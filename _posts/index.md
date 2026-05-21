@@ -1,0 +1,125 @@
+---
+title: "ZTronics"
+layout: home
+author_profile: false
+header:
+  overlay_image: /assets/images/banner.jpg
+  overlay_filter: 0.4
+  caption: "ESP32, Arduino and MPU6050 Tutorials"
+excerpt: "Arduino, ESP32, MPU6050 and OLED tutorials with code examples, wiring diagrams and project guides."
+---
+
+# ESP32 and Arduino Tutorials
+
+Learn how to build electronics projects using:
+- ESP32
+- Arduino Uno and Nano
+- MPU6050 sensors
+- OLED displays
+- I2C communication
+- Motion control systems
+
+This website includes:
+- Step-by-step tutorials
+- Wiring guides
+- Arduino code examples
+- GitHub projects
+- Troubleshooting tips
+
+---
+
+# Featured Tutorials
+
+## MPU6050 Tutorials
+
+- [MPU6050 Arduino Guide](mpu6050-arduino-guide.md)
+- [MPU6050 Calibration Tutorial](mpu6050-calibration.md)
+- [ESP32 MPU6050 Projects](esp32-mpu6050.md)
+
+---
+
+## OLED Display Guides
+
+- [SSD1306 OLED Arduino Tutorial](ssd1306-oled-guide.md)
+- [ESP32 OLED Display Setup](esp32-oled.md)
+
+---
+
+## Arduino and ESP32 Projects
+
+- [ESP32 Snake Game](esp32-snake-game.md)
+- [I2C Scanner Tutorial](i2c-scanner.md)
+- [Arduino Sensor Projects](arduino-projects.md)
+
+---
+
+# Popular Project
+
+## ESP32 Snake Game Controlled by MPU6050
+
+Build a motion-controlled Snake game using:
+- ESP32
+- MPU6050 gyroscope
+- SSD1306 OLED display
+
+Features:
+- Tilt controls
+- Real-time movement
+- OLED graphics
+- Arduino IDE compatible
+
+[View Project](esp32-snake-game.md)
+
+---
+
+# Recommended Components
+
+| Component | Link |
+|---|---|
+| ESP32 Development Board | [View ESP32 Boards](https://YOUR-AFFILIATE-LINK.com) |
+| MPU6050 Sensor | [Recommended MPU6050 Module](https://YOUR-AFFILIATE-LINK.com) |
+| SSD1306 OLED Display | [OLED Display Used in Projects](https://YOUR-AFFILIATE-LINK.com) |
+| Breadboard Kit | [Electronics Starter Kit](https://YOUR-AFFILIATE-LINK.com) |
+
+---
+
+# Why Use MPU6050?
+
+The MPU6050 is one of the best beginner-friendly motion sensors for:
+- Arduino projects
+- Gesture control
+- Robotics
+- Motion tracking
+- DIY electronics
+- ESP32 projects
+
+It combines:
+- Accelerometer
+- Gyroscope
+- Temperature sensor
+
+in a single low-cost module.
+
+---
+
+# Latest Tutorials
+
+- MPU6050 Arduino Wiring
+- ESP32 OLED Setup
+- Arduino Motion Sensors
+- I2C Communication Guide
+- MPU6050 Calibration
+- ESP32 Display Projects
+
+---
+
+# GitHub Projects
+
+All tutorials include:
+- Source code
+- Wiring diagrams
+- Arduino examples
+- Setup instructions
+- Troubleshooting tips
+
+More projects and tutorials are added regularly.
