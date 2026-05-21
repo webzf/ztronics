@@ -1,45 +1,81 @@
-title: ZTronics
-email:
-description: >-
-  ESP32, Arduino, MPU6050 and OLED tutorials with wiring diagrams,
-  code examples and project guides.
+minimal_mistakes_skin    : "neon"
 
-twitter_username:
-github_username: webzf
+locale                   : "en-US"
 
-minimal_mistakes_skin: neon
+title                    : "ZTronics"
+title_separator          : "-"
+subtitle                 : "ESP32, Arduino and MPU6050 Tutorials"
 
-search: true
+name                     : "ZTronics"
 
-markdown: kramdown
+description              : "ESP32, Arduino, MPU6050 and OLED tutorials with code examples and project guides."
 
-remote_theme: mmistakes/minimal-mistakes
+url                      : "https://webzf.github.io"
+baseurl                  : "/ztronics"
 
-url: "https://webzf.github.io"
-baseurl: "/ztronis"
+repository               : "webzf/ztronics"
 
-permalink: /:categories/:title/
+teaser                   :
+logo                     : "/assets/images/logo.png"
 
-paginate: 5
-paginate_path: /page:num/
+masthead_title           :
 
-timezone: Europe/Lisbon
+breadcrumbs              : true
 
-include:
-  - _pages
+words_per_minute         : 200
 
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
+enable_copy_code_button  : true
 
+copyright                :
+copyright_url            :
+
+comments:
+  provider               : false
+
+atom_feed:
+  path                   :
+  hide                   : false
+
+search                   : true
+search_full_content      : true
+search_provider          : lunr
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+naver_site_verification  :
+yandex_site_verification :
+baidu_site_verification  :
+
+# Social Sharing
+twitter:
+  username               :
+
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+
+og_image                 :
+og_image_alt             :
+
+social:
+  type                   : Organization
+  name                   : ZTronics
+
+  links:
+    - "https://github.com/webzf"
+
+# Analytics
+analytics:
+  provider               : false
+
+# Site Author
 author:
-  name   : "ZTronics"
-  avatar : "/assets/images/logo.png"
-  bio    : "ESP32, Arduino and MPU6050 tutorials with code examples and electronics projects."
+  name             : "ZTronics"
+  avatar           : "/assets/images/logo.png"
+  bio              : "ESP32, Arduino and MPU6050 tutorials with electronics projects and code examples."
+  location         : "Portugal"
 
   links:
     - label: "GitHub"
@@ -54,6 +90,7 @@ author:
       icon: "fab fa-fw fa-pinterest"
       url: "https://pinterest.com/YOURPROFILE"
 
+# Site Footer
 footer:
   links:
     - label: "GitHub"
@@ -68,6 +105,139 @@ footer:
       icon: "fab fa-fw fa-pinterest"
       url: "https://pinterest.com/YOURPROFILE"
 
+  since: "2026"
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - minimal-mistakes-jekyll.gemspec
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs
+  - /test
+
+keep_files:
+  - .git
+  - .svn
+
+encoding: "utf-8"
+
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+
+highlighter: rouge
+
+lsi: false
+
+excerpt_separator: "\n\n"
+
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+  quiet_deps: true
+  silence_deprecations: ['import']
+
+# Outputting
+permalink: /:categories/:title/
+
+timezone: Europe/Lisbon
+
+# Pagination
+paginate: 5
+paginate_path: /page:num/
+
+pagination:
+  debug: false
+  collection: 'posts'
+  per_page: 10
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  category: 'posts'
+  tag: ''
+  locale: ''
+
+  trail:
+    before: 2
+    after: 2
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-seo-tag
+
+# Whitelist
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# HTML Compression
+compress_html:
+  clippings: all
+
+  ignore:
+    envs: development
+
+# Defaults
 defaults:
   - scope:
       path: ""
@@ -88,11 +258,3 @@ defaults:
     values:
       layout: single
       author_profile: false
-
-category_archive:
-  type: liquid
-  path: /categories/
-
-tag_archive:
-  type: liquid
-  path: /tags/
