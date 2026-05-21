@@ -1,12 +1,11 @@
 ---
 title: "ZTronics"
-layout: home
-author_profile: false
-header:
-  overlay_image: /assets/images/banner.jpg
-  overlay_filter: 0.4
-  caption: "ESP32, Arduino and MPU6050 Tutorials"
-excerpt: "Arduino, ESP32, MPU6050 and OLED tutorials with code examples, wiring diagrams and project guides."
+date: 2019-04-18T15:34:30-04:00
+categories:
+  - blog
+tags:
+  - Jekyll
+  - update
 ---
 
 # ESP32 and Arduino Tutorials
