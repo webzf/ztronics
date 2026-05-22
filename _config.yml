@@ -156,7 +156,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 # Conversion
 markdown: kramdown
 
-highlighter: rouge
+highlighter: green #rouge
 
 lsi: false
 
@@ -183,7 +183,7 @@ sass:
   silence_deprecations: ['import']
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /:title/
 
 timezone: Europe/Lisbon
 
