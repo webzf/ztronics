@@ -156,7 +156,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 # Conversion
 markdown: kramdown
 
-highlighter: green #rouge
+highlighter: rouge
 
 lsi: false
 
@@ -251,6 +251,7 @@ defaults:
       layout: single
       author_profile: false
       read_time: true
+      show_date: false
       comments: false
       share: true
       related: true
