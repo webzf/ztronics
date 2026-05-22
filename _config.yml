@@ -75,7 +75,7 @@ author:
   name             : "ZTronics"
   avatar           : "/assets/images/logo.jpg"
   bio              : "ESP32, Arduino and MPU6050 tutorials with electronics projects and code examples."
-  location         : "Portugal"
+  location         : ""
 
   links:
     - label: "GitHub"
