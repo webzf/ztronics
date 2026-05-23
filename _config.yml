@@ -1,4 +1,4 @@
-remote_theme: "mmistakes/minimal-mistakes"
+⁹remote_theme: "mmistakes/minimal-mistakes"
 
 plugins:
   - jekyll-include-cache
@@ -20,7 +20,7 @@ baseurl                  : "/ztronics"
 repository               : "webzf/ztronics"
 
 teaser                   : "/assets/images/banner.jpg"
-logo                     : "/assets/images/logo.jpg"
+logo                     : "/assets/images/banner1.png"
 
 masthead_title           :
 
