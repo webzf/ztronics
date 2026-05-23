@@ -2,8 +2,8 @@
 title: "Welcome to Jekyll!"
 
 date: false
-show_date: false
-read_time: false
+show_date: true
+read_time: true
 categories:
   - Tutoriaal
 tags:
