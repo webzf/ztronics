@@ -8,11 +8,11 @@ locale                   : "en-US"
 
 title                    : "ZTronics"
 title_separator          : "-"
-subtitle                 : "ESP32, Arduino and MPU6050 Tutorials"
+subtitle                 : "ESP32, Arduino, Raspberry Pi and Electronics Projects"
 
 name                     : "ZTronics"
 
-description              : "ESP32, Arduino, MPU6050 and OLED tutorials with code examples and project guides."
+description              : "ESP32, Arduino, Raspberry Pi and electronics tutorials with code examples, wiring guides, sensors, displays and embedded projects."
 
 url                      : "https://webzf.github.io"
 baseurl                  : "/ztronics"
@@ -78,7 +78,7 @@ analytics:
 author:
   name             : "ZTronics"
   avatar           : "/assets/images/logo.jpg"
-  bio              : "ESP32, Arduino and MPU6050 tutorials with electronics projects and code examples."
+  bio              : "A collection of practical electronics tutorials, embedded projects, and beginner-friendly guides focused on Arduino, ESP32, Raspberry Pi, sensors, displays, and DIY hardware development."
   location         : ""
 
   links:
@@ -263,3 +263,9 @@ defaults:
     values:
       layout: single
       author_profile: false
+      read_time: false
+      show_date: false
+      comments: false
+      share: true
+      related: true
+
