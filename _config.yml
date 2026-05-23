@@ -20,7 +20,7 @@ baseurl                  : "/ztronics"
 repository               : "webzf/ztronics"
 
 teaser                   : "/assets/images/banner.jpg"
-logo                     : "/assets/images/Banner1.png"
+logo                     : "/assets/images/logo.png"
 
 masthead_title           :
 
