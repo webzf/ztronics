@@ -1,7 +1,7 @@
 ---
 title: "Welcome to Jekyll!"
 
-date: false
+date: true
 show_date: true
 read_time: true
 categories:
