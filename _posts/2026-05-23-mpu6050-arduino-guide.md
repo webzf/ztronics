@@ -7,6 +7,7 @@ excerpt: "Learn how to connect MPU6050 to Arduino Uno and Nano with wiring diagr
 
 show_date: false
 read_time: false
+last_modified_at: false
 
 toc: true
 toc_label: "Contents"
