@@ -263,9 +263,5 @@ defaults:
     values:
       layout: single
       author_profile: false
-      read_time: false
-      show_date: false
-      comments: false
-      share: true
-      related: true
+     
 
