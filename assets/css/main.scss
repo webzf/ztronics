@@ -11,9 +11,9 @@ a {
 a:hover {
   color: #66ffbb !important;
 }
-h1, h2, h3 {
-  color: #00ff88 !important;
-}
+
+/* Code blocks */
+
 .highlight,
 .highlighter-rouge {
   background: #2d333b !important;
@@ -24,5 +24,9 @@ h1, h2, h3 {
 .highlight pre,
 .highlighter-rouge pre {
   background: #2d333b !important;
-  color: #c9d1d9 !important;
+  color: #ffffff !important;
+}
+
+.highlight * {
+  color: #ffffff !important;
 }
