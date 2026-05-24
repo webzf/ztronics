@@ -1,12 +1,9 @@
-.highlight {
-  background: #0d1117 !important;
-  border-radius: 10px;
-}
+---
+---
 
-.highlight pre {
-  color: #c9d1d9 !important;
-}
+@import "minimal-mistakes";
 
+.highlight .kt,
 .highlight .k,
 .highlight .kd,
 .highlight .kr {
