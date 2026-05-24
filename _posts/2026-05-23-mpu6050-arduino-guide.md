@@ -131,7 +131,7 @@ Open Arduino IDE and install a compatible MPU6050 library.
 # MPU6050 Arduino Code Example
 
 The following example reads accelerometer and gyroscope values from the MPU6050 sensor.
-
+```cpp
     #include <Wire.h>
     #include <MPU6050.h>
 
@@ -178,7 +178,7 @@ The following example reads accelerometer and gyroscope values from the MPU6050 
 
       delay(500);
     }
-
+```
 ---
 
 # How the Code Works
