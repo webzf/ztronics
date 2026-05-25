@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "ZTronics"
+# title: "Embedded Nerd"
 author_profile: false
 
 header:
