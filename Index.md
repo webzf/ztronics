@@ -5,8 +5,8 @@ author_profile: false
 
 header:
  # overlay_image: /assets/images/embeddednerd.png
-  overlay_filter: 0.4
-  caption: "ESP32, Arduino and MPU6050 Tutorials"
+  # overlay_filter: 0.4
+  # caption: "ESP32, Arduino and MPU6050 Tutorials"
 
 excerpt: "ESP32, Arduino and MPU6050 tutorials with code examples, wiring diagrams and electronics projects."
 ---
