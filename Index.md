@@ -4,7 +4,7 @@ title: "ZTronics"
 author_profile: false
 
 header:
-  overlay_image: /assets/images/embeddednerd.png
+ # overlay_image: /assets/images/embeddednerd.png
   overlay_filter: 0.4
   caption: "ESP32, Arduino and MPU6050 Tutorials"
 
