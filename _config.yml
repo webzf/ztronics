@@ -6,11 +6,11 @@ minimal_mistakes_skin    : "neon"
 
 locale                   : "en-US"
 
-title                    : "ZTronics"
+title                    : "EmbeddedNerd.com"
 title_separator          : "-"
 subtitle                 : "ESP32, Arduino, Raspberry Pi and Electronics Projects"
 
-name                     : "ZTronics"
+name                     : "Embedded Nerd"
 
 description              : "ESP32, Arduino, Raspberry Pi and electronics tutorials with code examples, wiring guides, sensors, displays and embedded projects."
 
