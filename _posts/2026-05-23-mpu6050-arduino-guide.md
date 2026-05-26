@@ -13,8 +13,8 @@ toc: true
 toc_label: "Contents"
 
 header:
-  teaser: /assets/images/mpu6050.jpg
-  overlay_image: /assets/images/mpu6050-banner.jpg
+  teaser: /assets/images/Embeddednerd.png
+  overlay_image: /assets/images/Embeddednerd.png
   overlay_filter: 0.4
 
 categories:
