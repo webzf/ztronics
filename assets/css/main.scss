@@ -4,6 +4,7 @@
 @import "minimal-mistakes/skins/neon";
 @import "minimal-mistakes";
 
+.page__meta-sep, .page__meta + p { display: none !important; }
 a {
   color: #3fb950 !important;
 }
