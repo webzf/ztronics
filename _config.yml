@@ -79,7 +79,7 @@ analytics:
 # Site Author
 author:
   name             : "ZTronics"
-  avatar           : "/assets/images/logonerd.png"
+  avatar           : "/assets/images/Nerdlogo.png"
   bio              : "A collection of practical electronics tutorials, embedded projects, and beginner-friendly guides focused on Arduino, ESP32, Raspberry Pi, sensors, displays, and DIY hardware development."
   location         : ""
 
