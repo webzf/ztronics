@@ -19,7 +19,7 @@ baseurl                  : "/ztronics"
 
 repository               : "webzf/ztronics"
 
-teaser                   : "/assets/images/Embeddednerd.png"
+teaser                   : "/assets/images/headernerd.png"
 logo                     : "/assets/images/Nerdlogo.png"
 
 masthead_title           : 
