@@ -1,35 +1,15 @@
 ---
+---
 
-@import "minimal-mistakes/skins/neon";
 @import "minimal-mistakes";
 
-a {
-  color: #3fb950 !important;
+body {
+  background-color: #0b1120;
+  color: #e5e7eb;
+  font-family: "Inter", sans-serif;
 }
 
-a:hover {
-  color: #66ffbb !important;
-}
-
-/* Code blocks */
-
-.highlight,
-.highlighter-rouge {
-  background: #2d333b !important;
-  border-radius: 10px;
-  padding: 1rem;
-}
-
-.highlight pre,
-.highlighter-rouge pre {
-  background: #2d333b !important;
-  color: #ffffff !important;
-}
-
-.highlight * {
-  color: #ffffff !important;
-}
-/* Links verdes */
+/* Links */
 a {
   color: #00d084 !important;
 }
@@ -38,16 +18,15 @@ a:hover {
   color: #33ffb1 !important;
 }
 
-/* Fundo geral */
-body {
-  background-color: #0b1120;
-  color: #e5e7eb;
-}
-
 /* Header */
 .masthead {
   background-color: #070b14;
   border-bottom: 1px solid #1f2937;
+}
+
+/* Navigation */
+.greedy-nav {
+  background: #070b14;
 }
 
 /* Sidebar */
@@ -55,27 +34,52 @@ body {
   background-color: #0f172a;
 }
 
-/* Code blocks */
-.highlight {
-  background: #111827 !important;
-}
-
-/* Texto do código */
-.highlight pre {
-  color: #f3f4f6 !important;
-}
-
 /* Footer */
 .page__footer {
   background-color: #070b14;
+  color: #9ca3af;
 }
 
-/* Botões */
+/* Buttons */
 .btn {
   background-color: #00d084;
   border-color: #00d084;
+  color: #ffffff !important;
 }
 
 .btn:hover {
   background-color: #33ffb1;
+}
+
+/* Code blocks */
+.highlight,
+.highlighter-rouge {
+  background: #111827 !important;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.highlight pre,
+.highlighter-rouge pre {
+  background: #111827 !important;
+  color: #f3f4f6 !important;
+}
+
+/* Code text */
+.highlight * {
+  color: #f3f4f6 !important;
+}
+
+/* Borders */
+.page__content hr {
+  border-color: #1f2937;
+}
+
+/* Tables */
+table {
+  background-color: #111827;
+}
+
+thead {
+  background-color: #1f2937;
 }
