@@ -83,3 +83,48 @@ table {
 thead {
   background-color: #1f2937;
 }
+
+/* TOC / Contents box */
+
+.toc,
+.toc__menu,
+.sidebar__right {
+  background-color: #111827 !important;
+  border: 1px solid #1f2937 !important;
+  border-radius: 14px;
+}
+
+/* TOC title */
+.toc__title {
+  background-color: #0f172a !important;
+  color: #f3f4f6 !important;
+  border-radius: 14px 14px 0 0;
+  font-weight: 600;
+}
+
+/* TOC links */
+.toc__menu a {
+  color: #9ca3af !important;
+  transition: all 0.2s ease;
+}
+
+/* TOC hover */
+.toc__menu a:hover {
+  color: #00d084 !important;
+}
+
+/* Active section */
+.toc__menu .active a {
+  color: #00d084 !important;
+  font-weight: 600;
+}
+
+/* TOC spacing */
+.toc__menu li {
+  margin-bottom: 0.35rem;
+}
+
+/* Sidebar sticky area */
+.sidebar__right {
+  padding: 1rem;
+}
