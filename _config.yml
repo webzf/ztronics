@@ -7,8 +7,8 @@ minimal_mistakes_skin    : "air"
 locale                   : "en-US"
 
 title                    : ""
-title_separator          : "-"
-subtitle                 : "ESP32, Arduino, Raspberry Pi and Electronics Projects"
+title_separator          : ""
+#subtitle                 : "ESP32, Arduino, Raspberry Pi and Electronics Projects"
 
 name                     : "Embedded Nerd"
 
@@ -22,8 +22,7 @@ repository               : "webzf/ztronics"
 teaser                   : "/assets/images/Embeddednerd.png"
 logo                     : "/assets/images/Nerdlogo.png"
 
-masthead_title           :
-
+masthead_title           : "hheheheh" 
 last_modified_at: false
 
 breadcrumbs              : true
@@ -78,10 +77,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "ZTronics"
+  #name             : "ZTronics"
   avatar           : "/assets/images/Nerdlogo.png"
   bio              : "A collection of practical electronics tutorials, embedded projects, and beginner-friendly guides focused on Arduino, ESP32, Raspberry Pi, sensors, displays, and DIY hardware development."
-  location         : ""
+  #location         : ""
 
   links:
     - label: "GitHub"
