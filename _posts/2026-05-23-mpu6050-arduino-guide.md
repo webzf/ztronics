@@ -13,8 +13,8 @@ toc: true
 toc_label: "Contents"
 
 header:
-  teaser: /assets/images/Embeddednerd.png
-  overlay_image: /assets/images/Embeddednerd.png
+  teaser: /assets/images/headernerd2.png
+  overlay_image: /assets/images/headernerd2.png
   overlay_filter: 0.4
 
 categories:
