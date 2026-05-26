@@ -230,3 +230,22 @@ td {
 ::-webkit-scrollbar-thumb:hover {
   background: #374151;
 }
+
+/* Fix sticky TOC white background */
+
+.sidebar__right {
+  background: transparent !important;
+}
+
+.sidebar__right.sticky {
+  background: transparent !important;
+}
+
+.sidebar__right.sticky .toc {
+  background: #111827 !important;
+}
+
+/* Prevent white flash while scrolling */
+.sticky {
+  background: transparent !important;
+}
