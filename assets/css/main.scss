@@ -1,33 +1,50 @@
----
----
-
-@import "minimal-mistakes/skins/neon";
-@import "minimal-mistakes";
-
-.page__meta-sep, .page__meta + p { display: none !important; }
+/* Links verdes */
 a {
-  color: #3fb950 !important;
+  color: #00d084 !important;
 }
 
 a:hover {
-  color: #66ffbb !important;
+  color: #33ffb1 !important;
+}
+
+/* Fundo geral */
+body {
+  background-color: #0b1120;
+  color: #e5e7eb;
+}
+
+/* Header */
+.masthead {
+  background-color: #070b14;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #0f172a;
 }
 
 /* Code blocks */
-
-.highlight,
-.highlighter-rouge {
-  background: #2d333b !important;
-  border-radius: 10px;
-  padding: 1rem;
+.highlight {
+  background: #111827 !important;
 }
 
-.highlight pre,
-.highlighter-rouge pre {
-  background: #2d333b !important;
-  color: #ffffff !important;
+/* Texto do código */
+.highlight pre {
+  color: #f3f4f6 !important;
 }
 
-.highlight * {
-  color: #ffffff !important;
+/* Footer */
+.page__footer {
+  background-color: #070b14;
+}
+
+/* Botões */
+.btn {
+  background-color: #00d084;
+  border-color: #00d084;
+}
+
+.btn:hover {
+  background-color: #33ffb1;
 }
