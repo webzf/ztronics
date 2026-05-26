@@ -22,7 +22,7 @@ repository               : "webzf/ztronics"
 teaser                   : "/assets/images/Embeddednerd.png"
 logo                     : "/assets/images/Nerdlogo.png"
 
-masthead_title           : "hheheheh" 
+masthead_title           : 
 last_modified_at: false
 
 breadcrumbs              : true
