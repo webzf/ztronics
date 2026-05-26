@@ -249,3 +249,17 @@ td {
 .sticky {
   background: transparent !important;
 }
+
+/* Bigger logo */
+
+.site-logo img {
+  max-height: 52px !important;
+  width: auto;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .site-logo img {
+    max-height: 42px !important;
+  }
+}
