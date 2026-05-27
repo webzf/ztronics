@@ -6,8 +6,8 @@ minimal_mistakes_skin    : "dark"
 
 locale                   : "en-US"
 
-title                    : ""
-title_separator          : ""
+title                    : "Embedded Nerd"
+title_separator          : "-"
 subtitle                 : "ESP32, Arduino, Raspberry Pi and Electronics Projects"
 
 name                     : "Embedded Nerd"
