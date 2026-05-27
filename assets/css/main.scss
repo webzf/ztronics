@@ -8,14 +8,22 @@
 ========================= */
 
 body {
-  background-color: #0b1120;
+  background-color: #0f172a;
   color: #e5e7eb;
   font-family: "Inter", sans-serif;
 }
 
+/* Main content container */
+.initial-content {
+  background-color: #111827;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
 /* Better readability */
 .page__content {
-  line-height: 1.8;
+  line-height: 1.85;
   font-size: 1.05rem;
 }
 
@@ -29,12 +37,12 @@ body {
 ========================= */
 
 a {
-  color: #00d084 !important;
+  color: #10b981 !important;
   transition: all 0.2s ease;
 }
 
 a:hover {
-  color: #33ffb1 !important;
+  color: #34d399 !important;
 }
 
 /* =========================
@@ -47,6 +55,7 @@ a:hover {
 .page__content h4 {
   color: #f9fafb;
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 /* =========================
@@ -54,12 +63,208 @@ a:hover {
 ========================= */
 
 .masthead {
-  background-color: #070b14;
+  background-color: #111827;
   border-bottom: 1px solid #1f2937;
 }
 
 .greedy-nav {
-  background: #070b14;
+  background: #111827;
+}
+
+.greedy-nav a {
+  font-weight: 500;
+  color: #e5e7eb !important;
+}
+
+.greedy-nav a:hover {
+  color: #10b981 !important;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.site-logo img {
+  max-height: 54px !important;
+  width: auto;
+}
+
+/* Mobile logo */
+@media (max-width: 768px) {
+  .site-logo img {
+    max-height: 44px !important;
+  }
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  background: transparent;
+}
+
+/* =========================
+   TOC / CONTENTS
+========================= */
+
+.toc {
+  background: #0f172a !important;
+  border: 1px solid #1f2937 !important;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* TOC title */
+.toc .nav__title {
+  background: #111827 !important;
+  color: #f9fafb !important;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+/* TOC items */
+.toc .nav__items {
+  background: #0f172a !important;
+  padding: 0.8rem;
+}
+
+/* TOC links */
+.toc .nav__items a {
+  color: #9ca3af !important;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.toc .nav__items a:hover {
+  color: #10b981 !important;
+}
+
+/* Active section */
+.toc .active a {
+  color: #10b981 !important;
+  font-weight: 600;
+}
+
+/* TOC spacing */
+.toc li {
+  margin-bottom: 0.35rem;
+}
+
+/* Fix sticky sidebar */
+.sidebar__right,
+.sidebar__right.sticky,
+.sticky {
+  background: transparent !important;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  background-color: #10b981;
+  border-color: #10b981;
+  color: #ffffff !important;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #34d399;
+  border-color: #34d399;
+}
+
+/* =========================
+   CODE BLOCKS
+========================= */
+
+.highlight,
+.highlighter-rouge {
+  background: #0b1220 !important;
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid #1f2937;
+  overflow-x: auto;
+}
+
+.highlight pre,
+.highlighter-rouge pre {
+  background: transparent !important;
+  color: #f3f4f6 !important;
+}
+
+.highlight * {
+  color: #f3f4f6 !important;
+}
+
+/* =========================
+   TABLES
+========================= */
+
+table {
+  background-color: #0f172a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #111827;
+}
+
+th,
+td {
+  border-color: #374151 !important;
+  padding: 0.9rem;
+}
+
+/* =========================
+   HR / DIVIDERS
+========================= */
+
+.page__content hr {
+  border-color: #1f2937;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.page__footer {
+  background-color: #111827;
+  color: #9ca3af;
+  border-top: 1px solid #1f2937;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.page__content img {
+  border-radius: 16px;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}  background: #070b14;
 }
 
 .greedy-nav a {
