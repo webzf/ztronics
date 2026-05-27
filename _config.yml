@@ -260,7 +260,7 @@ defaults:
       toc: true
       toc_sticky: true
       breadcrumbs: true
-      classes: wide
+      #classes: wide
 
   - scope:
       path: "_pages"
