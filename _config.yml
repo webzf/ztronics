@@ -257,6 +257,10 @@ defaults:
       share: true
       related: true
       last_modified_at: false
+      toc: true
+      toc_sticky: true
+      breadcrumbs: true
+      classes: wide
 
   - scope:
       path: "_pages"
