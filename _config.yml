@@ -20,7 +20,7 @@ baseurl                  : "/ztronics"
 repository               : "webzf/ztronics"
 
 teaser                   : "/assets/images/headnerd2.png"
-logo                     : "/assets/images/Nerdlogo.png"
+logo                     : "/assets/images/Logoner3.png"
 
 masthead_title           : 
 last_modified_at: false
@@ -78,7 +78,7 @@ analytics:
 # Site Author
 author:
   #name             : "ZTronics"
-  avatar           : "/assets/images/Nerdlogo.png"
+  avatar           : "/assets/images/Logonerd3.png"
   bio              : "A collection of practical electronics tutorials, embedded projects, and beginner-friendly guides focused on Arduino, ESP32, Raspberry Pi, sensors, displays, and DIY hardware development."
   #location         : ""
 
