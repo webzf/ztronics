@@ -291,3 +291,18 @@ th,td {border-color: #374151 !important;}
 /* Content */.page__content {width: calc(100% - 320px);float: left;}
 
 /* Right sidebar / TOC */.sidebar__right {width: 260px;float: right;margin-right: 0;}}
+
+/* Move TOC to left side */
+
+@media (min-width: 1200px) {
+
+  .sidebar__right {
+    float: left !important;
+    margin-right: 2rem;
+    margin-left: 0;
+  }
+
+  .page__content {
+    float: right;
+  }
+}
