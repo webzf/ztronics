@@ -688,3 +688,31 @@ td {
     max-height: 42px !important;
   }
 }
+
+/* Wider content layout */
+
+.page {
+  max-width: 1600px;
+}
+
+/* Main content area */
+.page__inner-wrap {
+  max-width: 1200px;
+}
+
+/* Desktop layout */
+@media (min-width: 1200px) {
+
+  /* Content */
+  .page__content {
+    width: calc(100% - 320px);
+    float: left;
+  }
+
+  /* Right sidebar / TOC */
+  .sidebar__right {
+    width: 260px;
+    float: right;
+    margin-right: 0;
+  }
+}
