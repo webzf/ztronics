@@ -8,7 +8,7 @@
 ========================= */
 
 body {
-  background-color: #0f172a;
+  background-color: #0b1120;
   color: #e5e7eb;
   font-family: "Inter", sans-serif;
 }
@@ -19,9 +19,9 @@ body {
   font-size: 1.05rem;
 }
 
-/* Wider layout */
+/* Slightly wider layout */
 .page {
-  max-width: 1500px;
+  max-width: 1450px;
 }
 
 /* =========================
@@ -29,12 +29,12 @@ body {
 ========================= */
 
 a {
-  color: #10b981 !important;
+  color: #00d084 !important;
   transition: all 0.2s ease;
 }
 
 a:hover {
-  color: #34d399 !important;
+  color: #33ffb1 !important;
 }
 
 /* =========================
@@ -54,10 +54,13 @@ a:hover {
    HEADER / NAVBAR
 ========================= */
 
-.masthead,
-.greedy-nav {
-  background-color: #111827;
+.masthead {
+  background-color: #070b14;
   border-bottom: 1px solid #1f2937;
+}
+
+.greedy-nav {
+  background: #070b14;
 }
 
 .greedy-nav a {
@@ -66,7 +69,7 @@ a:hover {
 }
 
 .greedy-nav a:hover {
-  color: #10b981 !important;
+  color: #00d084 !important;
 }
 
 /* =========================
@@ -78,6 +81,7 @@ a:hover {
   width: auto;
 }
 
+/* Mobile logo */
 @media (max-width: 768px) {
   .site-logo img {
     max-height: 44px !important;
@@ -89,7 +93,7 @@ a:hover {
 ========================= */
 
 .sidebar {
-  background: transparent;
+  background-color: transparent;
 }
 
 /* =========================
@@ -104,6 +108,7 @@ a:hover {
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 
+/* TOC title */
 .toc .nav__title {
   background: #0f172a !important;
   color: #f9fafb !important;
@@ -111,25 +116,30 @@ a:hover {
   padding: 1rem;
 }
 
+/* TOC items */
 .toc .nav__items {
   background: #111827 !important;
   padding: 0.8rem;
 }
 
+/* TOC links */
 .toc .nav__items a {
   color: #9ca3af !important;
+  transition: all 0.2s ease;
 }
 
+/* Hover */
 .toc .nav__items a:hover {
-  color: #10b981 !important;
+  color: #00d084 !important;
 }
 
+/* Active section */
 .toc .active a {
-  color: #10b981 !important;
+  color: #00d084 !important;
   font-weight: 600;
 }
 
-/* Fix sticky sidebar */
+/* Fix sticky sidebar white background */
 .sidebar__right,
 .sidebar__right.sticky,
 .sticky {
@@ -141,15 +151,16 @@ a:hover {
 ========================= */
 
 .btn {
-  background-color: #10b981;
-  border-color: #10b981;
+  background-color: #00d084;
+  border-color: #00d084;
   color: #ffffff !important;
   border-radius: 12px;
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
-  background-color: #34d399;
-  border-color: #34d399;
+  background-color: #33ffb1;
+  border-color: #33ffb1;
 }
 
 /* =========================
@@ -196,11 +207,19 @@ td {
 }
 
 /* =========================
+   HR / DIVIDERS
+========================= */
+
+.page__content hr {
+  border-color: #1f2937;
+}
+
+/* =========================
    FOOTER
 ========================= */
 
 .page__footer {
-  background-color: #111827;
+  background-color: #070b14;
   color: #9ca3af;
   border-top: 1px solid #1f2937;
 }
@@ -211,4 +230,25 @@ td {
 
 .page__content img {
   border-radius: 16px;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
 }
