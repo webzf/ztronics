@@ -20,6 +20,30 @@ layout: default
 {% endif %}
 
 <div id="main" role="main">
+
+
+<!-- LEFT SIDEBAR -->
+<div class="left-sidebar">
+  <div class="featured-box">
+
+    <h3>Featured Projects</h3>
+
+    <a href="/esp32-snake-game/">
+      ESP32 Snake Game
+    </a>
+
+    <a href="/mpu6050-arduino/">
+      MPU6050 Arduino Guide
+    </a>
+
+    <a href="/esp32-oled-guide/">
+      ESP32 OLED Tutorial
+    </a>
+
+  </div>
+</div>
+
+  
   {% include sidebar.html locale=locale %}
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
@@ -85,35 +109,5 @@ layout: default
   {% elsif page.id and page.related %}
     {% include page__related.html locale=locale posts=site.posts %}
   {% endif %}
-</div>
-<div id="main" role="main">
-
-  <!-- LEFT SIDEBAR -->
-  <div class="left-sidebar">
-    <div class="featured-box">
-
-      <h3>Featured Projects</h3>
-
-      <a href="/esp32-snake-game/">
-        ESP32 Snake Game
-      </a>
-
-      <a href="/mpu6050-arduino/">
-        MPU6050 Arduino Guide
-      </a>
-
-      <a href="/esp32-oled-guide/">
-        ESP32 OLED Tutorial
-      </a>
-
-    </div>
-  </div>
-
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-
-    {{ content }}
-
-  </article>
-
 </div>
 
