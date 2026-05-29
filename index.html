@@ -11,57 +11,55 @@ excerpt: "ESP32, Arduino, Raspberry Pi and electronics tutorials with code examp
 
 
 feature_row:
-  - image_path: assets/images/unsplash-gallery-image-1-th.jpg
-    alt: "placeholder image 1"
-    title: "Placeholder 1"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder 2"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-    url: "#test-link"
-    btn_label: "Read More"
+  - image_path: /assets/images/esp32-snake-thumb.webp
+    alt: "ESP32 Snake Game"
+    title: "ESP32 Snake Game"
+    excerpt: "Control Snake using an MPU6050 motion sensor and ESP32."
+    url: /esp32-snake-game/
+    btn_label: "Read Tutorial"
     btn_class: "btn--primary"
-  - image_path: /assets/images/unsplash-gallery-image-3-th.jpg
-    title: "Placeholder 3"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+
+  - image_path: /assets/images/mpu6050-thumb.webp
+    alt: "MPU6050 Arduino Guide"
+    title: "MPU6050 Arduino Guide"
+    excerpt: "Learn wiring, libraries and code examples."
+    url: /mpu6050-arduino/
+    btn_label: "Read Tutorial"
+    btn_class: "btn--primary"
+
+  - image_path: /assets/images/oled-thumb.webp
+    alt: "ESP32 OLED Tutorial"
+    title: "ESP32 OLED Tutorial"
+    excerpt: "Display text, graphics and sensor data."
+    url: /esp32-oled-guide/
+    btn_label: "Read Tutorial"
+    btn_class: "btn--primary"
+
 feature_row2:
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder Image Left Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Left aligned with `type="left"`'
-    url: "#test-link"
-    btn_label: "Read More"
+  - image_path: /assets/images/featured-guide.webp
+    alt: "Embedded Systems Tutorials"
+    title: "Start Learning Embedded Systems"
+    excerpt: "Explore ESP32, Arduino, sensors, displays, IoT and robotics projects with detailed tutorials and code examples."
+    url: /categories/
+    btn_label: "Browse Tutorials"
     btn_class: "btn--primary"
-feature_row3:
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder Image Right Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Right aligned with `type="right"`'
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-feature_row4:
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder Image Center Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Centered with `type="center"`'
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
+
 ---
 
-{% for post in site.posts limit: 5 %}
-  {% include archive-single.html %}
-{% endfor %}
 
-{% include feature_row id="intro" type="center" %}
+## Featured Projects
 
 {% include feature_row %}
 
+## Latest Tutorials
+
+{% for post in site.posts limit: 6 %}
+  {% include archive-single.html %}
+{% endfor %}
+
+## Start Here
+
 {% include feature_row id="feature_row2" type="left" %}
 
-{% include feature_row id="feature_row3" type="right" %}
 
-{% include feature_row id="feature_row4" type="center" %}
 
