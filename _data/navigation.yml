@@ -1,4 +1,7 @@
 main:
+  - title: "Home"
+    url: /
+   
   - title: "ESP32"
     url: /categories/#Esp32/
 
