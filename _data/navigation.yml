@@ -1,19 +1,33 @@
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
+  - title: "ESP32"
+    url: /categories/#esp32/
+
+  - title: "Arduino"
+    url: /categories/#arduino/
+
+  - title: "Raspberry Pi"
+    url: /categories/#raspberry-pi/
+
+  - title: "Sensors"
+    url: /categories/#sensors/
+
+  - title: "Projects"
+    url: /projects/
+
+  - title: "GitHub"
+    url: /github/
+
   - title: "About"
     url: /about/
 
 
+
+```yaml
 embedded:
   - title: ESP32
     children:
-      - title: "ESP32 Tutorials"
-        url: /categories/Esp32/
+      - title: "Getting Started"
+        url: /esp32-getting-started/
       - title: "ESP32 Projects"
         url: /tags/esp32-projects/
       - title: "ESP32 OLED"
@@ -23,23 +37,26 @@ embedded:
 
   - title: Arduino
     children:
-      - title: "Arduino Tutorials"
-        url: /categories/Arduino/
+      - title: "Arduino Basics"
+        url: /arduino-beginners-guide/
       - title: "Arduino Projects"
         url: /tags/arduino-projects/
-      - title: "Arduino Sensors"
-        url: /arduino-sensors/
-      - title: "Getting Started with Arduino"
-        url: /arduino-beginners-guide/
 
   - title: Raspberry Pi
     children:
-      - title: "Raspberry Pi Tutorials"
-        url: /categories/Raspberry-pi/
-      - title: "Raspberry Pi Projects"
-        url: /tags/raspberry-pi-projects/
-      - title: "Raspberry Pi GPIO"
+      - title: "Raspberry Pi Basics"
+        url: /raspberry-pi-guide/
+      - title: "GPIO Guide"
         url: /raspberry-pi-gpio-guide/
+
+  - title: Popular Guides
+    children:
+      - title: "MPU6050 Guide"
+        url: /mpu6050-arduino/
+      - title: "OLED Displays"
+        url: /esp32-oled-guide/
+      - title: "Best ESP32 Boards"
+        url: /best-esp32-boards/
 
   - title: Sensors
     children:
@@ -68,12 +85,4 @@ embedded:
       - title: "Best Sensors for ESP32"
         url: /best-esp32-sensors/
 
-  - title: Resources
-    children:
-      - title: "GitHub Projects"
-        url: /github/
-      - title: "Downloads"
-        url: /downloads/
-      - title: "About Embedded Nerd"
-        url: /about/
-
+ 
