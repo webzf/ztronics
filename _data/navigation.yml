@@ -22,7 +22,6 @@ main:
 
 
 
-```yaml
 embedded:
   - title: ESP32
     children:
