@@ -19,7 +19,7 @@ baseurl                  : "/ztronics"
 
 repository               : "webzf/ztronics"
 
-teaser                   : "/assets/images/headnerd2.png"
+teaser                   : "/assets/images/headnerd2.webp"
 logo                     : "/assets/images/Logonerd3.png"
 
 masthead_title           : 
