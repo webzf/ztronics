@@ -3,10 +3,10 @@ main:
     url: /
    
   - title: "ESP32"
-    url: /categories/#Esp32/
+    url: /categories/#esp32
 
   - title: "Arduino"
-    url: /categories/#arduino/
+    url: /categories/#arduino
 
   - title: "Raspberry Pi"
     url: /categories/#raspberry-pi/
