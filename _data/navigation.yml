@@ -13,7 +13,7 @@ embedded:
   - title: ESP32
     children:
       - title: "ESP32 Tutorials"
-        url: /categories/esp32/
+        url: /categories/Esp32/
       - title: "ESP32 Projects"
         url: /tags/esp32-projects/
       - title: "ESP32 OLED"
@@ -24,7 +24,7 @@ embedded:
   - title: Arduino
     children:
       - title: "Arduino Tutorials"
-        url: /categories/arduino/
+        url: /categories/Arduino/
       - title: "Arduino Projects"
         url: /tags/arduino-projects/
       - title: "Arduino Sensors"
@@ -35,7 +35,7 @@ embedded:
   - title: Raspberry Pi
     children:
       - title: "Raspberry Pi Tutorials"
-        url: /categories/raspberry-pi/
+        url: /categories/Raspberry-pi/
       - title: "Raspberry Pi Projects"
         url: /tags/raspberry-pi-projects/
       - title: "Raspberry Pi GPIO"
