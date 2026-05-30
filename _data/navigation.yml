@@ -8,47 +8,72 @@ main:
   - title: "About"
     url: /about/
 
-docs:
-  - title: Getting Started
-    children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
 
-  - title: Customization
+embedded:
+  - title: ESP32
     children:
-      - title: "Configuration"
-        url: /docs/configuration/
-      - title: "Navigation"
-        url: /docs/navigation/
-      - title: "UI Text"
-        url: /docs/ui-text/
-      - title: "Authors"
-        url: /docs/authors/
-      - title: "Layouts"
-        url: /docs/layouts/
+      - title: "ESP32 Tutorials"
+        url: /categories/esp32/
+      - title: "ESP32 Projects"
+        url: /tags/esp32-projects/
+      - title: "ESP32 OLED"
+        url: /esp32-oled-guide/
+      - title: "ESP32 Web Server"
+        url: /esp32-web-server/
 
-  - title: Content
+  - title: Arduino
     children:
-      - title: "Working with Posts"
-        url: /docs/posts/
-      - title: "Working with Pages"
-        url: /docs/pages/
-      - title: "Working with Collections"
-        url: /docs/collections/
-      - title: "Helpers"
-        url: /docs/helpers/
-      - title: "Utility Classes"
-        url: /docs/utility-classes/
+      - title: "Arduino Tutorials"
+        url: /categories/arduino/
+      - title: "Arduino Projects"
+        url: /tags/arduino-projects/
+      - title: "Arduino Sensors"
+        url: /arduino-sensors/
+      - title: "Getting Started with Arduino"
+        url: /arduino-beginners-guide/
 
-  - title: Extras
+  - title: Raspberry Pi
     children:
-      - title: "Stylesheets"
-        url: /docs/stylesheets/
-      - title: "JavaScript"
-        url: /docs/javascript/
+      - title: "Raspberry Pi Tutorials"
+        url: /categories/raspberry-pi/
+      - title: "Raspberry Pi Projects"
+        url: /tags/raspberry-pi-projects/
+      - title: "Raspberry Pi GPIO"
+        url: /raspberry-pi-gpio-guide/
+
+  - title: Sensors
+    children:
+      - title: "MPU6050 Guide"
+        url: /mpu6050-arduino/
+      - title: "DHT22 Sensor"
+        url: /dht22-guide/
+      - title: "HC-SR04 Ultrasonic"
+        url: /hc-sr04-guide/
+
+  - title: Displays
+    children:
+      - title: "OLED Displays"
+        url: /esp32-oled-guide/
+      - title: "LCD Displays"
+        url: /lcd-display-guide/
+      - title: "TFT Displays"
+        url: /tft-display-guide/
+
+  - title: Recommended Hardware
+    children:
+      - title: "Best ESP32 Boards"
+        url: /best-esp32-boards/
+      - title: "Best Arduino Starter Kits"
+        url: /best-arduino-starter-kits/
+      - title: "Best Sensors for ESP32"
+        url: /best-esp32-sensors/
+
+  - title: Resources
+    children:
+      - title: "GitHub Projects"
+        url: /github/
+      - title: "Downloads"
+        url: /downloads/
+      - title: "About Embedded Nerd"
+        url: /about/
+
