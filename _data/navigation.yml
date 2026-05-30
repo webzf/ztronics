@@ -9,10 +9,10 @@ main:
     url: /categories/#arduino
 
   - title: "Raspberry Pi"
-    url: /categories/#raspberry-pi/
+    url: /categories/#raspberry-pi
 
   - title: "Sensors"
-    url: /categories/#sensors/
+    url: /categories/#sensors
 
   - title: "Projects"
     url: /projects/
