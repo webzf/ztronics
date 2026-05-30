@@ -14,7 +14,7 @@ toc_label: "Contents"
 
 header:
   teaser: /assets/images/headnerd2.png
-  overlay_image: /assets/images/headnerd2.png
+  overlay_image: /assets/images/headnerd2.webp
   overlay_filter: 0.4
 
 categories:
