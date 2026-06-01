@@ -84,4 +84,20 @@ embedded:
       - title: "Best Sensors for ESP32"
         url: /best-esp32-sensors/
 
- 
+
+
+
+sidebar:
+  nav: "embedded"
+
+  - title: "Popular Tutorials"
+    image: /assets/images/sidebar-popular.webp
+    image_alt: "Popular Tutorials"
+    text: "Explore our most popular ESP32 and Arduino guides."
+
+  - title: "Recommended Hardware"
+    image: /assets/images/sidebar-hardware.webp
+    image_alt: "Recommended Hardware"
+    text: "Boards, sensors and displays used in our projects."
+
+
