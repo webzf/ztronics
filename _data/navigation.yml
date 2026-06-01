@@ -66,15 +66,7 @@ embedded:
       - title: "HC-SR04 Ultrasonic"
         url: /hc-sr04-guide/
 
-  - title: Displays
-    children:
-      - title: "OLED Displays"
-        url: /esp32-oled-guide/
-      - title: "LCD Displays"
-        url: /lcd-display-guide/
-      - title: "TFT Displays"
-        url: /tft-display-guide/
-
+ 
   - title: Recommended Hardware
     children:
       - title: "Best ESP32 Boards"
