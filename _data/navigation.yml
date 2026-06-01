@@ -17,10 +17,7 @@ main:
   - title: "Projects"
     url: /projects/
 
-  - title: "GitHub"
-    url: /github/
-
-  - title: "About"
+    - title: "About"
     url: /about/
 
 
