@@ -577,7 +577,14 @@ th,td {border-color: #374151 !important;}
   }
 }
 
-.site-logo img {
-  max-height: 90px !important;
+
+.site-logo {
+  max-width: none !important;
 }
+
+.site-logo img {
+  height: 80px !important;
+  max-height: 80px !important;
+}
+
 
