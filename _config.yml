@@ -14,8 +14,10 @@ name                     : "EmbeddedNerd"
 
 description              : "ESP32, Arduino, Raspberry Pi and electronics tutorials with code examples, wiring guides, sensors, displays and embedded projects."
 
-url                      : "https://webzf.github.io"
-baseurl                  : "/ztronics"
+#url                      : "https://webzf.github.io"
+#baseurl                  : "/ztronics"
+url                       : "https://embeddednerd.com"
+baseurl                   : ""
 
 repository               : "webzf/ztronics"
 
