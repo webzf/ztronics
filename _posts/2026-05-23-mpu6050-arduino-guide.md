@@ -23,12 +23,14 @@ header:
 categories:
   - Arduino
   - Sensors
+  - Esp32
 
 tags:
   - MPU6050
   - Arduino
   - Arduino Uno
   - ESP32
+  - Esp32 projects
   - Gyroscope
   - Accelerometer
   - I2C
