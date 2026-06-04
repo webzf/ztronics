@@ -75,7 +75,10 @@ social:
 
 # Analytics
 analytics:
-  provider               : false
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-MZ3QY8T7PF"
+    anonymize_ip: false
 
 # Site Author
 author:
