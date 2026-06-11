@@ -5,7 +5,6 @@ layout: single
 author_profile: false
 ---
 
-# Privacy Policy
 
 _Last updated: June 2026_
 
