@@ -124,6 +124,9 @@ footer:
     - label: "Affiliate Disclosure"
       url: "/affiliate-disclosure/"
 
+    - label: "Terms of Service"
+      url: "/terms/"
+
     - label: "About"
       url: "/about/"
 
