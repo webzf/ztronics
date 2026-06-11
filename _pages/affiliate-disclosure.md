@@ -5,7 +5,6 @@ layout: single
 author_profile: false
 ---
 
-# Affiliate Disclosure
 
 _Last updated: June 2026_
 
