@@ -115,6 +115,18 @@ footer:
       icon: "fab fa-fw fa-pinterest"
       url: "https://pinterest.com/YOURPROFILE"
 
+    - label: "Contact"
+      url: "/contact/"
+
+    - label: "Privacy Policy"
+      url: "/privacy-policy/"
+
+    - label: "Affiliate Disclosure"
+      url: "/affiliate-disclosure/"
+
+    - label: "About"
+      url: "/about/"
+
   since: "2026"
 
 # Reading Files
