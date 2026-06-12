@@ -15,7 +15,7 @@ If you have questions about our tutorials, found an error in a project, would li
 
 For general questions regarding ESP32, Arduino, embedded systems, electronics, or website content:
 
-**Email:** conact@embeddednerd.com
+**Email:** contact@embeddednerd.com
 
 ## Report an Issue
 
