@@ -15,6 +15,9 @@ I'm an electronics and embedded systems enthusiast passionate about building pro
 
 Through years of experimentation, prototyping, and learning, I created Embedded Nerd to share practical knowledge and help makers, students, hobbyists, and engineers develop their embedded systems skills.
 
+For general questions regarding ESP32, Arduino, embedded systems, electronics, or website content: [Contact us](https://embeddednerd.com/contact/)
+
+
 ## Our Mission
 
 The goal of Embedded Nerd is simple:
