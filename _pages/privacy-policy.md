@@ -43,9 +43,9 @@ These services may collect anonymous usage information such as pages viewed, ses
 
 For more information, visit Google's Privacy Policy:
 
-https://policies.google.com/privacy
+[https://policies.google.com/privacy](https://policies.google.com/privacy)
 
-## Affiliate Links
+
 
 Some pages on Embedded Nerd may contain affiliate links.
 
