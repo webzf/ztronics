@@ -85,4 +85,4 @@ Any changes will be posted on this page with an updated revision date.
 
 If you have questions regarding this Privacy Policy, please contact:
 
-[contact@embeddednerd.com](contact@embeddednerd.com)
+[contact@embeddednerd.com](mailto:contact@embeddednerd.com)
