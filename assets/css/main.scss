@@ -1,0 +1,316 @@
+@import "minimal-mistakes";
+
+/* ==================================
+   COLORS
+================================== */
+
+:root{
+  --bg:#0b1120;
+  --card:#111827;
+  --card2:#0f172a;
+
+  --text:#e5e7eb;
+  --text-secondary:#9ca3af;
+
+  --primary:#10b981;
+  --primary-hover:#34d399;
+
+  --border:#1f2937;
+}
+
+/* ==================================
+   GLOBAL
+================================== */
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Inter",sans-serif;
+}
+
+.page{
+  max-width:1500px;
+}
+
+.page__inner-wrap{
+  max-width:1300px;
+}
+
+.page__content{
+  line-height:1.85;
+  font-size:1.05rem;
+}
+
+.page__content img{
+  border-radius:16px;
+}
+
+/* ==================================
+   LINKS
+================================== */
+
+a{
+  color:var(--primary) !important;
+  transition:0.2s ease;
+}
+
+a:hover{
+  color:var(--primary-hover) !important;
+}
+
+/* ==================================
+   HEADINGS
+================================== */
+
+.page__content h1,
+.page__content h2,
+.page__content h3,
+.page__content h4{
+
+  color:#f9fafb;
+
+  font-weight:700;
+
+  letter-spacing:-0.02em;
+}
+
+.page__content h1{
+  font-size:2.4rem;
+}
+
+.page__content h2{
+  margin-top:2.5rem;
+}
+
+/* ==================================
+   HEADER
+================================== */
+
+.masthead{
+  background:#111827;
+
+  border-bottom:1px solid var(--border);
+}
+
+.greedy-nav{
+  background:#111827;
+}
+
+.greedy-nav a{
+  color:var(--text) !important;
+
+  font-weight:500;
+}
+
+.greedy-nav a:hover{
+  color:var(--primary) !important;
+}
+
+/* ==================================
+   LOGO
+================================== */
+
+.site-logo img{
+  height:72px !important;
+
+  max-height:72px !important;
+
+  width:auto;
+}
+
+@media(max-width:768px){
+
+.site-logo img{
+
+height:52px !important;
+
+max-height:52px !important;
+
+}
+
+}
+
+/* ==================================
+   TOC
+================================== */
+
+.toc{
+
+  width:280px;
+
+  font-size:0.95rem;
+
+  background:var(--card2) !important;
+
+  border:1px solid var(--border) !important;
+
+  border-radius:16px;
+
+  overflow:hidden;
+
+  box-shadow:0 8px 24px rgba(0,0,0,0.25);
+}
+
+.toc .nav__title{
+
+  background:var(--card);
+
+  color:#fff !important;
+
+  font-weight:600;
+
+  padding:1rem;
+}
+
+.toc .nav__items{
+
+  padding:1rem;
+}
+
+.toc .nav__items a{
+
+  color:var(--text-secondary) !important;
+}
+
+.toc .nav__items a:hover{
+
+  color:var(--primary) !important;
+}
+
+.toc .active a{
+
+  color:var(--primary) !important;
+
+  font-weight:600;
+}
+
+.sidebar__right,
+.sidebar__right.sticky{
+
+  background:transparent !important;
+}
+
+/* ==================================
+   CODE BLOCKS
+================================== */
+
+.highlight,
+.highlighter-rouge{
+
+  background:#0f172a !important;
+
+  border:1px solid var(--border);
+
+  border-radius:16px;
+
+  padding:1rem;
+
+  overflow-x:auto;
+}
+
+.highlight pre,
+.highlighter-rouge pre{
+
+  background:transparent !important;
+
+  color:#f3f4f6 !important;
+}
+
+/* ==================================
+   TABLES
+================================== */
+
+table{
+
+  background:var(--card2);
+
+  border-radius:12px;
+
+  overflow:hidden;
+}
+
+thead{
+
+  background:var(--card);
+}
+
+th,td{
+
+  padding:0.9rem;
+
+  border-color:#374151 !important;
+}
+
+/* ==================================
+   BUTTONS
+================================== */
+
+.btn{
+
+  background:var(--primary);
+
+  border-color:var(--primary);
+
+  border-radius:12px;
+
+  color:#fff !important;
+}
+
+.btn:hover{
+
+  background:var(--primary-hover);
+
+  border-color:var(--primary-hover);
+}
+
+/* ==================================
+   FOOTER
+================================== */
+
+.page__footer{
+
+  background:#111827;
+
+  color:var(--text-secondary);
+
+  border-top:1px solid var(--border);
+}
+
+/* ==================================
+   SCROLLBAR
+================================== */
+
+::-webkit-scrollbar{
+
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+
+  background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+
+  background:#374151;
+
+  border-radius:10px;
+}
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media(max-width:1024px){
+
+.toc{
+
+display:none;
+}
+
+.page__content{
+
+font-size:1rem;
+}
+
+}
