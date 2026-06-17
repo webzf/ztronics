@@ -314,3 +314,36 @@ font-size:1rem;
 }
 
 }
+
+/* ===== DESKTOP ARTICLE LAYOUT ===== */
+
+@media (min-width: 1280px){
+
+  .page {
+    max-width: 1700px !important;
+  }
+
+  .page__inner-wrap {
+
+    display: grid !important;
+
+    grid-template-columns: minmax(0,1fr) 280px;
+
+    gap: 40px;
+
+    max-width: 1500px !important;
+  }
+
+  .page__content {
+
+    max-width: 1000px !important;
+
+    width: 100% !important;
+  }
+
+  .sidebar__right {
+
+    width: 280px !important;
+  }
+
+}
