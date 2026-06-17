@@ -12,7 +12,9 @@ show_date: false
 read_time: false
 last_modified_at: false
 
+
 toc: true
+toc_sticky: true
 toc_label: "Contents"
 
 header:
