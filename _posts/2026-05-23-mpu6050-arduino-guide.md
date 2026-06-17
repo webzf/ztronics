@@ -4,7 +4,7 @@ title: "MPU6050 Arduino Guide: Code, Wiring & GitHub"
 layout: single
 
 #sidebar: 
-   # nav: "embedded"
+   #nav: "embedded"
 
 excerpt: "Learn how to connect MPU6050 to Arduino Uno and Nano with wiring diagrams, working code examples and GitHub downloads."
 
