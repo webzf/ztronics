@@ -15,7 +15,7 @@ main:
     url: /categories/#sensors
 
   - title: "Projects"
-    url: /projects/
+    url: /categories/
 
   - title: "About"
     url: /about/
