@@ -349,26 +349,32 @@ font-size:1rem;
 }
 
 
+/* ===== Compactar o layout desktop ===== */
+
 @media (min-width: 1280px){
 
+  /* Aproximar o menu esquerdo do artigo */
   .sidebar{
     margin-right:15px !important;
   }
 
+  /* Aproximar o TOC do artigo */
   .sidebar__right{
     margin-left:15px !important;
   }
 
-}
+  /* Dar mais largura ao artigo */
+  .page__content{
 
-.sidebar .nav__items a{
+    max-width:none !important;
 
-  font-size:0.9rem;
+    width:auto !important;
+  }
 
-  padding:0.35rem 0;
-}
+  /* Aumentar a área útil */
+  .page__inner-wrap{
 
-.sidebar li{
+    max-width:1600px !important;
+  }
 
-  margin-bottom:0.15rem;
 }
