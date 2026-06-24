@@ -57,17 +57,17 @@ embedded:
       - title: "Best ESP32 Boards"
         url: /best-esp32-boards/
 
-  - title: Sensors
-    children:
-      - title: "MPU6050 Guide"
-        url: /mpu6050-arduino/
-      - title: "DHT22 Sensor"
-        url: /dht22-guide/
-      - title: "HC-SR04 Ultrasonic"
-        url: /hc-sr04-guide/
+#  - title: Sensors
+     #children:
+      #- title: "MPU6050 Guide"
+       # url: /mpu6050-arduino/
+      #- title: "DHT22 Sensor"
+       # url: /dht22-guide/
+      #- title: "HC-SR04 Ultrasonic"
+       # url: /hc-sr04-guide/
 
  
-  - title: Recommended Hardware
+  - title: Top Hardware
     children:
       - title: "Best ESP32 Boards"
         url: /best-esp32-boards/
