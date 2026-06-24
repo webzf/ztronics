@@ -28,13 +28,7 @@ body{
   font-family:"Inter",sans-serif;
 }
 
-.page{
-  max-width:1500px;
-}
 
-.page__inner-wrap{
-  max-width:1300px;
-}
 
 .page__content{
   line-height:1.85;
@@ -376,5 +370,44 @@ font-size:1rem;
 
     max-width:1600px !important;
   }
+
+
+   /* ===== EMBEDDED NERD DESKTOP LAYOUT ===== */
+
+@media (min-width: 1280px){
+
+  /* Área total */
+  .initial-content{
+
+    max-width: 1700px !important;
+
+    margin: auto;
+  }
+
+  /* Menu esquerdo */
+  .sidebar{
+
+    width: 160px !important;
+
+    margin-right: 15px !important;
+  }
+
+  /* Contents */
+  .sidebar__right{
+
+    width: 220px !important;
+
+    margin-left: 15px !important;
+  }
+
+  /* Artigo */
+  .page__content{
+
+    max-width: none !important;
+
+    width: auto !important;
+  }
+
+}
 
 }
