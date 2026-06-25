@@ -411,3 +411,72 @@ font-size:1rem;
 }
 
 }
+
+
+/* =====================================
+   EMBEDDED NERD ARTICLE LAYOUT
+=====================================*/
+
+@media (min-width:1280px){
+
+#main{
+
+display:grid;
+
+grid-template-columns:170px minmax(0,1fr) 230px;
+
+gap:25px;
+
+max-width:1500px;
+
+margin:auto;
+
+align-items:start;
+
+}
+
+/* Menu esquerdo */
+
+.sidebar{
+
+width:170px;
+
+margin:0;
+
+}
+
+/* Artigo */
+
+.page{
+
+margin:0;
+
+max-width:none;
+
+}
+
+.page__inner-wrap{
+
+max-width:none;
+
+}
+
+.page__content{
+
+max-width:1000px;
+
+margin:0;
+
+}
+
+/* TOC */
+
+.sidebar__right{
+
+width:230px;
+
+margin:0;
+
+}
+
+}
