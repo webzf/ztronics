@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+{% include masthead.html %}
+
+<div id="main" role="main">
+
+  {% include sidebar.html %}
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+
+    {% if page.header.overlay_color or page.header.overlay_image %}
+      {% include page__hero.html %}
+    {% endif %}
+
+    <div class="page__inner-wrap">
+
+      <header>
+        {% include page__meta.html %}
+      </header>
+
+      <section class="page__content" itemprop="text">
+
+        {{ content }}
+
+      </section>
+
+      {% if page.share %}
+        {% include social-share.html %}
+      {% endif %}
+
+      {% if page.related %}
+        {% include page__related.html %}
+      {% endif %}
+
+    </div>
+
+  </article>
+
+  {% if page.toc %}
+    <aside class="sidebar__right sticky">
+      <nav class="toc">
+        <header>
+          <h4 class="nav__title">{{ page.toc_label | default: "Contents" }}</h4>
+        </header>
+
+        {% include toc %}
+      </nav>
+    </aside>
+  {% endif %}
+
+</div>
