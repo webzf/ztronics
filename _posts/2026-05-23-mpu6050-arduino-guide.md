@@ -96,6 +96,8 @@ The sensor communicates using the I2C protocol and works with both Arduino and E
 
 # MPU6050 Arduino Wiring
 
+![MPU6050 arduino wiring]({{ '/assets/images/mpu6050-wiring.webp' | relative_url }})
+
 ## Arduino Uno / Nano Connections
 
 | MPU6050 Pin | Arduino Uno/Nano |
