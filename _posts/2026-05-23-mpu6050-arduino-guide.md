@@ -18,7 +18,7 @@ toc_sticky: true
 toc_label: "Contents"
 
 header:
-  teaser: /assets/images/headnerd2.png
+  teaser: /assets/images/MPU6050-Arduino-Guide.png
   overlay_image: /assets/images/headnerd2.webp
   overlay_filter: 0.4
 
@@ -143,6 +143,8 @@ Open Arduino IDE and install a compatible MPU6050 library.
 
 The following example reads accelerometer and gyroscope values from the MPU6050 sensor.
 ```cpp
+
+    #www.embeddednerd.com
     #include <Wire.h>
     #include <MPU6050.h>
 
