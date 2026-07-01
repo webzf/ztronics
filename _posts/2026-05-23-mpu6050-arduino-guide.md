@@ -144,7 +144,12 @@ Open Arduino IDE and install a compatible MPU6050 library.
 The following example reads accelerometer and gyroscope values from the MPU6050 sensor.
 ```cpp
 
-    #www.embeddednerd.com
+    // =====================================================
+    // Embedded Nerd - https://embeddednerd.com
+    // MPU6050 Arduino Example
+    // Tutorial: https://embeddednerd.com/mpu6050-arduino-tutorial/
+    // =====================================================
+
     #include <Wire.h>
     #include <MPU6050.h>
 
@@ -191,6 +196,11 @@ The following example reads accelerometer and gyroscope values from the MPU6050 
 
       delay(500);
     }
+
+    // -----------------------------------------------------
+    // More Arduino, ESP32 and Raspberry Pi tutorials:
+    // https://embeddednerd.com
+    // -----------------------------------------------------
 ```
 ---
 
