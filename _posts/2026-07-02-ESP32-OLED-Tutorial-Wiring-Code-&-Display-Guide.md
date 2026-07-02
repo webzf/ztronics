@@ -32,7 +32,7 @@ tags:
   - SSD1306
   - I2C
   - Arduino IDE
-  - ESP32 Projects
+  - Esp32 Projects
   - Display
   - Electronics
 
