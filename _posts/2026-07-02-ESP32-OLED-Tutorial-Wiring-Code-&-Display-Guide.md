@@ -17,7 +17,7 @@ toc_sticky: true
 toc_label: "Contents"
 
 header:
-  teaser: /assets/images/ESP32-OLED-Tutorial.png
+  teaser: /assets/images/ESP32-OLED-Tutorial.webp
   overlay_image: /assets/images/headnerd2.webp
   overlay_filter: 0.4
 
@@ -42,7 +42,7 @@ share: true
 
 # ESP32 OLED Tutorial: Wiring, Code & Display Guide
 
-![ESP32 OLED Tutorial]({{ '/assets/images/ESP32-OLED-Tutorial.png' | relative_url }})
+![ESP32 connected to an SSD1306 OLED display showing text using Arduino IDE]({{ '/assets/images/ESP32-OLED-Tutorial.webp' | relative_url }})
 
 This guide shows how to connect an SSD1306 OLED display to an ESP32 using I2C communication.
 
