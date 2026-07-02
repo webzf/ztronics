@@ -319,7 +319,7 @@ You can expand this project with:
 
 - [MPU6050 Calibration Guide](../mpu6050-calibration/)
 - [ESP32 MPU6050 Projects](../esp32-mpu6050/)
-- [SSD1306 OLED Guide](../ssd1306-oled-guide/)
+- [SSD1306 OLED Guide](../ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/))
 - [I2C Scanner Tutorial](../i2c-scanner/)
 
 ---
