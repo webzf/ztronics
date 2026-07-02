@@ -22,12 +22,12 @@ header:
   overlay_filter: 0.4
 
 categories:
-  - ESP32
+  - Esp32
   - Displays
   - Arduino
 
 tags:
-  - ESP32
+  - Esp32
   - OLED
   - SSD1306
   - I2C
