@@ -30,7 +30,7 @@ embedded:
       - title: "ESP32 Projects"
         url: /tags/esp32-projects/
       - title: "ESP32 OLED"
-        url: /esp32-oled-guide/
+        url: /ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/
       - title: "ESP32 Web Server"
         url: /esp32-web-server/
 
