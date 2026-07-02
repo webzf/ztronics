@@ -61,6 +61,18 @@ This tutorial includes:
 
 ---
 
+## Display MPU6050 Data on an OLED
+
+After connecting the OLED display, you can show live accelerometer and gyroscope values from an MPU6050 sensor.
+
+This combination is one of the most common in robotics, self-balancing robots, drone controllers, and motion detection projects.
+
+Follow our complete
+[MPU6050 Arduino Guide](/mpu6050-arduino-guide/)
+to learn how to read the sensor before displaying the values on the OLED.
+
+---
+
 # What is an SSD1306 OLED Display?
 
 The SSD1306 OLED display is a small monochrome display commonly available in:
