@@ -17,7 +17,7 @@ toc_sticky: true
 toc_label: "Contents"
 
 header:
-  teaser: /assets/images/ESP32-OLED-Tutorial.webp
+  teaser: /assets/images/esp32-oled-tutorial.webp
   overlay_image: /assets/images/headnerd2.webp
   overlay_filter: 0.4
 
