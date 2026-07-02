@@ -28,7 +28,7 @@ embedded:
       - title: "Getting Started"
         url: /esp32-getting-started/
       - title: "ESP32 Projects"
-        url: /tags/esp32-projects/
+        url: /categories/#esp32
       - title: "ESP32 OLED"
         url: /ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/
       - title: "ESP32 Web Server"
@@ -53,7 +53,7 @@ embedded:
       - title: "MPU6050 Guide"
         url: /mpu6050-arduino/
       - title: "OLED Displays"
-        url: /esp32-oled-guide/
+        url: /ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/
       - title: "Best ESP32 Boards"
         url: /best-esp32-boards/
 
