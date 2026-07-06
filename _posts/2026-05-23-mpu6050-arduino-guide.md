@@ -18,7 +18,7 @@ toc_sticky: true
 toc_label: "Contents"
 
 header:
-  teaser: /assets/images/MPU6050-Arduino-Guide.png
+  teaser: /assets/images/mpu6050-sensor-guide.webp
   overlay_image: /assets/images/headnerd2.webp
   overlay_filter: 0.4
 
