@@ -17,7 +17,7 @@ toc_sticky: true
 toc_label: "Contents"
 
 header:
-  teaser: /assets/images/esp32-snake-game.webp
+  teaser: /assets/images/Esp32-snake-game.webp66
   overlay_image: /assets/images/headnerd2.webp
   overlay_filter: 0.4
 
