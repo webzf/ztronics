@@ -46,13 +46,13 @@ share: true
 
 Learn how to build a classic Snake game using an ESP32, an MPU6050 motion sensor and a 0.96-inch SSD1306 OLED display.
 
-Instead of pressing buttons, you control the snake by tilting the [MPU6050 sensor].{/mpu6050-arduino-guide/}, making this a fun project for learning ESP32 graphics, sensors and game programming.
+Instead of pressing buttons, you control the snake by tilting the [MPU6050 sensor].(/mpu6050-arduino-guide/), making this a fun project for learning ESP32 graphics, sensors and game programming.
 
 In this tutorial you'll learn:
 
 - ESP32 Snake Game wiring
 - MPU6050 tilt controls
-- OLED display connections
+- [OLED display connections].(/ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)
 - Required libraries
 - Complete Arduino code
 - GitHub source code
