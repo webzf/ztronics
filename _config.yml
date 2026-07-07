@@ -23,7 +23,7 @@ baseurl                   : ""
 repository               : "webzf/ztronics"
 
 teaser                   : "/assets/images/headnerd2.webp"
-logo                     : "/assets/images/Logonerd3.png"
+logo                     : "/assets/images/logonerd.webp"
 
 masthead_title           : 
 last_modified_at: false
