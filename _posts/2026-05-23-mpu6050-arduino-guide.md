@@ -319,7 +319,7 @@ You can expand this project with:
 
 - [MPU6050 Calibration Guide](../mpu6050-calibration/)
 - [ESP32 MPU6050 Snake Game Projects](https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
-- [SSD1306 OLED Guide](../ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/))
+- [SSD1306 OLED Guide](../ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)
 - [I2C Scanner Tutorial](../i2c-scanner/)
 
 ---
