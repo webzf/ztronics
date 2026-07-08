@@ -65,7 +65,7 @@ This tutorial includes:
 
 After connecting the OLED display, you can show live accelerometer and gyroscope values from an MPU6050 sensor.
 
-This combination is one of the most common in robotics, self-balancing robots, drone controllers, and motion detection projects.
+This combination is one of the most common in robotics, self-balancing robots, drone controllers, and motion detection projects and [games](https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/).
 
 Follow our complete
 [MPU6050 Arduino Guide](/mpu6050-arduino-guide/)
@@ -92,6 +92,7 @@ These displays are widely used in:
 - IoT devices
 - ESP32 projects
 - Arduino projects
+- [Games projects](https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
 - Robotics
 - Home automation
 - DIY electronics
@@ -363,6 +364,7 @@ The SSD1306 display is widely used in:
 - Sensor dashboards
 - GPS displays
 - Home automation
+- [Arcade games](https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
 
 ---
 
@@ -399,7 +401,8 @@ You can extend this tutorial by adding:
 - [MPU6050 Arduino Guide](../mpu6050-arduino-guide/)
 - [I2C Scanner Tutorial](../i2c-scanner/)
 - [BME280 ESP32 Tutorial](../bme280-esp32/)
-
+- [ESP32 Snake Game with MPU6050 and OLED Display](
+https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
 ---
 
 # Frequently Asked Questions
