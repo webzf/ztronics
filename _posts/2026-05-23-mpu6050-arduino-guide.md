@@ -68,7 +68,7 @@ The MPU6050 is a motion tracking sensor used in:
 - Arduino projects
 - Robotics
 - Gesture control systems
-- Motion-controlled games
+- [Motion-controlled games](https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
 - Drone stabilization
 - DIY electronics
 
@@ -309,7 +309,7 @@ The complete MPU6050 Arduino code is available in the GitHub repository.
 You can expand this project with:
 - OLED displays
 - ESP32 boards
-- Motion-controlled games
+- [Motion-controlled games](https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
 - Wireless communication
 - Sensor-based automation
 
@@ -318,7 +318,7 @@ You can expand this project with:
 # Related Tutorials
 
 - [MPU6050 Calibration Guide](../mpu6050-calibration/)
-- [ESP32 MPU6050 Projects](../esp32-mpu6050/)
+- [ESP32 MPU6050 Snake Game Projects](https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
 - [SSD1306 OLED Guide](../ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/))
 - [I2C Scanner Tutorial](../i2c-scanner/)
 
