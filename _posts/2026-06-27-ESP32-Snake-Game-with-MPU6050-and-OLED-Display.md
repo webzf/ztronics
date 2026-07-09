@@ -95,7 +95,7 @@ The OLED display shows:
 
 # ESP32 Snake Game Wiring
 
-![ESP32 Snake Wiring]({{ '/assets/images/esp32-snake-game-wiring.webp' | relative_url }})
+![ESP32 Snake Wiring]({{ '/assets/images/esp32-snake-game-mpu6050.webp' | relative_url }})
 
 ## ESP32 Connections
 
