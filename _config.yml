@@ -4,6 +4,8 @@ plugins:
   - jekyll-include-cache
 minimal_mistakes_skin: "dark" #"default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
+seo:
+  name: ESP32, Arduino & Raspberry Pi Tutorials | Embedded Nerd
 
 locale                   : "en-US"
 
