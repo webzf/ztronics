@@ -48,7 +48,7 @@ An I2C Scanner is one of the most useful tools for debugging electronic projects
 
 Whether you're using an Arduino Uno, ESP32, ESP8266 or another compatible board, running an I2C scanner should always be one of the first troubleshooting steps when an I2C device isn't responding.
 
-{% include video id="YOUR_YOUTUBE_VIDEO_ID" provider="youtube" %}
+![I2C Scanner tutorial showing Arduino Uno, ESP32, OLED SSD1306 and MPU6050 with wiring diagram and detected I2C addresses.]({{ '/assets/images/i2c-scanner-tutorial-arduino-esp32.webp' | relative_url }})
 
 In this tutorial you'll learn:
 
