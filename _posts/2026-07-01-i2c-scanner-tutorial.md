@@ -200,8 +200,7 @@ Before uploading the scanner sketch, double-check the following:
 - The correct COM port is selected.
 
 Taking a minute to verify these connections can save a lot of troubleshooting later.
-```
-````markdown
+
 ---
 
 # Arduino & ESP32 I2C Scanner Code
@@ -489,8 +488,6 @@ Common causes include:
 
 An I2C Scanner is often the quickest way to determine whether the issue is related to software or hardware.
 
-````
-````markdown
 ---
 
 # Common I2C Device Addresses
