@@ -318,7 +318,7 @@ Possible causes:
 - Incorrect wiring
 - Loose jumper wires
 
-Run an I2C Scanner sketch to detect the display.
+Run an [I2C Scanner](https://embeddednerd.com/i2c-scanner-tutorial/) sketch to detect the display.
 
 ---
 
