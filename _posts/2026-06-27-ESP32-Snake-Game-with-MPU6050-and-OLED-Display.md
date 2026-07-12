@@ -106,7 +106,7 @@ The OLED display shows:
 | GPIO21 | SDA | SDA |
 | GPIO22 | SCL | SCL |
 
-Since both devices use I2C communication, they can share the same SDA and SCL pins.
+Since both devices use [I2C communication](https://embeddednerd.com/i2c-scanner-tutorial/), they can share the same SDA and SCL pins.
 
 ---
 
