@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "I2C Scanner Tutorial: Find Any I2C Device Address (Arduino & ESP32)"
 
