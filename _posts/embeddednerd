@@ -684,4 +684,590 @@ Before publishing any content, verify:
 ☐ Educational value is prioritized.
 ☐ The content reflects the Embedded Nerd philosophy defined in Chapter 0.
 
+Chapter 2 — Image System & Visual Standards
+2.1 Purpose
+
+Images are one of the most valuable educational tools on Embedded Nerd.
+
+A good image should explain a concept faster than several paragraphs of text.
+
+Every image must have a clear educational purpose.
+
+Images are not decoration.
+
+They exist to improve understanding.
+
+2.2 General Style
+
+Every image created for Embedded Nerd must immediately look like it belongs to the website.
+
+All illustrations must use the same visual language.
+
+Characteristics:
+
+White background
+Professional appearance
+High resolution
+Clean composition
+Modern typography
+Realistic electronic components
+Soft shadows
+Consistent spacing
+Green highlights
+Minimal visual clutter
+
+Readers should recognize an Embedded Nerd image instantly.
+
+2.3 Branding
+
+Every original illustration should include:
+
+✓ Official Embedded Nerd logo
+
+✓ EmbeddedNerd.com
+
+The branding should always be subtle.
+
+Never distract from the educational content.
+
+2.4 Logo Placement
+
+Default position
+
+Top-right corner.
+
+Rules
+
+Never place in the center.
+Never cover components.
+Never overlap text.
+Keep a clear margin around the logo.
+Always preserve proportions.
+2.5 Background
+
+Always use
+
+White (#FFFFFF)
+
+Never use
+
+Black
+Dark gradients
+Colored backgrounds
+Patterned backgrounds
+Transparent backgrounds unless specifically required
+
+A white background provides maximum readability and consistency.
+
+2.6 Color Palette
+
+Only use the Embedded Nerd palette.
+
+Primary Green
+
+#10B981
+
+Dark Gray
+
+#1F2937
+
+Light Gray
+
+#F8FAFC
+
+Border
+
+#E5E7EB
+
+Avoid bright or saturated colors except when necessary to distinguish wires.
+
+2.7 Typography
+
+Use a clean sans-serif font.
+
+Preferred:
+
+Inter
+Roboto
+Open Sans
+
+Rules:
+
+Large enough to read
+High contrast
+Consistent sizes
+Bold only for titles
+Never mix fonts
+2.8 Image Types
+
+Embedded Nerd uses six standard image categories.
+
+Hero Image
+Wiring Diagram
+Pinout Diagram
+Flow Diagram
+Serial Monitor
+Finished Project
+
+Every article should use as many of these as appropriate.
+
+2.9 Hero Image
+
+Purpose
+
+Capture attention.
+
+Summarize the article.
+
+Display the main hardware.
+
+Size
+
+1200 × 630 px
+
+Must include
+
+Article title
+Main component
+White background
+Soft shadow
+Embedded Nerd logo
+EmbeddedNerd.com
+
+Should not include
+
+Large paragraphs.
+
+Complex diagrams.
+
+Tiny unreadable text.
+
+2.10 Hero Composition
+
+Recommended layout
+
+Left side
+
+Main hardware.
+
+Center
+
+Large article title.
+
+Top-right
+
+Logo.
+
+Bottom-right
+
+EmbeddedNerd.com
+
+Everything should feel balanced.
+
+2.11 Hero Image Rules
+
+Maximum:
+
+3–5 hardware components.
+
+Avoid unnecessary accessories.
+
+The title should remain readable on mobile devices.
+
+2.12 Wiring Diagram
+
+Purpose
+
+Show physical connections.
+
+Size
+
+1600 × 900 px
+
+Always include
+
+Realistic development boards.
+
+Realistic modules.
+
+Colored wires.
+
+Pin labels.
+
+Simple layout.
+
+2.13 Wire Colors
+
+Always use the same colors.
+
+Signal	Color
+VCC	Red
+GND	Black
+SDA	Green
+SCL	Blue
+MOSI	Orange
+MISO	Purple
+SCK	Yellow
+CS	Gray
+TX	Cyan
+RX	Magenta
+
+Never change these colors between articles.
+
+2.14 Wiring Layout
+
+Connections should never cross if avoidable.
+
+Leave sufficient spacing.
+
+Use straight lines where possible.
+
+Label every connection.
+
+2.15 Pinout Diagram
+
+Purpose
+
+Help readers identify pins quickly.
+
+Size
+
+1600 × 900
+
+Must include
+
+Pin names.
+
+GPIO numbers.
+
+Power pins.
+
+Ground pins.
+
+Communication pins.
+
+Color coding.
+
+2.16 Pin Labels
+
+Labels should always use the official manufacturer names.
+
+Good
+
+GPIO21
+
+VIN
+
+3V3
+
+SDA
+
+SCL
+
+Avoid abbreviations that differ from the official documentation.
+
+2.17 Flow Diagram
+
+Purpose
+
+Explain program execution.
+
+Size
+
+1600 × 900
+
+Style
+
+Rounded rectangles.
+
+Green accents.
+
+Simple arrows.
+
+Minimal text.
+
+Consistent spacing.
+
+2.18 Diagram Rules
+
+Every flow diagram should be readable in less than 15 seconds.
+
+Avoid unnecessary branches.
+
+Keep logic simple.
+
+2.19 Serial Monitor
+
+Purpose
+
+Show expected output.
+
+Never invent values.
+
+Use realistic data.
+
+Example
+
+Temperature: 24.8 °C
+Humidity: 53 %
+
+Readers should obtain similar results.
+
+2.20 Finished Project
+
+Purpose
+
+Show the completed project.
+
+Should include
+
+Real hardware.
+
+Clean breadboard.
+
+Organized wiring.
+
+Good lighting.
+
+Neutral background.
+
+2.21 Screenshots
+
+Only use screenshots when necessary.
+
+Examples
+
+Arduino IDE.
+
+Serial Monitor.
+
+PlatformIO.
+
+Logic Analyzer.
+
+Oscilloscope.
+
+Crop unnecessary interface elements.
+
+2.22 Icons
+
+Use only simple flat icons.
+
+Avoid
+
+3D icons.
+
+Cartoons.
+
+Emojis.
+
+Comic style.
+
+2.23 Shadows
+
+Always use soft shadows.
+
+Avoid
+
+Hard shadows.
+
+Long shadows.
+
+Heavy effects.
+
+The hardware should appear realistic without looking artificial.
+
+2.24 Lighting
+
+Lighting should appear natural.
+
+Avoid dramatic lighting.
+
+Avoid colored lighting.
+
+Avoid reflections.
+
+2.25 Perspective
+
+Preferred
+
+Slight isometric angle.
+
+Never use extreme perspective distortion.
+
+2.26 White Space
+
+Leave generous spacing.
+
+Never crowd components together.
+
+A clean layout improves comprehension.
+
+2.27 Image File Format
+
+Preferred
+
+WebP
+
+Fallback
+
+PNG
+
+JPEG should only be used for photographs.
+
+2.28 Compression
+
+Images should remain visually lossless.
+
+Target sizes
+
+Hero
+
+<250 KB
+
+Wiring
+
+<350 KB
+
+Pinout
+
+<300 KB
+
+Flow Diagram
+
+<250 KB
+
+Serial Monitor
+
+<150 KB
+
+2.29 Naming Convention
+
+Always lowercase.
+
+Always hyphens.
+
+Examples
+
+esp32-oled-hero.webp
+esp32-oled-wiring.webp
+esp32-oled-pinout.webp
+esp32-oled-flow.webp
+esp32-oled-output.webp
+esp32-oled-project.webp
+2.30 Alt Text
+
+Every image requires descriptive alt text.
+
+Example
+
+ESP32 development board connected to an SSD1306 OLED display using the I2C interface with labeled SDA and SCL connections.
+
+Rules
+
+Describe the image.
+
+Do not repeat the article title.
+
+Do not keyword stuff.
+
+Target
+
+80–140 characters.
+
+2.31 Image Placement
+
+Hero
+
+Immediately after H1.
+
+Pinout
+
+Inside Pinout section.
+
+Wiring
+
+Inside Wiring section.
+
+Flow Diagram
+
+Near the code explanation.
+
+Serial Monitor
+
+Inside Example Output.
+
+Finished Project
+
+Near the conclusion.
+
+2.32 AI Image Generation Rules
+
+When generating images for Embedded Nerd:
+
+Always use:
+
+White background
+Realistic electronic components
+Professional vector illustration
+Soft shadows
+Consistent perspective
+Embedded Nerd branding
+High resolution
+Modern typography
+
+Never use:
+
+Cartoon style
+Fantasy effects
+Neon colors
+Watermarks
+Dark themes
+AI artifacts
+Random fonts
+2.33 Image Quality Standard
+
+Every generated image should be good enough to appear in:
+
+Technical books
+Professional documentation
+University teaching material
+Electronics magazines
+
+If the image does not meet this standard, regenerate it.
+
+2.34 Educational Priority
+
+Every image must answer at least one question.
+
+Examples:
+
+Which wire goes where?
+
+Which pin should I use?
+
+How does the algorithm work?
+
+What output should I expect?
+
+If the image does not improve understanding, it should not be included.
+
+2.35 Image Checklist
+
+Before publishing, verify:
+
+☐ White background.
+☐ Official Embedded Nerd logo.
+☐ EmbeddedNerd.com included.
+☐ Correct color palette.
+☐ Consistent typography.
+☐ Realistic components.
+☐ High resolution.
+☐ Proper wire colors.
+☐ Correct filename.
+☐ Descriptive alt text.
+☐ Educational purpose is clear.
+☐ No AI artifacts.
+☐ Matches the Embedded Nerd visual identity.
+
 
