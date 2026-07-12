@@ -2840,6 +2840,531 @@ The image system should be so consistent that, after seeing only a few illustrat
 
 Every hero image, wiring diagram, flowchart and pinout should feel like part of the same professionally designed documentation set. Over time, this consistency becomes a powerful part of the brand, increasing recognition, trust and perceived quality before the reader has even started reading the article.
 
+Chapter 7 — Article Templates & Content Blueprints
+7.1 Purpose
+
+Not every tutorial is the same.
+
+A sensor tutorial requires different sections than a communication protocol guide.
+
+This chapter defines standardized templates for each content type published on Embedded Nerd.
+
+Every new article should begin by selecting the most appropriate template.
+
+7.2 Available Templates
+
+Embedded Nerd uses the following article types:
+
+Sensor Tutorial
+Display Tutorial
+Development Board Guide
+Communication Protocol Guide
+Library Guide
+Complete Project
+Component Review
+Comparison Article
+Troubleshooting Guide
+Electronics Fundamentals
+Buying Guide
+Reference Guide
+7.3 Sensor Tutorial Template
+
+Examples
+
+MPU6050
+DHT22
+HC-SR04
+DS18B20
+BME280
+BMP280
+PIR Sensor
+
+Standard structure
+
+Front Matter
+
+Hero Image
+
+Introduction
+
+What is the Sensor?
+
+How It Works
+
+Features
+
+Technical Specifications
+
+Pinout
+
+Wiring
+
+Installing Libraries
+
+Complete Code
+
+Code Explanation
+
+Example Output
+
+Troubleshooting
+
+FAQ
+
+Applications
+
+Recommended Products
+
+Related Tutorials
+
+GitHub
+
+Downloads
+
+Conclusion
+7.4 Display Tutorial Template
+
+Examples
+
+SSD1306
+ILI9341
+ST7735
+LCD1602
+MAX7219
+
+Additional sections
+
+Display resolution
+Display modes
+Fonts
+Graphics
+Performance
+7.5 Development Board Guide
+
+Examples
+
+ESP32
+Arduino Uno
+Arduino Nano
+Raspberry Pi Pico
+STM32 Blue Pill
+
+Additional sections
+
+Specifications
+GPIO overview
+Pinout
+Power options
+Programming
+Example projects
+7.6 Communication Protocol Guide
+
+Examples
+
+I²C
+SPI
+UART
+CAN
+OneWire
+Modbus
+RS485
+
+Additional sections
+
+Theory
+Timing diagrams
+Advantages
+Limitations
+Common mistakes
+Logic analyzer examples
+7.7 Library Guide
+
+Examples
+
+Wire Library
+Adafruit GFX
+FastLED
+WiFi Library
+
+Additional sections
+
+Installation
+
+Functions
+
+Examples
+
+Performance
+
+Compatibility
+
+Common errors
+
+7.8 Complete Project Template
+
+Examples
+
+Weather Station
+Smart Door Lock
+IoT Sensor Node
+OLED Clock
+Robot Car
+
+Structure
+
+Problem
+
+Project overview
+
+Hardware
+
+Wiring
+
+Assembly
+
+Complete Code
+
+Explanation
+
+Finished Project
+
+Possible Improvements
+
+Downloads
+
+Conclusion
+
+7.9 Component Review
+
+Examples
+
+ESP32 DevKit
+Logic Analyzer
+Oscilloscope
+Breadboard
+
+Additional sections
+
+Pros
+
+Cons
+
+Specifications
+
+Real testing
+
+Who should buy it?
+
+Alternatives
+
+7.10 Comparison Template
+
+Examples
+
+ESP32 vs Arduino
+
+SSD1306 vs SH1106
+
+DHT11 vs DHT22
+
+Structure
+
+Overview
+
+Specifications
+
+Comparison Table
+
+Performance
+
+Power Consumption
+
+Ease of Use
+
+Price
+
+Final Recommendation
+
+7.11 Troubleshooting Guide
+
+Examples
+
+OLED not working
+
+ESP32 upload failed
+
+I²C Scanner finds no devices
+
+Structure
+
+Symptoms
+
+Possible Causes
+
+Solutions
+
+Testing
+
+Prevention
+
+FAQ
+
+7.12 Electronics Fundamentals
+
+Examples
+
+What is PWM?
+
+What is UART?
+
+How ADC Works
+
+How Pull-up Resistors Work
+
+Structure
+
+Definition
+
+Theory
+
+Real-world examples
+
+Diagrams
+
+Practical applications
+
+Summary
+
+7.13 Buying Guide
+
+Examples
+
+Best ESP32 Boards
+
+Best OLED Displays
+
+Best Arduino Starter Kits
+
+Structure
+
+Buying criteria
+
+Comparison
+
+Recommendations
+
+Frequently Asked Questions
+
+Conclusion
+
+7.14 Reference Guide
+
+Examples
+
+ESP32 GPIO Reference
+
+Arduino Pin Reference
+
+I²C Address List
+
+ADC Resolution Table
+
+Reference articles should prioritise:
+
+Tables
+
+Lists
+
+Quick lookup
+
+Minimal narrative
+
+7.15 Code Templates
+
+Every project should follow a consistent structure.
+
+#include <Wire.h>
+
+void setup() {
+
+}
+
+void loop() {
+
+}
+
+Organise code into:
+
+Includes
+Constants
+Global variables
+Setup
+Loop
+Helper functions
+7.16 Hardware Tables
+
+Standard format
+
+Component	Quantity	Notes
+ESP32	1	DevKit V1
+OLED	1	SSD1306
+
+Maintain identical formatting across all articles.
+
+7.17 Pin Tables
+
+Standard format
+
+Pin	Function
+VCC	Power
+GND	Ground
+SDA	Data
+SCL	Clock
+
+Never mix different table styles.
+
+7.18 Wiring Tables
+
+Standard format
+
+Module	ESP32
+SDA	GPIO21
+SCL	GPIO22
+VCC	3V3
+GND	GND
+7.19 Troubleshooting Template
+
+Each problem should use the same structure.
+
+Problem
+Cause
+Solution
+Prevention
+
+Consistency makes troubleshooting easier to read.
+
+7.20 FAQ Template
+
+Each answer should be:
+
+Short
+
+Accurate
+
+Helpful
+
+Practical
+
+Avoid overly long explanations.
+
+7.21 GitHub Template
+
+Every project repository should contain:
+
+README.md
+
+images/
+
+src/
+
+libraries/
+
+datasheets/
+
+LICENSE
+7.22 Download Template
+
+Standard list
+
+Source Code
+Wiring Diagram
+Libraries
+Datasheets
+PCB Files (if applicable)
+7.23 Internal Links Template
+
+Recommended categories
+
+Related Sensors
+
+Related Displays
+
+Related ESP32 Tutorials
+
+Related Arduino Tutorials
+
+Communication Protocols
+
+Projects
+
+Always link to articles that naturally extend the reader's knowledge.
+
+7.24 Conclusion Template
+
+Every conclusion should answer:
+
+What was learned?
+
+Why is it useful?
+
+What should the reader build next?
+
+Which related tutorial should they read next?
+
+7.25 Template Selection Rules
+
+When creating a new article:
+
+Identify the topic.
+Select the correct template.
+Apply the template completely.
+Adapt sections only where necessary.
+Preserve the overall structure.
+
+Readers should always know what to expect from an Embedded Nerd article.
+
+7.26 Reusable Components
+
+The following elements should remain identical across all templates:
+
+Front Matter
+Hero Image
+Hardware Table
+Wiring Table
+Code Formatting
+Troubleshooting Layout
+FAQ Style
+GitHub Section
+Downloads Section
+Conclusion Style
+
+This consistency improves readability and simplifies maintenance.
+
+7.27 Future Templates
+
+As Embedded Nerd grows, additional templates may be added for:
+
+FreeRTOS
+ESP-IDF
+Zephyr RTOS
+PlatformIO
+KiCad
+PCB Design
+Embedded Linux
+Machine Learning on Edge Devices
+FPGA Tutorials
+Home Assistant Integrations
+
+Each new template should follow the same design principles established in this manual.
+
+⭐ 7.28 Master Blueprint System
+
+Every article published on Embedded Nerd should fit into one of these templates. This ensures that readers always encounter a familiar structure, regardless of the topic.
+
+By standardising article blueprints, Embedded Nerd becomes easier to maintain, faster to expand and more consistent for both readers and search engines. Over time, these templates will allow the creation of hundreds of tutorials while preserving the same level of quality, organisation and educational value across the entire website.
+
+
+
 
 
 
