@@ -2187,6 +2187,382 @@ Every new tutorial should strengthen one or more content clusters (e.g., ESP32, 
 
 Rather than publishing many unrelated articles, Embedded Nerd should focus on producing the most complete, technically accurate and interconnected tutorials in its niche. This strategy not only benefits traditional search engines like Google and Bing, but also improves visibility in AI-powered search systems that increasingly favour comprehensive, well-structured and trustworthy content.
 
+Chapter 5 — Monetization System & User Trust
+5.1 Purpose
+
+The purpose of monetization is to support the continued creation of free, high-quality educational content.
+
+Every monetization decision should improve—or at least never reduce—the user experience.
+
+Trust is always more valuable than a single affiliate sale.
+
+Readers who trust Embedded Nerd will return for future tutorials, recommend the website and naturally support the project over time.
+
+5.2 Core Principle
+
+Education comes first.
+
+Monetization comes second.
+
+If a monetization element interferes with learning, it should be removed.
+
+Every recommendation should genuinely help the reader complete the project.
+
+5.3 Revenue Sources
+
+Embedded Nerd may generate revenue through:
+
+Amazon Associates
+Other hardware affiliate programs
+GitHub Sponsors
+Ko-fi
+Donations
+Sponsorships (carefully selected)
+Digital products
+Premium project bundles
+Online courses (future)
+
+No revenue source should compromise editorial independence.
+
+5.4 Affiliate Philosophy
+
+Affiliate links are recommendations.
+
+They are not advertisements.
+
+Only recommend products that:
+
+are actually used
+have good reliability
+offer good value
+are widely available
+are suitable for beginners
+
+Never recommend hardware solely because it offers a higher commission.
+
+5.5 Where Affiliate Links Are Allowed
+
+Affiliate links may appear only in dedicated sections.
+
+Approved locations:
+
+Hardware Required
+Recommended Products
+Project Kits
+Optional Accessories
+
+Do not insert affiliate links inside:
+
+code blocks
+explanations
+troubleshooting
+FAQs
+wiring diagrams
+
+Educational content should remain neutral.
+
+5.6 Hardware Required
+
+Every tutorial should include a table similar to:
+
+Component	Quantity	Purpose	Buy
+ESP32 Dev Board	1	Main controller	Affiliate Placeholder
+Breadboard	1	Prototyping	Affiliate Placeholder
+Jumper Wires	Several	Connections	Affiliate Placeholder
+
+Readers should immediately know what they need.
+
+5.7 Recommended Products
+
+At the end of every article include:
+
+Recommended Products
+
+Separate:
+
+Essential Hardware
+
+Optional Tools
+
+Professional Tools
+
+Example:
+
+Essential
+
+ESP32 Dev Board
+Breadboard
+Jumper Wires
+
+Optional
+
+Logic Analyzer
+USB Power Meter
+Oscilloscope
+
+Professional
+
+Soldering Station
+Bench Power Supply
+
+This separation helps readers purchase only what they actually need.
+
+5.8 Product Selection Rules
+
+Only recommend products that meet all of the following:
+
+✓ Reliable
+
+✓ Popular
+
+✓ Good reviews
+
+✓ Good availability
+
+✓ Good documentation
+
+✓ Suitable for beginners
+
+Avoid unknown products unless they provide a significant technical advantage.
+
+5.9 Product Images
+
+If product images are used:
+
+Use:
+
+official manufacturer images
+white background
+consistent size
+
+Avoid:
+
+watermarked images
+low-resolution images
+inconsistent styles
+5.10 GitHub Integration
+
+Every project should have a public GitHub repository whenever possible.
+
+The repository should include:
+
+source code
+README
+license
+wiring diagrams
+images
+library list
+
+GitHub increases trust.
+
+5.11 Repository Structure
+
+Recommended:
+
+project-name/
+│
+├── images/
+├── src/
+├── libraries/
+├── datasheets/
+├── LICENSE
+├── README.md
+└── wiring-diagram.png
+
+Readers should immediately understand the project structure.
+
+5.12 README Standards
+
+Every repository should contain:
+
+Project description.
+
+Required hardware.
+
+Wiring diagram.
+
+Installation steps.
+
+Library list.
+
+License.
+
+Article link.
+
+Readers should never need to search for missing information.
+
+5.13 Download Section
+
+Every article should include:
+
+Downloads
+
+Source Code
+Wiring Diagram
+Datasheet
+Libraries
+PCB Files (if applicable)
+
+Downloads improve the user experience.
+
+5.14 Calls to Action
+
+Calls to action should feel natural.
+
+Good examples:
+
+"If you'd like to explore this project further, download the complete source code from GitHub."
+
+"If you're building this project, you'll find the recommended hardware listed below."
+
+Avoid:
+
+"BUY NOW!"
+
+"LIMITED OFFER!"
+
+"CLICK HERE!"
+
+Educational websites should never sound like sales pages.
+
+5.15 Donations
+
+If donations are enabled:
+
+Explain clearly that they help maintain free tutorials.
+
+Never pressure readers.
+
+Readers should feel appreciation, not obligation.
+
+5.16 Sponsorships
+
+Sponsored content must always be disclosed.
+
+Sponsored products should still be evaluated honestly.
+
+Negative aspects should never be hidden.
+
+Trust is more valuable than sponsorship income.
+
+5.17 Advertising
+
+Advertising should never interfere with learning.
+
+Avoid:
+
+pop-ups
+autoplay videos
+intrusive banners
+flashing ads
+excessive ad density
+
+A clean website keeps readers engaged.
+
+5.18 Premium Content
+
+If premium content is offered in the future, it should complement—not replace—the free tutorials.
+
+Examples:
+
+Advanced eBooks
+Complete project collections
+Printable guides
+Video courses
+PCB design files
+
+The core educational content should remain freely accessible.
+
+5.19 Community Support
+
+Encourage readers to:
+
+star GitHub repositories
+report issues
+suggest improvements
+share completed projects
+
+Community engagement strengthens the project.
+
+5.20 Trust Indicators
+
+Every article should demonstrate credibility through:
+
+Tested code
+Original images
+Official references
+Clear explanations
+Transparent recommendations
+
+Trust is built through consistency.
+
+5.21 Long-Term Strategy
+
+The objective is not to maximise revenue per visitor.
+
+The objective is to maximise:
+
+returning visitors
+subscriber growth
+reader satisfaction
+brand reputation
+long-term sustainability
+
+A loyal audience is more valuable than short-term profit.
+
+5.22 Ethical Guidelines
+
+Never:
+
+recommend unnecessary products
+exaggerate benefits
+hide affiliate relationships
+use misleading comparisons
+sacrifice accuracy for commissions
+
+Always:
+
+disclose affiliate relationships where required
+recommend only relevant hardware
+prioritise educational value
+5.23 Future Revenue Opportunities
+
+As Embedded Nerd grows, consider expanding with:
+
+Printable project PDFs
+Complete starter kits
+Electronics cheat sheets
+PCB files
+KiCad projects
+STL files for 3D printing
+Premium troubleshooting guides
+Email courses
+
+Each new offering should provide genuine value.
+
+5.24 Publication Checklist
+
+Before publishing, verify:
+
+☐ Hardware table completed.
+☐ Affiliate placeholders added only where appropriate.
+☐ Recommended Products included.
+☐ GitHub repository linked.
+☐ Downloads section completed.
+☐ Calls to action are natural.
+☐ No affiliate links inside code.
+☐ No intrusive promotional language.
+☐ Recommendations are technically justified.
+☐ Educational content remains the priority.
+⭐ 5.25 Embedded Nerd Monetization Strategy
+
+The long-term goal is to build a trusted educational brand where readers return because they know the tutorials are accurate, complete and honest.
+
+Monetization should be a natural consequence of providing exceptional value—not the reason the content exists. Every recommendation should answer the question, "Does this genuinely help the reader succeed with the project?" If the answer is no, it should not be included.
+
+By consistently putting education before revenue, Embedded Nerd can develop a loyal community that supports the project through affiliate purchases, GitHub stars, donations and future premium resources, creating a sustainable ecosystem without compromising editorial integrity.
+
+
 
 
 
