@@ -3364,6 +3364,302 @@ Every article published on Embedded Nerd should fit into one of these templates.
 By standardising article blueprints, Embedded Nerd becomes easier to maintain, faster to expand and more consistent for both readers and search engines. Over time, these templates will allow the creation of hundreds of tutorials while preserving the same level of quality, organisation and educational value across the entire website.
 
 
+7.5 Template Selection Engine
+Purpose
+
+Before writing any article, the correct template must be selected.
+
+Choosing the appropriate template ensures:
+
+Consistent article structure
+Better SEO
+Better user experience
+Faster content creation
+Consistent branding
+
+Every article published on Embedded Nerd must use one—and only one—primary template.
+
+Secondary templates may be combined when appropriate.
+
+7.5.1 Template Decision Matrix
+Topic	Primary Template	Secondary Template
+MPU6050	Sensor Tutorial	Complete Project
+DS3231	Sensor Tutorial	Complete Project
+DHT22	Sensor Tutorial	Complete Project
+BME280	Sensor Tutorial	Complete Project
+BMP280	Sensor Tutorial	Complete Project
+HC-SR04	Sensor Tutorial	Complete Project
+RC522 RFID	Sensor Tutorial	Complete Project
+OLED SSD1306	Display Tutorial	Complete Project
+SH1106	Display Tutorial	Complete Project
+TFT ILI9341	Display Tutorial	Complete Project
+MAX7219	Display Tutorial	Complete Project
+ESP32	Development Board Guide	Project
+Arduino Uno	Development Board Guide	Project
+Raspberry Pi Pico	Development Board Guide	Project
+Raspberry Pi	SBC Guide	Project
+I²C	Communication Protocol	Reference Guide
+SPI	Communication Protocol	Reference Guide
+UART	Communication Protocol	Reference Guide
+CAN Bus	Communication Protocol	Reference Guide
+OneWire	Communication Protocol	Reference Guide
+Wire Library	Library Guide	Reference Guide
+FastLED	Library Guide	Project
+WiFi Library	Library Guide	Project
+Bluetooth	Communication Guide	Project
+MQTT	IoT Guide	Project
+Weather Station	Complete Project	Sensor Tutorial
+Smart Door Lock	Complete Project	RFID Tutorial
+Robot Car	Complete Project	Motor Driver Guide
+ESP32 vs Arduino	Comparison	Buying Guide
+DHT11 vs DHT22	Comparison	Sensor Tutorial
+SSD1306 vs SH1106	Comparison	Display Guide
+7.5.2 Automatic Section Selection
+
+Each template automatically enables the required sections.
+
+Sensor Tutorial
+
+Automatically include
+
+What Is
+Features
+Specifications
+Pinout
+Wiring
+Library Installation
+Complete Code
+Code Explanation
+Serial Monitor
+Troubleshooting
+FAQ
+Display Tutorial
+
+Automatically include
+
+Resolution
+Interface
+Fonts
+Graphics
+Display Examples
+Wiring
+Library Installation
+Code
+Screenshots
+Communication Protocol
+
+Automatically include
+
+Theory
+Advantages
+Disadvantages
+Timing Diagram
+Wiring
+Code Example
+Logic Analyzer
+Troubleshooting
+Project
+
+Automatically include
+
+Project Overview
+Hardware
+Assembly
+Wiring
+Complete Code
+Finished Project
+Possible Improvements
+Downloads
+Comparison
+
+Automatically include
+
+Specifications Table
+Performance
+Advantages
+Disadvantages
+Recommended Choice
+7.5.3 Automatic Image Selection
+
+Depending on the template, the following images should be generated.
+
+Image	Sensor	Display	Protocol	Project
+Hero	✓	✓	✓	✓
+Wiring	✓	✓	✓	✓
+Pinout	✓	✓		
+Flow Diagram	Optional	Optional	✓	✓
+Serial Monitor	✓	✓	✓	✓
+Logic Analyzer			✓	
+Finished Project	Optional	Optional	Optional	✓
+7.5.4 Automatic Code Selection
+
+The template determines the code style.
+
+Sensor
+
+Read values
+
+Display
+
+Draw graphics
+
+Protocol
+
+Communication example
+
+Project
+
+Complete application
+
+Comparison
+
+Usually no code
+
+Reference
+
+Minimal examples
+
+7.5.5 Automatic SEO Selection
+
+Sensor Tutorial
+
+Primary Keyword
+
+<sensor> Arduino
+
+Examples
+
+DS3231 Arduino
+
+BME280 Arduino
+
+HC-SR04 Arduino
+
+Display Tutorial
+
+Primary Keyword
+
+<display> ESP32
+
+Examples
+
+SSD1306 ESP32
+
+ILI9341 Arduino
+
+Protocol Tutorial
+
+Primary Keyword
+
+I2C Arduino
+
+SPI ESP32
+
+UART ESP32
+7.5.6 Automatic Internal Linking
+
+Each template links to related articles.
+
+Sensor
+
+→ ESP32 GPIO
+
+→ Arduino Analog Input
+
+→ I²C Guide
+
+→ OLED Tutorial
+
+Display
+
+→ I²C Scanner
+
+→ ESP32 GPIO
+
+→ Wire Library
+
+Protocol
+
+→ Sensors using the protocol
+
+→ Displays using the protocol
+
+→ Logic Analyzer Tutorial
+
+Project
+
+→ All hardware used
+
+→ Related projects
+
+7.5.7 Automatic Affiliate Products
+
+Sensor
+
+Breadboard
+ESP32
+Jumper Wires
+
+Display
+
+Display
+ESP32
+Breadboard
+
+Protocol
+
+Logic Analyzer
+ESP32
+Breadboard
+
+Project
+
+Everything required
+
+7.5.8 Automatic GitHub Structure
+
+Every project repository should follow:
+
+Project
+│
+├── images
+├── src
+├── libraries
+├── datasheets
+├── examples
+├── LICENSE
+├── README.md
+└── CHANGELOG.md
+7.5.9 Future Expansion
+
+When a new content category is introduced:
+
+Create a new template.
+Define required sections.
+Define image requirements.
+Define SEO rules.
+Define internal linking strategy.
+Add it to the Decision Matrix.
+
+No article type should be created without first defining its template.
+
+⭐ 7.5.10 Embedded Nerd Intelligent Template System
+
+From this point forward, article creation follows a deterministic workflow:
+
+Identify the topic.
+Classify it using the Decision Matrix.
+Select the primary template.
+Load all mandatory sections.
+Determine the required images.
+Apply the correct SEO strategy.
+Insert the appropriate affiliate placeholders.
+Build the GitHub structure.
+Validate the final checklist.
+
+This ensures that every Embedded Nerd article is generated using the same high standard of quality, while automatically adapting its structure to the specific type of content. As the site grows to hundreds of tutorials, this system guarantees consistency, reduces manual decisions and makes future article creation significantly faster and more reliable.
+
+
 
 
 
