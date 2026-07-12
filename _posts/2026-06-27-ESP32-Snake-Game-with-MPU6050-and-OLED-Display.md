@@ -755,7 +755,7 @@ The repository includes:
 
 - [MPU6050 Arduino Guide](../mpu6050-arduino-guide/)
 - [ESP32 OLED Display Guide](../ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)
-- [I2C Scanner Tutorial](../i2c-scanner/)
+- [I2C Scanner Tutorial](../i2c-scanner-tutorial/)
 - [ESP32 Joystick Tutorial](../esp32-joystick/)
 
 ---
