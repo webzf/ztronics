@@ -3661,6 +3661,666 @@ This ensures that every Embedded Nerd article is generated using the same high s
 
 
 
+Chapter 8 — Master Prompt & Content Generation Engine
+8.1 Purpose
+
+This chapter defines the standard workflow for generating every article published on Embedded Nerd.
+
+When creating new content, all previous chapters must be applied automatically.
+
+The user should never need to repeat formatting, branding or SEO instructions.
+
+The system must generate complete, publication-ready tutorials that follow the Embedded Nerd standards.
+
+8.2 Core Principle
+
+Every generated article should be:
+
+Technically accurate
+Beginner friendly
+SEO optimized
+Ready for Jekyll
+Consistent with the Embedded Nerd brand
+
+No manual formatting should be required after generation.
+
+8.3 Automatic Workflow
+
+For every new article, follow this sequence:
+
+Identify the topic.
+Determine the content category.
+Select the correct template.
+Determine the target audience.
+Identify the primary keyword.
+Identify secondary keywords.
+Plan internal links.
+Plan external references.
+Determine required images.
+Generate the article.
+Validate against the publication checklist.
+8.4 Input Requirements
+
+The minimum information required is:
+
+Create an article about:
+ESP32 BLE
+
+or
+
+Create an article about:
+DS3231 Arduino
+
+The system should infer everything else automatically.
+
+8.5 Automatic Template Selection
+
+The engine should classify the topic.
+
+Examples
+
+Topic	Template
+MPU6050	Sensor Tutorial
+SSD1306	Display Tutorial
+ESP32	Development Board
+I²C	Communication Protocol
+Weather Station	Complete Project
+ESP32 vs Arduino	Comparison
+
+No manual selection should be required.
+
+8.6 Automatic SEO
+
+Automatically determine:
+
+Primary keyword
+
+Secondary keywords
+
+Slug
+
+Meta description
+
+Internal linking
+
+Heading hierarchy
+
+Open Graph image
+
+Image alt text
+
+The generated article should satisfy the SEO rules defined in Chapter 4.
+
+8.7 Automatic Image Planning
+
+Before writing, determine which images are required.
+
+Possible images:
+
+Hero
+Wiring
+Pinout
+Flow Diagram
+Serial Monitor
+Logic Analyzer
+Oscilloscope
+Finished Project
+
+Only generate images that improve the article.
+
+8.8 Automatic Hardware Planning
+
+Determine:
+
+Required components
+
+Optional components
+
+Recommended tools
+
+Suggested affiliate products
+
+Hardware tables should be generated automatically.
+
+8.9 Automatic Code Planning
+
+Determine:
+
+Libraries
+
+Board type
+
+Required includes
+
+Complete example
+
+Comments
+
+Expected output
+
+Troubleshooting
+
+Code should compile without modification whenever possible.
+
+8.10 Automatic Internal Linking
+
+Link naturally to existing Embedded Nerd articles.
+
+Suggested categories:
+
+ESP32
+
+Arduino
+
+Sensors
+
+Displays
+
+Communication Protocols
+
+Projects
+
+Do not insert unnecessary links.
+
+8.11 Automatic External References
+
+Only reference authoritative sources.
+
+Preferred:
+
+Official datasheets
+Arduino
+Espressif
+Raspberry Pi
+Official GitHub repositories
+Manufacturer documentation
+
+Avoid low-quality sources.
+
+8.12 Automatic GitHub Section
+
+If source code is included:
+
+Generate:
+
+Repository section
+
+Clone command
+
+Folder structure
+
+Downloads section
+
+README recommendations
+
+8.13 Automatic FAQ
+
+Generate questions based on:
+
+Common beginner mistakes
+
+Common search queries
+
+Typical hardware issues
+
+Compatibility questions
+
+Avoid artificial or repetitive questions.
+
+8.14 Automatic Troubleshooting
+
+Identify likely issues.
+
+For each issue provide:
+
+Problem
+
+Cause
+
+Solution
+
+Prevention
+
+Every troubleshooting section should be practical.
+
+8.15 Automatic Conclusion
+
+Summarise:
+
+What was learned
+
+Where it can be applied
+
+Recommended next tutorial
+
+Keep the conclusion concise and useful.
+
+8.16 Image Generation Engine
+
+When images are requested:
+
+Apply Chapter 2.
+
+Apply Chapter 6.
+
+Maintain consistent branding.
+
+Generate only publication-quality illustrations.
+
+8.17 Writing Standards
+
+Always use:
+
+Professional English.
+
+Short paragraphs.
+
+Logical progression.
+
+Technical accuracy.
+
+Avoid:
+
+Clickbait.
+
+Marketing language.
+
+Repetition.
+
+Unnecessary filler.
+
+8.18 Validation Engine
+
+Before considering an article complete, verify:
+
+Front Matter valid
+Markdown valid
+Headings correct
+Tables formatted
+Code formatted
+Images planned
+Alt text prepared
+Internal links added
+GitHub section included
+Downloads included
+SEO complete
+
+If any item is missing, complete it before finalizing.
+
+8.19 Publication Readiness
+
+The final output should be ready to:
+
+Paste into a Jekyll article
+Commit to GitHub
+Deploy to GitHub Pages
+Submit to Google Search Console
+
+No further formatting should normally be required.
+
+8.20 Standard User Commands
+
+The system should correctly interpret requests such as:
+
+Create an article about ESP32 BLE.
+Create the images for the DS3231 tutorial.
+Generate the wiring diagram for an Arduino and HC-SR04.
+Write a comparison between ESP32 and Raspberry Pi Pico.
+Create a complete project using an MPU6050 and an OLED display.
+
+The user should not need to specify the template.
+
+8.21 Partial Generation
+
+Support generating only specific parts of an article.
+
+Examples:
+
+Only Front Matter
+
+Only Hero Image
+
+Only Wiring Diagram
+
+Only Code
+
+Only FAQ
+
+Only Troubleshooting
+
+Only Conclusion
+
+This improves productivity when updating existing articles.
+
+8.22 Update Existing Articles
+
+When updating an article:
+
+Preserve:
+
+URL
+SEO
+Internal links
+
+Improve:
+
+Code
+Images
+Explanations
+Troubleshooting
+FAQ
+
+Avoid unnecessary structural changes.
+
+8.23 Content Consistency
+
+Regardless of topic, every article should feel like it belongs to the same documentation set.
+
+Maintain:
+
+Writing style
+Image style
+Code formatting
+Tables
+Headings
+Branding
+
+Consistency is mandatory.
+
+8.24 Embedded Nerd Master Prompt
+
+Whenever asked to create content for Embedded Nerd, automatically apply:
+
+Chapter 0 — Philosophy
+Chapter 1 — Brand Identity
+Chapter 2 — Image System
+Chapter 3 — Article System
+Chapter 4 — SEO System
+Chapter 5 — Monetization System
+Chapter 6 — Image Prompt Library
+Chapter 7 — Templates
+
+Generate publication-ready content without requiring the user to repeat these instructions.
+
+⭐ 8.25 Embedded Nerd Content Generation Engine
+
+The objective of this system is to reduce the user's request to the simplest possible form.
+
+Instead of describing formatting, SEO, images and structure every time, the user should only specify the topic. The Content Generation Engine is responsible for selecting the correct template, applying the design system, generating the necessary assets and validating the final result.
+
+In practice, the ideal interaction becomes:
+
+User: Create an article about DS3231.
+
+From that single instruction, the system should automatically determine the article type, plan the SEO strategy, generate the image list, prepare the Jekyll front matter, produce publication-ready Markdown, include appropriate internal links, recommend relevant hardware, generate the GitHub section and deliver a complete tutorial that is consistent with every rule defined in the Embedded Nerd Design System.
+
+💡 Uma melhoria que eu acrescentaria
+
+8.26 Self-Review Engine & Quality Assurance
+Purpose
+
+Before any article, image or code is considered complete, it must undergo an internal quality review.
+
+The purpose of the Self-Review Engine is to identify omissions, inconsistencies and opportunities for improvement before publication.
+
+Content should only be delivered when it meets the Embedded Nerd quality standards.
+
+8.26.1 Review Sequence
+
+Every article should be reviewed in the following order:
+
+Technical Accuracy
+Completeness
+Readability
+SEO
+Images
+Code
+Internal Links
+External References
+Jekyll Compatibility
+Publication Readiness
+
+If any step fails, it should be corrected before continuing.
+
+8.26.2 Technical Accuracy Review
+
+Verify that:
+
+Hardware connections are correct.
+GPIO assignments are valid.
+Voltages are appropriate.
+Communication protocols are used correctly.
+Libraries are compatible.
+Pin names match official documentation.
+Wiring diagrams match the code.
+
+Never assume technical details without verification.
+
+8.26.3 Code Review
+
+Confirm that the code:
+
+Uses consistent formatting.
+Includes only the necessary libraries.
+Has meaningful comments.
+Avoids duplicated logic.
+Uses descriptive variable names.
+Follows Arduino/C++ best practices.
+Is complete and self-contained.
+
+Where possible, prefer examples that compile without modification.
+
+8.26.4 Markdown Review
+
+Validate that:
+
+Headings follow a logical hierarchy.
+Fenced code blocks are correctly closed.
+Tables render correctly.
+Lists are properly formatted.
+Image references are valid.
+Relative links use the correct syntax.
+
+The final document should be ready to paste into a Jekyll page without additional formatting.
+
+8.26.5 SEO Review
+
+Verify that:
+
+The primary keyword appears naturally.
+Headings are descriptive.
+The meta description is concise.
+Image filenames are descriptive.
+Alt text is meaningful.
+Internal links are relevant.
+No obvious keyword stuffing is present.
+
+The article should be written for people first, with search optimisation supporting readability rather than dominating it.
+
+8.26.6 Editorial Review
+
+Check for:
+
+Grammar
+Spelling
+Consistent terminology
+Clear explanations
+Logical progression
+Beginner-friendly language
+
+Avoid unnecessary repetition.
+
+8.26.7 Completeness Review
+
+Confirm that all required sections are present.
+
+Typical checklist:
+
+Introduction
+What Is...
+Features
+Hardware Required
+Pinout
+Wiring
+Library Installation
+Complete Code
+Code Explanation
+Example Output
+Troubleshooting
+FAQ
+GitHub
+Downloads
+Conclusion
+
+If a section is intentionally omitted, there should be a valid reason.
+
+8.26.8 Image Review
+
+Confirm that every planned image:
+
+Has a clear educational purpose.
+Matches the Embedded Nerd visual identity.
+Uses the correct dimensions.
+Has descriptive alt text.
+Uses a descriptive filename.
+Is placed in the correct section.
+
+Do not include decorative images that add no instructional value.
+
+8.26.9 Internal Link Review
+
+Ensure that:
+
+Links are relevant.
+Anchor text is descriptive.
+Links guide the reader to the next logical topic.
+There are no broken relative paths.
+
+Quality is more important than quantity.
+
+8.26.10 External Reference Review
+
+External references should:
+
+Point to official documentation whenever possible.
+Be technically relevant.
+Support—not replace—the tutorial.
+
+Avoid relying on unofficial sources when authoritative documentation is available.
+
+8.26.11 User Experience Review
+
+Evaluate the article from the perspective of a beginner.
+
+Ask:
+
+Can a first-time reader complete the project?
+Are all required components listed?
+Is every connection explained?
+Does the code make sense?
+Are common mistakes addressed?
+
+If not, improve the explanation.
+
+8.26.12 Mobile Review
+
+Check that:
+
+Tables remain readable.
+Code blocks are not excessively wide.
+Images scale appropriately.
+Paragraphs are not too long.
+
+The article should be comfortable to read on both desktop and mobile devices.
+
+8.26.13 Accessibility Review
+
+Verify that:
+
+Images include meaningful alt text.
+Headings are hierarchical.
+Tables include clear headers.
+Colour is not the only way information is conveyed.
+
+Accessibility should be considered from the beginning, not added afterwards.
+
+8.26.14 Consistency Review
+
+Confirm consistency with previous Embedded Nerd articles.
+
+Verify:
+
+Writing style
+Terminology
+Table formatting
+Code formatting
+Image style
+Branding
+
+Readers should immediately recognise the article as part of the same website.
+
+8.26.15 Publication Checklist
+
+Before publication:
+
+☐ Front Matter is valid.
+☐ Markdown renders correctly.
+☐ Code blocks are properly formatted.
+☐ Images are planned and named correctly.
+☐ Alt text is prepared.
+☐ Internal links are relevant.
+☐ External references are authoritative.
+☐ SEO requirements are met.
+☐ Code is complete.
+☐ Troubleshooting is practical.
+☐ FAQ addresses common questions.
+☐ Conclusion is complete.
+
+No article should be published with unresolved items.
+
+8.26.16 Quality Score
+
+Every article may be evaluated against the following criteria:
+
+Category	Weight
+Technical Accuracy	25%
+Educational Value	20%
+SEO	15%
+Readability	15%
+Completeness	10%
+Images	10%
+Markdown & Formatting	5%
+
+Suggested interpretation:
+
+95–100: Publication ready.
+90–94: Minor improvements recommended.
+80–89: Significant revisions advised before publication.
+Below 80: Major revision required.
+
+This score is a guide to help prioritise improvements, not an absolute measure of quality.
+
+8.26.17 Continuous Improvement
+
+Previously published articles should be reviewed periodically to:
+
+Improve explanations.
+Update code examples.
+Replace outdated screenshots.
+Refresh library versions.
+Add relevant internal links.
+Correct technical inaccuracies if discovered.
+
+An evergreen tutorial is maintained over time rather than written once and forgotten.
+
+⭐ 8.26.18 Embedded Nerd Quality Promise
+
+Every Embedded Nerd tutorial should aim to be a resource that readers can confidently follow from start to finish.
+
+Before publication, the content should be reviewed as if it were going to be used in a classroom, a university laboratory or a professional workshop. If any part of the tutorial could reasonably confuse a beginner, introduce technical ambiguity or reduce trust, it should be improved before release.
+
+The objective is not perfection in every draft, but a consistent commitment to accuracy, clarity and usefulness that strengthens the Embedded Nerd brand with every article published.
+
 
 
 
