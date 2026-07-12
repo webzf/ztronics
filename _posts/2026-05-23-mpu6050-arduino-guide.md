@@ -113,7 +113,7 @@ The sensor communicates using the I2C protocol and works with both Arduino and E
 
 - SDA is the I2C data pin
 - SCL is the I2C clock pin
-- Default I2C address is `0x68`
+- [Default I2C address is `0x68`](https://embeddednerd.com/i2c-scanner-tutorial/)
 - Most MPU6050 modules support both 3.3V and 5V
 
 The MPU6050 connects easily to Arduino Uno and Nano using the built-in I2C pins.
