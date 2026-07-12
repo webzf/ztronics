@@ -399,7 +399,7 @@ You can extend this tutorial by adding:
 - [ESP32 WiFi Tutorial](../esp32-wifi/)
 - [ESP32 Web Server Guide](../esp32-web-server/)
 - [MPU6050 Arduino Guide](../mpu6050-arduino-guide/)
-- [I2C Scanner Tutorial](../i2c-scanner/)
+- [I2C Scanner Tutorial](../i2c-scanner-tutorial/)
 - [BME280 ESP32 Tutorial](../bme280-esp32/)
 - [ESP32 Snake Game with MPU6050 and OLED Display](
 https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
