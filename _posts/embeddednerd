@@ -1271,3 +1271,485 @@ Before publishing, verify:
 ☐ Matches the Embedded Nerd visual identity.
 
 
+Chapter 3 — Article System & Editorial Standards
+3.1 Purpose
+
+Every Embedded Nerd article must be a complete learning resource.
+
+The reader should not need to search for additional tutorials to complete the project.
+
+Each article should teach:
+
+the theory
+the hardware
+the wiring
+the code
+the expected output
+troubleshooting
+practical applications
+
+A complete tutorial always has greater educational value than a short tutorial.
+
+3.2 Standard Article Structure
+
+Every article must follow this order.
+
+Front Matter
+
+Hero Image
+
+Introduction
+
+What Is...
+
+Features
+
+Hardware Required
+
+Pinout
+
+Wiring
+
+Installing Libraries
+
+Complete Code
+
+Code Explanation
+
+Example Output
+
+Flow Diagram (when applicable)
+
+Troubleshooting
+
+Frequently Asked Questions
+
+Recommended Products
+
+Related Tutorials
+
+GitHub Repository
+
+Downloads
+
+Conclusion
+
+No sections should be omitted unless they are genuinely not applicable.
+
+3.3 Front Matter
+
+Every article must begin with valid Jekyll Front Matter.
+
+---
+title: ""
+layout: single
+
+sidebar:
+  nav: "embedded"
+
+excerpt: ""
+description: ""
+
+categories:
+  -
+
+tags:
+  -
+
+toc: true
+toc_sticky: true
+toc_label: "Table of Contents"
+
+show_date: false
+read_time: false
+last_modified_at: false
+
+header:
+  image:
+  teaser:
+---
+
+Rules:
+
+Valid YAML only.
+No empty mandatory fields.
+Optimized for Jekyll.
+3.4 Hero Image
+
+Immediately after the H1.
+
+Requirements:
+
+1200 × 630 px
+Official Embedded Nerd logo
+EmbeddedNerd.com
+White background
+Main hardware
+Article title
+
+Include Markdown:
+
+![ESP32 OLED Hero](images/esp32-oled-hero.webp)
+
+Always include descriptive alt text.
+
+3.5 Introduction
+
+Target length:
+
+400–600 words
+
+The introduction must answer:
+
+What is this tutorial about?
+Why is it useful?
+What will the reader build?
+What hardware is required?
+What experience level is needed?
+
+The target keyword must naturally appear in the first paragraph.
+
+Never begin with generic filler such as:
+
+"Nowadays electronics are everywhere..."
+
+Start directly with the topic.
+
+3.6 What Is...
+
+Explain:
+
+Definition
+Purpose
+Working principle
+Common applications
+Advantages
+Limitations (if relevant)
+
+Avoid excessive theory.
+
+Explain only what is useful for the tutorial.
+
+3.7 Features
+
+Use bullet points.
+
+Example:
+
+I²C communication
+Low power consumption
+Wide operating voltage
+Easy Arduino integration
+Open-source libraries
+
+Readers should understand the module within a few seconds.
+
+3.8 Hardware Required
+
+Always use a Markdown table.
+
+Example:
+
+Component	Quantity	Notes	Buy
+ESP32 Dev Board	1	ESP32-WROOM-32	Affiliate Placeholder
+SSD1306 OLED Display	1	I²C version	Affiliate Placeholder
+Breadboard	1	Standard	Affiliate Placeholder
+Jumper Wires	Several	Male-to-male	Affiliate Placeholder
+
+Rules:
+
+Include only components actually used.
+Do not include unnecessary products.
+Affiliate links only in this table and the Recommended Products section.
+3.9 Pinout
+
+Include:
+
+Pinout image
+Pin table
+Pin descriptions
+
+Example:
+
+Pin	Function
+VCC	Power supply
+GND	Ground
+SDA	I²C Data
+SCL	I²C Clock
+
+Explain each important pin.
+
+3.10 Wiring
+
+Always include:
+
+Wiring image
+Connection table
+Explanation
+
+Example:
+
+Module	ESP32
+SDA	GPIO21
+SCL	GPIO22
+VCC	3.3V
+GND	GND
+
+Explain why each connection is used.
+
+3.11 Installing Libraries
+
+Always explain:
+
+Arduino IDE Library Manager.
+
+Required libraries.
+
+Alternative installation from GitHub if necessary.
+
+Mention compatible library versions if important.
+
+3.12 Complete Code
+
+Rules:
+
+Fully tested.
+Ready to compile.
+Properly commented.
+Complete example.
+No missing functions.
+
+Use fenced code blocks.
+
+#include <Wire.h>
+
+void setup() {
+  Serial.begin(115200);
+}
+
+void loop() {
+
+}
+
+Never publish incomplete code.
+
+3.13 Code Explanation
+
+Explain:
+
+Setup
+Global variables
+Initialization
+Main loop
+Functions
+Important algorithms
+
+Do not simply repeat the code.
+
+Explain why it works.
+
+3.14 Example Output
+
+Always include:
+
+Serial Monitor screenshot
+Expected values
+Explanation
+
+Example:
+
+Temperature: 24.5 °C
+Humidity: 55 %
+
+Never invent impossible values.
+
+3.15 Flow Diagram
+
+Include when the code is not trivial.
+
+Flow diagrams help beginners understand program execution.
+
+3.16 Troubleshooting
+
+Minimum:
+
+Five problems.
+
+Each problem should include:
+
+Problem
+
+Cause
+
+Solution
+
+Example:
+
+OLED Display Remains Blank
+
+Cause:
+
+Incorrect SDA or SCL connection.
+
+Solution:
+
+Verify GPIO21 and GPIO22 connections.
+
+3.17 Frequently Asked Questions
+
+Minimum:
+
+Five questions.
+
+Maximum:
+
+Ten.
+
+Questions should be based on common beginner problems.
+
+Avoid artificial FAQs.
+
+3.18 Recommended Products
+
+Always use a Markdown table.
+
+Product	Purpose
+ESP32 Dev Board	Main controller
+Breadboard	Prototyping
+Jumper Wires	Connections
+OLED Display	Output
+
+Affiliate placeholders only.
+
+3.19 Related Tutorials
+
+Minimum:
+
+Five internal links.
+
+Maximum:
+
+Ten.
+
+Use descriptive anchor text.
+
+Example:
+
+- [MPU6050 Arduino Guide](/mpu6050-arduino-guide/)
+- [ESP32 OLED Display Tutorial](/esp32-oled-display-tutorial/)
+- [I²C Scanner Guide](/i2c-scanner-arduino/)
+
+Never use generic text like "click here".
+
+3.20 GitHub Repository
+
+Always include:
+
+Repository link.
+
+Clone command.
+
+Directory structure (if useful).
+
+Example:
+
+git clone https://github.com/embeddednerd/project-name.git
+3.21 Downloads
+
+Always include:
+
+Source Code
+Wiring Diagram
+Datasheet
+Required Libraries
+PCB Files (if applicable)
+3.22 Conclusion
+
+Target length:
+
+150–250 words.
+
+Summarize:
+
+What was learned.
+Key takeaways.
+Practical applications.
+Suggested next tutorials.
+
+End with a natural invitation to continue learning.
+
+Avoid promotional language.
+
+3.23 Writing Standards
+
+Every article should be:
+
+Beginner friendly.
+Technically accurate.
+Practical.
+Easy to read.
+Well structured.
+
+Avoid:
+
+Long paragraphs.
+Repetition.
+Marketing language.
+Overly academic explanations.
+3.24 Technical Accuracy
+
+Never publish:
+
+Untested code.
+Incorrect wiring.
+Fake screenshots.
+AI-generated code without verification.
+
+Technical correctness always comes before publication speed.
+
+3.25 Evergreen Content
+
+Articles should remain useful for many years.
+
+Avoid references such as:
+
+"this year"
+"recently released"
+"last month"
+
+Unless absolutely necessary.
+
+3.26 Editorial Quality Checklist
+
+Before publishing, verify:
+
+☐ Front Matter is valid.
+☐ Hero image included.
+☐ Introduction is 400–600 words.
+☐ Hardware table completed.
+☐ Pinout included.
+☐ Wiring diagram included.
+☐ Library installation explained.
+☐ Code tested.
+☐ Code fully commented.
+☐ Code explanation completed.
+☐ Example output included.
+☐ Troubleshooting has at least five items.
+☐ FAQ has at least five questions.
+☐ Recommended Products section included.
+☐ Related Tutorials section includes 5–10 internal links.
+☐ GitHub section completed.
+☐ Downloads section completed.
+☐ Conclusion written.
+☐ Grammar checked.
+☐ Markdown validated.
+☐ Ready for Jekyll.
+⭐ 3.27 Embedded Nerd Gold Standard
+
+Every article published on Embedded Nerd should answer every question a beginner is likely to ask about the topic. If, after reading the tutorial, a user still needs to search for basic information elsewhere, the article is not yet complete.
+
+The objective is not to create another tutorial.
+
+The objective is to create the tutorial that readers bookmark, recommend and return to because it is the most complete, accurate and practical resource available.
+
+
