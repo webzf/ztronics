@@ -2563,6 +2563,284 @@ Monetization should be a natural consequence of providing exceptional value—no
 By consistently putting education before revenue, Embedded Nerd can develop a loyal community that supports the project through affiliate purchases, GitHub stars, donations and future premium resources, creating a sustainable ecosystem without compromising editorial integrity.
 
 
+Chapter 6 — Image Prompt Library & Generation Standards
+6.1 Purpose
+
+This chapter defines the standard prompts and rules used to generate every image for Embedded Nerd.
+
+Every generated image must share the same visual identity regardless of the article topic.
+
+The objective is to make every illustration immediately recognizable as part of the Embedded Nerd brand.
+
+6.2 General Prompt Structure
+
+Every prompt should include:
+
+White background
+Professional technical illustration
+Realistic electronic components
+Clean composition
+Soft shadows
+Modern sans-serif typography
+Official Embedded Nerd logo in the top-right corner
+EmbeddedNerd.com in the bottom-right corner
+High resolution
+Consistent spacing
+Green (#10B981) highlights
+Educational appearance
+6.3 Universal Style Prompt
+
+Use this style as the base for all images:
+
+Create a clean, professional technical illustration on a white background using realistic electronic components, soft shadows, modern sans-serif typography, subtle green (#10B981) highlights, consistent spacing, and a minimalist educational layout. Place the official Embedded Nerd logo in the top-right corner with appropriate margin and add EmbeddedNerd.com subtly in the bottom-right corner. The image should resemble a page from a modern electronics textbook rather than a marketing graphic.
+
+6.4 Hero Image Prompt
+
+Purpose
+
+Create an attractive cover image for the article.
+
+Standard Prompt
+
+Create a professional hero image (1200×630 px) with a white background, showing the main hardware used in the tutorial arranged neatly. Display the article title prominently using modern typography. Add soft shadows, green highlights, realistic electronic components, the official Embedded Nerd logo in the top-right corner, and EmbeddedNerd.com in the bottom-right corner. The design should be clean, balanced and suitable for Open Graph social sharing.
+
+6.5 Wiring Diagram Prompt
+
+Purpose
+
+Show physical connections.
+
+Standard Prompt
+
+Create a professional wiring diagram (1600×900 px) showing realistic development boards and modules connected using coloured jumper wires. Use red for VCC, black for GND, green for SDA, blue for SCL, orange for MOSI, purple for MISO, yellow for SCK, grey for CS, cyan for TX and magenta for RX. Label every pin clearly using modern typography. Use a white background with subtle green highlights and include the official Embedded Nerd logo.
+
+6.6 Pinout Prompt
+
+Purpose
+
+Show all important pins.
+
+Standard Prompt
+
+Create a clean pinout diagram (1600×900 px) showing the board from a top-down view with every important pin labelled using the official manufacturer names. Use colour coding for power, ground, communication and GPIO pins. Keep the background white and the design simple, clear and suitable for beginners.
+
+6.7 Flow Diagram Prompt
+
+Purpose
+
+Explain program execution.
+
+Standard Prompt
+
+Create a modern flowchart (1600×900 px) using rounded rectangles, green accent colours, clean arrows and minimal text. The background should be white with generous spacing. The diagram should be understandable within a few seconds and suitable for a beginner electronics tutorial.
+
+6.8 Serial Monitor Prompt
+
+Purpose
+
+Display realistic output.
+
+Standard Prompt
+
+Create a realistic Serial Monitor screenshot showing clean monospaced text with believable sensor readings. Do not invent unrealistic values. Keep the layout similar to the Arduino IDE Serial Monitor. The screenshot should be sharp and easy to read.
+
+6.9 Logic Analyzer Prompt
+
+Purpose
+
+Explain digital communication.
+
+Standard Prompt
+
+Create a realistic logic analyzer screenshot showing digital waveforms with labelled channels and protocol decoding where applicable. Use a clean white interface with readable timing information suitable for educational documentation.
+
+6.10 Oscilloscope Prompt
+
+Purpose
+
+Show analog or digital waveforms.
+
+Standard Prompt
+
+Create a realistic oscilloscope screenshot showing a clean waveform with labelled voltage and time scales. The image should resemble a modern digital oscilloscope and be easy to understand.
+
+6.11 Finished Project Prompt
+
+Purpose
+
+Show the completed build.
+
+Standard Prompt
+
+Create a high-quality photograph-style illustration of the completed electronics project assembled on a clean workbench. Use organised wiring, realistic components, natural lighting and a neutral background. Include subtle Embedded Nerd branding without distracting from the project.
+
+6.12 PCB Prompt
+
+Purpose
+
+Show printed circuit boards.
+
+Standard Prompt
+
+Create a realistic top-view rendering of a professionally designed PCB with clearly labelled components, solder mask, silkscreen and mounting holes. Maintain a clean educational presentation on a white background.
+
+6.13 Comparison Prompt
+
+Purpose
+
+Compare two boards or modules.
+
+Standard Prompt
+
+Create a side-by-side comparison image with both boards shown at the same scale. Present specifications in a clean comparison table below the boards. Use green highlights for advantages and maintain the Embedded Nerd visual style.
+
+6.14 Hardware Photography Rules
+
+If photographs are used instead of illustrations:
+
+Neutral lighting
+White or light grey background
+Sharp focus
+No visible clutter
+Components arranged neatly
+No distracting reflections
+Consistent perspective
+6.15 Typography Rules
+
+Image text should:
+
+Use Inter or Roboto where possible
+Be easy to read on mobile
+Maintain consistent sizing
+Avoid decorative fonts
+
+Titles should be large and concise.
+
+6.16 Component Appearance
+
+Always represent components accurately.
+
+Examples:
+
+Correct ESP32 board layout
+Correct Arduino Uno pin headers
+Correct Raspberry Pi GPIO orientation
+Correct sensor dimensions where possible
+
+Avoid generic or inaccurate hardware.
+
+6.17 Educational Focus
+
+Every image should answer a question.
+
+Examples:
+
+Which wire goes where?
+Which pin should I connect?
+What does the output look like?
+How does the algorithm work?
+
+If an image does not improve understanding, do not generate it.
+
+6.18 Image Variants
+
+Each article should ideally include:
+
+Image	Required
+Hero	✓
+Wiring Diagram	✓
+Pinout Diagram	✓ (if applicable)
+Flow Diagram	✓ (if applicable)
+Serial Monitor	✓
+Finished Project	Optional
+Logic Analyzer	Optional
+Oscilloscope	Optional
+6.19 Naming Convention
+
+Examples:
+
+esp32-oled-hero.webp
+esp32-oled-wiring.webp
+esp32-oled-pinout.webp
+esp32-oled-flow.webp
+esp32-oled-output.webp
+esp32-oled-project.webp
+
+Always:
+
+lowercase
+hyphens
+descriptive names
+.webp format
+6.20 Alt Text Standard
+
+Every image requires meaningful alt text.
+
+Examples:
+
+Hero
+
+ESP32 development board and SSD1306 OLED display used in an I²C display tutorial.
+
+Wiring
+
+ESP32 connected to an SSD1306 OLED display using labelled I²C connections.
+
+Flow Diagram
+
+Flowchart showing the initialization and display update process for an ESP32 OLED project.
+
+Alt text should describe the content, not repeat the article title.
+
+6.21 Regeneration Policy
+
+If an image contains:
+
+incorrect wiring
+inaccurate hardware
+unreadable labels
+AI artifacts
+inconsistent branding
+poor alignment
+
+it should be regenerated.
+
+Do not edit around major errors.
+
+6.22 Embedded Nerd Image Quality Standard
+
+Before accepting any generated image, verify:
+
+☐ White background.
+☐ Official logo positioned correctly.
+☐ EmbeddedNerd.com included.
+☐ Realistic hardware.
+☐ Accurate labels.
+☐ Consistent colour palette.
+☐ High resolution.
+☐ Educational value.
+☐ Mobile readability.
+☐ No visible AI artifacts.
+6.23 Prompt Adaptation
+
+When generating images for specific articles, adapt the standard prompts only by replacing:
+
+Article title
+Hardware names
+Board model
+Sensor or module
+Communication protocol
+Output examples
+
+The overall style must never change.
+
+⭐ 6.24 Embedded Nerd Visual Identity
+
+The image system should be so consistent that, after seeing only a few illustrations, readers can immediately recognise them as belonging to Embedded Nerd.
+
+Every hero image, wiring diagram, flowchart and pinout should feel like part of the same professionally designed documentation set. Over time, this consistency becomes a powerful part of the brand, increasing recognition, trust and perceived quality before the reader has even started reading the article.
+
+
 
 
 
