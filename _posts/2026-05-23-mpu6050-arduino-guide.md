@@ -1,6 +1,8 @@
 ---
 title: "MPU6050 Arduino Guide: Code, Wiring & GitHub"
 
+howto: true
+
 layout: single
 
 sidebar: 
