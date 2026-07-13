@@ -98,11 +98,11 @@ author:
 
     - label: "YouTube"
       icon: "fab fa-fw fa-youtube"
-      url: "https://youtube.com/@YOURCHANNEL"
+      url: "https://youtube.com/@z3tr0n1c"
 
     - label: "Pinterest"
       icon: "fab fa-fw fa-pinterest"
-      url: "https://pinterest.com/YOURPROFILE"
+      url: "https://www.pinterest.com/ztronics03/"
 
 # Site Footer
 footer:
@@ -113,11 +113,11 @@ footer:
 
     - label: "YouTube"
       icon: "fab fa-fw fa-youtube"
-      url: "https://youtube.com/@YOURCHANNEL"
+      url: "https://youtube.com/@z3tr0n1c"
 
     - label: "Pinterest"
       icon: "fab fa-fw fa-pinterest"
-      url: "https://pinterest.com/YOURPROFILE"
+      url: "https://www.pinterest.com/ztronics03/"
 
     - label: "Contact"
       url: "/contact/"
