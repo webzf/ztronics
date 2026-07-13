@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+
+{% if page.howto %}
+{% include schema-howto.html %}
+{% endif %}
+
 {%- assign locale = page.locale | default: layout.locale | default: site.locale %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
