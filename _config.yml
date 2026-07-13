@@ -74,8 +74,7 @@ og_image_alt             :
 social:
   type                   : Organization
   name                   : Embedded Nerd
-
-   links:
+  links:
     - https://github.com/webzf
     - https://www.youtube.com/@z3tr0n1c
     - https://www.pinterest.com/ztronics03/
@@ -90,7 +89,7 @@ analytics:
 # Site Author
 author:
   name             : Embedded Nerd
-  avatar           : "/assets/images/Logonerd3.png"
+  avatar           : "/assets/images/Logonerd3.webp"
   bio              : "A collection of practical electronics tutorials, embedded projects, and beginner-friendly guides focused on Arduino, ESP32, Raspberry Pi, sensors, displays, and DIY hardware development."
   #location         : ""
 
