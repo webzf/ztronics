@@ -1,6 +1,8 @@
 ---
 title: "ESP32 Snake Game with MPU6050 and OLED Display"
 
+howto: true
+
 layout: single
 
 sidebar:
