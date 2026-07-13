@@ -14,7 +14,7 @@ subtitle                 : "Arduino, ESP32 & Raspberry Pi Tutorials and Electron
 
 name                     : "Embedded Nerd"
 
-description              : "ESP32, Arduino, Raspberry Pi and electronics tutorials with code examples, wiring guides, sensors, displays and embedded projects."
+description              : "Step-by-step Arduino, ESP32 and Raspberry Pi tutorials with wiring diagrams, code examples, electronics projects and embedded systems."
 
 #url                      : "https://webzf.github.io"
 #baseurl                  : "/ztronics"
