@@ -9,7 +9,7 @@ minimal_mistakes_skin: "dark" #"default" # "air", "aqua", "contrast", "dark", "d
 locale                   : "en-US"
 
 title                    : "Embedded Nerd"
-title_separator          : "-"
+title_separator          : "|"
 subtitle                 : "Arduino, ESP32 & Raspberry Pi Tutorials and Electronics Projects"
 
 name                     : "Embedded Nerd"
@@ -57,28 +57,28 @@ yandex_site_verification :
 baidu_site_verification  :
 
 
-seo:
-  name: "ESP32, Arduino & Raspberry Pi Tutorials | Embedded Nerd"
-
   
 # Social Sharing
 twitter:
   username               :
+  card: summary_large_image
 
 facebook:
   username               :
   app_id                 :
   publisher              :
 
-og_image                 :
+og_image                 : /assets/images/headnerd2.webp
 og_image_alt             :
 
 social:
   type                   : Organization
-  name                   : ZTronics
+  name                   : Embedded Nerd
 
-  links:
-    - "https://github.com/webzf"
+   links:
+    - https://github.com/webzf
+    - https://www.youtube.com/@z3tr0n1c
+    - https://www.pinterest.com/ztronics03/
 
 # Analytics
 analytics:
@@ -89,7 +89,7 @@ analytics:
 
 # Site Author
 author:
-  #name             : "ZTronics"
+  name             : Embedded Nerd
   avatar           : "/assets/images/Logonerd3.png"
   bio              : "A collection of practical electronics tutorials, embedded projects, and beginner-friendly guides focused on Arduino, ESP32, Raspberry Pi, sensors, displays, and DIY hardware development."
   #location         : ""
