@@ -61,7 +61,7 @@ baidu_site_verification  :
 # Social Sharing
 twitter:
   username               :
-  card: summary_large_image
+  card                   : summary_large_image
 
 facebook:
   username               :
