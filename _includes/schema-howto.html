@@ -1,0 +1,33 @@
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"HowTo",
+
+"name":"{{ page.title }}",
+
+"description":"{{ page.excerpt | strip_html | strip_newlines }}",
+
+"image":"{{ page.header.overlay_image | absolute_url }}",
+
+"author":{
+"@type":"Organization",
+"name":"Embedded Nerd"
+},
+
+"publisher":{
+"@type":"Organization",
+"name":"Embedded Nerd",
+"logo":{
+"@type":"ImageObject",
+"url":"{{ site.logo | absolute_url }}"
+}
+},
+
+"datePublished":"{{ page.date | date_to_xmlschema }}",
+
+"dateModified":"{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+
+"totalTime":"PT20M"
+
+}
+</script>
