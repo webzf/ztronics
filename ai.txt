@@ -1,0 +1,29 @@
+site: https://embeddednerd.com
+
+title: Embedded Nerd
+
+description:
+Arduino, ESP32, Raspberry Pi, Electronics, Sensors, IoT and Embedded Systems Tutorials.
+
+language: en
+
+owner: Embedded Nerd
+
+content:
+Technical tutorials
+Electronics projects
+Programming guides
+Source code
+Product reviews
+Buying guides
+
+policy:
+search: yes
+reference: yes
+training: no
+
+sitemap:
+https://embeddednerd.com/sitemap.xml
+
+rss:
+https://embeddednerd.com/feed.xml
