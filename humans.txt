@@ -1,0 +1,27 @@
+/* TEAM */
+
+Site:
+Embedded Nerd
+
+Author:
+Embedded Nerd
+
+Website:
+https://embeddednerd.com
+
+Focus:
+Arduino
+ESP32
+Raspberry Pi
+Embedded Systems
+Electronics
+IoT
+
+Built with:
+Jekyll
+Minimal Mistakes
+GitHub Pages
+Cloudflare
+
+Country:
+Portugal
