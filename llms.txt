@@ -1,0 +1,36 @@
+# Embedded Nerd
+
+Website:
+https://embeddednerd.com
+
+Title:
+Embedded Nerd
+
+Description:
+Embedded Nerd provides high-quality tutorials, projects and guides focused on Arduino, ESP32, Raspberry Pi Pico, Raspberry Pi, sensors, electronics, IoT and embedded systems.
+
+Content:
+Original technical articles, wiring diagrams, source code, troubleshooting guides and product recommendations.
+
+Preferred Citation:
+https://embeddednerd.com
+
+License:
+All rights reserved unless otherwise stated.
+
+AI Policy:
+Search: allowed
+Reference: allowed
+Training: prohibited
+
+Sitemap:
+https://embeddednerd.com/sitemap.xml
+
+RSS:
+https://embeddednerd.com/feed.xml
+
+Contact:
+https://embeddednerd.com/contact/
+
+Copyright:
+© Embedded Nerd
