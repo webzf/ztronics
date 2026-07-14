@@ -20,6 +20,8 @@ toc_label: "Contents"
 
 header:
   teaser: /assets/images/Esp32-snake-game.webp
+  image: /assets/images/Esp32-snake-game.webp
+  og_image: /assets/images/Esp32-snake-game.webp
   overlay_image: /assets/images/headnerd2.webp
   overlay_filter: 0.4
 
