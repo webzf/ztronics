@@ -2203,3 +2203,952 @@ We've now controlled both a **servo motor** and a **DC motor** using the joystic
 
 In the next chapter we'll use the joystick to navigate menus on an OLED display, creating an interface similar to those found in commercial electronic devices. This technique is widely used in laboratory instruments, 3D printers, CNC controllers, and portable embedded systems.
 
+---
+
+# Mini Project: OLED Menu Navigation with the ESP32 Joystick
+
+Until now, we've used the joystick to control actuators such as servo motors and DC motors.
+
+However, analog joysticks are also excellent user input devices.
+
+Combined with a small OLED display, they allow you to build intuitive menu systems without requiring multiple push buttons.
+
+This technique is widely used in:
+
+- 3D printers
+- CNC controllers
+- Battery testers
+- Portable measuring instruments
+- IoT devices
+- Smart home controllers
+- Laboratory equipment
+- DIY handheld consoles
+
+In this project, we'll build a simple menu system that can easily be expanded into your own projects.
+
+---
+
+# Hardware Required
+
+| Component | Quantity |
+|-----------|---------:|
+| ESP32 Dev Board | 1 |
+| KY-023 Joystick | 1 |
+| SSD1306 OLED Display (128×64) | 1 |
+| Breadboard | 1 |
+| Jumper Wires | Several |
+
+---
+
+# OLED Wiring
+
+The SSD1306 communicates using the I²C interface.
+
+| OLED | ESP32 |
+|------|--------|
+| VCC | 3V3 |
+| GND | GND |
+| SDA | GPIO21 |
+| SCL | GPIO22 |
+
+The joystick remains connected as in the previous chapters.
+
+![ESP32 OLED Wiring](images/esp32-joystick-oled-wiring.webp)
+
+---
+
+# Installing the Required Libraries
+
+Open:
+
+```
+Sketch
+
+↓
+
+Include Library
+
+↓
+
+Manage Libraries
+```
+
+Install:
+
+- Adafruit SSD1306
+- Adafruit GFX Library
+
+These libraries greatly simplify drawing text, graphics, and menus.
+
+---
+
+# Menu Structure
+
+Our menu will contain four items.
+
+```
+>Main Screen
+
+ Settings
+
+ Servo Test
+
+ About
+```
+
+The highlighted item represents the current selection.
+
+Moving the joystick:
+
+- Up → Previous item
+- Down → Next item
+
+Pressing the joystick button selects the highlighted option.
+
+---
+
+# Defining the Menu
+
+```cpp
+const char* menuItems[] =
+{
+    "Main Screen",
+    "Settings",
+    "Servo Test",
+    "About"
+};
+
+const int totalItems = 4;
+
+int selectedItem = 0;
+```
+
+This structure makes it easy to add or remove menu options.
+
+---
+
+# Drawing the Menu
+
+```cpp
+display.clearDisplay();
+
+for(int i = 0; i < totalItems; i++)
+{
+    if(i == selectedItem)
+    {
+        display.print(">");
+    }
+    else
+    {
+        display.print(" ");
+    }
+
+    display.println(menuItems[i]);
+}
+
+display.display();
+```
+
+The arrow indicates the currently selected menu item.
+
+---
+
+# Reading the Joystick
+
+We'll use the calibrated Y-axis value.
+
+```cpp
+int y =
+readAverage(yAxisPin);
+
+y -= centerY;
+```
+
+Now apply the dead zone.
+
+```cpp
+if(abs(y) < deadZone)
+{
+    y = 0;
+}
+```
+
+---
+
+# Moving Through the Menu
+
+If the joystick moves upward:
+
+```cpp
+if(y > 500)
+{
+    selectedItem--;
+
+    delay(180);
+}
+```
+
+Moving downward:
+
+```cpp
+if(y < -500)
+{
+    selectedItem++;
+
+    delay(180);
+}
+```
+
+The short delay prevents the menu from scrolling too quickly.
+
+---
+
+# Preventing Index Errors
+
+Always keep the selected item inside the valid range.
+
+```cpp
+if(selectedItem < 0)
+{
+    selectedItem = totalItems - 1;
+}
+
+if(selectedItem >= totalItems)
+{
+    selectedItem = 0;
+}
+```
+
+This creates a circular menu.
+
+Example:
+
+```
+About
+
+↓
+
+Main Screen
+```
+
+and
+
+```
+Main Screen
+
+↑
+
+About
+```
+
+This feels much more natural than stopping at the first or last item.
+
+---
+
+# Selecting an Item
+
+The joystick button acts as the Enter key.
+
+```cpp
+if(digitalRead(buttonPin) == LOW)
+{
+    Serial.println(menuItems[selectedItem]);
+
+    delay(300);
+}
+```
+
+Later, each menu item can launch a different application or settings page.
+
+---
+
+# Creating a Better User Experience
+
+Instead of instantly changing the selection every time the joystick moves slightly, wait until the joystick returns to the center before accepting another movement.
+
+Pseudo-code:
+
+```
+Move joystick
+
+↓
+
+Change menu
+
+↓
+
+Wait until joystick returns
+
+↓
+
+Accept next movement
+```
+
+This prevents accidental skipping of multiple items.
+
+---
+
+# Highlighting the Selected Item
+
+The SSD1306 library allows you to invert colours.
+
+Example:
+
+```cpp
+display.fillRect(0, lineY, 128, 10, WHITE);
+
+display.setTextColor(BLACK);
+
+display.setCursor(2, lineY + 1);
+
+display.print(menuItems[i]);
+
+display.setTextColor(WHITE);
+```
+
+The selected item appears highlighted, similar to commercial user interfaces.
+
+---
+
+# Adding Icons
+
+You can further improve the menu by displaying small bitmap icons.
+
+Example:
+
+```
+⚙ Settings
+
+🎮 Servo Test
+
+ℹ About
+```
+
+Icons make navigation faster and more intuitive.
+
+---
+
+# Creating Submenus
+
+A real application usually contains more than one page.
+
+For example:
+
+```
+Main Menu
+
+↓
+
+Settings
+
+↓
+
+Brightness
+
+↓
+
+Contrast
+
+↓
+
+Wi-Fi
+```
+
+Instead of using a single variable, define an application state.
+
+```cpp
+enum Screen
+{
+    MAIN_MENU,
+    SETTINGS,
+    SERVO,
+    ABOUT
+};
+
+Screen currentScreen = MAIN_MENU;
+```
+
+Switching between screens becomes much cleaner.
+
+---
+
+# Practical Applications
+
+The same menu structure can be reused in many projects.
+
+Examples include:
+
+- Temperature controllers
+- Smart thermostats
+- Greenhouse automation
+- Data loggers
+- Oscilloscopes
+- Battery monitors
+- Electronic loads
+- Home automation dashboards
+
+Once you've built one menu system, you can easily adapt it to future projects.
+
+---
+
+# Troubleshooting
+
+## OLED Remains Blank
+
+Check:
+
+- I²C wiring
+- OLED address (0x3C or 0x3D)
+- Library installation
+- SDA and SCL pins
+
+Running an I²C scanner sketch is a quick way to verify the display address.
+
+---
+
+## Menu Scrolls Too Quickly
+
+Increase the delay or implement joystick release detection before allowing another movement.
+
+---
+
+## Random Menu Movements
+
+Possible causes:
+
+- Dead zone too small
+- No averaging filter
+- Poor joystick calibration
+
+Increasing the dead zone to around 40–60 ADC counts usually solves the issue.
+
+---
+
+## Flickering Display
+
+Avoid calling `display.display()` more often than necessary.
+
+Only refresh the screen when something changes.
+
+This reduces flicker and improves overall performance.
+
+---
+
+> **Tip**
+>
+> Redrawing the OLED only when the menu changes significantly reduces I²C traffic and makes the interface feel much smoother.
+
+---
+
+# What's Next?
+
+So far, we've built several practical applications using the joystick:
+
+- Reading analog values
+- Detecting button presses
+- Controlling a servo
+- Driving a DC motor
+- Navigating OLED menus
+
+In the next chapter, we'll explore advanced joystick techniques, including exponential response curves, sensitivity adjustment, custom mapping functions, acceleration, and wireless control over Bluetooth and Wi-Fi. These techniques are commonly used in drones, RC transmitters, gaming controllers, and industrial control systems.
+
+
+---
+
+# Advanced Joystick Techniques
+
+By now, you've learned how to read the joystick, calibrate it, eliminate noise, and use it to control servos, motors, and OLED menus.
+
+While these techniques are sufficient for many projects, professional embedded systems often apply additional signal processing to improve responsiveness and user experience.
+
+In this chapter, you'll learn several advanced techniques that can be adapted to almost any joystick-controlled project.
+
+These include:
+
+- Sensitivity adjustment
+- Exponential response curves
+- Low-pass filtering
+- Median filtering
+- Percentage conversion
+- Velocity mapping
+- Angle mapping
+- Diagonal movement detection
+- Wireless joystick communication
+
+These concepts are widely used in commercial products ranging from RC transmitters to industrial machinery.
+
+---
+
+# Adjusting the Joystick Sensitivity
+
+Sometimes a joystick feels too sensitive.
+
+Small movements may produce large responses.
+
+Instead of changing the hardware, we can simply reduce the sensitivity in software.
+
+For example:
+
+```cpp
+normalizedX /= 2;
+normalizedY /= 2;
+```
+
+Now moving the joystick halfway produces a much smaller output.
+
+This is useful for:
+
+- Camera control
+- Robot arms
+- Precision positioning
+- CNC jogging
+
+---
+
+# Increasing the Sensitivity
+
+The opposite is also possible.
+
+```cpp
+normalizedX *= 2;
+normalizedY *= 2;
+```
+
+Always remember to constrain the final value.
+
+```cpp
+normalizedX = constrain(normalizedX,-2048,2047);
+```
+
+This technique makes the joystick feel much more responsive.
+
+---
+
+# Linear Response
+
+Until now we've assumed the joystick behaves linearly.
+
+```
+Joystick Movement
+
+↓
+
+Motor Speed
+```
+
+A small movement produces a small speed increase.
+
+A large movement produces a large speed increase.
+
+This is called a **linear response**.
+
+It is simple and predictable.
+
+---
+
+# Exponential Response (Expo)
+
+Many radio-controlled aircraft and drones use an exponential response curve.
+
+Near the center, movement becomes less sensitive.
+
+Near the edges, movement becomes much more aggressive.
+
+This provides:
+
+- Better precision
+- Smoother control
+- Easier hovering
+- Better aiming
+
+Example:
+
+```cpp
+float input =
+normalizedX / 2048.0;
+
+float expo = input * input * input;
+
+int output =
+expo * 2048;
+```
+
+Near the center:
+
+```
+Very Smooth
+```
+
+Near the edges:
+
+```
+Very Fast
+```
+
+Professional RC transmitters almost always offer adjustable exponential curves.
+
+---
+
+# Percentage Conversion
+
+Sometimes raw ADC values are difficult to interpret.
+
+Converting them into percentages makes debugging much easier.
+
+Example:
+
+```cpp
+int percentage =
+map(xValue,0,4095,0,100);
+```
+
+Result:
+
+```
+0%
+
+↓
+
+100%
+```
+
+Or centered around zero:
+
+```cpp
+int percentage =
+map(normalizedX,-2048,2047,-100,100);
+```
+
+Now the joystick reports:
+
+```
+Left
+
+↓
+
+-100%
+
+Center
+
+↓
+
+0%
+
+Right
+
+↓
+
+100%
+```
+
+This representation is ideal for user interfaces.
+
+---
+
+# Velocity Mapping
+
+Many robots are controlled using speed rather than position.
+
+Convert the joystick reading into a velocity.
+
+```cpp
+int speed =
+map(normalizedY,-2048,2047,-255,255);
+```
+
+Now:
+
+```
+Forward
+
+↓
+
+Positive Speed
+
+Reverse
+
+↓
+
+Negative Speed
+```
+
+This is exactly how differential-drive robots are controlled.
+
+---
+
+# Angle Mapping
+
+Servos usually require angles.
+
+Example:
+
+```cpp
+int angle =
+map(xValue,0,4095,0,180);
+```
+
+Or limit the travel:
+
+```cpp
+map(xValue,0,4095,30,150);
+```
+
+Reducing the mechanical range often improves reliability.
+
+---
+
+# PWM Mapping
+
+LED brightness and motor speed are usually controlled using PWM.
+
+```cpp
+int pwm =
+map(abs(normalizedY),0,2048,0,255);
+```
+
+Now pushing the joystick further increases brightness or motor speed.
+
+---
+
+# Low-Pass Filtering
+
+A Moving Average filter reduces noise effectively.
+
+However, another popular technique is the Low-Pass Filter.
+
+Formula:
+
+```
+Filtered
+
+=
+
+Previous
+
++
+
+(New-Previous)
+
+×
+
+Alpha
+```
+
+Example:
+
+```cpp
+filteredX =
+filteredX +
+0.2 * (rawX-filteredX);
+```
+
+Advantages:
+
+- Smooth movement
+- Fast response
+- Very little memory
+
+This technique is widely used in flight controllers.
+
+---
+
+# Median Filtering
+
+Occasionally an ADC produces a sudden incorrect reading.
+
+Example:
+
+```
+2048
+
+2050
+
+4095
+
+2047
+
+2051
+```
+
+The value **4095** is clearly incorrect.
+
+A median filter removes these spikes automatically.
+
+Instead of averaging, it selects the middle value.
+
+Median filters are especially useful in electrically noisy environments.
+
+---
+
+# Detecting Diagonal Movement
+
+Many games require eight directions.
+
+Instead of only:
+
+- Up
+- Down
+- Left
+- Right
+
+we also detect:
+
+- Up Left
+- Up Right
+- Down Left
+- Down Right
+
+Example:
+
+```cpp
+if(x>500 && y>500)
+{
+    Serial.println("UP RIGHT");
+}
+```
+
+The same logic applies to the remaining diagonal directions.
+
+---
+
+# Variable Dead Zone
+
+Earlier we used a fixed dead zone.
+
+Professional controllers sometimes adjust it dynamically.
+
+For example:
+
+Small movements
+
+↓
+
+Small dead zone
+
+Large movements
+
+↓
+
+Larger dead zone
+
+This creates a smoother user experience.
+
+---
+
+# Using the Joystick as a Mouse
+
+The ESP32 can emulate a Bluetooth HID mouse.
+
+Joystick movement controls the cursor.
+
+Button press becomes the left mouse click.
+
+Possible mapping:
+
+| Joystick | Mouse |
+|-----------|--------|
+| X | Cursor Left/Right |
+| Y | Cursor Up/Down |
+| SW | Left Click |
+
+This is an excellent beginner Bluetooth project.
+
+---
+
+# Bluetooth Game Controller
+
+Instead of acting as a mouse, the ESP32 can emulate a Bluetooth gamepad.
+
+The joystick axes become:
+
+```
+Left Analog Stick
+```
+
+while the button becomes:
+
+```
+Button A
+```
+
+Computers, Android devices, and many game consoles can recognise the ESP32 as a wireless controller.
+
+---
+
+# ESP-NOW Remote Control
+
+ESP-NOW is a low-latency wireless protocol developed by Espressif.
+
+One ESP32 reads the joystick.
+
+Another ESP32 receives the commands.
+
+Advantages include:
+
+- No Wi-Fi router required
+- Very low latency
+- Low power consumption
+- Excellent reliability
+
+This is ideal for:
+
+- Robots
+- RC vehicles
+- Smart home remotes
+- Wireless controllers
+
+---
+
+# Wi-Fi Robot Control
+
+Instead of transmitting commands over ESP-NOW, the joystick can send data through Wi-Fi.
+
+Possible applications include:
+
+- Mobile robots
+- Home automation
+- IoT devices
+- Camera systems
+- Remote monitoring
+
+The ESP32 can publish joystick data using:
+
+- HTTP
+- MQTT
+- WebSocket
+
+allowing any connected device to receive the commands.
+
+---
+
+# Practical Ideas
+
+Now that you understand advanced joystick processing, consider trying some of these projects:
+
+- Pan-Tilt camera
+- Bluetooth game controller
+- Wireless robot
+- CNC pendant
+- Smart home remote
+- MIDI controller
+- Digital drawing tablet
+- RC transmitter
+- Camera gimbal
+- Electronic Etch-A-Sketch
+
+These projects build directly upon the techniques you've learned throughout this tutorial.
+
+---
+
+> **Pro Tip**
+>
+> Most professional joystick applications never use raw ADC readings directly. They combine calibration, filtering, dead zones, response curves, and value mapping to create smooth, predictable, and intuitive controls.
+
+---
+
+# What's Next?
+
+At this point, you've learned nearly everything required to use an analog joystick effectively with the ESP32.
+
+The final sections of this guide will focus on troubleshooting, frequently asked questions, recommended hardware, and ideas for extending your own projects.
+
