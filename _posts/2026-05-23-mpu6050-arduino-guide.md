@@ -22,7 +22,7 @@ toc_label: "Contents"
 header:
   teaser: /assets/images/mpu6050-sensor-guide.webp
   overlay_image: /assets/images/header3.webp
-  overlay_filter: 0.4
+  overlay_filter: 0.25
   image: /assets/images/mpu6050-sensor-guide.webp
   og_image: /assets/images/mpu6050-sensor-guide.webp
 
