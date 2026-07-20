@@ -3146,12 +3146,445 @@ These projects build directly upon the techniques you've learned throughout this
 
 ---
 
-# What's Next?
+---
 
-At this point, you've learned nearly everything required to use an analog joystick effectively with the ESP32.
+# Performance Optimization & Best Practices
 
-The final sections of this guide will focus on troubleshooting, frequently asked questions, recommended hardware, and ideas for extending your own projects.
+The examples presented throughout this guide are designed to be easy to understand.
 
+However, when developing larger ESP32 applications, a few additional techniques can significantly improve performance, responsiveness, and reliability.
+
+This section introduces several best practices commonly used in professional embedded systems.
+
+Although not all of them are necessary for beginner projects, understanding these concepts will help you write cleaner and more scalable code.
+
+---
+
+# Avoid Blocking Code
+
+One of the most common beginner mistakes is relying heavily on:
+
+```cpp
+delay();
+```
+
+For example:
+
+```cpp
+delay(500);
+```
+
+While simple, this completely stops the processor for half a second.
+
+During this time the ESP32 cannot:
+
+- Read the joystick
+- Update the OLED
+- Receive Wi-Fi packets
+- Process Bluetooth events
+- Read sensors
+
+As projects become more complex, excessive use of `delay()` quickly becomes a limitation.
+
+---
+
+# Use millis() Instead
+
+A better approach is timing events using:
+
+```cpp
+millis()
+```
+
+Example:
+
+```cpp
+unsigned long previous = 0;
+
+const int interval = 20;
+
+void loop()
+{
+    if(millis() - previous >= interval)
+    {
+        previous = millis();
+
+        readJoystick();
+    }
+}
+```
+
+Advantages include:
+
+- Responsive user interface
+
+- Smooth multitasking
+
+- Better Wi-Fi performance
+
+- Easier project expansion
+
+This technique is considered standard practice in Arduino programming.
+
+---
+
+# Read the ADC Only When Necessary
+
+Many beginners call:
+
+```cpp
+analogRead();
+```
+
+multiple times inside the same loop.
+
+Example:
+
+```cpp
+if(analogRead(pin)>2000)
+```
+
+followed by:
+
+```cpp
+Serial.println(analogRead(pin));
+```
+
+Each call performs a new ADC conversion.
+
+Instead:
+
+```cpp
+int value = analogRead(pin);
+```
+
+Use the stored value throughout the loop.
+
+This reduces unnecessary ADC conversions and improves consistency.
+
+---
+
+# Apply Filtering Before Processing
+
+Always process the signal in the correct order.
+
+Recommended pipeline:
+
+```
+Read ADC
+
+↓
+
+Filtering
+
+↓
+
+Calibration
+
+↓
+
+Dead Zone
+
+↓
+
+Normalization
+
+↓
+
+Application Logic
+```
+
+Keeping this sequence consistent makes your code easier to understand and maintain.
+
+---
+
+# Use Meaningful Variable Names
+
+Instead of:
+
+```cpp
+int x;
+
+int y;
+```
+
+prefer:
+
+```cpp
+int joystickX;
+
+int joystickY;
+```
+
+Similarly:
+
+```cpp
+servoAngle
+
+motorSpeed
+
+centerX
+
+filteredY
+```
+
+Descriptive names improve readability, especially in larger projects.
+
+---
+
+# Organize Your Code into Functions
+
+Rather than placing everything inside `loop()`, divide your program into small reusable functions.
+
+Example:
+
+```cpp
+readJoystick();
+
+filterSignal();
+
+updateServo();
+
+updateDisplay();
+
+checkButton();
+```
+
+Benefits include:
+
+- Easier debugging
+- Better readability
+- Reusable code
+- Simpler testing
+
+---
+
+# Keep Constants Together
+
+Instead of scattering configuration values throughout the code:
+
+```cpp
+40
+
+180
+
+2048
+
+10
+```
+
+declare them once.
+
+Example:
+
+```cpp
+const int deadZone = 40;
+
+const int maxAngle = 180;
+
+const int samples = 10;
+```
+
+Changing project parameters later becomes much easier.
+
+---
+
+# Constrain Output Values
+
+Whenever values are mapped or scaled, limit the output range.
+
+Example:
+
+```cpp
+servoAngle =
+constrain(servoAngle,0,180);
+```
+
+This prevents unexpected behaviour caused by invalid values.
+
+---
+
+# Avoid Floating Inputs
+
+Unused digital inputs should never be left floating.
+
+Always configure them using:
+
+```cpp
+INPUT_PULLUP
+```
+
+or
+
+```cpp
+INPUT_PULLDOWN
+```
+
+depending on the application.
+
+Floating inputs often produce random behaviour that is difficult to diagnose.
+
+---
+
+# Choose ADC1 Pins
+
+Whenever possible, connect analog sensors to ADC1 GPIOs.
+
+Advantages:
+
+- Compatible with Wi-Fi
+- More reliable
+- Recommended by Espressif
+
+This simple decision can prevent many future debugging sessions.
+
+---
+
+# Use External Power for Motors
+
+Servos and DC motors generate electrical noise.
+
+Always power them separately from the ESP32.
+
+Remember:
+
+```
+Separate Supply
+
+↓
+
+Common Ground
+```
+
+This greatly improves stability.
+
+---
+
+# Minimize OLED Updates
+
+Updating an OLED display hundreds of times per second wastes CPU time and increases I²C traffic.
+
+Instead:
+
+Only refresh the display when something changes.
+
+This produces:
+
+- Smoother menus
+- Less flicker
+- Lower CPU usage
+
+---
+
+# Consider FreeRTOS for Larger Projects
+
+One of the ESP32's biggest advantages is built-in FreeRTOS support.
+
+As projects become more advanced, different tasks can run independently.
+
+Example:
+
+Task 1
+
+↓
+
+Read joystick
+
+Task 2
+
+↓
+
+Update OLED
+
+Task 3
+
+↓
+
+Control motors
+
+Task 4
+
+↓
+
+Wi-Fi communication
+
+This keeps the application responsive even under heavy workloads.
+
+Although FreeRTOS is beyond the scope of this tutorial, it is worth exploring in future projects.
+
+---
+
+# Calibrate Every Time the Device Starts
+
+Never assume every joystick behaves identically.
+
+Running a quick calibration routine during startup ensures consistent behaviour across different modules.
+
+The calibration process only takes a fraction of a second but greatly improves accuracy.
+
+---
+
+# Document Your Code
+
+Good comments explain *why* something is done, not merely *what* the code already says.
+
+Instead of:
+
+```cpp
+// Read X
+```
+
+prefer:
+
+```cpp
+// Read and average the X-axis to reduce ADC noise
+```
+
+Future-you will appreciate the extra context.
+
+---
+
+# Test Incrementally
+
+When building larger projects, add one feature at a time.
+
+For example:
+
+1. Read the joystick
+2. Verify Serial output
+3. Add filtering
+4. Add calibration
+5. Add servo control
+6. Add OLED
+7. Add Wi-Fi
+
+This incremental approach makes debugging far easier than introducing multiple changes simultaneously.
+
+---
+
+# Summary of Best Practices
+
+Following these recommendations will make your projects:
+
+✔ More stable
+
+✔ Easier to maintain
+
+✔ More responsive
+
+✔ Easier to debug
+
+✔ More scalable
+
+✔ Ready for future expansion
+
+Professional embedded software is rarely more complicated because of the hardware—it is usually more robust because it follows good engineering practices from the beginning.
+
+---
+
+> **Best Practice**
+>
+> Focus on writing code that is clear, modular, and reliable rather than simply making it work. A well-structured project is much easier to debug, extend, and reuse in future designs.
 
 ---
 
