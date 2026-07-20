@@ -1410,3 +1410,407 @@ In the next section, we'll use these processed values to control real hardware.
 
 We'll start by driving an SG90 servo motor smoothly, then expand the project to control DC motors, navigate OLED menus, and build more advanced applications.
 
+
+---
+
+# Mini Project: Smooth Servo Control with the ESP32 Joystick
+
+Now that we have clean, calibrated joystick readings, it's time to control a real actuator.
+
+In this project, the joystick's X-axis will control the position of an SG90 micro servo.
+
+Unlike many basic tutorials, we won't simply map the joystick directly to the servo angle. Instead, we'll implement:
+
+- Smooth movement
+- Dead zone support
+- Servo speed limiting
+- Stable operation
+- Proper power recommendations
+
+These improvements produce much more natural movement and prevent the servo from constantly vibrating around its center position.
+
+---
+
+# Hardware Required
+
+| Component | Quantity |
+|-----------|---------:|
+| ESP32 Dev Board | 1 |
+| KY-023 Joystick | 1 |
+| SG90 Servo | 1 |
+| Breadboard | 1 |
+| Jumper Wires | Several |
+
+---
+
+# Servo Wiring
+
+| SG90 Wire | ESP32 |
+|------------|--------|
+| Brown | GND |
+| Red | External 5V* |
+| Orange | GPIO18 |
+
+*An external 5V power supply is strongly recommended.
+
+![ESP32 Servo Wiring](images/esp32-servo-wiring.webp)
+
+---
+
+> **Warning**
+>
+> Never power multiple servos directly from the ESP32's 3.3V pin. Even a small SG90 can draw over 500 mA during startup or when stalled. An overloaded power supply may cause random ESP32 resets or unstable operation.
+
+---
+
+# Why Use an External Power Supply?
+
+Many beginners connect the servo directly to the ESP32.
+
+Although this may work for quick tests, it often causes problems.
+
+An SG90 typically consumes:
+
+| Condition | Current |
+|------------|---------:|
+| Idle | 10–20 mA |
+| Moving | 150–250 mA |
+| Stall | Up to 650 mA |
+
+The ESP32 cannot safely provide this current under all conditions.
+
+The recommended wiring is:
+
+```
+External 5V
+      │
+      ├──── Servo VCC
+
+ESP32 GND
+      │
+      ├──── Servo GND
+      └──── Power Supply GND
+```
+
+The grounds **must** be connected together.
+
+Without a common ground, the PWM control signal will not have a proper voltage reference.
+
+---
+
+# Installing the Servo Library
+
+The standard Arduino Servo library is not fully compatible with the ESP32.
+
+Instead, install:
+
+```
+ESP32Servo
+```
+
+by Kevin Harrington.
+
+Open:
+
+```
+Sketch
+
+↓
+
+Include Library
+
+↓
+
+Manage Libraries
+```
+
+Search for:
+
+```
+ESP32Servo
+```
+
+Install the latest version.
+
+---
+
+# Complete Project Code
+
+```cpp
+#include <ESP32Servo.h>
+
+const byte xAxisPin = 34;
+const byte servoPin = 18;
+
+Servo myServo;
+
+int centerX;
+int currentAngle = 90;
+
+const int deadZone = 40;
+
+void calibrateJoystick()
+{
+    long sum = 0;
+
+    for(int i = 0; i < 100; i++)
+    {
+        sum += analogRead(xAxisPin);
+        delay(5);
+    }
+
+    centerX = sum / 100;
+}
+
+void setup()
+{
+    Serial.begin(115200);
+
+    analogSetPinAttenuation(xAxisPin, ADC_11db);
+
+    calibrateJoystick();
+
+    ESP32PWM::allocateTimer(0);
+
+    myServo.setPeriodHertz(50);
+
+    myServo.attach(servoPin,500,2400);
+
+    myServo.write(currentAngle);
+}
+
+void loop()
+{
+    int x = analogRead(xAxisPin);
+
+    if(abs(x-centerX)<deadZone)
+        x=centerX;
+
+    int targetAngle=
+        map(x,0,4095,0,180);
+
+    if(targetAngle>currentAngle)
+        currentAngle++;
+
+    if(targetAngle<currentAngle)
+        currentAngle--;
+
+    myServo.write(currentAngle);
+
+    delay(10);
+}
+```
+
+---
+
+# How the Code Works
+
+The program begins by calibrating the joystick.
+
+Instead of assuming the center is exactly **2048**, it measures the actual center value during startup.
+
+After calibration, each loop performs the following sequence:
+
+1. Read the joystick.
+2. Apply the dead zone.
+3. Convert the ADC value into an angle.
+4. Move the servo smoothly toward the target.
+5. Repeat.
+
+Instead of instantly jumping to the new position, the servo moves one degree at a time.
+
+This creates much smoother movement.
+
+---
+
+# Why Smooth Movement Matters
+
+Many beginner examples use:
+
+```cpp
+servo.write(map(analogRead(...)));
+```
+
+Although simple, this produces abrupt movement.
+
+Even tiny ADC fluctuations cause constant servo corrections.
+
+The result is:
+
+- Jitter
+- Noise
+- Excessive wear
+- Higher current consumption
+
+By gradually moving toward the target position, the servo behaves much more naturally.
+
+---
+
+# Understanding the map() Function
+
+The joystick produces values between:
+
+```
+0
+
+↓
+
+4095
+```
+
+The servo expects:
+
+```
+0°
+
+↓
+
+180°
+```
+
+The `map()` function converts one range into another.
+
+```cpp
+int angle =
+map(x,0,4095,0,180);
+```
+
+Examples:
+
+| ADC | Servo Angle |
+|------|------------:|
+| 0 | 0° |
+| 1024 | 45° |
+| 2048 | 90° |
+| 3072 | 135° |
+| 4095 | 180° |
+
+---
+
+# Limiting the Servo Range
+
+Some mechanical systems should not rotate through the full 180°.
+
+You can limit the travel easily.
+
+Instead of:
+
+```cpp
+map(x,0,4095,0,180);
+```
+
+use:
+
+```cpp
+map(x,0,4095,20,160);
+```
+
+This protects gears and mechanical linkages.
+
+---
+
+# Adjusting the Servo Speed
+
+The movement speed depends on this section:
+
+```cpp
+currentAngle++;
+```
+
+or
+
+```cpp
+currentAngle--;
+```
+
+Increasing by one degree per loop creates smooth motion.
+
+Increasing by:
+
+```cpp
+currentAngle+=3;
+```
+
+makes the servo respond faster.
+
+Experiment to find the best balance for your application.
+
+---
+
+# Returning to the Center
+
+Because we implemented a dead zone, releasing the joystick causes the servo to return smoothly to approximately 90°.
+
+This behaviour is ideal for:
+
+- Camera pan systems
+- Robot steering
+- Turret control
+- RC transmitters
+
+---
+
+# Troubleshooting
+
+## Servo Doesn't Move
+
+Check:
+
+- External power supply
+- Common ground
+- Correct GPIO
+- ESP32Servo installed
+
+---
+
+## Servo Vibrates
+
+Possible causes:
+
+- No dead zone
+- Poor power supply
+- Loose wiring
+
+---
+
+## ESP32 Keeps Resetting
+
+Almost always caused by powering the servo from the ESP32.
+
+Use an external 5V supply.
+
+---
+
+## Servo Only Moves Partially
+
+Verify:
+
+```cpp
+myServo.attach(servoPin,500,2400);
+```
+
+Different servos require slightly different pulse widths.
+
+---
+
+# Ideas for Further Improvements
+
+Now that the servo is working reliably, you can extend the project in several ways.
+
+- Use the Y-axis to control a second servo and build a pan-tilt camera platform.
+- Press the joystick button to store preset positions.
+- Add acceleration and deceleration for even smoother movement.
+- Display the current angle on an OLED screen.
+- Send joystick commands wirelessly over Wi-Fi or Bluetooth.
+- Control a robotic arm with multiple joints.
+
+These ideas all build upon the same concepts you've learned in this chapter.
+
+---
+
+# What's Next?
+
+Controlling a servo is an excellent introduction, but many real projects require controlling motors rather than position.
+
+In the next chapter, you'll learn how to use the joystick to drive a DC motor through an H-bridge driver, enabling proportional speed and direction control. The same principles can then be applied to mobile robots, RC vehicles, conveyor systems, and other motion-control applications.
+
