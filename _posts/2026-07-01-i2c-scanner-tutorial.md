@@ -164,7 +164,7 @@ Additional I2C devices can simply be connected in parallel to the same SDA and S
 
 # Arduino Uno Wiring
 
-![Arduino I2C Wiring pinout]({{ '/assets/images/MPU6050-Arduino-Guide.png' | relative_url }})
+![Arduino I2C Wiring pinout]({{ '/assets/images/mpu6050-wiring.webp' | relative_url }})
 
 | Arduino Uno | I2C Device | 
 |--------------|------------|
