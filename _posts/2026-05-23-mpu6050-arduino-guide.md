@@ -47,8 +47,6 @@ share: true
 
 # MPU6050 Arduino Guide: Code, Wiring & GitHub
 
-![MPU6050 accelerometer motion sensor gyroscope arduino esp32]({{ '/assets/images/MPU6050-Arduino-Guide.png' | relative_url }})
-
 Learn how to connect the MPU6050 sensor to Arduino Uno or Nano using simple wiring, working Arduino code examples, and I2C communication.
 
 The MPU6050 is one of the most popular motion sensors for Arduino because it combines:
@@ -56,6 +54,8 @@ The MPU6050 is one of the most popular motion sensors for Arduino because it com
 - 3-axis gyroscope
 - Temperature sensor
 - I2C communication
+
+![MPU6050 accelerometer motion sensor gyroscope arduino esp32]({{ '/assets/images/MPU6050-Arduino-Guide.png' | relative_url }})
 
 This tutorial includes:
 - MPU6050 Arduino wiring
