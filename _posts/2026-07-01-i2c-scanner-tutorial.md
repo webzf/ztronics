@@ -177,10 +177,10 @@ Additional I2C devices can simply be connected in parallel to the same SDA and S
 
 # ESP32 Wiring
 
-![ESP32 I2C Wiring]({{ '/assets/images/Pinout-and-wiring-diagram-of-the-ESP32-with-I2C-OLED-display.webp' | relative_url }})
+![ESP32 I2C Wiring pinout code]({{ '/assets/images/Pinout-and-wiring-diagram-of-the-ESP32-with-I2C-OLED-display.webp' | relative_url }})
 
 | ESP32 | I2C Device |
-|--------|------------|
+|--------|------------ |
 | 3.3V | VCC |
 | GND | GND |
 | GPIO21 | SDA |
