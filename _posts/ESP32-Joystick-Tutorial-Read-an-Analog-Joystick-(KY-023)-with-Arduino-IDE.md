@@ -4076,6 +4076,180 @@ Each of these projects builds directly on the techniques covered in this tutoria
 ---
 
 
+---
 
+# Recommended Hardware
 
+Throughout this tutorial, we've used a small selection of affordable components that are widely available and suitable for both beginners and experienced makers.
+
+Investing in quality components not only makes your projects more reliable but also saves time when troubleshooting.
+
+Below are the parts we recommend for this project.
+
+| Product | Why We Recommend It | Link |
+|----------|---------------------|------|
+| ESP32 Dev Board | Powerful Wi-Fi and Bluetooth microcontroller with a 240 MHz dual-core CPU | Amazon Affiliate |
+| KY-023 Analog Joystick | Low-cost analog joystick with two potentiometers and a push button | Amazon Affiliate |
+| SG90 Micro Servo | Ideal for learning motion control and robotics | Amazon Affiliate |
+| SSD1306 OLED Display (128×64) | Perfect for menus, sensors, and user interfaces | Amazon Affiliate |
+| L298N Motor Driver | Beginner-friendly H-bridge for DC motors | Amazon Affiliate |
+| TB6612FNG Motor Driver | More efficient alternative to the L298N | Amazon Affiliate |
+| Breadboard Kit | Reusable prototyping platform | Amazon Affiliate |
+| Premium Jumper Wires | Reliable electrical connections | Amazon Affiliate |
+| USB Power Supply (5V 2A) | Stable power for ESP32 projects | Amazon Affiliate |
+
+---
+
+## Why These Components?
+
+Although many alternatives exist, these modules have several advantages.
+
+They are:
+
+- Affordable
+- Easy to find
+- Well documented
+- Supported by large communities
+- Compatible with hundreds of ESP32 projects
+
+As you continue learning, you'll find yourself reusing these same components again and again.
+
+---
+
+# Project Ideas
+
+Now that you've mastered the basics of the KY-023 joystick, try extending what you've learned into larger projects.
+
+Here are a few ideas.
+
+## Beginner Projects
+
+- LED Brightness Controller
+- Servo Position Controller
+- OLED Menu Navigation
+- RGB LED Mixer
+- Digital Volume Knob
+- Camera Pan Controller
+
+---
+
+## Intermediate Projects
+
+- Bluetooth Gamepad
+- ESP-NOW Remote Controller
+- Differential Drive Robot
+- Two-Axis Camera Platform
+- Electronic Drawing Pad
+- MIDI Controller
+- CNC Pendant
+
+---
+
+## Advanced Projects
+
+- Robot Arm Controller
+- Wi-Fi Controlled Robot
+- Camera Gimbal
+- Drone Ground Station
+- Smart Home Dashboard
+- Industrial Control Panel
+- Autonomous Vehicle Manual Override
+
+Each of these projects builds directly upon the concepts introduced in this tutorial.
+
+---
+
+# Continue Learning
+
+If you enjoyed this project, you may also like these tutorials on Embedded Nerd.
+
+## Recommended ESP32 Tutorials
+
+- Getting Started with the ESP32
+- ESP32 GPIO Explained
+- ESP32 PWM Tutorial
+- ESP32 ADC Complete Guide
+- ESP32 Interrupts Tutorial
+- ESP32 Servo Motor Guide
+- ESP32 DC Motor Control
+- ESP32 I²C Scanner
+- ESP32 OLED Display Tutorial
+- ESP32 Bluetooth Guide
+- ESP32 Wi-Fi Tutorial
+- ESP32 ESP-NOW Guide
+
+These tutorials build naturally on the techniques you've learned here and will help you create more advanced embedded systems.
+
+---
+
+# Learning Path
+
+If you're new to the ESP32 ecosystem, we recommend following this order.
+
+1. ESP32 Basics
+2. Digital Inputs and Outputs
+3. Analog Inputs (ADC)
+4. PWM Outputs
+5. Interrupts
+6. I²C Communication
+7. OLED Displays
+8. Servo Motors
+9. DC Motor Drivers
+10. Bluetooth
+11. Wi-Fi Networking
+12. ESP-NOW
+13. Robotics Projects
+
+By following this sequence, each new topic builds on knowledge you've already gained.
+
+---
+
+# Source Code
+
+The complete Arduino sketch used throughout this tutorial is available for download.
+
+The code includes:
+
+- Hardware initialization
+- ADC configuration
+- Automatic calibration
+- Moving Average filtering
+- Dead zone implementation
+- Servo control
+- DC motor example
+- OLED navigation example
+
+Feel free to modify and adapt the code for your own projects.
+
+---
+
+# Downloads
+
+To help you get started quickly, we've also prepared several resources.
+
+Available downloads include:
+
+- Complete Arduino Sketch
+- Wiring Diagram
+- High-Resolution Pinout
+- OLED Menu Example
+- Servo Project
+- Motor Control Project
+- PDF Wiring Reference
+
+These resources can save time while building your own projects.
+
+---
+
+# Before You Go...
+
+If this tutorial helped you build your project, consider exploring the rest of the ESP32 section on Embedded Nerd.
+
+Our goal is to create practical, beginner-friendly tutorials that not only explain **how** something works, but also **why** it works.
+
+Every project is designed to be reusable, expandable, and based on real-world engineering practices.
+
+Whether you're building a robot, an IoT device, or your first embedded system, the same techniques you learned here will continue to be useful.
+
+---
 
