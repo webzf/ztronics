@@ -1007,3 +1007,406 @@ The next section will dramatically improve their quality by implementing:
 - Stable analog readings
 
 These techniques are used in game controllers, robotics, drones, CNC machines, and industrial control systems, and they will make your projects feel much smoother and more responsive.
+
+
+---
+
+# Calibrating the Joystick and Eliminating Noise
+
+If you've watched the Serial Monitor while the joystick is at rest, you've probably noticed that the values are never perfectly stable.
+
+Instead of always reading:
+
+```
+X = 2048
+Y = 2048
+```
+
+you'll typically see something like:
+
+```
+2045
+2048
+2052
+2047
+2044
+2050
+```
+
+This behavior is completely normal.
+
+It does **not** mean that your joystick is faulty.
+
+Professional game controllers, drone transmitters, RC radios, and industrial joysticks all experience small variations in their analog signals. The difference is that they process those signals before using them.
+
+In this section, you'll learn the same techniques used in professional systems:
+
+- Automatic center calibration
+- Dead zone implementation
+- Moving average filtering
+- Value normalization
+- Direction detection
+
+Once these techniques are applied, the joystick will feel significantly smoother and more accurate.
+
+---
+
+# Why Analog Signals Are Noisy
+
+An analog joystick is built around two mechanical potentiometers.
+
+Unlike digital components, potentiometers are never perfectly stable.
+
+Several factors contribute to small fluctuations:
+
+- Mechanical tolerances
+- ADC conversion error
+- Electrical noise
+- USB power ripple
+- Breadboard contact resistance
+- Temperature changes
+
+Because of this, it is unrealistic to expect the center position to always produce exactly the same value.
+
+Even expensive industrial joysticks exhibit some degree of analog noise.
+
+---
+
+# Automatic Center Calibration
+
+Every joystick is slightly different.
+
+One joystick may rest at:
+
+```
+X = 2034
+Y = 2058
+```
+
+Another might rest at:
+
+```
+X = 2086
+Y = 2012
+```
+
+For this reason, professional software never assumes that the center is exactly **2048**.
+
+Instead, it measures the center automatically during startup.
+
+---
+
+## Calibration Code
+
+```cpp
+int centerX;
+int centerY;
+
+void calibrateJoystick()
+{
+    long sumX = 0;
+    long sumY = 0;
+
+    const int samples = 100;
+
+    Serial.println("Calibrating joystick...");
+
+    for(int i = 0; i < samples; i++)
+    {
+        sumX += analogRead(xAxisPin);
+        sumY += analogRead(yAxisPin);
+
+        delay(5);
+    }
+
+    centerX = sumX / samples;
+    centerY = sumY / samples;
+
+    Serial.print("Center X: ");
+    Serial.println(centerX);
+
+    Serial.print("Center Y: ");
+    Serial.println(centerY);
+}
+```
+
+Call the function once inside `setup()` after initializing the Serial port.
+
+```cpp
+calibrateJoystick();
+```
+
+The joystick should remain untouched during calibration.
+
+---
+
+> **Tip**
+>
+> Averaging many samples produces a much more accurate center value than taking a single reading.
+
+---
+
+# Creating a Dead Zone
+
+Even after calibration, the joystick may continue producing tiny movements while resting.
+
+Imagine the center value is:
+
+```
+2048
+```
+
+The ADC may still report:
+
+```
+2045
+
+2051
+
+2047
+
+2053
+```
+
+Although these changes are insignificant, your software might interpret them as real movement.
+
+A **dead zone** solves this problem.
+
+Any movement smaller than a predefined threshold is ignored.
+
+---
+
+## Dead Zone Example
+
+```cpp
+const int deadZone = 40;
+
+int x = analogRead(xAxisPin);
+
+if(abs(x - centerX) < deadZone)
+{
+    x = centerX;
+}
+```
+
+The same logic should be applied to the Y axis.
+
+---
+
+### Why Use a Dead Zone?
+
+Without one, a robot may slowly drift across the floor, a servo may continuously vibrate, or a cursor on an OLED display may move on its own.
+
+A dead zone ensures that small fluctuations around the center are treated as intentional "no movement."
+
+---
+
+## Choosing the Right Dead Zone
+
+| Dead Zone | Feel |
+|-----------|------|
+| 10 | Very sensitive |
+| 20 | Sensitive |
+| 40 | Recommended |
+| 60 | Smooth |
+| 100 | Less responsive |
+
+For most projects, a value between **30 and 50 ADC counts** works very well.
+
+---
+
+# Moving Average Filter
+
+Another way to reduce noise is by averaging multiple consecutive readings.
+
+Instead of using:
+
+```cpp
+analogRead()
+```
+
+once,
+
+we calculate the average of several measurements.
+
+---
+
+## Moving Average Function
+
+```cpp
+int readAverage(int pin)
+{
+    long total = 0;
+
+    const int samples = 10;
+
+    for(int i = 0; i < samples; i++)
+    {
+        total += analogRead(pin);
+    }
+
+    return total / samples;
+}
+```
+
+Now read the joystick like this:
+
+```cpp
+int x = readAverage(xAxisPin);
+int y = readAverage(yAxisPin);
+```
+
+The movement becomes noticeably smoother.
+
+---
+
+## Advantages
+
+✔ Reduced electrical noise
+
+✔ More stable readings
+
+✔ Better servo movement
+
+✔ Better robot control
+
+✔ More professional feel
+
+---
+
+## Disadvantages
+
+A larger average also makes the joystick slightly slower to respond.
+
+Typical values are:
+
+| Samples | Response |
+|----------|----------|
+| 4 | Fast |
+| 8 | Recommended |
+| 10 | Smooth |
+| 20 | Very smooth |
+| 50 | Slow |
+
+Eight to ten samples provide an excellent balance between smoothness and responsiveness.
+
+---
+
+# Normalizing the Values
+
+Once the joystick is calibrated, it is useful to convert the readings into values relative to the center.
+
+Instead of working with:
+
+```
+2035
+
+2052
+
+1988
+```
+
+we subtract the center value.
+
+```cpp
+int normalizedX =
+    analogRead(xAxisPin) - centerX;
+
+int normalizedY =
+    analogRead(yAxisPin) - centerY;
+```
+
+Now the center becomes:
+
+```
+0
+```
+
+Moving left produces negative values.
+
+Moving right produces positive values.
+
+For example:
+
+| Position | Value |
+|-----------|-------:|
+| Full Left | -2048 |
+| Center | 0 |
+| Full Right | +2047 |
+
+This representation is much easier to use in robotics and control systems.
+
+---
+
+# Detecting Direction
+
+Using the normalized values, detecting movement direction becomes straightforward.
+
+```cpp
+if(normalizedX > 300)
+{
+    Serial.println("RIGHT");
+}
+
+else if(normalizedX < -300)
+{
+    Serial.println("LEFT");
+}
+
+if(normalizedY > 300)
+{
+    Serial.println("UP");
+}
+
+else if(normalizedY < -300)
+{
+    Serial.println("DOWN");
+}
+```
+
+Diagonal movements can also be detected by combining both axes.
+
+For example:
+
+```
+UP + RIGHT
+
+↓
+
+UP-RIGHT
+```
+
+This technique is widely used in games and robotic navigation.
+
+---
+
+# Combining Everything
+
+A professional joystick reading typically follows this sequence:
+
+1. Read the ADC
+2. Average multiple samples
+3. Apply calibration
+4. Normalize the values
+5. Apply the dead zone
+6. Detect the direction
+7. Use the processed values in the application
+
+This processing pipeline produces smooth, accurate, and repeatable results.
+
+---
+
+> **Best Practice**
+>
+> Avoid using raw `analogRead()` values directly in real projects. Applying calibration, filtering, and a dead zone significantly improves the user experience with very little additional code.
+
+---
+
+# What's Next?
+
+Your joystick is now producing clean and reliable data.
+
+In the next section, we'll use these processed values to control real hardware.
+
+We'll start by driving an SG90 servo motor smoothly, then expand the project to control DC motors, navigate OLED menus, and build more advanced applications.
+
