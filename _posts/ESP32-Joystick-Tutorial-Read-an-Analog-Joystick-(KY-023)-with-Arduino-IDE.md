@@ -1814,3 +1814,392 @@ Controlling a servo is an excellent introduction, but many real projects require
 
 In the next chapter, you'll learn how to use the joystick to drive a DC motor through an H-bridge driver, enabling proportional speed and direction control. The same principles can then be applied to mobile robots, RC vehicles, conveyor systems, and other motion-control applications.
 
+
+---
+
+# Mini Project: Controlling a DC Motor with the ESP32 Joystick
+
+So far we've learned how to read the joystick accurately and use it to control a servo motor.
+
+The next logical step is controlling DC motors.
+
+This is where analog joysticks truly shine.
+
+Unlike push buttons, which can only turn a motor fully ON or OFF, an analog joystick lets you control both **speed** and **direction** proportionally.
+
+Push the joystick slightly forward and the motor rotates slowly.
+
+Push it fully forward and it reaches maximum speed.
+
+This behaviour is exactly how radio-controlled cars, mobile robots, forklifts, wheelchairs, and industrial vehicles are controlled.
+
+---
+
+# Why You Need a Motor Driver
+
+One of the most common beginner mistakes is attempting to connect a DC motor directly to an ESP32 GPIO.
+
+This will **not** work.
+
+An ESP32 GPIO can only supply a small amount of current, while even a tiny DC motor may require hundreds of milliamps when starting.
+
+A motor driver acts as an interface between the ESP32 and the motor.
+
+It provides:
+
+- Higher current capability
+- Direction control
+- Speed control through PWM
+- Protection for the ESP32
+
+Popular motor drivers include:
+
+| Driver | Voltage | Efficiency | Recommendation |
+|---------|---------|------------|----------------|
+| L298N | 5–35 V | Medium | Beginner |
+| TB6612FNG | 4.5–13.5 V | High | Recommended |
+| DRV8833 | 2.7–10.8 V | High | Small robots |
+| BTS7960 | Up to 43 A | Very High | Large motors |
+
+For this tutorial we'll use the widely available **L298N**.
+
+---
+
+# Hardware Required
+
+| Component | Quantity |
+|-----------|---------:|
+| ESP32 Dev Board | 1 |
+| KY-023 Joystick | 1 |
+| L298N Motor Driver | 1 |
+| DC Motor | 1 |
+| External Motor Supply | 1 |
+| Breadboard and Jumper Wires | Several |
+
+---
+
+# Wiring Diagram
+
+| L298N | ESP32 |
+|--------|--------|
+| ENA | GPIO25 |
+| IN1 | GPIO26 |
+| IN2 | GPIO27 |
+| GND | GND |
+
+Motor power:
+
+```
+Battery +
+
+↓
+
+L298N +12V
+
+Battery -
+
+↓
+
+L298N GND
+```
+
+ESP32 GND **must** be connected to the L298N GND.
+
+![ESP32 L298N Wiring](images/esp32-l298n-wiring.webp)
+
+---
+
+> **Important**
+>
+> The motor should always be powered from an external battery or power supply. Never attempt to power a DC motor directly from the ESP32.
+
+---
+
+# How the Control Works
+
+We'll use the joystick's **Y-axis**.
+
+The joystick center represents:
+
+```
+Motor Stopped
+```
+
+Moving forward:
+
+```
+Forward
+
+↓
+
+Increasing Speed
+```
+
+Moving backward:
+
+```
+Reverse
+
+↓
+
+Increasing Speed
+```
+
+The further the joystick moves from the center, the faster the motor rotates.
+
+---
+
+# Reading the Y-Axis
+
+Assuming the joystick has already been calibrated:
+
+```cpp
+int y = analogRead(yAxisPin);
+
+y -= centerY;
+```
+
+Now the values become approximately:
+
+| Position | Reading |
+|-----------|---------:|
+| Full Reverse | -2048 |
+| Center | 0 |
+| Full Forward | +2047 |
+
+This representation is much easier to work with.
+
+---
+
+# Applying a Dead Zone
+
+To prevent the motor from creeping when the joystick is released:
+
+```cpp
+if(abs(y) < 40)
+{
+    y = 0;
+}
+```
+
+Now the motor stops completely around the center position.
+
+---
+
+# Converting the Reading into PWM
+
+The ESP32 PWM range is:
+
+```
+0
+
+↓
+
+255
+```
+
+We therefore convert the joystick value into PWM.
+
+```cpp
+int pwm =
+map(abs(y),0,2048,0,255);
+```
+
+Examples:
+
+| Joystick | PWM |
+|-----------|----:|
+| Center | 0 |
+| 25% | 64 |
+| 50% | 128 |
+| 75% | 192 |
+| Full | 255 |
+
+This produces smooth speed control.
+
+---
+
+# Controlling Direction
+
+Forward:
+
+```cpp
+digitalWrite(IN1,HIGH);
+digitalWrite(IN2,LOW);
+```
+
+Reverse:
+
+```cpp
+digitalWrite(IN1,LOW);
+digitalWrite(IN2,HIGH);
+```
+
+Stop:
+
+```cpp
+digitalWrite(IN1,LOW);
+digitalWrite(IN2,LOW);
+```
+
+Simple and reliable.
+
+---
+
+# Complete Example
+
+```cpp
+int y = analogRead(yAxisPin);
+
+y -= centerY;
+
+if(abs(y) < 40)
+{
+    y = 0;
+}
+
+int pwm =
+map(abs(y),0,2048,0,255);
+
+if(y > 0)
+{
+    digitalWrite(IN1,HIGH);
+    digitalWrite(IN2,LOW);
+
+    ledcWrite(0,pwm);
+}
+else if(y < 0)
+{
+    digitalWrite(IN1,LOW);
+    digitalWrite(IN2,HIGH);
+
+    ledcWrite(0,pwm);
+}
+else
+{
+    digitalWrite(IN1,LOW);
+    digitalWrite(IN2,LOW);
+
+    ledcWrite(0,0);
+}
+```
+
+This creates proportional forward and reverse speed control.
+
+---
+
+# Improving the Driving Experience
+
+You can make the motor feel even smoother by limiting acceleration.
+
+Instead of changing the PWM instantly, gradually approach the target value.
+
+Example:
+
+```cpp
+if(currentPWM < targetPWM)
+    currentPWM++;
+
+if(currentPWM > targetPWM)
+    currentPWM--;
+```
+
+This technique reduces:
+
+- Wheel slip
+- Gearbox stress
+- Battery current spikes
+- Sudden starts
+
+Professional robot controllers almost always use some form of acceleration limiting.
+
+---
+
+# Differential Drive Robots
+
+Most mobile robots use **two** motors.
+
+The joystick axes can be assigned as follows:
+
+| Axis | Function |
+|------|----------|
+| Y | Forward / Reverse |
+| X | Left / Right Steering |
+
+Mixing both axes allows intuitive driving.
+
+For example:
+
+| X | Y | Robot Motion |
+|---|---|--------------|
+| 0 | +100% | Forward |
+| 0 | -100% | Reverse |
+| +100% | 0 | Rotate Right |
+| -100% | 0 | Rotate Left |
+| +50% | +100% | Forward Right |
+| -50% | +100% | Forward Left |
+
+This is exactly the steering principle used by skid-steer robots and tracked vehicles.
+
+---
+
+# Troubleshooting
+
+## Motor Doesn't Spin
+
+Check:
+
+- Battery voltage
+- Motor driver wiring
+- Common ground
+- PWM output
+- Driver enable pin
+
+---
+
+## Motor Only Spins in One Direction
+
+Usually indicates:
+
+- IN1 and IN2 incorrectly wired
+- One GPIO not configured as OUTPUT
+
+---
+
+## Motor Starts Before Moving the Joystick
+
+Increase the dead zone slightly.
+
+For example:
+
+```cpp
+deadZone = 60;
+```
+
+---
+
+## Motor Speed Changes Suddenly
+
+Possible causes include:
+
+- No averaging filter
+- Poor battery
+- Loose connections
+- Inadequate power supply
+
+Using the moving average filter introduced earlier usually resolves this issue.
+
+---
+
+> **Tip**
+>
+> If you're starting a new robotics project today, consider using the **TB6612FNG** instead of the L298N. It is more efficient, generates less heat, and delivers better performance with modern battery-powered robots.
+
+---
+
+# What's Next?
+
+We've now controlled both a **servo motor** and a **DC motor** using the joystick.
+
+In the next chapter we'll use the joystick to navigate menus on an OLED display, creating an interface similar to those found in commercial electronic devices. This technique is widely used in laboratory instruments, 3D printers, CNC controllers, and portable embedded systems.
+
