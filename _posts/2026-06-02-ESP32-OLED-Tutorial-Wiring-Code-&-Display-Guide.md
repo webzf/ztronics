@@ -116,7 +116,7 @@ These displays are widely used in:
 
 # ESP32 OLED Wiring
 
-![ESP32 OLED Wiring]({{ '/assets/images/esp32-oled-wiring.webp' | relative_url }})
+![ESP32 OLED Display Wiring i2c]({{ '/assets/images/esp32-oled-display-connection-i2c.webp' | relative_url }})
 
 ## I2C Connections
 
