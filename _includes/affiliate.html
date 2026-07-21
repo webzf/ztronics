@@ -1,0 +1,22 @@
+{% assign p = site.data.affiliates[include.id] %}
+
+{% assign store = include.store | default: "amazon" %}
+{% assign country = include.country | default: "us" %}
+
+{% if store == "amazon" %}
+  {% assign url = p.amazon[country] %}
+{% elsif store == "aliexpress" %}
+  {% assign url = p.aliexpress %}
+{% elsif store == "mouser" %}
+  {% assign url = p.mouser %}
+{% elsif store == "digikey" %}
+  {% assign url = p.digikey %}
+{% elsif store == "lcsc" %}
+  {% assign url = p.lcsc %}
+{% endif %}
+
+<a href="{{ url }}"
+   target="_blank"
+   rel="nofollow sponsored noopener">
+{{ p.name }}
+</a>
