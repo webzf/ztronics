@@ -34,8 +34,8 @@ last_modified_at: false
 header:
   image: images/esp32-joystick-hero.webp
   teaser: images/esp32-joystick-hero.webp
-  overlay_image: images/header.webp
-  overlay_filter: 0.35
+  overlay_image: /assets/images/header3.webp
+  overlay_filter: 0.25
 
 related: true
 share: true
