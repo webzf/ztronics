@@ -54,7 +54,10 @@ naver_site_verification  :
 yandex_site_verification :
 baidu_site_verification  :
 
-
+collections:
+  products:
+    output: true
+    permalink: /products/:name/
   
 # Social Sharing
 twitter:
