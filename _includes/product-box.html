@@ -1,0 +1,101 @@
+{% assign product = include.product %}
+
+{% assign manufacturer = site.data.manufacturers[product.manufacturer] %}
+{% assign commerce = site.data.commerce[product.product_id] %}
+
+<div class="en-product-box">
+
+  <div class="en-product-image">
+
+    <img
+      src="{{ product.image }}"
+      alt="{{ product.alt | default: product.title }}"
+      loading="lazy"
+      width="350"
+      height="350">
+
+  </div>
+
+  <div class="en-product-info">
+
+    <h2>{{ product.title }}</h2>
+
+    {% if manufacturer %}
+
+    <p>
+
+      <strong>Manufacturer:</strong>
+
+      {{ manufacturer.name }}
+
+    </p>
+
+    {% endif %}
+
+    <p>
+
+      {{ product.description }}
+
+    </p>
+
+    {% if product.supports %}
+
+    <div class="en-capabilities">
+
+      {% for id in product.supports %}
+
+        {% assign capability = site.data.capabilities[id] %}
+
+        {% if capability %}
+
+          <span class="en-capability">
+
+            {{ capability.name }}
+
+          </span>
+
+        {% endif %}
+
+      {% endfor %}
+
+    </div>
+
+    {% endif %}
+
+    {% if product.datasheet %}
+
+    <p>
+
+      <a href="{{ product.datasheet }}"
+         target="_blank"
+         rel="noopener">
+
+        📄 Datasheet
+
+      </a>
+
+    </p>
+
+    {% endif %}
+
+    {% if product.official %}
+
+    <p>
+
+      <a href="{{ product.official }}"
+         target="_blank"
+         rel="noopener">
+
+        🌐 Official Website
+
+      </a>
+
+    </p>
+
+    {% endif %}
+
+    {% include buy-buttons.html product=product.product_id %}
+
+  </div>
+
+</div>
