@@ -1,8 +1,7 @@
 esp32-devkit:
-
   name: "ESP32 DevKit V1"
 
-  description: "WiFi + Bluetooth development board based on the ESP32."
+  description: "ESP32 development board with Wi-Fi and Bluetooth."
 
   image: "/assets/images/products/esp32-devkit.webp"
 
@@ -10,38 +9,29 @@ esp32-devkit:
 
   datasheet: "https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf"
 
-  amazon:
-    us: "https://..."
+  stores:
 
-  aliexpress: "https://..."
+    amazon:
+      name: "Amazon"
+      icon: "🛒"
+      url: "https://www.amazon.com/dp/XXXXXXXX?tag=YOURTAG-20"
 
-  mouser: "https://..."
+    aliexpress:
+      name: "AliExpress"
+      icon: "🌍"
+      url: "https://s.click.aliexpress.com/e/XXXX"
 
-  digikey: ""
+    mouser:
+      name: "Mouser"
+      icon: "🔧"
+      url: ""
 
-  lcsc: ""
+    digikey:
+      name: "DigiKey"
+      icon: "📦"
+      url: ""
 
-
-
-bme280:
-
-  name: "BME280 Temperature, Humidity and Pressure Sensor"
-
-  description: "Environmental sensor with I2C interface."
-
-  image: "/assets/images/products/bme280.webp"
-
-  alt: "BME280 Sensor"
-
-  datasheet: "https://..."
-
-  amazon:
-    us: "https://..."
-
-  aliexpress: "https://..."
-
-  mouser: ""
-
-  digikey: ""
-
-  lcsc: "https://..."
+    lcsc:
+      name: "LCSC"
+      icon: "⚡"
+      url: ""
