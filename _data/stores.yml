@@ -1,69 +1,166 @@
 ################################################################################
-# Embedded Nerd Store Database
+# Embedded Nerd
+# Store Database
 #
-# Every store is defined only once.
-# Products only need to reference the store key.
+# Every store is defined here only once.
 ################################################################################
 
 amazon:
+
   name: "Amazon"
-  icon: "🛒"
-  color: "#FF9900"
+
+  icon: "amazon"
+
+  enabled: true
+
   affiliate: true
+
   website: "https://www.amazon.com"
 
+  brand_color: "#FF9900"
+
+  button_color: "#FF9900"
+
+
+
 aliexpress:
+
   name: "AliExpress"
-  icon: "🌍"
-  color: "#E62E04"
+
+  icon: "aliexpress"
+
+  enabled: true
+
   affiliate: true
+
   website: "https://www.aliexpress.com"
 
+  brand_color: "#E62E04"
+
+  button_color: "#E62E04"
+
+
+
 digikey:
+
   name: "DigiKey"
-  icon: "📦"
-  color: "#CC0000"
+
+  icon: "digikey"
+
+  enabled: true
+
   affiliate: false
+
   website: "https://www.digikey.com"
 
+  brand_color: "#CC0000"
+
+  button_color: "#CC0000"
+
+
+
 mouser:
+
   name: "Mouser"
-  icon: "🔧"
-  color: "#0055A4"
+
+  icon: "mouser"
+
+  enabled: true
+
   affiliate: false
+
   website: "https://www.mouser.com"
 
+  brand_color: "#0055A4"
+
+  button_color: "#0055A4"
+
+
+
 lcsc:
+
   name: "LCSC"
-  icon: "⚡"
-  color: "#005BAC"
+
+  icon: "lcsc"
+
+  enabled: true
+
   affiliate: false
+
   website: "https://www.lcsc.com"
 
+  brand_color: "#005BAC"
+
+  button_color: "#005BAC"
+
+
+
 adafruit:
+
   name: "Adafruit"
-  icon: "💙"
-  color: "#000000"
+
+  icon: "adafruit"
+
+  enabled: true
+
   affiliate: false
+
   website: "https://www.adafruit.com"
 
+  brand_color: "#111111"
+
+  button_color: "#111111"
+
+
+
 sparkfun:
+
   name: "SparkFun"
-  icon: "🔥"
-  color: "#D32F2F"
+
+  icon: "sparkfun"
+
+  enabled: true
+
   affiliate: false
+
   website: "https://www.sparkfun.com"
 
+  brand_color: "#D32F2F"
+
+  button_color: "#D32F2F"
+
+
+
 seeed:
+
   name: "Seeed Studio"
-  icon: "🌱"
-  color: "#4CAF50"
+
+  icon: "seeed"
+
+  enabled: true
+
   affiliate: false
+
   website: "https://www.seeedstudio.com"
 
+  brand_color: "#4CAF50"
+
+  button_color: "#4CAF50"
+
+
+
 dfrobot:
+
   name: "DFRobot"
-  icon: "🤖"
-  color: "#009688"
+
+  icon: "dfrobot"
+
+  enabled: true
+
   affiliate: false
+
   website: "https://www.dfrobot.com"
+
+  brand_color: "#009688"
+
+  button_color: "#009688"
