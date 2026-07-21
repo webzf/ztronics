@@ -1,51 +1,47 @@
 esp32-devkit:
+
   name: "ESP32 DevKit V1"
 
-  amazon:
-    us: "https://www.amazon.com/dp/XXXXXXXX?tag=embeddednerd-20"
-    uk: "https://www.amazon.co.uk/dp/XXXXXXXX?tag=embeddednerd-21"
-    de: "https://www.amazon.de/dp/XXXXXXXX?tag=embeddednerd-21"
+  description: "WiFi + Bluetooth development board based on the ESP32."
 
-  aliexpress: "https://s.click.aliexpress.com/e/xxxx"
+  image: "/assets/images/products/esp32-devkit.webp"
 
-  mouser: "https://www.mouser.com/ProductDetail/xxxx"
+  alt: "ESP32 DevKit V1"
 
-  digikey: "https://www.digikey.com/en/products/detail/xxxx"
-
-  lcsc: "https://www.lcsc.com/product-detail/xxxx"
-
-
-
-arduino-uno:
-  name: "Arduino Uno R4"
+  datasheet: "https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf"
 
   amazon:
-    us: "..."
-    uk: "..."
-    de: "..."
+    us: "https://..."
 
-  aliexpress: "..."
+  aliexpress: "https://..."
+
+  mouser: "https://..."
+
+  digikey: ""
+
+  lcsc: ""
 
 
 
 bme280:
-  name: "BME280 Sensor"
+
+  name: "BME280 Temperature, Humidity and Pressure Sensor"
+
+  description: "Environmental sensor with I2C interface."
+
+  image: "/assets/images/products/bme280.webp"
+
+  alt: "BME280 Sensor"
+
+  datasheet: "https://..."
 
   amazon:
-    us: "..."
-    uk: "..."
-    de: "..."
+    us: "https://..."
 
-  aliexpress: "..."
+  aliexpress: "https://..."
 
+  mouser: ""
 
+  digikey: ""
 
-mpu6050:
-  name: "MPU6050"
-
-  amazon:
-    us: "..."
-    uk: "..."
-    de: "..."
-
-  aliexpress: "..."
+  lcsc: "https://..."
