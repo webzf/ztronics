@@ -113,7 +113,6 @@ These displays are widely used in:
 | Jumper Wires | [Male-to-Female Jumper Wires](https://YOUR-AFFILIATE-LINK.com) |
 
 {% assign esp32 = site.products | where: "product_id", "esp32-devkit" | first %}
-
 {% include product-box.html product=esp32 %}
 ---
 
