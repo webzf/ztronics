@@ -75,9 +75,10 @@ esp32-devkit:
   # ---------------------------------------------------------------------------
 
   software:
-    - Arduino Core
-    - ESP-IDF
-    - MicroPython
+  arduino: true
+  espidf: true
+  micropython: true
+  circuitpython: false
 
   # ---------------------------------------------------------------------------
   # COMPATIBLE PLATFORMS
