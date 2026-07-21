@@ -1,0 +1,162 @@
+################################################################################
+# Embedded Nerd
+# Manufacturers Database
+################################################################################
+
+espressif:
+
+  name: "Espressif"
+
+  website: "https://www.espressif.com"
+
+  logo: "espressif"
+
+  country: "China"
+
+  founded: 2008
+
+  enabled: true
+
+
+
+arduino:
+
+  name: "Arduino"
+
+  website: "https://www.arduino.cc"
+
+  logo: "arduino"
+
+  country: "Italy"
+
+  founded: 2005
+
+  enabled: true
+
+
+
+raspberrypi:
+
+  name: "Raspberry Pi"
+
+  website: "https://www.raspberrypi.com"
+
+  logo: "raspberrypi"
+
+  country: "United Kingdom"
+
+  founded: 2009
+
+  enabled: true
+
+
+
+bosch:
+
+  name: "Bosch Sensortec"
+
+  website: "https://www.bosch-sensortec.com"
+
+  logo: "bosch"
+
+  country: "Germany"
+
+  founded: 2005
+
+  enabled: true
+
+
+
+tdk:
+
+  name: "TDK InvenSense"
+
+  website: "https://invensense.tdk.com"
+
+  logo: "tdk"
+
+  country: "Japan"
+
+  founded: 1948
+
+  enabled: true
+
+
+
+st:
+
+  name: "STMicroelectronics"
+
+  website: "https://www.st.com"
+
+  logo: "stmicroelectronics"
+
+  country: "Switzerland"
+
+  founded: 1987
+
+  enabled: true
+
+
+
+nxp:
+
+  name: "NXP Semiconductors"
+
+  website: "https://www.nxp.com"
+
+  logo: "nxp"
+
+  country: "Netherlands"
+
+  founded: 2006
+
+  enabled: true
+
+
+
+microchip:
+
+  name: "Microchip Technology"
+
+  website: "https://www.microchip.com"
+
+  logo: "microchip"
+
+  country: "United States"
+
+  founded: 1989
+
+  enabled: true
+
+
+
+texasinstruments:
+
+  name: "Texas Instruments"
+
+  website: "https://www.ti.com"
+
+  logo: "ti"
+
+  country: "United States"
+
+  founded: 1930
+
+  enabled: true
+
+
+
+analogdevices:
+
+  name: "Analog Devices"
+
+  website: "https://www.analog.com"
+
+  logo: "analogdevices"
+
+  country: "United States"
+
+  founded: 1965
+
+  enabled: true
