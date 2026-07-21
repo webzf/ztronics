@@ -1,1 +1,70 @@
 {% assign product = site.data.products[include.id] %}
+
+{% if product %}
+
+<div class="product-card">
+
+  {% if product.image %}
+  <div class="product-image">
+    <img
+      src="{{ product.image | relative_url }}"
+      alt="{{ product.alt }}"
+      loading="lazy">
+  </div>
+  {% endif %}
+
+  <div class="product-content">
+
+    <h3>{{ product.name }}</h3>
+
+    <p>{{ product.description }}</p>
+
+    <div class="product-buttons">
+
+      {% for store in product.stores %}
+
+        {% assign shop = store[1] %}
+
+        {% if shop.url != "" %}
+
+          <a class="product-button"
+             href="{{ shop.url }}"
+             target="_blank"
+             rel="nofollow sponsored noopener">
+
+             {{ shop.icon }} {{ shop.name }}
+
+          </a>
+
+        {% endif %}
+
+      {% endfor %}
+
+      {% if product.datasheet != "" %}
+
+      <a class="product-button datasheet"
+         href="{{ product.datasheet }}"
+         target="_blank"
+         rel="noopener">
+
+         📄 Datasheet
+
+      </a>
+
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</div>
+
+{% else %}
+
+<div class="product-error">
+
+⚠ Product "{{ include.id }}" not found in products.yml
+
+</div>
+
+{% endif %}
