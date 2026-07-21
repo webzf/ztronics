@@ -1,0 +1,170 @@
+################################################################################
+# Embedded Nerd
+# Categories Database
+################################################################################
+
+development-board:
+
+  name: "Development Boards"
+
+  icon: "development-board"
+
+  description: "Microcontroller and single-board computer development boards."
+
+  slug: "development-boards"
+
+  enabled: true
+
+
+
+microcontroller:
+
+  name: "Microcontrollers"
+
+  icon: "microcontroller"
+
+  description: "Standalone microcontroller chips."
+
+  slug: "microcontrollers"
+
+  enabled: true
+
+
+
+sensor:
+
+  name: "Sensors"
+
+  icon: "sensor"
+
+  description: "Sensors for measuring temperature, humidity, motion, pressure and more."
+
+  slug: "sensors"
+
+  enabled: true
+
+
+
+display:
+
+  name: "Displays"
+
+  icon: "display"
+
+  description: "LCD, OLED, TFT and e-paper displays."
+
+  slug: "displays"
+
+  enabled: true
+
+
+
+communication:
+
+  name: "Communication Modules"
+
+  icon: "communication"
+
+  description: "Wi-Fi, Bluetooth, LoRa, Zigbee and RF modules."
+
+  slug: "communication-modules"
+
+  enabled: true
+
+
+
+power:
+
+  name: "Power"
+
+  icon: "power"
+
+  description: "Power supplies, regulators, batteries and charging modules."
+
+  slug: "power"
+
+  enabled: true
+
+
+
+input-device:
+
+  name: "Input Devices"
+
+  icon: "input"
+
+  description: "Buttons, joysticks, keypads and rotary encoders."
+
+  slug: "input-devices"
+
+  enabled: true
+
+
+
+output-device:
+
+  name: "Output Devices"
+
+  icon: "output"
+
+  description: "LEDs, buzzers, relays and actuators."
+
+  slug: "output-devices"
+
+  enabled: true
+
+
+
+motor:
+
+  name: "Motors"
+
+  icon: "motor"
+
+  description: "Servo motors, stepper motors and DC motors."
+
+  slug: "motors"
+
+  enabled: true
+
+
+
+storage:
+
+  name: "Storage"
+
+  icon: "storage"
+
+  description: "EEPROM, Flash memory, SD card modules."
+
+  slug: "storage"
+
+  enabled: true
+
+
+
+tool:
+
+  name: "Tools"
+
+  icon: "tools"
+
+  description: "Development and prototyping tools."
+
+  slug: "tools"
+
+  enabled: true
+
+
+
+accessory:
+
+  name: "Accessories"
+
+  icon: "accessories"
+
+  description: "Breadboards, jumper wires and prototyping accessories."
+
+  slug: "accessories"
+
+  enabled: true
