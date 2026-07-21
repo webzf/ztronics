@@ -28,7 +28,7 @@ esp32-devkit:
 
     aliexpress:
       enabled: true
-      affiliate_url:: ""
+      affiliate_url:: "https://s.click.aliexpress.com/e/_c4n38hZ9"
 
     mouser:
       enabled: true
