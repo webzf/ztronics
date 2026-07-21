@@ -1,49 +1,64 @@
-{% assign product = site.data.products[include.id] %}
+{% assign product = site.data.products[include.product] %}
+{% assign commerce = site.data.commerce[include.product] %}
+{% assign manufacturer = site.data.manufacturers[product.manufacturer] %}
 
 {% if product %}
 
-<div class="product-card">
+<div class="en-product-card">
 
-  {% if product.image %}
-  <div class="product-image">
+  <div class="en-product-image">
+
     <img
-      src="{{ product.image | relative_url }}"
+      src="{{ product.image }}"
       alt="{{ product.alt }}"
-      loading="lazy">
-  </div>
-  {% endif %}
+      loading="lazy"
+      width="350"
+      height="350">
 
-  <div class="product-content">
+  </div>
+
+  <div class="en-product-content">
 
     <h3>{{ product.name }}</h3>
 
+    {% if manufacturer %}
+    <p class="en-manufacturer">
+      <strong>Manufacturer:</strong>
+      {{ manufacturer.name }}
+    </p>
+    {% endif %}
+
     <p>{{ product.description }}</p>
 
-    <div class="product-buttons">
+    {% if product.supports %}
 
-      {% for store in product.stores %}
+    <div class="en-technologies">
 
-        {% assign shop = store[1] %}
+      {% for tech in product.supports %}
 
-        {% if shop.url and shop.url != "" %}
+        {% assign capability = site.data.capabilities[tech] %}
 
-          <a class="product-button"
-             href="{{ shop.url }}"
-             target="_blank"
-             rel="nofollow sponsored noopener">
+        {% if capability %}
 
-             {{ shop.icon }} {{ shop.name }}
+        <span class="en-tech">
 
-          </a>
+          {{ capability.name }}
+
+        </span>
 
         {% endif %}
 
       {% endfor %}
 
-      {% if product.datasheet != "" %}
+    </div>
 
-      <a class="product-button datasheet"
-         href="{{ product.datasheet }}"
+    {% endif %}
+
+    {% if product.datasheet != "" %}
+
+    <p>
+
+      <a href="{{ product.datasheet }}"
          target="_blank"
          rel="noopener">
 
@@ -51,19 +66,13 @@
 
       </a>
 
-      {% endif %}
+    </p>
 
-    </div>
+    {% endif %}
+
+    {% include buy-buttons.html product=include.product %}
 
   </div>
-
-</div>
-
-{% else %}
-
-<div class="product-error">
-
-⚠ Product "{{ include.id }}" not found in products.yml
 
 </div>
 
