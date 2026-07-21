@@ -1,0 +1,71 @@
+{% assign ids = include.ids | split: "," %}
+
+<table class="components-table">
+
+<thead>
+
+<tr>
+
+<th>Component</th>
+
+<th>Description</th>
+
+<th>Buy</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for id in ids %}
+
+{% assign product = site.data.products[id | strip] %}
+
+{% if product %}
+
+<tr>
+
+<td>
+
+<strong>{{ product.name }}</strong>
+
+</td>
+
+<td>
+
+{{ product.description }}
+
+</td>
+
+<td>
+
+{% for store in product.stores %}
+
+{% assign shop = store[1] %}
+
+{% if shop.url and shop.url != "" %}
+
+<a href="{{ shop.url }}"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+{{ shop.icon }}
+
+</a>
+
+{% endif %}
+
+{% endfor %}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% endfor %}
+
+</tbody>
+
+</table>
