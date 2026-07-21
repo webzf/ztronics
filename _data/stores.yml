@@ -1,0 +1,69 @@
+################################################################################
+# Embedded Nerd Store Database
+#
+# Every store is defined only once.
+# Products only need to reference the store key.
+################################################################################
+
+amazon:
+  name: "Amazon"
+  icon: "🛒"
+  color: "#FF9900"
+  affiliate: true
+  website: "https://www.amazon.com"
+
+aliexpress:
+  name: "AliExpress"
+  icon: "🌍"
+  color: "#E62E04"
+  affiliate: true
+  website: "https://www.aliexpress.com"
+
+digikey:
+  name: "DigiKey"
+  icon: "📦"
+  color: "#CC0000"
+  affiliate: false
+  website: "https://www.digikey.com"
+
+mouser:
+  name: "Mouser"
+  icon: "🔧"
+  color: "#0055A4"
+  affiliate: false
+  website: "https://www.mouser.com"
+
+lcsc:
+  name: "LCSC"
+  icon: "⚡"
+  color: "#005BAC"
+  affiliate: false
+  website: "https://www.lcsc.com"
+
+adafruit:
+  name: "Adafruit"
+  icon: "💙"
+  color: "#000000"
+  affiliate: false
+  website: "https://www.adafruit.com"
+
+sparkfun:
+  name: "SparkFun"
+  icon: "🔥"
+  color: "#D32F2F"
+  affiliate: false
+  website: "https://www.sparkfun.com"
+
+seeed:
+  name: "Seeed Studio"
+  icon: "🌱"
+  color: "#4CAF50"
+  affiliate: false
+  website: "https://www.seeedstudio.com"
+
+dfrobot:
+  name: "DFRobot"
+  icon: "🤖"
+  color: "#009688"
+  affiliate: false
+  website: "https://www.dfrobot.com"
