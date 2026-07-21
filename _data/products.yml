@@ -1,7 +1,23 @@
+################################################################################
+# Embedded Nerd Product Database
+#
+# To use in an article:
+#
+# {% include product-card.html id="esp32-devkit" %}
+#
+################################################################################
+
+################################################################################
+# ESP32 DEVKIT
+################################################################################
+
 esp32-devkit:
+
   name: "ESP32 DevKit V1"
 
-  description: "ESP32 development board with Wi-Fi and Bluetooth."
+  short_name: "ESP32 DevKit"
+
+  description: "ESP32 Wi-Fi and Bluetooth development board."
 
   image: "/assets/images/products/esp32-devkit.webp"
 
@@ -14,12 +30,242 @@ esp32-devkit:
     amazon:
       name: "Amazon"
       icon: "🛒"
-      url: "https://www.amazon.com/dp/XXXXXXXX?tag=YOURTAG-20"
+      url: ""
 
     aliexpress:
       name: "AliExpress"
       icon: "🌍"
-      url: "https://s.click.aliexpress.com/e/XXXX"
+      url: ""
+
+    mouser:
+      name: "Mouser"
+      icon: "🔧"
+      url: ""
+
+    digikey:
+      name: "DigiKey"
+      icon: "📦"
+      url: ""
+
+    lcsc:
+      name: "LCSC"
+      icon: "⚡"
+      url: ""
+
+
+################################################################################
+# BME280
+################################################################################
+
+bme280:
+
+  name: "BME280 Environmental Sensor"
+
+  short_name: "BME280"
+
+  description: "Temperature, humidity and pressure sensor."
+
+  image: "/assets/images/products/bme280.webp"
+
+  alt: "BME280 Sensor"
+
+  datasheet: "https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/"
+
+  stores:
+
+    amazon:
+      name: "Amazon"
+      icon: "🛒"
+      url: ""
+
+    aliexpress:
+      name: "AliExpress"
+      icon: "🌍"
+      url: ""
+
+    mouser:
+      name: "Mouser"
+      icon: "🔧"
+      url: ""
+
+    digikey:
+      name: "DigiKey"
+      icon: "📦"
+      url: ""
+
+    lcsc:
+      name: "LCSC"
+      icon: "⚡"
+      url: ""
+
+
+################################################################################
+# MPU6050
+################################################################################
+
+mpu6050:
+
+  name: "MPU6050 Accelerometer & Gyroscope"
+
+  short_name: "MPU6050"
+
+  description: "6-axis accelerometer and gyroscope module."
+
+  image: "/assets/images/products/mpu6050.webp"
+
+  alt: "MPU6050 Module"
+
+  datasheet: "https://invensense.tdk.com/products/motion-tracking/6-axis/mpu-6050/"
+
+  stores:
+
+    amazon:
+      name: "Amazon"
+      icon: "🛒"
+      url: ""
+
+    aliexpress:
+      name: "AliExpress"
+      icon: "🌍"
+      url: ""
+
+    mouser:
+      name: "Mouser"
+      icon: "🔧"
+      url: ""
+
+    digikey:
+      name: "DigiKey"
+      icon: "📦"
+      url: ""
+
+    lcsc:
+      name: "LCSC"
+      icon: "⚡"
+      url: ""
+
+
+################################################################################
+# SSD1306 OLED
+################################################################################
+
+ssd1306:
+
+  name: "SSD1306 OLED Display"
+
+  short_name: "OLED SSD1306"
+
+  description: "0.96 inch I2C OLED display."
+
+  image: "/assets/images/products/ssd1306.webp"
+
+  alt: "SSD1306 OLED Display"
+
+  datasheet: ""
+
+  stores:
+
+    amazon:
+      name: "Amazon"
+      icon: "🛒"
+      url: ""
+
+    aliexpress:
+      name: "AliExpress"
+      icon: "🌍"
+      url: ""
+
+    mouser:
+      name: "Mouser"
+      icon: "🔧"
+      url: ""
+
+    digikey:
+      name: "DigiKey"
+      icon: "📦"
+      url: ""
+
+    lcsc:
+      name: "LCSC"
+      icon: "⚡"
+      url: ""
+
+
+################################################################################
+# BREADBOARD
+################################################################################
+
+breadboard:
+
+  name: "830 Point Breadboard"
+
+  short_name: "Breadboard"
+
+  description: "Reusable solderless breadboard."
+
+  image: "/assets/images/products/breadboard.webp"
+
+  alt: "Breadboard"
+
+  datasheet: ""
+
+  stores:
+
+    amazon:
+      name: "Amazon"
+      icon: "🛒"
+      url: ""
+
+    aliexpress:
+      name: "AliExpress"
+      icon: "🌍"
+      url: ""
+
+    mouser:
+      name: "Mouser"
+      icon: "🔧"
+      url: ""
+
+    digikey:
+      name: "DigiKey"
+      icon: "📦"
+      url: ""
+
+    lcsc:
+      name: "LCSC"
+      icon: "⚡"
+      url: ""
+
+
+################################################################################
+# JUMPER WIRES
+################################################################################
+
+jumper-wires:
+
+  name: "Jumper Wires Kit"
+
+  short_name: "Jumper Wires"
+
+  description: "Male-to-male, male-to-female and female-to-female jumper wires."
+
+  image: "/assets/images/products/jumper-wires.webp"
+
+  alt: "Jumper Wires"
+
+  datasheet: ""
+
+  stores:
+
+    amazon:
+      name: "Amazon"
+      icon: "🛒"
+      url: ""
+
+    aliexpress:
+      name: "AliExpress"
+      icon: "🌍"
+      url: ""
 
     mouser:
       name: "Mouser"
