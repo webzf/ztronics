@@ -75,10 +75,10 @@ esp32-devkit:
   # ---------------------------------------------------------------------------
 
   software:
-  arduino: true
-  espidf: true
-  micropython: true
-  circuitpython: false
+    arduino: true
+    espidf: true
+    micropython: true
+    circuitpython: false
 
   # ---------------------------------------------------------------------------
   # COMPATIBLE PLATFORMS
