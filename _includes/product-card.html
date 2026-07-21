@@ -25,7 +25,7 @@
 
         {% assign shop = store[1] %}
 
-        {% if shop.url != "" %}
+        {% if shop.url and shop.url != "" %}
 
           <a class="product-button"
              href="{{ shop.url }}"
