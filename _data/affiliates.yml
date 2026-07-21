@@ -1,0 +1,51 @@
+esp32-devkit:
+  name: "ESP32 DevKit V1"
+
+  amazon:
+    us: "https://www.amazon.com/dp/XXXXXXXX?tag=embeddednerd-20"
+    uk: "https://www.amazon.co.uk/dp/XXXXXXXX?tag=embeddednerd-21"
+    de: "https://www.amazon.de/dp/XXXXXXXX?tag=embeddednerd-21"
+
+  aliexpress: "https://s.click.aliexpress.com/e/xxxx"
+
+  mouser: "https://www.mouser.com/ProductDetail/xxxx"
+
+  digikey: "https://www.digikey.com/en/products/detail/xxxx"
+
+  lcsc: "https://www.lcsc.com/product-detail/xxxx"
+
+
+
+arduino-uno:
+  name: "Arduino Uno R4"
+
+  amazon:
+    us: "..."
+    uk: "..."
+    de: "..."
+
+  aliexpress: "..."
+
+
+
+bme280:
+  name: "BME280 Sensor"
+
+  amazon:
+    us: "..."
+    uk: "..."
+    de: "..."
+
+  aliexpress: "..."
+
+
+
+mpu6050:
+  name: "MPU6050"
+
+  amazon:
+    us: "..."
+    uk: "..."
+    de: "..."
+
+  aliexpress: "..."
