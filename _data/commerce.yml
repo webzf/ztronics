@@ -12,7 +12,7 @@ esp32-devkit:
   # STORE PREFERENCES
   # ---------------------------------------------------------------------------
 
-  preferred_store: amazon
+  preferred_store: aliexpress
 
   show_all_stores: true
 
