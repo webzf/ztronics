@@ -22,9 +22,9 @@ header:
   teaser: /assets/images/i2c-scanner-tutorial-arduino-esp32.webp
   image: /assets/images/i2c-scanner-tutorial-arduino-esp32.webp
   og_image: /assets/images/i2c-scanner-tutorial-arduino-esp32.webp
-  overlay_image: /assets/images/headnerd2.webp
-  overlay_filter: 0.4
-
+  overlay_image: /assets/images/header3.webp
+  overlay_filter: 0.25
+  
 categories:
   - Arduino
   - ESP32
