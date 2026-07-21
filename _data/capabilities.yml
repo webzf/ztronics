@@ -1,0 +1,237 @@
+################################################################################
+# Embedded Nerd
+# Capabilities Database
+#
+# Defines technical capabilities, interfaces, protocols and software support.
+################################################################################
+
+################################################################################
+# COMMUNICATION PROTOCOLS
+################################################################################
+
+i2c:
+  name: "I²C"
+  category: "communication"
+  description: "Two-wire serial communication bus."
+  icon: "i2c"
+  enabled: true
+
+spi:
+  name: "SPI"
+  category: "communication"
+  description: "Serial Peripheral Interface."
+  icon: "spi"
+  enabled: true
+
+uart:
+  name: "UART"
+  category: "communication"
+  description: "Universal Asynchronous Receiver/Transmitter."
+  icon: "uart"
+  enabled: true
+
+can:
+  name: "CAN Bus"
+  category: "communication"
+  description: "Controller Area Network."
+  icon: "can"
+  enabled: true
+
+usb:
+  name: "USB"
+  category: "communication"
+  description: "Universal Serial Bus."
+  icon: "usb"
+  enabled: true
+
+onewire:
+  name: "1-Wire"
+  category: "communication"
+  description: "Single-wire communication protocol."
+  icon: "onewire"
+  enabled: true
+
+################################################################################
+# WIRELESS
+################################################################################
+
+wifi:
+  name: "Wi-Fi"
+  category: "wireless"
+  description: "Wireless LAN connectivity."
+  icon: "wifi"
+  enabled: true
+
+bluetooth:
+  name: "Bluetooth"
+  category: "wireless"
+  description: "Bluetooth Classic."
+  icon: "bluetooth"
+  enabled: true
+
+ble:
+  name: "Bluetooth Low Energy"
+  category: "wireless"
+  description: "Bluetooth Low Energy (BLE)."
+  icon: "ble"
+  enabled: true
+
+lora:
+  name: "LoRa"
+  category: "wireless"
+  description: "Long Range wireless communication."
+  icon: "lora"
+  enabled: true
+
+zigbee:
+  name: "Zigbee"
+  category: "wireless"
+  description: "Low-power mesh networking."
+  icon: "zigbee"
+  enabled: true
+
+ethernet:
+  name: "Ethernet"
+  category: "wireless"
+  description: "Wired Ethernet networking."
+  icon: "ethernet"
+  enabled: true
+
+################################################################################
+# ANALOG & DIGITAL
+################################################################################
+
+adc:
+  name: "ADC"
+  category: "peripheral"
+  description: "Analog-to-Digital Converter."
+  icon: "adc"
+  enabled: true
+
+dac:
+  name: "DAC"
+  category: "peripheral"
+  description: "Digital-to-Analog Converter."
+  icon: "dac"
+  enabled: true
+
+pwm:
+  name: "PWM"
+  category: "peripheral"
+  description: "Pulse Width Modulation."
+  icon: "pwm"
+  enabled: true
+
+touch:
+  name: "Touch Sensor"
+  category: "peripheral"
+  description: "Capacitive touch sensing."
+  icon: "touch"
+  enabled: true
+
+################################################################################
+# SOFTWARE
+################################################################################
+
+arduino:
+  name: "Arduino"
+  category: "software"
+  description: "Arduino Framework."
+  icon: "arduino"
+  enabled: true
+
+micropython:
+  name: "MicroPython"
+  category: "software"
+  description: "MicroPython support."
+  icon: "micropython"
+  enabled: true
+
+platformio:
+  name: "PlatformIO"
+  category: "software"
+  description: "PlatformIO IDE."
+  icon: "platformio"
+  enabled: true
+
+espidf:
+  name: "ESP-IDF"
+  category: "software"
+  description: "Espressif IoT Development Framework."
+  icon: "espidf"
+  enabled: true
+
+################################################################################
+# HARDWARE FEATURES
+################################################################################
+
+camera:
+  name: "Camera"
+  category: "hardware"
+  description: "Camera interface."
+  icon: "camera"
+  enabled: true
+
+audio:
+  name: "Audio"
+  category: "hardware"
+  description: "Audio support."
+  icon: "audio"
+  enabled: true
+
+rtc:
+  name: "RTC"
+  category: "hardware"
+  description: "Real-Time Clock."
+  icon: "rtc"
+  enabled: true
+
+dma:
+  name: "DMA"
+  category: "hardware"
+  description: "Direct Memory Access."
+  icon: "dma"
+  enabled: true
+
+crypto:
+  name: "Hardware Crypto"
+  category: "hardware"
+  description: "Hardware cryptographic acceleration."
+  icon: "crypto"
+  enabled: true
+
+################################################################################
+# ELECTRICAL
+################################################################################
+
+voltage-3v3:
+  name: "3.3V"
+  category: "electrical"
+  description: "Operates at 3.3V."
+  icon: "3v3"
+  enabled: true
+
+voltage-5v:
+  name: "5V"
+  category: "electrical"
+  description: "Operates at 5V."
+  icon: "5v"
+  enabled: true
+
+################################################################################
+# CPU
+################################################################################
+
+single-core:
+  name: "Single Core"
+  category: "processor"
+  description: "Single-core processor."
+  icon: "single-core"
+  enabled: true
+
+dual-core:
+  name: "Dual Core"
+  category: "processor"
+  description: "Dual-core processor."
+  icon: "dual-core"
+  enabled: true
