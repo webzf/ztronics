@@ -1,72 +1,70 @@
-{% assign product = site.data.products[include.product] %}
 {% assign commerce = site.data.commerce[include.product] %}
 
-{% if product and commerce %}
+{% if commerce %}
 
 <div class="en-buy-buttons">
 
-{% assign preferred = commerce.preferred_store %}
+  {% assign preferred = commerce.preferred_store %}
+  {% assign preferred_offer = commerce.stores[preferred] %}
+  {% assign preferred_store = site.data.stores[preferred] %}
 
-{% assign preferred_offer = commerce.stores[preferred] %}
-{% assign preferred_store = site.data.stores[preferred] %}
+  {% if preferred_offer.enabled and preferred_offer.affiliate_url != "" %}
 
-{% if preferred_offer.enabled and preferred_offer.affiliate_url != "" %}
+    <a class="en-buy-button preferred"
+       href="{{ preferred_offer.affiliate_url }}"
+       target="_blank"
+       rel="nofollow sponsored noopener">
 
-<a class="en-buy-button preferred"
-   href="{{ preferred_offer.affiliate_url }}"
-   target="_blank"
-   rel="nofollow sponsored noopener">
+      <img
+        src="/assets/images/brands/stores/{{ preferred_store.icon }}.svg"
+        alt="{{ preferred_store.name }}"
+        width="20"
+        height="20">
 
-    <img
-      src="/assets/images/brands/stores/{{ preferred_store.icon }}.svg"
-      alt="{{ preferred_store.name }}"
-      width="20"
-      height="20">
+      Buy on {{ preferred_store.name }}
 
-    Buy on {{ preferred_store.name }}
+    </a>
 
-</a>
+  {% endif %}
 
-{% endif %}
+  {% if commerce.show_all_stores %}
 
-{% if commerce.show_all_stores %}
+    <div class="en-more-stores">
 
-<div class="en-more-stores">
+      {% for store in commerce.stores %}
 
-{% for store in commerce.stores %}
+        {% assign key = store[0] %}
+        {% assign offer = store[1] %}
+        {% assign info = site.data.stores[key] %}
 
-{% assign key = store[0] %}
-{% assign offer = store[1] %}
-{% assign info = site.data.stores[key] %}
+        {% unless key == preferred %}
 
-{% unless key == preferred %}
+          {% if offer.enabled and offer.affiliate_url != "" %}
 
-{% if offer.enabled and offer.affiliate_url != "" %}
+            <a class="en-store-button"
+               href="{{ offer.affiliate_url }}"
+               target="_blank"
+               rel="nofollow sponsored noopener">
 
-<a class="en-store-button"
-   href="{{ offer.affiliate_url }}"
-   target="_blank"
-   rel="nofollow sponsored noopener">
+              <img
+                src="/assets/images/brands/stores/{{ info.icon }}.svg"
+                alt="{{ info.name }}"
+                width="18"
+                height="18">
 
-<img
-src="/assets/images/brands/stores/{{ info.icon }}.svg"
-alt="{{ info.name }}"
-width="18"
-height="18">
+              {{ info.name }}
 
-{{ info.name }}
+            </a>
 
-</a>
+          {% endif %}
 
-{% endif %}
+        {% endunless %}
 
-{% endunless %}
+      {% endfor %}
 
-{% endfor %}
+    </div>
 
-</div>
-
-{% endif %}
+  {% endif %}
 
 </div>
 
