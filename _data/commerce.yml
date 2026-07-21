@@ -24,23 +24,23 @@ esp32-devkit:
 
     amazon:
       enabled: true
-      url: ""
+      affiliate_url:: ""
 
     aliexpress:
       enabled: true
-      url: ""
+      affiliate_url:: ""
 
     mouser:
       enabled: true
-      url: ""
+      affiliate_url:: ""
 
     digikey:
       enabled: true
-      url: ""
+      affiliate_url:: ""
 
     lcsc:
       enabled: true
-      url: ""
+      affiliate_url:: ""
 
   # ---------------------------------------------------------------------------
   # OPTIONAL LABELS
