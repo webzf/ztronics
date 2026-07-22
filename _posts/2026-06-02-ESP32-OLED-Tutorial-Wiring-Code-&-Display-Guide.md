@@ -112,8 +112,9 @@ These displays are widely used in:
 | Breadboard | [Breadboard Kit](https://YOUR-AFFILIATE-LINK.com) |
 | Jumper Wires | [Male-to-Female Jumper Wires](https://YOUR-AFFILIATE-LINK.com) |
 
-{% include product-box.html product="esp32-devkit" style="inline" %}
 ---
+
+{% include product-box.html product="esp32-devkit" style="inline" %}
 
 # ESP32 OLED Wiring
 
