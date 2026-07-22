@@ -216,7 +216,7 @@ Software
 
 {% endif %}
 
-{% if commerce.badges %}
+{% if commerce and commerce.badges %}
 
 <div class="en-product-badges">
 
@@ -444,7 +444,7 @@ Related Components
 
 <a
 class="en-related-card"
-href="{{ related.url | relative_url }}">
+href="/products/{{ related_id }}/">
 
 <img
 src="{{ related.image }}"
@@ -478,9 +478,13 @@ Schema.org Product
 ==============================================================================
 {% endcomment %}
 
+{% if commerce %}
+
 {% assign preferred = commerce.preferred_store %}
 {% assign offer = commerce.stores[preferred] %}
 {% assign seller = site.data.stores[preferred] %}
+
+{% endif %}
 
 
 <script type="application/ld+json">
