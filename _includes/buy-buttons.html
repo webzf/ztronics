@@ -2,67 +2,103 @@
 
 {% if commerce %}
 
+{% assign preferred = commerce.preferred_store %}
+{% assign preferred_offer = commerce.stores[preferred] %}
+{% assign preferred_store = site.data.stores[preferred] %}
+
 <div class="en-buy-buttons">
 
-  {% assign preferred = commerce.preferred_store %}
-  {% assign preferred_offer = commerce.stores[preferred] %}
-  {% assign preferred_store = site.data.stores[preferred] %}
+  {%- comment -%}
+  ============================
+  MAIN STORE
+  ============================
+  {%- endcomment -%}
 
-  {% if preferred_offer.enabled and preferred_offer.affiliate_url != "" %}
+  {% if preferred_offer
+     and preferred_offer.enabled
+     and preferred_offer.affiliate_url
+     and preferred_offer.affiliate_url != "" %}
 
-    <a class="en-buy-button preferred"
-       href="{{ preferred_offer.affiliate_url }}"
-       target="_blank"
-       rel="nofollow sponsored noopener">
+  <a
+    class="en-buy-main"
+    href="{{ preferred_offer.affiliate_url }}"
+    target="_blank"
+    rel="nofollow sponsored noopener">
+
+      {% if preferred_store.icon %}
 
       <img
+        class="en-store-icon"
         src="/assets/images/brands/stores/{{ preferred_store.icon }}.svg"
         alt="{{ preferred_store.name }}"
         width="20"
-        height="20">
+        height="20"
+        loading="lazy">
 
-      Buy on {{ preferred_store.name }}
+      {% endif %}
 
-    </a>
+      <span>
+
+        Buy on {{ preferred_store.name }}
+
+      </span>
+
+  </a>
 
   {% endif %}
 
+  {%- comment -%}
+  ============================
+  OTHER STORES
+  ============================
+  {%- endcomment -%}
+
   {% if commerce.show_all_stores %}
 
-    <div class="en-more-stores">
+  <div class="en-other-stores">
 
-      {% for store in commerce.stores %}
+    {% for item in commerce.stores %}
 
-        {% assign key = store[0] %}
-        {% assign offer = store[1] %}
-        {% assign info = site.data.stores[key] %}
+      {% assign key = item[0] %}
+      {% assign offer = item[1] %}
 
-        {% unless key == preferred %}
+      {% unless key == preferred %}
 
-          {% if offer.enabled and offer.affiliate_url != "" %}
+        {% assign store = site.data.stores[key] %}
 
-            <a class="en-store-button"
-               href="{{ offer.affiliate_url }}"
-               target="_blank"
-               rel="nofollow sponsored noopener">
+        {% if offer.enabled
+           and offer.affiliate_url
+           and offer.affiliate_url != "" %}
 
-              <img
-                src="/assets/images/brands/stores/{{ info.icon }}.svg"
-                alt="{{ info.name }}"
-                width="18"
-                height="18">
+        <a
+          class="en-buy-secondary"
+          href="{{ offer.affiliate_url }}"
+          target="_blank"
+          rel="nofollow sponsored noopener">
 
-              {{ info.name }}
+          {% if store.icon %}
 
-            </a>
+          <img
+            class="en-store-icon"
+            src="/assets/images/brands/stores/{{ store.icon }}.svg"
+            alt="{{ store.name }}"
+            width="18"
+            height="18"
+            loading="lazy">
 
           {% endif %}
 
-        {% endunless %}
+          {{ store.name }}
 
-      {% endfor %}
+        </a>
 
-    </div>
+        {% endif %}
+
+      {% endunless %}
+
+    {% endfor %}
+
+  </div>
 
   {% endif %}
 
