@@ -113,7 +113,7 @@ These displays are widely used in:
 | Jumper Wires | [Male-to-Female Jumper Wires](https://YOUR-AFFILIATE-LINK.com) |
 
 ---
-
+{% include product-box.html product="esp32-devkit" style="premium" %}
 
 # ESP32 OLED Wiring
 
