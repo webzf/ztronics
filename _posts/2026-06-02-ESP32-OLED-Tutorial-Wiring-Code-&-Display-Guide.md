@@ -114,7 +114,6 @@ These displays are widely used in:
 
 ---
 
-{% include product-box.html product="esp32-devkit" style="compact" %}
 
 # ESP32 OLED Wiring
 
