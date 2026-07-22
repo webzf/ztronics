@@ -1,6 +1,16 @@
 ---
 product_id: esp32-devkit
 
+sku: ESP32-DEVKIT-V1
+
+mpn: ESP32-DEVKIT-V1
+
+gtin:
+
+release_date:
+
+last_verified: 
+
 title: "ESP32 DevKit V1"
 
 layout: product
