@@ -1,10 +1,196 @@
-{% assign product = include.product %}
-{% assign style = include.style | default: "standard" %}
+{% comment %}
+==============================================================================
+Embedded Nerd Product Box v3.0
+------------------------------------------------------------------------------
+Compatible with:
+- _data/products.yml
+- _data/commerce.yml
+- _data/manufacturers.yml
+- _data/stores.yml
+- _data/capabilities.yml
+==============================================================================
+
+Usage:
+
+{% include product-box.html product="esp32-devkit" style="premium" %}
+
+Styles:
+- premium
+- standard
+- compact
+- inline
+{% endcomment %}
+
+{% assign product_id = include.product %}
+{% assign style = include.style | default: "premium" %}
+
+{% assign product = site.data.products[product_id] %}
+{% assign commerce = site.data.commerce[product_id] %}
+
+{% if product %}
 
 {% assign manufacturer = site.data.manufacturers[product.manufacturer] %}
-{% assign commerce = site.data.commerce[product.product_id] %}
 
-{% capture capability_badges %}
+<div class="en-product-box {{ style }}">
+
+{% if style == "premium" %}
+
+<div class="en-product-main">
+
+<div class="en-product-image">
+
+<img
+src="{{ product.image }}"
+alt="{{ product.alt | default: product.title }}"
+loading="lazy"
+width="420"
+height="420">
+
+</div>
+
+<div class="en-product-content">
+
+<span class="en-premium-badge">
+
+⭐ Recommended by Embedded Nerd
+
+</span>
+
+<h2>
+
+{{ product.title }}
+
+</h2>
+
+<p class="en-product-description">
+
+{{ product.description }}
+
+</p>
+
+<table class="en-product-specs">
+
+{% if manufacturer %}
+
+<tr>
+
+<th>
+
+Manufacturer
+
+</th>
+
+<td>
+
+{{ manufacturer.name }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if product.operating_voltage %}
+
+<tr>
+
+<th>
+
+Operating Voltage
+
+</th>
+
+<td>
+
+{{ product.operating_voltage }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if product.input_voltage %}
+
+<tr>
+
+<th>
+
+Input Voltage
+
+</th>
+
+<td>
+
+{{ product.input_voltage }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if product.logic_level %}
+
+<tr>
+
+<th>
+
+Logic Level
+
+</th>
+
+<td>
+
+{{ product.logic_level }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if product.platforms %}
+
+<tr>
+
+<th>
+
+Platforms
+
+</th>
+
+<td>
+
+{{ product.platforms | join: ", " }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if product.software %}
+
+<tr>
+
+<th>
+
+Software
+
+</th>
+
+<td>
+
+{{ product.software | join: ", " }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+</table>
 
 {% if product.supports %}
 
@@ -30,11 +216,39 @@
 
 {% endif %}
 
-{% endcapture %}
+  {% if commerce.badges %}
 
+<div class="en-product-badges">
 
+{% if commerce.badges.recommended %}
+<span class="en-badge recommended">
+✓ Recommended
+</span>
+{% endif %}
 
-{% capture action_links %}
+{% if commerce.badges.editor_choice %}
+<span class="en-badge editor">
+★ Editor's Choice
+</span>
+{% endif %}
+
+{% if commerce.badges.best_value %}
+<span class="en-badge value">
+💰 Best Value
+</span>
+{% endif %}
+
+{% if commerce.badges.fast_shipping %}
+<span class="en-badge shipping">
+🚚 Fast Shipping
+</span>
+{% endif %}
+
+</div>
+
+{% endif %}
+
+{% include buy-buttons.html product=product_id %}
 
 <div class="en-product-links">
 
@@ -51,8 +265,6 @@ rel="noopener">
 
 {% endif %}
 
-
-
 {% if product.official %}
 
 <a
@@ -68,185 +280,11 @@ rel="noopener">
 
 </div>
 
-{% endcapture %}
-
-
-
-{% capture buy_buttons %}
-
-{% include buy-buttons.html
-product=product.product_id %}
-
-{% endcapture %}
-
-{% if style == "inline" %}
-
-<div class="en-product-box inline">
-
-<div class="en-inline-left">
-
-<img
-src="{{ product.image }}"
-alt="{{ product.alt | default: product.title }}"
-loading="lazy"
-width="90"
-height="90">
-
 </div>
-
-<div class="en-inline-right">
-
-<h4>{{ product.title }}</h4>
-
-{{ capability_badges }}
-
-{{ buy_buttons }}
-
-</div>
-
-</div>
-
-{% elsif style == "compact" %}
-
-<div class="en-product-box compact">
-
-<img
-src="{{ product.image }}"
-alt="{{ product.alt | default: product.title }}"
-loading="lazy"
-width="180"
-height="180">
-
-<h3>
-
-{{ product.title }}
-
-</h3>
-
-<p>
-
-{{ product.description }}
-
-</p>
-
-{{ buy_buttons }}
 
 </div>
 
 {% elsif style == "standard" %}
-
-<div class="en-product-box standard">
-
-  <div class="en-product-image">
-
-    <img
-      src="{{ product.image }}"
-      alt="{{ product.alt | default: product.title }}"
-      loading="lazy"
-      width="320"
-      height="320">
-
-  </div>
-
-  <div class="en-product-content">
-
-    <span class="en-product-label">
-
-      Recommended Component
-
-    </span>
-
-    <h2>
-
-      {{ product.title }}
-
-    </h2>
-
-    <p class="en-product-description">
-
-      {{ product.description }}
-
-    </p>
-
-    <table class="en-product-specs">
-
-      {% if manufacturer %}
-
-      <tr>
-
-        <th>Manufacturer</th>
-
-        <td>{{ manufacturer.name }}</td>
-
-      </tr>
-
-      {% endif %}
-
-      {% if product.operating_voltage %}
-
-      <tr>
-
-        <th>Voltage</th>
-
-        <td>{{ product.operating_voltage }}</td>
-
-      </tr>
-
-      {% endif %}
-
-      {% if product.logic_level %}
-
-      <tr>
-
-        <th>Logic Level</th>
-
-        <td>{{ product.logic_level }}</td>
-
-      </tr>
-
-      {% endif %}
-
-      {% if product.platforms %}
-
-      <tr>
-
-        <th>Platforms</th>
-
-        <td>
-
-          {{ product.platforms | join: ", " }}
-
-        </td>
-
-      </tr>
-
-      {% endif %}
-
-    </table>
-
-    {{ capability_badges }}
-
-    {{ buy_buttons }}
-
-    {{ action_links }}
-
-  </div>
-
-</div>
-
-{% elsif style == "premium" %}
-
-<div class="en-product-box premium">
-
-<div class="en-product-header">
-
-<span class="en-premium-badge">
-
-⭐ Recommended by Embedded Nerd
-
-</span>
-
-</div>
 
 <div class="en-product-main">
 
@@ -256,12 +294,18 @@ height="180">
 src="{{ product.image }}"
 alt="{{ product.alt | default: product.title }}"
 loading="lazy"
-width="420"
-height="420">
+width="320"
+height="320">
 
 </div>
 
 <div class="en-product-content">
+
+<span class="en-product-label">
+
+Recommended Component
+
+</span>
 
 <h2>
 
@@ -278,162 +322,123 @@ height="420">
 <table class="en-product-specs">
 
 {% if manufacturer %}
-
-<tr>
-
-<th>Manufacturer</th>
-
-<td>
-
-{{ manufacturer.name }}
-
-</td>
-
-</tr>
-
+<tr><th>Manufacturer</th><td>{{ manufacturer.name }}</td></tr>
 {% endif %}
 
 {% if product.operating_voltage %}
-
-<tr>
-
-<th>Operating Voltage</th>
-
-<td>
-
-{{ product.operating_voltage }}
-
-</td>
-
-</tr>
-
-{% endif %}
-
-{% if product.input_voltage %}
-
-<tr>
-
-<th>Input Voltage</th>
-
-<td>
-
-{{ product.input_voltage }}
-
-</td>
-
-</tr>
-
+<tr><th>Voltage</th><td>{{ product.operating_voltage }}</td></tr>
 {% endif %}
 
 {% if product.logic_level %}
-
-<tr>
-
-<th>Logic Level</th>
-
-<td>
-
-{{ product.logic_level }}
-
-</td>
-
-</tr>
-
+<tr><th>Logic Level</th><td>{{ product.logic_level }}</td></tr>
 {% endif %}
 
 {% if product.platforms %}
-
 <tr>
-
 <th>Platforms</th>
-
-<td>
-
-{{ product.platforms | join: ", " }}
-
-</td>
-
+<td>{{ product.platforms | join: ", " }}</td>
 </tr>
-
-{% endif %}
-
-{% if product.software %}
-
-<tr>
-
-<th>Software</th>
-
-<td>
-
-{{ product.software | join: ", " }}
-
-</td>
-
-</tr>
-
 {% endif %}
 
 </table>
 
-{{ capability_badges }}
+{% if product.supports %}
 
-{{ buy_buttons }}
+<div class="en-capabilities">
 
-{{ action_links }}
+{% for capability_id in product.supports %}
 
-</div>
+{% assign capability = site.data.capabilities[capability_id] %}
 
-</div>
+{% if capability %}
 
-</div>
+<span class="en-capability">
 
-{% if commerce.badges %}
+{{ capability.name }}
 
-<div class="en-product-badges">
+</span>
 
-  {% if commerce.badges.recommended %}
-    <span class="en-badge recommended">
-      ✓ Recommended
-    </span>
-  {% endif %}
+{% endif %}
 
-  {% if commerce.badges.editor_choice %}
-    <span class="en-badge editor">
-      ★ Editor's Choice
-    </span>
-  {% endif %}
-
-  {% if commerce.badges.best_value %}
-    <span class="en-badge value">
-      💰 Best Value
-    </span>
-  {% endif %}
-
-  {% if commerce.badges.fast_shipping %}
-    <span class="en-badge shipping">
-      🚚 Fast Shipping
-    </span>
-  {% endif %}
+{% endfor %}
 
 </div>
 
 {% endif %}
 
-{% if product.related %}
+{% include buy-buttons.html product=product_id %}
+
+<div class="en-product-links">
+
+{% if product.datasheet %}
+<a href="{{ product.datasheet }}" target="_blank" rel="noopener">
+📄 Datasheet
+</a>
+{% endif %}
+
+{% if product.official %}
+<a href="{{ product.official }}" target="_blank" rel="noopener">
+🌐 Official Website
+</a>
+{% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+{% elsif style == "compact" %}
+
+<img
+src="{{ product.image }}"
+alt="{{ product.alt | default: product.title }}"
+loading="lazy"
+width="180"
+height="180">
+
+<h3>{{ product.title }}</h3>
+
+<p>{{ product.description }}</p>
+
+{% include buy-buttons.html product=product_id %}
+
+{% elsif style == "inline" %}
+
+<div class="en-inline-left">
+
+<img
+src="{{ product.image }}"
+alt="{{ product.alt | default: product.title }}"
+loading="lazy"
+width="90"
+height="90">
+
+</div>
+
+<div class="en-inline-right">
+
+<h4>{{ product.title }}</h4>
+
+{% include buy-buttons.html product=product_id %}
+
+</div>
+
+{% endif %}
+
+  {% if product.related %}
 
 <div class="en-related-products">
 
 <h3>
-
 Related Components
-
 </h3>
 
 <div class="en-related-grid">
 
 {% for related_id in product.related %}
 
-{% assign related = site.products | where: "product_id", related_id | first %}
+{% assign related = site.data.products[related_id] %}
 
 {% if related %}
 
@@ -443,7 +448,7 @@ href="{{ related.url | relative_url }}">
 
 <img
 src="{{ related.image }}"
-alt="{{ related.title }}"
+alt="{{ related.alt | default: related.title }}"
 loading="lazy"
 width="120"
 height="120">
@@ -466,69 +471,120 @@ height="120">
 
 {% endif %}
 
+
+{% comment %}
+==============================================================================
+Schema.org Product
+==============================================================================
+{% endcomment %}
+
 {% assign preferred = commerce.preferred_store %}
 {% assign offer = commerce.stores[preferred] %}
 {% assign seller = site.data.stores[preferred] %}
 
+
 <script type="application/ld+json">
+
 {
-  "@context": "https://schema.org",
-  "@type": "Product",
+"@context":"https://schema.org",
+"@type":"Product",
 
-  "name": {{ product.title | jsonify }},
+"name":{{ product.title | jsonify }},
 
-  "description": {{ product.description | strip_html | strip_newlines | jsonify }},
+"description":{{ product.description | strip_html | strip_newlines | jsonify }},
 
-  "image": {{ product.image | absolute_url | jsonify }},
+"image":{{ product.image | absolute_url | jsonify }},
 
-  "url": {{ page.url | absolute_url | jsonify }},
+"url":{{ page.url | absolute_url | jsonify }}
 
-  {% if manufacturer %}
-  "brand": {
-    "@type": "Brand",
-    "name": {{ manufacturer.name | jsonify }}
-  },
-  {% endif %}
 
-  {% if product.sku %}
-  "sku": {{ product.sku | jsonify }},
-  {% endif %}
+{% if manufacturer %}
 
-  {% if product.mpn %}
-  "mpn": {{ product.mpn | jsonify }},
-  {% endif %}
-
-  {% if product.gtin %}
-  "gtin": {{ product.gtin | jsonify }},
-  {% endif %}
-
-  {% if offer and offer.enabled and offer.affiliate_url != "" %}
-  "offers": {
-    "@type": "Offer",
-
-    "url": {{ offer.affiliate_url | jsonify }},
-
-    {% if seller %}
-    "seller": {
-      "@type": "Organization",
-      "name": {{ seller.name | jsonify }}
-    },
-    {% endif %}
-
-    {% if offer.price %}
-    "price": "{{ offer.price }}",
-    {% endif %}
-
-    {% if offer.currency %}
-    "priceCurrency": "{{ offer.currency }}",
-    {% endif %}
-
-    "availability": "https://schema.org/InStock"
-  },
-  {% endif %}
-
-  "category": "Electronic Component"
+,
+"brand":{
+"@type":"Brand",
+"name":{{ manufacturer.name | jsonify }}
 }
+
+{% endif %}
+
+
+{% if product.sku %}
+
+,
+"sku":{{ product.sku | jsonify }}
+
+{% endif %}
+
+
+{% if product.mpn %}
+
+,
+"mpn":{{ product.mpn | jsonify }}
+
+{% endif %}
+
+
+{% if product.gtin %}
+
+,
+"gtin":{{ product.gtin | jsonify }}
+
+{% endif %}
+
+
+{% if offer and offer.enabled and offer.affiliate_url != "" %}
+
+,
+"offers":{
+
+"@type":"Offer",
+
+"url":{{ offer.affiliate_url | jsonify }},
+
+"availability":"https://schema.org/InStock"
+
+
+{% if offer.price %}
+
+,
+"price":"{{ offer.price }}"
+
+{% endif %}
+
+
+{% if offer.currency %}
+
+,
+"priceCurrency":"{{ offer.currency }}"
+
+{% endif %}
+
+
+{% if seller %}
+
+,
+"seller":{
+
+"@type":"Organization",
+
+"name":{{ seller.name | jsonify }}
+
+}
+
+{% endif %}
+
+}
+
+{% endif %}
+
+
+,
+"category":"Electronic Component"
+
+}
+
 </script>
+
 
 {% endif %}
