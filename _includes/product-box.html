@@ -175,21 +175,28 @@ Platforms
 <tr>
 
 <th>
-
 Software
-
 </th>
 
 <td>
 
-{{ product.software | join: ", " }}
+{% for item in product.software %}
+
+{% if item[1] == true %}
+
+{{ item[0] }}
+
+{% unless forloop.last %}, {% endunless %}
+
+{% endif %}
+
+{% endfor %}
 
 </td>
 
 </tr>
 
 {% endif %}
-
 </table>
 
 {% if product.supports %}
