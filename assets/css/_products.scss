@@ -712,3 +712,61 @@
   will-change:transform;
 
 }
+
+/* ==========================================================================
+   BUY BUTTONS V2
+   ========================================================================== */
+
+.en-buy-note{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    margin-bottom:1rem;
+
+    padding:.55rem .9rem;
+
+    border-radius:999px;
+
+    background:rgba(16,185,129,.10);
+
+    border:1px solid rgba(16,185,129,.30);
+
+    color:#34d399;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+.en-compare-title{
+
+    margin-top:1.25rem;
+
+    margin-bottom:.75rem;
+
+    font-size:.9rem;
+
+    color:var(--text-secondary);
+
+    font-weight:600;
+
+}
+
+.en-affiliate-disclaimer{
+
+    margin-top:1rem;
+
+    font-size:.75rem;
+
+    line-height:1.5;
+
+    color:var(--text-secondary);
+
+    opacity:.9;
+
+}
