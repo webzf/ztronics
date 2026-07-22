@@ -484,9 +484,6 @@ Schema.org Product
 {% assign offer = commerce.stores[preferred] %}
 {% assign seller = site.data.stores[preferred] %}
 
-{% endif %}
-
-
 <script type="application/ld+json">
 
 {
@@ -499,96 +496,12 @@ Schema.org Product
 
 "image":{{ product.image | absolute_url | jsonify }},
 
-"url":{{ page.url | absolute_url | jsonify }}
+"url":{{ page.url | absolute_url | jsonify }},
 
-
-{% if manufacturer %}
-
-,
-"brand":{
-"@type":"Brand",
-"name":{{ manufacturer.name | jsonify }}
-}
-
-{% endif %}
-
-
-{% if product.sku %}
-
-,
-"sku":{{ product.sku | jsonify }}
-
-{% endif %}
-
-
-{% if product.mpn %}
-
-,
-"mpn":{{ product.mpn | jsonify }}
-
-{% endif %}
-
-
-{% if product.gtin %}
-
-,
-"gtin":{{ product.gtin | jsonify }}
-
-{% endif %}
-
-
-{% if offer and offer.enabled and offer.affiliate_url != "" %}
-
-,
-"offers":{
-
-"@type":"Offer",
-
-"url":{{ offer.affiliate_url | jsonify }},
-
-"availability":"https://schema.org/InStock"
-
-
-{% if offer.price %}
-
-,
-"price":"{{ offer.price }}"
-
-{% endif %}
-
-
-{% if offer.currency %}
-
-,
-"priceCurrency":"{{ offer.currency }}"
-
-{% endif %}
-
-
-{% if seller %}
-
-,
-"seller":{
-
-"@type":"Organization",
-
-"name":{{ seller.name | jsonify }}
-
-}
-
-{% endif %}
-
-}
-
-{% endif %}
-
-
-,
 "category":"Electronic Component"
 
 }
 
 </script>
-
 
 {% endif %}
