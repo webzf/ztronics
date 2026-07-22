@@ -25,10 +25,16 @@ esp32-devkit:
     amazon:
       enabled: true
       affiliate_url: ""
+      price: 
+
+      currency: 
 
     aliexpress:
       enabled: true
       affiliate_url: "https://s.click.aliexpress.com/e/_c4n38hZ9"
+      price: 8.99
+
+      currency: USD
 
     mouser:
       enabled: true
