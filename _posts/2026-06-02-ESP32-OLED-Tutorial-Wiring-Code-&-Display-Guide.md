@@ -23,7 +23,7 @@ header:
   image: /assets/images/esp32-oled-tutorial.webp
   og_image: /assets/images/esp32-oled-tutorial.webp
   overlay_image: /assets/images/header3.webp
-  overlay_filter: 0.25
+  overlay_filter: 0.26
 
 categories:
   - ESP32
