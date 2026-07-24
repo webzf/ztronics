@@ -569,6 +569,8 @@ If you enjoyed this guide, check out these tutorials:
 
 ## Recommended Products
 
+{% include product-box.html product="esp32-devkit" style="inline" %}
+
 - ESP32 DevKit V1
 - SSD1306 OLED Display (128×64)
 - Breadboard Kit
