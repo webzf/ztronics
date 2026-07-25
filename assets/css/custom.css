@@ -1,0 +1,32 @@
+.hardware-table{
+width:100%;
+border-collapse:collapse;
+margin:2rem 0;
+font-size:0.95rem;
+}
+
+.hardware-table th{
+background:#10b981;
+color:#fff;
+padding:12px;
+text-align:left;
+}
+
+.hardware-table td{
+padding:12px;
+border-bottom:1px solid #e5e7eb;
+}
+
+.hardware-table tr:hover{
+background:#f8fafc;
+}
+
+.hardware-table a{
+font-weight:600;
+text-decoration:none;
+color:#10b981;
+}
+
+.hardware-table a:hover{
+text-decoration:underline;
+}
