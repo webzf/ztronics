@@ -377,6 +377,11 @@ The SSD1306 display is widely used in:
 
 ---
 
+{% include starter-kits.html
+products="esp32-starter-kit,ssd1306,breadboard-kit,usb-c-cable"
+%}
+
+---
 # Recommended Starter Kits
 
 Useful products for this project:
