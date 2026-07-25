@@ -1,0 +1,64 @@
+{% assign title = include.title | default: "Required Hardware" %}
+{% assign products = include.products | split: "," %}
+
+<table class="hardware-table">
+<thead>
+<tr>
+<th>{{ title }}</th>
+<th>Link</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for id in products %}
+
+{% assign id = id | strip %}
+{% assign product = site.data.products[id] %}
+{% assign commerce = site.data.commerce[id] %}
+
+{% if product %}
+
+<tr>
+
+<td>
+
+{{ product.name }}
+
+</td>
+
+<td>
+
+{% if commerce %}
+
+{% assign preferred = commerce.preferred_store %}
+{% assign offer = commerce.stores[preferred] %}
+
+{% if offer.enabled and offer.affiliate_url != "" %}
+
+<a href="{{ offer.affiliate_url }}"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+{{ product.short_name | default: product.name }}
+
+</a>
+
+{% else %}
+
+—
+
+{% endif %}
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% endfor %}
+
+</tbody>
+</table>
