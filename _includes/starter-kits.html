@@ -1,0 +1,55 @@
+{% assign title = include.title | default: "Recommended Starter Kits" %}
+{% assign products = include.products | split: "," %}
+
+<div class="starter-kits">
+
+<h2>{{ title }}</h2>
+
+<p>Useful products for this project:</p>
+
+<ul class="starter-kit-list">
+
+{% for id in products %}
+
+{% assign id = id | strip %}
+{% assign product = site.data.products[id] %}
+{% assign commerce = site.data.commerce[id] %}
+
+{% if product %}
+
+{% assign preferred = commerce.preferred_store %}
+{% assign offer = commerce.stores[preferred] %}
+
+<li>
+
+<strong>{{ product.name }}</strong>
+
+{% if product.description %}
+<br>
+<span>{{ product.description }}</span>
+{% endif %}
+
+{% if offer.enabled and offer.affiliate_url != "" %}
+
+<br>
+
+<a class="starter-button"
+href="{{ offer.affiliate_url }}"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+🛒 Check Price →
+
+</a>
+
+{% endif %}
+
+</li>
+
+{% endif %}
+
+{% endfor %}
+
+</ul>
+
+</div>
