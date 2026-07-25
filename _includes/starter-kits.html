@@ -5,9 +5,9 @@
 
 <h2>{{ title }}</h2>
 
-<p>Useful products for this project:</p>
-
-<ul class="starter-kit-list">
+<p class="starter-intro">
+Useful products for this project:
+</p>
 
 {% for id in products %}
 
@@ -15,41 +15,51 @@
 {% assign product = site.data.products[id] %}
 {% assign commerce = site.data.commerce[id] %}
 
-{% if product %}
+{% if product and commerce %}
 
 {% assign preferred = commerce.preferred_store %}
 {% assign offer = commerce.stores[preferred] %}
+{% assign store = site.data.stores[preferred] %}
 
-<li>
+<div class="starter-card">
 
-<strong>{{ product.name }}</strong>
+    <div class="starter-image">
 
-{% if product.description %}
-<br>
-<span>{{ product.description }}</span>
-{% endif %}
+        <img
+            src="{{ product.image }}"
+            alt="{{ product.alt | default: product.name }}"
+            loading="lazy"
+            width="120"
+            height="120">
 
-{% if offer.enabled and offer.affiliate_url != "" %}
+    </div>
 
-<br>
+    <div class="starter-content">
 
-<a class="starter-button"
-href="{{ offer.affiliate_url }}"
-target="_blank"
-rel="nofollow sponsored noopener">
+        <h3>{{ product.name }}</h3>
 
-🛒 Check Price →
+        <p>{{ product.description }}</p>
 
-</a>
+        {% if offer.enabled and offer.affiliate_url != "" %}
 
-{% endif %}
+        <a
+            class="starter-button"
+            href="{{ offer.affiliate_url }}"
+            target="_blank"
+            rel="nofollow sponsored noopener">
 
-</li>
+            🛒 Check Price on {{ store.name }}
+
+        </a>
+
+        {% endif %}
+
+    </div>
+
+</div>
 
 {% endif %}
 
 {% endfor %}
-
-</ul>
 
 </div>
