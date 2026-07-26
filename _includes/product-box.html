@@ -442,7 +442,7 @@ Related Components
 
 {% for related_id in product.related %}
 
-{% assign related = site.data.products[related_id] %}
+{% assign related = site.products | where: "product_id", related_id | first %}
 
 {% if related %}
 
