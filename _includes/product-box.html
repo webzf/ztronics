@@ -21,10 +21,7 @@ Styles:
 - inline
 {% endcomment %}
 
-{% assign product_id = include.product %}
-{% assign style = include.style | default: "premium" %}
-
-{% assign product = site.data.products[product_id] %}
+{% assign product = site.products | where: "product_id", product_id | first %}
 {% assign commerce = site.data.commerce[product_id] %}
 
 {% if product %}
