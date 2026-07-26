@@ -1,52 +1,35 @@
 ---
-product_id: esp32-devkit
-
-sku: ESP32-DEVKIT-V1
-
-mpn: ESP32-DEVKIT-V1
-
-gtin:
-
-release_date:
-
-last_verified: 
+layout: product
 
 title: "ESP32 DevKit V1"
 
-layout: product
+product_id: esp32-devkit
 
 permalink: /products/esp32-devkit/
 
-manufacturer: espressif
-
-categories:
-  - development-board
-  - communication
-
-supports:
-  - wifi
-  - bluetooth
-  - ble
-  - i2c
-  - spi
-  - uart
-  - adc
-  - pwm
-  - dual-core
-  - arduino
-  - micropython
-  - espidf
-
 image: /assets/images/products/esp32-devkit.webp
-
-alt: ESP32 DevKit V1
+alt: ESP32 DevKit V1 Development Board
 
 description: >
-  ESP32 development board with integrated Wi-Fi and Bluetooth.
+  ESP32 development board with integrated Wi-Fi and Bluetooth, ideal for IoT,
+  automation and embedded electronics projects.
 
-datasheet: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+manufacturer: Espressif
 
-official: https://www.espressif.com
+categories:
+  - Development Board
+  - ESP32
+
+supports:
+  - Wi-Fi
+  - Bluetooth
+  - BLE
+  - I2C
+  - SPI
+  - UART
+  - ADC
+  - PWM
+  - Dual Core
 
 software:
   - Arduino Core
@@ -54,29 +37,68 @@ software:
   - MicroPython
 
 platforms:
-  - arduino
-  - esp32
-  - platformio
+  - Arduino IDE
+  - PlatformIO
+  - ESP-IDF
 
-operating_voltage: 3.3V
+specifications:
 
-input_voltage: 5V
+  MCU: ESP32
 
-logic_level: 3.3V
+  CPU: Dual-core Xtensa LX6
 
-keywords:
-  - ESP32
-  - ESP32 DevKit
-  - ESP32 Arduino
-  - ESP32 WiFi
+  Clock: Up to 240 MHz
+
+  Flash: 4 MB
+
+  SRAM: 520 KB
+
+  Wi-Fi: 802.11 b/g/n
+
+  Bluetooth: Bluetooth 4.2 + BLE
+
+  Operating Voltage: 3.3V
+
+  Input Voltage: 5V USB
+
+  Logic Level: 3.3V
+
+datasheet: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+
+official: https://www.espressif.com/
 
 related:
+  - ssd1306-oled
+  - mpu6050
   - bme280
   - bmp280
-  - ssd1306
-  - mpu6050
+
 ---
 
-The ESP32 DevKit V1 is one of the most popular development boards for IoT, automation and embedded systems.
+## Overview
 
-This content will appear on the dedicated product page.
+The ESP32 DevKit V1 is one of the most popular development boards for IoT,
+automation, robotics and embedded systems.
+
+It features integrated Wi-Fi and Bluetooth connectivity, a powerful dual-core
+processor and excellent support from the Arduino, ESP-IDF and MicroPython
+ecosystems.
+
+The board is suitable for beginners and professionals looking for a reliable
+development platform.
+
+## Typical Applications
+
+- IoT devices
+- Home automation
+- Wireless sensor networks
+- Robotics
+- Data logging
+- Weather stations
+- Smart agriculture
+- Industrial monitoring
+
+## Package Contents
+
+- ESP32 DevKit V1 Board
+- USB Programming Interface
