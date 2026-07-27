@@ -3,14 +3,15 @@
 Embedded Nerd Product System v6
 ------------------------------------------------------------------------------
 Controller
+==============================================================================
 
 Usage:
 
 {% include product-box.html product="esp32-devkit" %}
 
 {% include product-box.html
-    product="esp32-devkit"
-    style="article"
+   product="esp32-devkit"
+   style="article"
 %}
 
 Styles
@@ -19,18 +20,16 @@ Styles
 - article
 - standard
 - inline
-- compare
-- starterkit
 
-============================================================================== 
+==============================================================================
 {% endcomment %}
 
-{% assign style = include.style | default: "premium" %}
 {% assign product_id = include.product %}
+{% assign style = include.style | default: "premium" %}
 
 {% if product_id == nil %}
 <div class="product-error">
-Product ID not specified.
+    <strong>Product Error:</strong> Missing product ID.
 </div>
 {% break %}
 {% endif %}
@@ -39,8 +38,7 @@ Product ID not specified.
 
 {% if product == nil %}
 <div class="product-error">
-Unknown product:
-<strong>{{ product_id }}</strong>
+    <strong>Unknown product:</strong> {{ product_id }}
 </div>
 {% break %}
 {% endif %}
@@ -48,24 +46,18 @@ Unknown product:
 {% case style %}
 
 {% when "premium" %}
-    {% include product-layouts/premium.html %}
+    {% include product-layouts/premium.html product=product %}
 
 {% when "article" %}
-    {% include product-layouts/article.html %}
+    {% include product-layouts/article.html product=product %}
 
 {% when "standard" %}
-    {% include product-layouts/standard.html %}
+    {% include product-layouts/standard.html product=product %}
 
 {% when "inline" %}
-    {% include product-layouts/inline.html %}
-
-{% when "compare" %}
-    {% include product-layouts/compare.html %}
-
-{% when "starterkit" %}
-    {% include product-layouts/starterkit.html %}
+    {% include product-layouts/inline.html product=product %}
 
 {% else %}
-    {% include product-layouts/premium.html %}
+    {% include product-layouts/premium.html product=product %}
 
 {% endcase %}
