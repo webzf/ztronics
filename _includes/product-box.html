@@ -460,7 +460,7 @@ Styles:
   "name": {{ product.title | jsonify }},
   "description": {{ product.description | strip_html | strip_newlines | jsonify }},
   "image": {{ product.image | absolute_url | jsonify }},
-  "url": {{ product.url | relative_url | absolute_url | jsonify }},
+  "url": {{ product.url | absolute_url | jsonify }},
   "category": "Electronic Component"
 
   {% if product.manufacturer %},
