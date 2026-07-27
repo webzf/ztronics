@@ -2,38 +2,51 @@
 # Embedded Nerd Commerce Database v1.0
 # ============================================================================
 # One entry per product.
-# Referenced from:
 #
-# _products/*.md
+# Usage:
+#   product_id: esp32-devkit
 #
-# using:
-#
-# product_id: esp32-devkit
-#
+# Example:
+#   {% include product-box.html product=page.product_id %}
 # ============================================================================
 
 esp32-devkit:
 
+  # --------------------------------------------------------------------------
   # Basic Information
+  # --------------------------------------------------------------------------
+
   name: "ESP32 DevKit V1"
   manufacturer: "Espressif"
   model: "ESP32 DevKit V1"
   sku: "ESP32-DEVKIT-V1"
 
+  # --------------------------------------------------------------------------
   # Images
+  # --------------------------------------------------------------------------
+
   image: "/assets/images/products/esp32-devkit.webp"
 
+  # --------------------------------------------------------------------------
   # Status
+  # --------------------------------------------------------------------------
+
   featured: true
   bestseller: true
   editors_choice: false
   new: false
 
-  # Review
+  # --------------------------------------------------------------------------
+  # Rating
+  # --------------------------------------------------------------------------
+
   rating: 4.8
   reviews: 1250
 
-  # Specifications
+  # --------------------------------------------------------------------------
+  # Quick Specifications
+  # --------------------------------------------------------------------------
+
   specs:
     cpu: "Dual-core Xtensa LX6"
     frequency: "Up to 240 MHz"
@@ -41,15 +54,18 @@ esp32-devkit:
     sram: "520 KB"
     wifi: true
     bluetooth: true
-    voltage: "3.3V"
+    voltage: "3.3 V"
 
+  # --------------------------------------------------------------------------
   # Purchase Links
+  # --------------------------------------------------------------------------
+
   stores:
 
     amazon_us:
       enabled: true
       name: "Amazon US"
-      logo: "amazon.webp"
+      logo: "/assets/images/stores/amazon.webp"
 
       affiliate: "https://amzn.to/3RC1jZV"
 
@@ -58,16 +74,20 @@ esp32-devkit:
 
       availability: "In Stock"
 
+      button: "View on Amazon"
+
     amazon_uk:
       enabled: true
       name: "Amazon UK"
-      logo: "amazon.webp"
+      logo: "/assets/images/stores/amazon.webp"
 
       affiliate: "https://amzn.to/yyyyyyyy"
 
       price: "£8.49"
 
       availability: "In Stock"
+
+      button: "View on Amazon"
 
     amazon_de:
       enabled: false
@@ -78,7 +98,7 @@ esp32-devkit:
     aliexpress:
       enabled: true
       name: "AliExpress"
-      logo: "aliexpress.webp"
+      logo: "/assets/images/stores/aliexpress.webp"
 
       affiliate: "https://s.click.aliexpress.com/e/_c4n38hZ9"
 
@@ -86,6 +106,4 @@ esp32-devkit:
 
       availability: "In Stock"
 
-      #---------------------------------
-
-      
+      button: "View on AliExpress"
