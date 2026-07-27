@@ -1,7 +1,6 @@
 {% comment %}
 ==============================================================================
-Embedded Nerd Product System v4
-------------------------------------------------------------------------------
+Embedded Nerd Buy Buttons v5
 Compatible with:
 - _products/*.md
 - _data/commerce.yml
@@ -28,147 +27,37 @@ Compatible with:
 
 <div class="en-buy-buttons">
 
-{% if commerce.notes %}
+  {% if commerce.notes %}
+  <div class="en-buy-note">
+    ✓ {{ commerce.notes }}
+  </div>
+  {% else %}
+  <div class="en-buy-note">
+    ✓ Used in this tutorial
+  </div>
+  {% endif %}
 
-<div class="en-buy-note">
-
-✓ {{ commerce.notes }}
-
-</div>
-
-{% else %}
-
-<div class="en-buy-note">
-
-✓ Used in this tutorial
-
-</div>
-
-{% endif %}
-
-{% if preferred_offer.enabled and preferred_offer.affiliate_url != "" %}
-
-<a
-class="en-buy-main"
-href="{{ preferred_offer.affiliate_url }}"
-target="_blank"
-rel="nofollow sponsored noopener">
-
-{% if preferred_store.icon %}
-
-<img
-class="en-store-icon"
-src="/assets/images/brands/stores/{{ preferred_store.icon }}.svg"
-alt="{{ preferred_store.name }}"
-width="20"
-height="20"
-loading="lazy">
-
-{% endif %}
-
-<span>
-
-🛒 Buy on {{ preferred_store.name }}
-
-</span>
-
-</a>
-
-{% endif %}
-
-{% if enabled_count > 1 %}
-
-<div class="en-compare-title">
-
-Compare Prices
-
-</div>
-
-<div class="en-other-stores">
-
-{% for item in commerce.stores %}
-
-{% assign store_key = item[0] %}
-{% assign offer = item[1] %}
-
-{% unless store_key == preferred %}
-
-{% assign store = site.data.stores[store_key] %}
-
-{% if offer.enabled and offer.affiliate_url != "" %}
-
-<a
-class="en-buy-secondary"
-href="{{ offer.affiliate_url }}"
-target="_blank"
-rel="nofollow sponsored noopener">
-
-{% if store.icon %}
-
-<img
-class="en-store-icon"
-src="/assets/images/brands/stores/{{ store.icon }}.svg"
-alt="{{ store.name }}"
-width="18"
-height="18"
-loading="lazy">
-
-{% endif %}
-
-{{ store.name }}
-
-</a>
-
-{% endif %}
-
-{% endunless %}
-
-{% endfor %}
-
-</div>
-
-{% endif %}
-
-{% if commerce.disclaimer == false %}
-
-{% else %}
-
-<div class="en-affiliate-disclaimer">
-
-Affiliate links help support Embedded Nerd at no extra cost to you.
-
-</div>
-
-{% endif %}
-
-</div>
-
-{% endif %}
-  {% if preferred_offer.enabled and preferred_offer.affiliate_url != "" %}
+  {% if preferred_offer and preferred_offer.enabled and preferred_offer.affiliate_url != "" %}
 
   <a
-      class="en-buy-main"
-      href="{{ preferred_offer.affiliate_url }}"
-      target="_blank"
-      rel="nofollow sponsored noopener">
+    class="en-buy-main"
+    href="{{ preferred_offer.affiliate_url }}"
+    target="_blank"
+    rel="nofollow sponsored noopener">
 
-      {% if preferred_store.icon %}
+    {% if preferred_store and preferred_store.icon %}
+    <img
+      class="en-store-icon"
+      src="/assets/images/brands/stores/{{ preferred_store.icon }}.svg"
+      alt="{{ preferred_store.name }}"
+      width="20"
+      height="20"
+      loading="lazy">
+    {% endif %}
 
-      <img
-          class="en-store-icon"
-          src="/assets/images/brands/stores/{{ preferred_store.icon }}.svg"
-          alt="{{ preferred_store.name }}"
-          width="20"
-          height="20"
-          loading="lazy">
-
-      {% endif %}
-
-      <span>
-
-          🛒 Buy on {{ preferred_store.name }}
-
-      </span>
+    <span>
+      🛒 Buy on {{ preferred_store.name }}
+    </span>
 
   </a>
 
@@ -177,71 +66,59 @@ Affiliate links help support Embedded Nerd at no extra cost to you.
   {% if enabled_count > 1 %}
 
   <div class="en-compare-title">
-
-      Compare prices
-
+    Compare Prices
   </div>
 
   <div class="en-other-stores">
 
-      {% for item in commerce.stores %}
+    {% for item in commerce.stores %}
 
-      {% assign key = item[0] %}
+      {% assign store_key = item[0] %}
       {% assign offer = item[1] %}
 
-      {% unless key == preferred %}
+      {% unless store_key == preferred %}
 
-      {% assign store = site.data.stores[key] %}
+        {% assign store = site.data.stores[store_key] %}
 
-      {% if offer.enabled and offer.affiliate_url != "" %}
+        {% if offer.enabled and offer.affiliate_url != "" %}
 
-      <a
-
+        <a
           class="en-buy-secondary"
-
           href="{{ offer.affiliate_url }}"
-
           target="_blank"
-
           rel="nofollow sponsored noopener">
 
-          {% if store.icon %}
-
+          {% if store and store.icon %}
           <img
-
-              class="en-store-icon"
-
-              src="/assets/images/brands/stores/{{ store.icon }}.svg"
-
-              alt="{{ store.name }}"
-
-              width="18"
-
-              height="18"
-
-              loading="lazy">
-
+            class="en-store-icon"
+            src="/assets/images/brands/stores/{{ store.icon }}.svg"
+            alt="{{ store.name }}"
+            width="18"
+            height="18"
+            loading="lazy">
           {% endif %}
 
           {{ store.name }}
 
-      </a>
+        </a>
 
-      {% endif %}
+        {% endif %}
 
       {% endunless %}
 
-      {% endfor %}
+    {% endfor %}
 
   </div>
 
   {% endif %}
 
+  {% unless commerce.disclaimer == false %}
+
   <div class="en-affiliate-disclaimer">
-
-      Affiliate links help support Embedded Nerd at no extra cost to you.
-
+    Affiliate links help support Embedded Nerd at no extra cost to you.
   </div>
+
+  {% endunless %}
 
 </div>
 
