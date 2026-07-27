@@ -1,15 +1,6 @@
 ---
 layout: product
 
-sidebar:
-   nav: "embedded"
-
-toc: true
-toc_sticky: true
-toc_label: "Contents"
-
-overlay_image: /assets/images/header3.webp
-overlay_filter: 0.25
 
 # ============================================================================
 # Basic Information
