@@ -58,6 +58,24 @@ collections:
   products:
     output: true
     permalink: /products/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "products"
+    values:
+      layout: product
+
+      sidebar:
+        nav: embedded
+
+      toc: true
+      toc_sticky: true
+      toc_label: "Contents"
+
+      header:
+        overlay_image: /assets/images/header3.webp
+        overlay_filter: 0.25
   
 # Social Sharing
 twitter:
