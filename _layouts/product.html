@@ -2,23 +2,18 @@
 layout: single
 ---
 
+{% assign product_style = page.product_style | default: "premium" %}
+
 <div class="product-page">
 
-  {% assign product_style = page.product_style | default: "premium" %}
-
-{% include product-box.html
-   product=page.product_id
-   style=product_style
-%}
+  {% include product-box.html
+     product=page.product_id
+     style=product_style %}
 
   {% if page.show_content != false %}
-
-  <div class="product-content">
-
-    {{ content }}
-
-  </div>
-
+    <div class="product-content">
+      {{ content }}
+    </div>
   {% endif %}
 
 </div>
