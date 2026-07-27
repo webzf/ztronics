@@ -4,10 +4,12 @@ layout: single
 
 <div class="product-page">
 
-  {% include product-box.html
-     product=page.product_id
-     style=page.product_style | default: "premium"
-  %}
+  {% assign product_style = page.product_style | default: "premium" %}
+
+{% include product-box.html
+   product=page.product_id
+   style=product_style
+%}
 
   {% if page.show_content != false %}
 
