@@ -101,10 +101,7 @@ These displays are widely used in:
 
 ---
 
-{% include hardware-table.html
-products="esp32-devkit,ssd1306,breadboard,jumper-wires"
-title="Required Hardware"
-%}
+{% include product-box.html product="esp32-devkit" %}
 
 ---
 
