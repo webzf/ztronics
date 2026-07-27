@@ -1,284 +1,71 @@
 {% comment %}
 ==============================================================================
-Embedded Nerd Product Box v5 Final
+Embedded Nerd Product System v6
 ------------------------------------------------------------------------------
-Data source:
-- _data/commerce.yml
+Controller
 
 Usage:
 
 {% include product-box.html product="esp32-devkit" %}
-{% include product-box.html product=page.product_id %}
 
-Styles:
+{% include product-box.html
+    product="esp32-devkit"
+    style="article"
+%}
+
+Styles
+
 - premium (default)
+- article
 - standard
-- compact
 - inline
-==============================================================================
+- compare
+- starterkit
+
+============================================================================== 
 {% endcomment %}
 
 {% assign style = include.style | default: "premium" %}
 {% assign product_id = include.product %}
-{% assign product = site.data.commerce[product_id] %}
+
+{% if product_id == nil %}
+<div class="product-error">
+Product ID not specified.
+</div>
+{% break %}
+{% endif %}
+
+{% assign product = site.data.commerce.products[product_id] %}
 
 {% if product == nil %}
-
-<div class="notice--danger">
-  <strong>Product not found.</strong><br>
-  The product <code>{{ product_id }}</code> does not exist in
-  <code>_data/commerce.yml</code>.
+<div class="product-error">
+Unknown product:
+<strong>{{ product_id }}</strong>
 </div>
+{% break %}
+{% endif %}
+
+{% case style %}
+
+{% when "premium" %}
+    {% include product-layouts/premium.html %}
+
+{% when "article" %}
+    {% include product-layouts/article.html %}
+
+{% when "standard" %}
+    {% include product-layouts/standard.html %}
+
+{% when "inline" %}
+    {% include product-layouts/inline.html %}
+
+{% when "compare" %}
+    {% include product-layouts/compare.html %}
+
+{% when "starterkit" %}
+    {% include product-layouts/starterkit.html %}
 
 {% else %}
+    {% include product-layouts/premium.html %}
 
-{% assign specs = product.specs %}
-{% assign stores = product.stores %}
-
-<div class="product-box product-box--{{ style }}">
-
-  <div class="product-header">
-
-    {% if product.image %}
-    <div class="product-image">
-
-      <img
-        src="{{ product.image | relative_url }}"
-        alt="{{ product.name }}"
-        loading="lazy"
-        decoding="async"
-        width="400"
-        height="400">
-
-    </div>
-    {% endif %}
-
-    <div class="product-summary">
-
-      <h2 class="product-title">
-        {{ product.name }}
-      </h2>
-
-      {% if product.manufacturer %}
-      <div class="product-manufacturer">
-        <strong>Manufacturer:</strong>
-        {{ product.manufacturer }}
-      </div>
-      {% endif %}
-
-      {% if product.model %}
-      <div class="product-model">
-        <strong>Model:</strong>
-        {{ product.model }}
-      </div>
-      {% endif %}
-
-      {% if product.sku %}
-      <div class="product-sku">
-        <strong>SKU:</strong>
-        {{ product.sku }}
-      </div>
-      {% endif %}
-            {% if product.rating %}
-      <div class="product-rating">
-
-        <span class="product-stars">★★★★★</span>
-
-        <span class="product-rating-value">
-          {{ product.rating }}/5
-        </span>
-
-        {% if product.reviews %}
-        <span class="product-review-count">
-          ({{ product.reviews }} reviews)
-        </span>
-        {% endif %}
-
-      </div>
-      {% endif %}
-
-      {% if product.featured or product.bestseller or product.editors_choice or product.new %}
-      <div class="product-badges">
-
-        {% if product.featured %}
-        <span class="product-badge featured">
-          Featured
-        </span>
-        {% endif %}
-
-        {% if product.bestseller %}
-        <span class="product-badge bestseller">
-          Best Seller
-        </span>
-        {% endif %}
-
-        {% if product.editors_choice %}
-        <span class="product-badge editor">
-          Editor's Choice
-        </span>
-        {% endif %}
-
-        {% if product.new %}
-        <span class="product-badge new">
-          New
-        </span>
-        {% endif %}
-
-      </div>
-      {% endif %}
-
-    </div>
-
-  </div>
-
-  {% if specs %}
-  <div class="product-specs">
-
-    {% if specs.cpu %}
-    <div class="product-spec">
-      <strong>CPU</strong>
-      <span>{{ specs.cpu }}</span>
-    </div>
-    {% endif %}
-
-    {% if specs.frequency %}
-    <div class="product-spec">
-      <strong>Frequency</strong>
-      <span>{{ specs.frequency }}</span>
-    </div>
-    {% endif %}
-
-    {% if specs.flash %}
-    <div class="product-spec">
-      <strong>Flash</strong>
-      <span>{{ specs.flash }}</span>
-    </div>
-    {% endif %}
-
-    {% if specs.sram %}
-    <div class="product-spec">
-      <strong>SRAM</strong>
-      <span>{{ specs.sram }}</span>
-    </div>
-    {% endif %}
-
-    {% if specs.wifi %}
-    <div class="product-spec">
-      <strong>Wi-Fi</strong>
-      <span>✔</span>
-    </div>
-    {% endif %}
-
-    {% if specs.bluetooth %}
-    <div class="product-spec">
-      <strong>Bluetooth</strong>
-      <span>✔</span>
-    </div>
-    {% endif %}
-
-    {% if specs.voltage %}
-    <div class="product-spec">
-      <strong>Voltage</strong>
-      <span>{{ specs.voltage }}</span>
-    </div>
-    {% endif %}
-
-  </div>
-  {% endif %}
-  {% if stores %}
-<div class="product-stores">
-
-  <h3 class="product-section-title">
-    Buying Options
-  </h3>
-
-  {% for item in stores %}
-
-    {% assign store = item[1] %}
-
-    {% if store.enabled %}
-
-    <div class="product-store">
-
-      {% if store.logo %}
-      <div class="product-store-logo">
-
-        <img
-          src="{{ '/assets/images/stores/' | append: store.logo | relative_url }}"
-          alt="{{ store.name }}"
-          loading="lazy"
-          decoding="async">
-
-      </div>
-      {% endif %}
-
-      <div class="product-store-info">
-
-        <div class="product-store-name">
-          {{ store.name }}
-        </div>
-
-        {% if store.availability %}
-        <div class="product-store-stock">
-          {{ store.availability }}
-        </div>
-        {% endif %}
-
-      </div>
-
-      <div class="product-store-price">
-
-        {% if store.old_price %}
-        <span class="old-price">
-          {{ store.old_price }}
-        </span>
-        {% endif %}
-
-        {% if store.price %}
-        <span class="current-price">
-          {{ store.price }}
-        </span>
-        {% endif %}
-
-      </div>
-
-      <div class="product-store-button">
-
-        {% if store.affiliate %}
-        <a
-          href="{{ store.affiliate }}"
-          class="btn btn--primary"
-          target="_blank"
-          rel="nofollow sponsored noopener">
-
-          Buy Now
-
-        </a>
-        {% endif %}
-
-      </div>
-
-    </div>
-
-    {% endif %}
-
-  {% endfor %}
-
-</div>
-{% endif %}
-
-<div class="product-footer">
-
-  <p>
-    Prices and availability may change without notice.
-  </p>
-
-  <p>
-    Some links may be affiliate links that help support Embedded Nerd at no additional cost to you.
-  </p>
-
-</div>
-
-</div>
-
-{% endif %}
+{% endcase %}
