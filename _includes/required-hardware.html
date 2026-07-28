@@ -1,0 +1,96 @@
+{% comment %}
+==============================================================================
+Embedded Nerd Required Hardware v1
+------------------------------------------------------------------------------
+
+Usage:
+
+{% include required-hardware.html
+    products=page.required_hardware
+%}
+
+Front Matter:
+
+required_hardware:
+  - product: esp32-devkit
+  - product: ssd1306-oled
+
+==============================================================================
+{% endcomment %}
+
+{% assign hardware = include.products %}
+
+{% if hardware and hardware.size > 0 %}
+
+<div class="en-required-hardware">
+
+<h2 class="en-required-hardware__title">
+Required Hardware
+</h2>
+
+<table class="en-required-hardware__table">
+
+<thead>
+
+<tr>
+    <th>Component</th>
+    <th>Recommended Product</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for item in hardware %}
+
+    {% assign product = site.products
+        | where: "product_id", item.product
+        | first %}
+
+    {% assign commerce = site.data.commerce[item.product] %}
+
+    {% if product %}
+
+    <tr>
+
+        <td>
+
+            {{ product.short_title | default: product.title }}
+
+        </td>
+
+        <td>
+
+            {% if commerce.stores.amazon.enabled %}
+
+                <a
+                    href="{{ commerce.stores.amazon.affiliate_url }}"
+                    class="en-btn en-btn--amazon"
+                    target="_blank"
+                    rel="nofollow sponsored noopener">
+
+                    🛒 Check Price
+
+                </a>
+
+            {% else %}
+
+                —
+
+            {% endif %}
+
+        </td>
+
+    </tr>
+
+    {% endif %}
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endif %}
