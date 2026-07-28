@@ -79,7 +79,7 @@ social:
   name                   : Embedded Nerd
   links:
     - https://github.com/webzf
-    - https://www.youtube.com/@z3tr0n1c
+    - https://www.youtube.com/@embedded_nerd
     - https://www.pinterest.com/ztronics03/
 
 # Analytics
@@ -103,7 +103,7 @@ author:
 
     - label: "YouTube"
       icon: "fab fa-fw fa-youtube"
-      url: "https://youtube.com/@z3tr0n1c"
+      url: "https://youtube.com/@embedded_nerd"
 
     - label: "Pinterest"
       icon: "fab fa-fw fa-pinterest"
@@ -118,7 +118,7 @@ footer:
 
     - label: "YouTube"
       icon: "fab fa-fw fa-youtube"
-      url: "https://youtube.com/@z3tr0n1c"
+      url: "https://youtube.com/@embedded_nerd"
 
     - label: "Pinterest"
       icon: "fab fa-fw fa-pinterest"
