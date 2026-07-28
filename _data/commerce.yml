@@ -19,7 +19,7 @@ esp32-devkit:
   stores:
 
     amazon:
-      enabled: true
+      enabled: false
       affiliate_url: "https://amzn.to/3RC1jZV"
 
     aliexpress:
