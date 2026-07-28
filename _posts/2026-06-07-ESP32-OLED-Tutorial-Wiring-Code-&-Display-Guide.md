@@ -6,10 +6,17 @@ howto: true
 layout: single
 
 required_hardware:
-  - product: esp32-devkit
-  - product: ssd1306-oled
-  - product: breadboard
-  - product: jumper-wires-mf
+  - id: esp32-devkit
+    component: ESP32 Development Board
+
+  - id: ssd1306-oled
+    component: SSD1306 OLED Display
+
+  - id: breadboard
+    component: Breadboard
+
+  - id: jumper-wires-mf
+    component: Male-to-Female Jumper Wires
 
 sidebar:
   nav: "embedded"
