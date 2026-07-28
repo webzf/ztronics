@@ -50,7 +50,7 @@ specifications:
     value: 3.3V – 5V
 
   - name: Viewing Angle
-    value: >160°
+    value: >160
 
   - name: Active Color
     value: White (most common)
