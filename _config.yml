@@ -278,7 +278,7 @@ defaults:
       path: ""
       type: "products"
     values:
-      layout: single
+      layout: product
 
       sidebar:
         nav: embedded
