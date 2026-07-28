@@ -1,314 +1,696 @@
 {% comment %}
 ==============================================================================
-Embedded Nerd Product Box v5
+Embedded Nerd Product System v4
 ------------------------------------------------------------------------------
-Data Source:
-- _data/commerce.yml
+Compatible with:
+
+✓ _products/*.md
+✓ _data/commerce.yml
+✓ _data/stores.yml
+
+Removed:
+
+✗ _data/products.yml
+✗ _data/manufacturers.yml
+✗ _data/capabilities.yml
 
 Usage:
 
-{% include product-box.html product="esp32-devkit" %}
-
-or
-
-{% include product-box.html product=page.product_id %}
+{% include product-box.html product="esp32-devkit" style="premium" %}
 
 Styles:
 
-- premium (default)
+- premium
 - standard
 - compact
 - inline
-
 ==============================================================================
 {% endcomment %}
 
+{% assign product = site.products | where: "product_id", include.product | first %}
+{% assign commerce = site.data.commerce[include.product] %}
 {% assign style = include.style | default: "premium" %}
-{% assign product_id = include.product %}
-{% assign product = site.data.commerce[product_id] %}
 
-{% if product == nil %}
+{% if product %}
 
-<div class="notice--danger">
-<strong>Product not found.</strong><br>
-The product "<code>{{ product_id }}</code>" does not exist in
-<code>_data/commerce.yml</code>.
+<div class="en-product-box {{ style }}">
+
+{% if style == "premium" %}
+
+<div class="en-product-main">
+
+<div class="en-product-image">
+
+<img
+src="{{ product.image }}"
+alt="{{ product.alt | default: product.title }}"
+loading="lazy"
+width="420"
+height="420">
+
 </div>
+
+<div class="en-product-content">
+
+<span class="en-premium-badge">
+
+⭐ Recommended by Embedded Nerd
+
+</span>
+
+<h2>
+
+{{ product.title }}
+
+</h2>
+
+<p class="en-product-description">
+
+{{ product.description }}
+
+</p>
+
+<table class="en-product-specs">
+
+{% if product.manufacturer %}
+
+<tr>
+
+<th>
+
+Manufacturer
+
+</th>
+
+<td>
+
+{% if product.manufacturer.website %}
+
+<a
+href="{{ product.manufacturer.website }}"
+target="_blank"
+rel="noopener">
+
+{{ product.manufacturer.name }}
+
+</a>
 
 {% else %}
 
-{% assign stores = product.stores %}
-{% assign specs = product.specs %}
-
-<div class="product-box product-box--{{ style }}">
-
-  <!-- Header -->
-  <div class="product-header">
-
-    {% if product.image %}
-      <div class="product-image">
-        <img
-          src="{{ product.image | relative_url }}"
-          alt="{{ product.name }}"
-          loading="lazy">
-      </div>
-    {% endif %}
-
-    <div class="product-summary">
-
-      <h2 class="product-title">
-        {{ product.name }}
-      </h2>
-
-      {% if product.manufacturer %}
-      <div class="product-manufacturer">
-        {{ product.manufacturer }}
-      </div>
-      {% endif %}
-
-      {% if product.model %}
-      <div class="product-model">
-        {{ product.model }}
-      </div>
-      {% endif %}
-
-      {% if product.sku %}
-      <div class="product-sku">
-        SKU: {{ product.sku }}
-      </div>
-      {% endif %}
-
-    </div>
-
-  </div>
-
-</div>
+{{ product.manufacturer.name }}
 
 {% endif %}
 
-<div class="product-summary">
+</td>
 
-  <h2 class="product-title">
-    {{ product.name }}
-  </h2>
+</tr>
 
-  {% if product.manufacturer %}
-  <div class="product-manufacturer">
-    {{ product.manufacturer }}
-  </div>
-  {% endif %}
+{% endif %}
 
-  {% if product.model %}
-  <div class="product-model">
-    {{ product.model }}
-  </div>
-  {% endif %}
+{% if product.specifications %}
 
-  {% if product.sku %}
-  <div class="product-sku">
-    SKU: {{ product.sku }}
-  </div>
-  {% endif %}
+{% for spec in product.specifications %}
 
-  {% if product.rating %}
-  <div class="product-rating">
+<tr>
 
-    <span class="product-stars">
-      ★★★★★
-    </span>
+<th>
 
-    <span class="product-rating-value">
-      {{ product.rating }}/5
-    </span>
+{{ spec.name }}
 
-    {% if product.reviews %}
-    <span class="product-review-count">
-      ({{ product.reviews }} reviews)
-    </span>
-    {% endif %}
+</th>
 
-  </div>
-  {% endif %}
+<td>
 
-  {% if product.featured or product.bestseller or product.editors_choice or product.new %}
-  <div class="product-badges">
+{{ spec.value }}
 
-    {% if product.featured %}
-      <span class="product-badge featured">
-        Featured
-      </span>
-    {% endif %}
+</td>
 
-    {% if product.bestseller %}
-      <span class="product-badge bestseller">
-        Best Seller
-      </span>
-    {% endif %}
-
-    {% if product.editors_choice %}
-      <span class="product-badge editor">
-        Editor's Choice
-      </span>
-    {% endif %}
-
-    {% if product.new %}
-      <span class="product-badge new">
-        New
-      </span>
-    {% endif %}
-
-  </div>
-  {% endif %}
-
-  {% if specs %}
-  <div class="product-specs">
-
-    {% if specs.cpu %}
-    <div class="product-spec">
-      <strong>CPU</strong>
-      <span>{{ specs.cpu }}</span>
-    </div>
-    {% endif %}
-
-    {% if specs.frequency %}
-    <div class="product-spec">
-      <strong>Frequency</strong>
-      <span>{{ specs.frequency }}</span>
-    </div>
-    {% endif %}
-
-    {% if specs.flash %}
-    <div class="product-spec">
-      <strong>Flash</strong>
-      <span>{{ specs.flash }}</span>
-    </div>
-    {% endif %}
-
-    {% if specs.sram %}
-    <div class="product-spec">
-      <strong>SRAM</strong>
-      <span>{{ specs.sram }}</span>
-    </div>
-    {% endif %}
-
-    {% if specs.wifi %}
-    <div class="product-spec">
-      <strong>Wi-Fi</strong>
-      <span>✔</span>
-    </div>
-    {% endif %}
-
-    {% if specs.bluetooth %}
-    <div class="product-spec">
-      <strong>Bluetooth</strong>
-      <span>✔</span>
-    </div>
-    {% endif %}
-
-    {% if specs.voltage %}
-    <div class="product-spec">
-      <strong>Voltage</strong>
-      <span>{{ specs.voltage }}</span>
-    </div>
-    {% endif %}
-
-  </div>
-  {% endif %}
-
-</div>
-
-<div class="product-stores">
-
-{% for store in stores %}
-
-  {% if store.enabled %}
-
-  <div class="product-store">
-
-    {% if store.logo %}
-    <div class="product-store-logo">
-
-      <img
-        src="{{ '/assets/images/stores/' | append: store.logo | relative_url }}"
-        alt="{{ store.name }}"
-        loading="lazy">
-
-    </div>
-    {% endif %}
-
-    <div class="product-store-info">
-
-      <div class="product-store-name">
-        {{ store.name }}
-      </div>
-
-      {% if store.availability %}
-      <div class="product-store-stock">
-        {{ store.availability }}
-      </div>
-      {% endif %}
-
-    </div>
-
-    <div class="product-store-price">
-
-      {% if store.old_price %}
-      <span class="old-price">
-        {{ store.old_price }}
-      </span>
-      {% endif %}
-
-      <span class="current-price">
-        {{ store.price }}
-      </span>
-
-    </div>
-
-    <div class="product-store-button">
-
-      <a
-        href="{{ store.affiliate }}"
-        target="_blank"
-        rel="nofollow sponsored noopener"
-        class="btn btn--primary">
-
-        Buy Now
-
-      </a>
-
-    </div>
-
-  </div>
-
-  {% endif %}
+</tr>
 
 {% endfor %}
 
-   </div>
-{% assign product = site.data.commerce.products[product_id] %}
-
-{% if product == nil %}
-<div class="product-error">
-    <strong>Unknown product:</strong> {{ product_id }}
-</div>
-{% break %}
 {% endif %}
 
-{% case style %}
+{% if product.platforms %}
 
-{% when "premium" %}
-    {% include product-layouts/premium.html product=product %}
+<tr>
 
-{% when "article" %}
-    {% include product-layouts/article.html product=product %}
+<th>
 
-{% when "standard" %}
-    {% include product-layouts/standard.html product=product %}
+Platforms
 
-{% when "inline" %}
-    {% include product-layouts/inline.html product=product %}
+</th>
+
+<td>
+
+{{ product.platforms | join: ", " }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if product.software %}
+
+<tr>
+
+<th>
+
+Software
+
+</th>
+
+<td>
+
+{{ product.software | join: ", " }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+</table>
+
+{% if product.supports %}
+
+<div class="en-capabilities">
+
+{% for capability in product.supports %}
+
+<span class="en-capability">
+
+{{ capability }}
+
+</span>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+{% if commerce and commerce.badges %}
+
+<div class="en-product-badges">
+
+{% if commerce.badges.recommended %}
+
+<span class="en-badge recommended">
+
+✓ Recommended
+
+</span>
+
+{% endif %}
+
+{% if commerce.badges.editor_choice %}
+
+<span class="en-badge editor">
+
+★ Editor's Choice
+
+</span>
+
+{% endif %}
+
+{% if commerce.badges.best_value %}
+
+<span class="en-badge value">
+
+💰 Best Value
+
+</span>
+
+{% endif %}
+
+{% if commerce.badges.fast_shipping %}
+
+<span class="en-badge shipping">
+
+🚚 Fast Shipping
+
+</span>
+
+{% endif %}
+
+</div>
+
+{% endif %}
+
+{% include buy-buttons.html product=product.product_id %}
+
+<div class="en-product-links">
+
+{% if product.datasheet %}
+
+<a
+href="{{ product.datasheet }}"
+target="_blank"
+rel="noopener">
+
+📄 Datasheet
+
+</a>
+
+{% endif %}
+
+{% if product.official %}
+
+<a
+href="{{ product.official }}"
+target="_blank"
+rel="noopener">
+
+🌐 Official Website
+
+</a>
+
+{% endif %}
+
+{% if product.github %}
+
+<a
+href="{{ product.github }}"
+target="_blank"
+rel="noopener">
+
+💻 GitHub
+
+</a>
+
+{% endif %}
+
+{% if product.documentation %}
+
+<a
+href="{{ product.documentation }}"
+target="_blank"
+rel="noopener">
+
+📚 Documentation
+
+</a>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+{% elsif style == "standard" %}
+
+<div class="en-product-main">
+
+<div class="en-product-image">
+
+<img
+src="{{ product.image }}"
+alt="{{ product.alt | default: product.title }}"
+loading="lazy"
+width="320"
+height="320">
+
+</div>
+
+<div class="en-product-content">
+
+<span class="en-product-label">
+
+Recommended Component
+
+</span>
+
+<h2>
+
+{{ product.title }}
+
+</h2>
+
+<p class="en-product-description">
+
+{{ product.description }}
+
+</p>
+
+<table class="en-product-specs">
+
+{% if product.manufacturer %}
+
+<tr>
+
+<th>
+
+Manufacturer
+
+</th>
+
+<td>
+
+{% if product.manufacturer.website %}
+
+<a
+href="{{ product.manufacturer.website }}"
+target="_blank"
+rel="noopener">
+
+{{ product.manufacturer.name }}
+
+</a>
 
 {% else %}
-    {% include product-layouts/premium.html product=product %}
 
-{% endcase %}
+{{ product.manufacturer.name }}
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if product.specifications %}
+
+{% for spec in product.specifications %}
+
+<tr>
+
+<th>
+
+{{ spec.name }}
+
+</th>
+
+<td>
+
+{{ spec.value }}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+{% endif %}
+
+{% if product.platforms %}
+
+<tr>
+
+<th>
+
+Platforms
+
+</th>
+
+<td>
+
+{{ product.platforms | join: ", " }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if product.software %}
+
+<tr>
+
+<th>
+
+Software
+
+</th>
+
+<td>
+
+{{ product.software | join: ", " }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+</table>
+
+{% if product.supports %}
+
+<div class="en-capabilities">
+
+{% for capability in product.supports %}
+
+<span class="en-capability">
+
+{{ capability }}
+
+</span>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+{% include buy-buttons.html product=product.product_id %}
+
+<div class="en-product-links">
+
+{% if product.datasheet %}
+
+<a
+href="{{ product.datasheet }}"
+target="_blank"
+rel="noopener">
+
+📄 Datasheet
+
+</a>
+
+{% endif %}
+
+{% if product.official %}
+
+<a
+href="{{ product.official }}"
+target="_blank"
+rel="noopener">
+
+🌐 Official Website
+
+</a>
+
+{% endif %}
+
+{% if product.github %}
+
+<a
+href="{{ product.github }}"
+target="_blank"
+rel="noopener">
+
+💻 GitHub
+
+</a>
+
+{% endif %}
+
+{% if product.documentation %}
+
+<a
+href="{{ product.documentation }}"
+target="_blank"
+rel="noopener">
+
+📚 Documentation
+
+</a>
+
+{% endif %}
+
+</div>
+
+</div>
+
+  </div>
+
+{% elsif style == "compact" %}
+
+<div class="en-product-compact">
+
+<div class="en-product-image">
+
+<img
+src="{{ product.image }}"
+alt="{{ product.alt | default: product.title }}"
+loading="lazy"
+width="180"
+height="180">
+
+</div>
+
+<div class="en-product-content">
+
+<h3>
+
+{{ product.title }}
+
+</h3>
+
+<p class="en-product-description">
+
+{{ product.description }}
+
+</p>
+
+{% include buy-buttons.html product=product.product_id %}
+
+</div>
+
+</div>
+
+{% elsif style == "inline" %}
+
+<div class="en-inline-left">
+
+<img
+src="{{ product.image }}"
+alt="{{ product.alt | default: product.title }}"
+loading="lazy"
+width="90"
+height="90">
+
+</div>
+
+<div class="en-inline-right">
+
+<h4>
+
+{{ product.title }}
+
+</h4>
+
+{% include buy-buttons.html product=product.product_id %}
+
+</div>
+
+{% endif %}
+
+{% if product.related %}
+
+<div class="en-related-products">
+
+<h3>
+
+Related Components
+
+</h3>
+
+<div class="en-related-grid">
+
+{% for related_id in product.related %}
+
+{% assign related = site.products | where: "product_id", related_id | first %}
+
+{% if related %}
+
+<a
+class="en-related-card"
+href="{{ related.url | relative_url }}">
+
+<img
+src="{{ related.image }}"
+alt="{{ related.alt | default: related.title }}"
+loading="lazy"
+width="120"
+height="120">
+
+<span>
+
+{{ related.title }}
+
+</span>
+
+</a>
+
+{% endif %}
+
+{% endfor %}
+
+</div>
+
+</div>
+
+{% endif %}
+
+{% comment %}
+==============================================================================
+Schema.org Product
+==============================================================================
+{% endcomment %}
+
+{% if commerce %}
+
+{% assign preferred = commerce.preferred_store %}
+{% assign offer = commerce.stores[preferred] %}
+{% assign seller = site.data.stores[preferred] %}
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+
+  "name": {{ product.title | jsonify }},
+
+  "description": {{ product.description | strip_html | strip_newlines | jsonify }},
+
+  "image": {{ product.image | absolute_url | jsonify }},
+
+  "url": {{ page.url | absolute_url | jsonify }},
+
+  "category":"Electronic Component",
+
+  "brand":{
+    "@type":"Brand",
+    "name": {{ product.manufacturer.name | jsonify }}
+  }
+
+  {% if offer and offer.enabled %},
+
+  "offers": {
+    "@type": "Offer",
+    "url": {{ offer.affiliate_url | jsonify }},
+    "availability": "https://schema.org/InStock",
+
+{% if seller %}
+
+    "seller": {
+      "@type": "Organization",
+      "name": {{ seller.name | jsonify }}
+    }
+
+{% endif %}
+
+  }
+
+{% endif %}
+
+{% if product.datasheet %},
+
+  "subjectOf": {
+    "@type": "CreativeWork",
+    "url": {{ product.datasheet | jsonify }}
+  }
+
+{% endif %}
+
+}
+</script>
+
+{% endif %}
+{% endif %}
