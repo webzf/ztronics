@@ -1,125 +1,42 @@
-{% comment %}
-==============================================================================
-Embedded Nerd Buy Buttons v5
-Compatible with:
-- _products/*.md
-- _data/commerce.yml
-- _data/stores.yml
-==============================================================================
-{% endcomment %}
-
 {% assign commerce = site.data.commerce[include.product] %}
+{% assign stores = site.data.stores %}
 
-{% if commerce %}
+{% if commerce and commerce.stores %}
 
-{% assign preferred = commerce.preferred_store %}
-{% assign preferred_offer = commerce.stores[preferred] %}
-{% assign preferred_store = site.data.stores[preferred] %}
+<div class="en-product-buttons">
 
-{% assign enabled_count = 0 %}
+  {% for store_data in commerce.stores %}
 
-{% for item in commerce.stores %}
-  {% assign offer = item[1] %}
-  {% if offer.enabled and offer.affiliate_url != "" %}
-    {% assign enabled_count = enabled_count | plus: 1 %}
-  {% endif %}
-{% endfor %}
+    {% assign store_key = store_data[0] %}
+    {% assign store = store_data[1] %}
+    {% assign store_info = stores[store_key] %}
 
-<div class="en-buy-buttons">
+    {% if store.enabled and store.affiliate_url %}
 
-  {% if commerce.notes %}
-  <div class="en-buy-note">
-    ✓ {{ commerce.notes }}
-  </div>
-  {% else %}
-  <div class="en-buy-note">
-    ✓ Used in this tutorial
-  </div>
-  {% endif %}
+      <a
+        href="{{ store.affiliate_url }}"
+        class="en-buy-button{% if commerce.preferred_store == store_key %} preferred{% endif %}"
+        target="_blank"
+        rel="nofollow sponsored noopener">
 
-  {% if preferred_offer and preferred_offer.enabled and preferred_offer.affiliate_url != "" %}
-
-  <a
-    class="en-buy-main"
-    href="{{ preferred_offer.affiliate_url }}"
-    target="_blank"
-    rel="nofollow sponsored noopener">
-
-    {% if preferred_store and preferred_store.icon %}
-    <img
-      class="en-store-icon"
-      src="/assets/images/brands/stores/{{ preferred_store.icon }}.svg"
-      alt="{{ preferred_store.name }}"
-      width="20"
-      height="20"
-      loading="lazy">
-    {% endif %}
-
-    <span>
-      🛒 Buy on {{ preferred_store.name }}
-    </span>
-
-  </a>
-
-  {% endif %}
-
-  {% if enabled_count > 1 %}
-
-  <div class="en-compare-title">
-    Compare Prices
-  </div>
-
-  <div class="en-other-stores">
-
-    {% for item in commerce.stores %}
-
-      {% assign store_key = item[0] %}
-      {% assign offer = item[1] %}
-
-      {% unless store_key == preferred %}
-
-        {% assign store = site.data.stores[store_key] %}
-
-        {% if offer.enabled and offer.affiliate_url != "" %}
-
-        <a
-          class="en-buy-secondary"
-          href="{{ offer.affiliate_url }}"
-          target="_blank"
-          rel="nofollow sponsored noopener">
-
-          {% if store and store.icon %}
-          <img
-            class="en-store-icon"
-            src="/assets/images/brands/stores/{{ store.icon }}.svg"
-            alt="{{ store.name }}"
-            width="18"
-            height="18"
-            loading="lazy">
-          {% endif %}
-
-          {{ store.name }}
-
-        </a>
-
+        {% if store_info.icon %}
+          <i class="fab fa-{{ store_info.icon }}"></i>
         {% endif %}
 
-      {% endunless %}
+        Buy on {{ store_info.name }}
 
-    {% endfor %}
+      </a>
 
-  </div>
+    {% endif %}
 
-  {% endif %}
-
-  {% unless commerce.disclaimer == false %}
-
-  <div class="en-affiliate-disclaimer">
-    Affiliate links help support Embedded Nerd at no extra cost to you.
-  </div>
-
-  {% endunless %}
+  {% endfor %}
 
 </div>
+
+{% if commerce.disclaimer %}
+<div class="en-affiliate-disclaimer">
+    {{ commerce.disclaimer }}
+</div>
+{% endif %}
 
 {% endif %}
