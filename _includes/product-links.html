@@ -1,0 +1,89 @@
+{% assign product = include.product %}
+
+{% if product.links %}
+
+<section class="en-product-links">
+
+    <h3 class="en-section-title">
+
+        Resources
+
+    </h3>
+
+    <div class="en-links-grid">
+
+        {% if product.links.datasheet %}
+        <a href="{{ product.links.datasheet }}"
+           target="_blank"
+           rel="noopener">
+
+            📄 Datasheet
+
+        </a>
+        {% endif %}
+
+        {% if product.links.documentation %}
+        <a href="{{ product.links.documentation }}"
+           target="_blank"
+           rel="noopener">
+
+            📚 Documentation
+
+        </a>
+        {% endif %}
+
+        {% if product.links.github %}
+        <a href="{{ product.links.github }}"
+           target="_blank"
+           rel="noopener">
+
+            💻 GitHub
+
+        </a>
+        {% endif %}
+
+        {% if product.links.official %}
+        <a href="{{ product.links.official }}"
+           target="_blank"
+           rel="noopener">
+
+            🌐 Official Website
+
+        </a>
+        {% endif %}
+
+        {% if product.links.arduino_library %}
+        <a href="{{ product.links.arduino_library }}"
+           target="_blank"
+           rel="noopener">
+
+            ⚡ Arduino Library
+
+        </a>
+        {% endif %}
+
+        {% if product.links.esp_idf %}
+        <a href="{{ product.links.esp_idf }}"
+           target="_blank"
+           rel="noopener">
+
+            🛠 ESP-IDF
+
+        </a>
+        {% endif %}
+
+        {% if product.links.pinout %}
+        <a href="{{ product.links.pinout }}"
+           target="_blank"
+           rel="noopener">
+
+            📌 Pinout
+
+        </a>
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endif %}
