@@ -1,0 +1,299 @@
+/* ==========================================================================
+   Embedded Nerd Product System v6
+   ========================================================================== */
+
+.en-product-box {
+
+  margin: 2rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+
+}
+
+/* =====================================================
+   Header
+===================================================== */
+
+.en-product-header {
+
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+
+}
+
+.en-product-image {
+
+  flex: 0 0 280px;
+
+}
+
+.en-product-image img {
+
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+
+}
+
+.en-product-content {
+
+  flex: 1;
+
+}
+
+.en-product-title {
+
+  margin: 0;
+  font-size: 2rem;
+
+}
+
+.en-product-description {
+
+  margin-top: 1rem;
+  color: #555;
+
+}
+
+/* =====================================================
+   Badges
+===================================================== */
+
+.en-product-badges {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 1rem;
+
+}
+
+.en-badge {
+
+  display: inline-block;
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 600;
+
+}
+
+.en-badge.recommended {
+
+  background: #dbeafe;
+  color: #1d4ed8;
+
+}
+
+.en-badge.editor-choice {
+
+  background: #fef3c7;
+  color: #92400e;
+
+}
+
+.en-badge.best-value {
+
+  background: #dcfce7;
+  color: #166534;
+
+}
+
+/* =====================================================
+   Specifications
+===================================================== */
+
+.en-product-specifications {
+
+  padding: 0 2rem 2rem;
+
+}
+
+.en-specifications-table {
+
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+.en-specifications-table th {
+
+  width: 35%;
+  text-align: left;
+  padding: .75rem;
+  background: #f8fafc;
+
+}
+
+.en-specifications-table td {
+
+  padding: .75rem;
+
+}
+
+.en-specifications-table tr {
+
+  border-bottom: 1px solid #eee;
+
+}
+
+/* =====================================================
+   Buy Buttons
+===================================================== */
+
+.en-buy-buttons {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 2rem 2rem;
+
+}
+
+.en-buy-button {
+
+  flex: 1;
+  min-width: 220px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+
+  padding: 1rem;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  transition: .2s;
+
+}
+
+.en-buy-button.preferred {
+
+  background: #f59e0b;
+  color: white;
+
+}
+
+.en-buy-button:not(.preferred) {
+
+  background: #f3f4f6;
+  color: #111827;
+
+}
+
+.en-buy-button:hover {
+
+  transform: translateY(-2px);
+
+}
+
+/* =====================================================
+   Resources
+===================================================== */
+
+.en-links-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+
+  gap: 1rem;
+
+  padding: 0 2rem 2rem;
+
+}
+
+.en-resource-card {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 1rem;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+}
+
+/* =====================================================
+   Related Products
+===================================================== */
+
+.en-related-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+
+  gap: 1.5rem;
+
+  padding: 0 2rem 2rem;
+
+}
+
+.en-related-card {
+
+  display: block;
+
+  text-decoration: none;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+}
+
+.en-related-card img {
+
+  width: 100%;
+  height: auto;
+  display: block;
+
+}
+
+.en-related-content {
+
+  padding: 1rem;
+
+}
+
+/* =====================================================
+   Mobile
+===================================================== */
+
+@media (max-width:768px){
+
+.en-product-header{
+
+flex-direction:column;
+
+}
+
+.en-product-image{
+
+flex:none;
+
+}
+
+.en-buy-buttons{
+
+flex-direction:column;
+
+}
+
+}
