@@ -100,7 +100,7 @@ These displays are widely used in:
 - DIY electronics
 
 ---
-
+{% include product-box.html product="esp32-devkit" style="premium" %}
 
 ---
 
