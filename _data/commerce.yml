@@ -4,7 +4,7 @@
 
 esp32-devkit:
 
-  preferred_store: amazon
+  preferred_store: aliexpress
 
   notes: "Used in this tutorial"
 
