@@ -73,3 +73,9 @@ related:
   - ssd1306-oled
   - mpu6050
 ---
+
+{% include product-box.html product=page.product_id %}
+
+## Overview
+
+The ESP32 DevKit V1 is one of the most popular ESP32 development boards. It features Wi-Fi, Bluetooth and is fully compatible with the Arduino IDE, PlatformIO and ESP-IDF.
