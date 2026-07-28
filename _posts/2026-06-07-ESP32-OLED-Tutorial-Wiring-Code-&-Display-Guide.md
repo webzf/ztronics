@@ -5,6 +5,12 @@ howto: true
 
 layout: single
 
+required_hardware:
+  - product: esp32-devkit
+  - product: ssd1306-oled
+  - product: breadboard
+  - product: jumper-wires-mf
+
 sidebar:
   nav: "embedded"
 
@@ -101,18 +107,9 @@ These displays are widely used in:
 
 ---
 
-{% include product-box.html product="esp32-devkit" style="inline" %}
-
----
-
 # Required Hardware
 
-| Component | Link |
-|---|---|
-| ESP32 Development Board | [Recommended ESP32 Board](https://YOUR-AFFILIATE-LINK.com) |
-| SSD1306 OLED Display | [0.96" OLED Display](https://YOUR-AFFILIATE-LINK.com) |
-| Breadboard | [Breadboard Kit](https://YOUR-AFFILIATE-LINK.com) |
-| Jumper Wires | [Male-to-Female Jumper Wires](https://YOUR-AFFILIATE-LINK.com) |
+{% include required-hardware.html products=page.required_hardware %}
 
 ---
 
