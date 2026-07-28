@@ -4,11 +4,8 @@ layout: single
 permalink: /products/
 
 author_profile: false
-
 toc: false
-
 classes: wide
-
 search: false
 ---
 
@@ -42,37 +39,8 @@ placeholder="Search components...">
 
 {% for product in products %}
 
-<div
-class="en-product-card"
-
-data-title="{{ product.title | downcase }}"
-
-data-platforms="{{ product.platforms | join: ',' | downcase }}">
-
-<a href="{{ product.url | relative_url }}">
-
-<img
-src="{{ product.image }}"
-alt="{{ product.title }}"
-loading="lazy">
-
-<h3>
-
-{{ product.title }}
-
-</h3>
-
-</a>
-
-<p>
-
-{{ product.description }}
-
-</p>
-
-{% include buy-buttons.html product=product.product_id %}
-
-</div>
+    {% include product-card.html
+        product=product %}
 
 {% endfor %}
 
@@ -81,39 +49,37 @@ loading="lazy">
 <script>
 
 const search=document.getElementById("productSearch");
-
 const filter=document.getElementById("platformFilter");
-
 const cards=document.querySelectorAll(".en-product-card");
 
 function updateProducts(){
 
 const text=search.value.toLowerCase();
-
 const platform=filter.value.toLowerCase();
 
 cards.forEach(card=>{
 
 const title=card.dataset.title;
-
+const description=card.dataset.description;
+const manufacturer=card.dataset.manufacturer;
 const platforms=card.dataset.platforms;
 
-const show=
+const matchesSearch=
+title.includes(text)||
+description.includes(text)||
+manufacturer.includes(text);
 
-title.includes(text)
+const matchesPlatform=
+platform==""||platforms.includes(platform);
 
-&&
-
-(platform=="" || platforms.includes(platform));
-
-card.style.display=show?"":"none";
+card.style.display=
+(matchesSearch&&matchesPlatform)?"":"none";
 
 });
 
 }
 
 search.addEventListener("input",updateProducts);
-
 filter.addEventListener("change",updateProducts);
 
 </script>
