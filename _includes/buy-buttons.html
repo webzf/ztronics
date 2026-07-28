@@ -3,12 +3,12 @@
 
 {% if commerce and commerce.stores %}
 
-<div class="en-product-buttons">
+<div class="en-buy-buttons">
 
-  {% for store_data in commerce.stores %}
+  {% for item in commerce.stores %}
 
-    {% assign store_key = store_data[0] %}
-    {% assign store = store_data[1] %}
+    {% assign store_key = item[0] %}
+    {% assign store = item[1] %}
     {% assign store_info = stores[store_key] %}
 
     {% if store.enabled and store.affiliate_url %}
@@ -19,11 +19,25 @@
         target="_blank"
         rel="nofollow sponsored noopener">
 
-        {% if store_info.icon %}
-          <i class="fab fa-{{ store_info.icon }}"></i>
+        {% if commerce.preferred_store == store_key %}
+          <span class="en-buy-badge">
+            Recommended
+          </span>
         {% endif %}
 
-        Buy on {{ store_info.name }}
+        {% if store_info.icon %}
+          <i class="fas fa-{{ store_info.icon }}"></i>
+        {% endif %}
+
+        <span class="en-buy-text">
+
+          <strong>Check Price</strong>
+
+          <small>
+            on {{ store_info.name }}
+          </small>
+
+        </span>
 
       </a>
 
@@ -34,9 +48,13 @@
 </div>
 
 {% if commerce.disclaimer %}
-<div class="en-affiliate-disclaimer">
+
+<p class="en-affiliate-note">
+
     {{ commerce.disclaimer }}
-</div>
+
+</p>
+
 {% endif %}
 
 {% endif %}
