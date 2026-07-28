@@ -1,0 +1,37 @@
+{% assign product = include.product %}
+
+{% if product.specifications %}
+
+<section class="en-product-specifications">
+
+  <h3 class="en-section-title">
+    Specifications
+  </h3>
+
+  <table class="en-specifications-table">
+
+    <tbody>
+
+      {% for spec in product.specifications %}
+
+      <tr>
+
+        <th scope="row">
+          {{ spec.name }}
+        </th>
+
+        <td>
+          {{ spec.value }}
+        </td>
+
+      </tr>
+
+      {% endfor %}
+
+    </tbody>
+
+  </table>
+
+</section>
+
+{% endif %}
