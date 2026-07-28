@@ -303,43 +303,35 @@ flex-direction:column;
    ========================================================================== */
 
 .en-required-hardware {
-
     margin: 2rem 0;
-
-}
-
-.en-required-hardware__title {
-
-    margin-bottom: 1rem;
-
 }
 
 .en-required-hardware__table {
-
     width: 100%;
     border-collapse: collapse;
-
 }
 
 .en-required-hardware__table th,
 .en-required-hardware__table td {
-
-    padding: .85rem 1rem;
+    padding: .9rem 1rem;
     border-bottom: 1px solid #e5e5e5;
     text-align: left;
-
+    vertical-align: middle;
 }
 
-.en-btn--amazon {
+.en-required-hardware__table th:last-child,
+.en-required-hardware__table td:last-child {
+    text-align: center;
+}
 
-    display: inline-block;
-
-    padding: .45rem .9rem;
-
-    border-radius: 6px;
-
+.en-required-hardware__table a {
     text-decoration: none;
+}
 
+.en-btn--buy {
+    display: inline-block;
+    padding: .45rem .9rem;
+    border-radius: 6px;
     font-weight: 600;
-
+    white-space: nowrap;
 }
