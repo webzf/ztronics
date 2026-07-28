@@ -1,79 +1,86 @@
-{% assign product = site.data.products[include.product] %}
-{% assign commerce = site.data.commerce[include.product] %}
-{% assign manufacturer = site.data.manufacturers[product.manufacturer] %}
+{% comment %}
+==============================================================================
+Embedded Nerd Product Card v1
+------------------------------------------------------------------------------
 
-{% if product %}
+Usage:
 
-<div class="en-product-card">
+{% include product-card.html product=product %}
 
-  <div class="en-product-image">
+==============================================================================
+{% endcomment %}
 
-    <img
-      src="{{ product.image }}"
-      alt="{{ product.alt }}"
-      loading="lazy"
-      width="350"
-      height="350">
+{% assign commerce = site.data.commerce[include.product.product_id] %}
 
-  </div>
+<div class="en-product-card"
+     data-title="{{ include.product.title | downcase }}"
+     data-platforms="{{ include.product.categories | join: ',' | downcase }}"
+     data-manufacturer="{{ include.product.manufacturer | downcase }}"
+     data-description="{{ include.product.excerpt | downcase }}">
 
-  <div class="en-product-content">
+    <a class="en-product-card__image"
+       href="{{ include.product.url | relative_url }}">
 
-    <h3>{{ product.name }}</h3>
+        <img
+            src="{{ include.product.image | relative_url }}"
+            alt="{{ include.product.title }}"
+            loading="lazy">
 
-    {% if manufacturer %}
-    <p class="en-manufacturer">
-      <strong>Manufacturer:</strong>
-      {{ manufacturer.name }}
-    </p>
-    {% endif %}
-
-    <p>{{ product.description }}</p>
-
-    {% if product.supports %}
-
-    <div class="en-technologies">
-
-      {% for tech in product.supports %}
-
-        {% assign capability = site.data.capabilities[tech] %}
-
-        {% if capability %}
-
-        <span class="en-tech">
-
-          {{ capability.name }}
-
-        </span>
-
+        {% if commerce.badges.recommended %}
+            <span class="en-badge en-badge--recommended">
+                Recommended
+            </span>
         {% endif %}
 
-      {% endfor %}
+    </a>
+
+    <div class="en-product-card__body">
+
+        {% if include.product.manufacturer %}
+        <div class="en-product-card__manufacturer">
+
+            {{ include.product.manufacturer }}
+
+        </div>
+        {% endif %}
+
+        <h3>
+
+            <a href="{{ include.product.url | relative_url }}">
+
+                {{ include.product.title }}
+
+            </a>
+
+        </h3>
+
+        <p>
+
+            {{ include.product.excerpt }}
+
+        </p>
+
+        <div class="en-product-card__footer">
+
+            {% for category in include.product.categories %}
+
+                <span class="en-tag">
+
+                    {{ category }}
+
+                </span>
+
+            {% endfor %}
+
+            <a class="en-view-product"
+               href="{{ include.product.url | relative_url }}">
+
+                View Product →
+
+            </a>
+
+        </div>
 
     </div>
 
-    {% endif %}
-
-    {% if product.datasheet != "" %}
-
-    <p>
-
-      <a href="{{ product.datasheet }}"
-         target="_blank"
-         rel="noopener">
-
-         📄 Datasheet
-
-      </a>
-
-    </p>
-
-    {% endif %}
-
-    {% include buy-buttons.html product=include.product %}
-
-  </div>
-
 </div>
-
-{% endif %}
