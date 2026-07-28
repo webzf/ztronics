@@ -101,7 +101,7 @@ These displays are widely used in:
 
 ---
 
-<div>TESTE</div>
+{% include product-box.html product="esp32-devkit" style="inline" %}
 
 ---
 
