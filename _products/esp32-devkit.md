@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "ESP32 DevKit V1"
 product_id: esp32-devkit
 
