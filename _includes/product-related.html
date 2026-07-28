@@ -1,0 +1,73 @@
+{% assign product = include.product %}
+
+{% if product.related and product.related.size > 0 %}
+
+<section class="en-product-related">
+
+    <h3 class="en-section-title">
+
+        You May Also Like
+
+    </h3>
+
+    <div class="en-related-grid">
+
+        {% for related_id in product.related %}
+
+            {% assign related = site.products | where: "product_id", related_id | first %}
+
+            {% if related %}
+
+            <a class="en-related-card"
+               href="{{ related.url | relative_url }}">
+
+                {% if related.image %}
+
+                <img
+                    src="{{ related.image | relative_url }}"
+                    alt="{{ related.title }}"
+                    loading="lazy"
+                    width="160"
+                    height="160">
+
+                {% endif %}
+
+                <div class="en-related-content">
+
+                    <strong>
+
+                        {{ related.title }}
+
+                    </strong>
+
+                    {% if related.excerpt %}
+
+                    <small>
+
+                        {{ related.excerpt | strip_html | truncate: 80 }}
+
+                    </small>
+
+                    {% elsif related.description %}
+
+                    <small>
+
+                        {{ related.description | truncate: 80 }}
+
+                    </small>
+
+                    {% endif %}
+
+                </div>
+
+            </a>
+
+            {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endif %}
