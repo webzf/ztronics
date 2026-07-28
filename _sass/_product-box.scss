@@ -297,3 +297,49 @@ flex-direction:column;
 }
 
 }
+
+/* ==========================================================================
+   Required Hardware
+   ========================================================================== */
+
+.en-required-hardware {
+
+    margin: 2rem 0;
+
+}
+
+.en-required-hardware__title {
+
+    margin-bottom: 1rem;
+
+}
+
+.en-required-hardware__table {
+
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.en-required-hardware__table th,
+.en-required-hardware__table td {
+
+    padding: .85rem 1rem;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: left;
+
+}
+
+.en-btn--amazon {
+
+    display: inline-block;
+
+    padding: .45rem .9rem;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
