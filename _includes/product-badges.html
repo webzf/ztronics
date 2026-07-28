@@ -1,0 +1,45 @@
+{% assign commerce = include.commerce %}
+
+{% if commerce.badges %}
+
+<div class="en-product-badges">
+
+  {% if commerce.badges.recommended %}
+    <span class="en-badge recommended">
+      ⭐ Recommended
+    </span>
+  {% endif %}
+
+  {% if commerce.badges.editor_choice %}
+    <span class="en-badge editor-choice">
+      🏆 Editor's Choice
+    </span>
+  {% endif %}
+
+  {% if commerce.badges.best_value %}
+    <span class="en-badge best-value">
+      💰 Best Value
+    </span>
+  {% endif %}
+
+  {% if commerce.badges.beginner %}
+    <span class="en-badge beginner">
+      🎓 Beginner Friendly
+    </span>
+  {% endif %}
+
+  {% if commerce.badges.open_source %}
+    <span class="en-badge open-source">
+      🔓 Open Source
+    </span>
+  {% endif %}
+
+  {% if commerce.badges.low_power %}
+    <span class="en-badge low-power">
+      🔋 Low Power
+    </span>
+  {% endif %}
+
+</div>
+
+{% endif %}
