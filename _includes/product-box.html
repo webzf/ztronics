@@ -1,31 +1,52 @@
-{% assign product = site.products | where: "product_id", include.product | first %}
-{% assign commerce = site.data.commerce[include.product] %}
+{% comment %}
+Embedded Nerd Product Box v6 Final
+{% endcomment %}
+
+{% assign allowed_styles = "premium,standard,compact,inline" | split: "," %}
 {% assign style = include.style | default: "premium" %}
+{% unless allowed_styles contains style %}
+  {% assign style = "premium" %}
+{% endunless %}
+
+{% if page.product_id == include.product %}
+  {% assign product = page %}
+{% else %}
+  {% assign product = site.products | where: "product_id", include.product | first %}
+{% endif %}
+
+{% assign commerce = site.data.commerce[include.product] %}
 
 {% if product %}
 
-<div class="en-product-box {{ style }}">
+<div class="en-product-box en-product-box--{{ style }}">
 
-    {% include product-header.html
-        product=product
-        commerce=commerce %}
+  {% include product-header.html
+      product=product
+      commerce=commerce %}
 
-    {% include product-specifications.html
-        product=product %}
+  {% include product-specifications.html
+      product=product %}
 
-    {% include buy-buttons.html
-        product=product.product_id %}
+  {% include buy-buttons.html
+      product=product.product_id %}
 
-    {% include product-links.html
-        product=product %}
+  {% include product-links.html
+      product=product %}
 
-    {% include product-related.html
-        product=product %}
+  {% include product-related.html
+      product=product %}
 
 </div>
 
 {% include product-schema.html
     product=product
     commerce=commerce %}
+
+{% else %}
+
+<div class="notice--warning">
+  <strong>Embedded Nerd Product System:</strong>
+  Product "<code>{{ include.product }}</code>" was not found.
+</div>
 
 {% endif %}
