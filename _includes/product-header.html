@@ -1,0 +1,45 @@
+{% assign product = include.product %}
+{% assign commerce = include.commerce %}
+
+<div class="en-product-header">
+
+  <div class="en-product-image">
+
+    <a href="{{ product.url | relative_url }}">
+
+      <img
+        src="{{ product.image | relative_url }}"
+        alt="{{ product.alt | default: product.title }}"
+        loading="lazy"
+        width="420"
+        height="420">
+
+    </a>
+
+  </div>
+
+  <div class="en-product-content">
+
+    {% include product-badges.html commerce=commerce %}
+
+    <h2 class="en-product-title">
+      <a href="{{ product.url | relative_url }}">
+        {{ product.title }}
+      </a>
+    </h2>
+
+    {% if product.manufacturer %}
+      <p class="en-product-manufacturer">
+        by <strong>{{ product.manufacturer }}</strong>
+      </p>
+    {% endif %}
+
+    {% if product.description %}
+      <p class="en-product-description">
+        {{ product.description }}
+      </p>
+    {% endif %}
+
+  </div>
+
+</div>
