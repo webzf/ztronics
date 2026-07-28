@@ -74,7 +74,7 @@ related:
   - mpu6050
 ---
 
-{% include product-box.html product=page.product_id %}
+
 
 ## Overview
 
