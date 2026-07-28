@@ -10,7 +10,7 @@ search: false
 ---
 
 <div class="en-products-toolbar">
-
+ 
 <input
 id="productSearch"
 class="en-search"
