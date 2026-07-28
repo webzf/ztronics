@@ -1,6 +1,6 @@
 {% assign product = include.product %}
 
-{% if product.links %}
+{% if product.links and product.links.size > 0 %}
 
 <section class="en-product-links">
 
@@ -12,75 +12,49 @@
 
     <div class="en-links-grid">
 
-        {% if product.links.datasheet %}
-        <a href="{{ product.links.datasheet }}"
-           target="_blank"
-           rel="noopener">
+        {% for link in product.links %}
 
-            📄 Datasheet
+        <a
+            class="en-resource-card"
+            href="{{ link.url }}"
+            target="_blank"
+            rel="noopener">
 
-        </a>
-        {% endif %}
+            <div class="en-resource-icon">
 
-        {% if product.links.documentation %}
-        <a href="{{ product.links.documentation }}"
-           target="_blank"
-           rel="noopener">
+                <i class="fas fa-{{ link.icon }}"></i>
 
-            📚 Documentation
+            </div>
 
-        </a>
-        {% endif %}
+            <div class="en-resource-content">
 
-        {% if product.links.github %}
-        <a href="{{ product.links.github }}"
-           target="_blank"
-           rel="noopener">
+                <strong>
 
-            💻 GitHub
+                    {{ link.title }}
 
-        </a>
-        {% endif %}
+                </strong>
 
-        {% if product.links.official %}
-        <a href="{{ product.links.official }}"
-           target="_blank"
-           rel="noopener">
+                {% if link.description %}
 
-            🌐 Official Website
+                <small>
 
-        </a>
-        {% endif %}
+                    {{ link.description }}
 
-        {% if product.links.arduino_library %}
-        <a href="{{ product.links.arduino_library }}"
-           target="_blank"
-           rel="noopener">
+                </small>
 
-            ⚡ Arduino Library
+                {% endif %}
+
+            </div>
+
+            <div class="en-resource-arrow">
+
+                →
+
+            </div>
 
         </a>
-        {% endif %}
 
-        {% if product.links.esp_idf %}
-        <a href="{{ product.links.esp_idf }}"
-           target="_blank"
-           rel="noopener">
-
-            🛠 ESP-IDF
-
-        </a>
-        {% endif %}
-
-        {% if product.links.pinout %}
-        <a href="{{ product.links.pinout }}"
-           target="_blank"
-           rel="noopener">
-
-            📌 Pinout
-
-        </a>
-        {% endif %}
+        {% endfor %}
 
     </div>
 
