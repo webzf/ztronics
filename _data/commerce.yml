@@ -25,3 +25,28 @@ esp32-devkit:
     aliexpress:
       enabled: true
       affiliate_url: "https://s.click.aliexpress.com/e/_c4n38hZ9"
+
+
+SSD1306-OLED-Display:
+
+  preferred_store: aliexpress
+
+  notes: "Used in this tutorial"
+
+  disclaimer: false
+
+  badges:
+    recommended: true
+    editor_choice: true
+    best_value: true
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: false
+      affiliate_url: "https://amzn.to/3RC1jZV"
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_EIt4LOO"
