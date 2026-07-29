@@ -27,7 +27,7 @@ esp32-devkit:
       affiliate_url: "https://s.click.aliexpress.com/e/_c4n38hZ9"
 
 
-SSD1306-OLED-Display:
+ssd1306-oled:
 
   preferred_store: aliexpress
 
