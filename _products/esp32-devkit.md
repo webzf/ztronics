@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: product
 
 title: "ESP32 DevKit V1"
 
