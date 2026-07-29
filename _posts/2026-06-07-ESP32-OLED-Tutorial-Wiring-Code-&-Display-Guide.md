@@ -55,6 +55,7 @@ tags:
 
 related: true
 share: true
+
 ---
 
 This guide shows how to connect an SSD1306 OLED display to an ESP32 using I2C communication.
