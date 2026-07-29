@@ -417,6 +417,7 @@ You can extend this tutorial by adding:
 - [I2C Scanner Tutorial](../i2c-scanner-tutorial/)
 - [BME280 ESP32 Tutorial](../bme280-esp32/)
 - [ESP32 Snake Game with MPU6050 and OLED Display](../ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
+
 ---
 
 # Frequently Asked Questions
