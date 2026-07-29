@@ -458,3 +458,22 @@ flex-direction:column;
     font-size: 1.5rem;
     font-weight: 700;
 }
+
+/* =====================================================
+   Product Sections
+===================================================== */
+
+.en-product-specifications,
+.en-product-links,
+.en-product-related {
+    margin-top: 3rem;
+}
+
+.en-section-title {
+    margin: 0 0 1.5rem;
+    padding-bottom: .6rem;
+    border-bottom: 2px solid #f3f4f6;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
