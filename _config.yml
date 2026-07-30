@@ -283,7 +283,7 @@ defaults:
       sidebar:
         nav: embedded
 
-      toc: true
+      toc: false
       toc_sticky: true
       toc_label: "Contents"
 
