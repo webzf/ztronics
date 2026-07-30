@@ -1,9 +1,6 @@
 @import "minimal-mistakes";
 
 
-.en-product-box{
-    border:10px solid red !important;
-}
 /* ==================================
    COLORS
 ================================== */
@@ -999,4 +996,8 @@ flex-direction:column;
 .en-links-grid,
 .en-related-grid{
     margin-top:1rem;
+}
+
+.en-product-box{
+    border:10px solid red !important;
 }
