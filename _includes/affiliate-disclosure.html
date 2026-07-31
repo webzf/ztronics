@@ -1,25 +1,12 @@
-{% assign has_affiliate = false %}
-
-{% for item in commerce.stores %}
-  {% assign store = item[1] %}
-  {% if store.enabled and store.affiliate_url != blank %}
-    {% assign has_affiliate = true %}
-    {% break %}
-  {% endif %}
-{% endfor %}
-
-{% if has_affiliate %}
-
 <div class="en-product-disclosure">
 
-    <strong>Affiliate Disclosure</strong>
+    <strong>Transparency Notice</strong>
 
     <p>
         Some links on this page are affiliate links. If you purchase through them,
-        Embedded Nerd may earn a small commission at no extra cost to you.
-        Thank you for supporting the website.
+        Embedded Nerd may earn a small commission at no additional cost to you.
+        This helps support the website and allows us to continue creating free
+        tutorials and guides. Thank you for your support!
     </p>
 
 </div>
-
-{% endif %}
