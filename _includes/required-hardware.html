@@ -12,6 +12,22 @@ Usage:
 ==============================================================================
 {% endcomment %}
 
+{% assign has_affiliate = false %}
+
+{% for item in hardware %}
+    {% assign commerce = site.data.commerce[item.id] %}
+
+    {% if commerce %}
+        {% assign preferred = commerce.preferred_store %}
+        {% assign store = commerce.stores[preferred] %}
+
+        {% if store.enabled and store.affiliate_url != blank %}
+            {% assign has_affiliate = true %}
+            {% break %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
 {% assign hardware = include.products %}
 
 {% if hardware and hardware.size > 0 %}
@@ -88,5 +104,7 @@ Usage:
 </table>
 
 </div>
-{% include affiliate-disclosure.html %}
+{% if has_affiliate %}
+    {% include affiliate-disclosure.html %}
+{% endif %}
 {% endif %}
