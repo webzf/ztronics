@@ -74,24 +74,22 @@ related:
   - mpu6050
 ---
 
----
-
 ## Overview
 
-The ESP32 DevKit V1 is one of the most widely used development boards based on the ESP32 microcontroller from Espressif. It combines a powerful dual-core processor, integrated Wi-Fi and Bluetooth connectivity, and a rich set of GPIO pins in a compact and affordable board.
+The **ESP32 DevKit V1** is one of the most popular development boards based on the **ESP32** microcontroller from Espressif. Combining a powerful dual-core processor with integrated Wi-Fi and Bluetooth connectivity, it provides an excellent platform for IoT, automation and embedded development.
 
-Designed for rapid prototyping, the ESP32 DevKit V1 is compatible with the Arduino IDE, PlatformIO and the official ESP-IDF framework, making it suitable for beginners, makers and professional embedded developers.
+Designed for rapid prototyping, the ESP32 DevKit V1 is fully compatible with the Arduino IDE, PlatformIO and Espressif's official ESP-IDF framework, making it suitable for beginners, makers and professional embedded developers.
 
-Whether you're building an IoT sensor, a smart home device, a robotics project or a wireless data logger, the ESP32 DevKit V1 provides excellent performance while maintaining low power consumption.
+If you're just getting started, our **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)** walks you through connecting an **[SSD1306 OLED Display](/products/ssd1306-oled/)** and displaying your first graphics in just a few minutes.
 
 ---
 
 ## Key Features
 
 - Dual-core Xtensa LX6 processor running up to 240 MHz
-- Built-in 2.4 GHz Wi-Fi
+- Integrated 2.4 GHz Wi-Fi
 - Bluetooth Classic and Bluetooth Low Energy (BLE)
-- 34 programmable GPIO pins
+- Up to 34 programmable GPIO pins
 - Hardware PWM support
 - Multiple UART, SPI and I2C interfaces
 - Capacitive touch inputs
@@ -105,7 +103,7 @@ Whether you're building an IoT sensor, a smart home device, a robotics project o
 
 ## Applications
 
-The ESP32 DevKit V1 is suitable for a wide range of embedded projects, including:
+The ESP32 DevKit V1 is suitable for a wide variety of embedded projects, including:
 
 - Internet of Things (IoT)
 - Home automation
@@ -114,35 +112,37 @@ The ESP32 DevKit V1 is suitable for a wide range of embedded projects, including
 - Robotics
 - Data logging
 - Industrial monitoring
-- Bluetooth devices
+- Bluetooth applications
 - Smart displays
 - Remote controllers
-- Battery-powered electronics
+- Battery-powered devices
+
+Its built-in wireless connectivity makes it ideal for projects that require cloud communication, remote monitoring or smartphone control.
 
 ---
 
 ## Why Choose the ESP32 DevKit V1?
 
-The ESP32 offers significantly more processing power and connectivity than traditional Arduino boards while remaining affordable.
+Compared to traditional development boards, the ESP32 offers significantly more performance and functionality while remaining affordable.
 
-Compared to the Arduino Uno, the ESP32 provides:
+Key advantages include:
 
-- Much faster CPU
+- Faster dual-core processor
 - Built-in Wi-Fi
 - Built-in Bluetooth
 - More RAM
 - More Flash memory
 - More GPIO pins
 - Better power management
-- Dual-core architecture
+- Extensive software ecosystem
 
-This makes it one of the best choices for modern embedded systems and connected devices.
+These features have made the ESP32 one of the most widely adopted microcontrollers for modern embedded systems and IoT applications.
 
 ---
 
 ## Software Support
 
-The ESP32 has one of the largest software ecosystems among microcontrollers.
+The ESP32 has one of the largest software ecosystems available for embedded development.
 
 Popular development environments include:
 
@@ -153,13 +153,13 @@ Popular development environments include:
 - CircuitPython
 - ESPHome
 
-Large collections of libraries are available for displays, sensors, networking, MQTT, HTTP servers, Bluetooth communication and cloud services.
+Thousands of open-source libraries are available for displays, sensors, networking, MQTT, HTTP servers, Bluetooth communication and cloud services.
 
 ---
 
-## Connectivity
+## Wireless Connectivity
 
-Integrated wireless connectivity includes:
+Integrated wireless features include:
 
 - 802.11 b/g/n Wi-Fi
 - Station Mode
@@ -168,30 +168,28 @@ Integrated wireless connectivity includes:
 - Bluetooth Classic
 - Bluetooth Low Energy (BLE)
 
-These features allow the ESP32 to communicate with smartphones, cloud services and other embedded devices without additional hardware.
+These capabilities allow the ESP32 to communicate with cloud platforms, smartphones and other embedded devices without requiring additional communication modules.
 
 ---
 
 ## Power Options
 
-The ESP32 DevKit V1 can typically be powered using:
+The ESP32 DevKit V1 can be powered using:
 
 - USB connection
 - 5V VIN pin
 - Regulated 3.3V input
 
-The onboard voltage regulator provides the required 3.3V for the ESP32 microcontroller.
-
-For battery-powered projects, the Deep Sleep mode can reduce power consumption dramatically.
+For battery-powered applications, the ESP32 supports **Deep Sleep** mode, dramatically reducing power consumption while maintaining the ability to wake up automatically when required.
 
 ---
 
 ## Compatible Modules
 
-The ESP32 works with hundreds of external modules, including:
+The ESP32 integrates easily with hundreds of sensors and peripherals, including:
 
-- SSD1306 OLED Displays
-- MPU6050 Accelerometer & Gyroscope
+- **[SSD1306 OLED Display](/products/ssd1306-oled/)**
+- **[MPU6050 Accelerometer & Gyroscope](/mpu6050-arduino-guide/)**
 - BME280 Environmental Sensor
 - DHT22 Temperature Sensor
 - Relay Modules
@@ -201,14 +199,44 @@ The ESP32 works with hundreds of external modules, including:
 - WS2812 LED Strips
 - SD Card Modules
 
+If you're using multiple I2C devices such as an OLED display and an MPU6050, our **[I2C Scanner Tutorial](/i2c-scanner-tutorial/)** explains how to detect every device connected to the bus.
+
+---
+
+## Project Ideas
+
+The ESP32 DevKit V1 is suitable for projects ranging from simple experiments to complete connected systems.
+
+Popular examples include:
+
+- Wi-Fi weather stations
+- Home automation controllers
+- Smart sensors
+- Bluetooth monitoring devices
+- OLED dashboards
+- Data loggers
+- Robotics
+- Internet-connected displays
+
+For a complete practical project, follow our **[ESP32 Snake Game with MPU6050 and OLED Display](/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)**, which combines the ESP32 with an **SSD1306 OLED Display** and an **MPU6050** motion sensor.
+
 ---
 
 ## Documentation
 
-Espressif provides comprehensive documentation covering hardware design, software development, APIs and reference manuals. Combined with a large open-source community, the ESP32 is one of the best-supported embedded platforms available today.
+Espressif provides comprehensive documentation covering hardware design, APIs and software development. Combined with its large open-source community, the ESP32 remains one of the best-supported embedded platforms available.
+
+You can also browse our **[Products](/products/)** section for compatible hardware or explore our **[Recommended Hardware](/recommended-hardware/)** collection for components frequently used with the ESP32.
 
 ---
 
 ## Related Tutorials
 
-Visit our ESP32 tutorials to learn how to connect sensors, control displays, build Wi-Fi applications and create complete IoT projects using the ESP32 DevKit V1.
+To get the most from your ESP32 DevKit V1, we recommend the following guides:
+
+- **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)**
+- **[I2C Scanner Tutorial](/i2c-scanner-tutorial/)**
+- **[MPU6050 Arduino Guide](/mpu6050-arduino-guide/)**
+- **[ESP32 Snake Game with MPU6050 and OLED Display](/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)**
+
+These tutorials cover displays, sensors, I2C communication and complete ESP32 projects, helping you build practical embedded systems using the ESP32 DevKit V1.
