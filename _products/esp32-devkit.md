@@ -63,7 +63,7 @@ links:
     url: https://www.espressif.com/
 
   - title: GitHub
-    icon: github
+    icon: fab fa-github
     description: Arduino ESP32 Core
     url: https://github.com/espressif/arduino-esp32
 
