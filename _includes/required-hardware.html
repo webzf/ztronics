@@ -12,12 +12,16 @@ Usage:
 ==============================================================================
 {% endcomment %}
 
+{% assign hardware = include.products %}
+
 {% assign has_affiliate = false %}
 
 {% for item in hardware %}
+
     {% assign commerce = site.data.commerce[item.id] %}
 
     {% if commerce %}
+
         {% assign preferred = commerce.preferred_store %}
         {% assign store = commerce.stores[preferred] %}
 
@@ -25,10 +29,10 @@ Usage:
             {% assign has_affiliate = true %}
             {% break %}
         {% endif %}
-    {% endif %}
-{% endfor %}
 
-{% assign hardware = include.products %}
+    {% endif %}
+
+{% endfor %}
 
 {% if hardware and hardware.size > 0 %}
 
