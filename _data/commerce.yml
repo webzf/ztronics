@@ -8,7 +8,7 @@ esp32-devkit:
 
   notes: "Used in this tutorial"
 
-  disclaimer: false
+  disclaimer: true
 
   badges:
     recommended: true
@@ -19,7 +19,7 @@ esp32-devkit:
   stores:
 
     amazon:
-      enabled: false
+      enabled: true
       affiliate_url: "https://amzn.to/3RC1jZV"
 
     aliexpress:
@@ -33,7 +33,7 @@ ssd1306-oled:
 
   notes: "Used in this tutorial"
 
-  disclaimer: false
+  disclaimer: true
 
   badges:
     recommended: true
