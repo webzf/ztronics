@@ -58,7 +58,7 @@ specifications:
 links:
 
   - title: Datasheet
-    icon: file-lines
+    icon: fas fa-file-lines
     description: SSD1306 Controller Datasheet
     url: https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf
 
