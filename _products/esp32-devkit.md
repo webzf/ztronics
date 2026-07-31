@@ -53,12 +53,12 @@ specifications:
 links:
 
   - title: Datasheet
-    icon: file-lines
+    icon: fas fa-file-lines
     description: Espressif Datasheet
     url: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
 
   - title: Official Website
-    icon: globe
+    icon: fas fa-globe
     description: Espressif Product Page
     url: https://www.espressif.com/
 
