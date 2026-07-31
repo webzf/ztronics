@@ -770,9 +770,13 @@
     }
 
 }
+/* =====================================================
+   Transparency Notice
+===================================================== */
+
 .en-product-disclosure{
 
-    margin:0 2rem 2rem;
+    margin:1.5rem 0 0;
 
     padding-top:1rem;
 
@@ -782,7 +786,7 @@
 
     font-size:.85rem;
 
-    line-height:1.6;
+    line-height:1.7;
 
 }
 
@@ -790,8 +794,12 @@
 
     display:block;
 
-    margin-bottom:.4rem;
+    margin-bottom:.5rem;
 
     color:$text-color;
+
+    font-size:.9rem;
+
+    font-weight:700;
 
 }
