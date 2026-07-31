@@ -1,0 +1,89 @@
+{% assign product = include.product %}
+
+{% assign matches = "" | split: "|" %}
+
+{% for post in site.posts %}
+
+  {% assign score = 0 %}
+
+  {% for tag in product.tags %}
+    {% if post.tags contains tag %}
+      {% assign score = score | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+
+  {% if score > 0 %}
+    {% capture item %}
+{{ score }}|||{{ post.url }}|||{{ post.title }}|||{{ post.excerpt }}|||{{ post.header.teaser }}
+    {% endcapture %}
+
+    {% assign matches = matches | push: item %}
+
+  {% endif %}
+
+{% endfor %}
+
+{% assign matches = matches | sort | reverse %}
+
+{% if matches.size > 0 %}
+
+<section class="en-related-tutorials">
+
+<h3 class="en-section-title">
+Related Tutorials
+</h3>
+
+<div class="en-related-grid">
+
+{% for item in matches limit:3 %}
+
+{% assign p = item | split:"|||" %}
+
+<div class="en-related-card">
+
+{% if p[4] != blank %}
+
+<a href="{{ p[1] }}">
+
+<img
+src="{{ p[4] }}"
+alt="{{ p[2] }}"
+loading="lazy">
+
+</a>
+
+{% endif %}
+
+<h4>
+
+<a href="{{ p[1] }}">
+
+{{ p[2] }}
+
+</a>
+
+</h4>
+
+<p>
+
+{{ p[3] | strip_html | truncate:130 }}
+
+</p>
+
+<a
+class="en-read-more"
+href="{{ p[1] }}">
+
+Read Tutorial →
+
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</section>
+
+{% endif %}
