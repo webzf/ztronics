@@ -4,18 +4,14 @@
 <div class="en-product-header">
 
   <div class="en-product-image">
-
     <a href="{{ product.url | relative_url }}">
-
       <img
         src="{{ product.image | relative_url }}"
         alt="{{ product.alt | default: product.title }}"
         loading="lazy"
-        width="420"
-        height="420">
-
+        width="220"
+        height="220">
     </a>
-
   </div>
 
   <div class="en-product-content">
@@ -29,9 +25,9 @@
     </h2>
 
     {% if product.manufacturer %}
-      <p class="en-product-manufacturer">
-        by <strong>{{ product.manufacturer }}</strong>
-      </p>
+      <div class="en-product-manufacturer">
+        {{ product.manufacturer }}
+      </div>
     {% endif %}
 
     {% if product.description %}
@@ -39,6 +35,27 @@
         {{ product.description }}
       </p>
     {% endif %}
+
+    <div class="en-product-cta">
+
+      {% assign preferred = commerce.preferred_store %}
+      {% assign store = commerce.stores[preferred] %}
+
+      {% if store.enabled %}
+
+      <a
+        class="en-buy-button"
+        href="{{ store.affiliate_url }}"
+        target="_blank"
+        rel="nofollow sponsored noopener">
+
+        🛒 Check Price on {{ preferred | capitalize }}
+
+      </a>
+
+      {% endif %}
+
+    </div>
 
   </div>
 
