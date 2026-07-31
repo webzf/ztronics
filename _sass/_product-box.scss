@@ -803,3 +803,101 @@
     font-weight:700;
 
 }
+
+/* =====================================================
+   Related Tutorials
+===================================================== */
+
+.en-related-tutorials{
+
+margin-top:3rem;
+
+padding-top:2rem;
+
+border-top:1px solid #353c47;
+
+}
+
+.en-related-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:1.5rem;
+
+}
+
+.en-related-card{
+
+background:#252a34;
+
+border:1px solid #3a4250;
+
+border-radius:12px;
+
+overflow:hidden;
+
+transition:.25s;
+
+}
+
+.en-related-card:hover{
+
+transform:translateY(-3px);
+
+border-color:#4f7cff;
+
+}
+
+.en-related-card img{
+
+width:100%;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+.en-related-card h4{
+
+margin:1rem;
+
+font-size:1.05rem;
+
+}
+
+.en-related-card h4 a{
+
+text-decoration:none;
+
+color:#fff;
+
+}
+
+.en-related-card p{
+
+margin:0 1rem 1rem;
+
+color:#c6ced9;
+
+font-size:.92rem;
+
+line-height:1.6;
+
+}
+
+.en-read-more{
+
+display:inline-block;
+
+margin:0 1rem 1rem;
+
+font-weight:600;
+
+text-decoration:none;
+
+}
