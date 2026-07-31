@@ -63,12 +63,12 @@ links:
     url: https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf
 
   - title: Adafruit Library
-    icon: github
+    icon: fab fa-github
     description: Adafruit SSD1306 Arduino Library
     url: https://github.com/adafruit/Adafruit_SSD1306
 
   - title: GFX Library
-    icon: github
+    icon: fab fa-github
     description: Adafruit GFX Graphics Library
     url: https://github.com/adafruit/Adafruit-GFX-Library
 
