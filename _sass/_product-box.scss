@@ -770,3 +770,28 @@
     }
 
 }
+.en-product-disclosure{
+
+    margin:0 2rem 2rem;
+
+    padding-top:1rem;
+
+    border-top:1px solid $border-color;
+
+    color:$muted-text-color;
+
+    font-size:.85rem;
+
+    line-height:1.6;
+
+}
+
+.en-product-disclosure strong{
+
+    display:block;
+
+    margin-bottom:.4rem;
+
+    color:$text-color;
+
+}
