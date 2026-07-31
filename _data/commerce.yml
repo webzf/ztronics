@@ -8,7 +8,7 @@ esp32-devkit:
 
   notes: "Used in this tutorial"
 
-  disclaimer: true
+  disclaimer: false
 
   badges:
     recommended: true
@@ -33,7 +33,7 @@ ssd1306-oled:
 
   notes: "Used in this tutorial"
 
-  disclaimer: true
+  disclaimer: false
 
   badges:
     recommended: true
