@@ -36,7 +36,7 @@ tags:
   - Arduino
   - Arduino Uno
   - ESP32
-  - ESP32-projects
+  - Esp32 projects
   - Gyroscope
   - Accelerometer
   - I2C
