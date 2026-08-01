@@ -1,0 +1,26 @@
+{% if product.tags and product.tags.size > 0 %}
+
+<section class="en-product-categories">
+
+    <h3 class="en-section-title">
+        Categories
+    </h3>
+
+    <div class="en-product-tags">
+
+        {% for tag in product.tags %}
+
+        <a href="{{ '/tags/' | append: tag | slugify | append: '/' | relative_url }}"
+           class="en-product-tag">
+
+            {{ tag }}
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endif %}
