@@ -88,3 +88,65 @@
     color:#b8c0cc;
 
 }
+
+.en-products-toolbar{
+
+    margin:2rem 0;
+
+}
+
+.en-search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding:1rem 1.25rem;
+
+    border-radius:16px;
+
+    background:#252a34;
+
+    border:1px solid #353b46;
+
+    transition:.25s;
+
+}
+
+.en-search-box:focus-within{
+
+    border-color:#3b82f6;
+
+    box-shadow:0 0 0 4px rgba(59,130,246,.18);
+
+}
+
+.en-search-icon{
+
+    width:22px;
+
+    height:22px;
+
+    color:#94a3b8;
+
+    flex:none;
+
+}
+
+.en-search{
+
+    width:100%;
+
+    border:0;
+
+    outline:none;
+
+    background:none;
+
+    color:#fff;
+
+    font-size:1rem;
+
+}
