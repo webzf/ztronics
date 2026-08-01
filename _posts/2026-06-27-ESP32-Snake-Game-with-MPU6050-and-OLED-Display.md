@@ -38,7 +38,7 @@ tags:
   - SSD1306
   - Arduino IDE
   - I2C
-  - ESP32 Projects
+  - Esp32 Projects
 
 related: true
 share: true
