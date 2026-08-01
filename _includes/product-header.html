@@ -60,3 +60,20 @@
   </div>
 
 </div>
+
+{% if product.tags %}
+
+<div class="en-product-tags">
+
+{% for tag in product.tags %}
+
+<a href="/tags/{{ tag | slugify }}/"
+   class="en-product-tag">
+   {{ tag }}
+</a>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
