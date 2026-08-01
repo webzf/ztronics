@@ -1,203 +1,66 @@
----
-title: "Electronic Components"
-layout: single
-permalink: /products/
+{% assign platforms_string = "" %}
 
-author_profile: false
-toc: false
-classes: wide
-search: false
----
+{% for product in products %}
 
-<div class="en-products-page">
+  {% if product.platforms %}
 
-    <!-- HERO -->
+    {% for platform in product.platforms %}
 
-    <section class="en-products-hero">
+      {% assign platforms_string = platforms_string | append: platform | append: "|" %}
 
-        <div class="en-products-hero-content">
+    {% endfor %}
 
-            <span class="en-products-label">
+  {% endif %}
 
-                Embedded Nerd Library
+{% endfor %}
 
-            </span>
+{% assign platforms = platforms_string | split: "|" | uniq | sort %}
 
-            <h1>
+<section class="en-filters-card">
 
-                Electronic Components
+    <div class="en-filter-header">
 
-            </h1>
-
-            <p>
-
-                Explore development boards, sensors, displays,
-                modules and accessories used throughout our tutorials.
-
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- SEARCH -->
-
-    <section class="en-products-toolbar">
-
-        <div class="en-search-box">
-
-            <svg class="en-search-icon"
-                 viewBox="0 0 24 24"
-                 fill="none"
-                 stroke="currentColor"
-                 stroke-width="2">
-
-                <circle cx="11" cy="11" r="8"></circle>
-
-                <line x1="21"
-                      y1="21"
-                      x2="16.65"
-                      y2="16.65"></line>
-
-            </svg>
-
-            <input
-                id="productSearch"
-                class="en-search"
-                type="search"
-                autocomplete="off"
-                placeholder="Search components...">
-
-        </div>
-
-    </section>
-
-    <!-- FILTERS -->
-
-    <section class="en-filters">
-
-        <div class="en-filter-group">
-
-            <h3>
-
-                Platforms
-
-            </h3>
-
-            <div class="en-platforms">
-
-                <button class="platform-chip active"
-                        data-platform="">
-
-                    All
-
-                </button>
-
-                <button class="platform-chip"
-                        data-platform="ESP32">
-
-                    ESP32
-
-                </button>
-
-                <button class="platform-chip"
-                        data-platform="Arduino">
-
-                    Arduino
-
-                </button>
-
-                <button class="platform-chip"
-                        data-platform="STM32">
-
-                    STM32
-
-                </button>
-
-                <button class="platform-chip"
-                        data-platform="Raspberry Pi">
-
-                    Raspberry Pi
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- RESULTS -->
-
-    <section class="en-products-results">
-
-        <div>
-
-            <h2>
-
-                Components
-
-            </h2>
-
-            <p id="productsCount">
-
-            </p>
-
-        </div>
+        <h2>Browse by Platform</h2>
 
         <button
             id="clearFilters"
-            class="en-clear-filters">
+            class="en-clear-filters"
+            type="button">
 
             Clear Filters
 
         </button>
 
-    </section>
+    </div>
 
-    <!-- GRID -->
+    <div class="en-platforms">
 
-    <div
-        id="productsGrid"
-        class="en-products-grid">
+        <button
+            class="platform-chip active"
+            type="button"
+            data-platform="">
 
-        {% assign products = site.products | sort:"title" %}
+            All
 
-        {% for product in products %}
+        </button>
 
-            {% include product-card.html product=product %}
+        {% for platform in platforms %}
+
+            {% unless platform == "" %}
+
+            <button
+                class="platform-chip"
+                type="button"
+                data-platform="{{ platform }}">
+
+                {{ platform }}
+
+            </button>
+
+            {% endunless %}
 
         {% endfor %}
 
     </div>
 
-    <!-- EMPTY -->
-
-    <div
-        id="noProducts"
-        class="en-no-products"
-        hidden>
-
-        <div class="en-empty-icon">
-
-            🔍
-
-        </div>
-
-        <h3>
-
-            No components found
-
-        </h3>
-
-        <p>
-
-            Try another search or remove the filters.
-
-        </p>
-
-    </div>
-
-</div>
-
-<script defer src="{{ '/assets/js/products.js' | relative_url }}"></script>
+</section>
