@@ -785,3 +785,88 @@ text-decoration:none;
     left:12px;
     font-size: 0.65rem;
 }
+
+/* =====================================================
+   Product Tags
+===================================================== */
+
+.en-product-tags-section{
+
+    margin:2rem 0;
+
+}
+
+.en-product-tags-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.75rem;
+
+    margin-top:1rem;
+
+}
+
+.en-product-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.55rem 1rem;
+
+    border:1px solid var(--border-color,#3b4252);
+
+    border-radius:999px;
+
+    background:var(--card-color,#2b313d);
+
+    color:var(--text-color,#e5e7eb);
+
+    text-decoration:none;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    line-height:1;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+.en-product-tag:hover{
+
+    background:#2563eb;
+
+    border-color:#2563eb;
+
+    color:#fff;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 18px rgba(37,99,235,.25);
+
+}
+
+.en-product-tag:focus-visible{
+
+    outline:2px solid #2563eb;
+
+    outline-offset:3px;
+
+}
+
+.en-product-tag-text{
+
+    white-space:nowrap;
+
+}
