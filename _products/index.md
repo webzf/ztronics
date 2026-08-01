@@ -9,168 +9,195 @@ classes: wide
 search: false
 ---
 
-<section class="en-products-hero">
+<div class="en-products-page">
 
-    <h1>Electronic Components</h1>
+    <!-- HERO -->
 
-    <p>
-        Browse development boards, displays, sensors and modules
-        used throughout Embedded Nerd tutorials.
-    </p>
+    <section class="en-products-hero">
 
-    <div class="en-products-search">
+        <div class="en-products-hero-content">
 
-        <input
-            id="productSearch"
-            class="en-search"
-            type="search"
-            placeholder="Search components..."
-            autocomplete="off">
+            <span class="en-products-label">
+
+                Embedded Nerd Library
+
+            </span>
+
+            <h1>
+
+                Electronic Components
+
+            </h1>
+
+            <p>
+
+                Explore development boards, sensors, displays,
+                modules and accessories used throughout our tutorials.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- SEARCH -->
+
+    <section class="en-products-toolbar">
+
+        <div class="en-search-box">
+
+            <svg class="en-search-icon"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2">
+
+                <circle cx="11" cy="11" r="8"></circle>
+
+                <line x1="21"
+                      y1="21"
+                      x2="16.65"
+                      y2="16.65"></line>
+
+            </svg>
+
+            <input
+                id="productSearch"
+                class="en-search"
+                type="search"
+                autocomplete="off"
+                placeholder="Search components...">
+
+        </div>
+
+    </section>
+
+    <!-- FILTERS -->
+
+    <section class="en-filters">
+
+        <div class="en-filter-group">
+
+            <h3>
+
+                Platforms
+
+            </h3>
+
+            <div class="en-platforms">
+
+                <button class="platform-chip active"
+                        data-platform="">
+
+                    All
+
+                </button>
+
+                <button class="platform-chip"
+                        data-platform="ESP32">
+
+                    ESP32
+
+                </button>
+
+                <button class="platform-chip"
+                        data-platform="Arduino">
+
+                    Arduino
+
+                </button>
+
+                <button class="platform-chip"
+                        data-platform="STM32">
+
+                    STM32
+
+                </button>
+
+                <button class="platform-chip"
+                        data-platform="Raspberry Pi">
+
+                    Raspberry Pi
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RESULTS -->
+
+    <section class="en-products-results">
+
+        <div>
+
+            <h2>
+
+                Components
+
+            </h2>
+
+            <p id="productsCount">
+
+            </p>
+
+        </div>
+
+        <button
+            id="clearFilters"
+            class="en-clear-filters">
+
+            Clear Filters
+
+        </button>
+
+    </section>
+
+    <!-- GRID -->
+
+    <div
+        id="productsGrid"
+        class="en-products-grid">
+
+        {% assign products = site.products | sort:"title" %}
+
+        {% for product in products %}
+
+            {% include product-card.html product=product %}
+
+        {% endfor %}
 
     </div>
 
-</section>
+    <!-- EMPTY -->
 
-<section class="en-platforms">
+    <div
+        id="noProducts"
+        class="en-no-products"
+        hidden>
 
-    <button class="platform-chip active" data-platform="">
-        All
-    </button>
+        <div class="en-empty-icon">
 
-    <button class="platform-chip" data-platform="ESP32">
-        ESP32
-    </button>
+            🔍
 
-    <button class="platform-chip" data-platform="Arduino">
-        Arduino
-    </button>
+        </div>
 
-    <button class="platform-chip" data-platform="STM32">
-        STM32
-    </button>
+        <h3>
 
-    <button class="platform-chip" data-platform="Raspberry Pi">
-        Raspberry Pi
-    </button>
+            No components found
 
-</section>
+        </h3>
 
-<div class="en-products-info">
+        <p>
 
-    <span id="productsCount"></span>
+            Try another search or remove the filters.
+
+        </p>
+
+    </div>
 
 </div>
 
-<div id="productsGrid" class="en-products-grid">
-
-{% assign products = site.products | sort:"title" %}
-
-{% for product in products %}
-
-    {% include product-card.html product=product %}
-
-{% endfor %}
-
-</div>
-
-<div
-    id="noProducts"
-    class="en-no-products"
-    hidden>
-
-    No components found.
-
-</div>
-
-<script>
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-const search=document.getElementById("productSearch");
-
-const chips=document.querySelectorAll(".platform-chip");
-
-const cards=[...document.querySelectorAll(".en-product-card")];
-
-const counter=document.getElementById("productsCount");
-
-const empty=document.getElementById("noProducts");
-
-let platform="";
-
-function normalize(value){
-
-return(value||"")
-.toLowerCase()
-.normalize("NFD")
-.replace(/[\u0300-\u036f]/g,"");
-
-}
-
-function filterProducts(){
-
-const text=normalize(search.value);
-
-let visible=0;
-
-cards.forEach(card=>{
-
-const title=normalize(card.dataset.title);
-
-const description=normalize(card.dataset.description);
-
-const manufacturer=normalize(card.dataset.manufacturer);
-
-const platforms=normalize(card.dataset.platforms);
-
-const show=
-
-(
-title.includes(text)||
-description.includes(text)||
-manufacturer.includes(text)||
-platforms.includes(text)
-)
-
-&&
-
-(
-platform===""||
-platforms.includes(platform)
-);
-
-card.hidden=!show;
-
-if(show) visible++;
-
-});
-
-counter.textContent=`Showing ${visible} component${visible!=1?"s":""}`;
-
-empty.hidden=visible!==0;
-
-}
-
-search.addEventListener("input",filterProducts);
-
-chips.forEach(chip=>{
-
-chip.addEventListener("click",()=>{
-
-chips.forEach(c=>c.classList.remove("active"));
-
-chip.classList.add("active");
-
-platform=normalize(chip.dataset.platform);
-
-filterProducts();
-
-});
-
-});
-
-filterProducts();
-
-});
-
-</script>
+<script defer src="{{ '/assets/js/products.js' | relative_url }}"></script>
