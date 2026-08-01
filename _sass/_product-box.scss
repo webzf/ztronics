@@ -791,82 +791,51 @@ text-decoration:none;
 ===================================================== */
 
 .en-product-tags-section{
-
     margin:2rem 0;
-
 }
 
 .en-product-tags-list{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:.75rem;
-
     margin-top:1rem;
-
 }
 
 .en-product-tag{
-
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
 
-    padding:.55rem 1rem;
+    padding:.6rem 1rem;
 
-    border:1px solid var(--border-color,#3b4252);
-
+    background:#252a34;
+    border:1px solid #3a4250;
     border-radius:999px;
 
-    background:var(--card-color,#2b313d);
-
-    color:var(--text-color,#e5e7eb);
-
+    color:#d1d5db;
     text-decoration:none;
 
     font-size:.9rem;
-
     font-weight:600;
-
     line-height:1;
 
-    transition:
-        background .2s ease,
-        border-color .2s ease,
-        color .2s ease,
-        transform .2s ease,
-        box-shadow .2s ease;
-
+    transition:all .25s ease;
 }
 
 .en-product-tag:hover{
-
-    background:#2563eb;
-
-    border-color:#2563eb;
-
-    color:#fff;
+    background:#303846;
+    border-color:#4b5563;
+    color:#ffffff;
 
     transform:translateY(-2px);
-
-    box-shadow:0 6px 18px rgba(37,99,235,.25);
-
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
 
 .en-product-tag:focus-visible{
-
-    outline:2px solid #2563eb;
-
+    outline:2px solid #3b82f6;
     outline-offset:3px;
-
 }
 
 .en-product-tag-text{
-
     white-space:nowrap;
-
 }
