@@ -901,3 +901,55 @@ font-weight:600;
 text-decoration:none;
 
 }
+
+.en-buy-button{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    position:relative;
+}
+
+.en-buy-icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2rem;
+    background:rgba(255,255,255,.12);
+    flex-shrink:0;
+}
+
+.en-buy-text{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.en-buy-text strong{
+    font-size:1.7rem;
+    line-height:1.1;
+}
+
+.en-buy-text small{
+    margin-top:4px;
+    font-size:1rem;
+    opacity:.9;
+}
+
+.en-buy-arrow{
+    font-size:1.3rem;
+    opacity:.8;
+    transition:.25s;
+}
+
+.en-buy-button:hover .en-buy-arrow{
+    transform:translateX(6px);
+}
+
+.en-buy-badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+}
