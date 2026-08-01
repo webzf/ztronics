@@ -1,0 +1,123 @@
+{% assign locale = page.locale | default: site.locale %}
+
+{% assign all_tags = "" | split: "" %}
+
+{%- comment -%}
+Collect all unique tags from posts
+{%- endcomment -%}
+{% for post in site.posts %}
+  {% if post.tags %}
+    {% for tag in post.tags %}
+      {% unless all_tags contains tag %}
+        {% assign all_tags = all_tags | push: tag %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{%- comment -%}
+Collect all unique tags from products
+{%- endcomment -%}
+{% for product in site.products %}
+  {% if product.tags %}
+    {% for tag in product.tags %}
+      {% unless all_tags contains tag %}
+        {% assign all_tags = all_tags | push: tag %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% assign all_tags = all_tags | sort %}
+
+<ul class="taxonomy__index">
+
+{% for tag in all_tags %}
+
+    {% assign total = 0 %}
+
+    {% for post in site.posts %}
+        {% if post.tags contains tag %}
+            {% assign total = total | plus: 1 %}
+        {% endif %}
+    {% endfor %}
+
+    {% for product in site.products %}
+        {% if product.tags contains tag %}
+            {% assign total = total | plus: 1 %}
+        {% endif %}
+    {% endfor %}
+
+    <li>
+        <a href="#{{ tag | slugify }}">
+            <strong>{{ tag }}</strong>
+            <span class="taxonomy__count">{{ total }}</span>
+        </a>
+    </li>
+
+{% endfor %}
+
+</ul>
+
+{% assign entries_layout = page.entries_layout | default: "list" %}
+
+{% for tag in all_tags %}
+
+<section id="{{ tag | slugify }}" class="taxonomy__section">
+
+    <h2 class="archive__subtitle">{{ tag }}</h2>
+
+    {% assign has_products = false %}
+    {% assign has_posts = false %}
+
+    {% for product in site.products %}
+        {% if product.tags contains tag %}
+            {% assign has_products = true %}
+        {% endif %}
+    {% endfor %}
+
+    {% if has_products %}
+
+    <h3>Products</h3>
+
+    <div class="entries-{{ entries_layout }}">
+
+        {% for post in site.products %}
+            {% if post.tags contains tag %}
+                {% include archive-single.html type=entries_layout %}
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+    {% endif %}
+
+    {% for post in site.posts %}
+        {% if post.tags contains tag %}
+            {% assign has_posts = true %}
+        {% endif %}
+    {% endfor %}
+
+    {% if has_posts %}
+
+    <h3>Articles</h3>
+
+    <div class="entries-{{ entries_layout }}">
+
+        {% for post in site.posts %}
+            {% if post.tags contains tag %}
+                {% include archive-single.html type=entries_layout %}
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+    {% endif %}
+
+    <a href="#page-title" class="back-to-top">
+        Back to Top ↑
+    </a>
+
+</section>
+
+{% endfor %}
