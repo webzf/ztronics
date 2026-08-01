@@ -1,19 +1,23 @@
 {% if product.tags and product.tags.size > 0 %}
 
-<section class="en-product-categories">
+<section class="en-product-tags-section">
 
     <h3 class="en-section-title">
-        Categories
+        Related Topics
     </h3>
 
-    <div class="en-product-tags">
+    <div class="en-product-tags-list">
 
         {% for tag in product.tags %}
 
-        <a href="{{ '/tags/' | append: tag | slugify | append: '/' | relative_url }}"
-           class="en-product-tag">
+        <a
+            class="en-product-tag"
+            href="{{ '/tags/' | append: tag | slugify | append: '/' | relative_url }}"
+            title="View all content tagged '{{ tag }}'">
 
-            {{ tag }}
+            <span class="en-product-tag-text">
+                {{ tag }}
+            </span>
 
         </a>
 
