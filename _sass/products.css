@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Embedded Nerd Products v3
+   ========================================================================== */
+
+.en-products-page{
+
+    max-width:1500px;
+    margin:0 auto;
+    padding:2rem 0 4rem;
+
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.en-products-hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:4rem 2rem;
+
+    margin-bottom:2rem;
+
+    border-radius:24px;
+
+    background:
+        radial-gradient(circle at top right,#2563eb33 0%,transparent 45%),
+        radial-gradient(circle at bottom left,#0ea5e933 0%,transparent 40%),
+        linear-gradient(180deg,#252a34 0%,#1b2029 100%);
+
+    border:1px solid rgba(255,255,255,.06);
+
+}
+
+.en-products-hero-content{
+
+    max-width:760px;
+
+}
+
+.en-products-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    padding:.45rem .9rem;
+
+    border-radius:999px;
+
+    background:#2563eb22;
+
+    color:#7dd3fc;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    letter-spacing:.04em;
+
+    text-transform:uppercase;
+
+}
+
+.en-products-hero h1{
+
+    margin:1rem 0;
+
+    font-size:clamp(2.3rem,4vw,3.5rem);
+
+    line-height:1.1;
+
+}
+
+.en-products-hero p{
+
+    max-width:620px;
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    color:#b8c0cc;
+
+}
