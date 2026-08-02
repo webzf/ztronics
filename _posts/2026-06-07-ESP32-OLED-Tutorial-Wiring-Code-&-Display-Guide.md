@@ -12,7 +12,7 @@ required_hardware:
   - id: ssd1306-oled
     component: SSD1306 OLED Display
 
-  - id: breadboard
+  - id: solderless-breadboard
     component: Breadboard
 
   - id: jumper-wires-mf
