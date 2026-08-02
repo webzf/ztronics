@@ -32,8 +32,8 @@ read_time: false
 last_modified_at: false
 
 header:
-  image: images/esp32-joystick-hero.webp
-  teaser: images/esp32-joystick-hero.webp
+  image: /assets/images/esp32-joystick-hero.webp
+  teaser: /assets/images/esp32-joystick-hero.webp
   overlay_image: /assets/images/header3.webp
   overlay_filter: 0.25
 
@@ -43,7 +43,7 @@ share: true
 
 # ESP32 Joystick Tutorial
 
-![ESP32 Analog Joystick connected to an ESP32](images/esp32-joystick-hero2.webp)
+![ESP32 Analog Joystick connected to an ESP32](/assets/images/esp32-joystick-hero2.webp)
 
 *Learn how to connect, calibrate, and program an analog joystick module with the ESP32 using the Arduino IDE.*
 
@@ -271,7 +271,7 @@ The KY-023 joystick module exposes five pins.
 | VRy | Analog Y-axis Output |
 | SW | Push Button Output |
 
-![Joystick Pinout](images/esp32-joystick-pinout.webp)
+![Joystick Pinout](/assets/images/esp32-joystick-pinout.webp)
 
 Although many modules print **+5V**, the joystick works perfectly from **3.3V**.
 
@@ -498,7 +498,7 @@ These pins provide:
 
 # Wiring Diagram
 
-![ESP32 Wiring](images/esp32-joystick-wiring.webp)
+![ESP32 Wiring](/assets/images/esp32-joystick-wiring.webp)
 
 Follow the connections exactly as shown.
 
@@ -1453,7 +1453,7 @@ These improvements produce much more natural movement and prevent the servo from
 
 *An external 5V power supply is strongly recommended.
 
-![ESP32 Servo Wiring](images/esp32-servo-wiring.webp)
+![ESP32 Servo Wiring](/assets/images/esp32-servo-wiring.webp)
 
 ---
 
@@ -1905,7 +1905,7 @@ L298N GND
 
 ESP32 GND **must** be connected to the L298N GND.
 
-![ESP32 L298N Wiring](images/esp32-l298n-wiring.webp)
+![ESP32 L298N Wiring](/assets/images/esp32-l298n-wiring.webp)
 
 ---
 
@@ -2253,7 +2253,7 @@ The SSD1306 communicates using the I²C interface.
 
 The joystick remains connected as in the previous chapters.
 
-![ESP32 OLED Wiring](images/esp32-joystick-oled-wiring.webp)
+![ESP32 OLED Wiring](/assets/images/esp32-joystick-oled-wiring.webp)
 
 ---
 
