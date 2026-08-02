@@ -70,7 +70,7 @@ In this tutorial you'll learn:
 
 This project combines three popular ESP32 modules:
 
-- ESP32 development board
+- **[ESP32 development board](/products/esp32-devkit/)**
 - MPU6050 accelerometer and gyroscope
 - SSD1306 OLED display
 
