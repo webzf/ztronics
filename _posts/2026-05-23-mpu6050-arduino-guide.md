@@ -241,7 +241,7 @@ Example output:
 The MPU6050 works very well with:
 - Arduino Uno
 - Arduino Nano
-- ESP32
+- **[ESP32](/products/esp32-devkit/)**
 - Raspberry Pi
 
 For Arduino Uno:
