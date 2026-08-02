@@ -43,7 +43,7 @@ share: true
 
 # ESP32 Joystick Tutorial
 
-![ESP32 Analog Joystick connected to an ESP32](images/esp32-joystick-hero.webp)
+![ESP32 Analog Joystick connected to an ESP32](images/esp32-joystick-hero2.webp)
 
 *Learn how to connect, calibrate, and program an analog joystick module with the ESP32 using the Arduino IDE.*
 
