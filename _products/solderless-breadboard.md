@@ -190,6 +190,25 @@ The solderless breadboard is compatible with virtually every low-voltage electro
 - Teensy
 
 ---
+## Frequently Asked Questions
+
+### What is a breadboard?
+
+A breadboard is a reusable prototyping board that allows electronic circuits to be assembled without soldering.
+
+### Can I use a breadboard with ESP32?
+
+Yes. ESP32 development boards are fully compatible with standard 2.54 mm breadboards.
+
+### Can breadboards carry high current?
+
+Breadboards are designed for low-power electronics and are not suitable for high-current applications.
+
+### Why are the power rails separated?
+
+Many large breadboards split the power rails in the middle, requiring a jumper wire if continuous power is needed.
+
+---
 
 ## Final Thoughts
 
