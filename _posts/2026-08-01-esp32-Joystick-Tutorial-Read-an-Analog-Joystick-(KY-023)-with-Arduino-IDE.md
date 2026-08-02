@@ -24,9 +24,8 @@ tags:
   - Robotics
 
 toc: true
-toc_sticky: true
+toc_sticky: false
 toc_label: "Contents"
-toc_levels: 1
 
 show_date: false
 read_time: false
