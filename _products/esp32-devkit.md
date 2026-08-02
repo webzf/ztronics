@@ -72,6 +72,7 @@ related:
   - esp32-cam
   - ssd1306-oled
   - mpu6050
+  - jumper-wires
 ---
 
 ## Overview
