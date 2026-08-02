@@ -839,3 +839,10 @@ text-decoration:none;
 .en-product-tag-text{
     white-space:nowrap;
 }
+
+/* Esconder TOC em telemóveis e tablets */
+@media (max-width: 1024px) {
+  .sidebar__right {
+    display: none;
+  }
+}
