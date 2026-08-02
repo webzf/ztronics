@@ -311,7 +311,7 @@ Useful kits for beginners:
 The complete MPU6050 Arduino code is available in the GitHub repository.
 
 You can expand this project with:
-- OLED displays
+- [OLED displays](/products/ssd1306-oled/)
 - ESP32 boards
 - [Motion-controlled games](https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
 - Wireless communication
