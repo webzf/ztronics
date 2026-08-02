@@ -25,7 +25,7 @@ tags:
 
 toc: true
 toc_sticky: true
-toc_label: "Table of Contents"
+toc_label: "Contents"
 toc_levels: 1
 
 show_date: false
