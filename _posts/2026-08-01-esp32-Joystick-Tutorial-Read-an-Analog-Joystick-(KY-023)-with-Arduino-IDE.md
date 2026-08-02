@@ -24,7 +24,7 @@ tags:
   - Robotics
 
 toc: true
-toc_sticky: false
+toc_sticky: true
 toc_label: "Contents"
 
 show_date: false
@@ -81,19 +81,6 @@ By the end of this tutorial you will be able to:
 
 ---
 
-> **Skill Level**
->
-> Beginner → Intermediate
-
-> **Estimated Reading Time**
->
-> 20–30 minutes
-
-> **Project Time**
->
-> Less than one hour
-
----
 
 ## Why Read This Guide?
 
@@ -4011,7 +3998,7 @@ or use an exponential response curve.
 
 ---
 
-# Problem: Movement Feels Too Slow
+### Problem: Movement Feels Too Slow
 
 Increase the sensitivity.
 
@@ -4062,7 +4049,7 @@ For long-running applications, consider adding a manual recalibration option in 
 
 ---
 
-# Problem: Joystick Works in One Direction Only
+### Problem: Joystick Works in One Direction Only
 
 Check:
 
@@ -4110,7 +4097,7 @@ In most cases, one of these checks will identify the problem.
 
 ---
 
-# Frequently Asked Questions (FAQ)
+### Frequently Asked Questions (FAQ)
 
 This section answers some of the most common questions about using the KY-023 analog joystick with the ESP32.
 
@@ -4118,7 +4105,7 @@ If you're just getting started, you'll likely find the answer to your question h
 
 ---
 
-## 1. Can I power the KY-023 from 5V?
+### 1. Can I power the KY-023 from 5V?
 
 Technically, yes.
 
@@ -4130,7 +4117,7 @@ Powering the module from 3.3V ensures the VRx and VRy outputs always remain with
 
 ---
 
-## 2. Which GPIOs should I use?
+### 2. Which GPIOs should I use?
 
 For analog inputs, use ADC1 pins whenever possible.
 
@@ -4149,7 +4136,7 @@ Avoid ADC2 pins if your project uses Wi-Fi.
 
 ---
 
-## 3. Why should I avoid ADC2?
+### 3. Why should I avoid ADC2?
 
 ADC2 shares hardware resources with the Wi-Fi subsystem.
 
@@ -4159,7 +4146,7 @@ Using ADC1 avoids this limitation and makes your project easier to expand in the
 
 ---
 
-## 4. Why isn't the center value exactly 2048?
+### 4. Why isn't the center value exactly 2048?
 
 Because no joystick is perfectly manufactured.
 
@@ -4181,7 +4168,7 @@ Always calibrate the joystick during startup instead of assuming a fixed center 
 
 ---
 
-## 5. What dead zone should I use?
+### 5. What dead zone should I use?
 
 A good starting point is:
 
@@ -4202,7 +4189,7 @@ The ideal value depends on your joystick and application.
 
 ---
 
-## 6. Do I need filtering?
+### 6. Do I need filtering?
 
 For simple experiments:
 
@@ -4223,7 +4210,7 @@ Even a simple moving average produces much smoother control.
 
 ---
 
-## 7. Should I use a Moving Average or a Low-Pass Filter?
+### 7. Should I use a Moving Average or a Low-Pass Filter?
 
 Both work well.
 
@@ -4256,7 +4243,7 @@ For beginners, the Moving Average filter is usually the best choice.
 
 ---
 
-## 8. Why doesn't the joystick reach 0 or 4095?
+### 8. Why doesn't the joystick reach 0 or 4095?
 
 Potentiometers have manufacturing tolerances.
 
@@ -4284,7 +4271,7 @@ Calibration is the correct solution.
 
 ---
 
-## 9. Can I control two servos?
+### 9. Can I control two servos?
 
 Yes.
 
@@ -4299,7 +4286,7 @@ This creates a simple pan-tilt mechanism for cameras, laser pointers, or sensors
 
 ---
 
-## 10. Can I control a robot?
+### 10. Can I control a robot?
 
 Yes.
 
@@ -4316,7 +4303,7 @@ This allows smooth proportional control of a differential-drive robot.
 
 ---
 
-## 11. Can I use the joystick for menu navigation?
+### 11. Can I use the joystick for menu navigation?
 
 Absolutely.
 
@@ -4334,7 +4321,7 @@ This approach is commonly used in embedded devices with OLED displays.
 
 ---
 
-## 12. Does the joystick require external resistors?
+### 12. Does the joystick require external resistors?
 
 No.
 
@@ -4350,7 +4337,7 @@ No additional components are required.
 
 ---
 
-## 13. Can I use interrupts for the button?
+### 13. Can I use interrupts for the button?
 
 Yes.
 
@@ -4370,7 +4357,7 @@ Keep the interrupt service routine as short as possible.
 
 ---
 
-## 14. Can I use MicroPython instead of Arduino IDE?
+### 14. Can I use MicroPython instead of Arduino IDE?
 
 Yes.
 
@@ -4387,7 +4374,7 @@ The hardware connections remain exactly the same.
 
 ---
 
-## 15. Can I use this joystick with ESP32-S3, ESP32-C3, or ESP32-C6?
+### 15. Can I use this joystick with ESP32-S3, ESP32-C3, or ESP32-C6?
 
 Yes.
 
@@ -4399,7 +4386,7 @@ Always consult the pinout of your specific development board before selecting th
 
 ---
 
-## 16. Can I connect multiple joysticks?
+### 16. Can I connect multiple joysticks?
 
 Yes.
 
@@ -4419,7 +4406,7 @@ This is useful for dual-stick game controllers and advanced robotic systems.
 
 ---
 
-## 17. Why does my servo shake even after calibration?
+### 17. Why does my servo shake even after calibration?
 
 Possible causes include:
 
@@ -4433,7 +4420,7 @@ Using an external power supply together with filtering and a dead zone usually e
 
 ---
 
-## 18. Can I build a wireless controller?
+### 18. Can I build a wireless controller?
 
 Yes.
 
@@ -4452,7 +4439,7 @@ This makes it possible to create wireless robots, remote controls, and custom ga
 
 ---
 
-## 19. Which joystick module should I buy?
+### 19. Which joystick module should I buy?
 
 The KY-023 is an excellent choice because it is:
 
@@ -4466,7 +4453,7 @@ Higher-end industrial joysticks are available, but the KY-023 offers excellent v
 
 ---
 
-## 20. What should I build next?
+### 20. What should I build next?
 
 Once you're comfortable with the basics, consider extending your project with one of the following ideas:
 
@@ -4487,7 +4474,7 @@ Each of these projects builds directly on the techniques covered in this tutoria
 
 ---
 
-## Quick Reference
+### Quick Reference
 
 | Feature | Recommendation |
 |----------|----------------|
@@ -4533,7 +4520,7 @@ Below are the parts we recommend for this project.
 
 ---
 
-## Why These Components?
+### Why These Components?
 
 Although many alternatives exist, these modules have several advantages.
 
@@ -4555,7 +4542,7 @@ Now that you've mastered the basics of the KY-023 joystick, try extending what y
 
 Here are a few ideas.
 
-## Beginner Projects
+### Beginner Projects
 
 - LED Brightness Controller
 - Servo Position Controller
@@ -4566,7 +4553,7 @@ Here are a few ideas.
 
 ---
 
-## Intermediate Projects
+### Intermediate Projects
 
 - Bluetooth Gamepad
 - ESP-NOW Remote Controller
@@ -4578,7 +4565,7 @@ Here are a few ideas.
 
 ---
 
-## Advanced Projects
+### Advanced Projects
 
 - Robot Arm Controller
 - Wi-Fi Controlled Robot
@@ -4592,7 +4579,7 @@ Each of these projects builds directly upon the concepts introduced in this tuto
 
 ---
 
-# Continue Learning
+### Continue Learning
 
 If you enjoyed this project, you may also like these tutorials on Embedded Nerd.
 
@@ -4637,7 +4624,7 @@ By following this sequence, each new topic builds on knowledge you've already ga
 
 ---
 
-# Source Code
+### Source Code
 
 The complete Arduino sketch used throughout this tutorial is available for download.
 
@@ -4656,7 +4643,7 @@ Feel free to modify and adapt the code for your own projects.
 
 ---
 
-# Downloads
+### Downloads
 
 To help you get started quickly, we've also prepared several resources.
 
@@ -4674,7 +4661,7 @@ These resources can save time while building your own projects.
 
 ---
 
-# Before You Go...
+### Before You Go...
 
 If this tutorial helped you build your project, consider exploring the rest of the ESP32 section on Embedded Nerd.
 
@@ -4689,7 +4676,7 @@ Whether you're building a robot, an IoT device, or your first embedded system, t
 
 ---
 
-# Conclusion
+### Conclusion
 
 The KY-023 Analog Joystick may appear to be a simple module, but as you've seen throughout this guide, it is an incredibly versatile input device capable of powering a wide range of interactive ESP32 projects.
 
@@ -4737,7 +4724,7 @@ It introduces the foundations of analog signal processing on the ESP32.
 
 ---
 
-# What You've Learned
+### What You've Learned
 
 By completing this guide, you can now confidently:
 
@@ -4822,7 +4809,7 @@ The joystick you've explored in this guide is an important step along that journ
 
 ---
 
-# Build, Experiment, Improve
+### Build, Experiment, Improve
 
 One of the best ways to learn embedded systems is by experimenting.
 
@@ -4874,7 +4861,7 @@ Every successful project starts with curiosity.
 
 ---
 
-# Thank You for Reading
+### Thank You for Reading
 
 Thank you for following this tutorial.
 
