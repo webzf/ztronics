@@ -15,7 +15,7 @@ required_hardware:
   - id: solderless-breadboard
     component: Breadboard
 
-  - id: jumper-wires-mf
+  - id: jumper-wires
     component: Male-to-Female Jumper Wires
 
 sidebar:
