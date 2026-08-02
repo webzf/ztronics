@@ -48,7 +48,7 @@ share: true
 
 <!-- ![ESP32 Snake Game]({{ '/assets/images/ESP32-Snake-Game.png' | relative_url }}) -->
 
-Learn how to build a classic Snake game using an ESP32, an MPU6050 motion sensor and a 0.96-inch SSD1306 OLED display.
+Learn how to build a classic Snake game using an ESP32, an MPU6050 motion sensor and a 0.96-inch **[SSD1306 OLED Display](/products/ssd1306-oled/)**.
 
 Instead of pressing buttons, you control the snake by tilting the [MPU6050 sensor](/mpu6050-arduino-guide/), making this a fun project for learning ESP32 graphics, sensors and game programming.
 
@@ -76,7 +76,7 @@ This project combines three popular ESP32 modules:
 
 The MPU6050 detects the board's orientation and changes the snake's direction.
 
-The OLED display shows:
+The [OLED Display](/products/ssd1306-oled/) shows:
 
 - Snake
 - Food
