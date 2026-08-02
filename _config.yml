@@ -307,6 +307,7 @@ defaults:
       last_modified_at: false
       toc: true
       toc_sticky: true
+      toc_levels: "2"
       breadcrumbs: true
       
       #classes: wide
