@@ -62,7 +62,7 @@ This guide shows how to connect an SSD1306 OLED display to an ESP32 using I2C co
 
 You'll learn how to wire the display, install the required libraries, upload working code, and display text on the screen.
 
-The SSD1306 OLED is one of the most popular displays for ESP32 projects because it is inexpensive, compact, and requires only two communication pins.
+The **[SSD1306 OLED](/products/ssd1306-oled/)** is one of the most popular displays for ESP32 projects because it is inexpensive, compact, and requires only two communication pins.
 
 ![ESP32 connected to an SSD1306 OLED display showing text using Arduino IDE]({{ '/assets/images/ESP32-OLED-Tutorial.webp' | relative_url }})
 
