@@ -186,7 +186,7 @@ Additional I2C devices can simply be connected in parallel to the same SDA and S
 | GPIO21 | SDA |
 | GPIO22 | SCL |
 
-Most ESP32 development boards use GPIO21 for SDA and GPIO22 for SCL by default.
+Most **[ESP32 development board](/products/esp32-devkit/)** use GPIO21 for SDA and GPIO22 for SCL by default.
 
 If your board uses different pins, they can usually be changed in software.
 
