@@ -26,7 +26,7 @@ tags:
 toc: true
 toc_sticky: true
 toc_label: "Table of Contents"
-toc_levels: "2"
+toc_levels: 1
 
 show_date: false
 read_time: false
@@ -4875,7 +4875,7 @@ Every successful project starts with curiosity.
 
 ---
 
-## Thank You for Reading
+# Thank You for Reading
 
 Thank you for following this tutorial.
 
