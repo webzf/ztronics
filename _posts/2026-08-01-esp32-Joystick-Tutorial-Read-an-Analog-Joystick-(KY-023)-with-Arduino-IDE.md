@@ -23,7 +23,7 @@ tags:
   - OLED
   - Robotics
 
-toc: true
+toc: false
 toc_sticky: true
 toc_label: "Contents"
 
