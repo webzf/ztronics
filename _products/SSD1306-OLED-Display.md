@@ -75,7 +75,9 @@ links:
 related:
 
   - esp32-devkit
-  - mpu6050
+  - mpu6050 
+  - solderless-breadboard
+  - jumper-wires
 ---
 
 
