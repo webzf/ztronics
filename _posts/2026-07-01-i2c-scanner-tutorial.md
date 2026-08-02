@@ -46,7 +46,7 @@ share: true
 
 # I2C Scanner Tutorial: Find Any I2C Device Address
 
-If you've ever connected an OLED display, MPU6050, BME280, RTC module or any other I2C device to an Arduino or ESP32, you've probably encountered the problem of not knowing its I2C address.
+If you've ever connected an [OLED Display](/products/ssd1306-oled/), MPU6050, BME280, RTC module or any other I2C device to an Arduino or ESP32, you've probably encountered the problem of not knowing its I2C address.
 
 An I2C Scanner is one of the most useful tools for debugging electronic projects. It quickly scans the I2C bus, detects every connected device and displays its address in the Serial Monitor.
 
@@ -82,7 +82,7 @@ A single pair of SDA and SCL lines can connect multiple sensors, displays and ex
 
 Popular I2C devices include:
 
-- SSD1306 OLED displays
+- **[SSD1306 OLED Display](/products/ssd1306-oled/)**
 - MPU6050 accelerometer and gyroscope
 - BME280 environmental sensor
 - BMP280 pressure sensor
