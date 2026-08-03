@@ -9,6 +9,9 @@ manufacturer: Generic
 
 image: /assets/images/products/ssd1306-oled.webp
 
+header:
+  teaser: /assets/images/products/ssd1306-oled.webp
+
 excerpt: "0.96-inch SSD1306 OLED display module with I2C interface for Arduino, ESP32 and Raspberry Pi projects."
 
 description: "Monochrome 128×64 OLED display based on the SSD1306 controller. Features low power consumption, excellent contrast and simple I2C communication."
