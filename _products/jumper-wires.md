@@ -9,6 +9,9 @@ manufacturer: Generic
 
 image: /assets/images/products/jumper-wires.webp
 
+header:
+  teaser: /assets/images/products/jumper-wires.webp
+
 excerpt: "Jumper wires for breadboard prototyping with Arduino, ESP32, Raspberry Pi and other embedded development boards."
 
 description: "Reusable jumper wires with 2.54 mm connectors for solderless breadboards, electronic prototyping and embedded system development."
