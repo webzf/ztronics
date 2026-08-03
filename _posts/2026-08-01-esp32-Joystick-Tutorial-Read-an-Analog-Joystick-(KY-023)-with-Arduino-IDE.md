@@ -3628,7 +3628,7 @@ You should read approximately:
 
 ---
 
-# Problem: Readings Always Stay Near 4095
+## Problem: Readings Always Stay Near 4095
 
 ### Symptoms
 
