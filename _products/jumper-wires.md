@@ -9,6 +9,8 @@ manufacturer: Generic
 
 image: /assets/images/products/jumper-wires.webp
 
+og_image: /assets/images/products/jumper-wires.webp
+
 header:
   teaser: /assets/images/products/jumper-wires.webp
 
