@@ -258,7 +258,6 @@ The KY-023 joystick module exposes five pins.
 | VRy | Analog Y-axis Output |
 | SW | Push Button Output |
 
-![Joystick Pinout](/assets/images/esp32-joystick-pinout-2.webp)
 ![Joystick Pinout](/assets/images/esp32-joystick-pinout.webp)
 
 Although many modules print **+5V**, the joystick works perfectly from **3.3V**.
@@ -486,6 +485,7 @@ These pins provide:
 
 # Wiring Diagram
 
+![Joystick Pinout wiring esp32](/assets/images/esp32-joystick-pinout-2.webp)
 ![ESP32 Wiring](/assets/images/esp32-joystick-wiring.webp)
 
 Follow the connections exactly as shown.
