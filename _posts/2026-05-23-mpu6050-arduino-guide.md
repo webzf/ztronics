@@ -45,9 +45,8 @@ related: true
 share: true
 ---
 
-# MPU6050 Arduino Guide: Code, Wiring & GitHub
 
-Learn how to connect the MPU6050 sensor to Arduino Uno or Nano using simple wiring, working Arduino code examples, and I2C communication.
+Connect the MPU6050 sensor to Arduino Uno or Nano using simple wiring, working Arduino code examples, and I2C communication.
 
 The MPU6050 is one of the most popular motion sensors for Arduino because it combines:
 - 3-axis accelerometer
