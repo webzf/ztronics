@@ -9,6 +9,9 @@ manufacturer: Generic
 
 image: /assets/images/products/solderless-breadboard.webp
 
+header:
+  teaser: /assets/images/products/solderless-breadboard.webp
+
 excerpt: "Reusable solderless breadboard for rapid prototyping of electronic circuits with Arduino, ESP32 and Raspberry Pi."
 
 description: "A solderless breadboard allows electronic circuits to be assembled without soldering, making it ideal for prototyping, testing and learning electronics."
