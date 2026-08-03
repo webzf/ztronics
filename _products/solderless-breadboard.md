@@ -9,6 +9,7 @@ manufacturer: Generic
 
 image: /assets/images/products/solderless-breadboard.webp
 
+og_image: /assets/images/products/solderless-breadboard.webp
 header:
   teaser: /assets/images/products/solderless-breadboard.webp
 
