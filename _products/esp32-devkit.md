@@ -8,7 +8,9 @@ product_id: esp32-devkit
 manufacturer: Espressif
 
 image: /assets/images/products/esp32-devkit.webp
-og_image: /assets/images/products/esp32-devkit.webp
+
+header:
+  teaser: /assets/images/products/esp32-devkit.webp
 
 excerpt: "ESP32 DevKit V1 development board with built-in Wi-Fi and Bluetooth."
 
