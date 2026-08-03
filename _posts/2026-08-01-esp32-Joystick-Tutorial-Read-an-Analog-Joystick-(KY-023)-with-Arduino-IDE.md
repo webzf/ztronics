@@ -486,6 +486,7 @@ These pins provide:
 # Wiring Diagram
 
 ![Joystick Pinout wiring esp32](/assets/images/esp32-joystick-pinout-2.webp)
+
 ![ESP32 Wiring](/assets/images/esp32-joystick-wiring.webp)
 
 Follow the connections exactly as shown.
