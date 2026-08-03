@@ -45,7 +45,7 @@ atom_feed:
 
 search                   : true
 search_full_content      : true
-search_provider          : lunr
+search_provider          : Pagefind
 
 # SEO Related
 google_site_verification :
