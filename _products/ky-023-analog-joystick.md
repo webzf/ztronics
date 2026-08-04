@@ -14,9 +14,9 @@ header:
 
 og_image: /assets/images/products/ky-023-joystick.webp
 
-excerpt: "KY-023 analog joystick module with two-axis control and push button for Arduino, ESP32 and Raspberry Pi projects."
+excerpt: "KY-023 Analog Joystick Module featuring dual-axis analog control and an integrated push button for Arduino, ESP32 and Raspberry Pi projects."
 
-description: "Complete guide to the KY-023 Analog Joystick Module, including specifications, pinout, operating principle, compatible boards, applications and recommended tutorials."
+description: "KY-023 Analog Joystick Module with dual-axis analog outputs and integrated push button, compatible with Arduino, ESP32 and other microcontroller platforms."
 
 categories:
   - Sensors
