@@ -79,7 +79,6 @@ related:
 
 ---
 
-## Overview
 
 A **solderless breadboard** is one of the most essential tools for anyone learning or developing electronic circuits. It allows components to be connected without soldering, making it perfect for rapid prototyping, experimentation and debugging.
 
