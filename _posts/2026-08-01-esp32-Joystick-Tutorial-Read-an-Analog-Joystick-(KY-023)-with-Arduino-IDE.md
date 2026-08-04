@@ -219,7 +219,7 @@ No external resistor is required.
 
 ---
 
-# Hardware Overview
+## Hardware Overview
 
 Before connecting the joystick, it's worth taking a few minutes to understand how the hardware works. Knowing what each pin does and why specific GPIOs are chosen will help you avoid unstable readings, Wi-Fi conflicts, and damaged inputs.
 
@@ -358,7 +358,7 @@ No external resistor is required.
 
 ---
 
-# Understanding the ESP32 ADC
+## Understanding the ESP32 ADC
 
 This is one of the biggest differences between an ESP32 and a traditional Arduino.
 
@@ -396,7 +396,7 @@ The higher resolution allows much smoother joystick movement.
 
 ---
 
-# ADC1 vs ADC2
+## ADC1 vs ADC2
 
 This topic confuses many beginners.
 
@@ -459,7 +459,7 @@ That is why this tutorial uses:
 
 ---
 
-# Choosing the GPIOs
+## Choosing the GPIOs
 
 Our wiring will be:
 
@@ -483,7 +483,7 @@ These pins provide:
 
 ---
 
-# Wiring Diagram
+## Wiring Diagram
 
 ![Joystick Pinout wiring esp32](/assets/images/esp32-joystick-pinout-2.webp)
 
@@ -497,7 +497,7 @@ Most joystick problems are simply caused by swapped VCC and GND connections.
 
 ---
 
-# Power Supply Considerations
+## Power Supply Considerations
 
 The joystick itself consumes very little current.
 
@@ -513,7 +513,7 @@ No external power supply is required.
 
 ---
 
-# Analog Noise
+## Analog Noise
 
 One thing beginners often notice is that the joystick values are never perfectly stable.
 
@@ -555,7 +555,7 @@ Later in this tutorial we'll eliminate most of this noise using software filteri
 
 ---
 
-# Before Continuing
+## Before Continuing
 
 At this point you should have:
 
@@ -578,7 +578,7 @@ In the next section we'll examine every pin of the joystick module, understand w
 
 ---
 
-# Reading the Joystick with the ESP32
+## Reading the Joystick with the ESP32
 
 Now that the hardware is connected correctly, it's time to write our first program.
 
@@ -595,7 +595,7 @@ By the end of this section, you'll have a reliable test program that can serve a
 
 ---
 
-# Preparing the Arduino IDE
+## Preparing the Arduino IDE
 
 If you have already installed ESP32 support in the Arduino IDE, you can skip this section.
 
@@ -643,7 +643,7 @@ If you own another ESP32 variant, choose the appropriate board.
 
 ---
 
-# Understanding the ADC Resolution
+## Understanding the ADC Resolution
 
 The ESP32 converts voltages into numbers.
 
@@ -674,7 +674,7 @@ The higher resolution produces smoother joystick movement.
 
 ---
 
-# ADC Attenuation
+## ADC Attenuation
 
 One feature many ESP32 tutorials ignore is ADC attenuation.
 
@@ -699,7 +699,7 @@ Without proper attenuation, the ADC may saturate earlier than expected depending
 
 ---
 
-# The First Test Program
+## The First Test Program
 
 Upload the following sketch.
 
@@ -763,7 +763,7 @@ Set the baud rate to:
 
 ---
 
-# Expected Output
+## Expected Output
 
 With the joystick untouched, you should observe something similar to:
 
@@ -793,7 +793,7 @@ This is perfectly normal.
 
 ---
 
-# Moving the Joystick
+## Moving the Joystick
 
 Try moving the joystick slowly.
 
@@ -837,7 +837,7 @@ although they rarely reach these exact numbers.
 
 ---
 
-# Testing the Push Button
+## Testing the Push Button
 
 Press the joystick downward.
 
@@ -859,7 +859,7 @@ No external resistor is required because we enabled the ESP32's internal pull-up
 
 ---
 
-# Why Aren't the Center Values Exactly 2048?
+## Why Aren't the Center Values Exactly 2048?
 
 Many beginners expect:
 
@@ -901,7 +901,7 @@ We'll implement that later.
 
 ---
 
-# Monitoring the Analog Signal
+## Monitoring the Analog Signal
 
 Spend a minute moving the joystick in every direction.
 
@@ -927,7 +927,7 @@ Unlike digital buttons, they provide continuous position information instead of 
 
 ---
 
-# Common Beginner Mistakes
+## Common Beginner Mistakes
 
 ## Values Stay at Zero
 
@@ -980,7 +980,7 @@ Always verify the wiring before changing the software.
 
 ---
 
-# What's Next?
+## What's Next?
 
 At this point your joystick is working correctly.
 
@@ -1000,7 +1000,7 @@ These techniques are used in game controllers, robotics, drones, CNC machines, a
 
 ---
 
-# Calibrating the Joystick and Eliminating Noise
+## Calibrating the Joystick and Eliminating Noise
 
 If you've watched the Serial Monitor while the joystick is at rest, you've probably noticed that the values are never perfectly stable.
 
@@ -1040,7 +1040,7 @@ Once these techniques are applied, the joystick will feel significantly smoother
 
 ---
 
-# Why Analog Signals Are Noisy
+## Why Analog Signals Are Noisy
 
 An analog joystick is built around two mechanical potentiometers.
 
@@ -1061,7 +1061,7 @@ Even expensive industrial joysticks exhibit some degree of analog noise.
 
 ---
 
-# Automatic Center Calibration
+## Automatic Center Calibration
 
 Every joystick is slightly different.
 
@@ -1135,7 +1135,7 @@ The joystick should remain untouched during calibration.
 
 ---
 
-# Creating a Dead Zone
+## Creating a Dead Zone
 
 Even after calibration, the joystick may continue producing tiny movements while resting.
 
@@ -1204,7 +1204,7 @@ For most projects, a value between **30 and 50 ADC counts** works very well.
 
 ---
 
-# Moving Average Filter
+## Moving Average Filter
 
 Another way to reduce noise is by averaging multiple consecutive readings.
 
@@ -1281,7 +1281,7 @@ Eight to ten samples provide an excellent balance between smoothness and respons
 
 ---
 
-# Normalizing the Values
+## Normalizing the Values
 
 Once the joystick is calibrated, it is useful to convert the readings into values relative to the center.
 
@@ -1327,7 +1327,7 @@ This representation is much easier to use in robotics and control systems.
 
 ---
 
-# Detecting Direction
+## Detecting Direction
 
 Using the normalized values, detecting movement direction becomes straightforward.
 
@@ -1369,7 +1369,7 @@ This technique is widely used in games and robotic navigation.
 
 ---
 
-# Combining Everything
+## Combining Everything
 
 A professional joystick reading typically follows this sequence:
 
@@ -1391,7 +1391,7 @@ This processing pipeline produces smooth, accurate, and repeatable results.
 
 ---
 
-# What's Next?
+## What's Next?
 
 Your joystick is now producing clean and reliable data.
 
@@ -1402,7 +1402,7 @@ We'll start by driving an SG90 servo motor smoothly, then expand the project to 
 
 ---
 
-# Mini Project: Smooth Servo Control with the ESP32 Joystick
+## Mini Project: Smooth Servo Control with the ESP32 Joystick
 
 Now that we have clean, calibrated joystick readings, it's time to control a real actuator.
 
@@ -1420,7 +1420,7 @@ These improvements produce much more natural movement and prevent the servo from
 
 ---
 
-# Hardware Required
+## Hardware Required
 
 | Component | Quantity |
 |-----------|---------:|
@@ -1432,7 +1432,7 @@ These improvements produce much more natural movement and prevent the servo from
 
 ---
 
-# Servo Wiring
+## Servo Wiring
 
 | SG90 Wire | ESP32 |
 |------------|--------|
@@ -1452,7 +1452,7 @@ These improvements produce much more natural movement and prevent the servo from
 
 ---
 
-# Why Use an External Power Supply?
+## Why Use an External Power Supply?
 
 Many beginners connect the servo directly to the ESP32.
 
@@ -1487,7 +1487,7 @@ Without a common ground, the PWM control signal will not have a proper voltage r
 
 ---
 
-# Installing the Servo Library
+## Installing the Servo Library
 
 The standard Arduino Servo library is not fully compatible with the ESP32.
 
@@ -1523,7 +1523,7 @@ Install the latest version.
 
 ---
 
-# Complete Project Code
+## Complete Project Code
 
 ```cpp
 #include <ESP32Servo.h>
@@ -1592,7 +1592,7 @@ void loop()
 
 ---
 
-# How the Code Works
+## How the Code Works
 
 The program begins by calibrating the joystick.
 
@@ -1612,7 +1612,7 @@ This creates much smoother movement.
 
 ---
 
-# Why Smooth Movement Matters
+## Why Smooth Movement Matters
 
 Many beginner examples use:
 
@@ -1635,7 +1635,7 @@ By gradually moving toward the target position, the servo behaves much more natu
 
 ---
 
-# Understanding the map() Function
+## Understanding the map() Function
 
 The joystick produces values between:
 
@@ -1676,7 +1676,7 @@ Examples:
 
 ---
 
-# Limiting the Servo Range
+## Limiting the Servo Range
 
 Some mechanical systems should not rotate through the full 180°.
 
@@ -1698,7 +1698,7 @@ This protects gears and mechanical linkages.
 
 ---
 
-# Adjusting the Servo Speed
+## Adjusting the Servo Speed
 
 The movement speed depends on this section:
 
@@ -1726,7 +1726,7 @@ Experiment to find the best balance for your application.
 
 ---
 
-# Returning to the Center
+## Returning to the Center
 
 Because we implemented a dead zone, releasing the joystick causes the servo to return smoothly to approximately 90°.
 
@@ -1739,7 +1739,7 @@ This behaviour is ideal for:
 
 ---
 
-# Troubleshooting
+## Troubleshooting
 
 ## Servo Doesn't Move
 
@@ -1782,7 +1782,7 @@ Different servos require slightly different pulse widths.
 
 ---
 
-# Ideas for Further Improvements
+## Ideas for Further Improvements
 
 Now that the servo is working reliably, you can extend the project in several ways.
 
@@ -1797,7 +1797,7 @@ These ideas all build upon the same concepts you've learned in this chapter.
 
 ---
 
-# What's Next?
+## What's Next?
 
 Controlling a servo is an excellent introduction, but many real projects require controlling motors rather than position.
 
@@ -1806,7 +1806,7 @@ In the next chapter, you'll learn how to use the joystick to drive a DC motor th
 
 ---
 
-# Mini Project: Controlling a DC Motor with the ESP32 Joystick
+## Mini Project: Controlling a DC Motor with the ESP32 Joystick
 
 So far we've learned how to read the joystick accurately and use it to control a servo motor.
 
@@ -1824,7 +1824,7 @@ This behaviour is exactly how radio-controlled cars, mobile robots, forklifts, w
 
 ---
 
-# Why You Need a Motor Driver
+## Why You Need a Motor Driver
 
 One of the most common beginner mistakes is attempting to connect a DC motor directly to an ESP32 GPIO.
 
@@ -1854,7 +1854,7 @@ For this tutorial we'll use the widely available **L298N**.
 
 ---
 
-# Hardware Required
+## Hardware Required
 
 | Component | Quantity |
 |-----------|---------:|
@@ -1867,7 +1867,7 @@ For this tutorial we'll use the widely available **L298N**.
 
 ---
 
-# Wiring Diagram
+## Wiring Diagram
 
 | L298N | ESP32 |
 |--------|--------|
@@ -1904,7 +1904,7 @@ ESP32 GND **must** be connected to the L298N GND.
 
 ---
 
-# How the Control Works
+## How the Control Works
 
 We'll use the joystick's **Y-axis**.
 
@@ -1938,7 +1938,7 @@ The further the joystick moves from the center, the faster the motor rotates.
 
 ---
 
-# Reading the Y-Axis
+## Reading the Y-Axis
 
 Assuming the joystick has already been calibrated:
 
@@ -1960,7 +1960,7 @@ This representation is much easier to work with.
 
 ---
 
-# Applying a Dead Zone
+## Applying a Dead Zone
 
 To prevent the motor from creeping when the joystick is released:
 
@@ -1975,7 +1975,7 @@ Now the motor stops completely around the center position.
 
 ---
 
-# Converting the Reading into PWM
+## Converting the Reading into PWM
 
 The ESP32 PWM range is:
 
@@ -2008,7 +2008,7 @@ This produces smooth speed control.
 
 ---
 
-# Controlling Direction
+## Controlling Direction
 
 Forward:
 
@@ -2035,7 +2035,7 @@ Simple and reliable.
 
 ---
 
-# Complete Example
+## Complete Example
 
 ```cpp
 int y = analogRead(yAxisPin);
@@ -2077,7 +2077,7 @@ This creates proportional forward and reverse speed control.
 
 ---
 
-# Improving the Driving Experience
+## Improving the Driving Experience
 
 You can make the motor feel even smoother by limiting acceleration.
 
@@ -2104,7 +2104,7 @@ Professional robot controllers almost always use some form of acceleration limit
 
 ---
 
-# Differential Drive Robots
+## Differential Drive Robots
 
 Most mobile robots use **two** motors.
 
@@ -2132,7 +2132,7 @@ This is exactly the steering principle used by skid-steer robots and tracked veh
 
 ---
 
-# Troubleshooting
+## Troubleshooting
 
 ## Motor Doesn't Spin
 
@@ -2186,7 +2186,7 @@ Using the moving average filter introduced earlier usually resolves this issue.
 
 ---
 
-# What's Next?
+## What's Next?
 
 We've now controlled both a **servo motor** and a **DC motor** using the joystick.
 
@@ -2194,7 +2194,7 @@ In the next chapter we'll use the joystick to navigate menus on an OLED display,
 
 ---
 
-# Mini Project: OLED Menu Navigation with the ESP32 Joystick
+## Mini Project: OLED Menu Navigation with the ESP32 Joystick
 
 Until now, we've used the joystick to control actuators such as servo motors and DC motors.
 
@@ -2217,7 +2217,7 @@ In this project, we'll build a simple menu system that can easily be expanded in
 
 ---
 
-# Hardware Required
+## Hardware Required
 
 | Component | Quantity |
 |-----------|---------:|
@@ -2229,7 +2229,7 @@ In this project, we'll build a simple menu system that can easily be expanded in
 
 ---
 
-# OLED Wiring
+## OLED Wiring
 
 The SSD1306 communicates using the I²C interface.
 
@@ -2246,7 +2246,7 @@ The joystick remains connected as in the previous chapters.
 
 ---
 
-# Installing the Required Libraries
+## Installing the Required Libraries
 
 Open:
 
@@ -2271,7 +2271,7 @@ These libraries greatly simplify drawing text, graphics, and menus.
 
 ---
 
-# Menu Structure
+## Menu Structure
 
 Our menu will contain four items.
 
@@ -2296,7 +2296,7 @@ Pressing the joystick button selects the highlighted option.
 
 ---
 
-# Defining the Menu
+## Defining the Menu
 
 ```cpp
 const char* menuItems[] =
@@ -2316,7 +2316,7 @@ This structure makes it easy to add or remove menu options.
 
 ---
 
-# Drawing the Menu
+## Drawing the Menu
 
 ```cpp
 display.clearDisplay();
@@ -2342,7 +2342,7 @@ The arrow indicates the currently selected menu item.
 
 ---
 
-# Reading the Joystick
+## Reading the Joystick
 
 We'll use the calibrated Y-axis value.
 
@@ -2364,7 +2364,7 @@ if(abs(y) < deadZone)
 
 ---
 
-# Moving Through the Menu
+## Moving Through the Menu
 
 If the joystick moves upward:
 
@@ -2392,7 +2392,7 @@ The short delay prevents the menu from scrolling too quickly.
 
 ---
 
-# Preventing Index Errors
+## Preventing Index Errors
 
 Always keep the selected item inside the valid range.
 
@@ -2434,7 +2434,7 @@ This feels much more natural than stopping at the first or last item.
 
 ---
 
-# Selecting an Item
+## Selecting an Item
 
 The joystick button acts as the Enter key.
 
@@ -2451,7 +2451,7 @@ Later, each menu item can launch a different application or settings page.
 
 ---
 
-# Creating a Better User Experience
+## Creating a Better User Experience
 
 Instead of instantly changing the selection every time the joystick moves slightly, wait until the joystick returns to the center before accepting another movement.
 
@@ -2477,7 +2477,7 @@ This prevents accidental skipping of multiple items.
 
 ---
 
-# Highlighting the Selected Item
+## Highlighting the Selected Item
 
 The SSD1306 library allows you to invert colours.
 
@@ -2499,7 +2499,7 @@ The selected item appears highlighted, similar to commercial user interfaces.
 
 ---
 
-# Adding Icons
+## Adding Icons
 
 You can further improve the menu by displaying small bitmap icons.
 
@@ -2517,7 +2517,7 @@ Icons make navigation faster and more intuitive.
 
 ---
 
-# Creating Submenus
+## Creating Submenus
 
 A real application usually contains more than one page.
 
@@ -2561,7 +2561,7 @@ Switching between screens becomes much cleaner.
 
 ---
 
-# Practical Applications
+## Practical Applications
 
 The same menu structure can be reused in many projects.
 
@@ -2580,7 +2580,7 @@ Once you've built one menu system, you can easily adapt it to future projects.
 
 ---
 
-# Troubleshooting
+## Troubleshooting
 
 ## OLED Remains Blank
 
@@ -2629,7 +2629,7 @@ This reduces flicker and improves overall performance.
 
 ---
 
-# What's Next?
+## What's Next?
 
 So far, we've built several practical applications using the joystick:
 
@@ -2644,7 +2644,7 @@ In the next chapter, we'll explore advanced joystick techniques, including expon
 
 ---
 
-# Advanced Joystick Techniques
+## Advanced Joystick Techniques
 
 By now, you've learned how to read the joystick, calibrate it, eliminate noise, and use it to control servos, motors, and OLED menus.
 
@@ -2668,7 +2668,7 @@ These concepts are widely used in commercial products ranging from RC transmitte
 
 ---
 
-# Adjusting the Joystick Sensitivity
+## Adjusting the Joystick Sensitivity
 
 Sometimes a joystick feels too sensitive.
 
@@ -2694,7 +2694,7 @@ This is useful for:
 
 ---
 
-# Increasing the Sensitivity
+## Increasing the Sensitivity
 
 The opposite is also possible.
 
@@ -2713,7 +2713,7 @@ This technique makes the joystick feel much more responsive.
 
 ---
 
-# Linear Response
+## Linear Response
 
 Until now we've assumed the joystick behaves linearly.
 
@@ -2735,7 +2735,7 @@ It is simple and predictable.
 
 ---
 
-# Exponential Response (Expo)
+## Exponential Response (Expo)
 
 Many radio-controlled aircraft and drones use an exponential response curve.
 
@@ -2778,7 +2778,7 @@ Professional RC transmitters almost always offer adjustable exponential curves.
 
 ---
 
-# Percentage Conversion
+## Percentage Conversion
 
 Sometimes raw ADC values are difficult to interpret.
 
@@ -2834,7 +2834,7 @@ This representation is ideal for user interfaces.
 
 ---
 
-# Velocity Mapping
+## Velocity Mapping
 
 Many robots are controlled using speed rather than position.
 
@@ -2865,7 +2865,7 @@ This is exactly how differential-drive robots are controlled.
 
 ---
 
-# Angle Mapping
+## Angle Mapping
 
 Servos usually require angles.
 
@@ -2886,7 +2886,7 @@ Reducing the mechanical range often improves reliability.
 
 ---
 
-# PWM Mapping
+## PWM Mapping
 
 LED brightness and motor speed are usually controlled using PWM.
 
@@ -2899,7 +2899,7 @@ Now pushing the joystick further increases brightness or motor speed.
 
 ---
 
-# Low-Pass Filtering
+## Low-Pass Filtering
 
 A Moving Average filter reduces noise effectively.
 
@@ -2941,7 +2941,7 @@ This technique is widely used in flight controllers.
 
 ---
 
-# Median Filtering
+## Median Filtering
 
 Occasionally an ADC produces a sudden incorrect reading.
 
@@ -2969,7 +2969,7 @@ Median filters are especially useful in electrically noisy environments.
 
 ---
 
-# Detecting Diagonal Movement
+## Detecting Diagonal Movement
 
 Many games require eight directions.
 
@@ -3000,7 +3000,7 @@ The same logic applies to the remaining diagonal directions.
 
 ---
 
-# Variable Dead Zone
+## Variable Dead Zone
 
 Earlier we used a fixed dead zone.
 
@@ -3024,7 +3024,7 @@ This creates a smoother user experience.
 
 ---
 
-# Using the Joystick as a Mouse
+## Using the Joystick as a Mouse
 
 The ESP32 can emulate a Bluetooth HID mouse.
 
@@ -3044,7 +3044,7 @@ This is an excellent beginner Bluetooth project.
 
 ---
 
-# Bluetooth Game Controller
+## Bluetooth Game Controller
 
 Instead of acting as a mouse, the ESP32 can emulate a Bluetooth gamepad.
 
@@ -3064,7 +3064,7 @@ Computers, Android devices, and many game consoles can recognise the ESP32 as a 
 
 ---
 
-# ESP-NOW Remote Control
+## ESP-NOW Remote Control
 
 ESP-NOW is a low-latency wireless protocol developed by Espressif.
 
@@ -3088,7 +3088,7 @@ This is ideal for:
 
 ---
 
-# Wi-Fi Robot Control
+## Wi-Fi Robot Control
 
 Instead of transmitting commands over ESP-NOW, the joystick can send data through Wi-Fi.
 
@@ -3110,7 +3110,7 @@ allowing any connected device to receive the commands.
 
 ---
 
-# Practical Ideas
+## Practical Ideas
 
 Now that you understand advanced joystick processing, consider trying some of these projects:
 
@@ -3137,7 +3137,7 @@ These projects build directly upon the techniques you've learned throughout this
 
 ---
 
-# Performance Optimization & Best Practices
+## Performance Optimization & Best Practices
 
 The examples presented throughout this guide are designed to be easy to understand.
 
@@ -3149,7 +3149,7 @@ Although not all of them are necessary for beginner projects, understanding thes
 
 ---
 
-# Avoid Blocking Code
+## Avoid Blocking Code
 
 One of the most common beginner mistakes is relying heavily on:
 
@@ -3177,7 +3177,7 @@ As projects become more complex, excessive use of `delay()` quickly becomes a li
 
 ---
 
-# Use millis() Instead
+## Use millis() Instead
 
 A better approach is timing events using:
 
@@ -3217,7 +3217,7 @@ This technique is considered standard practice in Arduino programming.
 
 ---
 
-# Read the ADC Only When Necessary
+## Read the ADC Only When Necessary
 
 Many beginners call:
 
@@ -3253,7 +3253,7 @@ This reduces unnecessary ADC conversions and improves consistency.
 
 ---
 
-# Apply Filtering Before Processing
+## Apply Filtering Before Processing
 
 Always process the signal in the correct order.
 
@@ -3287,7 +3287,7 @@ Keeping this sequence consistent makes your code easier to understand and mainta
 
 ---
 
-# Use Meaningful Variable Names
+## Use Meaningful Variable Names
 
 Instead of:
 
@@ -3321,7 +3321,7 @@ Descriptive names improve readability, especially in larger projects.
 
 ---
 
-# Organize Your Code into Functions
+## Organize Your Code into Functions
 
 Rather than placing everything inside `loop()`, divide your program into small reusable functions.
 
@@ -3348,7 +3348,7 @@ Benefits include:
 
 ---
 
-# Keep Constants Together
+## Keep Constants Together
 
 Instead of scattering configuration values throughout the code:
 
@@ -3378,7 +3378,7 @@ Changing project parameters later becomes much easier.
 
 ---
 
-# Constrain Output Values
+## Constrain Output Values
 
 Whenever values are mapped or scaled, limit the output range.
 
@@ -3393,7 +3393,7 @@ This prevents unexpected behaviour caused by invalid values.
 
 ---
 
-# Avoid Floating Inputs
+## Avoid Floating Inputs
 
 Unused digital inputs should never be left floating.
 
@@ -3415,7 +3415,7 @@ Floating inputs often produce random behaviour that is difficult to diagnose.
 
 ---
 
-# Choose ADC1 Pins
+## Choose ADC1 Pins
 
 Whenever possible, connect analog sensors to ADC1 GPIOs.
 
@@ -3429,7 +3429,7 @@ This simple decision can prevent many future debugging sessions.
 
 ---
 
-# Use External Power for Motors
+## Use External Power for Motors
 
 Servos and DC motors generate electrical noise.
 
@@ -3449,7 +3449,7 @@ This greatly improves stability.
 
 ---
 
-# Minimize OLED Updates
+## Minimize OLED Updates
 
 Updating an OLED display hundreds of times per second wastes CPU time and increases I²C traffic.
 
@@ -3465,7 +3465,7 @@ This produces:
 
 ---
 
-# Consider FreeRTOS for Larger Projects
+## Consider FreeRTOS for Larger Projects
 
 One of the ESP32's biggest advantages is built-in FreeRTOS support.
 
@@ -3503,7 +3503,7 @@ Although FreeRTOS is beyond the scope of this tutorial, it is worth exploring in
 
 ---
 
-# Calibrate Every Time the Device Starts
+## Calibrate Every Time the Device Starts
 
 Never assume every joystick behaves identically.
 
@@ -3513,7 +3513,7 @@ The calibration process only takes a fraction of a second but greatly improves a
 
 ---
 
-# Document Your Code
+## Document Your Code
 
 Good comments explain *why* something is done, not merely *what* the code already says.
 
@@ -3533,7 +3533,7 @@ Future-you will appreciate the extra context.
 
 ---
 
-# Test Incrementally
+## Test Incrementally
 
 When building larger projects, add one feature at a time.
 
@@ -3551,7 +3551,7 @@ This incremental approach makes debugging far easier than introducing multiple c
 
 ---
 
-# Summary of Best Practices
+## Summary of Best Practices
 
 Following these recommendations will make your projects:
 
@@ -3577,7 +3577,7 @@ Professional embedded software is rarely more complicated because of the hardwar
 
 ---
 
-# Troubleshooting Guide
+## Troubleshooting Guide
 
 Even a simple circuit can occasionally behave in unexpected ways.
 
@@ -3589,7 +3589,7 @@ If your project isn't behaving as expected, work through the following checklist
 
 ---
 
-# Problem: X and Y Always Read Zero
+## Problem: X and Y Always Read Zero
 
 ### Symptoms
 
@@ -3664,7 +3664,7 @@ The voltage should change smoothly between approximately:
 
 ---
 
-# Problem: Values Jump Randomly
+## Problem: Values Jump Randomly
 
 ### Symptoms
 
@@ -3708,7 +3708,7 @@ Large jumps are not.
 
 ---
 
-# Problem: Button Never Changes State
+## Problem: Button Never Changes State
 
 ### Symptoms
 
@@ -3736,7 +3736,7 @@ Also check that the SW pin is connected correctly.
 
 ---
 
-# Problem: Button Is Always Pressed
+## Problem: Button Is Always Pressed
 
 ### Symptoms
 
@@ -3768,7 +3768,7 @@ If not, inspect the wiring.
 
 ---
 
-# Problem: Center Value Isn't 2048
+## Problem: Center Value Isn't 2048
 
 ### Symptoms
 
@@ -3808,7 +3808,7 @@ calibrateJoystick();
 
 ---
 
-# Problem: Servo Vibrates Constantly
+## Problem: Servo Vibrates Constantly
 
 ### Symptoms
 
@@ -3839,7 +3839,7 @@ Also average multiple ADC readings before mapping the angle.
 
 ---
 
-# Problem: Servo Causes ESP32 Resets
+## Problem: Servo Causes ESP32 Resets
 
 ### Symptoms
 
@@ -3877,7 +3877,7 @@ Common Ground
 
 ---
 
-# Problem: Motor Doesn't Spin
+## Problem: Motor Doesn't Spin
 
 ### Verify
 
@@ -3891,7 +3891,7 @@ Most motor problems are actually power supply problems.
 
 ---
 
-# Problem: Robot Slowly Moves by Itself
+## Problem: Robot Slowly Moves by Itself
 
 ### Cause
 
@@ -3909,7 +3909,7 @@ const int deadZone = 60;
 
 ---
 
-# Problem: OLED Menu Scrolls Automatically
+## Problem: OLED Menu Scrolls Automatically
 
 ### Causes
 
@@ -3929,7 +3929,7 @@ before detecting movement.
 
 ---
 
-# Problem: Wi-Fi Breaks Analog Readings
+## Problem: Wi-Fi Breaks Analog Readings
 
 ### Symptoms
 
@@ -3954,7 +3954,7 @@ These remain fully functional while Wi-Fi is active.
 
 ---
 
-# Problem: Readings Don't Reach 0 or 4095
+## Problem: Readings Don't Reach 0 or 4095
 
 ### Example
 
@@ -3986,7 +3986,7 @@ Always calibrate the usable range instead of assuming perfect values.
 
 ---
 
-# Problem: Movement Feels Too Sensitive
+## Problem: Movement Feels Too Sensitive
 
 Reduce the sensitivity.
 
@@ -4015,7 +4015,7 @@ constrain(normalizedX,-2048,2047);
 
 ---
 
-# Problem: Servo Doesn't Reach 180°
+## Problem: Servo Doesn't Reach 180°
 
 Different servos use different pulse widths.
 
@@ -4035,7 +4035,7 @@ depending on your servo model.
 
 ---
 
-# Problem: Analog Values Drift Over Time
+## Problem: Analog Values Drift Over Time
 
 ### Causes
 
@@ -4063,7 +4063,7 @@ Swap the X and Y connections temporarily to determine whether the issue follows 
 
 ---
 
-# Quick Diagnostic Checklist
+## Quick Diagnostic Checklist
 
 Before replacing any hardware, verify the following:
 
@@ -4500,7 +4500,7 @@ Each of these projects builds directly on the techniques covered in this tutoria
 
 ---
 
-# Recommended Hardware
+## Recommended Hardware
 
 Throughout this tutorial, we've used a small selection of affordable components that are widely available and suitable for both beginners and experienced makers.
 
@@ -4538,7 +4538,7 @@ As you continue learning, you'll find yourself reusing these same components aga
 
 ---
 
-# Project Ideas
+## Project Ideas
 
 Now that you've mastered the basics of the KY-023 joystick, try extending what you've learned into larger projects.
 
@@ -4604,7 +4604,7 @@ These tutorials build naturally on the techniques you've learned here and will h
 
 ---
 
-# Learning Path
+## Learning Path
 
 If you're new to the ESP32 ecosystem, we recommend following this order.
 
@@ -4764,7 +4764,7 @@ These skills form an excellent foundation for more advanced ESP32 development.
 
 ---
 
-# Where to Go Next
+## Where to Go Next
 
 Once you've mastered the KY-023 joystick, there are countless opportunities to expand your knowledge.
 
@@ -4786,7 +4786,7 @@ As your confidence grows, you'll discover that the joystick becomes just one of 
 
 ---
 
-# Continue Exploring ESP32
+## Continue Exploring ESP32
 
 The ESP32 is one of the most capable and affordable microcontrollers available today.
 
@@ -4839,7 +4839,7 @@ The examples presented throughout this guide are intended to serve as a solid fo
 
 ---
 
-# Final Thoughts
+## Final Thoughts
 
 Learning embedded systems can feel overwhelming at first.
 
