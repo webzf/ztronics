@@ -78,7 +78,6 @@ related:
   - ssd1306-oled
 ---
 
-## Overview
 
 **Jumper wires**, also known as **Dupont wires**, are one of the most essential accessories for electronic prototyping. They provide quick and reliable connections between components without soldering, making them ideal for use with a **[Solderless Breadboard](/products/solderless-breadboard/)**.
 
