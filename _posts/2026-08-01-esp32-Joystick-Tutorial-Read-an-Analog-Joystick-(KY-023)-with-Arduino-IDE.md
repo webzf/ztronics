@@ -43,7 +43,7 @@ share: true
 
 # ESP32 Joystick Tutorial
 
-*Learn how to connect, calibrate, and program an analog joystick module with the ESP32 using the Arduino IDE.*
+*Learn how to connect, calibrate, and program an analog joystick module with the [ESP32](/products/esp32-devkit/) using the Arduino IDE.*
 
 ![ESP32 Analog Joystick connected to an ESP32](/assets/images/esp32-joystick-hero2.webp)
 
@@ -73,7 +73,7 @@ By the end of this tutorial you will be able to:
 
 ✔ Control an SG90 servo
 
-✔ Navigate OLED menus
+✔ Navigate [OLED](/ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/) menus
 
 ✔ Control robot movement
 
@@ -182,7 +182,7 @@ The KY-023 joystick module is commonly found in projects such as:
 - Electronic games
 - Industrial operator panels
 - Educational robotics
-- DIY game consoles
+- [DIY game consoles](/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
 
 If you have ever used a PlayStation, Xbox, or Nintendo controller, you have already used the same basic principle explained in this tutorial.
 
@@ -444,7 +444,7 @@ GPIO27
 
 ⚠ These pins stop providing reliable analog readings whenever Wi-Fi is active.
 
-Since most ESP32 projects eventually use Wi-Fi or Bluetooth, it is good practice to always use ADC1 whenever possible.
+Since most [ESP32 projects](/categories/#esp32) eventually use Wi-Fi or Bluetooth, it is good practice to always use ADC1 whenever possible.
 
 That is why this tutorial uses:
 
@@ -491,7 +491,7 @@ These pins provide:
 
 Follow the connections exactly as shown.
 
-Double-check every wire before powering the ESP32.
+Double-check every [wire](/products/jumper-wires/) before powering the ESP32.
 
 Most joystick problems are simply caused by swapped VCC and GND connections.
 
@@ -676,7 +676,7 @@ The higher resolution produces smoother joystick movement.
 
 ## ADC Attenuation
 
-One feature many ESP32 tutorials ignore is ADC attenuation.
+One feature many [ESP32 tutorials](https://embeddednerd.com/tags/) ignore is ADC attenuation.
 
 Attenuation changes the voltage range that the ADC can measure.
 
@@ -695,7 +695,7 @@ Without proper attenuation, the ADC may saturate earlier than expected depending
 
 > **Tip**
 >
-> Most ESP32 development boards work well without explicitly setting attenuation, but configuring it makes your code more portable across different ESP32 variants.
+> Most [ESP32 development boards](/products/esp32-devkit/) work well without explicitly setting attenuation, but configuring it makes your code more portable across different ESP32 variants.
 
 ---
 
