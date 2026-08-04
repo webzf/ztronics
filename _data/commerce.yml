@@ -2,6 +2,33 @@
 # Embedded Nerd Commerce Database v2.0
 # ============================================================================
 
+ky-023-joystick:
+
+  preferred_store: aliexpress
+
+  notes: "Used in [this tutorial](../esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)"
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: true
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: true
+      affiliate_url: "https://amzn.to/3RC1jZV"
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3jqbrz5"
+
+
+#----------------
+
 esp32-devkit:
 
   preferred_store: aliexpress
