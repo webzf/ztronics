@@ -1,6 +1,8 @@
 ---
 title: "ESP32 Snake Game with MPU6050 and OLED Display"
 
+permalink: /esp32-snake-game-with-mpu6050-and-oled-display/
+
 howto: true
 
 layout: single
