@@ -80,7 +80,6 @@ related:
   - jumper-wires
 ---
 
-## Overview
 
 The **ESP32 DevKit V1** is one of the most popular development boards based on the **ESP32** microcontroller from Espressif. Combining a powerful dual-core processor with integrated Wi-Fi and Bluetooth connectivity, it provides an excellent platform for IoT, automation and embedded development.
 
