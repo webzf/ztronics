@@ -82,7 +82,6 @@ related:
   - ssd1306-oled
 ---
 
-## Overview
 
 The **KY-023 Analog Joystick Module** is a compact two-axis input device designed for embedded systems and microcontroller projects. It combines two precision potentiometers to measure movement along the X and Y axes while also providing an integrated push button for additional user input.
 
