@@ -1,6 +1,8 @@
 ---
 title: "ESP32 OLED Tutorial: Wiring, Code & Display Guide"
 
+permalink: /esp32-oled-tutorial-wiring-code-display-guide/
+
 howto: true
 
 layout: single
