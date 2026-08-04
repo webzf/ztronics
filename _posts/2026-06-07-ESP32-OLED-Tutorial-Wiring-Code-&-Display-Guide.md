@@ -413,7 +413,7 @@ You can extend this tutorial by adding:
 # Related Tutorials
 
 - [ESP32 WiFi Tutorial](../esp32-wifi/)
-- [ESP32 Web Server Guide](../esp32-web-server/)
+- [Esp32 Joystick Tutorial](../esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)
 - [MPU6050 Arduino Guide](../mpu6050-arduino-guide/)
 - [I2C Scanner Tutorial](../i2c-scanner-tutorial/)
 - [BME280 ESP32 Tutorial](../bme280-esp32/)
