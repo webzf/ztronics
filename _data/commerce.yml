@@ -6,7 +6,7 @@ ky-023-joystick:
 
   preferred_store: aliexpress
 
-  notes: "Used in [this tutorial](../esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)"
+  notes: "Used in this tutorial"
 
   disclaimer: false
 
@@ -19,7 +19,7 @@ ky-023-joystick:
   stores:
 
     amazon:
-      enabled: true
+      enabled: false
       affiliate_url: "https://amzn.to/3RC1jZV"
 
     aliexpress:
