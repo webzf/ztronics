@@ -86,7 +86,6 @@ related:
 ---
 
 
-## Overview
 
 The **SSD1306 OLED Display** is one of the most popular display modules used in embedded electronics. Thanks to its excellent contrast, ultra-low power consumption and simple **I2C** interface, it has become the preferred choice for makers, students and professional developers alike.
 
