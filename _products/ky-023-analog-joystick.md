@@ -5,6 +5,8 @@ title: "KY-023 Analog Joystick Module"
 
 product_id: ky-023-joystick
 
+category: Modules
+
 manufacturer: Generic
 
 image: /assets/images/products/ky-023-joystick.webp
