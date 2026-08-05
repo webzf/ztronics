@@ -4,9 +4,9 @@ title: "Products"
 permalink: /products/
 author_profile: false
 
-excerpt: "Browse our collection of electronic components, development boards and modules."
+excerpt: Browse our collection of electronic components.
 
-description: "Browse all product categories including ESP32 boards, sensors, displays, modules and accessories."
+description: Browse ESP32 boards, sensors, displays, modules and accessories.
 ---
 
 Browse our collection of development boards, sensors, displays, modules and electronic components.
@@ -18,23 +18,23 @@ Browse our collection of development boards, sensors, displays, modules and elec
 {% assign products = site.products | where:"category", category | sort:"title" %}
 {% assign slug = category | slugify %}
 
-<div class="notice--primary">
+---
 
 ## {{ category }}
 
 {% case category %}
 
 {% when "Development Boards" %}
-ESP32, Arduino, Raspberry Pi and other development boards.
+ESP32, Arduino and Raspberry Pi development boards.
 
 {% when "Sensors" %}
-Motion, temperature, humidity, pressure and environmental sensors.
+Motion, environmental and temperature sensors.
 
 {% when "Displays" %}
-OLED, LCD, TFT and e-paper displays.
+OLED, LCD and TFT displays.
 
 {% when "Modules" %}
-Relay, RFID, motor driver and interface modules.
+Relay, RFID, motor drivers, joysticks and interface modules.
 
 {% when "Communication" %}
 Wi-Fi, Bluetooth, LoRa and RF communication modules.
@@ -50,31 +50,30 @@ Electronic components.
 
 {% endcase %}
 
-### Featured products
+<p>
+<strong>{{ products.size }}</strong>
+{% if products.size == 1 %}Product{% else %}Products{% endif %}
+</p>
 
-<ul>
+<div class="en-product-grid">
+
 {% for product in products limit:3 %}
 
-**[{{ product.title }}]({{ product.url | relative_url }})**
-
-{{ product.excerpt }}
-
-{% unless forloop.last %}
----
-{% endunless %}
+    {% include product-card.html product=product %}
 
 {% endfor %}
-</ul>
-
-**{{ products.size }}**
-{% if products.size == 1 %}
-Product
-{% else %}
-Products
-{% endif %}
-
-[Browse {{ category }} →]({{ "/products/" | append: slug | append: "/" | relative_url }}){: .btn .btn--primary}
 
 </div>
+
+<p align="center">
+
+<a class="btn btn--primary"
+href="{{ '/products/' | append: slug | append:'/' | relative_url }}">
+
+Browse {{ category }}
+
+</a>
+
+</p>
 
 {% endfor %}
