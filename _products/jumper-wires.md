@@ -5,6 +5,8 @@ title: "Jumper Wires"
 
 product_id: jumper-wires
 
+category: Accessories
+
 manufacturer: Generic
 
 image: /assets/images/products/jumper-wires.webp
