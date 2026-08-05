@@ -54,7 +54,15 @@ Electronic components.
 
 <ul>
 {% for product in products limit:3 %}
-<li><a href="{{ product.url | relative_url }}">{{ product.title }}</a></li>
+
+**[{{ product.title }}]({{ product.url | relative_url }})**
+
+{{ product.excerpt }}
+
+{% unless forloop.last %}
+---
+{% endunless %}
+
 {% endfor %}
 </ul>
 
