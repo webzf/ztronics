@@ -5,6 +5,8 @@ title: "ESP32 DevKit V1"
 
 product_id: esp32-devkit
 
+category: Development Boards
+
 manufacturer: Espressif
 
 image: /assets/images/products/esp32-devkit.webp
