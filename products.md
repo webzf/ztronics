@@ -3,6 +3,9 @@ layout: single
 title: "Products"
 permalink: /products/
 author_profile: false
+
+sidebar: 
+   nav: "embedded"
 ---
 
 Browse our collection of development boards, sensors, displays and electronic components.
