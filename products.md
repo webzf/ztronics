@@ -15,7 +15,7 @@ Browse our collection of development boards, sensors, displays, modules and elec
 
 {% for category in categories %}
 
-{% assign products = site.products | where:"category", category %}
+{% assign products = site.products | where:"category", category | sort:"title" %}
 {% assign slug = category | slugify %}
 
 <div class="notice--primary">
@@ -34,10 +34,10 @@ Motion, temperature, humidity, pressure and environmental sensors.
 OLED, LCD, TFT and e-paper displays.
 
 {% when "Modules" %}
-Relay, RFID, joystick, motor driver and interface modules.
+Relay, RFID, motor driver and interface modules.
 
 {% when "Communication" %}
-Wi-Fi, Bluetooth, LoRa, RF and wired communication modules.
+Wi-Fi, Bluetooth, LoRa and RF communication modules.
 
 {% when "Power" %}
 Voltage regulators, battery chargers and power management modules.
@@ -46,9 +46,17 @@ Voltage regulators, battery chargers and power management modules.
 Breadboards, jumper wires and prototyping accessories.
 
 {% else %}
-Electronic components and modules.
+Electronic components.
 
 {% endcase %}
+
+### Featured products
+
+<ul>
+{% for product in products limit:3 %}
+<li><a href="{{ product.url | relative_url }}">{{ product.title }}</a></li>
+{% endfor %}
+</ul>
 
 **{{ products.size }}**
 {% if products.size == 1 %}
@@ -57,7 +65,7 @@ Product
 Products
 {% endif %}
 
-[Browse {{ category }} →](/products/{{ slug }}/){: .btn .btn--primary}
+[Browse {{ category }} →]({{ "/products/" | append: slug | append: "/" | relative_url }}){: .btn .btn--primary}
 
 </div>
 
