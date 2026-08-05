@@ -1,66 +1,32 @@
-{% assign platforms_string = "" %}
+---
+layout: archive
+title: "Electronic Components & Development Boards"
+permalink: /products/
+
+excerpt: "Browse ESP32 boards, sensors, displays, modules and electronic components."
+
+description: "Complete catalog of ESP32 boards, Arduino modules, sensors, displays and electronic components with specifications, pinouts and tutorials."
+
+author_profile: false
+---
+
+Browse our collection of development boards, sensors, displays, modules and electronic components.
+
+{% assign categories = site.products | map: "category" | uniq | sort %}
+
+{% for category in categories %}
+## {{ category }}
+
+<div class="grid__wrapper">
+
+{% assign products = site.products | where: "category", category | sort: "title" %}
 
 {% for product in products %}
-
-  {% if product.platforms %}
-
-    {% for platform in product.platforms %}
-
-      {% assign platforms_string = platforms_string | append: platform | append: "|" %}
-
-    {% endfor %}
-
-  {% endif %}
-
+  <div class="grid__item">
+    {% include archive-single.html type="grid" %}
+  </div>
 {% endfor %}
 
-{% assign platforms = platforms_string | split: "|" | uniq | sort %}
+</div>
 
-<section class="en-filters-card">
-
-    <div class="en-filter-header">
-
-        <h2>Browse by Platform</h2>
-
-        <button
-            id="clearFilters"
-            class="en-clear-filters"
-            type="button">
-
-            Clear Filters
-
-        </button>
-
-    </div>
-
-    <div class="en-platforms">
-
-        <button
-            class="platform-chip active"
-            type="button"
-            data-platform="">
-
-            All
-
-        </button>
-
-        {% for platform in platforms %}
-
-            {% unless platform == "" %}
-
-            <button
-                class="platform-chip"
-                type="button"
-                data-platform="{{ platform }}">
-
-                {{ platform }}
-
-            </button>
-
-            {% endunless %}
-
-        {% endfor %}
-
-    </div>
-
-</section>
+{% endfor %}
