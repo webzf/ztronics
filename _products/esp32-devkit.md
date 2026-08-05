@@ -5,7 +5,7 @@ title: "ESP32 DevKit V1"
 
 product_id: esp32-devkit
 
-category: Development Boards
+category: "Development Boards"
 
 manufacturer: Espressif
 
