@@ -5,6 +5,8 @@ title: "Solderless Breadboard"
 
 product_id: solderless-breadboard
 
+category: Accessories
+
 manufacturer: Generic
 
 image: /assets/images/products/solderless-breadboard.webp
