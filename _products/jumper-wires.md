@@ -31,7 +31,7 @@ tags:
   - Prototyping
   - Electronics
 
-permalink: /products/jumper-wires/
+permalink: /jumper-wires/
 
 specifications:
 
