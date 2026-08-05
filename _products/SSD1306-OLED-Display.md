@@ -5,6 +5,8 @@ title: "SSD1306 OLED Display"
 
 product_id: ssd1306-oled
 
+category: Displays
+
 manufacturer: Generic
 
 image: /assets/images/products/ssd1306-oled.webp
