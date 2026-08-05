@@ -57,7 +57,7 @@ Products
 <a href="/products/{{ slug }}/" class="btn btn--primary">
 View Products →
 </a>
-
+<br>
 </div>
 
 {% endfor %}
