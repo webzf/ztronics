@@ -3,22 +3,18 @@ layout: single
 author_profile: false
 ---
 
-{% assign products = site.products | where:"category", page.category | sort:"title" %}
+{% assign products = site.products
+    | where:"category", page.category
+    | sort:"title" %}
 
-{{ content }}
+{{ page.description }}
 
-{% if products.size > 0 %}
+<div class="en-product-grid">
 
-<div class="entries-grid">
+{% for product in products %}
 
-{% for post in products %}
-  {% include archive-single.html type="grid" %}
+    {% include product-card.html product=product %}
+
 {% endfor %}
 
 </div>
-
-{% else %}
-
-No products found.
-
-{% endif %}
