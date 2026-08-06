@@ -21,11 +21,8 @@ sidebar:
    
 ---
 
-Accessories are essential for building, testing and prototyping electronic projects. They allow you to assemble circuits quickly, test new ideas and experiment without permanent soldering.
 
-Whether you are using an Arduino, ESP32 or Raspberry Pi, the right accessories make development easier, improve reliability and save valuable time during debugging.
 
----
 
 ## Types of Accessories
 
@@ -64,7 +61,7 @@ Choosing the right accessories also makes tutorials easier to follow and helps p
 
 ### Are these accessories compatible with ESP32?
 
-Yes. Most accessories in this category are compatible with ESP32, Arduino and Raspberry Pi boards.
+Yes. Most accessories are compatible with ESP32, Arduino and Raspberry Pi boards.
 
 ### What are jumper wires used for?
 
