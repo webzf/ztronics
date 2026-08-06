@@ -4,9 +4,9 @@ title: "Products"
 permalink: /products/
 author_profile: false
 
-excerpt: Browse our collection of electronic components.
+excerpt: "Browse our collection of electronic components, development boards and modules."
 
-description: Browse ESP32 boards, sensors, displays, modules and accessories.
+description: "Browse development boards, sensors, displays, communication modules, power modules and accessories for Arduino, ESP32 and Raspberry Pi."
 ---
 
 Browse our collection of development boards, sensors, displays, modules and electronic components.
@@ -25,41 +25,36 @@ Browse our collection of development boards, sensors, displays, modules and elec
 {% case category %}
 
 {% when "Development Boards" %}
-ESP32, Arduino and Raspberry Pi development boards.
+Development boards for Arduino, ESP32 and Raspberry Pi projects.
 
 {% when "Sensors" %}
-Motion, environmental and temperature sensors.
+Temperature, humidity, motion, pressure and environmental sensors.
 
 {% when "Displays" %}
-OLED, LCD and TFT displays.
+OLED, LCD, TFT and e-paper displays.
 
 {% when "Modules" %}
-Relay, RFID, motor drivers, joysticks and interface modules.
+Relay, RFID, joystick, RTC and interface modules.
 
 {% when "Communication" %}
-Wi-Fi, Bluetooth, LoRa and RF communication modules.
+Wi-Fi, Bluetooth, LoRa, RF and wired communication modules.
 
 {% when "Power" %}
-Voltage regulators, battery chargers and power management modules.
+Voltage regulators, battery chargers and power supply modules.
 
 {% when "Accessories" %}
-Breadboards, jumper wires and prototyping accessories.
+Breadboards, jumper wires, pin headers and other prototyping accessories.
 
 {% else %}
 Electronic components.
 
 {% endcase %}
 
-<p>
-<strong>{{ products.size }}</strong>
-{% if products.size == 1 %}Product{% else %}Products{% endif %}
-</p>
-
 <div class="en-product-grid">
 
 {% for product in products limit:3 %}
 
-    {% include product-card.html product=product %}
+{% include product-card.html product=product %}
 
 {% endfor %}
 
