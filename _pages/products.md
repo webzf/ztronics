@@ -13,7 +13,7 @@ toc_sticky: true
 sidebar: 
    nav: "embedded"
 
-excerpt: "Browse our collection of development boards, sensors, displays, modules and accessories 
+excerpt: "Browse our collection of development boards, sensors, displays, modules and accessories"
 
 description: "Development boards, sensors, displays, communication modules, power modules and accessories for Arduino, ESP32 and Raspberry Pi."
 ---
