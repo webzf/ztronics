@@ -1,1 +1,3 @@
-
+---
+layout: product-category
+---
