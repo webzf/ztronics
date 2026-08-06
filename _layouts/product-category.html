@@ -16,6 +16,8 @@ sidebar:
 
 {% if products.size > 0 %}
 
+## Browse {{ page.title }}
+
 <div class="en-product-grid">
 
 {% for product in products %}
@@ -28,6 +30,6 @@ sidebar:
 
 {% else %}
 
-<p>No products found in this category.</p>
+> No products are currently available in this category.
 
 {% endif %}
