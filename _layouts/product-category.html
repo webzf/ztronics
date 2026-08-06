@@ -1,6 +1,10 @@
 ---
 layout: single
 author_profile: false
+
+sidebar: 
+   nav: "embedded"
+
 ---
 
 {% assign products = site.products | where:"category", page.category | sort:"title" %}
