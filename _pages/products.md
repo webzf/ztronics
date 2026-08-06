@@ -5,7 +5,7 @@ title: "Products"
 
 permalink: /products/
 
-author_profile: false
+author_profile: true
 
 excerpt: "Browse our collection of development boards, sensors, displays, modules and accessories."
 
