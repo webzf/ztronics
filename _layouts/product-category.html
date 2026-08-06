@@ -3,13 +3,9 @@ layout: single
 author_profile: false
 ---
 
+{{ content }}
+
 {% assign products = site.products | where:"category", page.category | sort:"title" %}
-
-<h1>{{ page.title }}</h1>
-
-{% if page.description %}
-<p>{{ page.description }}</p>
-{% endif %}
 
 <div class="en-product-grid">
 
