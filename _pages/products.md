@@ -5,7 +5,10 @@ title: "Products"
 
 permalink: /products/
 
-author_profile: true
+author_profile: false
+
+toc: true
+toc_sticky: true
 
 sidebar: 
    nav: "embedded"
