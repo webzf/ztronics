@@ -10,13 +10,16 @@ sidebar:
 
 ---
 
+
 {% assign products = site.products | where:"category", page.category | sort:"title" %}
 
-{{ content }}
+{% if page.introduction %}
+{{ page.introduction }}
+{% endif %}
 
 {% if products.size > 0 %}
 
-## Browse {{ page.title }}
+## Products
 
 <div class="en-product-grid">
 
@@ -33,3 +36,5 @@ sidebar:
 > No products are currently available in this category.
 
 {% endif %}
+
+{{ content }}
