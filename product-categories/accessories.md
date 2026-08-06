@@ -5,6 +5,8 @@ title: "Accessories"
 
 permalink: /products/accessories/
 
+author_profile: false
+
 category: Accessories
 
 excerpt: "Breadboards, jumper wires and prototyping accessories."
