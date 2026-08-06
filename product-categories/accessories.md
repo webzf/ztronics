@@ -13,6 +13,10 @@ description: "Browse breadboards, jumper wires, pin headers and other prototypin
 
 toc: true
 toc_sticky: true
+
+sidebar: 
+   nav: "embedded"
+   
 ---
 
 Accessories are essential for building, testing and prototyping electronic projects. They make it easy to assemble circuits, experiment with new ideas and quickly test hardware without permanent soldering.
