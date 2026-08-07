@@ -5,35 +5,20 @@ author_profile: false
 toc: true
 toc_sticky: true
 
-sidebar: 
-   nav: "embedded"
-
+sidebar:
+  nav: "embedded"
 ---
-
 
 {% assign products = site.products | where:"category", page.category | sort:"title" %}
 
-{% if page.introduction %}
-{{ page.introduction }}
-{% endif %}
-
+{% capture product_cards %}
 {% if products.size > 0 %}
-
-
-<div class="en-product-grid">
-
-{% for product in products %}
-
-  {% include product-card.html product=product %}
-
-{% endfor %}
-
-</div>
-
+  {% for product in products %}
+    {% include product-card.html product=product %}
+  {% endfor %}
 {% else %}
-
 > No products are currently available in this category.
-
 {% endif %}
+{% endcapture %}
 
-{{ content }}
+{{ content | replace: "{{ products }}", product_cards }}
