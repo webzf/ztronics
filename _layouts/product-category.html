@@ -11,14 +11,14 @@ sidebar:
 
 {% assign products = site.products | where:"category", page.category | sort:"title" %}
 
-{% capture product_cards %}
-{% if products.size > 0 %}
-  {% for product in products %}
-    {% include product-card.html product=product %}
-  {% endfor %}
-{% else %}
-> No products are currently available in this category.
-{% endif %}
-{% endcapture %}
+{{ content }}
 
-{{ content | replace: "{{ products }}", product_cards }}
+{% if page.show_products != false %}
+  {% if products.size > 0 %}
+    {% for product in products %}
+      {% include product-card.html product=product %}
+    {% endfor %}
+  {% else %}
+> No products are currently available in this category.
+  {% endif %}
+{% endif %}
