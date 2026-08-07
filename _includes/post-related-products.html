@@ -1,23 +1,20 @@
-{% if page.required_hardware and page.required_hardware.size > 0 %}
+<h3>DEBUG</h3>
 
-<h3 class="en-section-title">
-    Hardware Used in This Project
-</h3>
+{{ page.required_hardware | jsonify }}
 
-<div class="en-related-grid">
+<hr>
 
-    {% for item in page.required_hardware %}
+{% for item in page.required_hardware %}
+  ID: {{ item.id }}<br>
 
-        {% assign product = site.products | where: "product_id", item.id | first %}
+  {% assign product = site.products | where: "product_id", item.id | first %}
 
-        {% if product %}
+  Produto encontrado:
+  {% if product %}
+    ✅ {{ product.title }}
+  {% else %}
+    ❌ NÃO ENCONTRADO
+  {% endif %}
 
-            {% include product-card.html product=product %}
-
-        {% endif %}
-
-    {% endfor %}
-
-</div>
-
-{% endif %}
+  <hr>
+{% endfor %}
