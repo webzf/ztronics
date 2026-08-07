@@ -860,10 +860,11 @@ text-decoration:none;
 }
 
 .en-product-card__image {
+    position: relative;
     display: block;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background: #fff; /* ou var(--global-bg-color) se preferires */
+    background: #fff;
 }
 
 .en-product-card__image img {
