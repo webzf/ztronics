@@ -21,8 +21,9 @@ sidebar:
    
 ---
 
-### Products
+## Products
 
+{% include products-list.html category=page.category %}
 
 ## Types of Accessories
 
