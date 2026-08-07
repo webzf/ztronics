@@ -23,6 +23,7 @@ sidebar:
 
 ### Products
 
+{{ products }}
 
 ## Types of Accessories
 
