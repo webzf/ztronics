@@ -11,8 +11,8 @@ main:
   - title: "Raspberry Pi"
     url: /categories/#raspberry-pi
 
-  - title: "Sensors"
-    url: /categories/#sensors
+  - title: "Products"
+    url: /products/
 
   - title: "Projects"
     url: /categories/
