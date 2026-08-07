@@ -9,16 +9,4 @@ sidebar:
   nav: "embedded"
 ---
 
-{% assign products = site.products | where:"category", page.category | sort:"title" %}
-
 {{ content }}
-
-{% if page.show_products != false %}
-  {% if products.size > 0 %}
-    {% for product in products %}
-      {% include product-card.html product=product %}
-    {% endfor %}
-  {% else %}
-> No products are currently available in this category.
-  {% endif %}
-{% endif %}
