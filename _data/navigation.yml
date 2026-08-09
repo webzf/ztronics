@@ -39,7 +39,7 @@ embedded:
       - title: "Arduino Basics"
         url: /arduino-beginners-guide/
       - title: "Arduino Projects"
-        url: /tags/arduino-projects/
+        url: /tags/#arduino
 
   - title: Raspberry Pi
     children:
