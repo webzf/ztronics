@@ -36,6 +36,7 @@ header:
   teaser: /assets/images/esp32-joystick-hero.webp
   overlay_image: /assets/images/header3.webp
   overlay_filter: 0.25
+  og_image: /assets/images/esp32-joystick-hero.webp
 
 related: true
 share: true
