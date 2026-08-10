@@ -1,7 +1,7 @@
 ---
 layout: product-category
 
-title: "Accessories"
+title: "Electronics Accessories for Arduino, ESP32 & Raspberry Pi"
 
 permalink: /products/accessories/
 
@@ -11,7 +11,7 @@ category: Accessories
 
 excerpt: "Breadboards, jumper wires and prototyping accessories."
 
-description: "Browse breadboards, jumper wires, pin headers and other prototyping accessories for Arduino, ESP32 and Raspberry Pi."
+description: "Explore electronics accessories for Arduino, ESP32 and Raspberry Pi, including breadboards, jumper wires, connectors and other prototyping essentials."
 
 toc: true
 toc_sticky: true
