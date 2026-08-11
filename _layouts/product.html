@@ -10,6 +10,60 @@ layout: single
      product=page.product_id
      style=product_style %}
 
+  {% comment %}
+  ============================================================================
+  Used in these tutorials
+  Searches both _posts and _pages for tutorials using this product.
+  ============================================================================
+  {% endcomment %}
+
+  {% assign all_tutorials = site.posts | concat: site.pages %}
+  {% assign tutorial_count = 0 %}
+
+  {% for tutorial in all_tutorials %}
+    {% if tutorial.required_hardware %}
+      {% for hardware in tutorial.required_hardware %}
+        {% if hardware.id == page.product_id %}
+          {% assign tutorial_count = tutorial_count | plus: 1 %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  {% if tutorial_count > 0 %}
+    <section class="product-tutorials">
+
+      <h2>Used in these tutorials</h2>
+
+      <ul>
+        {% for tutorial in all_tutorials %}
+          {% if tutorial.required_hardware %}
+
+            {% assign uses_product = false %}
+
+            {% for hardware in tutorial.required_hardware %}
+              {% if hardware.id == page.product_id %}
+                {% assign uses_product = true %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+
+            {% if uses_product %}
+              <li>
+                <a href="{{ tutorial.url | relative_url }}">
+                  {{ tutorial.title }}
+                </a>
+              </li>
+            {% endif %}
+
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+    </section>
+  {% endif %}
+
   {% if page.show_content != false %}
     <div class="product-content">
       {{ content }}
