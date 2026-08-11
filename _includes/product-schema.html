@@ -25,12 +25,31 @@
   {% if product.product_id %}
   ,"sku": {{ product.product_id | jsonify }}
   {% endif %}
+
+  {% comment %}
+  ==========================================================================
+  OFFER
+  Only generate an Offer when the preferred store has:
+  - enabled: true
+  - affiliate_url
+  - price
+  ==========================================================================
+  {% endcomment %}
+
   {% if commerce and commerce.preferred_store %}
     {% assign preferred = commerce.stores[commerce.preferred_store] %}
-    {% if preferred and preferred.enabled and preferred.affiliate_url %}
+
+    {% if preferred and preferred.enabled and preferred.affiliate_url and preferred.price %}
   ,"offers": {
     "@type": "Offer",
-    "url": {{ preferred.affiliate_url | jsonify }}
+    "url": {{ preferred.affiliate_url | jsonify }},
+    "price": {{ preferred.price | jsonify }}
+    {% if preferred.currency %}
+    ,"priceCurrency": {{ preferred.currency | jsonify }}
+    {% endif %}
+    {% if preferred.availability %}
+    ,"availability": {{ preferred.availability | jsonify }}
+    {% endif %}
   }
     {% endif %}
   {% endif %}
