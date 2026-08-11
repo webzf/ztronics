@@ -56,7 +56,6 @@ layout: default
         {% endif %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
-        {% include post-related-products.html %}
       </section>
 
       <footer class="page__meta">
@@ -70,6 +69,8 @@ layout: default
       {% if page.share %}{% include social-share.html locale=locale %}{% endif %}
 
       {% include post_pagination.html locale=locale %}
+
+      {% include post-related-products.html %}
     </div>
 
     {% if site.comments.provider and page.comments %}
