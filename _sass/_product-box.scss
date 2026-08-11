@@ -905,9 +905,7 @@ text-decoration:none;
 
 /* Recommended badge */
 .en-hardware-grid .en-badge--recommended {
-  font-size: 0.7rem;
-  padding: 0.2rem 0.45rem;
-  white-space: nowrap;
+  display: none;
 }
 
 /* Card body */
@@ -971,12 +969,4 @@ text-decoration:none;
   .en-hardware-grid .en-product-card__image img {
     max-height: 95px;
   }
-}
-
-.en-hardware-grid .en-badge--recommended {
-  background: #2e7d32;
-  color: #fff;
-  font-size: 0.7rem;
-  padding: 0.2rem 0.45rem;
-  white-space: nowrap;
 }
