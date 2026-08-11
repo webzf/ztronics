@@ -70,7 +70,7 @@ layout: default
 
       {% include post_pagination.html locale=locale %}
 
-      {% include post-related-products.html %}
+      
     </div>
 
     {% if site.comments.provider and page.comments %}
@@ -89,9 +89,11 @@ layout: default
   
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
+    {% include post-related-products.html %}
     {% include page__related.html locale=locale posts=site.related_posts %}
   {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
   {% elsif page.id and page.related %}
+    {% include post-related-products.html %}
     {% include page__related.html locale=locale posts=site.posts %}
   {% endif %}
 </div>
