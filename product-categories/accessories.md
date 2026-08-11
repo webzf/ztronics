@@ -29,7 +29,7 @@ sidebar:
 
 The most common prototyping accessories include:
 
-- Breadboards
+- [Breadboards](/products/solderless-breadboard/)
 - Jumper Wires
 - Pin Headers
 - Dupont Connectors
@@ -42,7 +42,7 @@ The most common prototyping accessories include:
 
 These accessories are commonly used with:
 
-- ESP32
+- [ESP32](/products/esp32-devkit/)
 - Arduino Uno
 - Arduino Nano
 - Raspberry Pi Pico
@@ -54,7 +54,7 @@ These accessories are commonly used with:
 
 Reliable accessories make prototyping faster and more enjoyable. Good-quality jumper wires reduce connection problems, while breadboards provide a convenient platform for building and testing circuits without soldering.
 
-Choosing the right accessories also makes tutorials easier to follow and helps produce more reliable projects.
+Choosing the right accessories also makes [tutorials](/categories/#tutorials) easier to follow and helps produce more reliable projects.
 
 ---
 
