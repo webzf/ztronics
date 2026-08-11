@@ -18,7 +18,7 @@ toc: true
 toc_sticky: true
 
 sidebar:
-nav: "embedded"
+   nav: "embedded"
 
 ---
 
