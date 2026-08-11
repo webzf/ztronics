@@ -17,7 +17,7 @@ description: "Explore electronic components for Arduino, ESP32 and Raspberry Pi 
 toc: true
 toc_sticky: true
 
-sidebar:
+sidebar: 
    nav: "embedded"
 
 ---
