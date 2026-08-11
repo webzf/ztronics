@@ -873,3 +873,47 @@ text-decoration:none;
     object-fit: contain;
     display: block;
 }
+
+/* ==========================================================================
+   Hardware Used in This Project
+   ========================================================================== */
+
+.en-hardware-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.en-hardware-grid .en-product-card__image {
+  height: 130px;
+}
+
+.en-hardware-grid .en-product-card__image img {
+  max-height: 110px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .en-hardware-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .en-hardware-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .en-hardware-grid .en-product-card__image {
+    height: 120px;
+  }
+
+  .en-hardware-grid .en-product-card__image img {
+    max-height: 100px;
+  }
+}
