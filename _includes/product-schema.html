@@ -5,50 +5,37 @@
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"Product",
-
-  "name": {{ product.title | jsonify }},
-
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | jsonify }}
   {% if product.description %}
-  "description": {{ product.description | strip_html | jsonify }},
+  ,"description": {{ product.description | strip_html | jsonify }}
   {% endif %}
-
   {% if product.image %}
-  "image": [
+  ,"image": [
     {{ product.image | absolute_url | jsonify }}
-  ],
+  ]
   {% endif %}
-
   {% if product.manufacturer %}
-  "brand": {
-    "@type":"Brand",
+  ,"brand": {
+    "@type": "Brand",
     "name": {{ product.manufacturer | jsonify }}
-  },
-  {% endif %}
-
-  {% if product.product_id %}
-  "sku": {{ product.product_id | jsonify }},
-  {% endif %}
-
-  {% if commerce.preferred_store %}
-  "offers": {
-
-    "@type":"Offer",
-
-    {% assign preferred = commerce.stores[commerce.preferred_store] %}
-
-    {% if preferred.affiliate_url %}
-    "url": {{ preferred.affiliate_url | jsonify }},
-    {% endif %}
-
-    "availability":"https://schema.org/InStock",
-
-    "priceCurrency":"USD"
-
   }
   {% endif %}
-
+  {% if product.product_id %}
+  ,"sku": {{ product.product_id | jsonify }}
+  {% endif %}
+  {% if commerce.preferred_store %}
+  {% assign preferred = commerce.stores[commerce.preferred_store] %}
+  ,"offers": {
+    "@type": "Offer"
+    {% if preferred.affiliate_url %}
+    ,"url": {{ preferred.affiliate_url | jsonify }}
+    {% endif %}
+    ,"availability": "https://schema.org/InStock",
+    "priceCurrency": "USD"
+  }
+  {% endif %}
 }
 </script>
 
