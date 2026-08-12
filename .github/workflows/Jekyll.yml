@@ -44,8 +44,8 @@ jobs:
           bundle exec ruby -r jekyll -e 'puts "Jekyll #{Jekyll::VERSION}"; require_relative "_plugins/internal_linker.rb"'
 
       - name: Build site
-        run: bundle exec ruby -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build
-
+        run: bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build
+  
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
