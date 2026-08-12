@@ -8,12 +8,18 @@ module EmbeddedNerd
   module InternalLinker
 
     PROTECTED_TAGS = %w[
-      a
-      code
-      pre
-      script
-      style
-    ].freeze
+  a
+  h1
+  h2
+  h3
+  h4
+  h5
+  h6
+  code
+  pre
+  script
+  style
+].freeze
 
     def self.process(document)
 
