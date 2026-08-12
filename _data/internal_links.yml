@@ -1,0 +1,23 @@
+# ============================================================================
+# Embedded Nerd - Internal Linking Database
+# ============================================================================
+
+settings:
+  enabled: true
+  default_max_links_per_page: 1
+
+links:
+
+  mpu6050:
+    url: /products/mpu6050/
+    keywords:
+      - "MPU6050"
+      - "MPU-6050"
+    max_links_per_page: 1
+
+  esp32:
+    url: /products/esp32-devkit/
+    keywords:
+      - "ESP32"
+      - "ESP32 DevKit"
+    max_links_per_page: 1
