@@ -2,19 +2,10 @@
 # Embedded Nerd - Internal Link Engine
 # ============================================================================
 #
-# Version 1.0
+# Jekyll 3.10 compatible
 #
-# Automatic internal links for Jekyll 3.10
+# Uses :pre_render so modifications are included in the final HTML.
 #
-# Features:
-#   - Processes posts and HTML pages
-#   - Uses _data/internal_links.yml
-#   - Maximum links per destination
-#   - Prevents self-links
-#   - Protects existing links
-#   - Protects code/pre/script/style
-#   - Ignores CSS, JS, XML and other non-HTML files
-#   - Does not modify layouts, menus or footers
 # ============================================================================
 
 module EmbeddedNerd
@@ -28,8 +19,9 @@ module EmbeddedNerd
       style
     ].freeze
 
+
     # ------------------------------------------------------------------------
-    # Process a Jekyll document/page
+    # Main processor
     # ------------------------------------------------------------------------
 
     def self.process(document)
@@ -37,17 +29,18 @@ module EmbeddedNerd
       site = document.site
 
       # ----------------------------------------------------------------------
-      # Only HTML output
+      # Only process actual content files.
       # ----------------------------------------------------------------------
 
-      output_ext =
-        if document.respond_to?(:output_ext)
-          document.output_ext.to_s.downcase
+      ext =
+        if document.respond_to?(:extname)
+          document.extname.to_s.downcase
         else
           ""
         end
 
-      return unless output_ext == ".html"
+      return unless %w[.md .markdown .html .htm].include?(ext)
+
 
       # ----------------------------------------------------------------------
       # Configuration
@@ -65,6 +58,7 @@ module EmbeddedNerd
 
       return if links.empty?
 
+
       # ----------------------------------------------------------------------
       # Content
       # ----------------------------------------------------------------------
@@ -73,6 +67,7 @@ module EmbeddedNerd
 
       return if content.empty?
 
+
       # ----------------------------------------------------------------------
       # Current URL
       # ----------------------------------------------------------------------
@@ -80,8 +75,9 @@ module EmbeddedNerd
       current_url =
         normalize_url(document.url)
 
+
       # ----------------------------------------------------------------------
-      # Build linking rules
+      # Build rules
       # ----------------------------------------------------------------------
 
       rules = []
@@ -94,7 +90,9 @@ module EmbeddedNerd
 
         next if url.empty?
 
+
         keywords = Array(item["keywords"])
+
 
         max_links =
           (
@@ -103,13 +101,16 @@ module EmbeddedNerd
             1
           ).to_i
 
+
         next if max_links <= 0
+
 
         keywords.each do |keyword|
 
           keyword = keyword.to_s.strip
 
           next if keyword.empty?
+
 
           rules << {
             id: link_id.to_s,
@@ -119,35 +120,37 @@ module EmbeddedNerd
           }
 
         end
+
       end
+
 
       return if rules.empty?
 
-      # Longer keywords first.
-      #
-      # Example:
-      # "ESP32 DevKit" before "ESP32"
-      #
+
+      # Longer phrases first.
       rules.sort_by! do |rule|
         -rule[:keyword].length
       end
 
+
       # ----------------------------------------------------------------------
-      # Link counters
+      # Counters
       # ----------------------------------------------------------------------
 
       link_counts = Hash.new(0)
 
       total_created = 0
 
+
       # ----------------------------------------------------------------------
-      # Temporarily protect elements that must never be modified.
+      # Protect HTML blocks
       # ----------------------------------------------------------------------
 
       protected_content = []
 
       protected_pattern =
         /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
+
 
       content =
         content.gsub(protected_pattern) do |match|
@@ -160,65 +163,155 @@ module EmbeddedNerd
 
         end
 
+
       # ----------------------------------------------------------------------
-      # Process HTML text nodes only.
+      # Protect Markdown links
       #
-      # The pattern >TEXT< prevents us from changing HTML attributes.
+      # Example:
+      #
+      # [MPU6050](...)
+      #
+      # must never become:
+      #
+      # [<a href="...">MPU6050</a>](...)
       # ----------------------------------------------------------------------
+
+      markdown_links = []
+
 
       content =
-        content.gsub(/>([^<]+)</) do
+        content.gsub(
+          /!?\[[^\]]+\]\([^)]+\)/
+        ) do |match|
 
-          text = Regexp.last_match(1)
+          index = markdown_links.length
 
-          rules.each do |rule|
+          markdown_links << match
 
-            break if
-              link_counts[rule[:id]] >= rule[:max_links]
-
-            # Never link to the current page.
-            next if
-              normalize_url(rule[:url]) == current_url
-
-            pattern = /
-              (?<![\w-])
-              (#{Regexp.escape(rule[:keyword])})
-              (?![\w-])
-            /ix
-
-            new_text =
-              text.sub(pattern) do
-
-                matched_text =
-                  Regexp.last_match(1)
-
-                link_counts[rule[:id]] += 1
-
-                total_created += 1
-
-                escaped_url =
-                  rule[:url].gsub('"', '&quot;')
-
-                %(<a href="#{escaped_url}">#{matched_text}</a>)
-
-              end
-
-            text = new_text
-
-          end
-
-          ">#{text}<"
+          "__EMBEDDED_NERD_MARKDOWN_LINK_#{index}__"
 
         end
 
+
       # ----------------------------------------------------------------------
-      # Restore protected content
+      # Protect fenced code blocks
       # ----------------------------------------------------------------------
 
-      protected_content.each_with_index do |original, index|
+      code_blocks = []
+
+
+      content =
+        content.gsub(
+          /```.*?```/m
+        ) do |match|
+
+          index = code_blocks.length
+
+          code_blocks << match
+
+          "__EMBEDDED_NERD_CODE_BLOCK_#{index}__"
+
+        end
+
+
+      # ----------------------------------------------------------------------
+      # Protect inline code
+      # ----------------------------------------------------------------------
+
+      inline_code = []
+
+
+      content =
+        content.gsub(
+          /`[^`\n]+`/
+        ) do |match|
+
+          index = inline_code.length
+
+          inline_code << match
+
+          "__EMBEDDED_NERD_INLINE_CODE_#{index}__"
+
+        end
+
+
+      # ----------------------------------------------------------------------
+      # Replace keywords
+      # ----------------------------------------------------------------------
+
+      rules.each do |rule|
+
+        break if
+          link_counts[rule[:id]] >= rule[:max_links]
+
+
+        # Never link a page to itself.
+        next if
+          normalize_url(rule[:url]) == current_url
+
+
+        pattern =
+          /
+            (?<![\w-])
+            (#{Regexp.escape(rule[:keyword])})
+            (?![\w-])
+          /ix
+
+
+        remaining =
+          rule[:max_links] -
+          link_counts[rule[:id]]
+
+
+        remaining.times do
+
+          break if
+            link_counts[rule[:id]] >= rule[:max_links]
+
+
+          match_found = false
+
+
+          content =
+            content.sub(pattern) do
+
+              match_found = true
+
+
+              matched_text =
+                Regexp.last_match(1)
+
+
+              link_counts[rule[:id]] += 1
+
+              total_created += 1
+
+
+              escaped_url =
+                rule[:url].gsub('"', '&quot;')
+
+
+              %(<a href="#{escaped_url}">#{matched_text}</a>)
+
+            end
+
+
+          break unless match_found
+
+        end
+
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Restore inline code
+      # ----------------------------------------------------------------------
+
+      inline_code.each_with_index do |original, index|
 
         placeholder =
-          "__EMBEDDED_NERD_PROTECTED_#{index}__"
+          "__EMBEDDED_NERD_INLINE_CODE_#{index}__"
+
 
         content =
           content.gsub(
@@ -228,13 +321,72 @@ module EmbeddedNerd
 
       end
 
+
       # ----------------------------------------------------------------------
-      # Update document
+      # Restore code blocks
+      # ----------------------------------------------------------------------
+
+      code_blocks.each_with_index do |original, index|
+
+        placeholder =
+          "__EMBEDDED_NERD_CODE_BLOCK_#{index}__"
+
+
+        content =
+          content.gsub(
+            placeholder,
+            original
+          )
+
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Restore Markdown links
+      # ----------------------------------------------------------------------
+
+      markdown_links.each_with_index do |original, index|
+
+        placeholder =
+          "__EMBEDDED_NERD_MARKDOWN_LINK_#{index}__"
+
+
+        content =
+          content.gsub(
+            placeholder,
+            original
+          )
+
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Restore HTML protected elements
+      # ----------------------------------------------------------------------
+
+      protected_content.each_with_index do |original, index|
+
+        placeholder =
+          "__EMBEDDED_NERD_PROTECTED_#{index}__"
+
+
+        content =
+          content.gsub(
+            placeholder,
+            original
+          )
+
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Save modified content
       # ----------------------------------------------------------------------
 
       if total_created > 0
 
         document.content = content
+
 
         Jekyll.logger.info(
           "Internal Linker:",
@@ -245,25 +397,39 @@ module EmbeddedNerd
 
     end
 
+
     # ------------------------------------------------------------------------
-    # Normalize URL
+    # URL normalization
     # ------------------------------------------------------------------------
 
     def self.normalize_url(url)
 
-      value = url.to_s.strip
+      value =
+        url.to_s.strip
 
-      value = value.split("#").first
 
-      value = value.split("?").first
+      value =
+        value.split("#").first
 
-      value = "/" if value.empty?
 
-      value = "/#{value}" unless value.start_with?("/")
+      value =
+        value.split("?").first
 
-      value = value.chomp("/")
+
+      value =
+        "/" if value.empty?
+
+
+      value =
+        "/#{value}" unless value.start_with?("/")
+
+
+      value =
+        value.chomp("/")
+
 
       return "/" if value.empty?
+
 
       "#{value}/"
 
@@ -277,15 +443,15 @@ end
 # Jekyll 3.10 hooks
 # ============================================================================
 
-Jekyll::Hooks.register :posts, :post_render do |post|
+Jekyll::Hooks.register :posts, :pre_render do |post|
 
   EmbeddedNerd::InternalLinker.process(post)
 
 end
 
 
-Jekyll::Hooks.register :pages, :post_render do |page|
+Jekyll::Hooks.register :pages, :pre_render do |page|
 
   EmbeddedNerd::InternalLinker.process(page)
 
-end
+end9
