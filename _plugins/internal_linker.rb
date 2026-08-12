@@ -2,6 +2,20 @@
 # Embedded Nerd - Internal Link Engine
 # ============================================================================
 # Jekyll 3.10 compatible
+#
+# Features:
+#   - Automatic internal links in editorial content
+#   - Posts are automatically included
+#   - _pages can opt in through layout or internal_links: true
+#   - Product/category/utility pages are excluded
+#   - H1-H6 are never modified
+#   - Existing links are never modified
+#   - Markdown links are protected
+#   - Code blocks are protected
+#   - Inline code is protected
+#   - HTML code/pre/script/style are protected
+#   - Self-links are prevented
+#   - Maximum links per destination
 # ============================================================================
 
 module EmbeddedNerd
@@ -27,9 +41,9 @@ module EmbeddedNerd
 
 
     # ------------------------------------------------------------------------
-    # Page layouts that are considered editorial content.
+    # Editorial layouts.
     #
-    # Product/category/utility pages are deliberately excluded.
+    # These layouts are allowed to receive automatic internal links.
     # ------------------------------------------------------------------------
 
     EDITORIAL_LAYOUTS = %w[
@@ -41,15 +55,16 @@ module EmbeddedNerd
 
 
     # ------------------------------------------------------------------------
-    # Main processor
+    # Main processor.
     # ------------------------------------------------------------------------
 
     def self.process(document)
 
       site = document.site
 
+
       # ----------------------------------------------------------------------
-      # Only process real Markdown/HTML content.
+      # Only process Markdown and HTML content.
       # ----------------------------------------------------------------------
 
       ext =
@@ -59,50 +74,59 @@ module EmbeddedNerd
           ""
         end
 
-      return unless %w[.md .markdown .html .htm].include?(ext)
+      return unless %w[
+        .md
+        .markdown
+        .html
+        .htm
+      ].include?(ext)
 
 
       # ----------------------------------------------------------------------
-      # Decide whether this document is editorial content.
+      # Only process editorial content.
       # ----------------------------------------------------------------------
 
-      unless editorial_document?(document)
-
-        return
-
-      end
+      return unless editorial_document?(document)
 
 
       # ----------------------------------------------------------------------
-      # Configuration
+      # Load configuration.
       # ----------------------------------------------------------------------
 
-      config = site.data["internal_links"]
+      config =
+        site.data["internal_links"]
 
       return unless config.is_a?(Hash)
 
 
-      settings = config["settings"] || {}
+      settings =
+        config["settings"] || {}
 
 
       return if settings["enabled"] == false
 
 
-      links = config["links"] || {}
+      links =
+        config["links"] || {}
 
 
       return if links.empty?
 
 
       # ----------------------------------------------------------------------
-      # Content
+      # Get document content.
       # ----------------------------------------------------------------------
 
-      content = document.content.to_s
+      content =
+        document.content.to_s
 
 
       return if content.empty?
 
+
+      # ----------------------------------------------------------------------
+      # Current page URL.
+      # ----------------------------------------------------------------------
 
       current_url =
         normalize_url(document.url)
@@ -162,11 +186,17 @@ module EmbeddedNerd
       return if rules.empty?
 
 
-      # Longer phrases have priority.
+      # ----------------------------------------------------------------------
+      # Longer phrases first.
       #
       # Example:
-      # "ESP32 DevKit" is checked before "ESP32".
       #
+      # ESP32 DevKit
+      #
+      # is processed before:
+      #
+      # ESP32
+      # ----------------------------------------------------------------------
 
       rules.sort_by! do |rule|
 
@@ -188,71 +218,35 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Protect HTML blocks.
+      # Placeholder helper.
       # ----------------------------------------------------------------------
-
-      protected_parts =
-        []
-
 
       placeholder =
         lambda do |type, index|
 
           "__EMBEDDED_NERD_#{type}_#{index}__"
 
-      end
-
-
-      content =
-        content.gsub(
-          /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
-        ) do |match|
-
-          index =
-            protected_parts.length
-
-
-          protected_parts << match
-
-
-          placeholder.call(
-            "PROTECTED",
-            index
-          )
-
         end
 
 
-      # ----------------------------------------------------------------------
-      # Protect Markdown links.
-      # ----------------------------------------------------------------------
-
-      markdown_parts =
-        []
-
-
-      content =
-        content.gsub(
-          /!?\[[^\]]+\]\([^)]+\)/
-        ) do |match|
-
-          index =
-            markdown_parts.length
-
-
-          markdown_parts << match
-
-
-          placeholder.call(
-            "MARKDOWN",
-            index
-          )
-
-        end
+      # ======================================================================
+      # PROTECTION PHASE
+      # ======================================================================
+      #
+      # Important:
+      #
+      # We protect code blocks BEFORE Markdown headings.
+      #
+      # Otherwise a line such as:
+      #
+      # # MPU6050
+      #
+      # inside a code block could be treated as a real heading.
+      # ======================================================================
 
 
       # ----------------------------------------------------------------------
-      # Protect fenced code blocks.
+      # 1. Protect fenced code blocks.
       # ----------------------------------------------------------------------
 
       code_parts =
@@ -280,7 +274,135 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Protect inline code.
+      # 2. Protect indented Markdown code blocks.
+      # ----------------------------------------------------------------------
+
+      indented_code_parts =
+        []
+
+
+      content =
+        content.gsub(
+          /^(?: {4}|\t).*(?:\n|$)+/m
+        ) do |match|
+
+          index =
+            indented_code_parts.length
+
+
+          indented_code_parts << match
+
+
+          placeholder.call(
+            "INDENTED_CODE",
+            index
+          )
+
+        end
+
+
+      # ----------------------------------------------------------------------
+      # 3. Protect Markdown headings.
+      #
+      # This is the important fix.
+      #
+      # Examples:
+      #
+      # # MPU6050
+      # ## Using MPU6050 with ESP32
+      # ### MPU6050 Wiring
+      #
+      # None of these can receive automatic links.
+      # ----------------------------------------------------------------------
+
+      heading_parts =
+        []
+
+
+      content =
+        content.gsub(
+          /^ {0,3}#{1,6}[ \t]+[^\n]+$/m
+        ) do |match|
+
+          index =
+            heading_parts.length
+
+
+          heading_parts << match
+
+
+          placeholder.call(
+            "HEADING",
+            index
+          )
+
+        end
+
+
+      # ----------------------------------------------------------------------
+      # 4. Protect HTML elements.
+      # ----------------------------------------------------------------------
+
+      protected_parts =
+        []
+
+
+      content =
+        content.gsub(
+          /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
+        ) do |match|
+
+          index =
+            protected_parts.length
+
+
+          protected_parts << match
+
+
+          placeholder.call(
+            "PROTECTED",
+            index
+          )
+
+        end
+
+
+      # ----------------------------------------------------------------------
+      # 5. Protect Markdown links.
+      #
+      # Example:
+      #
+      # [MPU6050](https://example.com)
+      #
+      # must remain untouched.
+      # ----------------------------------------------------------------------
+
+      markdown_parts =
+        []
+
+
+      content =
+        content.gsub(
+          /!?\[[^\]]+\]\([^)]+\)/
+        ) do |match|
+
+          index =
+            markdown_parts.length
+
+
+          markdown_parts << match
+
+
+          placeholder.call(
+            "MARKDOWN",
+            index
+          )
+
+        end
+
+
+      # ----------------------------------------------------------------------
+      # 6. Protect inline code.
       # ----------------------------------------------------------------------
 
       inline_parts =
@@ -307,16 +429,23 @@ module EmbeddedNerd
         end
 
 
-      # ----------------------------------------------------------------------
-      # Create automatic links.
-      # ----------------------------------------------------------------------
+      # ======================================================================
+      # LINKING PHASE
+      # ======================================================================
 
       rules.each do |rule|
 
-        # Never link a page to itself.
+        # --------------------------------------------------------------------
+        # Never create a link to the current page.
+        # --------------------------------------------------------------------
+
         next if
           normalize_url(rule[:url]) == current_url
 
+
+        # --------------------------------------------------------------------
+        # Match complete words/phrases.
+        # --------------------------------------------------------------------
 
         pattern =
           /(?<![\w-])(#{Regexp.escape(rule[:keyword])})(?![\w-])/i
@@ -364,6 +493,11 @@ module EmbeddedNerd
       end
 
 
+      # ======================================================================
+      # RESTORATION PHASE
+      # ======================================================================
+
+
       # ----------------------------------------------------------------------
       # Restore inline code.
       # ----------------------------------------------------------------------
@@ -373,21 +507,6 @@ module EmbeddedNerd
         content =
           content.gsub(
             placeholder.call("INLINE", index),
-            original
-          )
-
-      end
-
-
-      # ----------------------------------------------------------------------
-      # Restore fenced code.
-      # ----------------------------------------------------------------------
-
-      code_parts.each_with_index do |original, index|
-
-        content =
-          content.gsub(
-            placeholder.call("CODE", index),
             original
           )
 
@@ -410,7 +529,7 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Restore protected HTML.
+      # Restore HTML protected elements.
       # ----------------------------------------------------------------------
 
       protected_parts.each_with_index do |original, index|
@@ -425,15 +544,60 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Save modified content.
+      # Restore Markdown headings.
       # ----------------------------------------------------------------------
+
+      heading_parts.each_with_index do |original, index|
+
+        content =
+          content.gsub(
+            placeholder.call("HEADING", index),
+            original
+          )
+
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Restore indented code.
+      # ----------------------------------------------------------------------
+
+      indented_code_parts.each_with_index do |original, index|
+
+        content =
+          content.gsub(
+            placeholder.call("INDENTED_CODE", index),
+            original
+          )
+
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Restore fenced code.
+      # ----------------------------------------------------------------------
+
+      code_parts.each_with_index do |original, index|
+
+        content =
+          content.gsub(
+            placeholder.call("CODE", index),
+            original
+          )
+
+      end
+
+
+      # ======================================================================
+      # SAVE
+      # ======================================================================
 
       document.content =
         content
 
 
       # ----------------------------------------------------------------------
-      # Logging.
+      # Build log.
       # ----------------------------------------------------------------------
 
       if total_created > 0
@@ -456,13 +620,13 @@ module EmbeddedNerd
 
 
     # =========================================================================
-    # Determine whether a document is editorial content.
+    # Determine whether a document is editorial.
     # =========================================================================
 
     def self.editorial_document?(document)
 
       # ----------------------------------------------------------------------
-      # Posts are always editorial content.
+      # Posts are always editorial.
       # ----------------------------------------------------------------------
 
       if document.respond_to?(:collection)
@@ -482,7 +646,7 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Pages need an editorial layout.
+      # Pages require an editorial layout or explicit opt-in.
       # ----------------------------------------------------------------------
 
       data =
@@ -498,9 +662,9 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Explicit opt-in for an _pages article.
+      # Explicit opt-in.
       #
-      # Add this to a page when needed:
+      # Example:
       #
       # internal_links: true
       # ----------------------------------------------------------------------
@@ -524,22 +688,27 @@ module EmbeddedNerd
         url.to_s.strip
 
 
+      # Remove fragment.
       value =
         value.split("#").first
 
 
+      # Remove query string.
       value =
         value.split("?").first
 
 
+      # Empty URL.
       value =
         "/" if value.empty?
 
 
+      # Ensure leading slash.
       value =
         "/#{value}" unless value.start_with?("/")
 
 
+      # Remove trailing slash.
       value =
         value.chomp("/")
 
@@ -556,7 +725,7 @@ end
 
 
 # ============================================================================
-# Jekyll 3.10 hooks
+# Jekyll 3.10 Hooks
 # ============================================================================
 
 Jekyll::Hooks.register :posts, :pre_render do |post|
