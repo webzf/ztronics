@@ -42,8 +42,6 @@ module EmbeddedNerd
 
     # ------------------------------------------------------------------------
     # Editorial layouts.
-    #
-    # These layouts are allowed to receive automatic internal links.
     # ------------------------------------------------------------------------
 
     EDITORIAL_LAYOUTS = %w[
@@ -188,14 +186,6 @@ module EmbeddedNerd
 
       # ----------------------------------------------------------------------
       # Longer phrases first.
-      #
-      # Example:
-      #
-      # ESP32 DevKit
-      #
-      # is processed before:
-      #
-      # ESP32
       # ----------------------------------------------------------------------
 
       rules.sort_by! do |rule|
@@ -231,17 +221,6 @@ module EmbeddedNerd
 
       # ======================================================================
       # PROTECTION PHASE
-      # ======================================================================
-      #
-      # Important:
-      #
-      # We protect code blocks BEFORE Markdown headings.
-      #
-      # Otherwise a line such as:
-      #
-      # # MPU6050
-      #
-      # inside a code block could be treated as a real heading.
       # ======================================================================
 
 
@@ -304,15 +283,16 @@ module EmbeddedNerd
       # ----------------------------------------------------------------------
       # 3. Protect Markdown headings.
       #
-      # This is the important fix.
+      # Important:
+      # Jekyll's :pre_render hook runs before Markdown becomes HTML.
       #
-      # Examples:
+      # Therefore we must protect:
       #
-      # # MPU6050
-      # ## Using MPU6050 with ESP32
-      # ### MPU6050 Wiring
+      # # H1
+      # ## H2
+      # ### H3
       #
-      # None of these can receive automatic links.
+      # here, rather than relying only on <h1>...</h1>.
       # ----------------------------------------------------------------------
 
       heading_parts =
@@ -321,7 +301,7 @@ module EmbeddedNerd
 
       content =
         content.gsub(
-          /^ {0,3}#{1,6}[ \t]+[^\n]+$/m
+          /^ {0,3}\#{1,6}[ \t]+[^\n]+$/m
         ) do |match|
 
           index =
@@ -369,12 +349,6 @@ module EmbeddedNerd
 
       # ----------------------------------------------------------------------
       # 5. Protect Markdown links.
-      #
-      # Example:
-      #
-      # [MPU6050](https://example.com)
-      #
-      # must remain untouched.
       # ----------------------------------------------------------------------
 
       markdown_parts =
@@ -529,7 +503,7 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Restore HTML protected elements.
+      # Restore protected HTML.
       # ----------------------------------------------------------------------
 
       protected_parts.each_with_index do |original, index|
@@ -597,7 +571,7 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Build log.
+      # Logging.
       # ----------------------------------------------------------------------
 
       if total_created > 0
@@ -664,9 +638,11 @@ module EmbeddedNerd
       # ----------------------------------------------------------------------
       # Explicit opt-in.
       #
-      # Example:
+      # Add:
       #
       # internal_links: true
+      #
+      # to an _pages document when you want automatic linking.
       # ----------------------------------------------------------------------
 
       return true if
