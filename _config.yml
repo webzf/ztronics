@@ -239,6 +239,7 @@ pagination:
     after: 2
 
 # Plugins
+safe: false
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
