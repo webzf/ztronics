@@ -40,7 +40,7 @@ jobs:
           cat _plugins/internal_linker.rb
 
       - name: Build site
-        run: bundle exec jekyll build 
+        run: bundle exec jekyll build --plugins _plugins
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
