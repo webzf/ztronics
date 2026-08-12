@@ -28,6 +28,11 @@
 module EmbeddedNerd
   module InternalLinker
 
+    Jekyll.logger.info(
+  "Internal Linker:",
+  "PLUGIN LOADED"
+)
+
     # ------------------------------------------------------------------------
     # Tags where automatic links must NEVER be inserted.
     # ------------------------------------------------------------------------
@@ -361,7 +366,38 @@ Jekyll::Hooks.register :posts, :post_render do |post|
 
 end
 
+# ============================================================================
+# Jekyll Hooks - DEBUG
+# ============================================================================
 
+Jekyll::Hooks.register :posts, :post_render do |post|
+
+  Jekyll.logger.info(
+    "Internal Linker:",
+    "Processing post: #{post.url}"
+  )
+
+  EmbeddedNerd::InternalLinker.process(
+    post,
+    post.site
+  )
+
+end
+
+
+Jekyll::Hooks.register :pages, :post_render do |page|
+
+  Jekyll.logger.info(
+    "Internal Linker:",
+    "Processing page: #{page.url}"
+  )
+
+  EmbeddedNerd::InternalLinker.process(
+    page,
+    page.site
+  )
+
+end
 # ----------------------------------------------------------------------------
 # Pages
 #
