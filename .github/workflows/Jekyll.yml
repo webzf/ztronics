@@ -32,6 +32,13 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Check Internal Linker
+  run: |
+    echo "=== INTERNAL LINKER FILE ==="
+    ls -la _plugins/
+    echo "=== FILE CONTENT ==="
+    cat _plugins/internal_linker.rb
+
       - name: Build site
         run: bundle exec jekyll build
 
