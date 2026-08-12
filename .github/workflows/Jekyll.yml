@@ -39,6 +39,10 @@ jobs:
           echo "=== FILE CONTENT ==="
           cat _plugins/internal_linker.rb
 
+            - name: Test Internal Linker Loading
+        run: |
+          bundle exec ruby -r jekyll -e 'puts "Jekyll #{Jekyll::VERSION}"; require_relative "_plugins/internal_linker.rb"'
+
       - name: Build site
         run: bundle exec jekyll build --plugins _plugins
 
