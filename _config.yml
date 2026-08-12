@@ -240,6 +240,8 @@ pagination:
 
 # Plugins
 safe: false
+
+plugins_dir: _plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
