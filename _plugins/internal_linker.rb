@@ -2,26 +2,35 @@
 # Embedded Nerd - Internal Link Engine
 # ============================================================================
 #
-# Automatically creates internal links in rendered HTML.
+# V1
 #
-# V1 features:
-# - Posts
-# - Pages
-# - Configurable keywords
-# - Maximum links per destination
-# - Prevents self-links
-# - Protects <a>, <code>, <pre>, <script> and <style>
+# Automatically creates internal links in rendered Jekyll content.
+#
+# Supported:
+#   - _posts
+#   - _pages
+#   - configurable keywords
+#   - maximum links per destination
+#   - prevents self-links
+#   - protects existing links
+#   - protects code/pre/script/style
+#   - reports links created during build
 #
 # Future:
-# - Automatic product relationships
-# - Related articles
-# - Orphan page detection
-# - Link recommendations
-# - SEO linking report
+#   - automatic product relationships
+#   - product_id integration
+#   - related articles
+#   - orphan page detection
+#   - internal link recommendations
+#   - SEO linking report
 # ============================================================================
 
 module EmbeddedNerd
   module InternalLinker
+
+    # ------------------------------------------------------------------------
+    # Tags where automatic links must NEVER be inserted.
+    # ------------------------------------------------------------------------
 
     PROTECTED_TAGS = %w[
       a
@@ -31,43 +40,75 @@ module EmbeddedNerd
       style
     ].freeze
 
+
+    # ------------------------------------------------------------------------
+    # Process a Jekyll page/document.
+    # ------------------------------------------------------------------------
+
     def self.process(page, site)
-      return unless site.data["internal_links"]
+
+      # ----------------------------------------------------------------------
+      # Load configuration
+      # ----------------------------------------------------------------------
 
       config = site.data["internal_links"]
+
+      unless config.is_a?(Hash)
+        return
+      end
+
       settings = config["settings"] || {}
 
+      # Allow the system to be disabled from YAML.
       return if settings["enabled"] == false
 
       links = config["links"] || {}
-      return if links.empty?
 
-      html = page.output.to_s
-      return if html.empty?
+      if links.empty?
+        Jekyll.logger.warn(
+          "Internal Linker:",
+          "No link rules found."
+        )
+        return
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Only process HTML pages.
+      # ----------------------------------------------------------------------
+
+      output = page.output.to_s
+
+      return if output.empty?
+
+      unless output.include?("<")
+        return
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Current page URL
+      # ----------------------------------------------------------------------
 
       current_url = normalize_url(page.url)
 
-      # Protect sections where links must never be inserted.
-      protected = []
 
-      html = html.gsub(
-        /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
-      ) do |match|
-        index = protected.length
-        protected << match
-        "__EMBEDDED_NERD_PROTECTED_#{index}__"
-      end
+      # ----------------------------------------------------------------------
+      # Build keyword rules.
+      # ----------------------------------------------------------------------
 
-      # Sort keywords by length so more specific phrases win.
       rules = []
 
-      links.each do |id, item|
+      links.each do |link_id, item|
+
         next unless item.is_a?(Hash)
 
-        url = item["url"].to_s
+        url = item["url"].to_s.strip
+
         next if url.empty?
 
         keywords = Array(item["keywords"])
+
         max_links = (
           item["max_links_per_page"] ||
           settings["default_max_links_per_page"] ||
@@ -76,37 +117,115 @@ module EmbeddedNerd
 
         next if max_links <= 0
 
+
         keywords.each do |keyword|
+
           keyword = keyword.to_s.strip
+
           next if keyword.empty?
 
           rules << {
-            id: id,
+            id: link_id.to_s,
             url: url,
             keyword: keyword,
             max_links: max_links
           }
+
         end
+
       end
 
-      rules.sort_by! { |rule| -rule[:keyword].length }
+
+      # ----------------------------------------------------------------------
+      # Longer keywords first.
+      #
+      # Example:
+      #
+      # "ESP32 DevKit" should be matched before "ESP32".
+      # ----------------------------------------------------------------------
+
+      rules.sort_by! do |rule|
+        -rule[:keyword].length
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Count links created for each destination.
+      # ----------------------------------------------------------------------
 
       link_counts = Hash.new(0)
 
-      # Process only text outside HTML tags.
-      html = html.gsub(/>([^<]+)</) do |match|
+      total_created = 0
+
+
+      # ----------------------------------------------------------------------
+      # Protect existing HTML elements.
+      #
+      # We temporarily replace them with placeholders.
+      # This prevents automatic linking inside:
+      #
+      # <a>
+      # <code>
+      # <pre>
+      # <script>
+      # <style>
+      # ----------------------------------------------------------------------
+
+      protected_content = []
+
+      protected_pattern =
+        /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
+
+      output = output.gsub(protected_pattern) do |match|
+
+        index = protected_content.length
+
+        protected_content << match
+
+        "__EMBEDDED_NERD_PROTECTED_#{index}__"
+
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Process text nodes.
+      #
+      # We only modify text between HTML tags.
+      # ----------------------------------------------------------------------
+
+      output = output.gsub(/>([^<]+)</) do |match|
+
         text = Regexp.last_match(1)
 
+
         rules.each do |rule|
+
+          # Maximum number of links for this destination.
           break if link_counts[rule[:id]] >= rule[:max_links]
 
-          # Never link a page to itself.
+
+          # Never create a link to the current page.
           next if normalize_url(rule[:url]) == current_url
 
-          remaining = rule[:max_links] - link_counts[rule[:id]]
+
+          # Remaining allowed links.
+          remaining =
+            rule[:max_links] - link_counts[rule[:id]]
+
           next if remaining <= 0
 
-          escaped_url = rule[:url].gsub('"', '&quot;')
+
+          # ------------------------------------------------------------------
+          # Match complete words/phrases.
+          #
+          # Examples:
+          #
+          # MPU6050      -> match
+          # MPU-6050     -> match
+          # ESP32        -> match
+          #
+          # Avoid matching inside larger words.
+          # ------------------------------------------------------------------
 
           pattern = /
             (?<![\w-])
@@ -114,59 +233,147 @@ module EmbeddedNerd
             (?![\w-])
           /ix
 
-          text = text.sub(pattern) do
-            link_counts[rule[:id]] += 1
 
-            %(<a href="#{escaped_url}">#{Regexp.last_match(1)}</a>)
+          # Only replace ONE occurrence at a time.
+          #
+          # This guarantees that max_links_per_page is respected.
+          #
+
+          new_text = text.sub(pattern) do
+
+            matched_text = Regexp.last_match(1)
+
+            link_counts[rule[:id]] += 1
+            total_created += 1
+
+            escaped_url =
+              rule[:url].gsub('"', '&quot;')
+
+            %(
+              <a href="#{escaped_url}">#{matched_text}</a>
+            ).strip
+
           end
+
+
+          text = new_text
+
         end
 
+
         ">#{text}<"
+
       end
 
-      # Restore protected sections.
-      protected.each_with_index do |content, index|
-        html = html.gsub(
-          "__EMBEDDED_NERD_PROTECTED_#{index}__",
+
+      # ----------------------------------------------------------------------
+      # Restore protected HTML.
+      # ----------------------------------------------------------------------
+
+      protected_content.each_with_index do |content, index|
+
+        placeholder =
+          "__EMBEDDED_NERD_PROTECTED_#{index}__"
+
+        output = output.gsub(
+          placeholder,
           content
         )
+
       end
 
-      page.output = html
+
+      # ----------------------------------------------------------------------
+      # Update Jekyll output.
+      # ----------------------------------------------------------------------
+
+      if total_created > 0
+
+        page.output = output
+
+        Jekyll.logger.info(
+          "Internal Linker:",
+          "#{page.url} -> #{total_created} link(s) created"
+        )
+
+      end
+
     end
+
+
+    # ------------------------------------------------------------------------
+    # Normalize URLs for comparison.
+    #
+    # /products/mpu6050
+    # /products/mpu6050/
+    #
+    # become the same URL.
+    # ------------------------------------------------------------------------
 
     def self.normalize_url(url)
+
       value = url.to_s.strip
+
+      # Remove fragment.
       value = value.split("#").first
+
+      # Remove query string.
       value = value.split("?").first
+
+      # Empty URL means root.
       value = "/" if value.empty?
 
-      value = "/#{value}" unless value.start_with?("/")
+      # Ensure leading slash.
+      unless value.start_with?("/")
+        value = "/#{value}"
+      end
 
+      # Remove trailing slash.
       value = value.chomp("/")
-      value.empty? ? "/" : "#{value}/"
+
+      # Root URL.
+      return "/" if value.empty?
+
+      "#{value}/"
+
     end
+
   end
 end
 
 
+# ============================================================================
+# Jekyll Hooks
+# ============================================================================
+
 # ----------------------------------------------------------------------------
-# Jekyll hooks
+# Posts
+#
+# Jekyll officially exposes :posts as a hook owner for documents in _posts.
 # ----------------------------------------------------------------------------
 
-Jekyll::Hooks.register :documents, :post_render do |document|
-  site = document.site
+Jekyll::Hooks.register :posts, :post_render do |post|
 
-  next unless document.output_ext == ".html"
+  EmbeddedNerd::InternalLinker.process(
+    post,
+    post.site
+  )
 
-  EmbeddedNerd::InternalLinker.process(document, site)
 end
 
 
+# ----------------------------------------------------------------------------
+# Pages
+#
+# This covers normal Jekyll pages, including pages generated from _pages
+# when they are configured as Jekyll pages.
+# ----------------------------------------------------------------------------
+
 Jekyll::Hooks.register :pages, :post_render do |page|
-  site = page.site
 
-  next unless page.output_ext == ".html"
+  EmbeddedNerd::InternalLinker.process(
+    page,
+    page.site
+  )
 
-  EmbeddedNerd::InternalLinker.process(page, site)
 end
