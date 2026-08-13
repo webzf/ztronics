@@ -1,34 +1,28 @@
 # ============================================================================
-# Embedded Nerd - Internal Link Engine V3.1
+# Embedded Nerd - Internal Link Engine V3.2
 # ============================================================================
 #
 # Jekyll 3.10 compatible
 #
 # Relationship engine:
-#
 #   Article -> Product
 #   Article -> Article
 #   Product -> Article
 #   Product -> Product
 #
-# V3.1:
-#
-#   - Relevance scoring
-#   - Real link opportunity detection
-#   - Existing link detection
-#   - Protected HTML elements
-#   - Required hardware priority
-#   - Automatic product keywords
-#   - Explicit internal_link_keywords support
-#   - Shared article relationships
-#   - Natural anchor text only
-#   - No generic tag/category anchors
-#   - Conservative product-to-product linking
+# V3.2 improvements:
+#   - Strong natural-anchor validation
+#   - Generic keyword protection
+#   - Product IDs are fallback anchors, not preferred anchors
+#   - Explicit internal_link_keywords remain supported
+#   - Required hardware gets highest relevance
+#   - Product-to-product remains deliberately conservative
+#   - Existing HTML/Markdown links are protected
+#   - Protected HTML/code blocks are never modified
 #   - Duplicate hook protection
-#   - Analysis mode
+#   - Analysis mode supported
 #
 # Current mode:
-#
 #   analysis_only: true
 #
 # ============================================================================
@@ -42,26 +36,17 @@ module EmbeddedNerd
     # ========================================================================
 
     DEFAULT_SETTINGS = {
-
       "enabled" => true,
-
       "analysis_only" => true,
-
       "max_total_links_per_page" => 5,
-
       "max_product_links_per_page" => 3,
-
       "max_article_links_per_page" => 2,
-
       "minimum_relevance" => 60,
-
       "analysis_results_per_page" => 5
-
     }.freeze
 
-
     # ========================================================================
-    # ELEMENTS THAT MUST NEVER BE MODIFIED
+    # PROTECTED ELEMENTS
     # ========================================================================
 
     PROTECTED_TAGS = %w[
@@ -79,10 +64,45 @@ module EmbeddedNerd
       textarea
     ].freeze
 
-
-    # ========================================================================
-    # EDITORIAL LAYOUTS
-    # ========================================================================
+    # Words that are useful for topical scoring but are far too generic to be
+    # used as automatic product anchors.
+    GENERIC_ANCHORS = %w[
+      arduino
+      esp32
+      esp8266
+      raspberry pi
+      raspberry-pi
+      electronics
+      electronic
+      device
+      devices
+      module
+      modules
+      sensor
+      sensors
+      display
+      displays
+      screen
+      screens
+      board
+      boards
+      development board
+      development boards
+      project
+      projects
+      tutorial
+      guide
+      code
+      example
+      examples
+      robotics
+      prototyping
+      component
+      components
+      hardware
+      microcontroller
+      microcontrollers
+    ].freeze
 
     EDITORIAL_LAYOUTS = %w[
       article
@@ -91,2353 +111,833 @@ module EmbeddedNerd
       single
     ].freeze
 
-
     # ========================================================================
     # MAIN PROCESSOR
     # ========================================================================
 
     def self.process(document)
-
-      site =
-        document.site
-
-
-      config =
-        site.data["internal_links"]
-
+      site = document.site
+      config = site.data["internal_links"]
 
       return unless config.is_a?(Hash)
 
-
-      settings =
-        DEFAULT_SETTINGS.merge(
-          config["settings"] || {}
-        )
-
-
+      settings = DEFAULT_SETTINGS.merge(config["settings"] || {})
       return unless settings["enabled"]
 
-
-      graph =
-        build_graph(site)
-
-
+      graph = build_graph(site)
       return unless graph
 
-
-      current_url =
-        normalize_url(
-          document.url
-        )
-
-
-      current =
-        graph[:by_url][current_url]
-
-
+      current_url = normalize_url(document.url)
+      current = graph[:by_url][current_url]
       return unless current
 
+      relations = find_relations(current, graph, settings, config)
 
-      relations =
-        find_relations(
-          current,
-          graph,
-          settings,
-          config
-        )
+      log_analysis(current, relations, settings)
 
+      return if settings["analysis_only"]
 
-      log_analysis(
-        current,
-        relations,
-        settings
-      )
+      new_content = insert_links(current, relations, settings)
 
-
-      # ----------------------------------------------------------------------
-      # Analysis-only mode.
-      #
-      # No content modification happens while this is true.
-      # ----------------------------------------------------------------------
-
-      return if
-        settings["analysis_only"]
-
-
-      # ----------------------------------------------------------------------
-      # Automatic link insertion.
-      # ----------------------------------------------------------------------
-
-      new_content =
-        insert_links(
-          current,
-          relations,
-          settings
-        )
-
-
-      if new_content != current[:content]
-
-        document.content =
-          new_content
-
-      end
-
+      document.content = new_content if new_content != current[:content]
     end
 
-
     # ========================================================================
-    # BUILD CONTENT GRAPH
+    # CONTENT GRAPH
     # ========================================================================
 
     def self.build_graph(site)
+      cache_key = :@embedded_nerd_internal_graph_v32
 
-      if site.instance_variable_defined?(
-        :@embedded_nerd_internal_graph_v31
-      )
-
-        return site.instance_variable_get(
-          :@embedded_nerd_internal_graph_v31
-        )
-
+      if site.instance_variable_defined?(cache_key)
+        return site.instance_variable_get(cache_key)
       end
-
 
       products = []
-
       articles = []
-
       by_url = {}
-
       by_product_id = {}
 
-
-      # ======================================================================
-      # PRODUCTS IN SITE PAGES
-      # ======================================================================
-
+      # Products in site.pages
       site.pages.each do |page|
+        data = page.data || {}
+        next unless data["layout"].to_s == "product"
 
-        data =
-          page.data || {}
-
-
-        next unless
-          data["layout"].to_s == "product"
-
-
-        product =
-          build_product(page)
-
-
-        next if
-          product[:id].empty?
-
-
-        add_product(
-          product,
-          products,
-          by_url,
-          by_product_id
-        )
-
+        product = build_product(page)
+        add_product(product, products, by_url, by_product_id)
       end
 
-
-      # ======================================================================
-      # PRODUCTS IN COLLECTIONS
-      # ======================================================================
-
+      # Products in collections
       site.collections.each do |_label, collection|
-
         collection.docs.each do |document|
+          data = document.data || {}
+          next unless data["layout"].to_s == "product"
 
-          data =
-            document.data || {}
-
-
-          next unless
-            data["layout"].to_s == "product"
-
-
-          product =
-            build_product(document)
-
-
-          next if
-            product[:id].empty?
-
-
-          add_product(
-            product,
-            products,
-            by_url,
-            by_product_id
-          )
-
+          product = build_product(document)
+          add_product(product, products, by_url, by_product_id)
         end
-
       end
 
-
-      # ======================================================================
-      # POSTS
-      # ======================================================================
-
+      # Posts
       site.posts.docs.each do |post|
-
-        article =
-          build_article(post)
-
-
-        add_article(
-          article,
-          articles,
-          by_url
-        )
-
+        add_article(build_article(post), articles, by_url)
       end
 
-
-      # ======================================================================
-      # EXPLICIT EDITORIAL PAGES
-      # ======================================================================
-
+      # Explicit editorial pages
       site.pages.each do |page|
+        data = page.data || {}
+        next if data["layout"].to_s == "product"
+        next unless data["internal_links"] == true
 
-        data =
-          page.data || {}
-
-
-        next if
-          data["layout"].to_s == "product"
-
-
-        next unless
-          data["internal_links"] == true
-
-
-        article =
-          build_article(page)
-
-
-        add_article(
-          article,
-          articles,
-          by_url
-        )
-
+        add_article(build_article(page), articles, by_url)
       end
 
-
-      # ======================================================================
-      # EDITORIAL COLLECTIONS
-      # ======================================================================
-
+      # Editorial collections
       site.collections.each do |label, collection|
-
-        # Posts are already processed above.
-        next if
-          label.to_s == "posts"
-
+        next if label.to_s == "posts"
 
         collection.docs.each do |document|
+          data = document.data || {}
+          next if data["layout"].to_s == "product"
+          next unless editorial_collection_document?(document)
 
-          data =
-            document.data || {}
-
-
-          next if
-            data["layout"].to_s == "product"
-
-
-          next unless
-            editorial_collection_document?(document)
-
-
-          article =
-            build_article(document)
-
-
-          add_article(
-            article,
-            articles,
-            by_url
-          )
-
+          add_article(build_article(document), articles, by_url)
         end
-
       end
-
 
       graph = {
-
         products: products,
-
         articles: articles,
-
         by_url: by_url,
-
         by_product_id: by_product_id
-
       }
 
+      build_product_article_index(graph)
 
-      build_product_article_index(
-        graph
-      )
-
-
-      site.instance_variable_set(
-        :@embedded_nerd_internal_graph_v31,
-        graph
-      )
-
+      site.instance_variable_set(cache_key, graph)
 
       Jekyll.logger.info(
         "Embedded Nerd:",
-        "Content Graph: " \
-        "#{products.length} products, " \
-        "#{articles.length} articles"
+        "Content Graph: #{products.length} products, #{articles.length} articles"
       )
 
-
       graph
-
     end
-
 
     # ========================================================================
     # PRODUCT / ARTICLE INDEX
     # ========================================================================
 
     def self.build_product_article_index(graph)
-
-      graph[:product_articles] =
-        Hash.new do |hash, key|
-
-          hash[key] = []
-
-        end
-
-
-      # ----------------------------------------------------------------------
-      # Required hardware relationships.
-      # ----------------------------------------------------------------------
+      graph[:product_articles] = Hash.new { |hash, key| hash[key] = [] }
 
       graph[:articles].each do |article|
-
         article[:required_hardware].each do |product_id|
+          next if product_id.empty?
+          next unless graph[:by_product_id].key?(product_id)
 
-          next if
-            product_id.empty?
-
-
-          next unless
-            graph[:by_product_id].key?(product_id)
-
-
-          unless graph[:product_articles][product_id].include?(
-            article[:id]
-          )
-
-            graph[:product_articles][product_id] << article[:id]
-
-          end
-
+          list = graph[:product_articles][product_id]
+          list << article[:id] unless list.include?(article[:id])
         end
-
       end
 
-
-      # ----------------------------------------------------------------------
-      # Natural product mentions inside articles.
-      # ----------------------------------------------------------------------
-
       graph[:articles].each do |article|
-
         graph[:products].each do |product|
-
-          next if
-            graph[:product_articles][product[:id]].include?(
-              article[:id]
-            )
-
-
-          next unless
-            product_mentioned_in_article?(
-              product,
-              article
-            )
-
+          next if graph[:product_articles][product[:id]].include?(article[:id])
+          next unless product_mentioned_in_article?(product, article)
 
           graph[:product_articles][product[:id]] << article[:id]
-
         end
-
       end
-
     end
-
 
     # ========================================================================
     # BUILD PRODUCT
     # ========================================================================
 
     def self.build_product(document)
+      data = document.data || {}
+      product_id = data["product_id"].to_s.strip
+      title = data["title"].to_s.strip
 
-      data =
-        document.data || {}
-
-
-      product_id =
-        data["product_id"].to_s.strip
-
-
-      title =
-        data["title"].to_s.strip
-
-
-      text =
-        [
-          title,
-          data["excerpt"],
-          data["description"],
-          data["manufacturer"],
-          Array(data["tags"]).join(" "),
-          Array(data["categories"]).join(" ")
-        ].compact.join(" ")
-
+      text = [
+        title,
+        data["excerpt"],
+        data["description"],
+        data["manufacturer"],
+        Array(data["tags"]).join(" "),
+        Array(data["categories"]).join(" ")
+      ].compact.join(" ")
 
       {
-
         type: :product,
-
         id: product_id,
-
         title: title,
-
         url: document.url,
-
-        text:
-          normalize_text(text),
-
-        tokens:
-          tokenize(text),
-
-        tags:
-          normalize_array(data["tags"]),
-
-        categories:
-          normalize_array(data["categories"]),
-
-        related:
-          normalize_ids(data["related"]),
-
-        keywords:
-          product_keywords(data),
-
-        content:
-          document.content.to_s
-
+        text: normalize_text(text),
+        tokens: tokenize(text),
+        tags: normalize_array(data["tags"]),
+        categories: normalize_array(data["categories"]),
+        related: normalize_ids(data["related"]),
+        keywords: product_keywords(data),
+        content: document.content.to_s
       }
-
     end
-
 
     # ========================================================================
     # BUILD ARTICLE
     # ========================================================================
 
     def self.build_article(document)
+      data = document.data || {}
+      title = data["title"].to_s.strip
+      content = document.content.to_s
 
-      data =
-        document.data || {}
-
-
-      title =
-        data["title"].to_s.strip
-
-
-      content =
-        document.content.to_s
-
-
-      text =
-        [
-          title,
-          data["excerpt"],
-          data["description"],
-          Array(data["tags"]).join(" "),
-          Array(data["categories"]).join(" "),
-          content
-        ].compact.join(" ")
-
+      text = [
+        title,
+        data["excerpt"],
+        data["description"],
+        Array(data["tags"]).join(" "),
+        Array(data["categories"]).join(" "),
+        content
+      ].compact.join(" ")
 
       {
-
         type: :article,
-
-        id:
-          normalize_url(
-            document.url
-          ),
-
+        id: normalize_url(document.url),
         title: title,
-
         url: document.url,
-
-        text:
-          normalize_text(text),
-
-        tokens:
-          tokenize(text),
-
-        tags:
-          normalize_array(data["tags"]),
-
-        categories:
-          normalize_array(data["categories"]),
-
-        required_hardware:
-          extract_hardware_ids(
-            data["required_hardware"]
-          ),
-
-        related:
-          normalize_ids(
-            data["related"]
-          ),
-
-        keywords:
-          article_keywords(data),
-
-        content:
-          content
-
+        text: normalize_text(text),
+        tokens: tokenize(text),
+        tags: normalize_array(data["tags"]),
+        categories: normalize_array(data["categories"]),
+        required_hardware: extract_hardware_ids(data["required_hardware"]),
+        related: normalize_ids(data["related"]),
+        keywords: article_keywords(data),
+        content: content
       }
-
     end
 
-
     # ========================================================================
-    # ADD PRODUCT
+    # ADD NODES
     # ========================================================================
 
-    def self.add_product(
-      product,
-      products,
-      by_url,
-      by_product_id
-    )
+    def self.add_product(product, products, by_url, by_product_id)
+      return if product[:id].empty?
+      return if by_product_id.key?(product[:id])
 
-      return if
-        product[:id].empty?
-
-
-      return if
-        by_product_id.key?(product[:id])
-
-
-      normalized_url =
-        normalize_url(
-          product[:url]
-        )
-
-
-      return if
-        by_url.key?(normalized_url)
-
+      normalized_url = normalize_url(product[:url])
+      return if by_url.key?(normalized_url)
 
       products << product
-
-
-      by_url[normalized_url] =
-        product
-
-
-      by_product_id[product[:id]] =
-        product
-
+      by_url[normalized_url] = product
+      by_product_id[product[:id]] = product
     end
 
-
-    # ========================================================================
-    # ADD ARTICLE
-    # ========================================================================
-
-    def self.add_article(
-      article,
-      articles,
-      by_url
-    )
-
-      url =
-        normalize_url(
-          article[:url]
-        )
-
-
-      return if
-        by_url.key?(url)
-
+    def self.add_article(article, articles, by_url)
+      url = normalize_url(article[:url])
+      return if by_url.key?(url)
 
       articles << article
-
-
-      by_url[url] =
-        article
-
+      by_url[url] = article
     end
 
-
     # ========================================================================
-    # FIND RELATIONS
+    # RELATION FINDER
     # ========================================================================
 
-    def self.find_relations(
-      current,
-      graph,
-      settings,
-      config
-    )
-
+    def self.find_relations(current, graph, settings, _config)
       relations = []
-
-
-      minimum =
-        settings[
-          "minimum_relevance"
-        ].to_i
-
-
-      # ======================================================================
-      # ARTICLE
-      # ======================================================================
+      minimum = settings["minimum_relevance"].to_i
 
       if current[:type] == :article
-
-        # ---------------------------------------------------------------------
-        # ARTICLE -> PRODUCT
-        # ---------------------------------------------------------------------
-
         graph[:products].each do |product|
+          score = article_product_score(current, product)
+          next if score < minimum
 
-          score =
-            article_product_score(
-              current,
-              product
-            )
-
-
-          next if
-            score < minimum
-
-
-          opportunity =
-            find_link_opportunity(
-              current,
-              product
-            )
-
-
-          next unless
-            opportunity
-
+          opportunity = find_link_opportunity(current, product)
+          next unless opportunity
 
           relations << {
-
             type: "article_to_product",
-
             source: current,
-
             target: product,
-
             score: score,
-
             opportunity: opportunity
-
           }
-
         end
-
-
-        # ---------------------------------------------------------------------
-        # ARTICLE -> ARTICLE
-        # ---------------------------------------------------------------------
 
         graph[:articles].each do |article|
+          next if normalize_url(article[:url]) == normalize_url(current[:url])
 
-          next if
-            normalize_url(article[:url]) ==
-            normalize_url(current[:url])
+          score = article_article_score(current, article)
+          next if score < minimum
 
-
-          score =
-            article_article_score(
-              current,
-              article
-            )
-
-
-          next if
-            score < minimum
-
-
-          opportunity =
-            find_link_opportunity(
-              current,
-              article
-            )
-
-
-          next unless
-            opportunity
-
+          opportunity = find_link_opportunity(current, article)
+          next unless opportunity
 
           relations << {
-
             type: "article_to_article",
-
             source: current,
-
             target: article,
-
             score: score,
-
             opportunity: opportunity
-
           }
-
         end
-
       end
-
-
-      # ======================================================================
-      # PRODUCT
-      # ======================================================================
 
       if current[:type] == :product
-
-        # ---------------------------------------------------------------------
-        # PRODUCT -> ARTICLE
-        # ---------------------------------------------------------------------
-
         graph[:articles].each do |article|
+          score = product_article_score(current, article, graph)
+          next if score < minimum
 
-          score =
-            product_article_score(
-              current,
-              article,
-              graph
-            )
-
-
-          next if
-            score < minimum
-
-
-          opportunity =
-            find_link_opportunity(
-              current,
-              article
-            )
-
-
-          next unless
-            opportunity
-
+          opportunity = find_link_opportunity(current, article)
+          next unless opportunity
 
           relations << {
-
             type: "product_to_article",
-
             source: current,
-
             target: article,
-
             score: score,
-
             opportunity: opportunity
-
           }
-
         end
-
-
-        # ---------------------------------------------------------------------
-        # PRODUCT -> PRODUCT
-        #
-        # V3.1 is deliberately conservative.
-        #
-        # Only:
-        #
-        #   - explicit related relationship
-        #   - shared article
-        #
-        # can create a product -> product relationship.
-        # ---------------------------------------------------------------------
 
         graph[:products].each do |product|
+          next if product[:id] == current[:id]
 
-          next if
-            product[:id] == current[:id]
+          score = product_product_score(current, product, graph)
+          next if score < minimum
 
-
-          score =
-            product_product_score(
-              current,
-              product,
-              graph
-            )
-
-
-          next if
-            score < minimum
-
-
-          opportunity =
-            find_link_opportunity(
-              current,
-              product
-            )
-
-
-          next unless
-            opportunity
-
+          opportunity = find_link_opportunity(current, product)
+          next unless opportunity
 
           relations << {
-
             type: "product_to_product",
-
             source: current,
-
             target: product,
-
             score: score,
-
             opportunity: opportunity
-
           }
-
         end
-
       end
-
 
       relations.sort_by! do |relation|
-
-        -relation[:score]
-
+        [-relation[:score], -relation[:opportunity][:keyword].to_s.length]
       end
 
-
       relations
-
     end
-
 
     # ========================================================================
     # ARTICLE -> PRODUCT
     # ========================================================================
 
-    def self.article_product_score(
-      article,
-      product
-    )
-
-      # ----------------------------------------------------------------------
-      # Required hardware is definitive.
-      # ----------------------------------------------------------------------
-
-      if article[:required_hardware].include?(
-        product[:id]
-      )
-
+    def self.article_product_score(article, product)
+      if article[:required_hardware].include?(product[:id])
         return 100
-
       end
 
+      return 0 unless product_keyword_match?(article, product)
 
-      score = 0
+      score = 75
 
-
-      # ----------------------------------------------------------------------
-      # Natural product keyword mention.
-      # ----------------------------------------------------------------------
-
-      if product_keyword_match?(
-        article,
-        product
-      )
-
-        score += 65
-
-      end
-
-
-      # ----------------------------------------------------------------------
-      # Shared tags.
-      #
-      # Tags influence relevance only.
-      # They can NEVER become anchor text.
-      # ----------------------------------------------------------------------
-
-      score +=
-        [
-          shared_values_score(
-            article[:tags],
-            product[:tags],
-            3
-          ),
-          10
-        ].min
-
-
-      # ----------------------------------------------------------------------
-      # Shared categories.
-      # ----------------------------------------------------------------------
-
-      score +=
-        [
-          shared_values_score(
-            article[:categories],
-            product[:categories],
-            3
-          ),
-          6
-        ].min
-
-
-      # ----------------------------------------------------------------------
-      # Text similarity.
-      # ----------------------------------------------------------------------
-
-      score +=
-        [
-          token_similarity(
-            article[:tokens],
-            product[:tokens]
-          ),
-          8
-        ].min
-
+      score += [shared_values_score(article[:tags], product[:tags], 2), 8].min
+      score += [shared_values_score(article[:categories], product[:categories], 2), 5].min
+      score += [token_similarity(article[:tokens], product[:tokens]), 7].min
 
       [score, 100].min
-
     end
-
 
     # ========================================================================
     # ARTICLE -> ARTICLE
     # ========================================================================
 
-    def self.article_article_score(
-      article_a,
-      article_b
-    )
-
+    def self.article_article_score(article_a, article_b)
       score = 0
 
+      shared_hardware = article_a[:required_hardware] & article_b[:required_hardware]
+      score += [shared_hardware.length * 25, 50].min
 
-      # ----------------------------------------------------------------------
-      # Shared required hardware.
-      # ----------------------------------------------------------------------
-
-      shared_hardware =
-        (
-          article_a[:required_hardware] &
-          article_b[:required_hardware]
-        )
-
-
-      score +=
-        [
-          shared_hardware.length * 20,
-          40
-        ].min
-
-
-      # ----------------------------------------------------------------------
-      # Shared tags.
-      # ----------------------------------------------------------------------
-
-      score +=
-        [
-          shared_values_score(
-            article_a[:tags],
-            article_b[:tags],
-            4
-          ),
-          12
-        ].min
-
-
-      # ----------------------------------------------------------------------
-      # Shared categories.
-      # ----------------------------------------------------------------------
-
-      score +=
-        [
-          shared_values_score(
-            article_a[:categories],
-            article_b[:categories],
-            4
-          ),
-          8
-        ].min
-
-
-      # ----------------------------------------------------------------------
-      # Text similarity.
-      # ----------------------------------------------------------------------
-
-      score +=
-        [
-          token_similarity(
-            article_a[:tokens],
-            article_b[:tokens]
-          ),
-          15
-        ].min
-
+      score += [shared_values_score(article_a[:tags], article_b[:tags], 3), 12].min
+      score += [shared_values_score(article_a[:categories], article_b[:categories], 3), 8].min
+      score += [token_similarity(article_a[:tokens], article_b[:tokens]), 15].min
 
       [score, 100].min
-
     end
-
 
     # ========================================================================
     # PRODUCT -> ARTICLE
     # ========================================================================
 
-    def self.product_article_score(
-      product,
-      article,
-      graph
-    )
-
+    def self.product_article_score(product, article, graph)
       score = 0
 
-
-      # ----------------------------------------------------------------------
-      # Required hardware.
-      # ----------------------------------------------------------------------
-
-      if article[:required_hardware].include?(
-        product[:id]
-      )
-
+      if article[:required_hardware].include?(product[:id])
         score += 100
-
       else
+        return 0 unless product_mentioned_in_article?(product, article)
 
-        # --------------------------------------------------------------------
-        # Explicit/natural product mention.
-        # --------------------------------------------------------------------
+        score += 75
 
-        if product_mentioned_in_article?(
-          product,
-          article
-        )
-
-          score += 65
-
+        if graph[:product_articles][product[:id]].include?(article[:id])
+          score += 10
         end
 
-
-        # --------------------------------------------------------------------
-        # Product/article relationship from content graph.
-        # --------------------------------------------------------------------
-
-        if graph[:product_articles][
-          product[:id]
-        ].include?(
-          article[:id]
-        )
-
-          score += 15
-
-        end
-
-
-        # --------------------------------------------------------------------
-        # Shared tags.
-        # --------------------------------------------------------------------
-
-        score +=
-          [
-            shared_values_score(
-              product[:tags],
-              article[:tags],
-              3
-            ),
-            8
-          ].min
-
-
-        # --------------------------------------------------------------------
-        # Shared categories.
-        # --------------------------------------------------------------------
-
-        score +=
-          [
-            shared_values_score(
-              product[:categories],
-              article[:categories],
-              3
-            ),
-            6
-          ].min
-
+        score += [shared_values_score(product[:tags], article[:tags], 2), 5].min
+        score += [shared_values_score(product[:categories], article[:categories], 2), 5].min
       end
 
-
       [score, 100].min
-
     end
-
 
     # ========================================================================
     # PRODUCT -> PRODUCT
     # ========================================================================
     #
-    # V3.1 deliberately removes generic tag/category/text scoring.
-    #
-    # A product-to-product relationship must have a meaningful connection:
-    #
-    #   1. Explicit related: relationship
-    #   2. Both products used/mentioned by the same article(s)
-    #
-    # This prevents:
-    #
-    #   Raspberry Pi -> unrelated product
-    #   Arduino -> unrelated product
-    #   Electronics -> unrelated product
-    #
-    # from becoming anchors.
+    # V3.2 remains conservative:
+    #   - explicit related relationship is strong evidence
+    #   - shared articles are strong evidence
+    #   - tags/categories/text similarity cannot create the relationship
     #
     # ========================================================================
 
-    def self.product_product_score(
-      product_a,
-      product_b,
-      graph
-    )
-
+    def self.product_product_score(product_a, product_b, graph)
       score = 0
 
-
-      # ----------------------------------------------------------------------
-      # Explicit related relationship.
-      # ----------------------------------------------------------------------
-
-      if product_a[:related].include?(
-        product_b[:id]
-      )
-
-        score += 60
-
+      if product_a[:related].include?(product_b[:id])
+        score += 70
       end
 
-
-      if product_b[:related].include?(
-        product_a[:id]
-      )
-
-        score += 60
-
+      if product_b[:related].include?(product_a[:id])
+        score += 70
       end
 
+      articles_a = graph[:product_articles][product_a[:id]]
+      articles_b = graph[:product_articles][product_b[:id]]
+      shared_articles = articles_a & articles_b
 
-      # ----------------------------------------------------------------------
-      # Shared articles.
-      # ----------------------------------------------------------------------
-
-      articles_a =
-        graph[:product_articles][
-          product_a[:id]
-        ]
-
-
-      articles_b =
-        graph[:product_articles][
-          product_b[:id]
-        ]
-
-
-      shared_articles =
-        (
-          articles_a &
-          articles_b
-        )
-
-
-      unless shared_articles.empty?
-
-        score +=
-          [
-            shared_articles.length * 25,
-            50
-          ].min
-
-      end
-
+      score += [shared_articles.length * 30, 60].min unless shared_articles.empty?
 
       [score, 100].min
-
     end
-
 
     # ========================================================================
     # PRODUCT KEYWORD MATCH
     # ========================================================================
 
-    def self.product_keyword_match?(
-      article,
-      product
-    )
-
+    def self.product_keyword_match?(article, product)
       product[:keywords].any? do |keyword|
+        value = normalize_text(keyword)
+        next false unless usable_keyword?(value, explicit: explicit_product_keyword?(product, keyword))
 
-        value =
-          normalize_text(
-            keyword
-          )
-
-
-        next false if
-          value.empty?
-
-
-        normalized_article =
-          article[:text]
-
-
-        normalized_article.include?(
-          value
-        )
-
+        article[:text].include?(value)
       end
-
     end
 
-
-    # ========================================================================
-    # PRODUCT MENTIONED IN ARTICLE
-    # ========================================================================
-
-    def self.product_mentioned_in_article?(
-      product,
-      article
-    )
-
-      product_keyword_match?(
-        article,
-        product
-      )
-
+    def self.product_mentioned_in_article?(product, article)
+      product_keyword_match?(article, product)
     end
 
-
     # ========================================================================
-    # FIND REAL LINK OPPORTUNITY
-    # ========================================================================
-    #
-    # The engine ONLY creates a relationship when a natural anchor actually
-    # exists in the source content.
-    #
-    # It NEVER uses generic tags or categories as anchors.
-    #
+    # LINK OPPORTUNITY
     # ========================================================================
 
-    def self.find_link_opportunity(
-      source,
-      target
-    )
+    def self.find_link_opportunity(source, target)
+      return nil if existing_link?(source, target[:url])
 
-      return nil if
-        existing_link?(
-          source,
-          target[:url]
-        )
-
-
-      keywords = []
-
-
-      # ----------------------------------------------------------------------
-      # Product target.
-      # ----------------------------------------------------------------------
+      keywords = target[:keywords].dup
 
       if target[:type] == :product
-
-        keywords =
-          target[:keywords].dup
-
+        keywords = preferred_product_keywords(target)
+      elsif target[:type] == :article
+        keywords = target[:keywords].dup
       end
 
-
-      # ----------------------------------------------------------------------
-      # Article target.
-      #
-      # Only article title + explicit keywords.
-      #
-      # Tags are deliberately NOT used as anchors.
-      # ----------------------------------------------------------------------
-
-      if target[:type] == :article
-
-        keywords << target[:title]
-
-
-        keywords.concat(
-          target[:keywords]
-        )
-
-      end
-
-
-      # ----------------------------------------------------------------------
-      # Clean keywords.
-      # ----------------------------------------------------------------------
-
-      keywords =
-        keywords
-          .map do |keyword|
-
-            keyword.to_s.strip
-
-          end
-          .reject do |keyword|
-
-            keyword.empty?
-
-          end
-          .uniq
-          .sort_by do |keyword|
-
-            -keyword.length
-
-          end
-
-
-      # ----------------------------------------------------------------------
-      # Find first natural occurrence.
-      # ----------------------------------------------------------------------
+      keywords = clean_anchor_candidates(keywords, target)
 
       keywords.each do |keyword|
-
-        opportunity =
-          find_keyword_occurrence(
-            source[:content],
-            keyword
-          )
-
-
-        return opportunity if
-          opportunity
-
+        opportunity = find_keyword_occurrence(source[:content], keyword)
+        return opportunity if opportunity
       end
 
-
       nil
-
     end
 
+    # ========================================================================
+    # ANCHOR CANDIDATES
+    # ========================================================================
+
+    def self.preferred_product_keywords(product)
+      title = product[:title].to_s.strip
+      product_id = product[:id].to_s.strip
+
+      explicit = product[:keywords].reject do |keyword|
+        normalize_text(keyword) == normalize_text(product_id) ||
+          normalize_text(keyword) == normalize_text(title)
+      end
+
+      # Explicit keywords first, title second, ID last.
+      explicit + [title, product_id]
+    end
+
+    def self.clean_anchor_candidates(keywords, target)
+      keywords.map { |keyword| keyword.to_s.strip }
+        .reject(&:empty?)
+        .uniq
+        .select do |keyword|
+          value = normalize_text(keyword)
+          explicit = target[:type] == :product && explicit_product_keyword?(target, keyword)
+          usable_keyword?(value, explicit: explicit)
+        end
+        .sort_by do |keyword|
+          # Prefer explicit keywords, then longer/more specific phrases.
+          explicit = target[:type] == :product && explicit_product_keyword?(target, keyword)
+          [explicit ? 0 : 1, -keyword.length]
+        end
+    end
+
+    def self.usable_keyword?(value, explicit: false)
+      return false if value.empty?
+      return true if explicit
+      return false if GENERIC_ANCHORS.include?(value)
+
+      words = value.split
+      return false if words.length == 1 && value.length < 4
+
+      # A one-word generic-looking term should not become an automatic anchor.
+      return false if words.length == 1 && GENERIC_ANCHORS.include?(value)
+
+      true
+    end
+
+    def self.explicit_product_keyword?(product, keyword)
+      id = normalize_text(product[:id])
+      title = normalize_text(product[:title])
+      value = normalize_text(keyword)
+
+      value != id && value != title
+    end
 
     # ========================================================================
     # FIND KEYWORD OCCURRENCE
     # ========================================================================
 
-    def self.find_keyword_occurrence(
-      content,
-      keyword
-    )
+    def self.find_keyword_occurrence(content, keyword)
+      return nil if content.to_s.empty?
+      return nil if keyword.to_s.empty?
 
-      return nil if
-        content.to_s.empty?
+      protected_pattern = /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
 
+      masked_content = content.gsub(protected_pattern) do |match|
+        " " * match.length
+      end
 
-      return nil if
-        keyword.to_s.empty?
+      markdown_pattern = /!?\[[^\]]+\]\([^)]+\)/
 
+      masked_content = masked_content.gsub(markdown_pattern) do |match|
+        " " * match.length
+      end
 
-      # ----------------------------------------------------------------------
-      # Protect HTML elements.
-      # ----------------------------------------------------------------------
-
-      protected_pattern =
-        /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
-
-
-      masked_content =
-        content.gsub(
-          protected_pattern
-        ) do |match|
-
-          " " * match.length
-
-        end
-
-
-      # ----------------------------------------------------------------------
-      # Protect Markdown links.
-      # ----------------------------------------------------------------------
-
-      markdown_pattern =
-        /!?\[[^\]]+\]\([^)]+\)/
-
-
-      masked_content =
-        masked_content.gsub(
-          markdown_pattern
-        ) do |match|
-
-          " " * match.length
-
-        end
-
-
-      # ----------------------------------------------------------------------
-      # Escape keyword.
-      # ----------------------------------------------------------------------
-
-      escaped =
-        Regexp.escape(
-          keyword
-        )
-
-
-      # ----------------------------------------------------------------------
-      # Natural word boundary.
-      # ----------------------------------------------------------------------
-
-      pattern =
-        /(?<![\w\-])#{escaped}(?![\w\-])/i
-
-
-      match =
-        pattern.match(
-          masked_content
-        )
-
-
-      return nil unless
-        match
-
+      escaped = Regexp.escape(keyword)
+      pattern = /(?<![\w\-])#{escaped}(?![\w\-])/i
+      match = pattern.match(masked_content)
+      return nil unless match
 
       {
         keyword: match[0],
-
         index: match.begin(0),
-
         length: match[0].length
       }
-
     end
-
 
     # ========================================================================
     # INSERT LINKS
     # ========================================================================
 
-    def self.insert_links(
-      current,
-      relations,
-      settings
-    )
+    def self.insert_links(current, relations, settings)
+      content = current[:content].to_s
+      return content if content.empty?
 
-      content =
-        current[:content].to_s
-
-
-      return content if
-        content.empty?
-
-
-      total =
-        0
-
-
-      product_links =
-        0
-
-
-      article_links =
-        0
-
-
+      total = 0
+      product_links = 0
+      article_links = 0
       used_targets = []
 
-
-      # ----------------------------------------------------------------------
-      # Highest relevance first.
-      # ----------------------------------------------------------------------
-
       relations.each do |relation|
+        break if total >= settings["max_total_links_per_page"].to_i
 
-        break if
-          total >= settings[
-            "max_total_links_per_page"
-          ].to_i
+        target_url = normalize_url(relation[:target][:url])
+        next if used_targets.include?(target_url)
 
-
-        target_url =
-          normalize_url(
-            relation[:target][:url]
-          )
-
-
-        next if
-          used_targets.include?(
-            target_url
-          )
-
-
-        # ---------------------------------------------------------------------
-        # Product limit.
-        # ---------------------------------------------------------------------
-
-        if relation[:type].include?(
-          "product"
-        )
-
-          next if
-            product_links >= settings[
-              "max_product_links_per_page"
-            ].to_i
-
+        if relation[:type].include?("product")
+          next if product_links >= settings["max_product_links_per_page"].to_i
         else
-
-          # -------------------------------------------------------------------
-          # Article limit.
-          # -------------------------------------------------------------------
-
-          next if
-            article_links >= settings[
-              "max_article_links_per_page"
-            ].to_i
-
+          next if article_links >= settings["max_article_links_per_page"].to_i
         end
 
+        source = current.merge(content: content)
+        opportunity = find_link_opportunity(source, relation[:target])
+        next unless opportunity
 
-        # ---------------------------------------------------------------------
-        # Recalculate opportunity because content changes after each link.
-        # ---------------------------------------------------------------------
+        keyword = opportunity[:keyword]
+        escaped_keyword = Regexp.escape(keyword)
+        href = target_url.gsub('"', "&quot;")
+        pattern = /(?<![\w\-\[>])#{escaped_keyword}(?![\w\-])/i
+        replacement = %(<a href="#{href}">#{keyword}</a>)
 
-        opportunity =
-          find_link_opportunity(
-            {
-              content: content
-            }.merge(current),
-            relation[:target]
-          )
+        new_content = replace_first_safe_occurrence(content, pattern, replacement)
+        next if new_content == content
 
-
-        next unless
-          opportunity
-
-
-        keyword =
-          opportunity[:keyword]
-
-
-        escaped_keyword =
-          Regexp.escape(
-            keyword
-          )
-
-
-        href =
-          target_url.gsub(
-            '"',
-            "&quot;"
-          )
-
-
-        # ---------------------------------------------------------------------
-        # Replace only safe natural occurrence.
-        # ---------------------------------------------------------------------
-
-        pattern =
-          /(?<![\w\-\[])#{escaped_keyword}(?![\w\-])/i
-
-
-        replacement =
-          %(<a href="#{href}">#{keyword}</a>)
-
-
-        new_content =
-          replace_first_safe_occurrence(
-            content,
-            pattern,
-            replacement
-          )
-
-
-        next if
-          new_content == content
-
-
-        content =
-          new_content
-
-
+        content = new_content
         used_targets << target_url
-
-
         total += 1
 
-
-        if relation[:type].include?(
-          "product"
-        )
-
+        if relation[:type].include?("product")
           product_links += 1
-
         else
-
           article_links += 1
-
         end
-
       end
-
 
       content
-
     end
 
-
     # ========================================================================
-    # SAFE FIRST OCCURRENCE REPLACEMENT
+    # SAFE REPLACEMENT
     # ========================================================================
 
-    def self.replace_first_safe_occurrence(
-      content,
-      pattern,
-      replacement
-    )
-
+    def self.replace_first_safe_occurrence(content, pattern, replacement)
       protected_parts = []
 
+      protected_pattern = /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
 
-      # ----------------------------------------------------------------------
-      # Protect HTML elements.
-      # ----------------------------------------------------------------------
-
-      protected_pattern =
-        /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
-
-
-      working =
-        content.gsub(
-          protected_pattern
-        ) do |match|
-
-          placeholder =
-            "__EN_PROTECTED_#{protected_parts.length}__"
-
-
-          protected_parts << match
-
-
-          placeholder
-
-        end
-
-
-      # ----------------------------------------------------------------------
-      # Protect Markdown links.
-      # ----------------------------------------------------------------------
+      working = content.gsub(protected_pattern) do |match|
+        placeholder = "__EN_PROTECTED_#{protected_parts.length}__"
+        protected_parts << match
+        placeholder
+      end
 
       markdown_parts = []
-
-
-      working =
-        working.gsub(
-          /!?\[[^\]]+\]\([^)]+\)/
-        ) do |match|
-
-          placeholder =
-            "__EN_MARKDOWN_#{markdown_parts.length}__"
-
-
-          markdown_parts << match
-
-
-          placeholder
-
-        end
-
-
-      # ----------------------------------------------------------------------
-      # Protect inline code.
-      # ----------------------------------------------------------------------
+      working = working.gsub(/!?\[[^\]]+\]\([^)]+\)/) do |match|
+        placeholder = "__EN_MARKDOWN_#{markdown_parts.length}__"
+        markdown_parts << match
+        placeholder
+      end
 
       inline_parts = []
+      working = working.gsub(/`[^`\n]+`/) do |match|
+        placeholder = "__EN_INLINE_#{inline_parts.length}__"
+        inline_parts << match
+        placeholder
+      end
 
-
-      working =
-        working.gsub(
-          /`[^`\n]+`/
-        ) do |match|
-
-          placeholder =
-            "__EN_INLINE_#{inline_parts.length}__"
-
-
-          inline_parts << match
-
-
-          placeholder
-
-        end
-
-
-      # ----------------------------------------------------------------------
-      # Replace only one occurrence.
-      # ----------------------------------------------------------------------
-
-      replaced =
-        working.sub(
-          pattern,
-          replacement
-        )
-
-
-      return content if
-        replaced == working
-
-
-      # ----------------------------------------------------------------------
-      # Restore Markdown links.
-      # ----------------------------------------------------------------------
+      replaced = working.sub(pattern, replacement)
+      return content if replaced == working
 
       markdown_parts.each_with_index do |original, index|
-
-        replaced =
-          replaced.gsub(
-            "__EN_MARKDOWN_#{index}__",
-            original
-          )
-
+        replaced = replaced.gsub("__EN_MARKDOWN_#{index}__", original)
       end
-
-
-      # ----------------------------------------------------------------------
-      # Restore inline code.
-      # ----------------------------------------------------------------------
 
       inline_parts.each_with_index do |original, index|
-
-        replaced =
-          replaced.gsub(
-            "__EN_INLINE_#{index}__",
-            original
-          )
-
+        replaced = replaced.gsub("__EN_INLINE_#{index}__", original)
       end
-
-
-      # ----------------------------------------------------------------------
-      # Restore protected HTML.
-      # ----------------------------------------------------------------------
 
       protected_parts.each_with_index do |original, index|
-
-        replaced =
-          replaced.gsub(
-            "__EN_PROTECTED_#{index}__",
-            original
-          )
-
+        replaced = replaced.gsub("__EN_PROTECTED_#{index}__", original)
       end
 
-
       replaced
-
     end
-
 
     # ========================================================================
     # EXISTING LINK DETECTION
     # ========================================================================
 
-    def self.existing_link?(
-      source,
-      target_url
-    )
+    def self.existing_link?(source, target_url)
+      content = source[:content].to_s
+      return false if content.empty?
 
-      content =
-        source[:content].to_s
+      normalized = normalize_url(target_url)
+      escaped = Regexp.escape(normalized)
 
+      return true if content.match?(/href\s*=\s*["']#{escaped}["']/i)
+      return true if content.match?(/\]\(\s*#{escaped}(?:[#?][^)]*)?\s*\)/i)
 
-      return false if
-        content.empty?
+      no_slash = normalized.chomp("/")
+      return false if no_slash.empty?
 
+      escaped_no_slash = Regexp.escape(no_slash)
 
-      normalized =
-        normalize_url(
-          target_url
-        )
-
-
-      # ----------------------------------------------------------------------
-      # HTML href with trailing slash.
-      # ----------------------------------------------------------------------
-
-      escaped =
-        Regexp.escape(
-          normalized
-        )
-
-
-      html_pattern =
-        /href\s*=\s*["']#{escaped}["']/i
-
-
-      return true if
-        content.match?(
-          html_pattern
-        )
-
-
-      # ----------------------------------------------------------------------
-      # Markdown link with trailing slash.
-      # ----------------------------------------------------------------------
-
-      markdown_pattern =
-        /\]\(\s*#{escaped}(?:[#?][^)]*)?\s*\)/i
-
-
-      return true if
-        content.match?(
-          markdown_pattern
-        )
-
-
-      # ----------------------------------------------------------------------
-      # Without trailing slash.
-      # ----------------------------------------------------------------------
-
-      no_slash =
-        normalized.chomp("/")
-
-
-      return false if
-        no_slash.empty?
-
-
-      escaped_no_slash =
-        Regexp.escape(
-          no_slash
-        )
-
-
-      html_no_slash =
-        /href\s*=\s*["']#{escaped_no_slash}["']/i
-
-
-      return true if
-        content.match?(
-          html_no_slash
-        )
-
-
-      markdown_no_slash =
-        /\]\(\s*#{escaped_no_slash}(?:[#?][^)]*)?\s*\)/i
-
-
-      return true if
-        content.match?(
-          markdown_no_slash
-        )
-
+      return true if content.match?(/href\s*=\s*["']#{escaped_no_slash}["']/i)
+      return true if content.match?(/\]\(\s*#{escaped_no_slash}(?:[#?][^)]*)?\s*\)/i)
 
       false
-
     end
-
 
     # ========================================================================
     # PRODUCT KEYWORDS
     # ========================================================================
-    #
-    # IMPORTANT:
-    #
-    # Tags and categories are NOT anchors.
-    #
-    # Only:
-    #
-    #   - product_id
-    #   - title
-    #   - explicit internal_link_keywords
-    #
-    # are allowed to become product anchors.
-    #
-    # ========================================================================
 
     def self.product_keywords(data)
-
       keywords = []
 
+      product_id = data["product_id"].to_s.strip
+      keywords << product_id unless product_id.empty?
 
-      # ----------------------------------------------------------------------
-      # Product ID.
-      # ----------------------------------------------------------------------
+      title = data["title"].to_s.strip
+      keywords << title unless title.empty?
 
-      product_id =
-        data["product_id"].to_s.strip
-
-
-      keywords << product_id unless
-        product_id.empty?
-
-
-      # ----------------------------------------------------------------------
-      # Product title.
-      # ----------------------------------------------------------------------
-
-      title =
-        data["title"].to_s.strip
-
-
-      keywords << title unless
-        title.empty?
-
-
-      # ----------------------------------------------------------------------
-      # Explicit custom keywords.
-      # ----------------------------------------------------------------------
-
-      Array(
-        data["internal_link_keywords"]
-      ).each do |keyword|
-
-        value =
-          keyword.to_s.strip
-
-
-        keywords << value unless
-          value.empty?
-
+      Array(data["internal_link_keywords"]).each do |keyword|
+        value = keyword.to_s.strip
+        keywords << value unless value.empty?
       end
 
-
-      # ----------------------------------------------------------------------
-      # Clean duplicates.
-      # ----------------------------------------------------------------------
-
-      keywords
-        .uniq
-        .sort_by do |keyword|
-
-          -keyword.length
-
-        end
-
+      keywords.uniq.sort_by { |keyword| -keyword.length }
     end
-
 
     # ========================================================================
     # ARTICLE KEYWORDS
     # ========================================================================
-    #
-    # Article title is the default natural anchor.
-    #
-    # Optional:
-    #
-    # internal_link_keywords:
-    #   - "I2C scanner"
-    #   - "scan I2C devices"
-    #
-    # ========================================================================
 
     def self.article_keywords(data)
-
       keywords = []
 
+      title = data["title"].to_s.strip
+      keywords << title unless title.empty?
 
-      title =
-        data["title"].to_s.strip
-
-
-      keywords << title unless
-        title.empty?
-
-
-      Array(
-        data["internal_link_keywords"]
-      ).each do |keyword|
-
-        value =
-          keyword.to_s.strip
-
-
-        keywords << value unless
-          value.empty?
-
+      Array(data["internal_link_keywords"]).each do |keyword|
+        value = keyword.to_s.strip
+        keywords << value unless value.empty?
       end
 
-
-      keywords
-        .uniq
-        .sort_by do |keyword|
-
-          -keyword.length
-
-        end
-
+      keywords.uniq.sort_by { |keyword| -keyword.length }
     end
-
 
     # ========================================================================
     # REQUIRED HARDWARE
     # ========================================================================
 
     def self.extract_hardware_ids(value)
-
-      return [] unless
-        value.is_a?(Array)
-
+      return [] unless value.is_a?(Array)
 
       value.map do |item|
-
         if item.is_a?(Hash)
-
           item["id"].to_s.strip
-
         else
-
           item.to_s.strip
-
         end
-
-      end.reject do |id|
-
-        id.empty?
-
-      end
-
+      end.reject(&:empty?).uniq
     end
-
 
     # ========================================================================
     # EDITORIAL COLLECTION
     # ========================================================================
 
     def self.editorial_collection_document?(document)
+      data = document.data || {}
 
-      data =
-        document.data || {}
+      return true if data["internal_links"] == true
 
-
-      return true if
-        data["internal_links"] == true
-
-
-      EDITORIAL_LAYOUTS.include?(
-        data["layout"].to_s
-      )
-
+      EDITORIAL_LAYOUTS.include?(data["layout"].to_s)
     end
 
-
     # ========================================================================
-    # SHARED VALUES
+    # SCORING HELPERS
     # ========================================================================
 
-    def self.shared_values_score(
-      a,
-      b,
-      points
-    )
-
-      (
-        a & b
-      ).length * points
-
+    def self.shared_values_score(a, b, points)
+      (a & b).length * points
     end
 
+    def self.token_similarity(tokens_a, tokens_b)
+      return 0 if tokens_a.empty? || tokens_b.empty?
 
-    # ========================================================================
-    # TOKEN SIMILARITY
-    # ========================================================================
+      shared = tokens_a & tokens_b
+      return 0 if shared.empty?
 
-    def self.token_similarity(
-      tokens_a,
-      tokens_b
-    )
-
-      return 0 if
-        tokens_a.empty? ||
-        tokens_b.empty?
-
-
-      shared =
-        (
-          tokens_a &
-          tokens_b
-        )
-
-
-      return 0 if
-        shared.empty?
-
-
-      [
-        shared.length * 2,
-        20
-      ].min
-
+      [shared.length * 2, 20].min
     end
-
 
     # ========================================================================
     # TOKENIZER
     # ========================================================================
 
     def self.tokenize(text)
-
       stopwords = %w[
-
-        the
-        and
-        or
-        for
-        with
-        this
-        that
-        from
-        into
-        using
-        use
-        used
-        are
-        is
-        to
-        of
-        a
-        an
-        in
-        on
-        our
-        your
-        how
-        what
-        can
-        will
-        be
-
-        tutorial
-        guide
-        project
-        projects
-        display
-        code
-        example
-        learn
-
-        common
-        popular
-        embedded
-        electronics
-        device
-        devices
-
+        the and or for with this that from into using use used are is to of a an
+        in on our your how what can will be tutorial guide project projects
+        display code example learn common popular embedded electronics device devices
       ]
 
-
       normalize_text(text)
-        .scan(
-          /[a-z0-9][a-z0-9_-]{2,}/
-        )
-        .reject do |word|
-
-          stopwords.include?(word)
-
-        end
+        .scan(/[a-z0-9][a-z0-9_-]{2,}/)
+        .reject { |word| stopwords.include?(word) }
         .uniq
-
     end
 
-
     # ========================================================================
-    # NORMALIZE TEXT
+    # NORMALIZATION
     # ========================================================================
 
     def self.normalize_text(value)
-
       value.to_s
         .downcase
-        .gsub(
-          /[^a-z0-9_\-\s]/,
-          " "
-        )
-        .gsub(
-          /\s+/,
-          " "
-        )
+        .gsub(/[^a-z0-9_\-\s]/, " ")
+        .gsub(/\s+/, " ")
         .strip
-
     end
-
-
-    # ========================================================================
-    # NORMALIZE ARRAY
-    # ========================================================================
 
     def self.normalize_array(value)
-
       Array(value)
-        .map do |item|
-
-          normalize_text(item)
-
-        end
-        .reject do |item|
-
-          item.empty?
-
-        end
+        .map { |item| normalize_text(item) }
+        .reject(&:empty?)
         .uniq
-
     end
-
-
-    # ========================================================================
-    # NORMALIZE IDS
-    # ========================================================================
 
     def self.normalize_ids(value)
-
       Array(value)
         .map do |item|
-
           if item.is_a?(Hash)
-
             item["id"].to_s.strip
-
           else
-
             item.to_s.strip
-
           end
-
         end
-        .reject do |item|
-
-          item.empty?
-
-        end
-
+        .reject(&:empty?)
+        .uniq
     end
-
-
-    # ========================================================================
-    # NORMALIZE URL
-    # ========================================================================
 
     def self.normalize_url(url)
-
-      value =
-        url.to_s.strip
-
-
-      value =
-        value.split("#").first
-
-
-      value =
-        value.split("?").first
-
-
-      value =
-        "/" if
-          value.empty?
-
-
-      value =
-        "/#{value}" unless
-          value.start_with?("/")
-
-
-      value =
-        value.chomp("/")
-
-
-      return "/" if
-        value.empty?
-
+      value = url.to_s.strip
+      value = value.split("#").first
+      value = value.split("?").first
+      value = "/" if value.empty?
+      value = "/#{value}" unless value.start_with?("/")
+      value = value.chomp("/")
+      return "/" if value.empty?
 
       "#{value}/"
-
     end
-
 
     # ========================================================================
     # ANALYSIS LOG
     # ========================================================================
 
-    def self.log_analysis(
-      current,
-      relations,
-      settings
-    )
+    def self.log_analysis(current, relations, settings)
+      limit = settings["analysis_results_per_page"].to_i
+      limit = 5 if limit <= 0
 
-      limit =
-        settings[
-          "analysis_results_per_page"
-        ].to_i
-
-
-      limit =
-        5 if
-          limit <= 0
-
-
-      Jekyll.logger.info(
-        "Embedded Nerd:",
-        "============================================================"
-      )
-
-
-      Jekyll.logger.info(
-        "Embedded Nerd:",
-        "Internal Link Analysis V3.1"
-      )
-
-
-      Jekyll.logger.info(
-        "Embedded Nerd:",
-        "#{current[:type].to_s.upcase}: #{current[:title]}"
-      )
-
-
-      Jekyll.logger.info(
-        "Embedded Nerd:",
-        "URL: #{current[:url]}"
-      )
-
+      Jekyll.logger.info("Embedded Nerd:", "============================================================")
+      Jekyll.logger.info("Embedded Nerd:", "Internal Link Analysis V3.2")
+      Jekyll.logger.info("Embedded Nerd:", "#{current[:type].to_s.upcase}: #{current[:title]}")
+      Jekyll.logger.info("Embedded Nerd:", "URL: #{current[:url]}")
 
       if relations.empty?
-
-        Jekyll.logger.info(
-          "Embedded Nerd:",
-          "No linkable relationships found."
-        )
-
+        Jekyll.logger.info("Embedded Nerd:", "No linkable relationships found.")
       else
-
         relations.first(limit).each do |relation|
-
-          anchor =
-            relation[:opportunity][:keyword]
-
+          anchor = relation[:opportunity][:keyword]
 
           Jekyll.logger.info(
             "Embedded Nerd:",
@@ -2447,111 +947,41 @@ module EmbeddedNerd
             "anchor=\"#{anchor}\" | " \
             "#{relation[:target][:url]}"
           )
-
         end
-
       end
 
-
-      Jekyll.logger.info(
-        "Embedded Nerd:",
-        "============================================================"
-      )
-
+      Jekyll.logger.info("Embedded Nerd:", "============================================================")
     end
-
   end
-
 end
-
 
 # ============================================================================
 # JEKYLL HOOKS
 # ============================================================================
-#
-# Important:
-#
-# :posts handles posts.
-# :pages handles pages.
-# :documents handles collection documents.
-#
-# Posts are explicitly skipped inside :documents so they are not processed
-# twice.
-#
-# ============================================================================
-
 
 Jekyll::Hooks.register :posts, :pre_render do |post|
-
-  EmbeddedNerd::InternalLinker.process(
-    post
-  )
-
+  EmbeddedNerd::InternalLinker.process(post)
 end
-
 
 Jekyll::Hooks.register :pages, :pre_render do |page|
-
-  EmbeddedNerd::InternalLinker.process(
-    page
-  )
-
+  EmbeddedNerd::InternalLinker.process(page)
 end
 
-
 Jekyll::Hooks.register :documents, :pre_render do |document|
+  data = document.data || {}
 
-  data =
-    document.data || {}
-
-
-  # --------------------------------------------------------------------------
-  # Posts are already handled by the :posts hook.
-  # --------------------------------------------------------------------------
-
+  # Posts are already handled by :posts.
   if document.respond_to?(:collection) &&
      document.collection &&
      document.collection.label.to_s == "posts"
-
     next
-
   end
-
-
-  # --------------------------------------------------------------------------
-  # Products.
-  # --------------------------------------------------------------------------
 
   if data["layout"].to_s == "product"
-
-    EmbeddedNerd::InternalLinker.process(
-      document
-    )
-
-
-  # --------------------------------------------------------------------------
-  # Explicitly enabled documents.
-  # --------------------------------------------------------------------------
-
+    EmbeddedNerd::InternalLinker.process(document)
   elsif data["internal_links"] == true
-
-    EmbeddedNerd::InternalLinker.process(
-      document
-    )
-
-
-  # --------------------------------------------------------------------------
-  # Editorial layouts.
-  # --------------------------------------------------------------------------
-
-  elsif EmbeddedNerd::InternalLinker::EDITORIAL_LAYOUTS.include?(
-    data["layout"].to_s
-  )
-
-    EmbeddedNerd::InternalLinker.process(
-      document
-    )
-
+    EmbeddedNerd::InternalLinker.process(document)
+  elsif EmbeddedNerd::InternalLinker::EDITORIAL_LAYOUTS.include?(data["layout"].to_s)
+    EmbeddedNerd::InternalLinker.process(document)
   end
-
 end
