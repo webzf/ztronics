@@ -1,5 +1,5 @@
 # ============================================================================
-# Embedded Nerd - Internal Link Engine V3.2
+# Embedded Nerd - Internal Link Engine V3.3
 # ============================================================================
 #
 # Jekyll 3.10 compatible
@@ -42,7 +42,10 @@ module EmbeddedNerd
       "max_product_links_per_page" => 3,
       "max_article_links_per_page" => 2,
       "minimum_relevance" => 60,
-      "analysis_results_per_page" => 5
+      "analysis_results_per_page" => 5,
+      "minimum_confidence" => "medium",
+      "high_confidence_score" => 85,
+      "medium_confidence_score" => 70
     }.freeze
 
     # ========================================================================
@@ -422,8 +425,41 @@ module EmbeddedNerd
         end
       end
 
+      # V3.3: classify every valid relationship before ranking.
+      relations.each do |relation|
+        relation[:anchor_quality] =
+          anchor_quality(
+            relation[:opportunity][:keyword],
+            relation[:target]
+          )
+
+        relation[:reason] =
+          relation_reason(relation)
+
+        relation[:confidence] =
+          confidence_level(
+            relation[:score],
+            relation[:anchor_quality],
+            relation[:reason],
+            settings
+          )
+      end
+
+      relations =
+        relations.select do |relation|
+          confidence_allowed?(
+            relation[:confidence],
+            settings["minimum_confidence"]
+          )
+        end
+
       relations.sort_by! do |relation|
-        [-relation[:score], -relation[:opportunity][:keyword].to_s.length]
+        [
+          -confidence_weight(relation[:confidence]),
+          -relation[:score],
+          -relation[:anchor_quality],
+          -relation[:opportunity][:keyword].to_s.length
+        ]
       end
 
       relations
@@ -503,20 +539,21 @@ module EmbeddedNerd
     # ========================================================================
 
     def self.product_product_score(product_a, product_b, graph)
-      score = 0
-
-      if product_a[:related].include?(product_b[:id])
-        score += 70
-      end
-
-      if product_b[:related].include?(product_a[:id])
-        score += 70
-      end
+      explicit_related =
+        product_a[:related].include?(product_b[:id]) ||
+        product_b[:related].include?(product_a[:id])
 
       articles_a = graph[:product_articles][product_a[:id]]
       articles_b = graph[:product_articles][product_b[:id]]
       shared_articles = articles_a & articles_b
 
+      # V3.3: product-to-product links require real evidence.
+      return 0 unless explicit_related || !shared_articles.empty?
+
+      score = 0
+
+      score += 70 if product_a[:related].include?(product_b[:id])
+      score += 70 if product_b[:related].include?(product_a[:id])
       score += [shared_articles.length * 30, 60].min unless shared_articles.empty?
 
       [score, 100].min
@@ -776,6 +813,137 @@ module EmbeddedNerd
     end
 
     # ========================================================================
+    # V3.3 ANCHOR QUALITY
+    # ========================================================================
+
+    def self.anchor_quality(keyword, target)
+      value = normalize_text(keyword)
+      return 0 if value.empty?
+
+      title = normalize_text(target[:title])
+      return 100 if !title.empty? && value == title
+
+      if target[:type] == :product
+        return 95 if explicit_product_keyword?(target, keyword)
+      end
+
+      return 90 if value.split.length >= 2
+      return 85 if value.length >= 5
+
+      70
+    end
+
+
+    # ========================================================================
+    # V3.3 RELATION REASON
+    # ========================================================================
+
+    def self.relation_reason(relation)
+      source = relation[:source]
+      target = relation[:target]
+      type = relation[:type]
+
+      case type
+      when "article_to_product"
+        return "required_hardware" if
+          source[:required_hardware].include?(target[:id])
+
+        return "explicit_product_mention" if
+          product_keyword_match?(source, target)
+
+        "contextual_product_match"
+
+      when "product_to_article"
+        return "required_hardware" if
+          target[:required_hardware].include?(source[:id])
+
+        return "explicit_product_mention" if
+          product_mentioned_in_article?(source, target)
+
+        "contextual_article_match"
+
+      when "product_to_product"
+        return "explicit_related" if
+          source[:related].include?(target[:id]) ||
+          target[:related].include?(source[:id])
+
+        "shared_article"
+
+      when "article_to_article"
+        shared =
+          source[:required_hardware] &
+          target[:required_hardware]
+
+        return "shared_hardware" unless shared.empty?
+
+        "contextual_article_match"
+
+      else
+        "contextual_match"
+      end
+    end
+
+
+    # ========================================================================
+    # V3.3 CONFIDENCE
+    # ========================================================================
+
+    def self.confidence_level(score, anchor_quality, reason, settings)
+      high_score =
+        settings["high_confidence_score"].to_i
+
+      medium_score =
+        settings["medium_confidence_score"].to_i
+
+      return "high" if reason == "required_hardware"
+      return "high" if reason == "explicit_related" && score >= medium_score
+      return "high" if reason == "shared_hardware" && score >= medium_score
+      return "high" if reason == "explicit_product_mention" && score >= high_score
+      return "high" if score >= high_score && anchor_quality >= 95
+
+      return "medium" if
+        score >= medium_score &&
+        anchor_quality >= 85
+
+      "low"
+    end
+
+
+    # ========================================================================
+    # V3.3 CONFIDENCE FILTER
+    # ========================================================================
+
+    def self.confidence_allowed?(confidence, minimum)
+      order = {
+        "low" => 1,
+        "medium" => 2,
+        "high" => 3
+      }
+
+      actual = order[confidence.to_s.downcase] || 1
+      required = order[minimum.to_s.downcase] || 2
+
+      actual >= required
+    end
+
+
+    # ========================================================================
+    # V3.3 CONFIDENCE WEIGHT
+    # ========================================================================
+
+    def self.confidence_weight(confidence)
+      case confidence.to_s.downcase
+      when "high"
+        3
+      when "medium"
+        2
+      else
+        1
+      end
+    end
+
+
+    # ========================================================================
     # PRODUCT KEYWORDS
     # ========================================================================
 
@@ -929,7 +1097,7 @@ module EmbeddedNerd
       limit = 5 if limit <= 0
 
       Jekyll.logger.info("Embedded Nerd:", "============================================================")
-      Jekyll.logger.info("Embedded Nerd:", "Internal Link Analysis V3.2")
+      Jekyll.logger.info("Embedded Nerd:", "Internal Link Analysis V3.3")
       Jekyll.logger.info("Embedded Nerd:", "#{current[:type].to_s.upcase}: #{current[:title]}")
       Jekyll.logger.info("Embedded Nerd:", "URL: #{current[:url]}")
 
@@ -945,6 +1113,9 @@ module EmbeddedNerd
             "#{relation[:target][:title]} | " \
             "score=#{relation[:score]} | " \
             "anchor=\"#{anchor}\" | " \
+            "anchor_quality=#{relation[:anchor_quality]} | " \
+            "confidence=#{relation[:confidence].upcase} | " \
+            "reason=#{relation[:reason]} | " \
             "#{relation[:target][:url]}"
           )
         end
