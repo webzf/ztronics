@@ -1,5 +1,5 @@
 # ============================================================================
-# Embedded Nerd - Internal Link Engine V3.4
+# Embedded Nerd - Internal Link Engine V3.4.1
 # ============================================================================
 #
 # Jekyll 3.10 compatible
@@ -157,7 +157,7 @@ module EmbeddedNerd
         document.content = new_content
         Jekyll.logger.info(
           "Embedded Nerd:",
-          "V3.4 inserted #{count_generated_links(new_content)} automatic link(s)"
+          "V3.4.1 inserted #{count_generated_links(new_content)} automatic link(s)"
         )
       end
     end
@@ -693,6 +693,14 @@ module EmbeddedNerd
         " " * match.length
       end
 
+      # Protect Markdown headings (# through ######).
+      # Automatic links must never be inserted into H1-H6 titles.
+      markdown_heading_pattern = /^\\s{0,3}\#{1,6}\\s+.*$/
+
+      masked_content = masked_content.gsub(markdown_heading_pattern) do |match|
+        " " * match.length
+      end
+
       escaped = Regexp.escape(keyword)
       pattern = /(?<![\w\-])#{escaped}(?![\w\-])/i
       match = pattern.match(masked_content)
@@ -786,6 +794,14 @@ module EmbeddedNerd
         placeholder
       end
 
+      # Protect Markdown headings (# through ######).
+      heading_parts = []
+      working = working.gsub(/^\s{0,3}\#{1,6}\s+.*$/) do |match|
+        placeholder = "__EN_HEADING_#{heading_parts.length}__"
+        heading_parts << match
+        placeholder
+      end
+
       inline_parts = []
       working = working.gsub(/`[^`\n]+`/) do |match|
         placeholder = "__EN_INLINE_#{inline_parts.length}__"
@@ -798,6 +814,10 @@ module EmbeddedNerd
 
       markdown_parts.each_with_index do |original, index|
         replaced = replaced.gsub("__EN_MARKDOWN_#{index}__", original)
+      end
+
+      heading_parts.each_with_index do |original, index|
+        replaced = replaced.gsub("__EN_HEADING_#{index}__", original)
       end
 
       inline_parts.each_with_index do |original, index|
@@ -1144,7 +1164,7 @@ module EmbeddedNerd
       limit = 5 if limit <= 0
 
       Jekyll.logger.info("Embedded Nerd:", "============================================================")
-      Jekyll.logger.info("Embedded Nerd:", "Internal Link Analysis V3.4")
+      Jekyll.logger.info("Embedded Nerd:", "Internal Link Analysis V3.4.1")
       Jekyll.logger.info("Embedded Nerd:", "#{current[:type].to_s.upcase}: #{current[:title]}")
       Jekyll.logger.info("Embedded Nerd:", "URL: #{current[:url]}")
 
