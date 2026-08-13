@@ -1,25 +1,27 @@
 # ============================================================================
-# Embedded Nerd - Internal Link Engine V2.3
+# Embedded Nerd - Internal Link Engine V3
 # ============================================================================
 #
 # Jekyll 3.10 compatible
 #
 # Relationship engine:
 #
-#   Article  -> Product
-#   Article  -> Article
-#   Product  -> Article
-#   Product  -> Product
+#   Article -> Product
+#   Article -> Article
+#   Product -> Article
+#   Product -> Product
 #
-# V2.3:
+# V3:
 #
-#   - Better relevance scoring
+#   - Relevance scoring
+#   - Real link opportunity detection
 #   - Existing link detection
+#   - Protected HTML elements
 #   - Required hardware priority
-#   - Product relationships through shared articles
-#   - Avoids weak product-to-product relationships
-#   - Ignores normal utility pages
-#   - Protects existing links from duplication
+#   - Automatic product keywords
+#   - Shared article relationships
+#   - No artificial anchor text
+#   - Conservative product-to-product linking
 #
 # Current mode:
 #
@@ -31,22 +33,52 @@ module EmbeddedNerd
 
   module InternalLinker
 
+    # ========================================================================
+    # DEFAULT SETTINGS
+    # ========================================================================
+
     DEFAULT_SETTINGS = {
+
       "enabled" => true,
+
       "analysis_only" => true,
 
       "max_total_links_per_page" => 5,
-      "max_product_links_per_page" => 2,
+
+      "max_product_links_per_page" => 3,
+
       "max_article_links_per_page" => 2,
 
       "minimum_relevance" => 60,
+
       "analysis_results_per_page" => 5
+
     }.freeze
 
 
-    # ------------------------------------------------------------------------
-    # Editorial layouts
-    # ------------------------------------------------------------------------
+    # ========================================================================
+    # ELEMENTS THAT MUST NEVER BE MODIFIED
+    # ========================================================================
+
+    PROTECTED_TAGS = %w[
+      a
+      h1
+      h2
+      h3
+      h4
+      h5
+      h6
+      code
+      pre
+      script
+      style
+      textarea
+    ].freeze
+
+
+    # ========================================================================
+    # EDITORIAL LAYOUTS
+    # ========================================================================
 
     EDITORIAL_LAYOUTS = %w[
       article
@@ -55,9 +87,9 @@ module EmbeddedNerd
     ].freeze
 
 
-    # =========================================================================
+    # ========================================================================
     # MAIN PROCESSOR
-    # =========================================================================
+    # ========================================================================
 
     def self.process(document)
 
@@ -114,30 +146,47 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Automatic insertion intentionally disabled while analysis_only=true.
+      # Do not modify content during analysis.
       # ----------------------------------------------------------------------
 
-      return if settings["analysis_only"]
+      return if
+        settings["analysis_only"]
 
 
-      # Automatic insertion will be enabled in the production version
-      # after the scoring has been validated.
+      # ----------------------------------------------------------------------
+      # V3 insertion happens here once analysis is approved.
+      # ----------------------------------------------------------------------
+
+      new_content =
+        insert_links(
+          current,
+          relations,
+          settings
+        )
+
+
+      if new_content != current[:content]
+
+        document.content =
+          new_content
+
+      end
 
     end
 
 
-    # =========================================================================
-    # BUILD GRAPH
-    # =========================================================================
+    # ========================================================================
+    # BUILD CONTENT GRAPH
+    # ========================================================================
 
     def self.build_graph(site)
 
       if site.instance_variable_defined?(
-        :@embedded_nerd_internal_graph
+        :@embedded_nerd_internal_graph_v3
       )
 
         return site.instance_variable_get(
-          :@embedded_nerd_internal_graph
+          :@embedded_nerd_internal_graph_v3
         )
 
       end
@@ -152,9 +201,9 @@ module EmbeddedNerd
       by_product_id = {}
 
 
-      # =======================================================================
-      # PRODUCTS FROM NORMAL PAGES
-      # =======================================================================
+      # ======================================================================
+      # PRODUCTS IN site.pages
+      # ======================================================================
 
       site.pages.each do |page|
 
@@ -184,9 +233,9 @@ module EmbeddedNerd
       end
 
 
-      # =======================================================================
-      # PRODUCTS FROM COLLECTIONS
-      # =======================================================================
+      # ======================================================================
+      # PRODUCTS IN COLLECTIONS
+      # ======================================================================
 
       site.collections.each do |_label, collection|
 
@@ -220,9 +269,9 @@ module EmbeddedNerd
       end
 
 
-      # =======================================================================
+      # ======================================================================
       # POSTS
-      # =======================================================================
+      # ======================================================================
 
       site.posts.docs.each do |post|
 
@@ -239,9 +288,9 @@ module EmbeddedNerd
       end
 
 
-      # =======================================================================
+      # ======================================================================
       # EXPLICIT EDITORIAL PAGES
-      # =======================================================================
+      # ======================================================================
 
       site.pages.each do |page|
 
@@ -270,9 +319,9 @@ module EmbeddedNerd
       end
 
 
-      # =======================================================================
-      # EDITORIAL COLLECTION DOCUMENTS
-      # =======================================================================
+      # ======================================================================
+      # EDITORIAL COLLECTIONS
+      # ======================================================================
 
       site.collections.each do |label, collection|
 
@@ -309,10 +358,6 @@ module EmbeddedNerd
       end
 
 
-      # =======================================================================
-      # BUILD PRODUCT/ARTICLE INDEX
-      # =======================================================================
-
       graph = {
 
         products: products,
@@ -332,7 +377,7 @@ module EmbeddedNerd
 
 
       site.instance_variable_set(
-        :@embedded_nerd_internal_graph,
+        :@embedded_nerd_internal_graph_v3,
         graph
       )
 
@@ -350,9 +395,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # PRODUCT / ARTICLE INDEX
-    # =========================================================================
+    # ========================================================================
 
     def self.build_product_article_index(graph)
 
@@ -363,10 +408,6 @@ module EmbeddedNerd
 
         end
 
-
-      # -----------------------------------------------------------------------
-      # Explicit required hardware relationships.
-      # -----------------------------------------------------------------------
 
       graph[:articles].each do |article|
 
@@ -380,10 +421,6 @@ module EmbeddedNerd
 
       end
 
-
-      # -----------------------------------------------------------------------
-      # Products mentioned directly inside article content.
-      # -----------------------------------------------------------------------
 
       graph[:articles].each do |article|
 
@@ -413,92 +450,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
-    # PRODUCT MENTION DETECTION
-    # =========================================================================
-
-    def self.product_mentioned_in_article?(
-      product,
-      article
-    )
-
-      product[:keywords].any? do |keyword|
-
-        value =
-          normalize_text(keyword)
-
-
-        next false if
-          value.empty?
-
-
-        article[:text].include?(value)
-
-      end
-
-    end
-
-
-    # =========================================================================
-    # ADD PRODUCT
-    # =========================================================================
-
-    def self.add_product(
-      product,
-      products,
-      by_url,
-      by_product_id
-    )
-
-      return if
-        by_product_id.key?(product[:id])
-
-
-      products << product
-
-
-      by_url[
-        normalize_url(product[:url])
-      ] = product
-
-
-      by_product_id[
-        product[:id]
-      ] = product
-
-    end
-
-
-    # =========================================================================
-    # ADD ARTICLE
-    # =========================================================================
-
-    def self.add_article(
-      article,
-      articles,
-      by_url
-    )
-
-      url =
-        normalize_url(article[:url])
-
-
-      return if
-        by_url.key?(url)
-
-
-      articles << article
-
-
-      by_url[url] =
-        article
-
-    end
-
-
-    # =========================================================================
+    # ========================================================================
     # BUILD PRODUCT
-    # =========================================================================
+    # ========================================================================
 
     def self.build_product(document)
 
@@ -542,19 +496,13 @@ module EmbeddedNerd
           tokenize(text),
 
         tags:
-          normalize_array(
-            data["tags"]
-          ),
+          normalize_array(data["tags"]),
 
         categories:
-          normalize_array(
-            data["categories"]
-          ),
+          normalize_array(data["categories"]),
 
         related:
-          normalize_ids(
-            data["related"]
-          ),
+          normalize_ids(data["related"]),
 
         keywords:
           product_keywords(data),
@@ -567,9 +515,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # BUILD ARTICLE
-    # =========================================================================
+    # ========================================================================
 
     def self.build_article(document)
 
@@ -616,14 +564,10 @@ module EmbeddedNerd
           tokenize(text),
 
         tags:
-          normalize_array(
-            data["tags"]
-          ),
+          normalize_array(data["tags"]),
 
         categories:
-          normalize_array(
-            data["categories"]
-          ),
+          normalize_array(data["categories"]),
 
         required_hardware:
           extract_hardware_ids(
@@ -643,9 +587,66 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
+    # ADD PRODUCT
+    # ========================================================================
+
+    def self.add_product(
+      product,
+      products,
+      by_url,
+      by_product_id
+    )
+
+      return if
+        by_product_id.key?(product[:id])
+
+
+      products << product
+
+
+      by_url[
+        normalize_url(product[:url])
+      ] = product
+
+
+      by_product_id[
+        product[:id]
+      ] = product
+
+    end
+
+
+    # ========================================================================
+    # ADD ARTICLE
+    # ========================================================================
+
+    def self.add_article(
+      article,
+      articles,
+      by_url
+    )
+
+      url =
+        normalize_url(article[:url])
+
+
+      return if
+        by_url.key?(url)
+
+
+      articles << article
+
+
+      by_url[url] =
+        article
+
+    end
+
+
+    # ========================================================================
     # FIND RELATIONS
-    # =========================================================================
+    # ========================================================================
 
     def self.find_relations(
       current,
@@ -657,14 +658,14 @@ module EmbeddedNerd
       relations = []
 
 
-      # =======================================================================
+      # ======================================================================
       # ARTICLE
-      # =======================================================================
+      # ======================================================================
 
       if current[:type] == :article
 
         # ---------------------------------------------------------------------
-        # Article -> Product
+        # ARTICLE -> PRODUCT
         # ---------------------------------------------------------------------
 
         graph[:products].each do |product|
@@ -677,16 +678,19 @@ module EmbeddedNerd
 
 
           next if
-            score < settings[
-              "minimum_relevance"
-            ].to_i
+            score <
+            settings["minimum_relevance"].to_i
 
 
-          next if
-            existing_link?(
+          opportunity =
+            find_link_opportunity(
               current,
-              product[:url]
+              product
             )
+
+
+          next unless
+            opportunity
 
 
           relations << {
@@ -697,7 +701,9 @@ module EmbeddedNerd
 
             target: product,
 
-            score: score
+            score: score,
+
+            opportunity: opportunity
 
           }
 
@@ -705,7 +711,7 @@ module EmbeddedNerd
 
 
         # ---------------------------------------------------------------------
-        # Article -> Article
+        # ARTICLE -> ARTICLE
         # ---------------------------------------------------------------------
 
         graph[:articles].each do |article|
@@ -722,16 +728,19 @@ module EmbeddedNerd
 
 
           next if
-            score < settings[
-              "minimum_relevance"
-            ].to_i
+            score <
+            settings["minimum_relevance"].to_i
 
 
-          next if
-            existing_link?(
+          opportunity =
+            find_link_opportunity(
               current,
-              article[:url]
+              article
             )
+
+
+          next unless
+            opportunity
 
 
           relations << {
@@ -742,7 +751,9 @@ module EmbeddedNerd
 
             target: article,
 
-            score: score
+            score: score,
+
+            opportunity: opportunity
 
           }
 
@@ -751,14 +762,14 @@ module EmbeddedNerd
       end
 
 
-      # =======================================================================
+      # ======================================================================
       # PRODUCT
-      # =======================================================================
+      # ======================================================================
 
       if current[:type] == :product
 
         # ---------------------------------------------------------------------
-        # Product -> Article
+        # PRODUCT -> ARTICLE
         # ---------------------------------------------------------------------
 
         graph[:articles].each do |article|
@@ -772,16 +783,19 @@ module EmbeddedNerd
 
 
           next if
-            score < settings[
-              "minimum_relevance"
-            ].to_i
+            score <
+            settings["minimum_relevance"].to_i
 
 
-          next if
-            existing_link?(
+          opportunity =
+            find_link_opportunity(
               current,
-              article[:url]
+              article
             )
+
+
+          next unless
+            opportunity
 
 
           relations << {
@@ -792,7 +806,9 @@ module EmbeddedNerd
 
             target: article,
 
-            score: score
+            score: score,
+
+            opportunity: opportunity
 
           }
 
@@ -800,7 +816,7 @@ module EmbeddedNerd
 
 
         # ---------------------------------------------------------------------
-        # Product -> Product
+        # PRODUCT -> PRODUCT
         # ---------------------------------------------------------------------
 
         graph[:products].each do |product|
@@ -818,16 +834,19 @@ module EmbeddedNerd
 
 
           next if
-            score < settings[
-              "minimum_relevance"
-            ].to_i
+            score <
+            settings["minimum_relevance"].to_i
 
 
-          next if
-            existing_link?(
+          opportunity =
+            find_link_opportunity(
               current,
-              product[:url]
+              product
             )
+
+
+          next unless
+            opportunity
 
 
           relations << {
@@ -838,7 +857,9 @@ module EmbeddedNerd
 
             target: product,
 
-            score: score
+            score: score,
+
+            opportunity: opportunity
 
           }
 
@@ -859,19 +880,16 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # ARTICLE -> PRODUCT
-    # =========================================================================
+    # ========================================================================
 
     def self.article_product_score(
       article,
       product
     )
 
-      # -----------------------------------------------------------------------
-      # Required hardware = definitive relationship.
-      # -----------------------------------------------------------------------
-
+      # Required hardware is definitive.
       if article[:required_hardware].include?(
         product[:id]
       )
@@ -884,74 +902,49 @@ module EmbeddedNerd
       score = 0
 
 
-      # -----------------------------------------------------------------------
       # Exact product keyword.
-      # -----------------------------------------------------------------------
+      if product_keyword_match?(
+        article,
+        product
+      )
 
-      exact_match =
-        product[:keywords].any? do |keyword|
-
-          value =
-            normalize_text(keyword)
-
-
-          next false if
-            value.empty?
-
-
-          article[:text].include?(value)
-
-        end
-
-
-      if exact_match
-
-        score += 60
+        score += 65
 
       end
 
 
-      # -----------------------------------------------------------------------
       # Shared tags.
-      # -----------------------------------------------------------------------
-
       score +=
         [
           shared_values_score(
             article[:tags],
             product[:tags],
-            5
+            3
           ),
-          15
+          10
         ].min
 
 
-      # -----------------------------------------------------------------------
       # Shared categories.
-      # -----------------------------------------------------------------------
-
       score +=
         [
           shared_values_score(
             article[:categories],
             product[:categories],
-            4
+            3
           ),
-          8
+          6
         ].min
 
 
-      # -----------------------------------------------------------------------
       # Text similarity.
-      # -----------------------------------------------------------------------
-
       score +=
         [
           token_similarity(
             article[:tokens],
             product[:tokens]
           ),
-          10
+          8
         ].min
 
 
@@ -960,9 +953,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # ARTICLE -> ARTICLE
-    # =========================================================================
+    # ========================================================================
 
     def self.article_article_score(
       article_a,
@@ -982,7 +975,7 @@ module EmbeddedNerd
       score +=
         [
           shared_hardware.length * 20,
-          50
+          40
         ].min
 
 
@@ -991,9 +984,9 @@ module EmbeddedNerd
           shared_values_score(
             article_a[:tags],
             article_b[:tags],
-            5
+            4
           ),
-          15
+          12
         ].min
 
 
@@ -1002,9 +995,9 @@ module EmbeddedNerd
           shared_values_score(
             article_a[:categories],
             article_b[:categories],
-            5
+            4
           ),
-          10
+          8
         ].min
 
 
@@ -1023,19 +1016,15 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # PRODUCT -> ARTICLE
-    # =========================================================================
+    # ========================================================================
 
     def self.product_article_score(
       product,
       article,
       graph
     )
-
-      # -----------------------------------------------------------------------
-      # Required hardware.
-      # -----------------------------------------------------------------------
 
       if article[:required_hardware].include?(
         product[:id]
@@ -1049,23 +1038,15 @@ module EmbeddedNerd
       score = 0
 
 
-      # -----------------------------------------------------------------------
-      # Direct product mention.
-      # -----------------------------------------------------------------------
-
       if product_mentioned_in_article?(
         product,
         article
       )
 
-        score += 60
+        score += 65
 
       end
 
-
-      # -----------------------------------------------------------------------
-      # Existing graph relationship.
-      # -----------------------------------------------------------------------
 
       if graph[:product_articles][
         product[:id]
@@ -1073,7 +1054,7 @@ module EmbeddedNerd
         article[:id]
       )
 
-        score += 20
+        score += 15
 
       end
 
@@ -1083,9 +1064,9 @@ module EmbeddedNerd
           shared_values_score(
             product[:tags],
             article[:tags],
-            5
+            3
           ),
-          10
+          8
         ].min
 
 
@@ -1094,9 +1075,9 @@ module EmbeddedNerd
           shared_values_score(
             product[:categories],
             article[:categories],
-            4
+            3
           ),
-          8
+          6
         ].min
 
 
@@ -1105,9 +1086,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # PRODUCT -> PRODUCT
-    # =========================================================================
+    # ========================================================================
 
     def self.product_product_score(
       product_a,
@@ -1118,15 +1099,15 @@ module EmbeddedNerd
       score = 0
 
 
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
       # Explicit related relationship.
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
 
       if product_a[:related].include?(
         product_b[:id]
       )
 
-        score += 50
+        score += 45
 
       end
 
@@ -1135,16 +1116,14 @@ module EmbeddedNerd
         product_a[:id]
       )
 
-        score += 50
+        score += 45
 
       end
 
 
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
       # Shared articles.
-      #
-      # Products used together in the same article are strongly related.
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
 
       articles_a =
         graph[:product_articles][
@@ -1172,39 +1151,39 @@ module EmbeddedNerd
         ].min
 
 
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
       # Shared tags.
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
 
       score +=
         [
           shared_values_score(
             product_a[:tags],
             product_b[:tags],
-            3
+            2
           ),
-          6
+          4
         ].min
 
 
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
       # Shared categories.
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
 
       score +=
         [
           shared_values_score(
             product_a[:categories],
             product_b[:categories],
-            3
+            2
           ),
-          6
+          4
         ].min
 
 
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
       # Text similarity.
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
 
       score +=
         [
@@ -1212,7 +1191,7 @@ module EmbeddedNerd
             product_a[:tokens],
             product_b[:tokens]
           ),
-          8
+          5
         ].min
 
 
@@ -1221,21 +1200,507 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
+    # PRODUCT KEYWORD MATCH
+    # ========================================================================
+
+    def self.product_keyword_match?(
+      article,
+      product
+    )
+
+      product[:keywords].any? do |keyword|
+
+        value =
+          normalize_text(keyword)
+
+
+        next false if
+          value.empty?
+
+
+        article[:text].include?(value)
+
+      end
+
+    end
+
+
+    # ========================================================================
+    # PRODUCT MENTIONED IN ARTICLE
+    # ========================================================================
+
+    def self.product_mentioned_in_article?(
+      product,
+      article
+    )
+
+      product_keyword_match?(
+        article,
+        product
+      )
+
+    end
+
+
+    # ========================================================================
+    # FIND REAL LINK OPPORTUNITY
+    # ========================================================================
+    #
+    # This is one of the most important V3 changes.
+    #
+    # The engine will ONLY recommend a link if the target's natural keyword
+    # actually exists in the source content.
+    #
+    # It never invents anchor text.
+    #
+    # ========================================================================
+
+    def self.find_link_opportunity(
+      source,
+      target
+    )
+
+      return nil if
+        existing_link?(
+          source,
+          target[:url]
+        )
+
+
+      keywords = []
+
+
+      # ----------------------------------------------------------------------
+      # Product target
+      # ----------------------------------------------------------------------
+
+      if target[:type] == :product
+
+        keywords =
+          target[:keywords].dup
+
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Article target
+      # ----------------------------------------------------------------------
+
+      if target[:type] == :article
+
+        keywords << target[:title]
+
+
+        # Also use the article's explicit related title when available.
+        keywords.concat(
+          target[:tags]
+        )
+
+      end
+
+
+      # Longest and most specific phrases first.
+      keywords =
+        keywords
+          .map do |keyword|
+
+            keyword.to_s.strip
+
+          end
+          .reject do |keyword|
+
+            keyword.empty?
+
+          end
+          .uniq
+          .sort_by do |keyword|
+
+            -keyword.length
+
+          end
+
+
+      keywords.each do |keyword|
+
+        opportunity =
+          find_keyword_occurrence(
+            source[:content],
+            keyword
+          )
+
+
+        return opportunity if
+          opportunity
+
+      end
+
+
+      nil
+
+    end
+
+
+    # ========================================================================
+    # FIND KEYWORD OCCURRENCE
+    # ========================================================================
+
+    def self.find_keyword_occurrence(
+      content,
+      keyword
+    )
+
+      return nil if
+        content.to_s.empty?
+
+
+      return nil if
+        keyword.to_s.empty?
+
+
+      # ----------------------------------------------------------------------
+      # Do not search inside protected HTML blocks.
+      # ----------------------------------------------------------------------
+
+      protected_pattern =
+        /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
+
+
+      masked_content =
+        content.gsub(
+          protected_pattern
+        ) do |match|
+
+          " " * match.length
+
+        end
+
+
+      # ----------------------------------------------------------------------
+      # Escape keyword for safe regex use.
+      # ----------------------------------------------------------------------
+
+      escaped =
+        Regexp.escape(keyword)
+
+
+      # ----------------------------------------------------------------------
+      # Markdown link text must not be modified.
+      #
+      # We therefore reject an occurrence immediately preceded by '['.
+      # ----------------------------------------------------------------------
+
+      pattern =
+        /(?<![\w\-\[])#{escaped}(?![\w\-])/i
+
+
+      match =
+        pattern.match(
+          masked_content
+        )
+
+
+      return nil unless
+        match
+
+
+      {
+        keyword: match[0],
+
+        index: match.begin(0),
+
+        length: match[0].length
+      }
+
+    end
+
+
+    # ========================================================================
+    # INSERT LINKS
+    # ========================================================================
+    #
+    # Used only when:
+    #
+    #   analysis_only: false
+    #
+    # ========================================================================
+
+    def self.insert_links(
+      current,
+      relations,
+      settings
+    )
+
+      content =
+        current[:content].to_s
+
+
+      return content if
+        content.empty?
+
+
+      total =
+        0
+
+
+      product_links =
+        0
+
+
+      article_links =
+        0
+
+
+      used_targets = []
+
+
+      # ----------------------------------------------------------------------
+      # Work from highest relevance to lowest.
+      # ----------------------------------------------------------------------
+
+      relations.each do |relation|
+
+        break if
+          total >= settings[
+            "max_total_links_per_page"
+          ].to_i
+
+
+        target_url =
+          normalize_url(
+            relation[:target][:url]
+          )
+
+
+        next if
+          used_targets.include?(target_url)
+
+
+        if relation[:type].include?(
+          "product"
+        )
+
+          break if
+            product_links >= settings[
+              "max_product_links_per_page"
+            ].to_i
+
+        else
+
+          break if
+            article_links >= settings[
+              "max_article_links_per_page"
+            ].to_i
+
+        end
+
+
+        # ---------------------------------------------------------------------
+        # Recalculate opportunity because content changes after each link.
+        # ---------------------------------------------------------------------
+
+        opportunity =
+          find_link_opportunity(
+            {
+              content: content
+            }.merge(current),
+            relation[:target]
+          )
+
+
+        next unless
+          opportunity
+
+
+        keyword =
+          opportunity[:keyword]
+
+
+        escaped_keyword =
+          Regexp.escape(keyword)
+
+
+        href =
+          target_url.gsub(
+            '"',
+            "&quot;"
+          )
+
+
+        # ---------------------------------------------------------------------
+        # Protect against matching an already generated link.
+        # ---------------------------------------------------------------------
+
+        pattern =
+          /(?<![\w\-\[>])#{escaped_keyword}(?![\w\-])/i
+
+
+        replacement =
+          %(<a href="#{href}">#{keyword}</a>)
+
+
+        new_content =
+          replace_first_safe_occurrence(
+            content,
+            pattern,
+            replacement
+          )
+
+
+        next if
+          new_content == content
+
+
+        content =
+          new_content
+
+
+        used_targets << target_url
+
+
+        total += 1
+
+
+        if relation[:type].include?(
+          "product"
+        )
+
+          product_links += 1
+
+        else
+
+          article_links += 1
+
+        end
+
+      end
+
+
+      content
+
+    end
+
+
+    # ========================================================================
+    # SAFE FIRST OCCURRENCE REPLACEMENT
+    # ========================================================================
+
+    def self.replace_first_safe_occurrence(
+      content,
+      pattern,
+      replacement
+    )
+
+      parts = []
+
+      placeholder_index = 0
+
+
+      # ----------------------------------------------------------------------
+      # Protect HTML elements.
+      # ----------------------------------------------------------------------
+
+      protected_pattern =
+        /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
+
+
+      working =
+        content.gsub(
+          protected_pattern
+        ) do |match|
+
+          placeholder =
+            "__EN_PROTECTED_#{placeholder_index}__"
+
+
+          placeholder_index += 1
+
+
+          parts << match
+
+
+          placeholder
+
+        end
+
+
+      # ----------------------------------------------------------------------
+      # Protect Markdown links.
+      # ----------------------------------------------------------------------
+
+      markdown_parts = []
+
+
+      working =
+        working.gsub(
+          /!?\[[^\]]+\]\([^)]+\)/
+        ) do |match|
+
+          placeholder =
+            "__EN_MARKDOWN_#{markdown_parts.length}__"
+
+
+          markdown_parts << match
+
+
+          placeholder
+
+        end
+
+
+      # ----------------------------------------------------------------------
+      # Replace only one occurrence.
+      # ----------------------------------------------------------------------
+
+      replaced =
+        working.sub(
+          pattern,
+          replacement
+        )
+
+
+      return content if
+        replaced == working
+
+
+      # ----------------------------------------------------------------------
+      # Restore Markdown links.
+      # ----------------------------------------------------------------------
+
+      markdown_parts.each_with_index do |original, index|
+
+        replaced =
+          replaced.gsub(
+            "__EN_MARKDOWN_#{index}__",
+            original
+          )
+
+      end
+
+
+      # ----------------------------------------------------------------------
+      # Restore protected HTML.
+      # ----------------------------------------------------------------------
+
+      parts.each_with_index do |original, index|
+
+        replaced =
+          replaced.gsub(
+            "__EN_PROTECTED_#{index}__",
+            original
+          )
+
+      end
+
+
+      replaced
+
+    end
+
+
+    # ========================================================================
     # EXISTING LINK DETECTION
-    # =========================================================================
-    #
-    # IMPORTANT:
-    #
-    # This version deliberately avoids the previous broken regex:
-    #
-    #   /(?:href...|]\(.../
-    #
-    # The closing square bracket is now correctly escaped as:
-    #
-    #   \]\(
-    #
-    # ==========================================================================
+    # ========================================================================
 
     def self.existing_link?(
       source,
@@ -1250,77 +1715,76 @@ module EmbeddedNerd
         content.empty?
 
 
-      normalized_target =
-        normalize_url(target_url)
-
-
-      escaped_target =
-        Regexp.escape(
-          normalized_target
+      normalized =
+        normalize_url(
+          target_url
         )
 
 
-      # -----------------------------------------------------------------------
-      # HTML
-      #
-      # href="/products/example/"
-      # href='/products/example/'
-      # -----------------------------------------------------------------------
+      escaped =
+        Regexp.escape(
+          normalized
+        )
 
+
+      # HTML link.
       html_pattern =
-        /href\s*=\s*["']#{escaped_target}["']/i
+        /href\s*=\s*["']#{escaped}["']/i
 
 
       return true if
-        content.match?(html_pattern)
+        content.match?(
+          html_pattern
+        )
 
 
-      # -----------------------------------------------------------------------
-      # Markdown
-      #
-      # [Product](/products/example/)
-      # -----------------------------------------------------------------------
-
+      # Markdown link.
       markdown_pattern =
-        /\]\(\s*#{escaped_target}(?:[#?][^)]*)?\s*\)/i
+        /\]\(\s*#{escaped}(?:[#?][^)]*)?\s*\)/i
 
 
       return true if
-        content.match?(markdown_pattern)
+        content.match?(
+          markdown_pattern
+        )
 
 
-      # -----------------------------------------------------------------------
-      # Test URL without trailing slash.
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
+      # Without trailing slash.
+      # ----------------------------------------------------------------------
 
-      without_trailing_slash =
-        normalized_target.chomp("/")
+      no_slash =
+        normalized.chomp("/")
 
 
       return false if
-        without_trailing_slash.empty?
+        no_slash.empty?
 
 
-      escaped_without_slash =
+      escaped_no_slash =
         Regexp.escape(
-          without_trailing_slash
+          no_slash
         )
 
 
-      html_pattern_no_slash =
-        /href\s*=\s*["']#{escaped_without_slash}["']/i
+      html_no_slash =
+        /href\s*=\s*["']#{escaped_no_slash}["']/i
 
 
       return true if
-        content.match?(html_pattern_no_slash)
+        content.match?(
+          html_no_slash
+        )
 
 
-      markdown_pattern_no_slash =
-        /\]\(\s*#{escaped_without_slash}(?:[#?][^)]*)?\s*\)/i
+      markdown_no_slash =
+        /\]\(\s*#{escaped_no_slash}(?:[#?][^)]*)?\s*\)/i
 
 
       return true if
-        content.match?(markdown_pattern_no_slash)
+        content.match?(
+          markdown_no_slash
+        )
 
 
       false
@@ -1328,37 +1792,34 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # PRODUCT KEYWORDS
-    # =========================================================================
+    # ========================================================================
 
     def self.product_keywords(data)
 
       keywords = []
 
 
+      # product_id
       product_id =
         data["product_id"].to_s.strip
 
 
-      unless product_id.empty?
-
-        keywords << product_id
-
-      end
+      keywords << product_id unless
+        product_id.empty?
 
 
+      # title
       title =
         data["title"].to_s.strip
 
 
-      unless title.empty?
-
-        keywords << title
-
-      end
+      keywords << title unless
+        title.empty?
 
 
+      # tags
       Array(
         data["tags"]
       ).each do |tag|
@@ -1367,15 +1828,13 @@ module EmbeddedNerd
           tag.to_s.strip
 
 
-        unless value.empty?
-
-          keywords << value
-
-        end
+        keywords << value unless
+          value.empty?
 
       end
 
 
+      # Optional explicit keywords.
       Array(
         data["internal_link_keywords"]
       ).each do |keyword|
@@ -1384,11 +1843,8 @@ module EmbeddedNerd
           keyword.to_s.strip
 
 
-        unless value.empty?
-
-          keywords << value
-
-        end
+        keywords << value unless
+          value.empty?
 
       end
 
@@ -1398,9 +1854,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # REQUIRED HARDWARE
-    # =========================================================================
+    # ========================================================================
 
     def self.extract_hardware_ids(value)
 
@@ -1429,9 +1885,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # EDITORIAL COLLECTION
-    # =========================================================================
+    # ========================================================================
 
     def self.editorial_collection_document?(document)
 
@@ -1450,9 +1906,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # SHARED VALUES
-    # =========================================================================
+    # ========================================================================
 
     def self.shared_values_score(
       a,
@@ -1467,9 +1923,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # TOKEN SIMILARITY
-    # =========================================================================
+    # ========================================================================
 
     def self.token_similarity(
       tokens_a,
@@ -1500,13 +1956,14 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # TOKENIZER
-    # =========================================================================
+    # ========================================================================
 
     def self.tokenize(text)
 
       stopwords = %w[
+
         the
         and
         or
@@ -1534,6 +1991,7 @@ module EmbeddedNerd
         can
         will
         be
+
         tutorial
         guide
         project
@@ -1542,12 +2000,14 @@ module EmbeddedNerd
         code
         example
         learn
+
         common
         popular
         embedded
         electronics
         device
         devices
+
       ]
 
 
@@ -1565,9 +2025,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # NORMALIZE TEXT
-    # =========================================================================
+    # ========================================================================
 
     def self.normalize_text(value)
 
@@ -1586,9 +2046,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # NORMALIZE ARRAY
-    # =========================================================================
+    # ========================================================================
 
     def self.normalize_array(value)
 
@@ -1608,9 +2068,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # NORMALIZE IDS
-    # =========================================================================
+    # ========================================================================
 
     def self.normalize_ids(value)
 
@@ -1637,9 +2097,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # NORMALIZE URL
-    # =========================================================================
+    # ========================================================================
 
     def self.normalize_url(url)
 
@@ -1656,7 +2116,8 @@ module EmbeddedNerd
 
 
       value =
-        "/" if value.empty?
+        "/" if
+          value.empty?
 
 
       value =
@@ -1677,9 +2138,9 @@ module EmbeddedNerd
     end
 
 
-    # =========================================================================
+    # ========================================================================
     # ANALYSIS LOG
-    # =========================================================================
+    # ========================================================================
 
     def self.log_analysis(
       current,
@@ -1706,7 +2167,7 @@ module EmbeddedNerd
 
       Jekyll.logger.info(
         "Embedded Nerd:",
-        "Internal Link Analysis"
+        "Internal Link Analysis V3"
       )
 
 
@@ -1726,18 +2187,23 @@ module EmbeddedNerd
 
         Jekyll.logger.info(
           "Embedded Nerd:",
-          "No relevant relationships found."
+          "No linkable relationships found."
         )
 
       else
 
         relations.first(limit).each do |relation|
 
+          anchor =
+            relation[:opportunity][:keyword]
+
+
           Jekyll.logger.info(
             "Embedded Nerd:",
             "#{relation[:type]} | " \
             "#{relation[:target][:title]} | " \
             "score=#{relation[:score]} | " \
+            "anchor=\"#{anchor}\" | " \
             "#{relation[:target][:url]}"
           )
 
@@ -1759,19 +2225,23 @@ end
 
 
 # ============================================================================
-# Jekyll hooks
+# Jekyll Hooks
 # ============================================================================
 
 Jekyll::Hooks.register :posts, :pre_render do |post|
 
-  EmbeddedNerd::InternalLinker.process(post)
+  EmbeddedNerd::InternalLinker.process(
+    post
+  )
 
 end
 
 
 Jekyll::Hooks.register :pages, :pre_render do |page|
 
-  EmbeddedNerd::InternalLinker.process(page)
+  EmbeddedNerd::InternalLinker.process(
+    page
+  )
 
 end
 
@@ -1784,21 +2254,23 @@ Jekyll::Hooks.register :documents, :pre_render do |document|
 
   if data["layout"].to_s == "product"
 
-    EmbeddedNerd::InternalLinker.process(document)
+    EmbeddedNerd::InternalLinker.process(
+      document
+    )
 
   elsif data["internal_links"] == true
 
-    EmbeddedNerd::InternalLinker.process(document)
+    EmbeddedNerd::InternalLinker.process(
+      document
+    )
 
-  elsif %w[
-    article
-    post
-    tutorial
-  ].include?(
+  elsif EDITORIAL_LAYOUTS.include?(
     data["layout"].to_s
   )
 
-    EmbeddedNerd::InternalLinker.process(document)
+    EmbeddedNerd::InternalLinker.process(
+      document
+    )
 
   end
 
