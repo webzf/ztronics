@@ -1,48 +1,67 @@
 # ============================================================================
-# Embedded Nerd - Internal Link Engine
+# Embedded Nerd - Internal Link Engine V2
 # ============================================================================
+#
 # Jekyll 3.10 compatible
 #
-# Features:
-#   - Automatic internal links in editorial content
-#   - Posts are automatically included
-#   - _pages can opt in through layout or internal_links: true
-#   - Product/category/utility pages are excluded
-#   - H1-H6 are never modified
-#   - Existing links are never modified
-#   - Markdown links are protected
-#   - Code blocks are protected
-#   - Inline code is protected
-#   - HTML code/pre/script/style are protected
-#   - Self-links are prevented
-#   - Maximum links per destination
+# V2 capabilities:
+#
+#   Article -> Product
+#   Article -> Article
+#   Product -> Article
+#   Product -> Product
+#
+# Uses:
+#
+#   product_id
+#   required_hardware
+#   related
+#   title
+#   excerpt
+#   description
+#   tags
+#   categories
+#   keywords
+#
+# Current mode:
+#
+#   analysis_only: true
+#
+# The engine analyses the content graph but DOES NOT modify pages.
+#
 # ============================================================================
 
 module EmbeddedNerd
+
   module InternalLinker
 
-    # ------------------------------------------------------------------------
-    # HTML elements that must never receive automatic links.
-    # ------------------------------------------------------------------------
 
-    PROTECTED_TAGS = %w[
-      a
-      h1
-      h2
-      h3
-      h4
-      h5
-      h6
-      code
-      pre
-      script
-      style
-    ].freeze
+    # =========================================================================
+    # Configuration
+    # =========================================================================
+
+    DEFAULT_SETTINGS = {
+
+      "enabled" => true,
+
+      "analysis_only" => true,
+
+      "max_total_links_per_page" => 5,
+
+      "max_product_links_per_page" => 2,
+
+      "max_article_links_per_page" => 2,
+
+      "minimum_relevance" => 60,
+
+      "analysis_results_per_page" => 5
+
+    }.freeze
 
 
-    # ------------------------------------------------------------------------
-    # Editorial layouts.
-    # ------------------------------------------------------------------------
+    # =========================================================================
+    # Editorial layouts
+    # =========================================================================
 
     EDITORIAL_LAYOUTS = %w[
       single
@@ -52,541 +71,863 @@ module EmbeddedNerd
     ].freeze
 
 
-    # ------------------------------------------------------------------------
-    # Main processor.
-    # ------------------------------------------------------------------------
+    # =========================================================================
+    # Main hook processor
+    # =========================================================================
 
     def self.process(document)
 
-      site = document.site
+      site =
+        document.site
 
-
-      # ----------------------------------------------------------------------
-      # Only process Markdown and HTML content.
-      # ----------------------------------------------------------------------
-
-      ext =
-        if document.respond_to?(:extname)
-          document.extname.to_s.downcase
-        else
-          ""
-        end
-
-      return unless %w[
-        .md
-        .markdown
-        .html
-        .htm
-      ].include?(ext)
-
-
-      # ----------------------------------------------------------------------
-      # Only process editorial content.
-      # ----------------------------------------------------------------------
-
-      return unless editorial_document?(document)
-
-
-      # ----------------------------------------------------------------------
-      # Load configuration.
-      # ----------------------------------------------------------------------
 
       config =
         site.data["internal_links"]
+
 
       return unless config.is_a?(Hash)
 
 
       settings =
-        config["settings"] || {}
+        DEFAULT_SETTINGS.merge(
+          config["settings"] || {}
+        )
 
 
-      return if settings["enabled"] == false
+      return unless settings["enabled"]
 
 
-      links =
-        config["links"] || {}
+      # -----------------------------------------------------------------------
+      # Build the content graph once per Jekyll build.
+      # -----------------------------------------------------------------------
+
+      graph =
+        build_graph(site, config)
 
 
-      return if links.empty?
+      return unless graph
 
 
-      # ----------------------------------------------------------------------
-      # Get document content.
-      # ----------------------------------------------------------------------
+      # -----------------------------------------------------------------------
+      # Identify current document.
+      # -----------------------------------------------------------------------
+
+      current =
+        graph[:by_url][
+          normalize_url(document.url)
+        ]
+
+
+      return unless current
+
+
+      # -----------------------------------------------------------------------
+      # Analyse relations.
+      # -----------------------------------------------------------------------
+
+      relations =
+        find_relations(
+          current,
+          graph,
+          settings,
+          config
+        )
+
+
+      # -----------------------------------------------------------------------
+      # Analysis mode.
+      #
+      # IMPORTANT:
+      # No content is modified here.
+      # -----------------------------------------------------------------------
+
+      if settings["analysis_only"]
+
+        log_analysis(
+          current,
+          relations,
+          settings
+        )
+
+        return
+
+      end
+
+
+      # -----------------------------------------------------------------------
+      # Automatic linking mode will be added after analysis is validated.
+      # -----------------------------------------------------------------------
+
+      log_analysis(
+        current,
+        relations,
+        settings
+      )
+
+    end
+
+
+    # =========================================================================
+    # Build content graph
+    # =========================================================================
+
+    def self.build_graph(site, config)
+
+      # -----------------------------------------------------------------------
+      # Reuse graph if already built.
+      # -----------------------------------------------------------------------
+
+      if site.instance_variable_defined?(:@embedded_nerd_internal_graph)
+
+        return site.instance_variable_get(
+          :@embedded_nerd_internal_graph
+        )
+
+      end
+
+
+      products = []
+
+
+      articles = []
+
+
+      by_url = {}
+
+
+      by_product_id = {}
+
+
+      # =======================================================================
+      # PRODUCTS
+      # =======================================================================
+
+      site.pages.each do |page|
+
+        data =
+          page.data || {}
+
+
+        next unless
+          data["layout"].to_s == "product"
+
+
+        product_id =
+          data["product_id"].to_s.strip
+
+
+        next if product_id.empty?
+
+
+        product =
+          build_product(page)
+
+
+        products << product
+
+
+        by_url[
+          normalize_url(product[:url])
+        ] = product
+
+
+        by_product_id[
+          product[:id]
+        ] = product
+
+      end
+
+
+      # =======================================================================
+      # ARTICLES
+      # =======================================================================
+
+      site.posts.docs.each do |post|
+
+        article =
+          build_article(post)
+
+
+        articles << article
+
+
+        by_url[
+          normalize_url(article[:url])
+        ] = article
+
+      end
+
+
+      # -----------------------------------------------------------------------
+      # Also support editorial pages in _pages.
+      # -----------------------------------------------------------------------
+
+      site.pages.each do |page|
+
+        data =
+          page.data || {}
+
+
+        next if
+          data["layout"].to_s == "product"
+
+
+        next unless
+          editorial_document?(page)
+
+
+        article =
+          build_article(page)
+
+
+        articles << article
+
+
+        by_url[
+          normalize_url(article[:url])
+        ] = article
+
+      end
+
+
+      # -----------------------------------------------------------------------
+      # Graph.
+      # -----------------------------------------------------------------------
+
+      graph = {
+
+        products: products,
+
+        articles: articles,
+
+        by_url: by_url,
+
+        by_product_id: by_product_id
+
+      }
+
+
+      site.instance_variable_set(
+        :@embedded_nerd_internal_graph,
+        graph
+      )
+
+
+      graph
+
+    end
+
+
+    # =========================================================================
+    # Build product object
+    # =========================================================================
+
+    def self.build_product(page)
+
+      data =
+        page.data || {}
+
+
+      id =
+        data["product_id"].to_s.strip
+
+
+      title =
+        data["title"].to_s
+
+
+      text =
+        [
+          title,
+          data["excerpt"],
+          data["description"],
+          data["manufacturer"],
+          Array(data["tags"]).join(" "),
+          Array(data["categories"]).join(" ")
+        ].compact.join(" ")
+
+
+      {
+
+        type: :product,
+
+        id: id,
+
+        title: title,
+
+        url: page.url,
+
+        text: normalize_text(text),
+
+        tokens: tokenize(text),
+
+        tags: normalize_array(data["tags"]),
+
+        categories: normalize_array(data["categories"]),
+
+        related: normalize_ids(data["related"]),
+
+        keywords: product_keywords(data)
+
+      }
+
+    end
+
+
+    # =========================================================================
+    # Build article object
+    # =========================================================================
+
+    def self.build_article(document)
+
+      data =
+        document.data || {}
+
+
+      title =
+        data["title"].to_s
+
 
       content =
         document.content.to_s
 
 
-      return if content.empty?
+      text =
+        [
+          title,
+          data["excerpt"],
+          data["description"],
+          Array(data["tags"]).join(" "),
+          Array(data["categories"]).join(" "),
+          content
+        ].compact.join(" ")
 
 
-      # ----------------------------------------------------------------------
-      # Current page URL.
-      # ----------------------------------------------------------------------
-
-      current_url =
-        normalize_url(document.url)
+      required_hardware =
+        extract_hardware_ids(
+          data["required_hardware"]
+        )
 
 
-      # ----------------------------------------------------------------------
-      # Build linking rules.
-      # ----------------------------------------------------------------------
+      {
 
-      rules = []
+        type: :article,
 
+        id: normalize_url(document.url),
 
-      links.each do |link_id, item|
+        title: title,
 
-        next unless item.is_a?(Hash)
+        url: document.url,
 
+        text: normalize_text(text),
 
-        url =
-          item["url"].to_s.strip
+        tokens: tokenize(text),
 
+        tags: normalize_array(data["tags"]),
 
-        next if url.empty?
+        categories: normalize_array(data["categories"]),
 
+        required_hardware: required_hardware,
 
-        max_links =
-          (
-            item["max_links_per_page"] ||
-            settings["default_max_links_per_page"] ||
-            1
-          ).to_i
+        related: normalize_ids(data["related"])
 
+      }
 
-        next if max_links <= 0
+    end
 
 
-        Array(item["keywords"]).each do |keyword|
+    # =========================================================================
+    # Find relations
+    # =========================================================================
 
-          keyword =
-            keyword.to_s.strip
+    def self.find_relations(current, graph, settings, config)
+
+      relations = []
 
 
-          next if keyword.empty?
+      if current[:type] == :article
+
+        # ---------------------------------------------------------------------
+        # Article -> Product
+        # ---------------------------------------------------------------------
+
+        graph[:products].each do |product|
+
+          score =
+            article_product_score(
+              current,
+              product,
+              config
+            )
 
 
-          rules << {
-            id: link_id.to_s,
-            url: url,
-            keyword: keyword,
-            max_links: max_links
-          }
+          if score >= settings["minimum_relevance"].to_i
+
+            relations << {
+
+              type: "article_to_product",
+
+              source: current,
+
+              target: product,
+
+              score: score
+
+            }
+
+          end
+
+        end
+
+
+        # ---------------------------------------------------------------------
+        # Article -> Article
+        # ---------------------------------------------------------------------
+
+        graph[:articles].each do |article|
+
+          next if
+            article[:url] == current[:url]
+
+
+          score =
+            article_article_score(
+              current,
+              article
+            )
+
+
+          if score >= settings["minimum_relevance"].to_i
+
+            relations << {
+
+              type: "article_to_article",
+
+              source: current,
+
+              target: article,
+
+              score: score
+
+            }
+
+          end
+
+        end
+
+      elsif current[:type] == :product
+
+        # ---------------------------------------------------------------------
+        # Product -> Article
+        # ---------------------------------------------------------------------
+
+        graph[:articles].each do |article|
+
+          score =
+            product_article_score(
+              current,
+              article
+            )
+
+
+          if score >= settings["minimum_relevance"].to_i
+
+            relations << {
+
+              type: "product_to_article",
+
+              source: current,
+
+              target: article,
+
+              score: score
+
+            }
+
+          end
+
+        end
+
+
+        # ---------------------------------------------------------------------
+        # Product -> Product
+        # ---------------------------------------------------------------------
+
+        graph[:products].each do |product|
+
+          next if
+            product[:id] == current[:id]
+
+
+          score =
+            product_product_score(
+              current,
+              product
+            )
+
+
+          if score >= settings["minimum_relevance"].to_i
+
+            relations << {
+
+              type: "product_to_product",
+
+              source: current,
+
+              target: product,
+
+              score: score
+
+            }
+
+          end
 
         end
 
       end
 
 
-      return if rules.empty?
+      # -----------------------------------------------------------------------
+      # Highest relevance first.
+      # -----------------------------------------------------------------------
 
+      relations.sort_by! do |relation|
 
-      # ----------------------------------------------------------------------
-      # Longer phrases first.
-      # ----------------------------------------------------------------------
-
-      rules.sort_by! do |rule|
-
-        -rule[:keyword].length
+        -relation[:score]
 
       end
 
 
-      # ----------------------------------------------------------------------
-      # Counters.
-      # ----------------------------------------------------------------------
+      relations
 
-      counts =
-        Hash.new(0)
+    end
 
 
-      total_created =
+    # =========================================================================
+    # Article -> Product score
+    # =========================================================================
+
+    def self.article_product_score(article, product, config)
+
+      score =
         0
 
 
-      # ----------------------------------------------------------------------
-      # Placeholder helper.
-      # ----------------------------------------------------------------------
+      # -----------------------------------------------------------------------
+      # Required hardware = strongest relationship.
+      # -----------------------------------------------------------------------
 
-      placeholder =
-        lambda do |type, index|
+      if article[:required_hardware].include?(product[:id])
 
-          "__EMBEDDED_NERD_#{type}_#{index}__"
-
-        end
-
-
-      # ======================================================================
-      # PROTECTION PHASE
-      # ======================================================================
-
-
-      # ----------------------------------------------------------------------
-      # 1. Protect fenced code blocks.
-      # ----------------------------------------------------------------------
-
-      code_parts =
-        []
-
-
-      content =
-        content.gsub(
-          /```.*?```/m
-        ) do |match|
-
-          index =
-            code_parts.length
-
-
-          code_parts << match
-
-
-          placeholder.call(
-            "CODE",
-            index
-          )
-
-        end
-
-
-      # ----------------------------------------------------------------------
-      # 2. Protect indented Markdown code blocks.
-      # ----------------------------------------------------------------------
-
-      indented_code_parts =
-        []
-
-
-      content =
-        content.gsub(
-          /^(?: {4}|\t).*(?:\n|$)+/m
-        ) do |match|
-
-          index =
-            indented_code_parts.length
-
-
-          indented_code_parts << match
-
-
-          placeholder.call(
-            "INDENTED_CODE",
-            index
-          )
-
-        end
-
-
-      # ----------------------------------------------------------------------
-      # 3. Protect Markdown headings.
-      #
-      # Important:
-      # Jekyll's :pre_render hook runs before Markdown becomes HTML.
-      #
-      # Therefore we must protect:
-      #
-      # # H1
-      # ## H2
-      # ### H3
-      #
-      # here, rather than relying only on <h1>...</h1>.
-      # ----------------------------------------------------------------------
-
-      heading_parts =
-        []
-
-
-      content =
-        content.gsub(
-          /^ {0,3}\#{1,6}[ \t]+[^\n]+$/m
-        ) do |match|
-
-          index =
-            heading_parts.length
-
-
-          heading_parts << match
-
-
-          placeholder.call(
-            "HEADING",
-            index
-          )
-
-        end
-
-
-      # ----------------------------------------------------------------------
-      # 4. Protect HTML elements.
-      # ----------------------------------------------------------------------
-
-      protected_parts =
-        []
-
-
-      content =
-        content.gsub(
-          /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
-        ) do |match|
-
-          index =
-            protected_parts.length
-
-
-          protected_parts << match
-
-
-          placeholder.call(
-            "PROTECTED",
-            index
-          )
-
-        end
-
-
-      # ----------------------------------------------------------------------
-      # 5. Protect Markdown links.
-      # ----------------------------------------------------------------------
-
-      markdown_parts =
-        []
-
-
-      content =
-        content.gsub(
-          /!?\[[^\]]+\]\([^)]+\)/
-        ) do |match|
-
-          index =
-            markdown_parts.length
-
-
-          markdown_parts << match
-
-
-          placeholder.call(
-            "MARKDOWN",
-            index
-          )
-
-        end
-
-
-      # ----------------------------------------------------------------------
-      # 6. Protect inline code.
-      # ----------------------------------------------------------------------
-
-      inline_parts =
-        []
-
-
-      content =
-        content.gsub(
-          /`[^`\n]+`/
-        ) do |match|
-
-          index =
-            inline_parts.length
-
-
-          inline_parts << match
-
-
-          placeholder.call(
-            "INLINE",
-            index
-          )
-
-        end
-
-
-      # ======================================================================
-      # LINKING PHASE
-      # ======================================================================
-
-      rules.each do |rule|
-
-        # --------------------------------------------------------------------
-        # Never create a link to the current page.
-        # --------------------------------------------------------------------
-
-        next if
-          normalize_url(rule[:url]) == current_url
-
-
-        # --------------------------------------------------------------------
-        # Match complete words/phrases.
-        # --------------------------------------------------------------------
-
-        pattern =
-          /(?<![\w-])(#{Regexp.escape(rule[:keyword])})(?![\w-])/i
-
-
-        while counts[rule[:id]] < rule[:max_links]
-
-          matched =
-            false
-
-
-          content =
-            content.sub(pattern) do
-
-              matched =
-                true
-
-
-              counts[rule[:id]] += 1
-
-
-              total_created += 1
-
-
-              text =
-                Regexp.last_match(1)
-
-
-              url =
-                rule[:url].gsub(
-                  '"',
-                  '&quot;'
-                )
-
-
-              %(<a href="#{url}">#{text}</a>)
-
-            end
-
-
-          break unless matched
-
-        end
+        score += 100
 
       end
 
 
-      # ======================================================================
-      # RESTORATION PHASE
-      # ======================================================================
+      # -----------------------------------------------------------------------
+      # Product related relationship.
+      # -----------------------------------------------------------------------
 
+      if product[:related].include?(product[:id])
 
-      # ----------------------------------------------------------------------
-      # Restore inline code.
-      # ----------------------------------------------------------------------
-
-      inline_parts.each_with_index do |original, index|
-
-        content =
-          content.gsub(
-            placeholder.call("INLINE", index),
-            original
-          )
+        score += 0
 
       end
 
 
-      # ----------------------------------------------------------------------
-      # Restore Markdown links.
-      # ----------------------------------------------------------------------
+      # -----------------------------------------------------------------------
+      # Keyword occurrences.
+      # -----------------------------------------------------------------------
 
-      markdown_parts.each_with_index do |original, index|
+      product[:keywords].each do |keyword|
 
-        content =
-          content.gsub(
-            placeholder.call("MARKDOWN", index),
-            original
-          )
-
-      end
-
-
-      # ----------------------------------------------------------------------
-      # Restore protected HTML.
-      # ----------------------------------------------------------------------
-
-      protected_parts.each_with_index do |original, index|
-
-        content =
-          content.gsub(
-            placeholder.call("PROTECTED", index),
-            original
-          )
-
-      end
-
-
-      # ----------------------------------------------------------------------
-      # Restore Markdown headings.
-      # ----------------------------------------------------------------------
-
-      heading_parts.each_with_index do |original, index|
-
-        content =
-          content.gsub(
-            placeholder.call("HEADING", index),
-            original
-          )
-
-      end
-
-
-      # ----------------------------------------------------------------------
-      # Restore indented code.
-      # ----------------------------------------------------------------------
-
-      indented_code_parts.each_with_index do |original, index|
-
-        content =
-          content.gsub(
-            placeholder.call("INDENTED_CODE", index),
-            original
-          )
-
-      end
-
-
-      # ----------------------------------------------------------------------
-      # Restore fenced code.
-      # ----------------------------------------------------------------------
-
-      code_parts.each_with_index do |original, index|
-
-        content =
-          content.gsub(
-            placeholder.call("CODE", index),
-            original
-          )
-
-      end
-
-
-      # ======================================================================
-      # SAVE
-      # ======================================================================
-
-      document.content =
-        content
-
-
-      # ----------------------------------------------------------------------
-      # Logging.
-      # ----------------------------------------------------------------------
-
-      if total_created > 0
-
-        Jekyll.logger.info(
-          "Internal Linker:",
-          "#{document.url} -> #{total_created} link(s) created"
+        if article[:text].include?(
+          normalize_text(keyword)
         )
 
-      else
+          score += 30
 
-        Jekyll.logger.info(
-          "Internal Linker:",
-          "#{document.url} -> 0 automatic links"
+          break
+
+        end
+
+      end
+
+
+      # -----------------------------------------------------------------------
+      # Token overlap.
+      # -----------------------------------------------------------------------
+
+      score +=
+        token_similarity(
+          article[:tokens],
+          product[:tokens]
         )
+
+
+      # -----------------------------------------------------------------------
+      # Shared tags.
+      # -----------------------------------------------------------------------
+
+      score +=
+        shared_values_score(
+          article[:tags],
+          product[:tags],
+          5
+        )
+
+
+      # -----------------------------------------------------------------------
+      # Shared categories.
+      # -----------------------------------------------------------------------
+
+      score +=
+        shared_values_score(
+          article[:categories],
+          product[:categories],
+          8
+        )
+
+
+      [score, 100].min
+
+    end
+
+
+    # =========================================================================
+    # Article -> Article score
+    # =========================================================================
+
+    def self.article_article_score(article_a, article_b)
+
+      score =
+        0
+
+
+      # -----------------------------------------------------------------------
+      # Shared required hardware.
+      # -----------------------------------------------------------------------
+
+      shared_hardware =
+        (
+          article_a[:required_hardware] &
+          article_b[:required_hardware]
+        )
+
+
+      score +=
+        shared_hardware.length * 25
+
+
+      # -----------------------------------------------------------------------
+      # Shared tags.
+      # -----------------------------------------------------------------------
+
+      score +=
+        shared_values_score(
+          article_a[:tags],
+          article_b[:tags],
+          8
+        )
+
+
+      # -----------------------------------------------------------------------
+      # Shared categories.
+      # -----------------------------------------------------------------------
+
+      score +=
+        shared_values_score(
+          article_a[:categories],
+          article_b[:categories],
+          10
+        )
+
+
+      # -----------------------------------------------------------------------
+      # Text/title similarity.
+      # -----------------------------------------------------------------------
+
+      score +=
+        token_similarity(
+          article_a[:tokens],
+          article_b[:tokens]
+        )
+
+
+      [score, 100].min
+
+    end
+
+
+    # =========================================================================
+    # Product -> Article score
+    # =========================================================================
+
+    def self.product_article_score(product, article)
+
+      score =
+        article_product_score(
+          article,
+          product,
+          {}
+        )
+
+
+      score
+
+    end
+
+
+    # =========================================================================
+    # Product -> Product score
+    # =========================================================================
+
+    def self.product_product_score(product_a, product_b)
+
+      score =
+        0
+
+
+      # -----------------------------------------------------------------------
+      # Explicit related relationship.
+      # -----------------------------------------------------------------------
+
+      if product_a[:related].include?(product_b[:id])
+
+        score += 70
+
+      end
+
+
+      if product_b[:related].include?(product_a[:id])
+
+        score += 70
+
+      end
+
+
+      # -----------------------------------------------------------------------
+      # Shared categories.
+      # -----------------------------------------------------------------------
+
+      score +=
+        shared_values_score(
+          product_a[:categories],
+          product_b[:categories],
+          15
+        )
+
+
+      # -----------------------------------------------------------------------
+      # Shared tags.
+      # -----------------------------------------------------------------------
+
+      score +=
+        shared_values_score(
+          product_a[:tags],
+          product_b[:tags],
+          8
+        )
+
+
+      # -----------------------------------------------------------------------
+      # Text similarity.
+      # -----------------------------------------------------------------------
+
+      score +=
+        token_similarity(
+          product_a[:tokens],
+          product_b[:tokens]
+        )
+
+
+      [score, 100].min
+
+    end
+
+
+    # =========================================================================
+    # Product keywords
+    # =========================================================================
+
+    def self.product_keywords(data)
+
+      keywords = []
+
+
+      # product_id
+      id =
+        data["product_id"].to_s.strip
+
+
+      keywords << id unless id.empty?
+
+
+      # Title
+      title =
+        data["title"].to_s.strip
+
+
+      keywords << title unless title.empty?
+
+
+      # Tags
+      Array(data["tags"]).each do |tag|
+
+        value =
+          tag.to_s.strip
+
+
+        keywords << value unless value.empty?
+
+      end
+
+
+      # Manual overrides
+      overrides =
+        data["internal_link_keywords"]
+
+
+      Array(overrides).each do |keyword|
+
+        value =
+          keyword.to_s.strip
+
+
+        keywords << value unless value.empty?
+
+      end
+
+
+      keywords.uniq
+
+    end
+
+
+    # =========================================================================
+    # Extract required hardware IDs
+    # =========================================================================
+
+    def self.extract_hardware_ids(value)
+
+      return [] unless value.is_a?(Array)
+
+
+      value.map do |item|
+
+        if item.is_a?(Hash)
+
+          item["id"].to_s.strip
+
+        else
+
+          item.to_s.strip
+
+        end
+
+      end.reject do |id|
+
+        id.empty?
 
       end
 
@@ -594,14 +935,171 @@ module EmbeddedNerd
 
 
     # =========================================================================
-    # Determine whether a document is editorial.
+    # Shared values score
+    # =========================================================================
+
+    def self.shared_values_score(a, b, points)
+
+      shared =
+        (
+          a & b
+        )
+
+
+      shared.length * points
+
+    end
+
+
+    # =========================================================================
+    # Token similarity
+    # =========================================================================
+
+    def self.token_similarity(tokens_a, tokens_b)
+
+      return 0 if
+        tokens_a.empty? ||
+        tokens_b.empty?
+
+
+      shared =
+        (
+          tokens_a & tokens_b
+        )
+
+
+      return 0 if shared.empty?
+
+
+      # Conservative score.
+      #
+      # We don't want generic words to dominate relevance.
+      #
+
+      score =
+        shared.length * 3
+
+
+      [score, 30].min
+
+    end
+
+
+    # =========================================================================
+    # Tokenize
+    # =========================================================================
+
+    def self.tokenize(text)
+
+      stopwords = %w[
+        the
+        and
+        or
+        for
+        with
+        this
+        that
+        from
+        into
+        using
+        use
+        used
+        are
+        is
+        to
+        of
+        a
+        an
+        in
+        on
+        our
+        your
+        how
+        what
+        can
+        will
+        be
+      ]
+
+
+      normalize_text(text)
+        .scan(/[a-z0-9][a-z0-9_-]{2,}/)
+        .reject do |word|
+
+          stopwords.include?(word)
+
+        end
+        .uniq
+
+    end
+
+
+    # =========================================================================
+    # Normalize text
+    # =========================================================================
+
+    def self.normalize_text(value)
+
+      value.to_s
+        .downcase
+        .gsub(/[^a-z0-9_\-\s]/, " ")
+        .gsub(/\s+/, " ")
+        .strip
+
+    end
+
+
+    # =========================================================================
+    # Normalize arrays
+    # =========================================================================
+
+    def self.normalize_array(value)
+
+      Array(value).map do |item|
+
+        normalize_text(item)
+
+      end.reject do |item|
+
+        item.empty?
+
+      end.uniq
+
+    end
+
+
+    # =========================================================================
+    # Normalize IDs
+    # =========================================================================
+
+    def self.normalize_ids(value)
+
+      Array(value).map do |item|
+
+        if item.is_a?(Hash)
+
+          item["id"].to_s.strip
+
+        else
+
+          item.to_s.strip
+
+        end
+
+      end.reject do |item|
+
+        item.empty?
+
+      end
+
+    end
+
+
+    # =========================================================================
+    # Determine editorial document
     # =========================================================================
 
     def self.editorial_document?(document)
-
-      # ----------------------------------------------------------------------
-      # Posts are always editorial.
-      # ----------------------------------------------------------------------
 
       if document.respond_to?(:collection)
 
@@ -619,10 +1117,6 @@ module EmbeddedNerd
       end
 
 
-      # ----------------------------------------------------------------------
-      # Pages require an editorial layout or explicit opt-in.
-      # ----------------------------------------------------------------------
-
       data =
         document.data || {}
 
@@ -635,16 +1129,6 @@ module EmbeddedNerd
         EDITORIAL_LAYOUTS.include?(layout)
 
 
-      # ----------------------------------------------------------------------
-      # Explicit opt-in.
-      #
-      # Add:
-      #
-      # internal_links: true
-      #
-      # to an _pages document when you want automatic linking.
-      # ----------------------------------------------------------------------
-
       return true if
         data["internal_links"] == true
 
@@ -655,7 +1139,7 @@ module EmbeddedNerd
 
 
     # =========================================================================
-    # Normalize URL.
+    # Normalize URL
     # =========================================================================
 
     def self.normalize_url(url)
@@ -664,27 +1148,22 @@ module EmbeddedNerd
         url.to_s.strip
 
 
-      # Remove fragment.
       value =
         value.split("#").first
 
 
-      # Remove query string.
       value =
         value.split("?").first
 
 
-      # Empty URL.
       value =
         "/" if value.empty?
 
 
-      # Ensure leading slash.
       value =
         "/#{value}" unless value.start_with?("/")
 
 
-      # Remove trailing slash.
       value =
         value.chomp("/")
 
@@ -696,12 +1175,90 @@ module EmbeddedNerd
 
     end
 
+
+    # =========================================================================
+    # Analysis logging
+    # =========================================================================
+
+    def self.log_analysis(current, relations, settings)
+
+      limit =
+        settings[
+          "analysis_results_per_page"
+        ].to_i
+
+
+      limit =
+        5 if limit <= 0
+
+
+      puts ""
+
+
+      Jekyll.logger.info(
+        "Embedded Nerd:",
+        "============================================================"
+      )
+
+
+      Jekyll.logger.info(
+        "Embedded Nerd:",
+        "Internal Link Analysis"
+      )
+
+
+      Jekyll.logger.info(
+        "Embedded Nerd:",
+        "#{current[:type].to_s.upcase}: #{current[:title]}"
+      )
+
+
+      Jekyll.logger.info(
+        "Embedded Nerd:",
+        "URL: #{current[:url]}"
+      )
+
+
+      if relations.empty?
+
+        Jekyll.logger.info(
+          "Embedded Nerd:",
+          "No relevant relationships found."
+        )
+
+      else
+
+        relations.first(limit).each do |relation|
+
+          Jekyll.logger.info(
+            "Embedded Nerd:",
+            "#{relation[:type]} | " \
+            "#{relation[:target][:title]} | " \
+            "score=#{relation[:score]} | " \
+            "#{relation[:target][:url]}"
+          )
+
+        end
+
+      end
+
+
+      Jekyll.logger.info(
+        "Embedded Nerd:",
+        "============================================================"
+      )
+
+
+      puts ""
+
+    end
+
   end
 end
 
 
 # ============================================================================
-# Jekyll 3.10 Hooks
+# Jekyll 3.10 hooks
 # ============================================================================
 
 Jekyll::Hooks.register :posts, :pre_render do |post|
