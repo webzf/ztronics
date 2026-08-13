@@ -1,67 +1,42 @@
 # ============================================================================
-# Embedded Nerd - Internal Link Engine V2
+# Embedded Nerd - Internal Link Engine V2.1
 # ============================================================================
 #
 # Jekyll 3.10 compatible
 #
-# V2 capabilities:
-#
+# Analysis:
 #   Article -> Product
 #   Article -> Article
 #   Product -> Article
 #   Product -> Product
 #
-# Uses:
-#
-#   product_id
-#   required_hardware
-#   related
-#   title
-#   excerpt
-#   description
-#   tags
-#   categories
-#   keywords
-#
-# Current mode:
-#
+# IMPORTANT:
 #   analysis_only: true
-#
-# The engine analyses the content graph but DOES NOT modify pages.
-#
+#   No pages are modified until we validate the graph.
 # ============================================================================
 
 module EmbeddedNerd
 
   module InternalLinker
 
-
-    # =========================================================================
-    # Configuration
-    # =========================================================================
+    # ------------------------------------------------------------------------
+    # Default settings
+    # ------------------------------------------------------------------------
 
     DEFAULT_SETTINGS = {
-
       "enabled" => true,
-
       "analysis_only" => true,
-
       "max_total_links_per_page" => 5,
-
       "max_product_links_per_page" => 2,
-
       "max_article_links_per_page" => 2,
-
       "minimum_relevance" => 60,
-
       "analysis_results_per_page" => 5
-
     }.freeze
 
 
-    # =========================================================================
-    # Editorial layouts
-    # =========================================================================
+    # ------------------------------------------------------------------------
+    # Only these layouts are considered editorial pages.
+    # ------------------------------------------------------------------------
 
     EDITORIAL_LAYOUTS = %w[
       single
@@ -71,59 +46,44 @@ module EmbeddedNerd
     ].freeze
 
 
-    # =========================================================================
-    # Main hook processor
-    # =========================================================================
+    # ------------------------------------------------------------------------
+    # Main processor
+    # ------------------------------------------------------------------------
 
     def self.process(document)
 
-      site =
-        document.site
+      site = document.site
 
-
-      config =
-        site.data["internal_links"]
-
+      config = site.data["internal_links"]
 
       return unless config.is_a?(Hash)
-
 
       settings =
         DEFAULT_SETTINGS.merge(
           config["settings"] || {}
         )
 
-
       return unless settings["enabled"]
 
 
-      # -----------------------------------------------------------------------
-      # Build the content graph once per Jekyll build.
-      # -----------------------------------------------------------------------
-
+      # Build graph once per Jekyll build.
       graph =
-        build_graph(site, config)
+        build_graph(site)
 
 
       return unless graph
 
 
-      # -----------------------------------------------------------------------
-      # Identify current document.
-      # -----------------------------------------------------------------------
+      current_url =
+        normalize_url(document.url)
+
 
       current =
-        graph[:by_url][
-          normalize_url(document.url)
-        ]
+        graph[:by_url][current_url]
 
 
       return unless current
 
-
-      # -----------------------------------------------------------------------
-      # Analyse relations.
-      # -----------------------------------------------------------------------
 
       relations =
         find_relations(
@@ -134,12 +94,9 @@ module EmbeddedNerd
         )
 
 
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
       # Analysis mode.
-      #
-      # IMPORTANT:
-      # No content is modified here.
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
 
       if settings["analysis_only"]
 
@@ -154,9 +111,10 @@ module EmbeddedNerd
       end
 
 
-      # -----------------------------------------------------------------------
-      # Automatic linking mode will be added after analysis is validated.
-      # -----------------------------------------------------------------------
+      # ----------------------------------------------------------------------
+      # Automatic linking is deliberately NOT enabled yet.
+      # We validate the graph first.
+      # ----------------------------------------------------------------------
 
       log_analysis(
         current,
@@ -171,13 +129,11 @@ module EmbeddedNerd
     # Build content graph
     # =========================================================================
 
-    def self.build_graph(site, config)
+    def self.build_graph(site)
 
-      # -----------------------------------------------------------------------
-      # Reuse graph if already built.
-      # -----------------------------------------------------------------------
-
-      if site.instance_variable_defined?(:@embedded_nerd_internal_graph)
+      if site.instance_variable_defined?(
+        :@embedded_nerd_internal_graph
+      )
 
         return site.instance_variable_get(
           :@embedded_nerd_internal_graph
@@ -188,19 +144,29 @@ module EmbeddedNerd
 
       products = []
 
-
       articles = []
 
-
       by_url = {}
-
 
       by_product_id = {}
 
 
       # =======================================================================
-      # PRODUCTS
+      # 1. FIND PRODUCTS
       # =======================================================================
+      #
+      # Products can live in:
+      #
+      #   site.pages
+      #   site.collections
+      #
+      # We inspect both.
+      # =======================================================================
+
+
+      # -----------------------------------------------------------------------
+      # Products from normal pages.
+      # -----------------------------------------------------------------------
 
       site.pages.each do |page|
 
@@ -212,35 +178,68 @@ module EmbeddedNerd
           data["layout"].to_s == "product"
 
 
-        product_id =
-          data["product_id"].to_s.strip
-
-
-        next if product_id.empty?
-
-
         product =
           build_product(page)
 
 
-        products << product
+        next if
+          product[:id].empty?
 
 
-        by_url[
-          normalize_url(product[:url])
-        ] = product
+        add_product(
+          product,
+          products,
+          by_url,
+          by_product_id
+        )
+
+      end
 
 
-        by_product_id[
-          product[:id]
-        ] = product
+      # -----------------------------------------------------------------------
+      # Products from collections.
+      # -----------------------------------------------------------------------
+
+      site.collections.each do |label, collection|
+
+        collection.docs.each do |document|
+
+          data =
+            document.data || {}
+
+
+          next unless
+            data["layout"].to_s == "product"
+
+
+          product =
+            build_product(document)
+
+
+          next if
+            product[:id].empty?
+
+
+          add_product(
+            product,
+            products,
+            by_url,
+            by_product_id
+          )
+
+        end
 
       end
 
 
       # =======================================================================
-      # ARTICLES
+      # 2. FIND ARTICLES
       # =======================================================================
+
+
+      # -----------------------------------------------------------------------
+      # Posts.
+      # -----------------------------------------------------------------------
 
       site.posts.docs.each do |post|
 
@@ -248,18 +247,25 @@ module EmbeddedNerd
           build_article(post)
 
 
-        articles << article
-
-
-        by_url[
-          normalize_url(article[:url])
-        ] = article
+        add_article(
+          article,
+          articles,
+          by_url
+        )
 
       end
 
 
       # -----------------------------------------------------------------------
-      # Also support editorial pages in _pages.
+      # Explicit editorial pages ONLY.
+      #
+      # A normal page is NOT automatically treated as an article.
+      #
+      # To opt in, use:
+      #
+      # internal_links: true
+      #
+      # or an editorial layout.
       # -----------------------------------------------------------------------
 
       site.pages.each do |page|
@@ -273,37 +279,73 @@ module EmbeddedNerd
 
 
         next unless
-          editorial_document?(page)
+          editorial_page?(page)
 
 
         article =
           build_article(page)
 
 
-        articles << article
-
-
-        by_url[
-          normalize_url(article[:url])
-        ] = article
+        add_article(
+          article,
+          articles,
+          by_url
+        )
 
       end
 
 
       # -----------------------------------------------------------------------
-      # Graph.
+      # Optional editorial collections.
+      #
+      # If you later create an article collection, it can participate when
+      # its documents explicitly use an editorial layout.
       # -----------------------------------------------------------------------
 
+      site.collections.each do |label, collection|
+
+        next if
+          label.to_s == "posts"
+
+
+        collection.docs.each do |document|
+
+          data =
+            document.data || {}
+
+
+          next if
+            data["layout"].to_s == "product"
+
+
+          next unless
+            editorial_collection_document?(document)
+
+
+          article =
+            build_article(document)
+
+
+          add_article(
+            article,
+            articles,
+            by_url
+          )
+
+        end
+
+      end
+
+
+      # =======================================================================
+      # GRAPH
+      # =======================================================================
+
       graph = {
-
         products: products,
-
         articles: articles,
-
         by_url: by_url,
-
         by_product_id: by_product_id
-
       }
 
 
@@ -313,19 +355,83 @@ module EmbeddedNerd
       )
 
 
+      Jekyll.logger.info(
+        "Embedded Nerd:",
+        "Content Graph: #{products.length} products, " \
+        "#{articles.length} articles"
+      )
+
+
       graph
 
     end
 
 
     # =========================================================================
-    # Build product object
+    # Add product
     # =========================================================================
 
-    def self.build_product(page)
+    def self.add_product(
+      product,
+      products,
+      by_url,
+      by_product_id
+    )
+
+      return if
+        by_product_id.key?(product[:id])
+
+
+      products << product
+
+
+      by_url[
+        normalize_url(product[:url])
+      ] = product
+
+
+      by_product_id[
+        product[:id]
+      ] = product
+
+    end
+
+
+    # =========================================================================
+    # Add article
+    # =========================================================================
+
+    def self.add_article(
+      article,
+      articles,
+      by_url
+    )
+
+      url =
+        normalize_url(article[:url])
+
+
+      return if
+        by_url.key?(url)
+
+
+      articles << article
+
+
+      by_url[url] =
+        article
+
+    end
+
+
+    # =========================================================================
+    # Build product
+    # =========================================================================
+
+    def self.build_product(document)
 
       data =
-        page.data || {}
+        document.data || {}
 
 
       id =
@@ -348,34 +454,40 @@ module EmbeddedNerd
 
 
       {
-
         type: :product,
 
         id: id,
 
         title: title,
 
-        url: page.url,
+        url: document.url,
 
         text: normalize_text(text),
 
         tokens: tokenize(text),
 
-        tags: normalize_array(data["tags"]),
+        tags: normalize_array(
+          data["tags"]
+        ),
 
-        categories: normalize_array(data["categories"]),
+        categories: normalize_array(
+          data["categories"]
+        ),
 
-        related: normalize_ids(data["related"]),
+        related: normalize_ids(
+          data["related"]
+        ),
 
-        keywords: product_keywords(data)
-
+        keywords: product_keywords(
+          data
+        )
       }
 
     end
 
 
     # =========================================================================
-    # Build article object
+    # Build article
     # =========================================================================
 
     def self.build_article(document)
@@ -403,17 +515,12 @@ module EmbeddedNerd
         ].compact.join(" ")
 
 
-      required_hardware =
-        extract_hardware_ids(
-          data["required_hardware"]
-        )
-
-
       {
-
         type: :article,
 
-        id: normalize_url(document.url),
+        id: normalize_url(
+          document.url
+        ),
 
         title: title,
 
@@ -423,13 +530,23 @@ module EmbeddedNerd
 
         tokens: tokenize(text),
 
-        tags: normalize_array(data["tags"]),
+        tags: normalize_array(
+          data["tags"]
+        ),
 
-        categories: normalize_array(data["categories"]),
+        categories: normalize_array(
+          data["categories"]
+        ),
 
-        required_hardware: required_hardware,
+        required_hardware:
+          extract_hardware_ids(
+            data["required_hardware"]
+          ),
 
-        related: normalize_ids(data["related"])
+        related:
+          normalize_ids(
+            data["related"]
+          )
 
       }
 
@@ -440,7 +557,12 @@ module EmbeddedNerd
     # Find relations
     # =========================================================================
 
-    def self.find_relations(current, graph, settings, config)
+    def self.find_relations(
+      current,
+      graph,
+      settings,
+      config
+    )
 
       relations = []
 
@@ -461,18 +583,15 @@ module EmbeddedNerd
             )
 
 
-          if score >= settings["minimum_relevance"].to_i
+          if score >= settings[
+            "minimum_relevance"
+          ].to_i
 
             relations << {
-
               type: "article_to_product",
-
               source: current,
-
               target: product,
-
               score: score
-
             }
 
           end
@@ -497,18 +616,15 @@ module EmbeddedNerd
             )
 
 
-          if score >= settings["minimum_relevance"].to_i
+          if score >= settings[
+            "minimum_relevance"
+          ].to_i
 
             relations << {
-
               type: "article_to_article",
-
               source: current,
-
               target: article,
-
               score: score
-
             }
 
           end
@@ -530,18 +646,15 @@ module EmbeddedNerd
             )
 
 
-          if score >= settings["minimum_relevance"].to_i
+          if score >= settings[
+            "minimum_relevance"
+          ].to_i
 
             relations << {
-
               type: "product_to_article",
-
               source: current,
-
               target: article,
-
               score: score
-
             }
 
           end
@@ -566,18 +679,15 @@ module EmbeddedNerd
             )
 
 
-          if score >= settings["minimum_relevance"].to_i
+          if score >= settings[
+            "minimum_relevance"
+          ].to_i
 
             relations << {
-
               type: "product_to_product",
-
               source: current,
-
               target: product,
-
               score: score
-
             }
 
           end
@@ -586,10 +696,6 @@ module EmbeddedNerd
 
       end
 
-
-      # -----------------------------------------------------------------------
-      # Highest relevance first.
-      # -----------------------------------------------------------------------
 
       relations.sort_by! do |relation|
 
@@ -604,45 +710,42 @@ module EmbeddedNerd
 
 
     # =========================================================================
-    # Article -> Product score
+    # Article -> Product
     # =========================================================================
 
-    def self.article_product_score(article, product, config)
+    def self.article_product_score(
+      article,
+      product,
+      config
+    )
 
-      score =
-        0
+      score = 0
 
 
-      # -----------------------------------------------------------------------
-      # Required hardware = strongest relationship.
-      # -----------------------------------------------------------------------
-
-      if article[:required_hardware].include?(product[:id])
+      # Strongest relation:
+      # required_hardware.
+      if article[:required_hardware].include?(
+        product[:id]
+      )
 
         score += 100
 
       end
 
 
-      # -----------------------------------------------------------------------
-      # Product related relationship.
-      # -----------------------------------------------------------------------
-
-      if product[:related].include?(product[:id])
-
-        score += 0
-
-      end
-
-
-      # -----------------------------------------------------------------------
-      # Keyword occurrences.
-      # -----------------------------------------------------------------------
-
+      # Product keywords in article.
       product[:keywords].each do |keyword|
 
-        if article[:text].include?(
+        normalized_keyword =
           normalize_text(keyword)
+
+
+        next if
+          normalized_keyword.empty?
+
+
+        if article[:text].include?(
+          normalized_keyword
         )
 
           score += 30
@@ -654,10 +757,7 @@ module EmbeddedNerd
       end
 
 
-      # -----------------------------------------------------------------------
-      # Token overlap.
-      # -----------------------------------------------------------------------
-
+      # Token similarity.
       score +=
         token_similarity(
           article[:tokens],
@@ -665,10 +765,7 @@ module EmbeddedNerd
         )
 
 
-      # -----------------------------------------------------------------------
       # Shared tags.
-      # -----------------------------------------------------------------------
-
       score +=
         shared_values_score(
           article[:tags],
@@ -677,10 +774,7 @@ module EmbeddedNerd
         )
 
 
-      # -----------------------------------------------------------------------
       # Shared categories.
-      # -----------------------------------------------------------------------
-
       score +=
         shared_values_score(
           article[:categories],
@@ -695,18 +789,16 @@ module EmbeddedNerd
 
 
     # =========================================================================
-    # Article -> Article score
+    # Article -> Article
     # =========================================================================
 
-    def self.article_article_score(article_a, article_b)
+    def self.article_article_score(
+      article_a,
+      article_b
+    )
 
-      score =
-        0
+      score = 0
 
-
-      # -----------------------------------------------------------------------
-      # Shared required hardware.
-      # -----------------------------------------------------------------------
 
       shared_hardware =
         (
@@ -719,10 +811,6 @@ module EmbeddedNerd
         shared_hardware.length * 25
 
 
-      # -----------------------------------------------------------------------
-      # Shared tags.
-      # -----------------------------------------------------------------------
-
       score +=
         shared_values_score(
           article_a[:tags],
@@ -731,10 +819,6 @@ module EmbeddedNerd
         )
 
 
-      # -----------------------------------------------------------------------
-      # Shared categories.
-      # -----------------------------------------------------------------------
-
       score +=
         shared_values_score(
           article_a[:categories],
@@ -742,10 +826,6 @@ module EmbeddedNerd
           10
         )
 
-
-      # -----------------------------------------------------------------------
-      # Text/title similarity.
-      # -----------------------------------------------------------------------
 
       score +=
         token_similarity(
@@ -760,56 +840,55 @@ module EmbeddedNerd
 
 
     # =========================================================================
-    # Product -> Article score
+    # Product -> Article
     # =========================================================================
 
-    def self.product_article_score(product, article)
+    def self.product_article_score(
+      product,
+      article
+    )
 
-      score =
-        article_product_score(
-          article,
-          product,
-          {}
-        )
-
-
-      score
+      article_product_score(
+        article,
+        product,
+        {}
+      )
 
     end
 
 
     # =========================================================================
-    # Product -> Product score
+    # Product -> Product
     # =========================================================================
 
-    def self.product_product_score(product_a, product_b)
+    def self.product_product_score(
+      product_a,
+      product_b
+    )
 
-      score =
-        0
+      score = 0
 
 
-      # -----------------------------------------------------------------------
       # Explicit related relationship.
-      # -----------------------------------------------------------------------
-
-      if product_a[:related].include?(product_b[:id])
-
-        score += 70
-
-      end
-
-
-      if product_b[:related].include?(product_a[:id])
+      if product_a[:related].include?(
+        product_b[:id]
+      )
 
         score += 70
 
       end
 
 
-      # -----------------------------------------------------------------------
+      if product_b[:related].include?(
+        product_a[:id]
+      )
+
+        score += 70
+
+      end
+
+
       # Shared categories.
-      # -----------------------------------------------------------------------
-
       score +=
         shared_values_score(
           product_a[:categories],
@@ -818,10 +897,7 @@ module EmbeddedNerd
         )
 
 
-      # -----------------------------------------------------------------------
       # Shared tags.
-      # -----------------------------------------------------------------------
-
       score +=
         shared_values_score(
           product_a[:tags],
@@ -830,10 +906,7 @@ module EmbeddedNerd
         )
 
 
-      # -----------------------------------------------------------------------
       # Text similarity.
-      # -----------------------------------------------------------------------
-
       score +=
         token_similarity(
           product_a[:tokens],
@@ -855,46 +928,42 @@ module EmbeddedNerd
       keywords = []
 
 
-      # product_id
-      id =
+      product_id =
         data["product_id"].to_s.strip
 
 
-      keywords << id unless id.empty?
+      keywords << product_id unless
+        product_id.empty?
 
 
-      # Title
       title =
         data["title"].to_s.strip
 
 
-      keywords << title unless title.empty?
+      keywords << title unless
+        title.empty?
 
 
-      # Tags
       Array(data["tags"]).each do |tag|
 
         value =
           tag.to_s.strip
 
 
-        keywords << value unless value.empty?
+        keywords << value unless
+          value.empty?
 
       end
 
 
-      # Manual overrides
-      overrides =
-        data["internal_link_keywords"]
-
-
-      Array(overrides).each do |keyword|
+      Array(data["internal_link_keywords"]).each do |keyword|
 
         value =
           keyword.to_s.strip
 
 
-        keywords << value unless value.empty?
+        keywords << value unless
+          value.empty?
 
       end
 
@@ -905,12 +974,13 @@ module EmbeddedNerd
 
 
     # =========================================================================
-    # Extract required hardware IDs
+    # Required hardware
     # =========================================================================
 
     def self.extract_hardware_ids(value)
 
-      return [] unless value.is_a?(Array)
+      return [] unless
+        value.is_a?(Array)
 
 
       value.map do |item|
@@ -935,18 +1005,18 @@ module EmbeddedNerd
 
 
     # =========================================================================
-    # Shared values score
+    # Shared values
     # =========================================================================
 
-    def self.shared_values_score(a, b, points)
+    def self.shared_values_score(
+      a,
+      b,
+      points
+    )
 
-      shared =
-        (
-          a & b
-        )
-
-
-      shared.length * points
+      (
+        a & b
+      ).length * points
 
     end
 
@@ -955,7 +1025,10 @@ module EmbeddedNerd
     # Token similarity
     # =========================================================================
 
-    def self.token_similarity(tokens_a, tokens_b)
+    def self.token_similarity(
+      tokens_a,
+      tokens_b
+    )
 
       return 0 if
         tokens_a.empty? ||
@@ -968,13 +1041,9 @@ module EmbeddedNerd
         )
 
 
-      return 0 if shared.empty?
+      return 0 if
+        shared.empty?
 
-
-      # Conservative score.
-      #
-      # We don't want generic words to dominate relevance.
-      #
 
       score =
         shared.length * 3
@@ -986,7 +1055,7 @@ module EmbeddedNerd
 
 
     # =========================================================================
-    # Tokenize
+    # Tokenizer
     # =========================================================================
 
     def self.tokenize(text)
@@ -1023,7 +1092,9 @@ module EmbeddedNerd
 
 
       normalize_text(text)
-        .scan(/[a-z0-9][a-z0-9_-]{2,}/)
+        .scan(
+          /[a-z0-9][a-z0-9_-]{2,}/
+        )
         .reject do |word|
 
           stopwords.include?(word)
@@ -1042,28 +1113,37 @@ module EmbeddedNerd
 
       value.to_s
         .downcase
-        .gsub(/[^a-z0-9_\-\s]/, " ")
-        .gsub(/\s+/, " ")
+        .gsub(
+          /[^a-z0-9_\-\s]/,
+          " "
+        )
+        .gsub(
+          /\s+/,
+          " "
+        )
         .strip
 
     end
 
 
     # =========================================================================
-    # Normalize arrays
+    # Normalize array
     # =========================================================================
 
     def self.normalize_array(value)
 
-      Array(value).map do |item|
+      Array(value)
+        .map do |item|
 
-        normalize_text(item)
+          normalize_text(item)
 
-      end.reject do |item|
+        end
+        .reject do |item|
 
-        item.empty?
+          item.empty?
 
-      end.uniq
+        end
+        .uniq
 
     end
 
@@ -1074,53 +1154,45 @@ module EmbeddedNerd
 
     def self.normalize_ids(value)
 
-      Array(value).map do |item|
+      Array(value)
+        .map do |item|
 
-        if item.is_a?(Hash)
+          if item.is_a?(Hash)
 
-          item["id"].to_s.strip
+            item["id"].to_s.strip
 
-        else
+          else
 
-          item.to_s.strip
+            item.to_s.strip
+
+          end
 
         end
+        .reject do |item|
 
-      end.reject do |item|
+          item.empty?
 
-        item.empty?
-
-      end
+        end
 
     end
 
 
     # =========================================================================
-    # Determine editorial document
+    # Editorial page
     # =========================================================================
 
-    def self.editorial_document?(document)
-
-      if document.respond_to?(:collection)
-
-        collection =
-          document.collection
-
-
-        if collection
-
-          return true if
-            collection.label.to_s == "posts"
-
-        end
-
-      end
-
+    def self.editorial_page?(page)
 
       data =
-        document.data || {}
+        page.data || {}
 
 
+      # Explicit opt-in.
+      return true if
+        data["internal_links"] == true
+
+
+      # Editorial layout.
       layout =
         data["layout"].to_s
 
@@ -1129,11 +1201,30 @@ module EmbeddedNerd
         EDITORIAL_LAYOUTS.include?(layout)
 
 
+      false
+
+    end
+
+
+    # =========================================================================
+    # Editorial collection document
+    # =========================================================================
+
+    def self.editorial_collection_document?(document)
+
+      data =
+        document.data || {}
+
+
       return true if
         data["internal_links"] == true
 
 
-      false
+      layout =
+        data["layout"].to_s
+
+
+      EDITORIAL_LAYOUTS.include?(layout)
 
     end
 
@@ -1161,14 +1252,16 @@ module EmbeddedNerd
 
 
       value =
-        "/#{value}" unless value.start_with?("/")
+        "/#{value}" unless
+          value.start_with?("/")
 
 
       value =
         value.chomp("/")
 
 
-      return "/" if value.empty?
+      return "/" if
+        value.empty?
 
 
       "#{value}/"
@@ -1180,7 +1273,11 @@ module EmbeddedNerd
     # Analysis logging
     # =========================================================================
 
-    def self.log_analysis(current, relations, settings)
+    def self.log_analysis(
+      current,
+      relations,
+      settings
+    )
 
       limit =
         settings[
@@ -1190,9 +1287,6 @@ module EmbeddedNerd
 
       limit =
         5 if limit <= 0
-
-
-      puts ""
 
 
       Jekyll.logger.info(
@@ -1248,9 +1342,6 @@ module EmbeddedNerd
         "============================================================"
       )
 
-
-      puts ""
-
     end
 
   end
@@ -1258,7 +1349,7 @@ end
 
 
 # ============================================================================
-# Jekyll 3.10 hooks
+# Jekyll hooks
 # ============================================================================
 
 Jekyll::Hooks.register :posts, :pre_render do |post|
