@@ -1,23 +1,45 @@
 # ============================================================================
-# Embedded Nerd - Internal Linking Database
+# Embedded Nerd - Internal Linking Engine
 # ============================================================================
 
 settings:
-  enabled: true
-  default_max_links_per_page: 1
 
-links:
+  enabled: true
+
+  # IMPORTANT:
+  # true = analyse only, do not modify pages
+  # false = allow automatic links
+  analysis_only: true
+
+  # Maximum automatic links per article/page
+  max_total_links_per_page: 5
+
+  # Maximum links by type
+  max_product_links_per_page: 2
+  max_article_links_per_page: 2
+
+  # Minimum score required for an automatic relation
+  minimum_relevance: 60
+
+  # Number of relations shown in the analysis log
+  analysis_results_per_page: 5
+
+
+# ----------------------------------------------------------------------------
+# Manual overrides
+#
+# These are optional.
+# The engine automatically discovers keywords from products/articles.
+# ----------------------------------------------------------------------------
+
+overrides:
 
   mpu6050:
-    url: /products/mpu6050/
     keywords:
       - "MPU6050"
       - "MPU-6050"
-    max_links_per_page: 1
 
-  esp32:
-    url: /products/esp32-devkit/
+  esp32-devkit:
     keywords:
       - "ESP32"
       - "ESP32 DevKit"
-    max_links_per_page: 1
