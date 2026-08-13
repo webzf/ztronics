@@ -9,7 +9,7 @@ settings:
   # IMPORTANT:
   # true = analyse only, do not modify pages
   # false = allow automatic links
-  analysis_only: true
+  analysis_only: false
 
   # Maximum automatic links per article/page
   max_total_links_per_page: 5
