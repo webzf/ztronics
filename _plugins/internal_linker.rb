@@ -19,9 +19,11 @@
 #   - Protected HTML elements
 #   - Required hardware priority
 #   - Automatic product keywords
+#   - Explicit internal_link_keywords support
 #   - Shared article relationships
 #   - No artificial anchor text
 #   - Conservative product-to-product linking
+#   - Generic tags are NEVER used as automatic anchors
 #
 # Current mode:
 #
@@ -29,9 +31,11 @@
 #
 # ============================================================================
 
+
 module EmbeddedNerd
 
   module InternalLinker
+
 
     # ========================================================================
     # DEFAULT SETTINGS
@@ -84,6 +88,7 @@ module EmbeddedNerd
       article
       post
       tutorial
+      single
     ].freeze
 
 
@@ -133,8 +138,7 @@ module EmbeddedNerd
         find_relations(
           current,
           graph,
-          settings,
-          config
+          settings
         )
 
 
@@ -146,14 +150,17 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Do not modify content during analysis.
+      # Analysis only.
+      #
+      # When true, the engine analyses the site but does NOT modify content.
       # ----------------------------------------------------------------------
 
-      return if settings["analysis_only"]
+      return if
+        settings["analysis_only"]
 
 
       # ----------------------------------------------------------------------
-      # V3 insertion happens here once analysis is approved.
+      # Automatic link insertion.
       # ----------------------------------------------------------------------
 
       new_content =
@@ -408,6 +415,10 @@ module EmbeddedNerd
         end
 
 
+      # ----------------------------------------------------------------------
+      # Required hardware relationships.
+      # ----------------------------------------------------------------------
+
       graph[:articles].each do |article|
 
         article[:required_hardware].each do |product_id|
@@ -420,6 +431,10 @@ module EmbeddedNerd
 
       end
 
+
+      # ----------------------------------------------------------------------
+      # Content-based product relationships.
+      # ----------------------------------------------------------------------
 
       graph[:articles].each do |article|
 
@@ -503,6 +518,8 @@ module EmbeddedNerd
         related:
           normalize_ids(data["related"]),
 
+        # IMPORTANT:
+        # Only these values may become automatic anchor text.
         keywords:
           product_keywords(data),
 
@@ -578,6 +595,14 @@ module EmbeddedNerd
             data["related"]
           ),
 
+        # Explicit article anchor keywords.
+        #
+        # These are optional and only used for linking.
+        internal_link_keywords:
+          normalize_string_array(
+            data["internal_link_keywords"]
+          ),
+
         content:
           content
 
@@ -650,11 +675,14 @@ module EmbeddedNerd
     def self.find_relations(
       current,
       graph,
-      settings,
-      config
+      settings
     )
 
       relations = []
+
+
+      minimum =
+        settings["minimum_relevance"].to_i
 
 
       # ======================================================================
@@ -677,8 +705,7 @@ module EmbeddedNerd
 
 
           next if
-            score <
-            settings["minimum_relevance"].to_i
+            score < minimum
 
 
           opportunity =
@@ -716,7 +743,8 @@ module EmbeddedNerd
         graph[:articles].each do |article|
 
           next if
-            article[:url] == current[:url]
+            normalize_url(article[:url]) ==
+            normalize_url(current[:url])
 
 
           score =
@@ -727,8 +755,7 @@ module EmbeddedNerd
 
 
           next if
-            score <
-            settings["minimum_relevance"].to_i
+            score < minimum
 
 
           opportunity =
@@ -782,8 +809,7 @@ module EmbeddedNerd
 
 
           next if
-            score <
-            settings["minimum_relevance"].to_i
+            score < minimum
 
 
           opportunity =
@@ -833,8 +859,7 @@ module EmbeddedNerd
 
 
           next if
-            score <
-            settings["minimum_relevance"].to_i
+            score < minimum
 
 
           opportunity =
@@ -866,6 +891,10 @@ module EmbeddedNerd
 
       end
 
+
+      # ----------------------------------------------------------------------
+      # Highest relevance first.
+      # ----------------------------------------------------------------------
 
       relations.sort_by! do |relation|
 
@@ -1246,10 +1275,12 @@ module EmbeddedNerd
     # FIND REAL LINK OPPORTUNITY
     # ========================================================================
     #
-    # The engine will ONLY recommend a link if the target's natural keyword
-    # actually exists in the source content.
+    # IMPORTANT:
     #
-    # It never invents anchor text.
+    # A relationship is only linkable when a natural anchor exists
+    # in the actual source content.
+    #
+    # Generic tags are NOT used as anchors.
     #
     # ========================================================================
 
@@ -1269,7 +1300,7 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Product target
+      # PRODUCT TARGET
       # ----------------------------------------------------------------------
 
       if target[:type] == :product
@@ -1281,21 +1312,30 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Article target
+      # ARTICLE TARGET
       # ----------------------------------------------------------------------
 
       if target[:type] == :article
 
-        keywords << target[:title]
+        title =
+          target[:title].to_s.strip
+
+
+        keywords << title unless
+          title.empty?
+
 
         keywords.concat(
-          target[:tags]
+          target[:internal_link_keywords] || []
         )
 
       end
 
 
-      # Longest and most specific phrases first.
+      # ----------------------------------------------------------------------
+      # Clean keywords.
+      # ----------------------------------------------------------------------
+
       keywords =
         keywords
           .map do |keyword|
@@ -1311,10 +1351,15 @@ module EmbeddedNerd
           .uniq
           .sort_by do |keyword|
 
+            # Longer phrases first.
             -keyword.length
 
           end
 
+
+      # ----------------------------------------------------------------------
+      # Find the first natural occurrence.
+      # ----------------------------------------------------------------------
 
       keywords.each do |keyword|
 
@@ -1354,7 +1399,7 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Do not search inside protected HTML blocks.
+      # Protect HTML elements.
       # ----------------------------------------------------------------------
 
       protected_pattern =
@@ -1371,16 +1416,48 @@ module EmbeddedNerd
         end
 
 
-      escaped =
-        Regexp.escape(keyword)
+      # ----------------------------------------------------------------------
+      # Protect Markdown links.
+      # ----------------------------------------------------------------------
+
+      markdown_pattern =
+        /!?\[[^\]]+\]\([^)]+\)/m
+
+
+      masked_content =
+        masked_content.gsub(
+          markdown_pattern
+        ) do |match|
+
+          " " * match.length
+
+        end
 
 
       # ----------------------------------------------------------------------
-      # Do not match inside Markdown links.
+      # Escape keyword.
+      # ----------------------------------------------------------------------
+
+      escaped =
+        Regexp.escape(
+          keyword
+        )
+
+
+      # ----------------------------------------------------------------------
+      # Natural word boundary.
+      #
+      # Allows:
+      #
+      #   MPU6050
+      #   MPU6050 sensor
+      #   SSD1306 OLED
+      #
+      # but avoids matching inside larger words.
       # ----------------------------------------------------------------------
 
       pattern =
-        /(?<![\w\-\[])#{escaped}(?![\w\-])/i
+        /(?<![\w-])#{escaped}(?![\w-])/i
 
 
       match =
@@ -1394,11 +1471,14 @@ module EmbeddedNerd
 
 
       {
-        keyword: match[0],
+        keyword:
+          match[0],
 
-        index: match.begin(0),
+        index:
+          match.begin(0),
 
-        length: match[0].length
+        length:
+          match[0].length
       }
 
     end
@@ -1406,12 +1486,6 @@ module EmbeddedNerd
 
     # ========================================================================
     # INSERT LINKS
-    # ========================================================================
-    #
-    # Used only when:
-    #
-    #   analysis_only: false
-    #
     # ========================================================================
 
     def self.insert_links(
@@ -1443,14 +1517,11 @@ module EmbeddedNerd
       used_targets = []
 
 
-      # ----------------------------------------------------------------------
-      # Work from highest relevance to lowest.
-      # ----------------------------------------------------------------------
-
       relations.each do |relation|
 
         break if
-          total >= settings[
+          total >=
+          settings[
             "max_total_links_per_page"
           ].to_i
 
@@ -1470,14 +1541,16 @@ module EmbeddedNerd
         )
 
           next if
-            product_links >= settings[
+            product_links >=
+            settings[
               "max_product_links_per_page"
             ].to_i
 
         else
 
           next if
-            article_links >= settings[
+            article_links >=
+            settings[
               "max_article_links_per_page"
             ].to_i
 
@@ -1485,20 +1558,7 @@ module EmbeddedNerd
 
 
         # ---------------------------------------------------------------------
-        # IMPORTANT:
-        #
-        # Use the CURRENT modified content.
-        #
-        # The previous version used:
-        #
-        #   { content: content }.merge(current)
-        #
-        # which caused current[:content] to overwrite the updated content.
-        #
-        # This version deliberately does:
-        #
-        #   current.merge(content: content)
-        #
+        # Recalculate opportunity after every insertion.
         # ---------------------------------------------------------------------
 
         source =
@@ -1506,10 +1566,6 @@ module EmbeddedNerd
             content: content
           )
 
-
-        # ---------------------------------------------------------------------
-        # Recalculate opportunity because content changes after each link.
-        # ---------------------------------------------------------------------
 
         opportunity =
           find_link_opportunity(
@@ -1527,7 +1583,9 @@ module EmbeddedNerd
 
 
         escaped_keyword =
-          Regexp.escape(keyword)
+          Regexp.escape(
+            keyword
+          )
 
 
         href =
@@ -1536,10 +1594,6 @@ module EmbeddedNerd
             "&quot;"
           )
 
-
-        # ---------------------------------------------------------------------
-        # Protect against matching an already generated link.
-        # ---------------------------------------------------------------------
 
         pattern =
           /(?<![\w\-\[>])#{escaped_keyword}(?![\w\-])/i
@@ -1601,9 +1655,9 @@ module EmbeddedNerd
       replacement
     )
 
-      parts = []
+      protected_parts = []
 
-      placeholder_index = 0
+      protected_index = 0
 
 
       # ----------------------------------------------------------------------
@@ -1620,13 +1674,13 @@ module EmbeddedNerd
         ) do |match|
 
           placeholder =
-            "__EN_PROTECTED_#{placeholder_index}__"
+            "__EN_PROTECTED_#{protected_index}__"
 
 
-          placeholder_index += 1
+          protected_index += 1
 
 
-          parts << match
+          protected_parts << match
 
 
           placeholder
@@ -1643,7 +1697,7 @@ module EmbeddedNerd
 
       working =
         working.gsub(
-          /!?\[[^\]]+\]\([^)]+\)/
+          /!?\[[^\]]+\]\([^)]+\)/m
         ) do |match|
 
           placeholder =
@@ -1692,7 +1746,7 @@ module EmbeddedNerd
       # Restore protected HTML.
       # ----------------------------------------------------------------------
 
-      parts.each_with_index do |original, index|
+      protected_parts.each_with_index do |original, index|
 
         replaced =
           replaced.gsub(
@@ -1737,7 +1791,10 @@ module EmbeddedNerd
         )
 
 
+      # ----------------------------------------------------------------------
       # HTML link.
+      # ----------------------------------------------------------------------
+
       html_pattern =
         /href\s*=\s*["']#{escaped}["']/i
 
@@ -1748,7 +1805,10 @@ module EmbeddedNerd
         )
 
 
+      # ----------------------------------------------------------------------
       # Markdown link.
+      # ----------------------------------------------------------------------
+
       markdown_pattern =
         /\]\(\s*#{escaped}(?:[#?][^)]*)?\s*\)/i
 
@@ -1760,7 +1820,7 @@ module EmbeddedNerd
 
 
       # ----------------------------------------------------------------------
-      # Without trailing slash.
+      # URL without trailing slash.
       # ----------------------------------------------------------------------
 
       no_slash =
@@ -1805,13 +1865,34 @@ module EmbeddedNerd
     # ========================================================================
     # PRODUCT KEYWORDS
     # ========================================================================
+    #
+    # IMPORTANT:
+    #
+    # Tags and categories are NOT automatic anchors.
+    #
+    # Automatic product anchors can only come from:
+    #
+    #   - product_id
+    #   - title
+    #   - internal_link_keywords
+    #
+    # This prevents incorrect links such as:
+    #
+    #   "Arduino" -> Breadboard
+    #   "Raspberry Pi" -> MPU6050
+    #   "electronics" -> OLED
+    #
+    # ========================================================================
 
     def self.product_keywords(data)
 
       keywords = []
 
 
-      # product_id
+      # ----------------------------------------------------------------------
+      # Product ID
+      # ----------------------------------------------------------------------
+
       product_id =
         data["product_id"].to_s.strip
 
@@ -1820,7 +1901,10 @@ module EmbeddedNerd
         product_id.empty?
 
 
-      # title
+      # ----------------------------------------------------------------------
+      # Product title
+      # ----------------------------------------------------------------------
+
       title =
         data["title"].to_s.strip
 
@@ -1829,22 +1913,10 @@ module EmbeddedNerd
         title.empty?
 
 
-      # tags
-      Array(
-        data["tags"]
-      ).each do |tag|
+      # ----------------------------------------------------------------------
+      # Explicit internal linking keywords.
+      # ----------------------------------------------------------------------
 
-        value =
-          tag.to_s.strip
-
-
-        keywords << value unless
-          value.empty?
-
-      end
-
-
-      # Optional explicit keywords.
       Array(
         data["internal_link_keywords"]
       ).each do |keyword|
@@ -1859,7 +1931,18 @@ module EmbeddedNerd
       end
 
 
-      keywords.uniq
+      # ----------------------------------------------------------------------
+      # Remove duplicates.
+      # ----------------------------------------------------------------------
+
+      keywords
+        .uniq
+        .sort_by do |keyword|
+
+          # Specific phrases first.
+          -keyword.length
+
+        end
 
     end
 
@@ -1909,7 +1992,7 @@ module EmbeddedNerd
         data["internal_links"] == true
 
 
-      EmbeddedNerd::InternalLinker::EDITORIAL_LAYOUTS.include?(
+      EDITORIAL_LAYOUTS.include?(
         data["layout"].to_s
       )
 
@@ -2066,6 +2149,28 @@ module EmbeddedNerd
         .map do |item|
 
           normalize_text(item)
+
+        end
+        .reject do |item|
+
+          item.empty?
+
+        end
+        .uniq
+
+    end
+
+
+    # ========================================================================
+    # NORMALIZE STRING ARRAY
+    # ========================================================================
+
+    def self.normalize_string_array(value)
+
+      Array(value)
+        .map do |item|
+
+          item.to_s.strip
 
         end
         .reject do |item|
@@ -2238,6 +2343,7 @@ end
 # JEKYLL HOOKS
 # ============================================================================
 
+
 Jekyll::Hooks.register :posts, :pre_render do |post|
 
   EmbeddedNerd::InternalLinker.process(
@@ -2262,11 +2368,24 @@ Jekyll::Hooks.register :documents, :pre_render do |document|
     document.data || {}
 
 
-  if data["layout"].to_s == "product"
+  layout =
+    data["layout"].to_s
+
+
+  # --------------------------------------------------------------------------
+  # Products.
+  # --------------------------------------------------------------------------
+
+  if layout == "product"
 
     EmbeddedNerd::InternalLinker.process(
       document
     )
+
+
+  # --------------------------------------------------------------------------
+  # Explicitly enabled documents.
+  # --------------------------------------------------------------------------
 
   elsif data["internal_links"] == true
 
@@ -2274,8 +2393,16 @@ Jekyll::Hooks.register :documents, :pre_render do |document|
       document
     )
 
+
+  # --------------------------------------------------------------------------
+  # Editorial layouts.
+  #
+  # IMPORTANT:
+  # Use the fully qualified constant here.
+  # --------------------------------------------------------------------------
+
   elsif EmbeddedNerd::InternalLinker::EDITORIAL_LAYOUTS.include?(
-    data["layout"].to_s
+    layout
   )
 
     EmbeddedNerd::InternalLinker.process(
