@@ -149,8 +149,7 @@ module EmbeddedNerd
       # Do not modify content during analysis.
       # ----------------------------------------------------------------------
 
-      return if
-        settings["analysis_only"]
+      return if settings["analysis_only"]
 
 
       # ----------------------------------------------------------------------
@@ -1247,8 +1246,6 @@ module EmbeddedNerd
     # FIND REAL LINK OPPORTUNITY
     # ========================================================================
     #
-    # This is one of the most important V3 changes.
-    #
     # The engine will ONLY recommend a link if the target's natural keyword
     # actually exists in the source content.
     #
@@ -1291,8 +1288,6 @@ module EmbeddedNerd
 
         keywords << target[:title]
 
-
-        # Also use the article's explicit related title when available.
         keywords.concat(
           target[:tags]
         )
@@ -1376,18 +1371,12 @@ module EmbeddedNerd
         end
 
 
-      # ----------------------------------------------------------------------
-      # Escape keyword for safe regex use.
-      # ----------------------------------------------------------------------
-
       escaped =
         Regexp.escape(keyword)
 
 
       # ----------------------------------------------------------------------
-      # Markdown link text must not be modified.
-      #
-      # We therefore reject an occurrence immediately preceded by '['.
+      # Do not match inside Markdown links.
       # ----------------------------------------------------------------------
 
       pattern =
@@ -1480,14 +1469,14 @@ module EmbeddedNerd
           "product"
         )
 
-          break if
+          next if
             product_links >= settings[
               "max_product_links_per_page"
             ].to_i
 
         else
 
-          break if
+          next if
             article_links >= settings[
               "max_article_links_per_page"
             ].to_i
@@ -1496,14 +1485,35 @@ module EmbeddedNerd
 
 
         # ---------------------------------------------------------------------
+        # IMPORTANT:
+        #
+        # Use the CURRENT modified content.
+        #
+        # The previous version used:
+        #
+        #   { content: content }.merge(current)
+        #
+        # which caused current[:content] to overwrite the updated content.
+        #
+        # This version deliberately does:
+        #
+        #   current.merge(content: content)
+        #
+        # ---------------------------------------------------------------------
+
+        source =
+          current.merge(
+            content: content
+          )
+
+
+        # ---------------------------------------------------------------------
         # Recalculate opportunity because content changes after each link.
         # ---------------------------------------------------------------------
 
         opportunity =
           find_link_opportunity(
-            {
-              content: content
-            }.merge(current),
+            source,
             relation[:target]
           )
 
@@ -1899,7 +1909,7 @@ module EmbeddedNerd
         data["internal_links"] == true
 
 
-      EDITORIAL_LAYOUTS.include?(
+      EmbeddedNerd::InternalLinker::EDITORIAL_LAYOUTS.include?(
         data["layout"].to_s
       )
 
@@ -2225,7 +2235,7 @@ end
 
 
 # ============================================================================
-# Jekyll Hooks
+# JEKYLL HOOKS
 # ============================================================================
 
 Jekyll::Hooks.register :posts, :pre_render do |post|
@@ -2264,7 +2274,7 @@ Jekyll::Hooks.register :documents, :pre_render do |document|
       document
     )
 
-  elsif EDITORIAL_LAYOUTS.include?(
+  elsif EmbeddedNerd::InternalLinker::EDITORIAL_LAYOUTS.include?(
     data["layout"].to_s
   )
 
