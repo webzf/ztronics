@@ -5,6 +5,20 @@ howto: true
 
 layout: single
 
+required_hardware:
+  - id: esp32-devkit
+    component: ESP32 Development Board
+
+  - id: mpu6050
+    component: MPU6050 Accelerometer & Gyroscope
+
+  - id: solderless-breadboard
+    component: Breadboard
+
+  - id: jumper-wires
+    component: Male-to-Female Jumper Wires
+
+
 sidebar: 
    nav: "embedded"
 
@@ -87,13 +101,7 @@ The sensor communicates using the I2C protocol and works with both Arduino and E
 
 # Required Hardware
 
-| Component | Link |
-|---|---|
-| MPU6050 Sensor | [Recommended MPU6050 Module](https://YOUR-AFFILIATE-LINK.com) |
-| Arduino Uno | [Compatible Arduino Uno Board](https://YOUR-AFFILIATE-LINK.com) |
-| Arduino Nano | [Arduino Nano for Compact Projects](https://YOUR-AFFILIATE-LINK.com) |
-| Jumper Wires | [Male to Female Jumper Wires](https://YOUR-AFFILIATE-LINK.com) |
-| Breadboard | [Breadboard for Arduino Projects](https://YOUR-AFFILIATE-LINK.com) |
+{% include required-hardware.html products=page.required_hardware %}
 
 ---
 
