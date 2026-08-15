@@ -15,10 +15,50 @@ required_hardware:
     component: MPU6050 Accelerometer & Gyroscope
 
   - id: solderless-breadboard
-    component: Solderless Breadboard
+    component: Breadboard
 
   - id: jumper-wires
-    component: Jumper Wires
+    component: Male-to-Female Jumper Wires
+
+sidebar:
+  nav: "embedded"
+
+excerpt: "Learn how to calibrate an MPU6050 accelerometer and gyroscope, calculate sensor offsets, verify calibration results, and improve motion sensor accuracy."
+
+show_date: false
+read_time: false
+last_modified_at: false
+
+toc: true
+toc_sticky: true
+toc_label: "Contents"
+
+header:
+  teaser: /assets/images/mpu6050-calibration-guide.webp
+  image: /assets/images/mpu6050-calibration-guide.webp
+  og_image: /assets/images/mpu6050-calibration-guide.webp
+  overlay_image: /assets/images/header3.webp
+  overlay_filter: 0.25
+
+categories:
+  - Sensors
+  - MPU6050
+  - Arduino
+
+tags:
+  - MPU6050
+  - Calibration
+  - Accelerometer
+  - Gyroscope
+  - Arduino
+  - ESP32
+  - I2C
+  - Motion Sensor
+  - Electronics
+
+related: true
+share: true
+
 ---
 
 # MPU6050 Calibration Guide: How to Calibrate Accelerometer & Gyroscope
