@@ -582,11 +582,18 @@ void loop() {
 
 ---
 
-<iframe
-  src="https://wokwi.com/experimental/embed?client_id=472467061541458945"
-  width="50%"
-  height="500"
-></iframe>
+## Try the MPU6050 Calibration in Wokwi
+
+You can run the complete calibration project directly in Wokwi.
+
+<div class="wokwi-embed">
+  <iframe
+    src="https://wokwi.com/projects/472467061541458945"
+    title="MPU6050 Calibration Simulation"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
+</div>
 
 # How the Calibration Code Works
 
