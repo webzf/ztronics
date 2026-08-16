@@ -582,7 +582,11 @@ void loop() {
 
 ---
 
-<iframe src="https://wokwi.com/projects/472467061541458945">
+<iframe
+  src="https://wokwi.com/experimental/embed?client_id=..."
+  width="50%"
+  height="500"
+></iframe>
 
 # How the Calibration Code Works
 
