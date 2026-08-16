@@ -583,7 +583,7 @@ void loop() {
 ---
 
 <iframe
-  src="https://wokwi.com/experimental/embed?client_id=..."
+  src="https://wokwi.com/experimental/embed?client_id=472467061541458945"
   width="50%"
   height="500"
 ></iframe>
