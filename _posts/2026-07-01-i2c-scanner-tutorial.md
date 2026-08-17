@@ -42,6 +42,23 @@ tags:
 
 related: true
 share: true
+
+required_hardware:
+  - id: esp32-devkit
+    component: ESP32 Development Board
+
+  - id: mpu6050
+    component: MPU6050 Accelerometer & Gyroscope
+
+  - id: ssd1306-oled
+    component: SSD1306 OLED Display
+
+  - id: solderless-breadboard
+    component: Breadboard
+
+  - id: jumper-wires
+    component: Male-to-Female Jumper Wires
+
 ---
 
 # I2C Scanner Tutorial: Find Any I2C Device Address
@@ -138,12 +155,7 @@ For beginners and experienced makers alike, it's one of the first programs worth
 
 # Required Hardware
 
-| Component | Link |
-|-----------|------|
-| Arduino Uno or ESP32 Development Board | Your Affiliate Link |
-| I2C Module (OLED, MPU6050, BME280, etc.) | Your Affiliate Link |
-| Breadboard | Your Affiliate Link |
-| Jumper Wires | Your Affiliate Link |
+{% include required-hardware.html products=page.required_hardware %}
 
 ---
 
