@@ -44,6 +44,22 @@ tags:
 
 related: true
 share: true
+
+required_hardware:
+  - id: esp32-devkit
+    component: ESP32 Development Board
+
+  - id: mpu6050
+    component: MPU6050 Accelerometer & Gyroscope
+
+  - id: ssd1306-oled
+    component: SSD1306 OLED Display
+
+  - id: solderless-breadboard
+    component: Breadboard
+
+  - id: jumper-wires
+    component: Male-to-Female Jumper Wires
 ---
 
 # ESP32 Snake Game with MPU6050 and OLED Display
@@ -89,13 +105,7 @@ The [OLED Display](/products/ssd1306-oled/) shows:
 
 # Required Hardware
 
-| Component | Link |
-|---|---|
-| ESP32 Development Board | [Recommended ESP32 Board](https://YOUR-AFFILIATE-LINK.com) |
-| MPU6050 Module | [MPU6050 Motion Sensor](https://YOUR-AFFILIATE-LINK.com) |
-| SSD1306 OLED Display | [0.96" OLED Display](https://YOUR-AFFILIATE-LINK.com) |
-| Breadboard | [Breadboard Kit](https://YOUR-AFFILIATE-LINK.com) |
-| Jumper Wires | [Jumper Wire Kit](https://YOUR-AFFILIATE-LINK.com) |
+{% include required-hardware.html products=page.required_hardware %}
 
 ---
 
