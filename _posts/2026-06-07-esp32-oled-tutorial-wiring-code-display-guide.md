@@ -386,16 +386,6 @@ products="esp32-starter-kit,esp32-devkit,ssd1306,breadboard-kit,usb-c-cable"
 %}
 
 ---
-# Recommended Starter Kits
-
-Useful products for this project:
-
-- [ESP32 Starter Kit](https://YOUR-AFFILIATE-LINK.com)
-- [SSD1306 OLED Display](https://YOUR-AFFILIATE-LINK.com)
-- [Breadboard Electronics Kit](https://YOUR-AFFILIATE-LINK.com)
-- [USB Type-C Cable](https://YOUR-AFFILIATE-LINK.com)
-
----
 
 # GitHub Source Code
 
