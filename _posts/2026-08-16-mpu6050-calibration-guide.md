@@ -197,13 +197,7 @@ Calibration provides a better starting point by reducing these measurable offset
 
 # Required Hardware
 
-The calibration process does not require special equipment. You need an MPU6050 module, a compatible development board, and basic prototyping hardware.
-
-The components used in this guide are listed in the **Hardware Used in This Project** section generated automatically from the front matter.
-
-> **Transparency Notice**
->
-> Some links on this page are affiliate links. If you purchase through them, Embedded Nerd may earn a small commission at no additional cost to you. This helps support the website and allows us to continue creating free tutorials and guides. Thank you for your support.
+{% include required-hardware.html products=page.required_hardware %}
 
 ---
 
