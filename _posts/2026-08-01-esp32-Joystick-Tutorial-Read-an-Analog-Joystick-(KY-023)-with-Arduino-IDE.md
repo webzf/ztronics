@@ -40,6 +40,19 @@ header:
 
 related: true
 share: true
+
+required_hardware:
+  - id: esp32-devkit
+    component: ESP32 Development Board
+
+  - id: ky-023-joystick
+    component: KY-023 Analog Joystick Module featuring dual-axis analog control and an integrated push button for Arduino, ESP32 and Raspberry Pi projects.
+
+  - id: solderless-breadboard
+    component: Breadboard
+
+  - id: jumper-wires
+    component: Male-to-Female Jumper Wires
 ---
 
 # ESP32 Joystick Tutorial
