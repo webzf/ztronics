@@ -250,13 +250,7 @@ In this section you'll learn:
 
 ## Hardware Required
 
-| Component | Quantity | Notes | Amazon |
-|-----------|---------:|-------|--------|
-| ESP32 Development Board | 1 | ESP32-WROOM-32 or equivalent | Affiliate Link |
-| KY-023 Analog Joystick Module | 1 | 5-pin module | Affiliate Link |
-| Breadboard | 1 | Half or full size | Affiliate Link |
-| Jumper Wires | 5 | Male-Male | Affiliate Link |
-| USB Cable | 1 | Data cable | Affiliate Link |
+{% include required-hardware.html products=page.required_hardware %}
 
 ---
 
