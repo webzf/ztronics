@@ -41,7 +41,7 @@ module EmbeddedNerd
       "max_total_links_per_page" => 5,
       "max_product_links_per_page" => 3,
       "max_article_links_per_page" => 2,
-      "minimum_relevance" => 60,
+      "minimum_relevance" => 65,
       "analysis_results_per_page" => 5,
       "minimum_confidence" => "medium",
       "high_confidence_score" => 85,
