@@ -991,7 +991,7 @@ This is useful for:
 
 Once the sensor readings are compensated, they can be used by higher-level application code.
 
-For example, the MPU6050 can be used as a motion controller in the [ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-mpu6050-oled/).
+For example, the MPU6050 can be used as a motion controller in the [ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-with-mpu6050-and-oled-display/).
 
 > **Important:** The calibration values in this example are stored only in RAM. They are lost when the microcontroller is restarted or powered off.
 
@@ -1020,7 +1020,7 @@ The complete calibration sketch will be available in the Embedded Nerd GitHub re
 
 The repository can be used to download the code and adapt the calibration process to your own MPU6050 projects.
 
-[Embedded Nerd on GitHub](https://github.com/embeddednerd)
+[Embedded Nerd on GitHub](https://github.com/webzf)
 
 ---
 
@@ -1030,7 +1030,7 @@ If you want to learn more about the MPU6050 and related projects, these guides a
 
 - [MPU6050 Arduino Guide](/mpu6050-arduino-guide/) — Learn how to connect the MPU6050, install the library, and read accelerometer and gyroscope data.
 - [I2C Scanner Tutorial](/i2c-scanner-tutorial/) — Check whether your MPU6050 is detected correctly on the I2C bus.
-- [ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-mpu6050-oled/) — Use the MPU6050 as a motion controller in an ESP32 project.
+- [ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-with-mpu6050-and-oled-display/) — Use the MPU6050 as a motion controller in an ESP32 project.
 - [ESP32 OLED Tutorial](/esp32-oled-tutorial-wiring-code-display-guide/) — Learn how to connect and use an SSD1306 OLED display with the ESP32.
 
 Future MPU6050 guides can cover topics such as gyroscope drift, troubleshooting, advanced accelerometer calibration, and using the MPU6050 with the ESP32.
@@ -1150,4 +1150,4 @@ After calibration:
 
 The calibration process described in this guide focuses on practical offset compensation. More advanced applications may require additional accelerometer calibration, temperature compensation, or techniques for dealing with long-term gyroscope drift.
 
-Once the MPU6050 is calibrated, it can be used for motion detection, robotics, orientation tracking, and motion-controlled projects such as the [ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-mpu6050-oled/).
+Once the MPU6050 is calibrated, it can be used for motion detection, robotics, orientation tracking, and motion-controlled projects such as the [ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-with-mpu6050-and-oled-display/).
