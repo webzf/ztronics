@@ -1,4 +1,5 @@
 ---
+
 title: "BMA400 ESP32 Tutorial: Wiring, Arduino Code & Accelerometer Guide"
 
 permalink: /bma400-esp32-tutorial-wiring-code-accelerometer-guide/
@@ -8,303 +9,341 @@ howto: true
 layout: single
 
 required_hardware:
-  - id: esp32-devkit
-    component: ESP32 Development Board
 
-  - id: solderless-breadboard
-    component: Solderless Breadboard
+* id: esp32-devkit
+  component: ESP32 Development Board
 
-excerpt: "Learn how to connect a BMA400 accelerometer to an ESP32, install the Arduino library, read X/Y/Z acceleration data, and understand the sensor's I2C interface."
+* id: bma400
+  component: BMA400 Accelerometer
+
+* id: solderless-breadboard
+  component: Breadboard
+
+* id: jumper-wires
+  component: Male-to-Female Jumper Wires
+
+sidebar:
+nav: "embedded"
+
+excerpt: "Learn how to connect a BMA400 accelerometer to an ESP32, install the Arduino library, read X/Y/Z acceleration data, and configure the sensor over I2C."
+
+show_date: false
+read_time: false
+last_modified_at: false
 
 toc: true
 toc_sticky: true
 toc_label: "Contents"
 
+header:
+teaser: /assets/images/bma400-esp32-tutorial.webp
+image: /assets/images/bma400-esp32-tutorial.webp
+og_image: /assets/images/bma400-esp32-tutorial.webp
+overlay_image: /assets/images/header3.webp
+overlay_filter: 0.25
+
 categories:
-  - ESP32
-  - Sensors
+
+* Sensors
+* ESP32
+* Arduino
 
 tags:
-  - BMA400
-  - Accelerometer
-  - ESP32
-  - Arduino
-  - I2C
-  - Motion Sensor
-  - Sensors
+
+* BMA400
+* Accelerometer
+* ESP32
+* Arduino
+* I2C
+* Motion Sensor
+* Sensors
+* Electronics
+
+related: true
+share: true
 
 ---
 
 # BMA400 ESP32 Tutorial: Wiring, Arduino Code & Accelerometer Guide
 
-The **BMA400** is a low-power 3-axis accelerometer from Bosch Sensortec that is particularly interesting for battery-powered ESP32 projects.
+The **BMA400** is a low-power 3-axis accelerometer from Bosch Sensortec that is well suited to motion-sensing and battery-powered embedded projects.
 
-In this tutorial, you will learn how to connect a BMA400 breakout board to an ESP32, communicate with it over I2C, install the Arduino library, and read acceleration on the X, Y and Z axes.
+In this tutorial, you will learn how to connect a BMA400 accelerometer to an ESP32, communicate with it over I2C, install an Arduino library, and read acceleration data from the X, Y and Z axes.
 
-We will build a simple example that prints the acceleration data to the Serial Monitor.
+We will start with a simple working example and then look at the sensor's measurement range, I2C address, acceleration data, troubleshooting and some of the BMA400's more advanced features.
 
-By the end of the tutorial, you will know:
+![BMA400 accelerometer connected to an ESP32 development board](/assets/images/bma400-esp32-hardware.webp)
 
-- What the BMA400 accelerometer is
-- How to connect a BMA400 to an ESP32
-- Which I2C address the sensor uses
-- Which Arduino library to install
-- How to read X, Y and Z acceleration
-- How to interpret the values in `g`
-- How to change the acceleration range
-- How to troubleshoot I2C communication problems
-- When calibration may be useful
-- Why the BMA400 is interesting for low-power applications
+By the end of this tutorial, you will know how to:
 
-> **Note:** This tutorial uses a BMA400 breakout board rather than the bare BMA400 chip. The electrical characteristics of the breakout board can differ from the bare sensor, so always check the documentation for the specific module you are using.
+* Connect a BMA400 to an ESP32
+* Wire the sensor using I2C
+* Install the BMA400 Arduino library
+* Read X, Y and Z acceleration
+* Understand acceleration values expressed in `g`
+* Check the BMA400 I2C address
+* Change the accelerometer measurement range
+* Troubleshoot common connection problems
+* Understand when calibration may be useful
+* Use the BMA400 as a foundation for low-power motion projects
 
 ---
 
-## What Is the BMA400?
+# What Is the BMA400?
 
 The BMA400 is a **3-axis digital accelerometer** developed by Bosch Sensortec.
 
-It measures acceleration along three perpendicular axes:
+It measures acceleration along three independent axes:
 
-- X
-- Y
-- Z
+* X
+* Y
+* Z
 
-Unlike an IMU such as the MPU6050, the BMA400 is an accelerometer rather than a combined accelerometer and gyroscope.
+The sensor supports four selectable measurement ranges:
 
-The sensor supports selectable measurement ranges of:
+| Range | Maximum acceleration |
+| ----- | -------------------: |
+| ±2 g  |                  2 g |
+| ±4 g  |                  4 g |
+| ±8 g  |                  8 g |
+| ±16 g |                 16 g |
 
-| Range | Maximum measurable acceleration |
-|---|---:|
-| ±2 g | 2 g |
-| ±4 g | 4 g |
-| ±8 g | 8 g |
-| ±16 g | 16 g |
+The BMA400 provides 12-bit digital resolution and supports I2C and SPI communication. Bosch also designed the sensor for low-power applications, with features such as auto wake-up, activity recognition, orientation detection, tap detection and step counting.
 
-The BMA400 provides 12-bit acceleration data and supports both I2C and SPI communication. Bosch also designed it specifically for very low-power applications, with features such as automatic wake-up, activity recognition, orientation detection, tap detection and step counting. :contentReference[oaicite:4]{index=4}
+The BMA400 is therefore useful for projects involving:
 
-This makes the BMA400 especially useful for:
-
-- Wearable electronics
-- Battery-powered sensors
-- Motion detection
-- Portable devices
-- IoT projects
-- Activity monitoring
-- Orientation detection
-- Low-power ESP32 projects
-
----
-
-## Why Use the BMA400 with an ESP32?
-
-The ESP32 is already a popular choice for wireless embedded projects because it combines processing power, Wi-Fi and Bluetooth with a large Arduino ecosystem.
-
-Adding the BMA400 gives the ESP32 access to motion data without requiring a large amount of power from the sensor.
-
-This combination is useful when a project needs to detect:
-
-- Movement
-- Tilt
-- Orientation changes
-- Shaking
-- Activity
-- Steps
-- Wake-up events
-
-The BMA400 is particularly attractive when you only need acceleration.
-
-If you also need rotational velocity from a gyroscope, an IMU such as the MPU6050 may be a better fit.
-
-For a basic introduction to the MPU6050, see the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/).
+* Motion detection
+* Tilt detection
+* Orientation
+* Wearables
+* Portable electronics
+* Battery-powered sensors
+* IoT devices
+* Activity monitoring
+* Low-power ESP32 applications
 
 ---
 
-## BMA400 vs MPU6050
+# Why Use the BMA400 with an ESP32?
 
-The BMA400 and MPU6050 are not direct replacements for each other.
+The ESP32 is a popular microcontroller for embedded projects because it combines processing power with Wi-Fi, Bluetooth and a large Arduino ecosystem.
 
-| Feature | BMA400 | MPU6050 |
-|---|---|---|
-| Accelerometer | 3-axis | 3-axis |
-| Gyroscope | No | 3-axis |
-| Measurement type | Acceleration | Acceleration + rotation |
-| I2C | Yes | Yes |
-| SPI | Yes | No |
-| Low-power focus | Excellent | Less focused |
-| Best suited for | Motion and low-power sensing | Motion + orientation/rotation |
+The BMA400 adds three-axis acceleration sensing while keeping power consumption low.
 
-The main distinction is simple:
+This combination is particularly useful when a project needs to detect:
 
-**Use the BMA400 when acceleration is enough. Use an MPU6050 when you also need a gyroscope.**
+* Movement
+* Shaking
+* Tilt
+* Orientation changes
+* Activity
+* Wake-up events
+* Steps
 
-This is one reason the BMA400 can be a better choice for battery-powered motion-detection projects.
+One of the biggest advantages of the BMA400 is that many motion-related functions can be handled by the sensor itself.
 
-A more detailed comparison can be covered separately without making this tutorial unnecessarily complicated.
+Instead of continuously waking the ESP32 and processing every measurement, the BMA400 can be configured to generate interrupts when specific conditions occur.
 
----
-
-## Required Hardware
-
-For this tutorial you need:
-
-- ESP32 DevKit V1
-- BMA400 breakout board
-- Solderless breadboard
-- Jumper wires
-- USB cable
-
-The BMA400 is available on several breakout boards. For example, SparkFun offers both standard and Micro BMA400 Qwiic boards. These boards operate the BMA400 at 3.3 V and expose the sensor through I2C. :contentReference[oaicite:5]{index=5}
-
-When choosing a breakout board, look for:
-
-- 3.3 V compatibility
-- I2C support
-- Clearly labelled SDA and SCL pins
-- Accessible address configuration
-- Pull-up resistors on the I2C lines
-- Good documentation
-
-The breakout board matters because the BMA400 chip itself and the surrounding breakout circuitry are not necessarily identical across manufacturers.
+This makes it especially interesting for battery-powered applications.
 
 ---
 
-## BMA400 Pinout
+# BMA400 vs MPU6050
 
-A typical BMA400 breakout board exposes pins similar to these:
+The BMA400 and MPU6050 have different strengths.
 
-| BMA400 Module | Function |
-|---|---|
-| VCC / 3V3 | Power |
-| GND | Ground |
-| SDA | I2C data |
-| SCL | I2C clock |
-| INT1 | Interrupt 1 |
-| INT2 | Interrupt 2 |
+The **BMA400 is a 3-axis accelerometer**, while the **MPU6050 combines a 3-axis accelerometer with a 3-axis gyroscope**.
 
-Some boards may expose additional pins such as CS or provide a different pin order.
+| Feature         | BMA400                  | MPU6050                 |
+| --------------- | ----------------------- | ----------------------- |
+| Accelerometer   | 3-axis                  | 3-axis                  |
+| Gyroscope       | No                      | Yes                     |
+| I2C             | Yes                     | Yes                     |
+| SPI             | Yes                     | No                      |
+| Low-power focus | Excellent               | More limited            |
+| Best for        | Acceleration and motion | Acceleration + rotation |
 
-Always check the labels on your particular breakout board before connecting it.
+If your project only needs acceleration, the BMA400 can be a very good choice.
 
-For this basic tutorial we only need:
+If you need both acceleration and rotational velocity, an IMU such as the MPU6050 is more appropriate.
 
-- VCC
-- GND
-- SDA
-- SCL
-
-The interrupt pins will become useful in more advanced BMA400 projects.
+The [MPU6050 Arduino Guide](/mpu6050-arduino-guide/) covers the MPU6050 in more detail.
 
 ---
 
-## BMA400 I2C Address
+# Required Hardware
 
-The BMA400 supports two 7-bit I2C addresses.
+For this project you need:
 
-| SDO configuration | I2C address |
-|---|---|
-| SDO low | `0x14` |
-| SDO high | `0x15` |
+* ESP32 Development Board
+* BMA400 Accelerometer breakout board
+* Breadboard
+* Male-to-Female Jumper Wires
+* USB cable
 
-The BMA400 datasheet defines the address using the SDO pin. The pin must have a defined logic level and should not be left floating. :contentReference[oaicite:6]{index=6}
+The exact breakout board matters.
 
-Many breakout boards configure the sensor for `0x14` by default.
+The BMA400 chip itself is a low-voltage device, while breakout boards may include additional circuitry such as voltage regulation, pull-up resistors and address configuration.
 
-For example, the SparkFun BMA400 breakout uses `0x14` by default and allows the alternate `0x15` address to be selected through its address configuration. :contentReference[oaicite:7]{index=7}
-
-This is important when troubleshooting an apparently invisible sensor.
-
-If your BMA400 does not respond at `0x14`, check the breakout documentation and run an I2C scanner.
+Always check the documentation for the particular BMA400 module you are using.
 
 ---
 
-## Wiring the BMA400 to the ESP32
+# BMA400 Pinout
+
+A typical BMA400 breakout exposes the following connections:
+
+| Pin       | Function    |
+| --------- | ----------- |
+| VCC / 3V3 | Power       |
+| GND       | Ground      |
+| SDA       | I2C data    |
+| SCL       | I2C clock   |
+| INT1      | Interrupt 1 |
+| INT2      | Interrupt 2 |
+
+Some breakout boards may expose additional pins or use a different pin layout.
+
+For this basic ESP32 example, only four connections are required:
+
+* VCC
+* GND
+* SDA
+* SCL
+
+The interrupt pins will become useful for more advanced motion-detection projects.
+
+![BMA400 breakout board pinout](/assets/images/bma400-esp32-pinout.webp)
+
+---
+
+# BMA400 I2C Address
+
+The BMA400 supports two 7-bit I2C addresses:
+
+| SDO level | I2C address |
+| --------- | ----------- |
+| Low       | `0x14`      |
+| High      | `0x15`      |
+
+The SDO pin determines which address is used.
+
+Many BMA400 breakout boards use `0x14` as their default address.
+
+If your sensor does not respond at `0x14`, check the breakout board documentation and verify whether the address has been changed to `0x15`.
+
+This is one of the first things to check when troubleshooting an I2C sensor.
+
+---
+
+# Wiring the BMA400 to the ESP32
 
 For a typical ESP32 DevKit V1, GPIO21 and GPIO22 are commonly used for I2C.
 
 Connect the BMA400 as follows:
 
-| BMA400 | ESP32 DevKit V1 |
-|---|---|
-| VCC / 3V3 | 3.3V |
-| GND | GND |
-| SDA | GPIO21 |
-| SCL | GPIO22 |
+| BMA400    | ESP32  |
+| --------- | ------ |
+| VCC / 3V3 | 3.3V   |
+| GND       | GND    |
+| SDA       | GPIO21 |
+| SCL       | GPIO22 |
 
-### Wiring Diagram
+![BMA400 ESP32 I2C wiring diagram](/assets/images/bma400-esp32-wiring.webp)
 
-The connection can be represented as:
+The connection can be summarized as:
 
 ```text
-BMA400              ESP32 DevKit V1
+BMA400                 ESP32 DevKit V1
 
-VCC  ----------------  3.3V
-GND  ----------------  GND
-SDA  ----------------  GPIO21
-SCL  ----------------  GPIO22
+VCC   ----------------  3.3V
+GND   ----------------  GND
+SDA   ----------------  GPIO21
+SCL   ----------------  GPIO22
 ```
 
-GPIO21 and GPIO22 are common I2C pins on ESP32 development boards, but the ESP32 Arduino core allows the I2C pins to be assigned explicitly.
+## Why GPIO21 and GPIO22?
 
-Using:
+The ESP32 Arduino core allows the I2C pins to be assigned explicitly.
+
+In this tutorial we use:
 
 ```cpp
 Wire.begin(21, 22);
 ```
 
-makes the intended pins clear in the program.
+This makes the wiring clear and avoids relying on board-specific default I2C configuration.
 
-### Important Voltage Note
+---
 
-The BMA400 chip operates from a low-voltage supply. Bosch specifies a sensor supply range of approximately 1.72 V to 3.6 V. :contentReference[oaicite:8]{index=8}
+# BMA400 Voltage
+
+The BMA400 itself is designed for low-voltage operation.
 
 For an ESP32 project, **3.3 V is the appropriate logic level**.
 
 Do not assume that every BMA400 breakout board can be connected directly to 5 V.
 
-Some breakout boards include additional power circuitry, while others may expose the sensor supply directly.
+Some breakout boards include regulators and additional circuitry, while others expose the sensor supply more directly.
 
-Always check the documentation for your specific board.
+Always check the specifications of the particular board you are using.
 
 ---
 
-## Installing the BMA400 Arduino Library
+# Installing the BMA400 Arduino Library
 
-The easiest way to use the BMA400 with Arduino is the **SparkFun BMA400 Arduino Library**.
+For this tutorial we will use the **SparkFun BMA400 Arduino Library**.
 
-The library provides an Arduino-friendly interface based on Bosch's BMA400 API. It supports I2C and SPI and includes examples for basic readings, interrupts, filtering, FIFO, motion detection, orientation, tap detection, step counting and power management. :contentReference[oaicite:9]{index=9}
+The library provides an Arduino-friendly interface for the BMA400 and implements Bosch's BMA400 API.
 
-### Install the Library
+It supports:
 
-Open the Arduino IDE.
+* I2C
+* SPI
+* Acceleration readings
+* Measurement range configuration
+* Filtering
+* Interrupts
+* Motion detection
+* Orientation detection
+* Tap detection
+* Step counting
+* FIFO
+* Power management
 
-Go to:
+The library can be installed directly through the Arduino IDE.
+
+## Arduino IDE Steps
+
+1. Open Arduino IDE.
+2. Select:
 
 **Sketch → Include Library → Manage Libraries**
 
-Search for:
+3. Search for:
 
 **SparkFun BMA400**
 
-Install:
+4. Install:
 
 **SparkFun BMA400 Arduino Library**
 
-The library can also be obtained from its official GitHub repository. :contentReference[oaicite:10]{index=10}
+The library also includes example sketches that can be opened from:
+
+**File → Examples → SparkFun BMA400 Arduino Library**
 
 ---
 
-## Basic BMA400 ESP32 Example
+# Basic BMA400 ESP32 Example
 
-The following example initializes the BMA400 over I2C and continuously prints the acceleration measured on the three axes.
+The following example initializes the BMA400 over I2C and continuously reads the acceleration on all three axes.
 
-It uses the library's `beginI2C()` and `getSensorData()` functions and reads the converted acceleration values from `accelerometer.data.accelX`, `accelY` and `accelZ`. :contentReference[oaicite:11]{index=11}
+The sensor values returned by the SparkFun library are converted to `g`.
 
 ```cpp
 #include <Wire.h>
 #include "SparkFun_BMA400_Arduino_Library.h"
 
-// Create the BMA400 sensor object
 BMA400 accelerometer;
 
 void setup()
@@ -326,7 +365,7 @@ void setup()
 
 void loop()
 {
-  // Update the sensor data
+  // Update sensor data
   accelerometer.getSensorData();
 
   Serial.print("X: ");
@@ -344,13 +383,13 @@ void loop()
 }
 ```
 
-The official SparkFun example uses the same basic sequence: create a `BMA400` object, initialize I2C with `beginI2C()`, call `getSensorData()`, and then read the three acceleration values from the sensor data structure. :contentReference[oaicite:12]{index=12}
+The SparkFun library's current implementation uses `beginI2C()` to initialize the sensor and `getSensorData()` to update the acceleration structure. The returned X, Y and Z values are converted to `g`.
 
 ---
 
-## How the Code Works
+# How the Code Works
 
-### Include the Libraries
+## Include the Libraries
 
 ```cpp
 #include <Wire.h>
@@ -359,64 +398,66 @@ The official SparkFun example uses the same basic sequence: create a `BMA400` ob
 
 `Wire.h` provides the Arduino I2C interface.
 
-The SparkFun library provides the BMA400-specific functions.
+The SparkFun library provides the BMA400-specific functions and data structures.
 
 ---
 
-### Create the Sensor Object
+## Create the Sensor Object
 
 ```cpp
 BMA400 accelerometer;
 ```
 
-This creates an instance of the BMA400 class.
-
-The object is then used to initialize the sensor and retrieve measurements.
+This creates the BMA400 object used throughout the program.
 
 ---
 
-### Start I2C
+## Start I2C
 
 ```cpp
 Wire.begin(21, 22);
 ```
 
-On this ESP32 example:
+The ESP32 uses:
 
-- GPIO21 = SDA
-- GPIO22 = SCL
+* GPIO21 → SDA
+* GPIO22 → SCL
 
-Using the pins explicitly also makes the wiring and code easier to compare when troubleshooting.
+These pins can be changed if your ESP32 board uses a different I2C configuration.
 
 ---
 
-### Initialize the BMA400
+## Initialize the Sensor
 
 ```cpp
 accelerometer.beginI2C(BMA400_I2C_ADDRESS_DEFAULT);
 ```
 
-The SparkFun library defines `BMA400_I2C_ADDRESS_DEFAULT` as the sensor's default address, `0x14`. The alternate address is `0x15`. :contentReference[oaicite:13]{index=13}
+The library accepts the BMA400 I2C address during initialization.
 
-If the sensor cannot be initialized, the example waits and tries again.
+The default address constant corresponds to the standard BMA400 address.
 
-This is useful during development because the Serial Monitor immediately tells you that the sensor has not been detected.
+If the initialization fails, the example prints an error and tries again.
+
+This is useful during development because the Serial Monitor immediately indicates whether the ESP32 can communicate with the sensor.
 
 ---
 
-### Read the Sensor
+## Read the Sensor Data
+
+Inside `loop()` we call:
 
 ```cpp
 accelerometer.getSensorData();
 ```
 
-This step is important.
+This updates the sensor data structure.
 
-The library documentation specifies that `getSensorData()` must be called before accessing the acceleration data. Otherwise the values will not be updated. :contentReference[oaicite:14]{index=14}
+Only after this function has been called should the acceleration values be read.
 
 ---
 
-### Read X, Y and Z
+## Read X, Y and Z
 
 The acceleration values are available through:
 
@@ -426,37 +467,21 @@ accelerometer.data.accelY
 accelerometer.data.accelZ
 ```
 
-The SparkFun library converts the raw sensor data into acceleration values expressed in **g**. :contentReference[oaicite:15]{index=15}
+The library converts the raw BMA400 measurements into values expressed in `g`.
 
 ---
 
-## Understanding X, Y and Z
+# Understanding X, Y and Z
 
-An accelerometer measures acceleration along three axes.
+An accelerometer measures acceleration along three perpendicular axes.
 
-```text
-                 Z
-                 ↑
-                 |
-                 |
-                 +--------→ X
-                /
-               /
-              ↓
-              Y
-```
+The exact orientation depends on how the breakout board is mounted.
 
-The exact physical orientation depends on how the breakout board is mounted.
+![BMA400 three-axis acceleration orientation diagram](/assets/images/bma400-esp32-axes.webp)
 
-The important point is that the three values represent acceleration along three perpendicular directions.
+When the sensor is stationary, gravity is still acting on it.
 
-### What Happens When the Sensor Is Still?
-
-Gravity is always acting on the sensor.
-
-Therefore, when the BMA400 is sitting still, one axis will normally measure approximately **1 g** or **-1 g**, depending on the sensor's orientation.
-
-For example, if the Z axis points upward, you may see something similar to:
+For example, depending on the physical orientation, you might see values approximately like:
 
 ```text
 X ≈ 0 g
@@ -464,45 +489,58 @@ Y ≈ 0 g
 Z ≈ +1 g
 ```
 
-If the board is turned upside down, the sign of the corresponding axis can change.
+If the board is turned upside down, the corresponding axis may become approximately:
 
-The exact values will not necessarily be perfect.
+```text
+Z ≈ -1 g
+```
 
-Small offsets, noise, board orientation and mounting can all affect the measurement.
+The actual values will vary.
+
+Factors such as:
+
+* Sensor orientation
+* Offset
+* Noise
+* Temperature
+* Mechanical mounting
+* Selected measurement range
+
+can all affect the readings.
 
 ---
 
-## Why Is Gravity Visible?
+# Why Does a Stationary Sensor Measure 1 g?
 
-An accelerometer does not simply measure "movement".
+An accelerometer does not simply measure whether the device is moving.
 
 It measures acceleration forces acting on the sensor, including the effect of gravity.
 
-That is why an accelerometer can be used to estimate orientation when the sensor is stationary.
+That is why a stationary accelerometer can be used to estimate orientation relative to gravity.
 
 For example:
 
-- Flat on a table → one axis is dominated by gravity
-- Rotated 90° → another axis becomes dominated by gravity
-- Moving → dynamic acceleration is added to the gravity component
+* Flat on a table → one axis is dominated by gravity
+* Rotate the board → the gravity component moves between axes
+* Move the board → dynamic acceleration is added to gravity
 
-This is one of the foundations of tilt and orientation detection.
+This principle is commonly used for tilt and orientation detection.
 
 ---
 
-## Testing the Accelerometer
+# Testing the Accelerometer
 
-After uploading the sketch:
+After uploading the program:
 
-1. Open the Arduino Serial Monitor.
+1. Open the Serial Monitor.
 2. Set the baud rate to **115200**.
-3. Leave the sensor stationary.
-4. Observe X, Y and Z.
+3. Leave the BMA400 stationary.
+4. Observe the X, Y and Z values.
 5. Slowly rotate the breakout board.
-6. Move the sensor in different directions.
+6. Move it in different directions.
 7. Observe which axis changes.
 
-You should see output similar to:
+The output should follow this general format:
 
 ```text
 X: 0.012 g | Y: -0.021 g | Z: 0.987 g
@@ -510,165 +548,160 @@ X: 0.018 g | Y: -0.014 g | Z: 1.004 g
 X: 0.412 g | Y: 0.082 g | Z: 0.903 g
 ```
 
-These values are examples of the format, not guaranteed measurements.
+These are example values showing the output format, not guaranteed measurements.
 
-Your actual readings will depend on:
+Your actual values will depend on the sensor, breakout board and orientation.
 
-- Sensor orientation
-- Breakout board
-- Mechanical mounting
-- Sensor range
-- Noise
-- Temperature
-- Motion
-
-Do not expect the sensor to produce exactly `0.000 g` and `1.000 g` in every situation.
+![BMA400 ESP32 Serial Monitor acceleration output](/assets/images/bma400-esp32-output.webp)
 
 ---
 
-## Accelerometer Range
+# Accelerometer Measurement Range
 
-The BMA400 supports four selectable acceleration ranges:
+The BMA400 supports four acceleration ranges:
 
-| Range | Use |
-|---|---|
-| ±2 g | Small movements and higher sensitivity |
-| ±4 g | General-purpose motion |
-| ±8 g | Larger acceleration |
-| ±16 g | High-acceleration applications |
+| Range | Typical use                            |
+| ----- | -------------------------------------- |
+| ±2 g  | Small movements and higher sensitivity |
+| ±4 g  | General-purpose motion                 |
+| ±8 g  | Larger acceleration                    |
+| ±16 g | High-acceleration applications         |
 
-The smaller ranges provide greater sensitivity for a given acceleration, while larger ranges allow the sensor to measure stronger acceleration without saturating. Bosch specifies the four ranges as ±2, ±4, ±8 and ±16 g. :contentReference[oaicite:16]{index=16}
+The smaller ranges provide more measurement resolution for smaller acceleration values, while larger ranges allow stronger acceleration to be measured before saturation.
 
-For a basic motion project, ±2 g is often a sensible starting point.
+The SparkFun library provides the `setRange()` function for changing the measurement range.
 
-For applications involving impacts or fast movement, a larger range may be more appropriate.
+For example:
 
-The SparkFun library exposes range configuration through `setRange()`. :contentReference[oaicite:17]{index=17}
+```cpp
+accelerometer.setRange(BMA400_RANGE_2G);
+```
 
-For example, range configuration can be added later when the application requires it rather than complicating the first sensor test.
+For a basic orientation or low-motion project, ±2 g can be a sensible starting point.
 
----
-
-## Output Data Rate
-
-The BMA400 also provides configurable output data rates.
-
-Bosch specifies normal-mode output data rates from **12.5 Hz to 800 Hz**. :contentReference[oaicite:18]{index=18}
-
-The correct value depends on the application.
-
-A lower data rate may be enough for:
-
-- Orientation
-- Slow movement
-- Basic monitoring
-
-A higher data rate can be useful for:
-
-- Faster motion
-- Vibration analysis
-- More responsive motion detection
-
-Higher sampling rates are not automatically better.
-
-The appropriate configuration depends on what the project is actually trying to measure.
+For impacts or faster movement, a larger range may be more appropriate.
 
 ---
 
-## BMA400 Low-Power Features
+# Output Data Rate
 
-One of the main reasons to choose the BMA400 is its low-power architecture.
+The BMA400 supports configurable output data rates from **12.5 Hz to 800 Hz**.
 
-Bosch specifies very low current consumption depending on the operating configuration, together with an ultra-low-power auto-wake-up mode. :contentReference[oaicite:19]{index=19}
+The appropriate rate depends on the application.
 
-The sensor also includes hardware features such as:
+A lower data rate can be suitable for:
 
-- Auto wake-up
-- Auto low-power operation
-- Activity recognition
-- Orientation detection
-- Step counting
-- Tap detection
-- Double-tap detection
-- Interrupts
-- FIFO buffering
+* Orientation
+* Tilt detection
+* Slow movement
 
-These functions allow the BMA400 to perform some motion-related tasks inside the sensor rather than forcing the ESP32 to continuously process every measurement. :contentReference[oaicite:20]{index=20}
+Higher rates can be useful for:
 
-This can be particularly valuable in battery-powered ESP32 projects.
+* Faster movement
+* Vibration
+* More responsive motion detection
 
----
+A higher data rate is not automatically better.
 
-## Motion Detection and Interrupts
-
-The BMA400 includes programmable interrupt functionality.
-
-Instead of continuously polling the sensor and asking whether something happened, the sensor can generate an interrupt when a configured condition occurs.
-
-Possible applications include:
-
-- Wake the ESP32 when movement is detected
-- Detect orientation changes
-- Detect taps
-- Count steps
-- Detect activity
-- Trigger a low-power application
-
-The SparkFun library exposes functions for configuring generic interrupts, orientation interrupts, tap detection, step counter interrupts, activity changes and wake-up interrupts. :contentReference[oaicite:21]{index=21}
-
-These features are intentionally outside the main example in this tutorial.
-
-The goal here is to first establish reliable communication and understand the acceleration data.
+The correct configuration depends on what the project needs to measure.
 
 ---
 
-## Calibration: Does the BMA400 Need It?
+# BMA400 Low-Power Features
 
-A new accelerometer does not automatically require a complete calibration procedure before it can be used.
+Low power is one of the main reasons to consider the BMA400.
 
-However, acceleration measurements can contain an offset.
+Bosch designed the sensor for applications where battery life is important.
 
-For example, when the sensor is positioned so that an axis should theoretically measure close to zero acceleration, the actual reading may be slightly positive or negative.
+The BMA400 provides several operating modes and hardware features intended to reduce the amount of work required from the host microcontroller.
 
-This offset is commonly called **bias** or **offset error**.
+These include:
 
-Calibration can be used to estimate and compensate for these errors.
+* Low-power operation
+* Auto wake-up
+* Activity recognition
+* Orientation detection
+* Tap detection
+* Double-tap detection
+* Step counting
+* Interrupts
+* FIFO buffering
 
-### When Is Calibration Useful?
+The SparkFun library exposes functions for configuring many of these features.
+
+This allows the ESP32 to remain in a lower-power state until the sensor detects something interesting.
+
+---
+
+# Motion Detection and Interrupts
+
+One of the most interesting aspects of the BMA400 is its interrupt system.
+
+Instead of continuously polling the sensor, the BMA400 can be configured to generate an interrupt when a particular event occurs.
+
+Examples include:
+
+* Motion detection
+* Wake-up
+* Orientation change
+* Tap
+* Double tap
+* Activity change
+* Step detection
+
+This architecture can be particularly useful in battery-powered ESP32 applications.
+
+For example, an ESP32 could remain in a low-power state and wake only after the BMA400 detects movement.
+
+These advanced features are better treated as separate projects because each requires additional configuration.
+
+---
+
+# Calibration and Sensor Offset
+
+The BMA400 can have small measurement offsets.
+
+For example, an axis that theoretically should read close to zero may produce a small positive or negative value when the sensor is stationary.
+
+This is commonly referred to as **offset** or **bias**.
+
+Calibration can be used to estimate these errors and compensate for them.
+
+## When Is Calibration Necessary?
 
 Calibration becomes more important when you need:
 
-- More accurate tilt measurements
-- Better orientation calculations
-- Consistent readings between sensors
-- More precise motion analysis
-- Reliable threshold-based detection
+* Accurate tilt measurements
+* Consistent measurements
+* Precise orientation
+* Reliable motion thresholds
+* Better agreement between multiple sensors
 
-For a simple project that only needs to detect movement, a small offset may not matter.
+For simple movement detection, a small offset may not matter.
 
-For a measurement system, it can matter significantly.
+For precision measurements, it becomes much more important.
 
-A dedicated BMA400 calibration tutorial should cover this subject in much more detail rather than making the main ESP32 tutorial unnecessarily complex.
+The calibration process should be treated as a separate BMA400 tutorial rather than making the basic ESP32 guide unnecessarily complicated.
 
 ---
 
-## BMA400 Practical Tips
+# Practical Tips
 
-### Keep the Sensor Still During Startup
+## Keep the Sensor Still During Testing
 
-When testing the sensor, place the breakout on a stable surface.
+Place the BMA400 on a stable surface when first testing it.
 
-This makes it easier to understand the initial acceleration values.
+This makes it much easier to understand the acceleration caused by gravity.
 
-### Check the Board Voltage
+## Check the Voltage
 
-Do not assume every BMA400 module uses the same power circuitry.
+Always check the specifications of the breakout board.
 
-The BMA400 itself is a low-voltage device, while breakout boards may add regulators or other circuitry.
+The BMA400 itself is a low-voltage sensor, but different breakout boards can contain different power circuitry.
 
-### Check the I2C Address
+## Check the I2C Address
 
-If the sensor is not detected, verify whether the module is using:
+If the sensor is not detected, check whether your board is using:
 
 ```text
 0x14
@@ -680,57 +713,59 @@ or:
 0x15
 ```
 
-### Check SDA and SCL
+## Check SDA and SCL
 
-Make sure:
+Verify:
 
-- SDA is connected to SDA
-- SCL is connected to SCL
-- GND is shared
-- The sensor is powered correctly
+* SDA → SDA
+* SCL → SCL
+* GND → GND
+* 3.3 V → correct power input
 
-### Avoid Loose Breadboard Connections
+## Keep the Wiring Short
 
-Intermittent connections can look like software problems.
+Long jumper wires can make I2C communication less reliable, especially on a breadboard.
 
-If the sensor repeatedly connects and disconnects, inspect the jumper wires and breadboard contacts.
+If communication is intermittent, shorten the connections and inspect the breadboard contacts.
 
 ---
 
-## Troubleshooting
+# Troubleshooting
 
-### BMA400 Not Detected
+## BMA400 Not Detected
 
-If the Serial Monitor repeatedly shows:
+If the Serial Monitor repeatedly displays:
 
 ```text
 BMA400 not detected. Check wiring and I2C address.
 ```
 
-check the following:
+check:
 
-- BMA400 power connection
-- GND connection
-- SDA connection
-- SCL connection
-- I2C address
-- Breakout board configuration
-- Jumper settings
-- I2C pull-up configuration
+* Power
+* Ground
+* SDA
+* SCL
+* I2C address
+* Breakout configuration
+* Jumper connections
+* I2C pull-up configuration
 
-The BMA400 requires a defined I2C address configuration, and the SDO pin determines whether the address is `0x14` or `0x15`. :contentReference[oaicite:22]{index=22}
+The first thing to verify is whether the sensor is actually visible on the I2C bus.
+
+An I2C scanner is particularly useful for this type of problem.
 
 ---
 
-### The Sensor Works but Values Do Not Change
+## The Sensor Is Detected but Values Do Not Change
 
-Make sure that:
+Make sure this function is being called:
 
 ```cpp
 accelerometer.getSensorData();
 ```
 
-is called inside `loop()` before reading:
+before reading:
 
 ```cpp
 accelerometer.data.accelX
@@ -738,249 +773,221 @@ accelerometer.data.accelY
 accelerometer.data.accelZ
 ```
 
-Without updating the sensor data, the values will not change. :contentReference[oaicite:23]{index=23}
+The library uses `getSensorData()` to retrieve and convert the latest acceleration measurement.
 
 ---
 
-### Values Look Strange
+## The Values Look Wrong
 
 Check:
 
-- Sensor orientation
-- Selected acceleration range
-- Wiring
-- Power supply
-- Mechanical mounting
-- Sensor movement during testing
+* Sensor orientation
+* Measurement range
+* Wiring
+* Power supply
+* Mechanical mounting
+* Sensor movement
 
-Remember that acceleration values include gravity.
+Remember that gravity contributes to the measured acceleration.
 
-A stationary sensor does not necessarily produce zeros on all three axes.
+A stationary sensor will not necessarily show zero on all three axes.
 
 ---
 
-### I2C Address Is Different
+## The I2C Address Is 0x15
 
-If your breakout uses `0x15`, change the initialization:
+If your breakout uses the secondary address, initialize the sensor with:
 
 ```cpp
 accelerometer.beginI2C(BMA400_I2C_ADDRESS_SECONDARY);
 ```
 
-The SparkFun library defines the default and secondary addresses as `0x14` and `0x15`. :contentReference[oaicite:24]{index=24}
+The BMA400 supports both `0x14` and `0x15`.
 
-If you are unsure which address is active, an I2C scanner is a useful diagnostic tool.
-
----
-
-## Choosing a BMA400 Module
-
-The BMA400 is available on different breakout boards.
-
-When choosing one for an ESP32 project, consider:
-
-| Feature | Why It Matters |
-|---|---|
-| I2C support | Simplifies ESP32 connection |
-| 3.3 V operation | Matches ESP32 logic |
-| Pull-up resistors | Simplifies I2C wiring |
-| Address selection | Useful when multiple I2C devices are used |
-| Interrupt pins | Important for motion/wake-up projects |
-| Header pins | Easier breadboard prototyping |
-| Documentation | Makes troubleshooting easier |
-
-A Qwiic-style board can be particularly convenient because the breakout already provides the necessary I2C connections and supporting circuitry.
-
-The SparkFun BMA400 breakout also provides traditional through-hole connections for users who prefer jumper wires and breadboards. :contentReference[oaicite:25]{index=25}
-
-For this tutorial, a well-documented 3.3 V BMA400 breakout with accessible SDA and SCL pins is the most practical choice.
+If you are unsure which address is active, use an I2C scanner.
 
 ---
 
-## Recommended Hardware
+# Choosing a BMA400 Breakout Board
 
-For the basic ESP32 tutorial, the recommended setup is:
+There are several BMA400 breakout boards available.
 
-- ESP32 DevKit V1
-- BMA400 breakout board
-- Solderless breadboard
-- Jumper wires
-- USB cable
+When choosing one for an ESP32 project, look for:
 
-The BMA400 breakout is the component that still needs to be integrated into the Embedded Nerd hardware/product system before the article can have the same product experience as the existing MPU6050 content.
+| Feature             | Why it matters                   |
+| ------------------- | -------------------------------- |
+| I2C support         | Simple ESP32 connection          |
+| 3.3 V compatibility | Matches ESP32 logic              |
+| Pull-up resistors   | Simplifies I2C wiring            |
+| Address selection   | Useful with multiple I2C devices |
+| Interrupt pins      | Useful for advanced projects     |
+| Header pins         | Easier breadboard prototyping    |
+| Good documentation  | Easier troubleshooting           |
 
----
+A well-documented breakout is generally a better choice for a first project than the cheapest available board.
 
-## GitHub Source Code
-
-The complete example should be made available through the Embedded Nerd GitHub repository alongside the tutorial.
-
-The project can later be expanded with:
-
-- OLED display
-- Motion detection
-- Wake-up interrupts
-- Orientation detection
-- Step counting
-- Data logging
-- Bluetooth
-- Wi-Fi
-- Battery-powered operation
-
-The first step, however, should remain simple: establish communication and verify that the three acceleration axes are working correctly.
+For more advanced battery-powered projects, interrupt pins and low-power configuration become especially important.
 
 ---
 
-## Related Tutorials
+# Recommended Hardware
 
-The BMA400 fits naturally into the Embedded Nerd sensor and ESP32 content cluster.
+The basic project uses:
 
-### MPU6050 Arduino Guide
+* ESP32 Development Board
+* BMA400 Accelerometer
+* Breadboard
+* Male-to-Female Jumper Wires
 
-If you are comparing accelerometer and IMU options, the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/) covers the MPU6050's accelerometer and gyroscope and provides a useful alternative approach.
+The ESP32 provides the processing and connectivity.
 
-### MPU6050 Calibration Guide
+The BMA400 provides three-axis acceleration sensing.
 
-The [MPU6050 Calibration Guide](/mpu6050-calibration-guide/) provides a useful introduction to sensor calibration concepts.
+The breadboard and jumper wires make the first prototype easy to assemble and modify.
 
-The calibration process for the BMA400 should be treated separately rather than copying the MPU6050 procedure directly.
-
-### I2C Scanner
-
-When an I2C sensor is not detected, an I2C scanner is one of the simplest ways to determine whether the ESP32 can see the device on the bus.
-
-The Embedded Nerd I2C Scanner tutorial is therefore a useful companion when troubleshooting BMA400 communication.
+The exact BMA400 breakout should be selected based on its voltage requirements, I2C support, address configuration and available interrupt pins.
 
 ---
 
-## Frequently Asked Questions
+# GitHub Source Code
 
-### Can the BMA400 work with an ESP32?
+The complete Arduino example should be kept together with the Embedded Nerd project source so it can be expanded later.
 
-Yes. The BMA400 supports I2C and SPI communication, and it can be connected to an ESP32 using the appropriate 3.3 V electrical interface. :contentReference[oaicite:26]{index=26}
+Possible extensions include:
 
-For this tutorial, I2C is used because it requires only SDA and SCL in addition to power and ground.
+* OLED display
+* Motion detection
+* Wake-up interrupts
+* Orientation detection
+* Step counting
+* Data logging
+* Bluetooth
+* Wi-Fi
+* Battery-powered operation
+
+The basic example should remain the starting point: first establish reliable communication, then build more advanced functionality on top of it.
 
 ---
 
-### Is the BMA400 compatible with Arduino?
+# Related Tutorials
+
+The BMA400 fits naturally into the Embedded Nerd sensor and ESP32 content.
+
+## MPU6050 Arduino Guide
+
+If you need both acceleration and gyroscope data, the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/) is a useful alternative.
+
+It covers the MPU6050 wiring, Arduino library, code and troubleshooting.
+
+## MPU6050 Calibration
+
+The Embedded Nerd also has dedicated MPU6050 calibration content.
+
+The concepts of offset and calibration are relevant to accelerometers in general, but the calibration procedure should not be copied directly from one sensor to another.
+
+The BMA400 should eventually have its own dedicated calibration guide.
+
+---
+
+# Frequently Asked Questions
+
+## Can the BMA400 work with ESP32?
 
 Yes.
 
-The SparkFun BMA400 Arduino Library provides an Arduino-compatible interface for the sensor and is designed around Bosch's BMA400 API. It can be installed through the Arduino Library Manager. :contentReference[oaicite:27]{index=27}
+The BMA400 supports I2C and SPI communication and can be connected to an ESP32 using an appropriate low-voltage interface.
 
----
+This tutorial uses I2C because it requires only SDA and SCL in addition to power and ground.
 
-### How do I connect the BMA400 to an ESP32?
+## Is the BMA400 compatible with Arduino?
+
+Yes.
+
+The SparkFun BMA400 Arduino Library provides an Arduino-compatible interface for the sensor and can be installed through the Arduino Library Manager.
+
+## How do I connect the BMA400 to an ESP32?
 
 For a typical ESP32 DevKit V1:
 
-| BMA400 | ESP32 |
-|---|---|
-| VCC | 3.3V |
-| GND | GND |
-| SDA | GPIO21 |
-| SCL | GPIO22 |
+| BMA400    | ESP32  |
+| --------- | ------ |
+| VCC / 3V3 | 3.3V   |
+| GND       | GND    |
+| SDA       | GPIO21 |
+| SCL       | GPIO22 |
 
-The exact connections can vary depending on the ESP32 board and BMA400 breakout being used.
+The exact connections can vary depending on the ESP32 board and BMA400 breakout.
 
----
+## What is the BMA400 I2C address?
 
-### What is the BMA400 I2C address?
+The BMA400 supports two I2C addresses:
 
-The BMA400 supports two 7-bit I2C addresses:
+* `0x14`
+* `0x15`
 
-- `0x14`
-- `0x15`
+The address is selected using the SDO configuration.
 
-The address depends on the logic level applied to the SDO pin. :contentReference[oaicite:28]{index=28}
+## What library should I use with the BMA400?
 
-Many breakout boards use `0x14` as the default.
+For an Arduino-based ESP32 project, the SparkFun BMA400 Arduino Library is a practical choice.
 
----
+It provides an Arduino-friendly interface to the BMA400 and includes examples for both basic measurements and advanced features.
 
-### What library should I use with the BMA400?
+## Does the BMA400 need calibration?
 
-For Arduino-based projects, the SparkFun BMA400 Arduino Library is a practical choice.
+Not necessarily.
 
-It provides an Arduino-friendly interface based on Bosch's BMA400 API and includes examples for basic readings and advanced sensor features. :contentReference[oaicite:29]{index=29}
+A basic motion-detection project can work without a dedicated calibration procedure.
 
----
+Calibration becomes more useful when accurate acceleration, tilt or orientation measurements are required.
 
-### Does the BMA400 need calibration?
+## Is the BMA400 better than the MPU6050?
 
-Not necessarily for a basic motion-detection project.
+Neither is universally better.
 
-However, calibration can be useful when you need more accurate acceleration, tilt or orientation measurements.
+The BMA400 is particularly attractive when you need a low-power 3-axis accelerometer.
 
-Offset errors can cause the measured acceleration to differ slightly from the ideal value.
+The MPU6050 is more appropriate when you also need a gyroscope.
 
----
-
-### Is the BMA400 better than the MPU6050?
-
-Neither sensor is universally better.
-
-The BMA400 is a strong choice when you need a low-power 3-axis accelerometer.
-
-The MPU6050 is more appropriate when you also need a 3-axis gyroscope.
-
-The correct choice depends on the requirements of the project.
-
----
-
-### Is the BMA400 good for low-power projects?
+## Is the BMA400 good for low-power projects?
 
 Yes.
 
-Low-power operation is one of the main strengths of the BMA400. Bosch specifically designed it for applications such as wearables and smart-home devices where battery life is important. :contentReference[oaicite:30]{index=30}
+Low-power operation is one of the main strengths of the BMA400.
 
-Its embedded wake-up, activity, orientation and step-counting functions can also reduce the amount of continuous processing required from the host microcontroller. :contentReference[oaicite:31]{index=31}
+Its wake-up, activity, orientation and interrupt features can also allow the sensor to perform motion-related tasks without requiring the ESP32 to continuously process every measurement.
 
----
-
-### Can the BMA400 detect motion without the ESP32 constantly reading it?
+## Can the BMA400 detect motion without constantly reading it from the ESP32?
 
 Yes.
 
-The BMA400 provides interrupt-based features including generic interrupts, wake-up, orientation change, tap detection, activity change and step counter functionality. :contentReference[oaicite:32]{index=32}
+The BMA400 includes interrupt-based functionality for events such as wake-up, motion, orientation, tap and step detection.
 
-This makes it possible to design applications where the sensor detects an event and signals the ESP32 only when necessary.
-
----
-
-### Can the BMA400 measure tilt?
-
-Yes, indirectly.
-
-A stationary accelerometer can use the gravity vector to estimate orientation relative to gravity.
-
-However, accurate tilt calculations require consideration of sensor orientation, offsets and dynamic acceleration.
-
-For a simple project, observing which axis is close to ±1 g can already provide a useful indication of orientation.
+This makes it suitable for applications where the ESP32 should remain inactive until a relevant event occurs.
 
 ---
 
-## Conclusion
+# Conclusion
 
-The BMA400 is a particularly interesting accelerometer for ESP32 projects where low power, motion detection and compact sensor functionality are important.
+The BMA400 is a powerful 3-axis accelerometer for ESP32 projects, especially when low power and motion detection are important.
 
 In this tutorial, you learned how to:
 
-- Connect a BMA400 to an ESP32
-- Use I2C communication
-- Identify the `0x14` and `0x15` I2C addresses
-- Install the SparkFun BMA400 Arduino Library
-- Initialize the sensor
-- Read X, Y and Z acceleration
-- Interpret acceleration in `g`
-- Understand the selectable measurement ranges
-- Troubleshoot common communication problems
-- Understand why calibration can matter
-- Explore the BMA400's low-power and interrupt capabilities
+* Connect a BMA400 to an ESP32
+* Use I2C communication
+* Understand the BMA400 I2C address
+* Install the Arduino library
+* Initialize the sensor
+* Read X, Y and Z acceleration
+* Interpret acceleration in `g`
+* Understand measurement ranges
+* Test the sensor
+* Troubleshoot I2C communication
+* Understand sensor offsets and calibration
+* Explore the BMA400's low-power and interrupt capabilities
 
 The basic example is deliberately simple.
 
-Once the sensor is working reliably, the BMA400 becomes much more interesting when its built-in features are used for wake-up detection, orientation, motion detection, step counting and other low-power applications.
+Once communication is working, the BMA400 can become the foundation for more advanced ESP32 projects involving motion detection, orientation, wake-up events, step counting and battery-powered sensing.
 
-That makes it a strong sensor to build a dedicated BMA400 project series around, rather than treating it as just another I2C accelerometer.
+This makes it a useful addition to the Embedded Nerd sensor library and a strong starting point for a dedicated BMA400 project series.
