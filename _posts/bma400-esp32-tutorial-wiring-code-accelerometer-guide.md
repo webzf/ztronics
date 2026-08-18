@@ -45,15 +45,15 @@ overlay_filter: 0.25
 categories:
 
 * Sensors
-* ESP32
+* BMA400
 * Arduino
 
 tags:
 
 * BMA400
 * Accelerometer
-* ESP32
 * Arduino
+* ESP32
 * I2C
 * Motion Sensor
 * Sensors
@@ -63,6 +63,7 @@ related: true
 share: true
 
 ---
+
 
 # BMA400 ESP32 Tutorial: Wiring, Arduino Code & Accelerometer Guide
 
