@@ -44,20 +44,20 @@ overlay_filter: 0.25
 
 categories:
 
-* Sensors
-* BMA400
-* Arduino
+   - Sensors
+   - BMA400
+   - Arduino
 
 tags:
 
-* BMA400
-* Accelerometer
-* Arduino
-* ESP32
-* I2C
-* Motion Sensor
-* Sensors
-* Electronics
+   - BMA400
+   - Accelerometer
+   - Arduino
+   - ESP32
+   - I2C
+   - Motion Sensor
+   - Sensors
+   - Electronics
 
 related: true
 share: true
