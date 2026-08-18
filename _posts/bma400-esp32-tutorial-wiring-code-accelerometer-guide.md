@@ -10,16 +10,16 @@ layout: single
 
 required_hardware:
 
-* id: esp32-devkit
+- id: esp32-devkit
   component: ESP32 Development Board
 
-* id: bma400
+- id: bma400
   component: BMA400 Accelerometer
 
-* id: solderless-breadboard
+- id: solderless-breadboard
   component: Breadboard
 
-* id: jumper-wires
+- id: jumper-wires
   component: Male-to-Female Jumper Wires
 
 sidebar:
