@@ -148,11 +148,7 @@ For projects that require sensor calibration, our [MPU6050 Calibration Guide]({{
 
 For this tutorial you need:
 
-- ESP32 development board
-- BMA400 breakout board
-- Solderless breadboard
-- Jumper wires
-- USB cable
+{% include required-hardware.html products=page.required_hardware %}
 
 A breakout board is strongly recommended because the BMA400 sensor itself is a very small surface-mount component.
 
