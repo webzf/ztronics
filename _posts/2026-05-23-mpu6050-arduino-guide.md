@@ -159,7 +159,6 @@ The following example reads accelerometer and gyroscope values from the MPU6050 
     // =====================================================
     // Embedded Nerd - https://embeddednerd.com
     // MPU6050 Arduino Example
-    // Tutorial: https://embeddednerd.com/mpu6050-arduino-tutorial/
     // =====================================================
 
     #include <Wire.h>
