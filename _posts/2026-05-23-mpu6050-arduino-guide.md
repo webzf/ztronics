@@ -265,6 +265,8 @@ For ESP32:
 
 ## MPU6050 Not Detected
 
+If the MPU6050 is not detected, first check the wiring and make sure the I2C address is correct. You can use our [I2C Scanner Tutorial](https://embeddednerd.com/i2c-scanner-tutorial/) to scan the I2C bus and verify whether the sensor is detected and which address it is using.
+
 Possible causes:
 - Wrong wiring
 - Incorrect I2C address
