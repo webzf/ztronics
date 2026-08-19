@@ -43,8 +43,12 @@ related: true
 share: true
 
 required_hardware:
+
   - id: esp32-devkit
     component: ESP32 Development Board
+
+  - id: bma400
+    component: BMA400 Accelerometer Module
 
   - id: solderless-breadboard
     component: Solderless Breadboard
