@@ -96,6 +96,7 @@ It can measure:
 - Motion
 
 The sensor communicates using the I2C protocol and works with both Arduino and ESP32 boards.
+The MPU6050 may show small offsets in the accelerometer and gyroscope readings. For more accurate measurements, see our [MPU6050 Calibration Guide](https://embeddednerd.com/mpu6050-calibration-guide/) for a complete calibration procedure.
 
 ---
 
