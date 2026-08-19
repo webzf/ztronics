@@ -244,6 +244,8 @@ The library includes examples for basic acceleration measurements as well as mor
 The following example initializes the BMA400 over I2C and continuously prints the acceleration measured on all three axes.
 
 ```cpp
+ // Embedded Nerd - https://embeddednerd.com
+
 #include <Wire.h>
 #include "SparkFun_BMA400_Arduino_Library.h"
 
