@@ -1,4 +1,3 @@
-
 ---
 title: "BMA400 ESP32 Tutorial: Wiring, Code & Arduino Guide"
 
@@ -38,7 +37,7 @@ tags:
   - Accelerometer
   - I2C
   - Motion Sensor
----
+  ---
 
 The **BMA400** is a low-power 3-axis digital accelerometer designed for applications where motion sensing and low power consumption are important.
 
