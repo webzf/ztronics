@@ -1,4 +1,4 @@
-````
+
 ---
 title: "BMA400 ESP32 Tutorial: Wiring, Code & Arduino Guide"
 
@@ -773,4 +773,4 @@ For a first project, start with the I2C connection and the basic acceleration ex
 Once the sensor is communicating correctly, you can move towards interrupt-driven motion detection, step counting and low-power ESP32 applications.
 
 The BMA400 is therefore a strong alternative to traditional motion sensors when a project needs **acceleration sensing, low power consumption and built-in motion features**.
-````
+
