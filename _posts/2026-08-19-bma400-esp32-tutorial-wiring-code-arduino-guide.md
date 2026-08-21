@@ -1,6 +1,8 @@
 ---
 title: "BMA400 ESP32 Tutorial: Wiring, Code & Arduino Guide"
 
+permalink: /bma400-esp32-tutorial-wiring-code-arduino-guide/
+
 howto: true
 
 layout: single
