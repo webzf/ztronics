@@ -653,7 +653,7 @@ If the scanner reports `0x3D`, change the address accordingly.
 
 You can then troubleshoot the OLED application separately from the I2C connection.
 
-See our **[ESP32 OLED Tutorial â€“ Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)** for a complete OLED example.
+See our **[ESP32 OLED Tutorial: Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)** for a complete OLED example.
 
 ---
 
@@ -754,7 +754,7 @@ although some modules use:
 
 If the scanner detects your OLED, use the detected address in your display initialization code.
 
-You can then continue with our **[ESP32 OLED Tutorial â€“ Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)**.
+You can then continue with our **[ESP32 OLED Tutorial: Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)**.
 
 ---
 
@@ -787,7 +787,7 @@ If you're working with I2C devices, these Embedded Nerd tutorials may also be us
 - **[MPU6050 Arduino Guide](/mpu6050-arduino-guide/)**
 - **[MPU6050 Calibration Guide](/mpu6050-calibration-guide/)**
 - **[BMA400 ESP32 Tutorial](/bma400-esp32-tutorial-wiring-code-arduino-guide/)**
-- **[ESP32 OLED Tutorial â€“ Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)**
+- **[ESP32 OLED Tutorial: Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)**
 
 An I2C Scanner is particularly useful before starting these projects because it lets you confirm that the hardware is visible on the I2C bus first.
 
