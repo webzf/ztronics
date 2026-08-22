@@ -109,7 +109,7 @@ This makes I2C particularly useful for projects containing several sensors and m
 
 Popular I2C devices include:
 
-- "SSD1306 OLED Display" (/products/ssd1306-oled/)
+- [SSD1306 OLED Display](/products/ssd1306-oled/)
 - MPU6050 accelerometer and gyroscope
 - BME280 environmental sensor
 - BMP280 pressure sensor
@@ -253,6 +253,7 @@ Arduino, ESP32 & ESP8266 I2C Scanner Code
 
 The following I2C Scanner uses the Arduino Wire library and works with many Arduino-compatible boards, including Arduino Uno, Nano, Mega, ESP32 and ESP8266.
 
+'''
 /*
    Embedded Nerd
    I2C Scanner Tutorial
@@ -328,7 +329,7 @@ void loop() {
 
   delay(5000);
 }
-
+'''
 ---
 
 How the I2C Scanner Works
