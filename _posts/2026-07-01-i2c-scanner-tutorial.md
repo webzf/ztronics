@@ -382,17 +382,17 @@ Open the Arduino IDE.
 
 Select your board:
 
-**Tools â†’ Board**
+**Tools > Board**
 
 Select the correct serial port:
 
-**Tools â†’ Port**
+**Tools > Port**
 
 Upload the scanner sketch.
 
 Once the upload is complete, open:
 
-**Tools â†’ Serial Monitor**
+**Tools > Serial Monitor**
 
 Set the baud rate to:
 
@@ -439,8 +439,8 @@ The same sketch can be used as an **ESP32 I2C Scanner**.
 
 For a typical ESP32 DevKit:
 
-- GPIO21 â†’ SDA
-- GPIO22 â†’ SCL
+- GPIO21 > SDA
+- GPIO22 > SCL
 
 The scanner can detect devices such as:
 
@@ -467,8 +467,8 @@ The same scanner can be used as an **Arduino I2C Scanner**.
 
 On an Arduino Uno:
 
-- A4 â†’ SDA
-- A5 â†’ SCL
+- A4 > SDA
+- A5 > SCL
 
 Other Arduino boards can use different I2C pins, so check the board documentation before wiring your device.
 
@@ -534,8 +534,8 @@ There are several common causes.
 Make sure:
 
 ```text
-SDA â†’ SDA
-SCL â†’ SCL
+SDA > SDA
+SCL > SCL
 ```
 
 Swapping SDA and SCL is one of the most common I2C wiring mistakes.
