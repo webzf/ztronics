@@ -80,7 +80,7 @@ social:
   links:
     - https://github.com/webzf
     - https://www.youtube.com/@embedded_nerd
-    - https://www.pinterest.com/ztronics03/
+    - https://www.pinterest.com/EmbeddedNerd/
 
 # Analytics
 analytics:
@@ -107,8 +107,7 @@ author:
 
     - label: "Pinterest"
       icon: "fab fa-fw fa-pinterest"
-      url: "https://www.pinterest.com/ztronics03/"
-
+      url: "https://www.pinterest.com/EmbeddedNerd/"
 # Site Footer
 footer:
   links:
@@ -122,7 +121,7 @@ footer:
 
     - label: "Pinterest"
       icon: "fab fa-fw fa-pinterest"
-      url: "https://www.pinterest.com/ztronics03/"
+      url: "https://www.pinterest.com/EmbeddedNerd/"
 
     - label: "Contact"
       url: "/contact/"
