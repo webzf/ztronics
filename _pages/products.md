@@ -7,6 +7,8 @@ permalink: /products/
 
 author_profile: false
 
+internal_links: true
+
 toc: true
 toc_sticky: true
 
