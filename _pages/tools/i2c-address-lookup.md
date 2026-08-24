@@ -1,10 +1,10 @@
 ---
-title: "I2C Address Lookup Tool"
+title: "I2C Address Lookup & Compatibility Tool"
 layout: single
 
 permalink: /tools/i2c-address-lookup/
 
-excerpt: "Search common I2C device addresses and identify sensors, displays, RTC modules and other devices used with Arduino and ESP32."
+excerpt: "Free I2C address lookup and compatibility checker for Arduino, ESP32 and Raspberry Pi. Find device addresses and check for I2C bus conflicts."
 
 show_date: false
 read_time: false
@@ -28,59 +28,93 @@ tags:
   - I2C
   - I2C Address
   - I2C Scanner
+  - I2C Compatibility
   - Arduino
   - ESP32
   - Electronics
 ---
 
-# I2C Address Lookup Tool
+# I2C Address Lookup & Compatibility Tool
 
-Use this free I2C Address Lookup Tool to identify common I2C devices by their hexadecimal address or search for a device by name.
+Use this free I2C tool to find common I2C device addresses and check whether multiple devices can share the same I2C bus.
 
-Search for:
-
-- An I2C address such as `0x68`
-- A device such as `MPU6050`
-- A display such as `SSD1306`
-- A sensor such as `BMA400`
+Search for a device such as `MPU6050`, search by address such as `0x68`, or select several devices to check for address conflicts.
 
 <div class="i2c-tool">
 
-  <div class="i2c-search-wrapper">
+  <div class="i2c-section">
 
-    <input
-      type="text"
-      id="i2c-search"
-      placeholder="Search by device name or I2C address..."
-      autocomplete="off"
-      aria-label="Search I2C devices"
-    >
+    <h2>I2C Address Lookup</h2>
 
-    <button id="i2c-clear" type="button">
-      Clear
-    </button>
+    <div class="i2c-search-wrapper">
+
+      <input
+        type="text"
+        id="i2c-search"
+        placeholder="Search device name or I2C address..."
+        autocomplete="off"
+        aria-label="Search I2C devices"
+      >
+
+      <button id="i2c-clear" type="button">
+        Clear
+      </button>
+
+    </div>
+
+    <div class="i2c-examples">
+
+      <span>Examples:</span>
+
+      <button type="button" class="i2c-example">MPU6050</button>
+      <button type="button" class="i2c-example">0x68</button>
+      <button type="button" class="i2c-example">SSD1306</button>
+      <button type="button" class="i2c-example">BMA400</button>
+
+    </div>
+
+    <div id="i2c-results-count"></div>
+
+    <div id="i2c-results"></div>
 
   </div>
 
-  <div class="i2c-examples">
-    <span>Examples:</span>
 
-    <button type="button" class="i2c-example">MPU6050</button>
-    <button type="button" class="i2c-example">0x68</button>
-    <button type="button" class="i2c-example">SSD1306</button>
-    <button type="button" class="i2c-example">BMA400</button>
+  <div class="i2c-section compatibility-section">
+
+    <h2>I2C Compatibility Checker</h2>
+
+    <p>
+      Select two or more devices to check whether their I2C addresses conflict.
+    </p>
+
+    <div class="i2c-selector-row">
+
+      <select id="i2c-device-select">
+
+        <option value="">Select a device...</option>
+
+      </select>
+
+      <button id="i2c-add-device" type="button">
+        + Add Device
+      </button>
+
+    </div>
+
+    <div id="i2c-selected-devices"></div>
+
+    <div id="i2c-compatibility-result"></div>
+
   </div>
-
-  <div id="i2c-results-count"></div>
-
-  <div id="i2c-results"></div>
 
 </div>
+
 
 <style>
 
 /* =========================================================
-   Embedded Nerd - I2C Address Lookup
+   Embedded Nerd - I2C Address & Compatibility Tool
    ========================================================= */
 
 .i2c-tool {
@@ -88,7 +122,15 @@ Search for:
   margin: 2rem auto;
 }
 
-/* Search area */
+.i2c-section {
+  margin-bottom: 3rem;
+}
+
+.i2c-section h2 {
+  margin-top: 0;
+}
+
+/* Search */
 
 .i2c-search-wrapper {
   display: flex;
@@ -108,12 +150,6 @@ Search for:
   border-radius: 8px;
   outline: none;
   box-sizing: border-box;
-  transition: border-color 0.2s ease,
-              box-shadow 0.2s ease;
-}
-
-#i2c-search::placeholder {
-  opacity: 0.65;
 }
 
 #i2c-search:focus {
@@ -121,11 +157,15 @@ Search for:
   box-shadow: 0 0 0 2px rgba(91, 194, 190, 0.12);
 }
 
-/* Clear button */
+#i2c-search::placeholder {
+  opacity: 0.65;
+}
 
-#i2c-clear {
-  flex: 0 0 auto;
-  padding: 0 20px;
+/* Buttons */
+
+#i2c-clear,
+#i2c-add-device {
+  padding: 12px 18px;
   font-family: inherit;
   font-size: 0.95rem;
   color: inherit;
@@ -135,20 +175,16 @@ Search for:
   cursor: pointer;
   transition:
     background 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
+    border-color 0.2s ease;
 }
 
-#i2c-clear:hover {
+#i2c-clear:hover,
+#i2c-add-device:hover {
   background: rgba(91, 194, 190, 0.10);
   border-color: #5bc2be;
 }
 
-#i2c-clear:active {
-  background: rgba(91, 194, 190, 0.16);
-}
-
-/* Search examples */
+/* Examples */
 
 .i2c-examples {
   display: flex;
@@ -171,8 +207,6 @@ Search for:
   background: none;
   border: none;
   cursor: pointer;
-  text-decoration: none;
-  transition: color 0.2s ease;
 }
 
 .i2c-example:hover {
@@ -180,15 +214,13 @@ Search for:
   text-decoration: underline;
 }
 
-/* Result count */
+/* Results */
 
 #i2c-results-count {
   margin-bottom: 16px;
   font-size: 0.95rem;
   opacity: 0.75;
 }
-
-/* Result cards */
 
 .i2c-result {
   padding: 22px;
@@ -198,13 +230,9 @@ Search for:
   background: rgba(255, 255, 255, 0.015);
 }
 
-.i2c-result h2 {
+.i2c-result h3 {
   margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 1.35rem;
 }
-
-/* Addresses */
 
 .i2c-addresses {
   display: flex;
@@ -225,8 +253,6 @@ Search for:
   border-radius: 5px;
 }
 
-/* Metadata */
-
 .i2c-meta {
   margin: 8px 0;
 }
@@ -235,8 +261,6 @@ Search for:
   display: inline-block;
   min-width: 105px;
 }
-
-/* Related links */
 
 .i2c-links {
   margin-top: 18px;
@@ -251,8 +275,104 @@ Search for:
   color: #5bc2be;
 }
 
-.i2c-links a:hover {
-  color: #7bd6d2;
+/* Compatibility */
+
+.compatibility-section {
+  padding-top: 10px;
+}
+
+.i2c-selector-row {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+#i2c-device-select {
+  flex: 1;
+  min-height: 46px;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid rgba(91, 194, 190, 0.55);
+  border-radius: 8px;
+}
+
+#i2c-device-select option {
+  color: #111;
+  background: #fff;
+}
+
+.i2c-selected-device {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+}
+
+.i2c-selected-info strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.i2c-selected-address {
+  font-family: monospace;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.i2c-remove {
+  padding: 6px 10px;
+  color: inherit;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.i2c-remove:hover {
+  border-color: #5bc2be;
+}
+
+.i2c-status {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.i2c-status-ok {
+  border: 1px solid rgba(91, 194, 190, 0.45);
+  background: rgba(91, 194, 190, 0.08);
+}
+
+.i2c-status-warning {
+  border: 1px solid rgba(230, 180, 70, 0.55);
+  background: rgba(230, 180, 70, 0.08);
+}
+
+.i2c-status-conflict {
+  border: 1px solid rgba(220, 90, 90, 0.55);
+  background: rgba(220, 90, 90, 0.08);
+}
+
+.i2c-status h3 {
+  margin-top: 0;
+}
+
+.i2c-conflict {
+  margin-top: 15px;
+  padding: 14px;
+  border-radius: 7px;
+  background: rgba(220, 90, 90, 0.08);
+}
+
+.i2c-solution {
+  margin-top: 15px;
 }
 
 /* No results */
@@ -264,29 +384,22 @@ Search for:
   border-radius: 10px;
 }
 
-.i2c-no-results p {
-  margin-bottom: 0;
-}
-
 /* Mobile */
 
 @media (max-width: 600px) {
 
-  .i2c-search-wrapper {
+  .i2c-search-wrapper,
+  .i2c-selector-row {
     flex-direction: column;
   }
 
-  #i2c-clear {
+  #i2c-clear,
+  #i2c-add-device {
     width: 100%;
-    min-height: 46px;
   }
 
-  .i2c-examples {
-    line-height: 1.8;
-  }
-
-  .i2c-result {
-    padding: 20px;
+  .i2c-selected-device {
+    align-items: flex-start;
   }
 
   .i2c-meta strong {
@@ -296,12 +409,8 @@ Search for:
 
 }
 
-
-/* =========================================================
-   End Embedded Nerd - I2C Address Lookup
-   ========================================================= */
-
 </style>
+
 
 <script>
 
@@ -394,7 +503,7 @@ const i2cDevices = [
     addresses: ["0x68"],
     category: "Real-Time Clock",
     manufacturer: "Analog Devices",
-    description: "High-accuracy real-time clock with integrated temperature-compensated crystal oscillator."
+    description: "High-accuracy real-time clock with temperature-compensated crystal oscillator."
   },
 
   {
@@ -407,7 +516,10 @@ const i2cDevices = [
 
   {
     name: "PCF8574",
-    addresses: ["0x20", "0x21", "0x22", "0x23", "0x24", "0x25", "0x26", "0x27"],
+    addresses: [
+      "0x20","0x21","0x22","0x23",
+      "0x24","0x25","0x26","0x27"
+    ],
     category: "I/O Expander",
     manufacturer: "NXP",
     description: "8-bit I2C GPIO expander commonly used with LCD displays and digital I/O."
@@ -415,15 +527,21 @@ const i2cDevices = [
 
   {
     name: "PCF8574A",
-    addresses: ["0x38", "0x39", "0x3A", "0x3B", "0x3C", "0x3D", "0x3E", "0x3F"],
+    addresses: [
+      "0x38","0x39","0x3A","0x3B",
+      "0x3C","0x3D","0x3E","0x3F"
+    ],
     category: "I/O Expander",
     manufacturer: "NXP",
-    description: "Alternate-address version of the 8-bit PCF8574 I2C GPIO expander."
+    description: "Alternate-address version of the PCF8574 I2C GPIO expander."
   },
 
   {
     name: "MCP23017",
-    addresses: ["0x20", "0x21", "0x22", "0x23", "0x24", "0x25", "0x26", "0x27"],
+    addresses: [
+      "0x20","0x21","0x22","0x23",
+      "0x24","0x25","0x26","0x27"
+    ],
     category: "16-Bit I/O Expander",
     manufacturer: "Microchip",
     description: "16-bit I2C GPIO expander with configurable ports and interrupts."
@@ -431,7 +549,7 @@ const i2cDevices = [
 
   {
     name: "ADS1115",
-    addresses: ["0x48", "0x49", "0x4A", "0x4B"],
+    addresses: ["0x48","0x49","0x4A","0x4B"],
     category: "Analog-to-Digital Converter",
     manufacturer: "Texas Instruments",
     description: "16-bit precision analog-to-digital converter with four input channels."
@@ -439,7 +557,7 @@ const i2cDevices = [
 
   {
     name: "ADS1015",
-    addresses: ["0x48", "0x49", "0x4A", "0x4B"],
+    addresses: ["0x48","0x49","0x4A","0x4B"],
     category: "Analog-to-Digital Converter",
     manufacturer: "Texas Instruments",
     description: "12-bit analog-to-digital converter with four input channels."
@@ -447,7 +565,7 @@ const i2cDevices = [
 
   {
     name: "INA219",
-    addresses: ["0x40", "0x41", "0x44", "0x45"],
+    addresses: ["0x40","0x41","0x44","0x45"],
     category: "Current / Power Monitor",
     manufacturer: "Texas Instruments",
     description: "Current, voltage and power monitoring sensor."
@@ -463,7 +581,7 @@ const i2cDevices = [
 
   {
     name: "BH1750",
-    addresses: ["0x23", "0x5C"],
+    addresses: ["0x23","0x5C"],
     category: "Light Sensor",
     manufacturer: "ROHM",
     description: "Digital ambient light sensor."
@@ -495,7 +613,7 @@ const i2cDevices = [
 
   {
     name: "SHT31",
-    addresses: ["0x44", "0x45"],
+    addresses: ["0x44","0x45"],
     category: "Temperature & Humidity Sensor",
     manufacturer: "Sensirion",
     description: "Digital temperature and humidity sensor."
@@ -503,10 +621,10 @@ const i2cDevices = [
 
   {
     name: "CCS811",
-    addresses: ["0x5A", "0x5B"],
+    addresses: ["0x5A","0x5B"],
     category: "Air Quality Sensor",
     manufacturer: "ScioSense",
-    description: "Digital indoor air-quality sensor for equivalent CO2 and VOC measurements."
+    description: "Digital indoor air-quality sensor."
   },
 
   {
@@ -519,19 +637,50 @@ const i2cDevices = [
 
   {
     name: "TCA9548A",
-    addresses: ["0x70", "0x71", "0x72", "0x73", "0x74", "0x75", "0x76", "0x77"],
+    addresses: [
+      "0x70","0x71","0x72","0x73",
+      "0x74","0x75","0x76","0x77"
+    ],
     category: "I2C Multiplexer",
     manufacturer: "Texas Instruments",
-    description: "8-channel I2C multiplexer used to connect devices with conflicting addresses or separate I2C buses."
+    description: "8-channel I2C multiplexer used to connect devices with conflicting addresses."
   }
 
 ];
 
-const searchInput = document.getElementById("i2c-search");
-const resultsContainer = document.getElementById("i2c-results");
-const resultsCount = document.getElementById("i2c-results-count");
-const clearButton = document.getElementById("i2c-clear");
-const exampleButtons = document.querySelectorAll(".i2c-example");
+
+const searchInput =
+  document.getElementById("i2c-search");
+
+const resultsContainer =
+  document.getElementById("i2c-results");
+
+const resultsCount =
+  document.getElementById("i2c-results-count");
+
+const clearButton =
+  document.getElementById("i2c-clear");
+
+const exampleButtons =
+  document.querySelectorAll(".i2c-example");
+
+const deviceSelect =
+  document.getElementById("i2c-device-select");
+
+const addDeviceButton =
+  document.getElementById("i2c-add-device");
+
+const selectedContainer =
+  document.getElementById("i2c-selected-devices");
+
+const compatibilityResult =
+  document.getElementById("i2c-compatibility-result");
+
+
+let selectedDevices = [];
+
+
+/* Escape HTML */
 
 function escapeHTML(value) {
 
@@ -543,6 +692,9 @@ function escapeHTML(value) {
     .replace(/'/g, "&#039;");
 
 }
+
+
+/* Address lookup */
 
 function renderResults(devices) {
 
@@ -560,8 +712,8 @@ function renderResults(devices) {
       <div class="i2c-no-results">
         <strong>No matching devices found.</strong>
         <p>
-          Try searching by device name or I2C address,
-          for example <code>MPU6050</code> or <code>0x68</code>.
+          Try searching for <code>MPU6050</code>
+          or <code>0x68</code>.
         </p>
       </div>
     `;
@@ -569,32 +721,44 @@ function renderResults(devices) {
     return;
   }
 
+
   devices.forEach(device => {
 
-    const addresses = device.addresses
-      .map(address =>
-        `<span class="i2c-address">${escapeHTML(address)}</span>`
-      )
-      .join("");
+    const addresses =
+      device.addresses
+        .map(address =>
+          `<span class="i2c-address">
+            ${escapeHTML(address)}
+          </span>`
+        )
+        .join("");
+
 
     let links = "";
 
-    if (device.links && device.links.length > 0) {
+
+    if (device.links && device.links.length) {
 
       links = `
         <div class="i2c-links">
+
           ${device.links.map(link =>
-            `<a href="${link.url}">${escapeHTML(link.title)} →</a>`
+            `<a href="${link.url}">
+              ${escapeHTML(link.title)} →
+            </a>`
           ).join("")}
+
         </div>
       `;
 
     }
 
+
     resultsContainer.innerHTML += `
+
       <article class="i2c-result">
 
-        <h2>${escapeHTML(device.name)}</h2>
+        <h3>${escapeHTML(device.name)}</h3>
 
         <div class="i2c-addresses">
           ${addresses}
@@ -617,17 +781,21 @@ function renderResults(devices) {
         ${links}
 
       </article>
+
     `;
 
   });
 
 }
 
+
+/* Search */
+
 function searchDevices() {
 
-  const query = searchInput.value
-    .trim()
-    .toLowerCase();
+  const query =
+    searchInput.value.trim().toLowerCase();
+
 
   if (!query) {
 
@@ -636,99 +804,439 @@ function searchDevices() {
 
   }
 
-  const filteredDevices = i2cDevices.filter(device => {
 
-    const searchableText = [
-      device.name,
-      device.category,
-      device.manufacturer,
-      device.description,
-      ...device.addresses
-    ]
-      .join(" ")
-      .toLowerCase();
+  const filtered =
+    i2cDevices.filter(device => {
 
-    return searchableText.includes(query);
+      const text = [
 
-  });
+        device.name,
+        device.category,
+        device.manufacturer,
+        device.description,
+        ...device.addresses
 
-  renderResults(filteredDevices);
+      ]
+        .join(" ")
+        .toLowerCase();
+
+
+      return text.includes(query);
+
+    });
+
+
+  renderResults(filtered);
 
 }
 
-searchInput.addEventListener("input", searchDevices);
 
-clearButton.addEventListener("click", function() {
+searchInput.addEventListener(
+  "input",
+  searchDevices
+);
 
-  searchInput.value = "";
-  searchInput.focus();
 
-  renderResults(i2cDevices);
+clearButton.addEventListener(
+  "click",
+  function() {
 
-});
-
-exampleButtons.forEach(button => {
-
-  button.addEventListener("click", function() {
-
-    searchInput.value = this.textContent.trim();
-
-    searchDevices();
+    searchInput.value = "";
 
     searchInput.focus();
 
-  });
+    renderResults(i2cDevices);
+
+  }
+);
+
+
+exampleButtons.forEach(button => {
+
+  button.addEventListener(
+    "click",
+    function() {
+
+      searchInput.value =
+        this.textContent.trim();
+
+      searchDevices();
+
+      searchInput.focus();
+
+    }
+  );
 
 });
+
+
+/* Populate device selector */
+
+i2cDevices.forEach((device, index) => {
+
+  const option =
+    document.createElement("option");
+
+  option.value = index;
+
+  option.textContent = device.name;
+
+  deviceSelect.appendChild(option);
+
+});
+
+
+/* Add device */
+
+addDeviceButton.addEventListener(
+  "click",
+  function() {
+
+    const index =
+      parseInt(deviceSelect.value);
+
+    if (isNaN(index)) {
+      return;
+    }
+
+
+    const device =
+      i2cDevices[index];
+
+
+    if (
+      selectedDevices.some(
+        item => item.name === device.name
+      )
+    ) {
+
+      return;
+
+    }
+
+
+    selectedDevices.push(device);
+
+    deviceSelect.value = "";
+
+    renderSelectedDevices();
+
+    checkCompatibility();
+
+  }
+);
+
+
+/* Render selected devices */
+
+function renderSelectedDevices() {
+
+  selectedContainer.innerHTML = "";
+
+
+  selectedDevices.forEach(
+    (device, index) => {
+
+      const addresses =
+        device.addresses.join(" / ");
+
+
+      selectedContainer.innerHTML += `
+
+        <div class="i2c-selected-device">
+
+          <div class="i2c-selected-info">
+
+            <strong>
+              ${escapeHTML(device.name)}
+            </strong>
+
+            <span class="i2c-selected-address">
+              ${escapeHTML(addresses)}
+            </span>
+
+          </div>
+
+          <button
+            type="button"
+            class="i2c-remove"
+            data-index="${index}"
+          >
+            Remove
+          </button>
+
+        </div>
+
+      `;
+
+    }
+  );
+
+
+  document
+    .querySelectorAll(".i2c-remove")
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          const index =
+            parseInt(this.dataset.index);
+
+          selectedDevices.splice(index, 1);
+
+          renderSelectedDevices();
+
+          checkCompatibility();
+
+        }
+      );
+
+    });
+
+}
+
+
+/* Compatibility checker */
+
+function checkCompatibility() {
+
+  compatibilityResult.innerHTML = "";
+
+
+  if (selectedDevices.length < 2) {
+
+    return;
+
+  }
+
+
+  const addressMap = {};
+
+
+  selectedDevices.forEach(device => {
+
+    device.addresses.forEach(address => {
+
+      if (!addressMap[address]) {
+
+        addressMap[address] = [];
+
+      }
+
+      addressMap[address].push(device);
+
+    });
+
+  });
+
+
+  const conflicts =
+    Object.entries(addressMap)
+      .filter(
+        ([address, devices]) =>
+          devices.length > 1
+      );
+
+
+  if (conflicts.length === 0) {
+
+    compatibilityResult.innerHTML = `
+
+      <div class="i2c-status i2c-status-ok">
+
+        <h3>
+          ✓ No I2C address conflicts detected
+        </h3>
+
+        <p>
+          The selected devices do not share
+          a common I2C address and can normally
+          share the same I2C bus.
+        </p>
+
+        <p>
+          Always check the individual module
+          documentation for voltage levels,
+          pull-up resistors and address configuration.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  let conflictHTML = "";
+
+
+  conflicts.forEach(
+    ([address, devices]) => {
+
+      conflictHTML += `
+
+        <div class="i2c-conflict">
+
+          <strong>
+            Address conflict at ${escapeHTML(address)}
+          </strong>
+
+          <p>
+
+            ${devices
+              .map(device =>
+                escapeHTML(device.name)
+              )
+              .join(" and ")}
+
+            can use this address.
+
+          </p>
+
+        </div>
+
+      `;
+
+    }
+  );
+
+
+  compatibilityResult.innerHTML = `
+
+    <div class="i2c-status i2c-status-conflict">
+
+      <h3>
+        ⚠ I2C address conflict detected
+      </h3>
+
+      <p>
+        Two or more selected devices can use
+        the same I2C address.
+      </p>
+
+      ${conflictHTML}
+
+      <div class="i2c-solution">
+
+        <strong>Possible solutions:</strong>
+
+        <ul>
+
+          <li>
+            Change the address using an address
+            pin or jumper if supported.
+          </li>
+
+          <li>
+            Use a second I2C bus.
+          </li>
+
+          <li>
+            Use an I2C multiplexer such as
+            the TCA9548A.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* Initial results */
 
 renderResults(i2cDevices);
 
 </script>
 
----
-
-## How to Find an I2C Device Address
-
-The easiest way to identify an unknown I2C device address is to run an I2C scanner.
-
-An I2C scanner checks the available addresses on the bus and reports devices that respond.
-
-See our [I2C Scanner Tutorial](/i2c-scanner-tutorial/) for a practical Arduino and ESP32 example.
 
 ---
 
-## Common I2C Addresses
+## How to Use This Tool
 
-Some I2C addresses are used by multiple devices.
+First, use the search box to find an I2C device or address.
 
-For example, `0x68` may be used by:
+For example:
 
-- MPU6050
-- DS3231
-- DS1307
+- `MPU6050`
+- `0x68`
+- `SSD1306`
+- `BMA400`
 
-Therefore, detecting an address does not always uniquely identify the device.
+The tool displays the known I2C addresses and basic information about the device.
 
-Always verify the device using its documentation, module markings or identification registers.
+To check several devices together, use the **I2C Compatibility Checker**.
 
----
+Select a device and click **Add Device**.
 
-## What If Two Devices Use the Same I2C Address?
+Add all the I2C devices you plan to connect to the same bus.
 
-Two devices with the same fixed I2C address cannot normally communicate independently on the same I2C bus.
-
-Possible solutions include:
-
-- Changing the address using an address pin or jumper
-- Using a second I2C bus
-- Using an I2C multiplexer such as the TCA9548A
-- Selecting a different sensor or module
-
-Before changing your wiring or code, use an I2C scanner to confirm which addresses are currently active.
+The tool will check for addresses that are shared between the selected devices.
 
 ---
 
-## Related Tutorials
+## Example: MPU6050 + BMA400 + SSD1306
+
+A typical ESP32 project might contain:
+
+| Device | I2C Address |
+|---|---|
+| BMA400 | `0x14` / `0x15` |
+| MPU6050 | `0x68` / `0x69` |
+| SSD1306 OLED | `0x3C` / `0x3D` |
+
+These devices do not have a common I2C address, so they can normally share the same I2C bus.
+
+However, address compatibility is only one part of a successful I2C design. Voltage levels, pull-up resistors, wiring and supported bus speed should also be checked.
+
+---
+
+## Example: MPU6050 + DS3231
+
+Both the MPU6050 and DS3231 commonly use address `0x68`.
+
+This creates a potential address conflict when both devices are connected to the same I2C bus.
+
+Possible solutions include changing the MPU6050 address to `0x69`, if supported by the module, using another I2C bus, or using an I2C multiplexer.
+
+---
+
+## How to Find the Actual I2C Address
+
+The easiest way to find which I2C devices are actually connected to your Arduino or ESP32 is to run an I2C scanner.
+
+Our [I2C Scanner Tutorial](/i2c-scanner-tutorial/) includes a complete Arduino and ESP32 example.
+
+---
+
+## Important Note About I2C Compatibility
+
+This tool checks **address conflicts only**.
+
+A result showing no address conflict does not guarantee electrical compatibility.
+
+Before connecting multiple devices, also verify:
+
+- Supply voltage
+- Logic voltage
+- SDA/SCL pull-up resistors
+- I2C bus speed
+- Maximum bus capacitance
+- Module-specific requirements
+
+Always consult the manufacturer's datasheet when designing a final circuit.
+
+---
+
+## Related Embedded Nerd Tutorials
 
 - [I2C Scanner Tutorial](/i2c-scanner-tutorial/)
 - [MPU6050 Arduino Guide](/mpu6050-arduino-guide/)
