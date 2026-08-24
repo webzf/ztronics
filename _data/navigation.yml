@@ -51,7 +51,7 @@ embedded:
   - title: Tools
     children:
       - title: "I2C Address Lookup Tool"
-        url: /mpu6050-arduino-guide/
+        url: /tools/i2c-address-lookup/
      # - title: "OLED Displays"
        # url: /ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/
       
