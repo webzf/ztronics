@@ -2,6 +2,7 @@
 title: "Tutorials"
 layout: single
 permalink: /tutorials/
+internal_links: true
 
 sidebar:
   nav: "embedded"
