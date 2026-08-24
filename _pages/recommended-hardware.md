@@ -2,6 +2,7 @@
 title: "Recommended Hardware"
 layout: single
 permalink: /recommended-hardware/
+internal_links: true
 
 sidebar:
   nav: "embedded"
