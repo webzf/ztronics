@@ -1,6 +1,7 @@
 ---
 title: "I2C Address Lookup & Compatibility Checker"
 layout: single
+internal_links: true
 permalink: /tools/i2c-address-lookup/
 excerpt: "Free I2C address lookup and compatibility checker for Arduino, ESP32 and Raspberry Pi. Find I2C addresses, detect conflicts and build a compatible I2C device configuration."
 show_date: false
