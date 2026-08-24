@@ -4,7 +4,7 @@ layout: single
 
 permalink: /tools/i2c-address-lookup/
 
-excerpt: "Search common I2C device addresses and identify sensors, displays, RTC modules and other devices used with Arduino, ESP32 and Raspberry Pi."
+excerpt: "Search common I2C device addresses and identify sensors, displays, RTC modules and other devices used with Arduino and ESP32."
 
 show_date: false
 read_time: false
@@ -37,36 +37,39 @@ tags:
 
 Use this free I2C Address Lookup Tool to identify common I2C devices by their hexadecimal address or search for a device by name.
 
-You can search for:
+Search for:
 
 - An I2C address such as `0x68`
-- A device name such as `MPU6050`
+- A device such as `MPU6050`
 - A display such as `SSD1306`
-- A sensor such as `BME280`
-
-The tool searches a database of common I2C sensors, displays, RTC modules and other devices used with Arduino, ESP32, ESP8266, Raspberry Pi and other microcontrollers.
+- A sensor such as `BMA400`
 
 <div class="i2c-tool">
 
   <div class="i2c-search-wrapper">
+
     <input
       type="text"
       id="i2c-search"
       placeholder="Search by device name or I2C address..."
       autocomplete="off"
+      aria-label="Search I2C devices"
     >
 
-    <button id="i2c-clear" type="button" aria-label="Clear search">
+    <button id="i2c-clear" type="button">
       Clear
     </button>
+
   </div>
 
-  <p class="i2c-help">
-    Examples: <button type="button" class="i2c-example">MPU6050</button>
+  <div class="i2c-examples">
+    <span>Examples:</span>
+
+    <button type="button" class="i2c-example">MPU6050</button>
     <button type="button" class="i2c-example">0x68</button>
     <button type="button" class="i2c-example">SSD1306</button>
-    <button type="button" class="i2c-example">BME280</button>
-  </p>
+    <button type="button" class="i2c-example">BMA400</button>
+  </div>
 
   <div id="i2c-results-count"></div>
 
@@ -76,89 +79,153 @@ The tool searches a database of common I2C sensors, displays, RTC modules and ot
 
 <style>
 
+/* =========================================================
+   Embedded Nerd - I2C Address Lookup
+   ========================================================= */
+
 .i2c-tool {
   max-width: 900px;
   margin: 2rem auto;
 }
 
+/* Search area */
+
 .i2c-search-wrapper {
   display: flex;
-  gap: 10px;
-  margin-bottom: 12px;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 #i2c-search {
+  flex: 1;
   width: 100%;
   padding: 15px 18px;
-  font-size: 1.05rem;
-  border: 1px solid #d9d9d9;
+  font-size: 1rem;
+  font-family: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid rgba(91, 194, 190, 0.55);
   border-radius: 8px;
   outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+#i2c-search::placeholder {
+  opacity: 0.65;
 }
 
 #i2c-search:focus {
-  border-color: #777;
+  border-color: #5bc2be;
+  box-shadow: 0 0 0 2px rgba(91, 194, 190, 0.12);
 }
 
+/* Clear button */
+
 #i2c-clear {
-  padding: 0 18px;
-  border: 1px solid #d9d9d9;
+  flex: 0 0 auto;
+  padding: 0 20px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid rgba(91, 194, 190, 0.55);
   border-radius: 8px;
-  background: #f5f5f5;
   cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 #i2c-clear:hover {
-  background: #e9e9e9;
+  background: rgba(91, 194, 190, 0.10);
+  border-color: #5bc2be;
 }
 
-.i2c-help {
-  font-size: 0.9rem;
-  margin-bottom: 20px;
+#i2c-clear:active {
+  background: rgba(91, 194, 190, 0.16);
 }
 
-.i2c-example {
-  border: none;
-  background: none;
-  padding: 0 3px;
-  text-decoration: underline;
-  cursor: pointer;
-  font: inherit;
-}
+/* Search examples */
 
-#i2c-results-count {
-  margin-bottom: 15px;
+.i2c-examples {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
   font-size: 0.95rem;
 }
 
+.i2c-examples > span {
+  opacity: 0.75;
+}
+
+.i2c-example {
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: #5bc2be;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.i2c-example:hover {
+  color: #7bd6d2;
+  text-decoration: underline;
+}
+
+/* Result count */
+
+#i2c-results-count {
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* Result cards */
+
 .i2c-result {
-  border: 1px solid #e2e2e2;
-  border-radius: 10px;
   padding: 22px;
   margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.015);
 }
 
 .i2c-result h2 {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-size: 1.35rem;
 }
+
+/* Addresses */
 
 .i2c-addresses {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 15px 0;
+  margin: 14px 0 18px;
 }
 
 .i2c-address {
   display: inline-block;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background: #f2f2f2;
+  padding: 6px 11px;
   font-family: monospace;
-  font-weight: bold;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #d9eeee;
+  background: rgba(91, 194, 190, 0.10);
+  border: 1px solid rgba(91, 194, 190, 0.35);
+  border-radius: 5px;
 }
+
+/* Metadata */
 
 .i2c-meta {
   margin: 8px 0;
@@ -166,23 +233,42 @@ The tool searches a database of common I2C sensors, displays, RTC modules and ot
 
 .i2c-meta strong {
   display: inline-block;
-  min-width: 100px;
+  min-width: 105px;
 }
 
+/* Related links */
+
 .i2c-links {
-  margin-top: 15px;
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .i2c-links a {
-  margin-right: 15px;
+  display: inline-block;
+  margin-right: 18px;
+  margin-bottom: 6px;
+  color: #5bc2be;
 }
 
+.i2c-links a:hover {
+  color: #7bd6d2;
+}
+
+/* No results */
+
 .i2c-no-results {
-  padding: 30px;
+  padding: 30px 20px;
   text-align: center;
-  border: 1px dashed #ccc;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
   border-radius: 10px;
 }
+
+.i2c-no-results p {
+  margin-bottom: 0;
+}
+
+/* Mobile */
 
 @media (max-width: 600px) {
 
@@ -191,10 +277,29 @@ The tool searches a database of common I2C sensors, displays, RTC modules and ot
   }
 
   #i2c-clear {
-    padding: 12px;
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .i2c-examples {
+    line-height: 1.8;
+  }
+
+  .i2c-result {
+    padding: 20px;
+  }
+
+  .i2c-meta strong {
+    display: block;
+    margin-bottom: 2px;
   }
 
 }
+
+
+/* =========================================================
+   End Embedded Nerd - I2C Address Lookup
+   ========================================================= */
 
 </style>
 
@@ -444,14 +549,20 @@ function renderResults(devices) {
   resultsContainer.innerHTML = "";
 
   resultsCount.textContent =
-    devices.length + " device" + (devices.length === 1 ? "" : "s") + " found";
+    devices.length +
+    " device" +
+    (devices.length === 1 ? "" : "s") +
+    " found";
 
   if (devices.length === 0) {
 
     resultsContainer.innerHTML = `
       <div class="i2c-no-results">
         <strong>No matching devices found.</strong>
-        <p>Try searching by device name or I2C address, for example <code>MPU6050</code> or <code>0x68</code>.</p>
+        <p>
+          Try searching by device name or I2C address,
+          for example <code>MPU6050</code> or <code>0x68</code>.
+        </p>
       </div>
     `;
 
@@ -461,7 +572,9 @@ function renderResults(devices) {
   devices.forEach(device => {
 
     const addresses = device.addresses
-      .map(address => `<span class="i2c-address">${escapeHTML(address)}</span>`)
+      .map(address =>
+        `<span class="i2c-address">${escapeHTML(address)}</span>`
+      )
       .join("");
 
     let links = "";
@@ -526,14 +639,14 @@ function searchDevices() {
   const filteredDevices = i2cDevices.filter(device => {
 
     const searchableText = [
-
       device.name,
       device.category,
       device.manufacturer,
       device.description,
       ...device.addresses
-
-    ].join(" ").toLowerCase();
+    ]
+      .join(" ")
+      .toLowerCase();
 
     return searchableText.includes(query);
 
@@ -580,25 +693,23 @@ The easiest way to identify an unknown I2C device address is to run an I2C scann
 
 An I2C scanner checks the available addresses on the bus and reports devices that respond.
 
-For Arduino and ESP32 projects, see our [I2C Scanner Tutorial](/i2c-scanner-tutorial/).
+See our [I2C Scanner Tutorial](/i2c-scanner-tutorial/) for a practical Arduino and ESP32 example.
 
 ---
 
 ## Common I2C Addresses
 
-Some addresses are used by multiple devices.
+Some I2C addresses are used by multiple devices.
 
-For example, address `0x68` may be used by:
+For example, `0x68` may be used by:
 
 - MPU6050
 - DS3231
 - DS1307
 
-This means that detecting `0x68` does not always identify the exact device automatically.
+Therefore, detecting an address does not always uniquely identify the device.
 
-Always verify the device using its documentation, module markings or device identification registers.
-
-The same situation applies to addresses such as `0x76`, `0x77` and `0x3C`, which may be used by different sensors or display controllers.
+Always verify the device using its documentation, module markings or identification registers.
 
 ---
 
