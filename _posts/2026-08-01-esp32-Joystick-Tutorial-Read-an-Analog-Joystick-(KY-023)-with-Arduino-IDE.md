@@ -491,7 +491,9 @@ These pins provide:
 
 ---
 
-## Wiring Diagram
+## ESP32 Joystick Wiring
+
+This ESP32 joystick wiring setup connects the KY-023 analog joystick module to GPIO34 and GPIO35 for the X and Y axes, with GPIO32 used for the push button.
 
 ![Joystick Pinout wiring esp32](/assets/images/esp32-joystick-pinout-2.webp)
 
