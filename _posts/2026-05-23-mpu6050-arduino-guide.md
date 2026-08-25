@@ -56,7 +56,7 @@ related: true
 share: true
 ---
 
-# MPU6050 Arduino Guide: Wiring, Code & I2C
+## MPU6050 Arduino Guide: Wiring, Code & I2C
 
 The **MPU6050** is a popular motion sensor for Arduino projects because it combines a 3-axis accelerometer and a 3-axis gyroscope in one device.
 
@@ -80,7 +80,7 @@ This tutorial covers:
 
 ---
 
-# What Is the MPU6050?
+## What Is the MPU6050?
 
 The MPU6050 is a 6-axis motion-tracking sensor that combines:
 
@@ -108,19 +108,19 @@ The MPU6050 can also show small offsets in its accelerometer and gyroscope readi
 
 ---
 
-# Required Hardware
+## Required Hardware
 
 {% include required-hardware.html products=page.required_hardware %}
 
 ---
 
-# MPU6050 Arduino Wiring
+## MPU6050 Arduino Wiring
 
 ![MPU6050 Arduino wiring diagram showing VCC, GND, SDA and SCL connections to Arduino Uno.]({{ '/assets/images/mpu6050-wiring.webp' | relative_url }})
 
 Connecting the MPU6050 to an Arduino Uno is straightforward because the Uno has dedicated I2C pins.
 
-## Arduino Uno and Nano Connections
+### Arduino Uno and Nano Connections
 
 | MPU6050 Pin | Arduino Uno / Nano |
 |---|---|
@@ -140,7 +140,7 @@ The correct supply voltage depends on the MPU6050 breakout board you are using.
 
 ---
 
-# MPU6050 I2C Address
+## MPU6050 I2C Address
 
 The MPU6050 normally uses the I2C address:
 
@@ -162,13 +162,13 @@ The scanner can confirm whether the sensor responds on the I2C bus and which add
 
 ---
 
-# Install the MPU6050 Arduino Library
+## Install the MPU6050 Arduino Library
 
 This example uses the `MPU6050` library with the Arduino `Wire` library.
 
 Open Arduino IDE and install a compatible MPU6050 library.
 
-## Arduino IDE Steps
+### Arduino IDE Steps
 
 1. Open Arduino IDE.
 2. Go to **Sketch → Include Library → Manage Libraries**.
@@ -180,7 +180,7 @@ Make sure that the library you install provides the `MPU6050.h` header and the f
 
 ---
 
-# MPU6050 Arduino Code Example
+## MPU6050 Arduino Code Example
 
 The following example initializes the MPU6050 and reads accelerometer and gyroscope values.
 
@@ -242,9 +242,9 @@ void loop() {
 
 ---
 
-# How the MPU6050 Arduino Code Works
+## How the MPU6050 Arduino Code Works
 
-## `Wire.begin()`
+### `Wire.begin()`
 
 ```cpp
 Wire.begin();
@@ -254,7 +254,7 @@ This initializes I2C communication.
 
 On an Arduino Uno or Nano, the default I2C pins are A4 for SDA and A5 for SCL.
 
-## `mpu.initialize()`
+### `mpu.initialize()`
 
 ```cpp
 mpu.initialize();
@@ -262,7 +262,7 @@ mpu.initialize();
 
 This initializes the MPU6050 through the library.
 
-## `mpu.testConnection()`
+### `mpu.testConnection()`
 
 ```cpp
 mpu.testConnection();
@@ -282,7 +282,7 @@ If it fails:
 MPU6050 connection failed
 ```
 
-## `getMotion6()`
+### `getMotion6()`
 
 ```cpp
 mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
@@ -301,7 +301,7 @@ The values returned by this example are raw sensor readings. They are not automa
 
 ---
 
-# MPU6050 Serial Monitor Output
+## MPU6050 Serial Monitor Output
 
 After uploading the sketch, open the Arduino Serial Monitor and select:
 
@@ -320,7 +320,7 @@ The exact values will change when you move the sensor.
 
 ---
 
-# MPU6050 Arduino Uno and Nano Notes
+## MPU6050 Arduino Uno and Nano Notes
 
 The MPU6050 works well with:
 
@@ -347,7 +347,7 @@ The exact pins can vary depending on the board and software configuration.
 
 ---
 
-# MPU6050 Not Detected
+## MPU6050 Not Detected
 
 If the MPU6050 Arduino code reports:
 
@@ -371,7 +371,7 @@ You can use the [I2C Scanner Tutorial](/i2c-scanner-tutorial/) to check whether 
 
 ---
 
-# MPU6050 I2C Scanner Troubleshooting
+## MPU6050 I2C Scanner Troubleshooting
 
 If the I2C Scanner does not detect the MPU6050, test one device at a time.
 
@@ -391,7 +391,7 @@ If the scanner detects the address but your application still fails, check the l
 
 ---
 
-# Random or Unstable MPU6050 Values
+## Random or Unstable MPU6050 Values
 
 Small changes in sensor readings are normal.
 
@@ -410,7 +410,7 @@ See the [MPU6050 Calibration Guide](/mpu6050-calibration-guide/) for a complete 
 
 ---
 
-# Upload Failed
+## Upload Failed
 
 If the Arduino sketch does not upload, the problem is usually unrelated to the MPU6050.
 
@@ -424,7 +424,7 @@ Check:
 
 ---
 
-# MPU6050 Projects
+## MPU6050 Projects
 
 Once the MPU6050 is working, it can be used for:
 
@@ -441,7 +441,7 @@ For example, the MPU6050 can be combined with an OLED display to create a compac
 
 ---
 
-# GitHub Source Code
+## GitHub Source Code
 
 The complete MPU6050 Arduino example can be kept in the Embedded Nerd GitHub repository for reuse in future projects.
 
@@ -456,7 +456,7 @@ The basic example can be expanded with:
 
 ---
 
-# Related Tutorials
+## Related Tutorials
 
 If you're working with the MPU6050 or other I2C devices, these tutorials may also be useful:
 
@@ -469,13 +469,13 @@ The I2C Scanner is especially useful when the MPU6050 is not detected, while the
 
 ---
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
-## What is the MPU6050 used for?
+### What is the MPU6050 used for?
 
 The MPU6050 is a 6-axis motion sensor that combines a 3-axis accelerometer and 3-axis gyroscope. It can be used for motion tracking, tilt measurement, robotics, gesture control and other Arduino projects.
 
-## How do I connect the MPU6050 to Arduino Uno?
+### How do I connect the MPU6050 to Arduino Uno?
 
 Connect:
 
@@ -488,21 +488,21 @@ MPU6050 VCC → Appropriate module supply
 
 Check the breakout board specifications before using 5V.
 
-## What is the MPU6050 I2C address?
+### What is the MPU6050 I2C address?
 
 The MPU6050 normally uses `0x68`. It can also use `0x69` when the AD0 pin is HIGH.
 
 If you're unsure, use an I2C Scanner to detect the address.
 
-## Why is my MPU6050 not detected?
+### Why is my MPU6050 not detected?
 
 Check the power supply, SDA and SCL connections, I2C pins and address. Running an I2C Scanner is one of the quickest ways to determine whether the sensor is responding.
 
-## Does the MPU6050 work with ESP32?
+### Does the MPU6050 work with ESP32?
 
 Yes. The MPU6050 can communicate with an ESP32 using I2C. A typical ESP32 configuration uses GPIO21 for SDA and GPIO22 for SCL.
 
-## Does the MPU6050 need calibration?
+### Does the MPU6050 need calibration?
 
 Calibration is useful when you need more accurate accelerometer and gyroscope measurements because the sensor can have small offsets.
 
@@ -510,7 +510,7 @@ See the [MPU6050 Calibration Guide](/mpu6050-calibration-guide/) for more inform
 
 ---
 
-# Conclusion
+## Conclusion
 
 The **MPU6050** is a versatile motion sensor and an excellent choice for Arduino and ESP32 projects.
 
