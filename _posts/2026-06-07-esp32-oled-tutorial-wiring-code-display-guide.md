@@ -79,7 +79,7 @@ This tutorial includes:
 
 ---
 
-## Display MPU6050 Data on an OLED
+### Display MPU6050 Data on an OLED
 
 After connecting the OLED display, you can show live accelerometer and gyroscope values from an MPU6050 sensor.
 
@@ -91,7 +91,7 @@ to learn how to read the sensor before displaying the values on the OLED.
 
 ---
 
-# What is an SSD1306 OLED Display?
+## What is an SSD1306 OLED Display?
 
 The SSD1306 OLED display is a small monochrome display commonly available in:
 
@@ -117,17 +117,17 @@ These displays are widely used in:
 
 ---
 
-# Required Hardware
+## Required Hardware
 
 {% include required-hardware.html products=page.required_hardware %}
 
 ---
 
-# ESP32 OLED Wiring
+## ESP32 OLED Wiring
 
 ![ESP32 OLED Display Wiring i2c]({{ '/assets/images/esp32-oled-display-connection-i2c.webp' | relative_url }})
 
-## I2C Connections
+### I2C Connections
 
 | OLED Pin | ESP32 |
 |---|---|
@@ -138,7 +138,7 @@ These displays are widely used in:
 
 ---
 
-# Wiring Notes
+## Wiring Notes
 
 The default I2C pins on most ESP32 boards are:
 
@@ -161,7 +161,7 @@ If your display is not detected, run an I2C Scanner sketch to find the correct a
 
 ---
 
-# Install Required Libraries
+## Install Required Libraries
 
 Open Arduino IDE.
 
@@ -180,7 +180,7 @@ These libraries make it easy to draw text, shapes, and graphics.
 
 ---
 
-# ESP32 OLED Code Example
+## ESP32 OLED Code Example
 
 ```cpp
 // =====================================================
@@ -233,33 +233,33 @@ void loop() {
 
 ---
 
-# How the Code Works
+## How the Code Works
 
-## display.begin()
+### display.begin()
 
 Initializes the OLED display using the I2C address.
 
 ---
 
-## clearDisplay()
+### clearDisplay()
 
 Clears the screen before drawing new content.
 
 ---
 
-## setCursor()
+### setCursor()
 
 Defines where the text starts.
 
 ---
 
-## println()
+### println()
 
 Writes text into the display buffer.
 
 ---
 
-## display()
+### display()
 
 Updates the OLED with everything stored in memory.
 
@@ -267,7 +267,7 @@ Nothing appears until this function is called.
 
 ---
 
-# Expected Output
+## Expected Output
 
 The OLED should display:
 
@@ -278,7 +278,7 @@ Nerd
 
 ---
 
-# Drawing Graphics
+## Drawing Graphics
 
 The SSD1306 library can also draw:
 
@@ -298,7 +298,7 @@ display.display();
 
 ---
 
-# Display Sensor Data
+## Display Sensor Data
 
 The OLED is commonly paired with sensors such as:
 
@@ -321,9 +321,9 @@ display.display();
 
 ---
 
-# Common Problems
+## Common Problems
 
-## OLED Not Found
+### OLED Not Found
 
 Possible causes:
 
@@ -335,7 +335,7 @@ Run an [I2C Scanner](https://embeddednerd.com/i2c-scanner-tutorial/) sketch to d
 
 ---
 
-## Blank Screen
+### Blank Screen
 
 Possible causes:
 
@@ -350,7 +350,7 @@ display.display();
 
 ---
 
-## Garbled Display
+### Garbled Display
 
 Try:
 
@@ -365,7 +365,7 @@ display.clearDisplay();
 
 ---
 
-# Popular ESP32 OLED Projects
+## Popular ESP32 OLED Projects
 
 The SSD1306 display is widely used in:
 
@@ -387,7 +387,7 @@ products="esp32-starter-kit,esp32-devkit,ssd1306-oled,mpu6050"
 
 ---
 
-# GitHub Source Code
+## GitHub Source Code
 
 The complete project code is available in the GitHub repository.
 
@@ -402,7 +402,7 @@ You can extend this tutorial by adding:
 
 ---
 
-# Related Tutorials
+## Related Tutorials
 
 - [ESP32 WiFi Tutorial](../esp32-wifi/)
 - [Esp32 Joystick Tutorial](../esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)
@@ -413,15 +413,15 @@ You can extend this tutorial by adding:
 
 ---
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
-## Can I use a 5V OLED with ESP32?
+### Can I use a 5V OLED with ESP32?
 
 Most SSD1306 modules work with both 3.3V and 5V power, but always check your module specifications.
 
 ---
 
-## What is the default I2C address?
+### What is the default I2C address?
 
 Usually:
 
@@ -437,7 +437,7 @@ Some displays use:
 
 ---
 
-## Can multiple I2C devices share the same bus?
+### Can multiple I2C devices share the same bus?
 
 Yes.
 
@@ -445,7 +445,7 @@ As long as every device has a different I2C address, multiple sensors and displa
 
 ---
 
-# Conclusion
+## Conclusion
 
 The SSD1306 OLED display is one of the easiest and most useful displays for ESP32 projects.
 
