@@ -382,7 +382,7 @@ The SSD1306 display is widely used in:
 ---
 
 {% include starter-kits.html
-products="esp32-starter-kit,esp32-devkit,ssd1306,breadboard-kit,usb-c-cable"
+products="esp32-starter-kit,esp32-devkit,ssd1306-oled,mpu6050"
 %}
 
 ---
