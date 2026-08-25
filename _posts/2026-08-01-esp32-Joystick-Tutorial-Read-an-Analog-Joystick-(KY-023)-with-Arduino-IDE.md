@@ -55,7 +55,7 @@ required_hardware:
     component: Male-to-Female Jumper Wires
 ---
 
-# ESP32 Joystick Tutorial
+## ESP32 Joystick Tutorial
 
 *Learn how to connect, calibrate, and program an analog joystick module with the [ESP32](/products/esp32-devkit/) using the Arduino IDE.*
 
@@ -63,7 +63,7 @@ required_hardware:
 
 ---
 
-## What You'll Learn
+### What You'll Learn
 
 By the end of this tutorial you will be able to:
 
@@ -96,7 +96,7 @@ By the end of this tutorial you will be able to:
 ---
 
 
-## Why Read This Guide?
+### Why Read This Guide?
 
 The analog joystick is one of the most useful input devices available for embedded systems. Although it looks simple, it can be used in hundreds of projects ranging from small menu navigation systems to autonomous robots.
 
@@ -123,7 +123,7 @@ Instead of only showing how to read the joystick, you'll learn how to build robu
 
 ---
 
-## Why Use the ESP32?
+### Why Use the ESP32?
 
 The ESP32 is one of the most powerful microcontrollers available for hobbyists and professionals.
 
@@ -144,7 +144,7 @@ For joystick-based projects, the higher ADC resolution makes a significant diffe
 
 ---
 
-## What Is an Analog Joystick?
+### What Is an Analog Joystick?
 
 An analog joystick is essentially two potentiometers mounted at 90 degrees from each other.
 
@@ -181,7 +181,7 @@ This proportional control is what makes analog joysticks far more versatile than
 
 ---
 
-## Typical Applications
+### Typical Applications
 
 The KY-023 joystick module is commonly found in projects such as:
 
@@ -202,7 +202,7 @@ If you have ever used a PlayStation, Xbox, or Nintendo controller, you have alre
 
 ---
 
-## How Does the KY-023 Work?
+### How Does the KY-023 Work?
 
 The KY-023 module combines three independent devices on a single board:
 
@@ -233,7 +233,7 @@ No external resistor is required.
 
 ---
 
-## Hardware Overview
+### Hardware Overview
 
 Before connecting the joystick, it's worth taking a few minutes to understand how the hardware works. Knowing what each pin does and why specific GPIOs are chosen will help you avoid unstable readings, Wi-Fi conflicts, and damaged inputs.
 
@@ -248,13 +248,13 @@ In this section you'll learn:
 
 ---
 
-## Hardware Required
+### Hardware Required
 
 {% include required-hardware.html products=page.required_hardware %}
 
 ---
 
-## Joystick Module Pinout
+### Joystick Module Pinout
 
 The KY-023 joystick module exposes five pins.
 
@@ -278,9 +278,9 @@ Powering it from 3.3V is actually recommended because the ESP32 ADC inputs are *
 
 ---
 
-## Understanding Each Pin
+### Understanding Each Pin
 
-### GND
+#### GND
 
 Ground is the common voltage reference shared between the ESP32 and the joystick.
 
@@ -297,7 +297,7 @@ ESP32 GND
 
 ---
 
-### VCC
+#### VCC
 
 This powers both potentiometers.
 
@@ -314,7 +314,7 @@ Although the board usually says **+5V**, the internal potentiometers operate per
 
 ---
 
-### VRx
+#### VRx
 
 Outputs an analog voltage representing horizontal movement.
 
@@ -328,7 +328,7 @@ Typical values:
 
 ---
 
-### VRy
+#### VRy
 
 Exactly the same concept applies to the vertical axis.
 
@@ -340,7 +340,7 @@ Exactly the same concept applies to the vertical axis.
 
 ---
 
-### SW
+#### SW
 
 The push button is completely independent.
 
@@ -366,7 +366,7 @@ No external resistor is required.
 
 ---
 
-## Understanding the ESP32 ADC
+### Understanding the ESP32 ADC
 
 This is one of the biggest differences between an ESP32 and a traditional Arduino.
 
@@ -379,7 +379,7 @@ Although both can read analog voltages, they behave differently.
 
 ---
 
-## ADC Resolution
+### ADC Resolution
 
 The ADC converts an analog voltage into a digital number.
 
@@ -404,13 +404,13 @@ The higher resolution allows much smoother joystick movement.
 
 ---
 
-## ADC1 vs ADC2
+### ADC1 vs ADC2
 
 This topic confuses many beginners.
 
 The ESP32 contains two ADC peripherals.
 
-## ADC1
+### ADC1
 
 GPIO32
 
@@ -428,7 +428,7 @@ GPIO39
 
 ---
 
-## ADC2
+### ADC2
 
 GPIO0
 
@@ -467,7 +467,7 @@ That is why this tutorial uses:
 
 ---
 
-## Choosing the GPIOs
+### Choosing the GPIOs
 
 Our wiring will be:
 
@@ -491,7 +491,7 @@ These pins provide:
 
 ---
 
-## ESP32 Joystick Wiring
+### ESP32 Joystick Wiring
 
 This ESP32 joystick wiring setup connects the KY-023 analog joystick module to GPIO34 and GPIO35 for the X and Y axes, with GPIO32 used for the push button.
 
@@ -507,7 +507,7 @@ Most joystick problems are simply caused by swapped VCC and GND connections.
 
 ---
 
-## Power Supply Considerations
+### Power Supply Considerations
 
 The joystick itself consumes very little current.
 
@@ -523,7 +523,7 @@ No external power supply is required.
 
 ---
 
-## Analog Noise
+### Analog Noise
 
 One thing beginners often notice is that the joystick values are never perfectly stable.
 
@@ -565,7 +565,7 @@ Later in this tutorial we'll eliminate most of this noise using software filteri
 
 ---
 
-## Before Continuing
+### Before Continuing
 
 At this point you should have:
 
@@ -588,7 +588,7 @@ In the next section we'll examine every pin of the joystick module, understand w
 
 ---
 
-## Reading the Joystick with the ESP32
+### Reading the Joystick with the ESP32
 
 Now that the hardware is connected correctly, it's time to write our first program.
 
@@ -605,7 +605,7 @@ By the end of this section, you'll have a reliable test program that can serve a
 
 ---
 
-## Preparing the Arduino IDE
+### Preparing the Arduino IDE
 
 If you have already installed ESP32 support in the Arduino IDE, you can skip this section.
 
@@ -653,7 +653,7 @@ If you own another ESP32 variant, choose the appropriate board.
 
 ---
 
-## Understanding the ADC Resolution
+### Understanding the ADC Resolution
 
 The ESP32 converts voltages into numbers.
 
@@ -684,7 +684,7 @@ The higher resolution produces smoother joystick movement.
 
 ---
 
-## ADC Attenuation
+### ADC Attenuation
 
 One feature many [ESP32 tutorials](https://embeddednerd.com/tags/) ignore is ADC attenuation.
 
@@ -709,7 +709,7 @@ Without proper attenuation, the ADC may saturate earlier than expected depending
 
 ---
 
-## The First Test Program
+### The First Test Program
 
 Upload the following sketch.
 
@@ -773,7 +773,7 @@ Set the baud rate to:
 
 ---
 
-## Expected Output
+### Expected Output
 
 With the joystick untouched, you should observe something similar to:
 
@@ -803,7 +803,7 @@ This is perfectly normal.
 
 ---
 
-## Moving the Joystick
+### Moving the Joystick
 
 Try moving the joystick slowly.
 
@@ -847,7 +847,7 @@ although they rarely reach these exact numbers.
 
 ---
 
-## Testing the Push Button
+### Testing the Push Button
 
 Press the joystick downward.
 
@@ -869,7 +869,7 @@ No external resistor is required because we enabled the ESP32's internal pull-up
 
 ---
 
-## Why Aren't the Center Values Exactly 2048?
+### Why Aren't the Center Values Exactly 2048?
 
 Many beginners expect:
 
@@ -911,7 +911,7 @@ We'll implement that later.
 
 ---
 
-## Monitoring the Analog Signal
+### Monitoring the Analog Signal
 
 Spend a minute moving the joystick in every direction.
 
