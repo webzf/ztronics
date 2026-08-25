@@ -61,7 +61,7 @@ share: true
 
 ---
 
-# MPU6050 Calibration Guide: How to Calibrate Accelerometer & Gyroscope
+## MPU6050 Calibration Guide: How to Calibrate Accelerometer & Gyroscope
 
 The MPU6050 is a popular motion sensor for Arduino and ESP32 projects, combining a 3-axis accelerometer and 3-axis gyroscope in a single device.
 
@@ -87,7 +87,7 @@ If you are new to the MPU6050, start with our [MPU6050 Arduino Guide](/mpu6050-a
 
 ---
 
-# What Is MPU6050 Calibration?
+## What Is MPU6050 Calibration?
 
 MPU6050 calibration is the process of measuring the sensor's offset and using that information to compensate for errors in its readings.
 
@@ -111,7 +111,7 @@ The exact values depend on the individual sensor and its operating conditions.
 
 Calibration allows us to measure these offsets and compensate for them before using the sensor data in an application.
 
-## Accelerometer Offset
+### Accelerometer Offset
 
 The MPU6050 accelerometer measures acceleration along three axes:
 
@@ -143,7 +143,7 @@ can be normal for a stationary sensor, although the X and Y offsets can still be
 
 The goal of calibration is not necessarily to make every accelerometer value exactly zero. Instead, the goal is to make the readings match the physical conditions of the sensor as closely as possible.
 
-## Gyroscope Offset
+### Gyroscope Offset
 
 The MPU6050 gyroscope measures rotational velocity around the X, Y, and Z axes.
 
@@ -175,7 +175,7 @@ This is particularly important for applications that integrate gyroscope measure
 
 We will cover gyroscope drift separately in a future MPU6050 guide.
 
-## Why Does the MPU6050 Need Calibration?
+### Why Does the MPU6050 Need Calibration?
 
 Different MPU6050 modules can have different sensor offsets, even when they use the same sensor chip.
 
@@ -195,13 +195,13 @@ Calibration provides a better starting point by reducing these measurable offset
 
 ---
 
-# Required Hardware
+## Required Hardware
 
 {% include required-hardware.html products=page.required_hardware %}
 
 ---
 
-# Before You Calibrate
+## Before You Calibrate
 
 Before starting the calibration process, make sure the MPU6050 is connected correctly and can remain completely stationary.
 
@@ -225,7 +225,7 @@ For the best results, place the MPU6050 on a solid, stable surface and avoid tou
 
 ---
 
-# MPU6050 Wiring
+## MPU6050 Wiring
 
 The MPU6050 communicates with the microcontroller using the I2C interface.
 
@@ -233,7 +233,7 @@ For Arduino Uno and Nano, the standard I2C connections are:
 
 ![MPU6050 wiring with Arduino](/assets/images/mpu6050-calibration-wiring.webp)
 
-## Arduino Uno / Nano Connections
+### Arduino Uno / Nano Connections
 
 | MPU6050 Pin | Arduino Uno / Nano |
 |---|---|
@@ -255,7 +255,7 @@ If your MPU6050 is not detected, use our [I2C Scanner Tutorial](/i2c-scanner-tut
 
 > **Wiring Note:** MPU6050 breakout boards can differ in their power requirements. Check the specifications of your particular module before connecting VCC.
 
-## ESP32 Connections
+### ESP32 Connections
 
 The MPU6050 can also be used with an ESP32.
 
@@ -274,13 +274,13 @@ For the calibration code in this guide, the same MPU6050 library interface used 
 
 ---
 
-# Install the MPU6050 Library
+## Install the MPU6050 Library
 
 The calibration code uses the same MPU6050 library interface used in our existing MPU6050 tutorial.
 
 If you already followed the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/), you can use the same library installation.
 
-## Arduino IDE Steps
+### Arduino IDE Steps
 
 Open the Arduino IDE and go to:
 
@@ -305,7 +305,7 @@ The same library interface is used by the existing Embedded Nerd MPU6050 example
 
 ---
 
-# How MPU6050 Calibration Works
+## How MPU6050 Calibration Works
 
 The calibration process is based on a simple principle:
 
@@ -335,7 +335,7 @@ Even though the sensor is not moving, the readings are not identical.
 
 Averaging many samples produces a more stable estimate of the sensor's stationary bias.
 
-## Gyroscope Calibration
+### Gyroscope Calibration
 
 When the MPU6050 is stationary, the ideal gyroscope output is approximately zero on all three axes:
 
@@ -365,7 +365,7 @@ Corrected Gyro X = Raw Gyro X - Gyro X Offset
 
 The same principle applies to the Y and Z axes.
 
-## Accelerometer Calibration
+### Accelerometer Calibration
 
 The accelerometer requires slightly more care because gravity is part of the measurement.
 
@@ -409,7 +409,7 @@ The corrected readings are then calculated by subtracting the corresponding bias
 
 ---
 
-# MPU6050 Calibration Code
+## MPU6050 Calibration Code
 
 The following sketch collects 2000 readings while the MPU6050 is completely stationary.
 
@@ -576,7 +576,7 @@ void loop() {
 
 ---
 
-## Try the MPU6050 Calibration in Wokwi
+### Try the MPU6050 Calibration in Wokwi
 
 You can run the complete calibration project directly in Wokwi.
 
@@ -589,9 +589,9 @@ You can run the complete calibration project directly in Wokwi.
   </iframe>
 </div>
 
-# How the Calibration Code Works
+## How the Calibration Code Works
 
-## Collecting Sensor Samples
+### Collecting Sensor Samples
 
 The number of calibration samples is defined here:
 
@@ -616,7 +616,7 @@ Each reading contains:
 
 The readings are added to separate totals and averaged after all samples have been collected.
 
-## Calculating the Average
+### Calculating the Average
 
 For each axis, the program calculates:
 
@@ -626,7 +626,7 @@ Average = Sum of samples / Number of samples
 
 Using many readings reduces the influence of short-term sensor noise.
 
-## Calculating the Gyroscope Offsets
+### Calculating the Gyroscope Offsets
 
 The gyroscope should read approximately zero when the sensor is stationary.
 
@@ -655,7 +655,7 @@ Gyro X Offset = 12
 Corrected Gyro X = 3
 ```
 
-## Calculating the Accelerometer Offsets
+### Calculating the Accelerometer Offsets
 
 The accelerometer uses a known reference: Earth's gravity.
 
@@ -681,7 +681,7 @@ Corrected Z = Raw Z - Z Offset
 
 This allows the Z axis to retain the gravity measurement instead of incorrectly forcing it to zero.
 
-## Applying the Offsets
+### Applying the Offsets
 
 The offsets are stored in variables while the program is running.
 
@@ -701,7 +701,7 @@ That makes the example easier to understand and avoids depending on library-spec
 
 ---
 
-# Calibration Output
+## Calibration Output
 
 After calibration, the Serial Monitor will show the calculated offsets.
 
@@ -746,13 +746,13 @@ Small variations are normal because the sensor still contains measurement noise.
 
 ---
 
-# How to Verify MPU6050 Calibration
+## How to Verify MPU6050 Calibration
 
 Calculating offsets is only part of the calibration process.
 
 You should also verify that the corrected readings behave as expected.
 
-## Test 1: Keep the Sensor Completely Still
+### Test 1: Keep the Sensor Completely Still
 
 Place the MPU6050 on a stable surface and leave it untouched.
 
@@ -766,7 +766,7 @@ Gyro Z ≈ 0
 
 Small fluctuations around zero are normal.
 
-## Test 2: Check the Accelerometer
+### Test 2: Check the Accelerometer
 
 Place the MPU6050 approximately level.
 
@@ -782,7 +782,7 @@ The exact values will fluctuate slightly.
 
 If the board is tilted, the gravity vector is distributed differently between the axes, so the readings will change.
 
-## Test 3: Rotate the Sensor
+### Test 3: Rotate the Sensor
 
 Slowly rotate the MPU6050 around each axis.
 
@@ -790,7 +790,7 @@ The corresponding gyroscope value should change while the sensor is moving.
 
 When the movement stops, the gyroscope readings should return close to zero.
 
-## Test 4: Return the Sensor to Its Original Position
+### Test 4: Return the Sensor to Its Original Position
 
 After rotating the sensor, return it to the same position used during calibration.
 
@@ -800,7 +800,7 @@ The gyroscope should again remain close to zero while the sensor is stationary.
 
 ---
 
-# How Accurate Should MPU6050 Calibration Be?
+## How Accurate Should MPU6050 Calibration Be?
 
 There is no single value that defines a perfectly calibrated MPU6050.
 
@@ -847,7 +847,7 @@ A more advanced accelerometer calibration can account for scale and axis-related
 
 ---
 
-# MPU6050 Calibration Tips
+## MPU6050 Calibration Tips
 
 Use the following practices to get more consistent calibration results:
 
@@ -864,9 +864,9 @@ For applications that use the gyroscope for long periods, remember that calibrat
 
 ---
 
-# Common MPU6050 Calibration Problems
+## Common MPU6050 Calibration Problems
 
-## Gyroscope Values Are Still Not Zero
+### Gyroscope Values Are Still Not Zero
 
 If the gyroscope still reports noticeable values after calibration, first make sure the MPU6050 was completely stationary while the calibration samples were collected.
 
@@ -883,7 +883,7 @@ Try running the calibration again on a stable surface.
 
 Small variations around zero are normal.
 
-## Accelerometer Z Is Not Close to 16384
+### Accelerometer Z Is Not Close to 16384
 
 When using the ±2g range and placing the MPU6050 level, the Z axis should be approximately 16384.
 
@@ -901,7 +901,7 @@ This guide focuses on basic offset compensation.
 
 More advanced accelerometer calibration can compensate for scale and axis-related errors.
 
-## Calibration Values Change Every Time
+### Calibration Values Change Every Time
 
 It is normal for calibration results to change slightly between runs.
 
@@ -915,7 +915,7 @@ If the values change dramatically between calibration runs, check for:
 - Unstable power
 - Mechanical interference
 
-## MPU6050 Is Not Detected
+### MPU6050 Is Not Detected
 
 If the calibration program reports:
 
@@ -938,7 +938,7 @@ Use the [I2C Scanner Tutorial](/i2c-scanner-tutorial/) to check whether the MPU6
 
 You can also return to the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/) for the basic wiring and setup.
 
-## Sensor Becomes Unstable Later
+### Sensor Becomes Unstable Later
 
 If the sensor works correctly immediately after calibration but the readings change later, environmental conditions may be affecting the measurements.
 
@@ -950,7 +950,7 @@ Calibration should therefore be considered a way to reduce the sensor's initial 
 
 ---
 
-# Using Calibration Values in Your Projects
+## Using Calibration Values in Your Projects
 
 Once the MPU6050 has been calibrated, the measured offsets can be used to compensate for future sensor readings.
 
@@ -999,7 +999,7 @@ For projects that use the same sensor permanently, the offsets can be saved to n
 
 ---
 
-# Recommended Products
+## Recommended Products
 
 The main hardware for this tutorial is already listed automatically in the **Hardware Used in This Project** section.
 
@@ -1014,7 +1014,7 @@ The ESP32 is particularly useful if you want to use the calibrated MPU6050 in a 
 
 ---
 
-# GitHub Source Code
+## GitHub Source Code
 
 The complete calibration sketch will be available in the Embedded Nerd GitHub repository.
 
@@ -1024,7 +1024,7 @@ The repository can be used to download the code and adapt the calibration proces
 
 ---
 
-# Related Tutorials
+## Related Tutorials
 
 If you want to learn more about the MPU6050 and related projects, these guides are a good next step:
 
@@ -1037,21 +1037,21 @@ Future MPU6050 guides can cover topics such as gyroscope drift, troubleshooting,
 
 ---
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
-## Does the MPU6050 need calibration?
+### Does the MPU6050 need calibration?
 
 Calibration is recommended when you need more reliable accelerometer or gyroscope measurements.
 
 The sensor can be used without calibration for simple projects, but reducing its initial offset can improve the results of motion and orientation applications.
 
-## How do I calibrate an MPU6050?
+### How do I calibrate an MPU6050?
 
 Keep the MPU6050 completely stationary, collect multiple accelerometer and gyroscope readings, calculate their average values, and use those measurements to determine the sensor offsets.
 
 The calibration sketch in this guide automates this process.
 
-## How do I calibrate the MPU6050 gyroscope?
+### How do I calibrate the MPU6050 gyroscope?
 
 Keep the sensor completely still while collecting multiple gyroscope samples.
 
@@ -1059,7 +1059,7 @@ The average X, Y, and Z readings represent the approximate stationary bias and c
 
 After compensation, the stationary gyroscope readings should be close to zero.
 
-## How do I calibrate the MPU6050 accelerometer?
+### How do I calibrate the MPU6050 accelerometer?
 
 For basic offset calibration, place the MPU6050 in a known stationary orientation and measure the accelerometer offsets.
 
@@ -1073,7 +1073,7 @@ Z ≈ 16384
 
 More advanced accelerometer calibration requires measurements in multiple orientations and can compensate for scale and axis errors.
 
-## Should the MPU6050 be completely still during calibration?
+### Should the MPU6050 be completely still during calibration?
 
 Yes.
 
@@ -1081,7 +1081,7 @@ The sensor should remain completely stationary while calibration samples are bei
 
 Any movement can be interpreted as sensor bias and result in incorrect calibration values.
 
-## Why is my MPU6050 gyroscope not reading zero?
+### Why is my MPU6050 gyroscope not reading zero?
 
 A small non-zero reading from a stationary gyroscope is normal.
 
@@ -1089,7 +1089,7 @@ If the value is consistently larger, recalibrate the sensor and make sure it rem
 
 If the readings continue changing significantly over time, the problem may be related to gyroscope drift or environmental conditions.
 
-## Why does my MPU6050 accelerometer show 16384?
+### Why does my MPU6050 accelerometer show 16384?
 
 At the common ±2g accelerometer setting, approximately 16384 raw counts correspond to 1g.
 
@@ -1097,7 +1097,7 @@ If the MPU6050 is stationary and level, the Z axis should therefore be close to 
 
 The X and Y axes should be closer to zero.
 
-## How many samples should I use for MPU6050 calibration?
+### How many samples should I use for MPU6050 calibration?
 
 There is no single required number of samples.
 
@@ -1105,7 +1105,7 @@ This guide uses 2000 samples as a practical starting point.
 
 Increasing the number of samples can produce a more stable average, but it also increases calibration time.
 
-## Does MPU6050 calibration remove gyroscope drift?
+### Does MPU6050 calibration remove gyroscope drift?
 
 No.
 
@@ -1115,7 +1115,7 @@ Gyroscope drift can also be affected by temperature, noise, sensor characteristi
 
 A dedicated MPU6050 gyroscope drift guide can cover these issues in more detail.
 
-## Do I need to calibrate the MPU6050 every time I turn it on?
+### Do I need to calibrate the MPU6050 every time I turn it on?
 
 Not necessarily.
 
@@ -1123,7 +1123,7 @@ The calculated offsets can be saved in the microcontroller's non-volatile memory
 
 However, recalibration may be useful if the sensor's operating conditions change significantly.
 
-## Can I use this calibration with an ESP32?
+### Can I use this calibration with an ESP32?
 
 Yes.
 
@@ -1135,7 +1135,7 @@ A dedicated MPU6050 + ESP32 guide can cover the ESP32-specific setup in more det
 
 ---
 
-# Conclusion
+## Conclusion
 
 Calibrating an MPU6050 is a simple but important step when you need more reliable motion sensor readings.
 
