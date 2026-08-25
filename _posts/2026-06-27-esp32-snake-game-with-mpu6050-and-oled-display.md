@@ -62,7 +62,7 @@ required_hardware:
     component: Male-to-Female Jumper Wires
 ---
 
-# ESP32 Snake Game with MPU6050 and OLED Display
+## ESP32 Snake Game with MPU6050 and OLED Display
 
 <!-- ![ESP32 Snake Game]({{ '/assets/images/ESP32-Snake-Game.png' | relative_url }}) -->
 
@@ -84,7 +84,7 @@ In this tutorial you'll learn:
 
 ---
 
-# Project Overview
+## Project Overview
 
 This project combines three popular ESP32 modules:
 
@@ -103,17 +103,17 @@ The [OLED Display](/products/ssd1306-oled/) shows:
 
 ---
 
-# Required Hardware
+## Required Hardware
 
 {% include required-hardware.html products=page.required_hardware %}
 
 ---
 
-# ESP32 Snake Game Wiring
+## ESP32 Snake Game Wiring
 
 ![ESP32 Snake Wiring]({{ '/assets/images/esp32-snake-game-mpu6050.webp' | relative_url }})
 
-## ESP32 Connections
+### ESP32 Connections
 
 | ESP32 | MPU6050 | OLED SSD1306 |
 |-------|----------|--------------|
@@ -126,7 +126,7 @@ Since both devices use [I2C communication](https://embeddednerd.com/i2c-scanner-
 
 ---
 
-# How the Game Works
+## How the Game Works
 
 The snake moves continuously across the OLED display.
 
@@ -152,7 +152,7 @@ The game ends and displays the final score.
 
 ---
 
-# Install Required Libraries
+## Install Required Libraries
 
 Open Arduino IDE.
 
@@ -173,7 +173,7 @@ Install the following libraries:
 
 ---
 
-# ESP32 Snake Game Code
+## ESP32 Snake Game Code
 
 The complete project is available on GitHub.
 
@@ -636,7 +636,7 @@ The complete sketch includes:
 
 ---
 
-# Reading the MPU6050
+## Reading the MPU6050
 
 The MPU6050 continuously measures acceleration on three axes.
 
@@ -660,7 +660,7 @@ Threshold values help prevent accidental direction changes caused by small movem
 
 ---
 
-# Drawing the Snake
+## Drawing the Snake
 
 Each snake segment is represented as a small square.
 
@@ -675,7 +675,7 @@ This creates smooth movement while keeping memory usage low.
 
 ---
 
-# Game Features
+## Game Features
 
 Current features include:
 
@@ -688,7 +688,7 @@ Current features include:
 
 ---
 
-# Possible Improvements
+## Possible Improvements
 
 You can easily expand this project by adding:
 
@@ -703,9 +703,9 @@ You can easily expand this project by adding:
 
 ---
 
-# Troubleshooting
+## Troubleshooting
 
-## OLED Not Displaying
+### OLED Not Displaying
 
 Check:
 
@@ -715,7 +715,7 @@ Check:
 
 ---
 
-## MPU6050 Not Detected
+### MPU6050 Not Detected
 
 Verify:
 
@@ -727,7 +727,7 @@ Run an I2C scanner if necessary.
 
 ---
 
-## Snake Moves Randomly
+### Snake Moves Randomly
 
 Possible causes:
 
@@ -739,7 +739,7 @@ Increasing the tilt threshold usually improves stability.
 
 ---
 
-# Why Use an MPU6050?
+## Why Use an MPU6050?
 
 Compared to push buttons, the MPU6050 provides a much more interactive gaming experience.
 
@@ -753,7 +753,7 @@ Advantages include:
 
 ---
 
-# GitHub Source Code
+## GitHub Source Code
 
 The complete ESP32 Snake Game source code is available in the GitHub repository.
 
@@ -767,7 +767,7 @@ The repository includes:
 
 ---
 
-# Related Tutorials
+## Related Tutorials
 
 - [MPU6050 Arduino Guide](../mpu6050-arduino-guide/)
 - [ESP32 OLED Display Guide](../ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)
@@ -776,7 +776,7 @@ The repository includes:
 
 ---
 
-# Conclusion
+## Conclusion
 
 Building a Snake game with an ESP32, MPU6050 and OLED display is an excellent way to learn embedded programming while creating a fun interactive project.
 
