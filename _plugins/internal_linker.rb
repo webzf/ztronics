@@ -38,9 +38,9 @@ module EmbeddedNerd
     DEFAULT_SETTINGS = {
       "enabled" => true,
       "analysis_only" => false,
-      "max_total_links_per_page" => 5,
-      "max_product_links_per_page" => 3,
-      "max_article_links_per_page" => 2,
+      "max_total_links_per_page" => 8,
+      "max_product_links_per_page" => 4,
+      "max_article_links_per_page" => 4,
       "minimum_relevance" => 65,
       "analysis_results_per_page" => 5,
       "minimum_confidence" => "medium",
