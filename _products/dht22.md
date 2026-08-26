@@ -9,12 +9,12 @@ category: Sensors
 
 manufacturer: Aosong
 
-image: /assets/images/products/dht22.webp
+image: /assets/images/products/Dht22.webp
 
 header:
-  teaser: /assets/images/products/dht22.webp
+  teaser: /assets/images/products/Dht22.webp
 
-og_image: /assets/images/products/dht22.webp
+og_image: /assets/images/products/Dht22.webp
 
 excerpt: "DHT22 digital temperature and humidity sensor with calibrated output and single-bus communication for Arduino, ESP32, Raspberry Pi, and embedded projects."
 
