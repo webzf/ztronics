@@ -17,9 +17,9 @@ teaser: /assets/images/products/dht22.webp
 
 og_image: /assets/images/products/dht22.webp
 
-excerpt: "DHT22 digital temperature and humidity sensor with calibrated output, single-bus communication, and a wide measurement range for Arduino, ESP32, Raspberry Pi, and embedded projects."
+excerpt: "DHT22 digital temperature and humidity sensor with calibrated output and single-bus communication for Arduino, ESP32, Raspberry Pi, and embedded projects."
 
-description: "The DHT22, also known as AM2302, is a digital temperature and relative humidity sensor designed for environmental monitoring and embedded electronics projects. It provides calibrated digital measurements through a single-bus data interface and offers a wider temperature range and higher humidity accuracy than the DHT11."
+description: "The DHT22, also known as AM2302, is a digital temperature and relative humidity sensor with calibrated digital output. It uses a single-bus interface and provides a wide temperature measurement range, making it suitable for environmental monitoring, IoT, automation, data logging, and embedded electronics projects."
 
 categories:
 
@@ -43,13 +43,13 @@ last_modified_at: 2026-08-26
 specifications:
 
 - name: Sensor Type
-  value: Digital temperature and humidity sensor
+  value: Digital temperature and relative humidity sensor
 
-- name: Alternate Name
+- name: Model
   value: AM2302
 
 - name: Interface
-  value: Single-bus digital
+  value: Single-bus digital interface
 
 - name: Supply Voltage
   value: 3.3V to 5.5V
@@ -67,7 +67,7 @@ specifications:
   value: 0% to 99.9% RH
 
 - name: Humidity Accuracy
-  value: ±2% RH typical
+  value: ±2% RH typical at 25°C
 
 - name: Humidity Resolution
   value: 0.1% RH
@@ -79,12 +79,12 @@ links:
 
 - title: "AM2302 Technical Manual"
   icon: fas fa-book
-  description: "Official Aosong technical manual for the AM2302 temperature and humidity sensor."
+  description: "Official technical manual for the AM2302 temperature and humidity sensor."
   url: https://www.aosong.com/uploadfiles/2025/04/20250417105409216.pdf
 
 - title: "Aosong AM2302 Product Page"
   icon: fas fa-external-link-alt
-  description: "Official Aosong product information for the AM2302 temperature and humidity sensor module."
+  description: "Official Aosong product page for the AM2302 temperature and humidity sensor module."
   url: https://www.aosong.com/en/Products/info.aspx?itemid=2294
 
 - title: "Adafruit DHT Sensor Library"
@@ -95,34 +95,32 @@ links:
 related:
 
 - esp32-devkit-v1
+- ssd1306-oled
 - solderless-breadboard
 - jumper-wires
-- ssd1306-oled
 
 ---
 
 The DHT22 is a digital temperature and relative humidity sensor commonly used in Arduino, ESP32, Raspberry Pi, and other embedded electronics projects. It is also known as the AM2302.
 
-The sensor combines a capacitive humidity sensing element, a temperature sensing element, internal signal processing, and calibrated digital output. Instead of providing an analog voltage that the microcontroller must convert, the DHT22 sends the measured temperature and humidity through a single digital data line.
+The sensor combines temperature and humidity sensing with internal signal processing and calibrated digital output. Instead of producing an analog voltage that must be converted by a microcontroller ADC, the DHT22 sends temperature and humidity measurements through a single digital data line.
 
-Its relatively wide temperature range and approximately ±2% RH typical humidity accuracy make it useful for environmental monitoring, data logging, IoT prototypes, automation, and educational electronics.
+With a temperature range of -40°C to 80°C and typical humidity accuracy of ±2% RH at 25°C, the DHT22 is well suited to environmental monitoring, IoT prototypes, automation, data logging, weather stations, and educational electronics.
 
 Key Features
 
 - Digital temperature and relative humidity measurement
 - Also known as AM2302
-- Single-bus digital communication
 - Calibrated digital output
-- Temperature measurement from -40°C to 80°C
-- Humidity measurement from 0% to 99.9% RH
+- Single-bus digital communication
+- Temperature range of -40°C to 80°C
+- Humidity range of 0% to 99.9% RH
 - 0.1°C temperature resolution
 - 0.1% RH humidity resolution
-- Typical temperature accuracy of ±0.5°C
-- Typical humidity accuracy of ±2% RH
+- ±0.5°C typical temperature accuracy
+- ±2% RH typical humidity accuracy at 25°C
 - 3.3V to 5.5V supply voltage
-- Maximum measurement rate of approximately one reading every 2 seconds
-
-The exact electrical implementation can vary between the bare DHT22 sensor and different breakout boards, so the documentation for the particular module should always be checked before wiring it.
+- Minimum sampling interval of approximately 2 seconds
 
 Applications
 
@@ -134,112 +132,142 @@ The DHT22 is suitable for applications such as:
 - Temperature and humidity data logging
 - Home automation
 - Greenhouse monitoring
+- HVAC monitoring
 - Robotics projects
-- Embedded environmental sensors
 - Educational electronics
 - ESP32 monitoring projects
 - Arduino sensor projects
 
-The sensor is particularly useful when a project needs both temperature and humidity measurements without requiring separate sensors.
+The sensor is particularly useful when a project needs both temperature and humidity measurements from a single digital sensor.
 
 Pinout
 
-A standard four-pin DHT22 sensor uses the following pin assignment:
+A standard four-pin AM2302/DHT22 sensor uses the following pin assignment:
 
 Pin| Connection| Description
-1| VCC| Power supply
-2| DATA| Digital single-bus data signal
+1| VDD| Power supply
+2| SDA| Bidirectional serial data
 3| NC| Not connected
 4| GND| Ground
 
-Some DHT22 products are supplied as breakout boards or wired AM2302 modules. Those versions can expose the connections differently, so check the specific module before making the connection.
+The exact physical presentation can differ between the bare sensor and breakout boards. Some DHT22 modules expose labeled pins such as "VCC", "DATA", and "GND" rather than all four sensor pins.
 
-The DATA line requires the appropriate pull-up arrangement for the particular sensor or module. Some ready-made modules include the required resistor on the board.
+Always check the markings on the specific module before connecting it.
+
+The data line requires a pull-up arrangement. The AM2302 technical documentation specifies a typical pull-up resistor for the single-bus interface.
 
 How It Works
 
-The DHT22 measures two environmental parameters internally:
+The DHT22 measures temperature and relative humidity internally and processes the sensor signals before transmitting the results digitally.
 
-- Relative humidity using a capacitive humidity sensing element
-- Temperature using a temperature sensing element
+The host microcontroller communicates with the sensor using the DHT22 single-bus protocol.
 
-The sensor processes these measurements internally and sends the resulting data digitally to the host microcontroller.
+A typical measurement sequence works as follows:
 
-Communication takes place over a single data line using the DHT-series timing protocol. The host initiates a measurement request, after which the DHT22 responds with a digital data frame containing the humidity and temperature information.
+1. The microcontroller initiates communication with the sensor.
+2. The DHT22 responds on the data line.
+3. The sensor transmits the humidity and temperature measurement data.
+4. The microcontroller decodes the digital data.
+5. The application can display, store, transmit, or otherwise process the measurements.
 
-The DHT22 is not compatible with the Dallas 1-Wire protocol, despite using a single data wire.
+The DHT22 is not an I2C sensor. Although it uses a single data wire, its communication protocol is different from the Dallas 1-Wire protocol.
 
-Because the sensor has a sampling period of approximately 2 seconds, it should not be polled continuously at a higher rate.
+The sensor also has a relatively slow measurement rate. A minimum interval of approximately 2 seconds should be maintained between readings.
 
 Compatible Boards
 
-The DHT22 can be used with many microcontroller and single-board computer platforms when their electrical interface and software support are suitable.
+The DHT22 uses a digital single-bus interface and can be used with many microcontrollers that can implement the required timing protocol.
 
 Arduino
 
-Arduino boards are a common platform for DHT22 projects. The sensor can be connected to a digital GPIO and read using a suitable DHT library.
+The DHT22 is widely used with Arduino boards. A digital GPIO can be connected to the sensor data line and a compatible DHT library can be used to handle the communication protocol.
 
 ESP32
 
-The DHT22 can be connected to an ESP32 digital GPIO. Since the sensor supports a 3.3V supply, it can be used directly with the ESP32 when wired according to the sensor and breakout-board requirements.
+The DHT22 is suitable for ESP32 projects. Its 3.3V-compatible supply range allows it to be powered from a 3.3V ESP32 system when the particular sensor or module is wired according to its specifications.
 
-The ESP32 is particularly useful for DHT22 projects that transmit temperature and humidity data over Wi-Fi or Bluetooth.
+An ESP32 combined with a DHT22 can be used to build Wi-Fi environmental monitoring systems, dashboards, data loggers, and IoT sensor nodes.
 
 Raspberry Pi
 
-The DHT22 can also be used with Raspberry Pi GPIO hardware. Because Raspberry Pi GPIO operates at 3.3V logic, the data connection must be designed so that the GPIO is not exposed to an unsuitable voltage.
-
-For Raspberry Pi projects, use a software library or driver that supports the DHT22 and follow the wiring requirements of the particular sensor module.
+The DHT22 can also be used with Raspberry Pi GPIO hardware. The data interface must be operated within the electrical limits of the Raspberry Pi GPIO, and suitable software support is required to implement the DHT22 communication protocol.
 
 Technical Details
 
-The DHT22 provides digital measurements with the following key characteristics:
-
 Parameter| Specification
 Sensor| DHT22 / AM2302
+Manufacturer| Aosong
 Interface| Single-bus digital
 Supply voltage| 3.3V to 5.5V
 Temperature range| -40°C to 80°C
 Temperature accuracy| ±0.5°C typical
 Temperature resolution| 0.1°C
 Humidity range| 0% to 99.9% RH
-Humidity accuracy| ±2% RH typical
+Humidity accuracy| ±2% RH typical at 25°C
 Humidity resolution| 0.1% RH
 Sampling period| 2 seconds
 
-The published humidity accuracy is specified under particular test conditions, including 25°C, and actual accuracy can vary with environmental conditions.
+The published humidity accuracy is specified under particular test conditions. Actual sensor performance can vary with environmental conditions, temperature, humidity level, installation, and sensor age.
 
-The sensor is also temperature compensated and factory calibrated.
+The AM2302 documentation also specifies response characteristics and long-term drift, so the sensor should be treated as a practical environmental sensor rather than a laboratory-grade measurement instrument.
 
 DHT22 Sampling Rate
 
-One of the most important characteristics of the DHT22 is its relatively slow measurement rate.
+The DHT22 is designed for relatively slow environmental measurements.
 
-The specified sampling period is approximately 2 seconds. This means the sensor is intended for relatively slow environmental measurements rather than high-speed temperature or humidity acquisition.
+The specified sampling period is approximately 2 seconds, meaning applications should not request new measurements faster than this interval.
 
-For applications such as room monitoring, weather stations, IoT nodes, or data logging, this limitation is usually acceptable.
+This is normally sufficient for:
 
-For applications requiring rapid environmental measurements, a newer sensor with a higher measurement rate may be a better choice.
+- Room monitoring
+- Weather stations
+- Greenhouse monitoring
+- IoT environmental nodes
+- Data logging
+- Home automation
+
+It is not designed for applications requiring high-speed temperature or humidity measurements.
+
+DHT22 Wiring Considerations
+
+The DHT22 requires power, ground, and a digital data connection.
+
+For a typical bare AM2302 sensor:
+
+DHT22| Microcontroller
+VDD| Suitable supply voltage
+SDA| Digital GPIO
+NC| Leave unconnected
+GND| GND
+
+The official documentation specifies a 3.3V to 5.5V supply range and recommends a pull-up resistor on the data line for the single-bus connection.
+
+When using a breakout board, the required pull-up resistor may already be included on the module.
+
+Cable length can also affect signal reliability. The manufacturer provides specific recommendations for cable length and pull-up configuration, particularly when operating from a 3.3V supply.
 
 Why Choose the DHT22?
 
-The DHT22 remains useful for projects that need a simple digital temperature and humidity sensor.
+The DHT22 is a practical choice for projects that need simple temperature and humidity measurement without an analog input or a more complex digital bus.
 
 Its main advantages include:
 
-- Simple single-data-line interface
-- Calibrated digital output
+- Simple digital interface
+- Calibrated output
 - Wide temperature measurement range
-- Useful humidity accuracy for hobby and educational applications
-- Support from established Arduino libraries
-- Compatibility with common embedded platforms
-- No analog input required
+- Useful humidity accuracy
+- 3.3V-compatible operation
+- Straightforward integration with microcontrollers
+- Established software-library support
+- Suitable for common environmental monitoring projects
 
-Its main limitation is the relatively slow sampling rate of approximately one measurement every two seconds.
+Its main limitation is its relatively slow sampling period of approximately 2 seconds.
+
+For projects requiring faster updates or more advanced environmental measurements, a newer sensor may be a better option.
 
 Project Ideas
 
-The DHT22 can be used as the basis for several practical Embedded Nerd projects, including:
+The DHT22 can be used as the basis for several practical Embedded Nerd projects:
 
 - ESP32 temperature and humidity monitor
 - Arduino room temperature monitor
@@ -252,68 +280,72 @@ The DHT22 can be used as the basis for several practical Embedded Nerd projects,
 - Web-based ESP32 environmental dashboard
 - Temperature and humidity alarm system
 
-A particularly useful project combination is an ESP32 + DHT22 + SSD1306 OLED, allowing temperature and humidity readings to be measured and displayed locally while the ESP32 can also provide wireless connectivity.
+A particularly useful combination is an ESP32 + DHT22 + SSD1306 OLED, allowing the sensor readings to be displayed locally while the ESP32 can also provide wireless connectivity.
 
 Documentation
 
-The DHT22 is supported by several established software libraries.
+The DHT22/AM2302 does not require an I2C or SPI library because it uses its own single-bus communication protocol.
 
-For Arduino projects, the Adafruit DHT Sensor Library supports DHT22 and AM2302 sensors. The library can be installed through the Arduino Library Manager by searching for DHT sensor library. It also depends on the Adafruit Unified Sensor library.
+For Arduino projects, an established library can handle the timing and data decoding required by the sensor. The Adafruit DHT Sensor Library provides support for DHT22 and AM2302 sensors.
 
-For Raspberry Pi and CircuitPython-based projects, Adafruit provides a dedicated CircuitPython DHT driver supporting DHT22 devices.
+The official "AM2302 Technical Manual" (https://www.aosong.com/uploadfiles/2025/04/20250417105409216.pdf) is the primary technical reference for the sensor and documents its electrical characteristics, communication protocol, timing, measurement range, and accuracy.
 
-The most important technical reference is the Aosong AM2302 Technical Manual, which documents the electrical characteristics, measurement performance, communication protocol, and timing requirements.
+The manufacturer also provides software examples for the AM230X single-bus sensor family through its download center.
 
 Related Products
 
-The DHT22 works well with several existing Embedded Nerd products.
+The DHT22 can be combined with several existing Embedded Nerd products for complete embedded projects.
 
-For wireless environmental monitoring, the "ESP32 DevKit V1" (/products/esp32-devkit/) provides a suitable development platform with built-in wireless connectivity.
+The "ESP32 DevKit V1" (/products/esp32-devkit/) provides a convenient development platform for wireless DHT22 monitoring projects.
 
-For prototyping the circuit, a "Solderless Breadboard" (/products/solderless-breadboard/) and "Jumper Wires" (/products/jumper-wires/) can be used to connect the sensor to the development board.
+The "SSD1306 OLED Display" (/products/ssd1306-oled/) can be used to display temperature and humidity measurements locally.
 
-An "SSD1306 OLED Display" (/products/ssd1306-oled/) can be added to display temperature and humidity readings locally.
+For physical prototyping, the "Solderless Breadboard" (/products/solderless-breadboard/) and "Jumper Wires" (/products/jumper-wires/) provide a simple way to connect the sensor to a development board.
 
 Related Tutorials
 
-The existing "ESP32 OLED Tutorial: Wiring, Code & Display Guide" (/esp32-oled-tutorial-wiring-code-display-guide/) includes an example of displaying sensor data such as DHT22 temperature and humidity readings on an SSD1306 OLED.
+The existing "ESP32 OLED Tutorial: Wiring, Code & Display Guide" (/esp32-oled-tutorial-wiring-code-display-guide/) specifically demonstrates displaying sensor data including DHT22 readings on an SSD1306 OLED.
 
-This makes the DHT22 a natural sensor to combine with the Embedded Nerd OLED and ESP32 ecosystem.
+This makes it a natural starting point for a future Embedded Nerd DHT22 project combining the sensor, ESP32, and OLED display.
 
 Frequently Asked Questions
 
-What is a DHT22 sensor?
+What is the DHT22?
 
-The DHT22 is a digital sensor that measures temperature and relative humidity. It is also commonly identified as the AM2302.
+The DHT22 is a digital temperature and relative humidity sensor. It is also commonly known as the AM2302.
 
 Is the DHT22 compatible with Arduino?
 
-Yes. The DHT22 can be connected to an Arduino digital pin and read using a suitable DHT sensor library, such as the Adafruit DHT Sensor Library.
+Yes. The DHT22 can be connected to an Arduino digital GPIO and read using a compatible DHT sensor library.
 
 Can I use the DHT22 with an ESP32?
 
-Yes. The DHT22 supports a 3.3V supply and uses a digital single-bus interface, making it suitable for ESP32 projects when wired according to the sensor or breakout-board requirements.
+Yes. The DHT22 supports a 3.3V to 5.5V supply range and uses a digital single-bus interface, making it suitable for ESP32 projects when wired correctly.
 
 Can the DHT22 be used with Raspberry Pi?
 
-Yes. The DHT22 can be connected to Raspberry Pi GPIO hardware, provided the data signal is kept within the GPIO's electrical limits and an appropriate software driver is used.
+Yes. The DHT22 can be connected to Raspberry Pi GPIO hardware using suitable software support. The electrical characteristics of the connection must be respected because Raspberry Pi GPIO uses 3.3V logic.
 
 What voltage does the DHT22 require?
 
-The AM2302 technical documentation specifies a supply voltage from 3.3V to 5.5V. Individual breakout boards can have different electrical implementations, so the module documentation should be checked before wiring it.
+The AM2302 documentation specifies a supply voltage from 3.3V to 5.5V. Individual breakout boards can have additional circuitry, so the documentation for the exact module should be checked before wiring it.
 
 What is the DHT22 pinout?
 
-A standard four-pin DHT22 uses VCC, DATA, NC, and GND. Pin 1 is VCC, pin 2 is DATA, pin 3 is not connected, and pin 4 is GND.
+A standard four-pin DHT22/AM2302 uses VDD, SDA, NC, and GND. Pin 1 is VDD, pin 2 is the data connection, pin 3 is not connected, and pin 4 is GND.
+
+Does the DHT22 use I2C?
+
+No. The DHT22 does not use I2C. It uses a proprietary single-bus digital communication protocol.
 
 How often can the DHT22 be read?
 
-The specified sampling period is approximately 2 seconds. It should therefore not be treated as a high-speed temperature or humidity sensor.
+The specified sampling period is approximately 2 seconds. Applications should therefore maintain at least this interval between sensor readings.
 
-Does the DHT22 use the Dallas 1-Wire protocol?
+Does the DHT22 need a library?
 
-No. Although the DHT22 communicates through a single data wire, its communication protocol is different from the Dallas 1-Wire bus protocol.
+A library is not strictly required if the communication protocol is implemented directly, but using an established library is much easier. The Adafruit DHT Sensor Library supports DHT22 and AM2302 sensors.
 
-Do I need a library to use the DHT22?
+Is the DHT22 accurate?
 
-A library is not fundamentally required if the DHT22 communication protocol is implemented directly, but using an established library makes development much easier. The Adafruit DHT Sensor Library provides support for DHT22 and AM2302 sensors.
+The AM2302 documentation specifies typical temperature accuracy of ±0.5°C and typical relative humidity accuracy of ±2% RH at 25°C. Actual results can vary with environmental conditions and sensor characteristics.
