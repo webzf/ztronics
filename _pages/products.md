@@ -24,11 +24,14 @@ Browse our collection of electronic components, development boards and accessori
 
 ---
 
-{% assign categories = site.products | map:"category" | compact | uniq | sort %}
+{% assign category_order = "Development Boards|Sensors|Displays|Modules|Components|Communication|Power|Accessories|Tools & Equipment" | split:"|" %}
 
-{% for category in categories %}
+{% for category in category_order %}
 
 {% assign products = site.products | where:"category", category | sort:"title" %}
+
+{% if products.size > 0 %}
+
 {% assign slug = category | slugify %}
 
 ## {{ category }}
@@ -47,6 +50,9 @@ OLED, LCD, TFT and e-paper displays.
 {% when "Modules" %}
 Relay, RFID, joystick and interface modules.
 
+{% when "Components" %}
+Electronic components for embedded systems, prototyping and hardware projects.
+
 {% when "Communication" %}
 Wi-Fi, Bluetooth, LoRa and RF communication modules.
 
@@ -55,6 +61,9 @@ Voltage regulators, battery chargers and power modules.
 
 {% when "Accessories" %}
 Breadboards, jumper wires, pin headers and prototyping accessories.
+
+{% when "Tools & Equipment" %}
+Tools and equipment for electronics development, testing and prototyping.
 
 {% else %}
 Electronic components.
@@ -85,5 +94,7 @@ Browse {{ category }}
 </p>
 
 ---
+
+{% endif %}
 
 {% endfor %}
