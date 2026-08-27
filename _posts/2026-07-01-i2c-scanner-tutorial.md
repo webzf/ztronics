@@ -882,3 +882,85 @@ It can quickly identify I2C device addresses, verify that hardware is responding
 Whether you're connecting an **SSD1306 OLED, MPU6050, BMA400, BME280, RTC or another I2C peripheral**, running an I2C Scanner is often the best first step before debugging the application itself.
 
 Keep this small utility in your Arduino toolkit and use it whenever an I2C device isn't behaving as expected.
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an I2C Scanner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An I2C Scanner is a small program that checks I2C addresses and reports devices that respond on the bus. It is commonly used to identify unknown I2C addresses and troubleshoot communication problems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find the I2C address of a device?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Connect the device to your Arduino, ESP32 or ESP8266, upload an I2C Scanner and open the Serial Monitor. The scanner will display the address of every responding device, for example: Found device at 0x3C."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does an I2C Scanner work with ESP32?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The scanner can be used with ESP32 boards. A typical ESP32 DevKit uses GPIO21 for SDA and GPIO22 for SCL. If you use different pins, configure them explicitly in the Wire library."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does an I2C Scanner work with Arduino Uno?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Arduino Uno uses A4 for SDA and A5 for SCL. Other Arduino boards may use different I2C pins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does an I2C Scanner work with ESP8266?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Wire library can be used with ESP8266 boards, but the SDA and SCL pins depend on the board and software configuration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my I2C Scanner say \"No I2C devices found\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check SDA and SCL wiring, power supply, GND connection, selected I2C pins, pull-up resistors, board configuration and device compatibility. Testing one I2C device at a time can help identify the problem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my OLED use 0x3D instead of 0x3C?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both addresses can be used by SSD1306 OLED modules. The exact address depends on the module configuration. Use the address reported by the I2C Scanner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can multiple I2C devices share the same SDA and SCL pins?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Multiple I2C devices can share the same bus as long as their addresses do not conflict and the electrical characteristics of the bus are suitable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can two I2C devices have the same address?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They can be connected physically, but if both devices respond to the same address, the microcontroller cannot independently select them using that address. You may need to change one device's address or use an I2C multiplexer."
+      }
+    }
+  ]
+}
+</script>
