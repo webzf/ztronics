@@ -515,6 +515,8 @@ The following table lists common addresses found on popular Arduino and ESP32 mo
 
 These are common addresses rather than guaranteed values. Always use the address detected by the scanner and verify it against the module documentation.
 
+You can also use our **[I2C Address Lookup Tool](/tools/i2c-address-lookup/)** to quickly check which device typically matches a given I2C address.
+
 ---
 
 ## What If No I2C Devices Are Found?
