@@ -527,3 +527,61 @@ The most important steps are:
 7. Calibrate the sensor when more accurate measurements are required.
 
 Once the basic connection is working, the MPU6050 can be used as the foundation for robotics, motion tracking, gesture control and many other embedded electronics projects.
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the MPU6050 used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The MPU6050 is a 6-axis motion sensor that combines a 3-axis accelerometer and 3-axis gyroscope. It can be used for motion tracking, tilt measurement, robotics, gesture control and other Arduino projects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I connect the MPU6050 to Arduino Uno?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Connect MPU6050 SDA to Arduino A4, MPU6050 SCL to Arduino A5, MPU6050 GND to Arduino GND, and MPU6050 VCC to the appropriate module supply. Check the breakout board specifications before using 5V."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the MPU6050 I2C address?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The MPU6050 normally uses 0x68. It can also use 0x69 when the AD0 pin is HIGH. If you're unsure, use an I2C Scanner to detect the address."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my MPU6050 not detected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check the power supply, SDA and SCL connections, I2C pins and address. Running an I2C Scanner is one of the quickest ways to determine whether the sensor is responding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the MPU6050 work with ESP32?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The MPU6050 can communicate with an ESP32 using I2C. A typical ESP32 configuration uses GPIO21 for SDA and GPIO22 for SCL."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the MPU6050 need calibration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calibration is useful when you need more accurate accelerometer and gyroscope measurements because the sensor can have small offsets."
+      }
+    }
+  ]
+}
+</script>
