@@ -1,6 +1,8 @@
 ---
 layout: product
 
+robots: noindex
+
 title: "MPU6050 Accelerometer & Gyroscope"
 
 product_id: mpu6050
