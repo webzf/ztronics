@@ -156,7 +156,7 @@ The address can also be:
 
 when the AD0 pin is configured HIGH.
 
-If you're not sure which address your module is using, run the [I2C Scanner Tutorial](/i2c-scanner-tutorial/) before troubleshooting the MPU6050 code.
+If you're not sure which address your module is using, run the [I2C Scanner Tutorial](/i2c-scanner-tutorial/) before troubleshooting the MPU6050 code, or check the **[I2C Address Lookup Tool](/tools/i2c-address-lookup/)** for a quick reference.
 
 The scanner can confirm whether the sensor responds on the I2C bus and which address it is using.
 
