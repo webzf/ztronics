@@ -64,7 +64,7 @@ required_hardware:
 
 ---
 
-# I2C Scanner Tutorial: Find I2C Address on Arduino, ESP32 & ESP8266
+## I2C Scanner Tutorial: Find I2C Address on Arduino, ESP32 & ESP8266
 
 If you've connected an [OLED Display](/products/ssd1306-oled/), MPU6050, BME280, RTC module or another I2C device to an Arduino, ESP32 or ESP8266, one of the first things you may need to know is its I2C address.
 
@@ -91,7 +91,7 @@ In this tutorial you'll learn:
 
 ---
 
-# What Is I2C?
+## What Is I2C?
 
 I2C (Inter-Integrated Circuit) is a communication protocol commonly used to connect sensors, displays and other peripherals to microcontrollers.
 
@@ -118,7 +118,7 @@ Each device normally needs a unique I2C address on the bus.
 
 ---
 
-# How I2C Addresses Work
+## How I2C Addresses Work
 
 Every I2C device uses an address that identifies it on the bus.
 
@@ -140,7 +140,7 @@ This is why using an **I2C Scanner** is often better than simply assuming the ad
 
 ---
 
-# Why Use an I2C Scanner?
+## Why Use an I2C Scanner?
 
 An I2C Scanner automatically checks the I2C bus for responding devices.
 
@@ -161,7 +161,7 @@ The scanner can answer that in seconds.
 
 ---
 
-# Required Hardware
+## Required Hardware
 
 {% include required-hardware.html products=page.required_hardware %}
 
@@ -169,7 +169,7 @@ The scanner itself does not require a specific sensor. You can use it with almos
 
 ---
 
-# Wiring the I2C Bus
+## Wiring the I2C Bus
 
 I2C devices normally require four connections:
 
@@ -186,7 +186,7 @@ However, always check the voltage requirements of the specific breakout board.
 
 ---
 
-# Arduino Uno I2C Wiring
+## Arduino Uno I2C Wiring
 
 ![Arduino Uno I2C wiring showing A4 as SDA and A5 as SCL.]({{ '/assets/images/mpu6050-wiring.webp' | relative_url }})
 
@@ -203,7 +203,7 @@ The correct supply voltage depends on the I2C module. Always check the module do
 
 ---
 
-# ESP32 I2C Wiring
+## ESP32 I2C Wiring
 
 ![ESP32 I2C wiring showing GPIO21 as SDA and GPIO22 as SCL.]({{ '/assets/images/Pinout-and-wiring-diagram-of-the-ESP32-with-I2C-OLED-display.webp' | relative_url }})
 
@@ -222,7 +222,7 @@ The ESP32 can also use other GPIO pins for I2C when they are configured in softw
 
 ---
 
-# ESP8266 I2C Wiring
+## ESP8266 I2C Wiring
 
 The ESP8266 also supports I2C, but the SDA and SCL pins depend on the specific board and software configuration.
 
@@ -232,7 +232,7 @@ If custom pins are configured in the code, make sure the physical wiring matches
 
 ---
 
-# Before Running the I2C Scanner
+## Before Running the I2C Scanner
 
 Before uploading the scanner sketch, check:
 
@@ -251,7 +251,7 @@ These checks can eliminate many common I2C problems before you start debugging t
 
 ---
 
-# Arduino & ESP32 I2C Scanner Code
+## Arduino & ESP32 I2C Scanner Code
 
 The following I2C Scanner uses the Arduino **Wire library** and can be used with many Arduino-compatible boards, including Arduino Uno, Nano, Mega, ESP32 and ESP8266.
 
@@ -338,7 +338,7 @@ void loop() {
 
 ---
 
-# How the I2C Scanner Works
+## How the I2C Scanner Works
 
 The scanner checks I2C addresses one at a time.
 
@@ -376,7 +376,7 @@ means that an I2C device responded at address `0x3C`.
 
 ---
 
-# Running the I2C Scanner
+## Running the I2C Scanner
 
 Open the Arduino IDE.
 
@@ -404,7 +404,7 @@ The scanner will then begin checking the I2C bus.
 
 ---
 
-# Example I2C Scanner Output
+## Example I2C Scanner Output
 
 If an SSD1306 OLED and MPU6050 are connected, you might see:
 
@@ -433,7 +433,7 @@ This means that two devices responded.
 
 ---
 
-# ESP32 I2C Scanner
+## ESP32 I2C Scanner
 
 The same sketch can be used as an **ESP32 I2C Scanner**.
 
@@ -461,7 +461,7 @@ Replace the pin numbers with the GPIO pins used by your project.
 
 ---
 
-# Arduino I2C Scanner
+## Arduino I2C Scanner
 
 The same scanner can be used as an **Arduino I2C Scanner**.
 
@@ -474,7 +474,7 @@ Other Arduino boards can use different I2C pins, so check the board documentatio
 
 ---
 
-# ESP8266 I2C Scanner
+## ESP8266 I2C Scanner
 
 The scanner can also be used with ESP8266 boards.
 
@@ -490,7 +490,7 @@ Make sure the wiring matches the pins configured in your program.
 
 ---
 
-# Common I2C Device Addresses
+## Common I2C Device Addresses
 
 The following table lists common addresses found on popular Arduino and ESP32 modules.
 
@@ -517,7 +517,7 @@ These are common addresses rather than guaranteed values. Always use the address
 
 ---
 
-# What If No I2C Devices Are Found?
+## What If No I2C Devices Are Found?
 
 If the Serial Monitor reports:
 
@@ -580,7 +580,7 @@ Some modules may:
 
 ---
 
-# Troubleshooting "No I2C Devices Found"
+## Troubleshooting "No I2C Devices Found"
 
 If your I2C Scanner repeatedly reports:
 
@@ -604,7 +604,7 @@ Testing one device at a time is usually much faster than trying to troubleshoot 
 
 ---
 
-# What If the I2C Scanner Finds the Device but My Code Doesn't?
+## What If the I2C Scanner Finds the Device but My Code Doesn't?
 
 If the scanner reports:
 
@@ -632,7 +632,7 @@ The scanner confirms that a device responds at an address, but it does not prove
 
 ---
 
-# OLED Detected but Nothing Appears
+## OLED Detected but Nothing Appears
 
 If your SSD1306 OLED is detected by the scanner but the display remains blank, check:
 
@@ -657,7 +657,7 @@ See our **[ESP32 OLED Tutorial: Wiring, Code & Display Guide](/esp32-oled-tutori
 
 ---
 
-# Multiple I2C Devices
+## Multiple I2C Devices
 
 One of the main advantages of I2C is that multiple devices can share the same SDA and SCL bus.
 
@@ -675,7 +675,7 @@ This makes I2C useful for projects such as an ESP32 motion monitor with an accel
 
 ---
 
-# What If Two I2C Devices Have the Same Address?
+## What If Two I2C Devices Have the Same Address?
 
 Two devices that respond to the same address can cause communication conflicts.
 
@@ -692,7 +692,7 @@ Always check the device documentation before changing an address.
 
 ---
 
-# I2C Scanner for MPU6050
+## I2C Scanner for MPU6050
 
 An I2C Scanner is particularly useful when setting up an MPU6050.
 
@@ -718,7 +718,7 @@ If you need to calibrate the sensor, see our **[MPU6050 Calibration Guide](/mpu6
 
 ---
 
-# I2C Scanner for BMA400
+## I2C Scanner for BMA400
 
 The BMA400 accelerometer can also be tested with an I2C Scanner.
 
@@ -738,7 +738,7 @@ Once the BMA400 is detected, you can continue with our **[BMA400 ESP32 Tutorial]
 
 ---
 
-# I2C Scanner for SSD1306 OLED
+## I2C Scanner for SSD1306 OLED
 
 SSD1306 OLED displays commonly use:
 
@@ -758,7 +758,7 @@ You can then continue with our **[ESP32 OLED Tutorial: Wiring, Code & Display Gu
 
 ---
 
-# Why Every Arduino and ESP32 Maker Should Keep an I2C Scanner
+## Why Every Arduino and ESP32 Maker Should Keep an I2C Scanner
 
 An I2C Scanner is a small utility, but it can save a significant amount of debugging time.
 
@@ -772,7 +772,7 @@ Keeping an I2C Scanner sketch available is especially useful when experimenting 
 
 ---
 
-# GitHub Source Code
+## GitHub Source Code
 
 The complete I2C Scanner sketch is available in the Embedded Nerd GitHub repository.
 
@@ -780,7 +780,7 @@ Keeping the scanner code available as a standalone utility makes it easy to reus
 
 ---
 
-# Related Tutorials
+## Related Tutorials
 
 If you're working with I2C devices, these Embedded Nerd tutorials may also be useful:
 
@@ -793,15 +793,15 @@ An I2C Scanner is particularly useful before starting these projects because it 
 
 ---
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
-## What is an I2C Scanner?
+### What is an I2C Scanner?
 
 An I2C Scanner is a small program that checks I2C addresses and reports devices that respond on the bus.
 
 It is commonly used to identify unknown I2C addresses and troubleshoot communication problems.
 
-## How do I find the I2C address of a device?
+### How do I find the I2C address of a device?
 
 Connect the device to your Arduino, ESP32 or ESP8266, upload an I2C Scanner and open the Serial Monitor.
 
@@ -815,7 +815,7 @@ Found device at 0x3C
 
 means that a device responded at `0x3C`.
 
-## Does an I2C Scanner work with ESP32?
+### Does an I2C Scanner work with ESP32?
 
 Yes.
 
@@ -823,7 +823,7 @@ The scanner can be used with ESP32 boards. A typical ESP32 DevKit uses GPIO21 fo
 
 If you use different pins, configure them explicitly in the Wire library.
 
-## Does an I2C Scanner work with Arduino Uno?
+### Does an I2C Scanner work with Arduino Uno?
 
 Yes.
 
@@ -831,13 +831,13 @@ The Arduino Uno uses A4 for SDA and A5 for SCL.
 
 Other Arduino boards may use different I2C pins.
 
-## Does an I2C Scanner work with ESP8266?
+### Does an I2C Scanner work with ESP8266?
 
 Yes.
 
 The Wire library can be used with ESP8266 boards, but the SDA and SCL pins depend on the board and software configuration.
 
-## Why does my I2C Scanner say "No I2C devices found"?
+### Why does my I2C Scanner say "No I2C devices found"?
 
 Check:
 
@@ -851,7 +851,7 @@ Check:
 
 Testing one I2C device at a time can help identify the problem.
 
-## Why does my OLED use 0x3D instead of 0x3C?
+### Why does my OLED use 0x3D instead of 0x3C?
 
 Both addresses can be used by SSD1306 OLED modules.
 
@@ -859,13 +859,13 @@ The exact address depends on the module configuration.
 
 Use the address reported by the I2C Scanner.
 
-## Can multiple I2C devices share the same SDA and SCL pins?
+### Can multiple I2C devices share the same SDA and SCL pins?
 
 Yes.
 
 Multiple I2C devices can share the same bus as long as their addresses do not conflict and the electrical characteristics of the bus are suitable.
 
-## Can two I2C devices have the same address?
+### Can two I2C devices have the same address?
 
 They can be connected physically, but if both devices respond to the same address, the microcontroller cannot independently select them using that address.
 
@@ -873,7 +873,7 @@ You may need to change one device's address or use an I2C multiplexer.
 
 ---
 
-# Conclusion
+## Conclusion
 
 An **I2C Scanner** is one of the simplest and most useful tools for Arduino, ESP32 and ESP8266 development.
 
