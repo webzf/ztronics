@@ -88,7 +88,7 @@ links:
     url: https://github.com/adafruit/DHT-sensor-library
 
 related:
-  - esp32-devkit-v1
+  - esp32-devkit
   - ssd1306-oled
   - solderless-breadboard
   - jumper-wires
