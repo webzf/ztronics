@@ -6,9 +6,32 @@ layout: single
 
 <div class="product-page">
 
+  {% comment %}
+  ============================================================================
+  Product Header / Commerce Box
+  Handles product image, title, description, badges and purchase CTAs.
+  ============================================================================
+  {% endcomment %}
+
   {% include product-box.html
      product=page.product_id
      style=product_style %}
+
+
+  {% comment %}
+  ============================================================================
+  Product Content
+  Main product information, specifications, buying information,
+  compatibility, applications and other SEO-relevant content.
+  ============================================================================
+  {% endcomment %}
+
+  {% if page.show_content != false %}
+    <div class="product-content">
+      {{ content }}
+    </div>
+  {% endif %}
+
 
   {% comment %}
   ============================================================================
@@ -34,7 +57,7 @@ layout: single
   {% if tutorial_count > 0 %}
     <section class="product-tutorials">
 
-      <h2>Used in these tutorials</h2>
+      <h2>Used in These Tutorials</h2>
 
       <ul>
         {% for tutorial in all_tutorials %}
@@ -62,12 +85,6 @@ layout: single
       </ul>
 
     </section>
-  {% endif %}
-
-  {% if page.show_content != false %}
-    <div class="product-content">
-      {{ content }}
-    </div>
   {% endif %}
 
 </div>
