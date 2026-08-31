@@ -10,7 +10,7 @@ toc: true
 toc_label: "Contents"
 header:
   teaser: /assets/images/mpu6050-discontinued.webp
-  overlay_image: /assets/images/mpu6050-discontinued.webp
+  overlay_image: /assets/images/header3.webp
   overlay_filter: 0.5
   image: /assets/images/mpu6050-discontinued.webp
   og_image: /assets/images/mpu6050-discontinued.webp
