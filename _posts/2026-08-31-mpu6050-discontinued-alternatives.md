@@ -141,11 +141,6 @@ Three sensors are particularly relevant when looking for a modern MPU6050 altern
 
 Every one involves a different package, pinout and register map, so treat all three as design migrations rather than drop-in swaps.
 
-<!-- IMAGE: mpu6050-alternatives.webp
-Suggested placement: after this introductory paragraph.
-Purpose: visual overview of MPU6050, BMA400, ICM-42670-P and ICM-42688-P.
--->
-
 ### BMA400
 
 The [BMA400](/products/bma400/) is a **3-axis accelerometer** from Bosch Sensortec, actively produced and built around ultra-low power consumption.
@@ -251,11 +246,6 @@ TDK specifies approximately:
 - up to 24 MHz SPI;
 - up to 1 MHz I2C.
 
-<!-- IMAGE: mpu6050-alternatives-comparison.webp
-Suggested placement: after the ICM-42688-P section and before "Other Alternatives".
-Purpose: visual comparison of the four sensors and their main roles.
--->
-
 Don't reach for it just because the datasheet numbers look better — it's more sensor than most hobbyist projects need.
 
 It makes sense specifically when your project is noise-sensitive or precision-sensitive:
@@ -281,10 +271,7 @@ This guide focuses on the BMA400, ICM-42670-P and ICM-42688-P because they are t
 
 ## MPU6050 vs Modern Alternatives
 
-<!-- IMAGE: mpu6050-vs-bma400.webp
-Suggested placement: immediately before the comparison table.
-Purpose: reinforce the key difference between the 6-axis MPU6050 and the accelerometer-only BMA400.
--->
+![MPU6050 vs BMA400, ICM-42670-P and ICM-42688-P comparison](/assets/images/mpu6050-alternatives-comparison.webp)
 
 | Feature | MPU6050 | BMA400 | ICM-42670-P | ICM-42688-P |
 |---|---|---|---|---|
@@ -383,6 +370,8 @@ It is not a new version of the MPU6050.
 
 It is a module designed to make the MPU6050 easier to connect to a microcontroller.
 
+![MPU6050 sensor module used in typical GY-521 breakout boards](/assets/images/mpu6050.webp)
+
 A typical board provides connections for:
 
 - VCC;
@@ -391,11 +380,6 @@ A typical board provides connections for:
 - SCL;
 - INT;
 - AD0.
-
-<!-- IMAGE: Existing GY-521/MPU6050 product image.
-Suggested placement: immediately after the GY-521 introduction.
-Reuse an existing Embedded Nerd product image if available.
--->
 
 ### Are GY-521 modules still useful?
 
