@@ -221,11 +221,6 @@ paginate: 8
 paginate_path: /page/:num/
 
 
-
-  trail:
-    before: 2
-    after: 2
-
 # Plugins
 safe: false
 
