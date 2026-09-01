@@ -1,36 +1,28 @@
 ---
-excerpt: Free I2C pull-up resistor calculator for Arduino, ESP32 and
-  Raspberry Pi. Calculate the valid minimum and maximum pull-up resistor
-  range from bus voltage, speed, sink current and bus capacitance.
-last_modified_at: false
+title: "I2C Pull-up Resistor Calculator"
+tool: true
 layout: single
 permalink: /tools/i2c-pullup-resistor-calculator/
-read_time: false
-show_date: false
+
 sidebar:
-  nav: embedded
-title: I2C Pull-up Resistor Calculator
+  nav: "embedded"
+
+excerpt: "Free I2C pull-up resistor calculator for Arduino, ESP32 and Raspberry Pi. Calculate the valid minimum and maximum pull-up resistor range from bus voltage, speed, sink current and bus capacitance."
+
+show_date: false
+read_time: false
+last_modified_at: false
 toc: true
-toc_label: Contents
+toc_label: "Contents"
 toc_sticky: true
-tool: true
 ---
-
-
-
-Choosing the correct **I2C pull-up resistor** is a balance between two
-limits: the resistor must be large enough to avoid excessive sink
-current when the bus is LOW, but small enough to charge the bus
-capacitance within the required rise time.
-
-This calculator uses the pull-up resistor equations from the **NXP
-UM10204 I2C-bus specification and user manual** to calculate the valid
-resistor range.
 
 ## I2C Pull-up Resistor Calculator
 
-::: en-i2c-calculator
-::: en-i2c-grid
+<div class="en-i2c-calculator">
+
+  <div class="en-i2c-grid">
+
     <div class="en-i2c-inputs">
 
       <div class="en-i2c-field">
@@ -80,7 +72,6 @@ resistor range.
       <div id="i2c-status" class="en-i2c-status">Calculating…</div>
 
       <div class="en-i2c-result-grid">
-
         <div class="en-i2c-result-card">
           <span>Rp(min)</span>
           <strong id="i2c-rmin">—</strong>
@@ -104,7 +95,6 @@ resistor range.
           <strong id="i2c-current">—</strong>
           <small>Approx. current when LOW</small>
         </div>
-
       </div>
 
       <div class="en-i2c-details">
@@ -115,174 +105,51 @@ resistor range.
       </div>
 
       <p id="i2c-message" class="en-i2c-message"></p>
-
     </div>
-:::
 
-::: en-i2c-note
+  </div>
+
+  <div class="en-i2c-note">
     <strong>Important:</strong> The capacitance value is an estimate unless you have measured the bus.
     The calculator gives a design range; always verify the actual SDA/SCL waveforms and rise time on the finished hardware.
-:::
-:::
+  </div>
 
-```{=html}
+</div>
+
 <style>
-.en-i2c-calculator {
-  margin: 1.5rem 0 2rem;
-}
-
-.en-i2c-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 1.5rem;
-}
-
-.en-i2c-inputs,
-.en-i2c-results {
-  border: 1px solid rgba(127,127,127,.25);
-  border-radius: 8px;
-  padding: 1.25rem;
-}
-
-.en-i2c-field {
-  margin-bottom: 1rem;
-}
-
-.en-i2c-field:last-child {
-  margin-bottom: 0;
-}
-
-.en-i2c-field label {
-  display: block;
-  font-weight: 700;
-  margin-bottom: .35rem;
-}
-
-.en-i2c-field input,
-.en-i2c-field select {
-  width: 100%;
-  box-sizing: border-box;
-  padding: .65rem .7rem;
-  border: 1px solid rgba(127,127,127,.45);
-  border-radius: 5px;
-  background: inherit;
-  color: inherit;
-  font: inherit;
-}
-
-.en-i2c-field small,
-.en-i2c-result-card small {
-  display: block;
-  margin-top: .3rem;
-  opacity: .72;
-  line-height: 1.4;
-}
-
-.en-i2c-status {
-  padding: .7rem .85rem;
-  border-radius: 6px;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: rgba(127,127,127,.12);
-}
-
-.en-i2c-status.valid {
-  border-left: 4px solid #2e7d32;
-}
-
-.en-i2c-status.invalid {
-  border-left: 4px solid #c62828;
-}
-
-.en-i2c-result-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: .75rem;
-}
-
-.en-i2c-result-card {
-  padding: .9rem;
-  border: 1px solid rgba(127,127,127,.2);
-  border-radius: 6px;
-}
-
-.en-i2c-result-card span {
-  display: block;
-  font-size: .88rem;
-  opacity: .75;
-}
-
-.en-i2c-result-card strong {
-  display: block;
-  font-size: 1.25rem;
-  margin-top: .2rem;
-}
-
-.en-i2c-highlight {
-  border-width: 2px;
-}
-
-.en-i2c-details {
-  margin-top: 1rem;
-  border-top: 1px solid rgba(127,127,127,.2);
-}
-
-.en-i2c-details > div {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: .65rem 0;
-  border-bottom: 1px solid rgba(127,127,127,.12);
-}
-
-.en-i2c-details span {
-  opacity: .75;
-}
-
-.en-i2c-message {
-  margin: 1rem 0 0;
-  line-height: 1.55;
-}
-
-.en-i2c-note {
-  margin-top: 1rem;
-  padding: 1rem;
-  border-left: 4px solid rgba(127,127,127,.5);
-  background: rgba(127,127,127,.08);
-}
-
-@media (max-width: 800px) {
-  .en-i2c-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .en-i2c-result-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .en-i2c-details > div {
-    flex-direction: column;
-    gap: .15rem;
-  }
+.en-i2c-calculator { margin: 1.5rem 0 2rem; }
+.en-i2c-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:1.5rem; }
+.en-i2c-inputs,.en-i2c-results { border:1px solid rgba(127,127,127,.25); border-radius:8px; padding:1.25rem; }
+.en-i2c-field { margin-bottom:1rem; }
+.en-i2c-field:last-child { margin-bottom:0; }
+.en-i2c-field label { display:block; font-weight:700; margin-bottom:.35rem; }
+.en-i2c-field input,.en-i2c-field select { width:100%; box-sizing:border-box; padding:.65rem .7rem; border:1px solid rgba(127,127,127,.45); border-radius:5px; background:inherit; color:inherit; font:inherit; }
+.en-i2c-field small,.en-i2c-result-card small { display:block; margin-top:.3rem; opacity:.72; line-height:1.4; }
+.en-i2c-status { padding:.7rem .85rem; border-radius:6px; font-weight:700; margin-bottom:1rem; background:rgba(127,127,127,.12); }
+.en-i2c-status.valid { border-left:4px solid #2e7d32; }
+.en-i2c-status.invalid { border-left:4px solid #c62828; }
+.en-i2c-result-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; }
+.en-i2c-result-card { padding:.9rem; border:1px solid rgba(127,127,127,.2); border-radius:6px; }
+.en-i2c-result-card span { display:block; font-size:.88rem; opacity:.75; }
+.en-i2c-result-card strong { display:block; font-size:1.25rem; margin-top:.2rem; }
+.en-i2c-highlight { border-width:2px; }
+.en-i2c-details { margin-top:1rem; border-top:1px solid rgba(127,127,127,.2); }
+.en-i2c-details > div { display:flex; justify-content:space-between; gap:1rem; padding:.65rem 0; border-bottom:1px solid rgba(127,127,127,.12); }
+.en-i2c-details span { opacity:.75; }
+.en-i2c-message { margin:1rem 0 0; line-height:1.55; }
+.en-i2c-note { margin-top:1rem; padding:1rem; border-left:4px solid rgba(127,127,127,.5); background:rgba(127,127,127,.08); }
+@media (max-width:800px) { .en-i2c-grid { grid-template-columns:1fr; } }
+@media (max-width:480px) {
+  .en-i2c-result-grid { grid-template-columns:1fr; }
+  .en-i2c-details > div { flex-direction:column; gap:.15rem; }
 }
 </style>
-```
-```{=html}
+
 <script>
 (function () {
   "use strict";
 
-  const ids = [
-    "i2c-vdd",
-    "i2c-mode",
-    "i2c-cap",
-    "i2c-vol",
-    "i2c-iol",
-    "i2c-tr"
-  ];
-
+  const ids = ["i2c-vdd","i2c-mode","i2c-cap","i2c-vol","i2c-iol","i2c-tr"];
   const el = {};
   ids.forEach(id => el[id] = document.getElementById(id));
 
@@ -299,130 +166,65 @@ resistor range.
   const iolNote = document.getElementById("i2c-iol-note");
 
   const modeDefaults = {
-    standard: {
-      rise: 1000,
-      iol: 3,
-      label: "Standard-mode"
-    },
-    fast: {
-      rise: 300,
-      iol: 3,
-      label: "Fast-mode"
-    },
-    fastplus: {
-      rise: 120,
-      iol: 20,
-      label: "Fast-mode Plus"
-    }
+    standard: { rise:1000, iol:3 },
+    fast: { rise:300, iol:3 },
+    fastplus: { rise:120, iol:20 }
   };
 
-  /*
-   * E12 values over several decades.
-   * The calculator chooses the nearest standard value that is
-   * inside the calculated valid range.
-   */
-  const e12Base = [
-    1.0, 1.2, 1.5, 1.8, 2.2, 2.7,
-    3.3, 3.9, 4.7, 5.6, 6.8, 8.2
-  ];
-
-  function e12Values() {
-    const values = [];
-
-    for (let decade = -1; decade <= 7; decade++) {
-      const multiplier = Math.pow(10, decade);
-      e12Base.forEach(base => values.push(base * multiplier));
-    }
-
-    return values.sort((a, b) => a - b);
+  const e12Base = [1,1.2,1.5,1.8,2.2,2.7,3.3,3.9,4.7,5.6,6.8,8.2];
+  const standardValues = [];
+  for (let decade=-1; decade<=7; decade++) {
+    const m = Math.pow(10,decade);
+    e12Base.forEach(v => standardValues.push(v*m));
   }
 
-  const standardValues = e12Values();
-
-  function nearestStandardInside(min, max) {
+  function nearestStandardInside(min,max) {
     const candidates = standardValues.filter(v => v >= min && v <= max);
-
-    if (!candidates.length) {
-      return null;
-    }
-
-    const target = Math.sqrt(min * max);
-
-    candidates.sort((a, b) => {
-      const da = Math.abs(Math.log(a / target));
-      const db = Math.abs(Math.log(b / target));
-      return da - db;
-    });
-
+    if (!candidates.length) return null;
+    const target = Math.sqrt(min*max);
+    candidates.sort((a,b) => Math.abs(Math.log(a/target))-Math.abs(Math.log(b/target)));
     return candidates[0];
   }
 
-  function formatResistance(ohms) {
-    if (!Number.isFinite(ohms)) return "—";
-
-    if (ohms >= 1000000) {
-      return (ohms / 1000000).toFixed(2).replace(/\.00$/, "") + " MΩ";
+  function formatResistance(r) {
+    if (!Number.isFinite(r)) return "—";
+    if (r >= 1e6) return (r/1e6).toFixed(2).replace(/\.00$/,"") + " MΩ";
+    if (r >= 1000) {
+      const v = r/1000;
+      return v.toFixed(v >= 100 ? 0 : v >= 10 ? 1 : 2).replace(/\.0$/,"") + " kΩ";
     }
-
-    if (ohms >= 1000) {
-      const value = ohms / 1000;
-      return value.toFixed(value >= 100 ? 0 : value >= 10 ? 1 : 2)
-        .replace(/\.0$/, "") + " kΩ";
-    }
-
-    return Math.round(ohms) + " Ω";
+    return Math.round(r) + " Ω";
   }
 
-  function formatCurrent(amps) {
-    if (!Number.isFinite(amps)) return "—";
-
-    const mA = amps * 1000;
-
-    if (mA >= 1) {
-      return mA.toFixed(mA >= 10 ? 1 : 2).replace(/\.00$/, "") + " mA";
-    }
-
-    return (amps * 1000000).toFixed(0) + " µA";
+  function formatCurrent(a) {
+    if (!Number.isFinite(a)) return "—";
+    const mA = a*1000;
+    return mA >= 1
+      ? mA.toFixed(mA >= 10 ? 1 : 2).replace(/\.00$/,"") + " mA"
+      : (a*1e6).toFixed(0) + " µA";
   }
 
   function formatTimeNs(ns) {
     if (!Number.isFinite(ns)) return "—";
-
-    if (ns >= 1000000) {
-      return (ns / 1000000).toFixed(2) + " ms";
-    }
-
-    if (ns >= 1000) {
-      return (ns / 1000).toFixed(2) + " µs";
-    }
-
+    if (ns >= 1e6) return (ns/1e6).toFixed(2) + " ms";
+    if (ns >= 1000) return (ns/1000).toFixed(2) + " µs";
     return ns.toFixed(1) + " ns";
   }
 
-  function formatTau(ns) {
-    return formatTimeNs(ns);
-  }
-
-  function setStatus(valid, text) {
-    status.classList.remove("valid", "invalid");
+  function setStatus(valid,text) {
+    status.classList.remove("valid","invalid");
     status.classList.add(valid ? "valid" : "invalid");
     status.textContent = text;
   }
 
-  function updateIolFromMode() {
+  function updateMode() {
     const mode = modeDefaults[el["i2c-mode"].value];
-
     if (!mode) return;
-
     el["i2c-tr"].value = mode.rise;
     el["i2c-iol"].value = mode.iol;
-
-    if (el["i2c-mode"].value === "fastplus") {
-      iolNote.textContent = "Default: 20 mA for Fast-mode Plus.";
-    } else {
-      iolNote.textContent = "Default: 3 mA for Standard-mode and Fast-mode.";
-    }
-
+    iolNote.textContent = mode.iol === 20
+      ? "Default: 20 mA for Fast-mode Plus."
+      : "Default: 3 mA for Standard-mode and Fast-mode.";
     calculate();
   }
 
@@ -432,122 +234,82 @@ resistor range.
     const vol = Number(el["i2c-vol"].value);
     const iolMa = Number(el["i2c-iol"].value);
     const trNs = Number(el["i2c-tr"].value);
-    const mode = modeDefaults[el["i2c-mode"].value];
 
-    const valuesValid =
-      Number.isFinite(vdd) &&
-      Number.isFinite(capPf) &&
-      Number.isFinite(vol) &&
-      Number.isFinite(iolMa) &&
-      Number.isFinite(trNs) &&
-      vdd > 0 &&
-      capPf > 0 &&
-      vol >= 0 &&
-      iolMa > 0 &&
-      trNs > 0 &&
-      vol < vdd;
+    const ok = Number.isFinite(vdd) && Number.isFinite(capPf) &&
+      Number.isFinite(vol) && Number.isFinite(iolMa) && Number.isFinite(trNs) &&
+      vdd > 0 && capPf > 0 && vol >= 0 && vol < vdd && iolMa > 0 && trNs > 0;
 
-    if (!valuesValid) {
-      setStatus(false, "Enter valid values");
-      [rminOut, rmaxOut, recOut, currentOut, selectedOut, riseOut, tauOut, rangeOut]
-        .forEach(node => node.textContent = "—");
-      messageOut.textContent = "Check the input values. VOL(max) must be lower than the bus voltage.";
+    if (!ok) {
+      setStatus(false,"Enter valid values");
+      [rminOut,rmaxOut,recOut,currentOut,selectedOut,riseOut,tauOut,rangeOut]
+        .forEach(n => n.textContent="—");
+      messageOut.textContent="Check the input values. VOL(max) must be lower than the bus voltage.";
       return;
     }
 
-    /*
-     * NXP UM10204:
-     * Rp(min) = (VDD - VOL(max)) / IOL
-     * Rp(max) = tr / (0.8473 × Cb)
-     *
-     * Units are converted so the result is in ohms.
-     */
-    const iolA = iolMa / 1000;
-    const capF = capPf * 1e-12;
-    const trS = trNs * 1e-9;
+    const iolA = iolMa/1000;
+    const capF = capPf*1e-12;
+    const trS = trNs*1e-9;
 
-    const rMin = (vdd - vol) / iolA;
-    const rMax = trS / (0.8473 * capF);
+    const rMin = (vdd-vol)/iolA;
+    const rMax = trS/(0.8473*capF);
 
     rminOut.textContent = formatResistance(rMin);
     rmaxOut.textContent = formatResistance(rMax);
     rangeOut.textContent = formatResistance(rMin) + " – " + formatResistance(rMax);
 
-    const valid = rMin <= rMax;
-
-    if (!valid) {
-      setStatus(false, "No valid resistor range");
-      recOut.textContent = "—";
-      selectedOut.textContent = "—";
-      currentOut.textContent = "—";
-      riseOut.textContent = "—";
-      tauOut.textContent = "—";
-
+    if (rMin > rMax) {
+      setStatus(false,"No valid resistor range");
+      [recOut,currentOut,selectedOut,riseOut,tauOut].forEach(n => n.textContent="—");
       messageOut.textContent =
-        "The minimum resistor value is higher than the maximum value allowed by the rise-time limit. " +
-        "Try reducing bus capacitance, lowering the I2C speed, or using a stronger pull-up only if the devices can safely sink the resulting current.";
-
+        "Rp(min) is higher than Rp(max). Reduce bus capacitance, lower the I2C speed, or review the electrical limits of the devices.";
       return;
     }
 
-    const recommended = nearestStandardInside(rMin, rMax);
+    const recommended = nearestStandardInside(rMin,rMax);
 
     if (recommended === null) {
-      setStatus(true, "Range is valid, but no E12 value fits");
-      recOut.textContent = "No E12 value";
-      selectedOut.textContent = "Choose a precision value";
-      currentOut.textContent = "—";
-      riseOut.textContent = "—";
-      tauOut.textContent = "—";
-
-      messageOut.textContent =
-        "The calculated range is valid, but no E12 resistor value falls inside it. " +
-        "A tighter standard series or precision resistor may be required.";
+      setStatus(true,"Range is valid, but no E12 value fits");
+      recOut.textContent="No E12 value";
+      selectedOut.textContent="Choose a precision value";
+      currentOut.textContent="—";
+      riseOut.textContent="—";
+      tauOut.textContent="—";
+      messageOut.textContent="No E12 resistor falls inside the calculated range. Consider another standard resistor series.";
       return;
     }
 
-    const pullupCurrent = (vdd - vol) / recommended;
-    const tauS = recommended * capF;
-    const riseNs = 0.8473 * recommended * capF * 1e9;
+    const current = (vdd-vol)/recommended;
+    const tauNs = recommended*capF*1e9;
+    const riseNs = 0.8473*recommended*capF*1e9;
 
-    setStatus(true, "Valid resistor range");
-    recOut.textContent = formatResistance(recommended);
-    selectedOut.textContent = formatResistance(recommended);
-    currentOut.textContent = formatCurrent(pullupCurrent);
-    riseOut.textContent = formatTimeNs(riseNs);
-    tauOut.textContent = formatTau(tauS * 1e9);
-
-    let warning = "";
-
-    if (riseNs > trNs) {
-      warning =
-        "The selected resistor does not meet the requested rise-time limit. " +
-        "Choose a lower resistance value.";
-    } else if (recommended < rMin || recommended > rMax) {
-      warning =
-        "The selected value is outside the calculated range. Verify the inputs.";
-    } else {
-      warning =
-        "The selected E12 value is inside the calculated range. " +
-        "Use the same value on SDA and SCL unless your design requires otherwise, and verify the real bus waveform on hardware.";
-    }
-
-    messageOut.textContent = warning;
+    setStatus(true,"Valid resistor range");
+    recOut.textContent=formatResistance(recommended);
+    selectedOut.textContent=formatResistance(recommended);
+    currentOut.textContent=formatCurrent(current);
+    riseOut.textContent=formatTimeNs(riseNs);
+    tauOut.textContent=formatTimeNs(tauNs);
+    messageOut.textContent =
+      "The selected E12 value is inside the calculated range. Verify SDA and SCL rise time on the finished hardware.";
   }
 
-  el["i2c-mode"].addEventListener("change", updateIolFromMode);
-
+  el["i2c-mode"].addEventListener("change",updateMode);
   ids.forEach(id => {
     if (id !== "i2c-mode") {
-      el[id].addEventListener("input", calculate);
-      el[id].addEventListener("change", calculate);
+      el[id].addEventListener("input",calculate);
+      el[id].addEventListener("change",calculate);
     }
   });
 
   calculate();
 })();
 </script>
-```
+
+<div class="en-i2c-note">
+  <strong>Important:</strong> The capacitance value is an estimate unless you have measured the bus.
+  Always verify the actual SDA/SCL waveforms and rise time on finished hardware.
+</div>
+
 ## How the I2C pull-up resistor is calculated
 
 The calculator determines a **minimum** and **maximum** resistor value.
