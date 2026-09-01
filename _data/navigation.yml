@@ -54,7 +54,8 @@ embedded:
         url: /tools/i2c-address-lookup/
      # - title: "OLED Displays"
        # url: /ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/
-      
+      - title: "I2C Pull-up Resistor Calculator"
+        url: /tools/i2c-pullup-resistor-calculator/
 
 #  - title: Sensors
      #children:
