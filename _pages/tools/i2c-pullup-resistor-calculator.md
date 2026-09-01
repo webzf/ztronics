@@ -305,11 +305,6 @@ toc_sticky: true
 })();
 </script>
 
-<div class="en-i2c-note">
-  <strong>Important:</strong> The capacitance value is an estimate unless you have measured the bus.
-  Always verify the actual SDA/SCL waveforms and rise time on finished hardware.
-</div>
-
 ## How the I2C pull-up resistor is calculated
 
 The calculator determines a **minimum** and **maximum** resistor value.
