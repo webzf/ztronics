@@ -104,6 +104,8 @@ Common MPU6050 Arduino applications include:
 
 The sensor communicates with a microcontroller using **I2C**, making it easy to connect to Arduino Uno, Arduino Nano and ESP32 boards.
 
+For existing projects and learning, the MPU6050 remains a useful and widely supported sensor. However, if you are starting a new long-term design, it is worth considering newer devices. See our guide to [MPU6050 alternatives and replacements](/mpu6050-discontinued-alternatives/), including the BMA400, ICM-42670-P and ICM-42688-P.
+
 The MPU6050 can also show small offsets in its accelerometer and gyroscope readings. For more accurate measurements, see our [MPU6050 Calibration Guide](/mpu6050-calibration-guide/).
 
 ---
