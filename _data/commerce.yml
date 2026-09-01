@@ -2,6 +2,35 @@
 # Embedded Nerd Commerce Database v2.0
 # ============================================================================
 
+
+
+icm-42688-p:
+
+  preferred_store: aliexpress
+
+  notes: ""
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: true
+
+  stores:
+
+    amazon:
+      enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3WbKl4x"
+
+
+#----------------
+
 st7789-tft:
 
   preferred_store: aliexpress
