@@ -1001,14 +1001,9 @@ For projects that use the same sensor permanently, the offsets can be saved to n
 
 ## Recommended Products
 
-The main hardware for this tutorial is already listed automatically in the **Hardware Used in This Project** section.
+The main hardware for this tutorial is already listed automatically in the [**Hardware Used in This Project**](/mpu6050-calibration-guide/#required-hardware) section.
 
-For a new MPU6050 project, the most useful components are:
-
-- MPU6050 accelerometer and gyroscope module
-- ESP32 development board
-- Solderless breadboard
-- Jumper wires
+For an existing project or for learning, the MPU6050 remains a practical and well-supported sensor. However, if you are starting a new long-term design, consider newer alternatives before committing to the MPU6050. See our guide to [MPU6050 alternatives and replacements](/mpu6050-discontinued-alternatives/) for a comparison of modern options.
 
 The ESP32 is particularly useful if you want to use the calibrated MPU6050 in a wireless or motion-controlled project.
 
