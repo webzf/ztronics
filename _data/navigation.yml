@@ -13,6 +13,14 @@ main:
 
   - title: "Products"
     url: /products/
+    children:
+      - title: "Development Boards"
+        url: /products/development-boards/
+      - title: "Sensors"
+        url: /products/sensors/
+      - title: "Modules"
+        url: /products/modules/
+    
 
   - title: "Projects"
     url: /categories/
