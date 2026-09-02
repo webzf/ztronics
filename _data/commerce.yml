@@ -2,6 +2,33 @@
 # Embedded Nerd Commerce Database v2.0
 # ============================================================================
 
+raspberry-pi-pico-w:
+
+  preferred_store: amazon
+
+  notes: ""
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: true
+    best_value: false
+    fast_shipping: true
+
+  stores:
+
+    amazon:
+      enabled: true
+      affiliate_url: "https://amzn.to/4dbsORp"
+
+    aliexpress:
+      enabled: false
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3LI5MHD"
+
+
+#----------------
+
 icm-42670-p:
 
   preferred_store: aliexpress
