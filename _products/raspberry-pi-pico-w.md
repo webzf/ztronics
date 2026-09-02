@@ -5,7 +5,7 @@ title: "Raspberry Pi Pico W"
 
 product_id: raspberry-pi-pico-w
 
-category: Raspberry Pi
+category: Development Boards
 
 manufacturer: Raspberry Pi
 
