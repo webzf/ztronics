@@ -3,6 +3,11 @@
 {% if products.size > 0 %}
   {% for product in products %}
     {% include product-card.html product=product %}
+
+    {% unless forloop.last %}
+      <hr>
+    {% endunless %}
+
   {% endfor %}
 {% else %}
 > No products are currently available in this category.
