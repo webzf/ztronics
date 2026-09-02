@@ -4,9 +4,7 @@
   {% for product in products %}
     {% include product-card.html product=product %}
 
-    {% unless forloop.last %}
-      <hr>
-    {% endunless %}
+
 
   {% endfor %}
 {% else %}
