@@ -1,662 +1,473 @@
 ---
-
 title: "Raspberry Pi IT Projects: Practical Home Server, Pi-hole, VPN, and Network Monitoring"
 layout: single
 permalink: /raspberry-pi-it-projects/
 sidebar:
-nav: "embedded"
+  nav: "embedded"
 excerpt: "Real Raspberry Pi IT projects for home servers, networking, storage, and self-hosting — with hardware picks, commands, and difficulty ratings for beginners through advanced users."
 show_date: false
 read_time: false
-last_modified_at: false
 toc: true
 toc_sticky: true
 header:
-teaser: /assets/images/raspberry-pi-it-projects-teaser.jpg
-overlay_image: /assets/images/raspberry-pi-it-projects-header.jpg
-overlay_filter: 0.5
-image: /assets/images/raspberry-pi-it-projects-header.jpg
-og_image: /assets/images/raspberry-pi-it-projects-og.jpg
+  teaser: /assets/images/raspberry-pi-it-projects-teaser.jpg
+  overlay_image: /assets/images/raspberry-pi-it-projects-header.jpg
+  overlay_filter: 0.5
+  image: /assets/images/raspberry-pi-it-projects-header.jpg
+  og_image: /assets/images/raspberry-pi-it-projects-og.jpg
 categories:
+  - Raspberry Pi
+tags:
+  - raspberry pi
+  - home server
+  - pi-hole
+  - wireguard
+  - networking
+  - self-hosting
+  - docker
+related: true
+share: true
+---
 
-- Raspberry Pi
-  tags:
-- raspberry pi
-- home server
-- pi-hole
-- wireguard
-- networking
-- self-hosting
-- docker
-  related: true
-  share: true
+If you are looking for **Raspberry Pi IT projects**, you do not need another list of LED blinkers, clocks, or weather stations.
+
+The Raspberry Pi can be much more useful as a small Linux server and home-lab platform. It can provide DNS filtering, network storage, automated backups, VPN access, monitoring, containers, and self-hosted applications.
+
+This guide focuses on **Raspberry Pi projects that perform real IT tasks**. The goal is to help you build useful infrastructure while learning practical Linux, networking, storage, security, and system administration skills.
+
+Think of it as a small IT laboratory you can build at home.
+
+## What Can You Use a Raspberry Pi for in IT?
+
+A Raspberry Pi can run many lightweight IT services, including:
+
+- Home servers
+- DNS filtering with Pi-hole
+- NAS storage with Samba
+- Automated backup servers
+- WireGuard VPN servers
+- Network monitoring
+- Docker containers
+- Personal cloud services
+- Local DNS
+- Network diagnostic tools
+
+These projects are useful because the skills transfer directly to larger Linux servers, cloud environments, networking equipment, and professional IT administration.
 
 ---
 
-Raspberry Pi IT Projects: Practical Home Server, Pi-hole, VPN, and Network Monitoring
+# Raspberry Pi Hardware for IT Projects
 
-Most "Raspberry Pi project" lists are really electronics lists: blink an LED, read a sensor, build a weather display. Those are great for learning GPIO, but they don't teach you much about running actual infrastructure.
+The Raspberry Pi model you choose depends on the workload.
 
-A Raspberry Pi IT project is different. It uses the Pi as a small, always-on Linux computer that performs real system administration and networking tasks: serving files, filtering DNS requests, providing VPN access, monitoring systems, running containers, or hosting self-managed applications.
+| Raspberry Pi | Best suited for |
+|---|---|
+| **Raspberry Pi 5** | Multiple services, Docker, monitoring, Nextcloud, larger home labs |
+| **Raspberry Pi 4** | Home servers, Pi-hole, Samba, WireGuard, lightweight monitoring and Docker |
+| **Raspberry Pi Zero 2 W** | Lightweight services such as DNS filtering and small utilities |
+| **Older Raspberry Pi 3** | Basic services and lightweight servers |
 
-The skills involved — SSH, IP addressing, service management with "systemctl", storage planning, backups, networking, and basic security — are transferable to full-size servers and professional IT environments.
+For a new home-lab build, the **Raspberry Pi 5** is the strongest choice when you expect to run several services simultaneously.
 
-This guide covers ten practical Raspberry Pi IT projects, from beginner-friendly setups to more advanced home-lab deployments. Each project includes realistic hardware requirements, software, networking considerations, storage guidance, and the skills you can develop.
+## Storage
 
-The goal isn't to build ten unrelated Raspberry Pi projects. It's to show how one inexpensive computer can become the foundation of a small, useful IT laboratory.
+A microSD card is convenient for the operating system, but an SSD is generally a better choice for write-intensive workloads such as databases, Nextcloud, Docker volumes, and long-term monitoring.
 
-[Internal Link: Raspberry Pi Pico Projects]
+For storage-heavy projects, consider:
 
-Hardware You'll Need
+- USB 3 SSD
+- USB hard drive
+- NVMe storage on compatible Raspberry Pi 5 hardware
+- Separate storage for backups
 
-Before choosing a project, it helps to identify the hardware you already have. None of these projects requires the newest or most expensive Raspberry Pi.
+Do not confuse storage with backup. A NAS or SSD containing your only copy of important files is not a backup.
 
-Raspberry Pi Models
+## Power Supply
 
-Raspberry Pi 4
+Use an appropriate power supply for your Raspberry Pi model.
 
-A Raspberry Pi 4 is a practical choice for many of the projects in this guide.
+An unstable power source can cause crashes, unexpected shutdowns, or filesystem problems.
 
-A model with 4GB RAM provides plenty of headroom for services such as:
+## Ethernet vs Wi-Fi
 
-- Pi-hole
-- Samba
-- WireGuard
-- lightweight monitoring
-- basic Docker deployments
-- network utilities
+For infrastructure that runs continuously, Ethernet is usually preferable.
 
-An 8GB model can be useful when running multiple services, but more RAM isn't automatically necessary for lightweight workloads.
+It provides a more predictable network connection for:
 
-Raspberry Pi 5
-
-The Raspberry Pi 5 is the better choice when you want more processing performance or several services running together.
-
-It is particularly attractive for:
-
-- multiple Docker containers
-- Prometheus and Grafana
-- Nextcloud
-- larger home-lab deployments
-- storage-intensive workloads
-
-Its PCIe interface also makes faster storage options possible with compatible hardware.
-
-Raspberry Pi Zero 2 W
-
-The Raspberry Pi Zero 2 W can handle lightweight services such as Pi-hole or a small network utility.
-
-It is not the board I would choose for:
-
-- a busy NAS
-- multiple Docker containers
-- Nextcloud
-- a large monitoring stack
-
-Older Raspberry Pi Models
-
-Older Raspberry Pi boards can still be useful for lightweight services.
-
-For example, a Raspberry Pi 3 can be perfectly adequate for Pi-hole or a basic Samba server.
-
-The limitation becomes more apparent when several services, databases, containers, or storage-heavy workloads are combined.
-
-Other Hardware
-
-microSD Card
-
-A microSD card is a convenient boot and operating-system drive.
-
-For a server, use a reputable card with suitable application performance characteristics. A 32GB card provides comfortable room for a typical Raspberry Pi OS installation and basic services.
-
-However, don't treat the microSD card as the ideal storage device for every workload.
-
-For applications involving frequent writes — such as databases, Nextcloud, or long-term monitoring — an external SSD is generally a better choice for the main data volume.
-
-Power Supply
-
-Use a power supply appropriate for your Raspberry Pi model.
-
-Power instability can cause crashes, filesystem problems, and confusing intermittent behavior.
-
-If a server randomly disappears from the network, power should be one of the things you check rather than assuming the problem is software.
-
-Ethernet Cable
-
-Ethernet is strongly preferred for most server-oriented deployments.
-
-This is particularly true for:
-
-- NAS
-- backups
+- NAS storage
+- Backups
 - VPN servers
-- monitoring servers
-- always-on infrastructure
+- Monitoring
+- Home servers
 
-Wi-Fi is perfectly reasonable for lightweight services such as Pi-hole when running an Ethernet cable isn't practical.
-
-USB Storage or SSD
-
-External storage is recommended for:
-
-- NAS data
-- backup repositories
-- Nextcloud data
-- Docker volumes
-- large datasets
-
-An SSD connected through USB 3.0 is an especially useful upgrade for a Raspberry Pi server.
-
-Optional HATs
-
-HATs are optional rather than necessary.
-
-Examples include:
-
-- PoE HATs for powering the Raspberry Pi over Ethernet
-- NVMe HATs for compatible Raspberry Pi 5 storage configurations
-- specialized expansion boards for specific networking or hardware requirements
-
-Don't add a HAT simply because the Raspberry Pi has a GPIO header. Add one when it solves a real problem.
-
-Ethernet vs. Wi-Fi
-
-For server and network projects, use Ethernet whenever possible.
-
-A wired connection provides a more predictable network path and avoids the variability associated with wireless interference, signal strength, and roaming.
-
-This matters particularly when the Raspberry Pi is responsible for a service used by multiple devices.
-
-For example:
-
-Home Network
-     |
-   Ethernet
-     |
-Raspberry Pi
-     |
-+----+----+---------+
-|         |         |
-DNS      NAS       VPN
-
-If the Pi is providing DNS or VPN access for the entire household, network stability matters much more than it does for a simple desktop experiment.
+Wi-Fi can work well for lightweight services, but wired Ethernet is generally the better choice for a home server.
 
 ---
 
-Best Raspberry Pi IT Projects
+# Raspberry Pi IT Projects for Beginners
 
-These ten projects are ordered roughly from beginner to advanced based on the Linux, networking, storage, and administration knowledge they require.
+These projects are good starting points if you are new to Linux servers and networking.
 
-1. Raspberry Pi Home Server
+## 1. Raspberry Pi Home Server
 
-What it does: Turns the Pi into a general-purpose always-on Linux server for SSH, file sharing, scripts, and additional services.
+**Difficulty:** Beginner  
+**Recommended hardware:** Raspberry Pi 4 or Raspberry Pi 5  
+**Main software:** Raspberry Pi OS, OpenSSH, optional Samba  
+**Storage:** 16–32GB microSD for a basic system; SSD for heavier workloads  
+**Network:** Ethernet recommended
 
-Why it's useful: It provides the foundation for almost every other project in this guide.
+A Raspberry Pi home server is one of the best starting points for learning Linux administration.
 
-Hardware: Raspberry Pi 4 or 5, Ethernet recommended, external SSD for larger data.
+You can use it as a central machine for running other services while learning:
 
-Difficulty: Beginner.
+- SSH
+- Linux users and permissions
+- IP addressing
+- Hostnames
+- systemd services
+- Package management
+- Storage
+- Networking
 
-Main software: Raspberry Pi OS, OpenSSH, optionally Samba.
+### Basic setup
 
-Storage: 16–32GB for the operating system; additional storage as required.
+After installing Raspberry Pi OS, update the system:
 
-Networking: A predictable LAN address is recommended. A DHCP reservation on the router is often the simplest approach.
+```bash
+sudo apt update
+sudo apt upgrade
+```
 
-What you'll learn: SSH, headless administration, hostnames, IP addressing, Linux users, permissions, and systemd.
+Enable SSH using the current Raspberry Pi OS configuration tools.
 
-Possible upgrades: Add Samba, backups, Docker, Pi-hole, monitoring, or WireGuard.
+Check the hostname:
 
-«Why this is an IT project: The Raspberry Pi becomes a managed Linux server rather than simply controlling external hardware.»
-
----
-
-2. Pi-hole DNS Ad Blocker
-
-What it does: Filters DNS requests using configured blocklists.
-
-Why it's useful: DNS filtering can apply to many devices across a network without requiring a separate browser extension on every client.
-
-Hardware: Raspberry Pi 3 or newer; a Raspberry Pi Zero 2 W can also handle this lightweight workload.
-
-Difficulty: Beginner.
-
-Main software: Pi-hole.
-
-Storage: Relatively small for a typical installation; allow room for logs and the blocklist database.
-
-Networking: The Pi should have a predictable IP address, normally through a DHCP reservation or static configuration.
-
-What you'll learn: DNS, DHCP, DNS filtering, client/server networking, and troubleshooting.
-
-Possible upgrades: Local DNS records, filtering groups, redundancy with a second Pi-hole, or integration with a VPN.
-
-«Why this is an IT project: The Raspberry Pi becomes a network service that participates in DNS resolution for other devices.»
-
----
-
-3. Raspberry Pi NAS with Samba
-
-What it does: Provides network file shares accessible from compatible Windows, macOS, and Linux clients.
-
-Why it's useful: It creates centralized storage without requiring a dedicated NAS appliance.
-
-Hardware: Raspberry Pi 4 or 5 with external USB 3.0 storage.
-
-Difficulty: Beginner–Intermediate.
-
-Main software: Samba.
-
-Storage: Determined primarily by the external drive capacity.
-
-Networking: Gigabit Ethernet strongly recommended.
-
-What you'll learn: Filesystems, mount points, Linux permissions, Samba configuration, and network file sharing.
-
-Possible upgrades: Automated backups, monitoring, additional storage, or remote access through WireGuard.
-
-«Important: A NAS is not automatically a backup. If the only copy of a file is stored on the NAS, a drive failure can still result in data loss.»
-
----
-
-4. Automated Backup Server with rsync
-
-What it does: Synchronizes files from computers or other servers to a dedicated backup destination.
-
-Why it's useful: Provides scriptable, automated backups without requiring a commercial backup platform.
-
-Hardware: Raspberry Pi 4 or 5 with dedicated external storage.
-
-Difficulty: Intermediate.
-
-Main software: "rsync" and a scheduler such as cron.
-
-Storage: Depends on source data and retention policy. Multiple retained copies can require substantially more storage than a simple mirror.
-
-Networking: LAN connection; SSH can be used when transferring data from remote Linux systems.
-
-What you'll learn: "rsync", exclusions, scheduling, retention, snapshots, and recovery.
-
-Possible upgrades: Incremental snapshots using "--link-dest", encrypted backups, off-site replication, and backup monitoring.
-
-«Important: A mirror and a backup are not necessarily the same thing. Options such as "--delete" should only be used after understanding their effect.»
-
----
-
-5. WireGuard VPN Server
-
-What it does: Provides an encrypted connection from remote devices to your home network.
-
-Why it's useful: It can provide remote access to internal services without exposing each service directly to the Internet.
-
-Hardware: Raspberry Pi 4 or 5.
-
-Difficulty: Intermediate.
-
-Main software: WireGuard.
-
-Storage: Negligible for the VPN itself.
-
-Networking: Requires appropriate router configuration for remote access and potentially dynamic DNS if your public IP address changes.
-
-What you'll learn: Public/private keys, VPN architecture, routing, NAT, firewall concepts, and remote access.
-
-Possible upgrades: Multiple peers, split tunneling, remote DNS through Pi-hole, or routing additional networks.
-
-«Why this is an IT project: You are designing a real network tunnel with authentication, routing, and security controls.»
-
----
-
-6. Network Monitoring with Prometheus and Grafana
-
-What it does: Collects time-series metrics and displays them in dashboards.
-
-Why it's useful: It lets you see how systems behave over time instead of troubleshooting only after something fails.
-
-Hardware: Raspberry Pi 4 or 5. More RAM and SSD storage become useful as the number of monitored systems and retention period increase.
-
-Difficulty: Intermediate–Advanced.
-
-Main software: Prometheus, Node Exporter, Grafana.
-
-Storage: Depends on scrape frequency, number of metrics, monitored hosts, and retention period. SSD storage is preferable for long-running deployments.
-
-Networking: The monitoring server must be able to reach the exporter endpoints.
-
-What you'll learn: Metrics, time-series data, PromQL, dashboards, and observability.
-
-Possible upgrades: Alertmanager, multiple Linux hosts, Docker monitoring, and network-service checks.
-
----
-
-7. Docker Home Server
-
-What it does: Runs multiple applications in isolated containers.
-
-Why it's useful: Containers make it easier to deploy, update, remove, and reproduce services.
-
-Hardware: Raspberry Pi 4 with sufficient RAM or Raspberry Pi 5.
-
-Difficulty: Intermediate.
-
-Main software: Docker Engine and Docker Compose.
-
-Storage: Depends on images, logs, volumes, and application data.
-
-Networking: LAN is sufficient for local services. Remote access requires additional security planning.
-
-What you'll learn: Containers, images, volumes, networks, environment variables, and application deployment.
-
-Possible upgrades: Reverse proxy, centralized logging, monitoring, and automated updates where appropriate.
-
-«Important: Always verify that a Docker image supports your Raspberry Pi's CPU architecture. Not every image published for Docker supports ARM.»
-
----
-
-8. Nextcloud Personal Cloud
-
-What it does: Provides self-hosted file synchronization, sharing, calendars, contacts, and collaboration features.
-
-Why it's useful: It provides an alternative to relying entirely on third-party cloud storage.
-
-Hardware: Raspberry Pi 5 preferred for a new multi-service deployment; Raspberry Pi 4 can be suitable for smaller installations.
-
-Difficulty: Advanced.
-
-Main software: Nextcloud plus its supported web-server, PHP, and database components.
-
-Storage: Determined by the amount of user data and retention requirements. SSD strongly recommended.
-
-Networking: Ethernet recommended. Remote access requires careful HTTPS and network-security planning; WireGuard is an alternative when the goal is private remote access.
-
-What you'll learn: Web applications, databases, PHP, persistent storage, authentication, HTTPS, and application administration.
-
-Possible upgrades: Reverse proxy, automated backups, monitoring, external storage, and VPN access.
-
----
-
-9. Local DNS Server
-
-What it does: Resolves names for devices and services on your local network.
-
-Why it's useful: You can access services by name rather than remembering IP addresses.
-
-For example:
-
-nas.home.arpa
-monitor.home.arpa
-server.home.arpa
-
-Hardware: Raspberry Pi 3 or newer.
-
-Difficulty: Intermediate.
-
-Main software: DNS software such as "dnsmasq", or local DNS functionality provided by Pi-hole.
-
-Storage: Negligible for typical configurations.
-
-Networking: Predictable IP address required; clients must use the DNS service.
-
-What you'll learn: DNS records, name resolution, caching, local naming, and DHCP/DNS relationships.
-
-Possible upgrades: Integrate local DNS with Pi-hole, Docker, VPN clients, and internal applications.
-
----
-
-10. Raspberry Pi Network Utility / Diagnostic Server
-
-What it does: Provides an always-available system for network diagnostics, latency tests, bandwidth testing, service checks, and troubleshooting.
-
-Why it's useful: Historical data can help identify intermittent problems that are difficult to diagnose by running a test only when the problem is happening.
-
-Hardware: Raspberry Pi 3 or newer. A second network interface can be useful for specific network-topology experiments.
-
-Difficulty: Intermediate.
-
-Main software: Tools such as "iperf3", "nmap", Smokeping, and standard Linux networking utilities.
-
-Storage: Relatively small for basic diagnostics; more storage is required if retaining long-term logs and metrics.
-
-Networking: LAN access to systems being tested.
-
-What you'll learn: Network diagnostics, ports, DNS, latency, packet loss, scripting, and troubleshooting.
-
-Possible upgrades: Feed metrics into Prometheus and Grafana for historical dashboards.
-
----
-
-Raspberry Pi IT Projects Comparison
-
-Project| Difficulty| Main software| Storage| Best for
-Home Server| Beginner| Raspberry Pi OS, SSH| 16–32GB| Learning Linux and server administration
-Pi-hole| Beginner| Pi-hole| A few GB| Network-wide DNS filtering
-NAS with Samba| Beginner–Intermediate| Samba| Drive-dependent| Central file storage
-Backup Server| Intermediate| rsync, cron| Depends on retention| Automated backups
-WireGuard VPN| Intermediate| WireGuard| Negligible| Secure remote access
-Prometheus + Grafana| Intermediate–Advanced| Prometheus, Grafana| A few GB+| Monitoring and observability
-Docker Home Server| Intermediate| Docker, Compose| Varies| Self-hosted services
-Nextcloud| Advanced| Nextcloud, database| Generous| Personal cloud
-Local DNS| Intermediate| dnsmasq / Pi-hole| Negligible| Internal hostname resolution
-Network Diagnostic Server| Intermediate| iperf3, nmap, Smokeping| Small| Network troubleshooting
-
-Featured Practical Builds
-
-Raspberry Pi Home Server: The Foundation
-
-The home server is the best place to start because nearly every other project depends on the same fundamentals.
-
-You want three things to be reliable before adding more services:
-
-1. The Raspberry Pi boots consistently.
-2. You can connect over SSH.
-3. The Raspberry Pi has a predictable network address.
-
-Enable SSH
-
-On Raspberry Pi OS, SSH can be enabled through Raspberry Pi configuration tools.
-
-For an existing installation, you can use:
-
-sudo raspi-config
-
-Then navigate to the SSH option and enable the service.
-
-Afterwards, connect from another computer:
-
-ssh username@192.168.1.50
-
-Replace the username and address with those used by your system.
-
-Recent Raspberry Pi OS installations don't necessarily use a default "pi" account, so use the account you created during setup.
-
-Configure a hostname
-
-A meaningful hostname makes administration easier.
-
-For example:
-
-home-server
-
-You can inspect the current hostname with:
-
+```bash
 hostname
+```
 
-And view the machine's IP addresses with:
+Check the network address:
 
+```bash
 hostname -I
+```
 
-Use a DHCP reservation
+For a server, you normally want a **predictable IP address**. A DHCP reservation configured on your router is often simpler than manually configuring a static IP on the Raspberry Pi.
 
-A server needs a predictable address, but that doesn't mean you always need to manually configure a static IP on the Raspberry Pi.
-
-A DHCP reservation on your router is often simpler.
-
-For example:
-
-Hostname: home-server
-Reserved address: 192.168.1.50
-
-The router continues managing DHCP while reserving the same address for the Raspberry Pi.
-
-This approach also avoids tying your server configuration too closely to a particular Linux networking configuration.
-
-Add Samba
+### Adding Samba
 
 Install Samba:
 
+```bash
 sudo apt update
 sudo apt install samba
+```
 
 Create a directory:
 
+```bash
 sudo mkdir -p /srv/shared
-sudo chown -R $USER:$USER /srv/shared
+```
 
-Edit:
+Assign ownership:
 
-sudo nano /etc/samba/smb.conf
+```bash
+sudo chown yourusername:yourusername /srv/shared
+```
 
-A representative share:
+Edit `/etc/samba/smb.conf` and add:
 
+```ini
 [Shared]
     path = /srv/shared
     browseable = yes
     read only = no
     valid users = yourusername
+```
 
-The important settings are:
+Add the Samba password:
 
-- "path" — filesystem directory being shared
-- "browseable" — controls whether the share is visible when browsing
-- "read only" — controls whether the share is read-only
-- "valid users" — restricts access to specified users
-
-Create a Samba password for the account:
-
+```bash
 sudo smbpasswd -a yourusername
+```
 
-Validate the configuration:
+Check the configuration:
 
+```bash
 testparm
+```
 
-Then restart Samba:
+Restart Samba:
 
+```bash
 sudo systemctl restart smbd
+```
 
-The Linux filesystem permissions still apply, so Samba does not override the underlying operating-system permissions.
+This simple setup gives you a useful Linux server while introducing concepts that apply to larger environments.
+
+### Why this is an IT project
+
+Instead of treating the Raspberry Pi as a microcontroller, you are using it as infrastructure.
+
+You are managing:
+
+- A Linux operating system
+- Network services
+- User accounts
+- Permissions
+- Server processes
+- Shared storage
+
+### Possible upgrades
+
+You can later add:
+
+- Pi-hole
+- WireGuard
+- Docker
+- Network monitoring
+- Automated backups
+- Additional storage
 
 ---
 
-Pi-hole: Network-Wide DNS Filtering
+## 2. Pi-hole DNS Ad Blocker
 
-Pi-hole works by becoming a DNS resolver used by clients on your network.
+**Difficulty:** Beginner  
+**Recommended hardware:** Raspberry Pi 3 or newer, including Zero 2 W for lightweight installations  
+**Main software:** Pi-hole  
+**Storage:** Small  
+**Network:** Ethernet recommended
+
+Pi-hole turns the Raspberry Pi into a network-wide DNS filtering service.
+
+Instead of configuring every device individually, your router can send DNS requests to Pi-hole.
 
 The basic flow is:
 
-Client
+```text
+Device
+   |
+   v
+Router
    |
    v
 Pi-hole
    |
-   +---- blocked domain
+   v
+DNS resolver
    |
-   +---- allowed domain
-             |
-             v
-        Upstream DNS
+   v
+Internet
+```
 
-The important point is that installing Pi-hole doesn't automatically make every device use it.
+Pi-hole can block domains using configured blocklists and provide useful DNS statistics.
 
-Your router or individual clients need to be configured to use the Raspberry Pi's address for DNS.
+Because installation procedures can change, use the **current official Pi-hole installation instructions** rather than relying on an old installation command copied from a tutorial.
 
-Installation
+You should also give the Raspberry Pi a predictable network address, typically using a DHCP reservation or another appropriate network configuration.
 
-Pi-hole's installation procedure can change between releases.
+### Useful troubleshooting commands
 
-For that reason, use the current installation instructions from the official Pi-hole documentation rather than copying an old command from an unrelated article.
+Test network connectivity:
 
-This is particularly important for infrastructure software because installation scripts, supported operating systems, and configuration requirements can change.
-
-Configure the network
-
-Once Pi-hole is installed, configure your router's DHCP settings to advertise the Pi-hole address as the DNS server, if your router supports this.
-
-Alternatively, configure a test device manually first.
-
-For example:
-
-DNS server:
-192.168.1.50
-
-Troubleshooting Pi-hole
-
-Ads are still appearing
-
-The client may not be using Pi-hole.
-
-Check its DNS configuration.
-
-Some devices and applications can also use alternative DNS mechanisms, including encrypted DNS.
-
-DNS stops working
-
-Check that the Raspberry Pi itself can reach the network and that the configured upstream resolver is available.
-
-Useful tests include:
-
+```bash
 ping 1.1.1.1
+```
 
-and:
+Test DNS:
 
+```bash
 dig example.com
+```
 
-Only some devices are filtered
+If DNS filtering appears not to work, check whether clients are actually using Pi-hole for DNS.
 
-Check whether those devices have manually configured DNS settings.
+Some devices and applications can use encrypted DNS such as DNS-over-HTTPS, which can bypass network-level DNS filtering depending on their configuration.
 
-Also check whether your router is still advertising the intended DNS server through DHCP.
+### What you learn
 
-A website stops working
+Pi-hole teaches:
 
-A domain may have been blocked unintentionally.
+- DNS
+- Client/server communication
+- DHCP
+- Network configuration
+- DNS filtering
+- Troubleshooting
 
-Use Pi-hole's query and allow-list functionality to identify and handle legitimate exceptions.
+### Possible upgrades
+
+- Local DNS names
+- Different filtering groups
+- Multiple DNS servers
+- VPN integration
+- Monitoring
 
 ---
 
-WireGuard VPN: Secure Remote Access
+## 3. Raspberry Pi NAS with Samba
 
-A VPN provides an encrypted tunnel between a client and a VPN endpoint.
+**Difficulty:** Beginner–Intermediate  
+**Recommended hardware:** Raspberry Pi 4 or Raspberry Pi 5  
+**Main software:** Samba  
+**Storage:** USB 3 SSD or HDD  
+**Network:** Ethernet strongly recommended
 
-For a home network:
+A Raspberry Pi can provide network storage for computers on your home network.
 
+Typical uses include:
+
+- Shared documents
+- Media storage
+- Project files
+- Local archives
+- Development files
+
+A basic architecture looks like:
+
+```text
+Laptop ─────┐
+Desktop ────┼── Ethernet ── Raspberry Pi ── SSD/HDD
+Phone ──────┘
+```
+
+The Raspberry Pi runs Samba and exposes selected directories over the network.
+
+### Important: NAS is not backup
+
+If the Raspberry Pi contains the only copy of your files, the system is not a backup solution.
+
+A better design is:
+
+```text
+Computers
+    |
+    v
+Raspberry Pi NAS
+    |
+    v
+Backup storage
+```
+
+### What you learn
+
+- Linux filesystems
+- Mount points
+- File permissions
+- Network shares
+- Samba
+- Storage management
+
+### Possible upgrades
+
+- SSD storage
+- Automated backups
+- Multiple users
+- Monitoring
+- Off-site backups
+
+---
+
+## 4. Automated Backup Server with rsync
+
+**Difficulty:** Intermediate  
+**Recommended hardware:** Raspberry Pi 4 or Raspberry Pi 5  
+**Main software:** rsync and cron  
+**Storage:** Depends on source data and retention strategy  
+**Network:** Ethernet recommended
+
+A Raspberry Pi can become an automated backup server.
+
+The simplest architecture is:
+
+```text
+PCs / Servers
+      |
+      | rsync
+      v
+Raspberry Pi
+      |
+      v
+Backup storage
+```
+
+A basic rsync example is:
+
+```bash
+rsync -av --delete /source/ user@server:/backup/
+```
+
+Be careful with `--delete`: files removed from the source can also be removed from the destination.
+
+For recurring backups, cron can run rsync automatically.
+
+The amount of storage required depends on:
+
+- Source data size
+- Number of systems
+- Retention period
+- Backup frequency
+- Whether historical versions are retained
+
+For more advanced backup designs, `rsync --link-dest` can reduce additional storage requirements when many files remain unchanged between backup runs.
+
+### What you learn
+
+- rsync
+- Scheduling
+- Backup strategies
+- Retention
+- Recovery
+- Linux permissions
+
+A backup is only useful if you can restore from it, so test your recovery process.
+
+---
+
+# Intermediate Raspberry Pi IT Projects
+
+## 5. WireGuard VPN Server
+
+**Difficulty:** Intermediate  
+**Recommended hardware:** Raspberry Pi 4 or Raspberry Pi 5  
+**Main software:** WireGuard  
+**Storage:** Minimal  
+**Network:** Ethernet recommended
+
+A Raspberry Pi can provide secure remote access to your home network using WireGuard.
+
+A simplified architecture is:
+
+```text
 Phone / Laptop
-       |
-    Internet
-       |
-     Router
-       |
- Raspberry Pi
-   WireGuard
-       |
-   Home LAN
+      |
+   Internet
+      |
+      v
+Home Router
+      |
+      v
+Raspberry Pi
+  WireGuard
+      |
+      v
+Home Network
+```
 
-The Raspberry Pi acts as the VPN endpoint while phones, laptops, or other authorized devices act as peers.
+WireGuard uses cryptographic keys to authenticate peers.
 
-Generate WireGuard keys
+Generate a private key and public key with:
 
-After installing the WireGuard tools, generate a private key and corresponding public key:
-
+```bash
 umask 077
 wg genkey > privatekey
 wg pubkey < privatekey > publickey
+```
 
-The private key must remain secret.
+A representative server configuration might look like:
 
-Representative server configuration
-
-A simplified configuration might look like:
-
+```ini
 [Interface]
 Address = 10.8.0.1/24
 ListenPort = 51820
@@ -665,676 +476,650 @@ PrivateKey = SERVER_PRIVATE_KEY
 [Peer]
 PublicKey = CLIENT_PUBLIC_KEY
 AllowedIPs = 10.8.0.2/32
+```
 
-Here:
+Bring up the interface:
 
-- "Address" defines the VPN interface address.
-- "ListenPort" defines the UDP port used by WireGuard.
-- "PrivateKey" identifies the server.
-- "PublicKey" identifies the client peer.
-- "AllowedIPs" associates the client with its VPN address.
-
-This is a representative example, not a complete configuration for every network.
-
-Routing and firewall configuration depend on whether you want clients to access only the home LAN or route additional traffic through the VPN.
-
-Bring up the interface
-
-Once the configuration is complete:
-
+```bash
 sudo wg-quick up wg0
+```
 
-Check its state:
+Check its status:
 
+```bash
 sudo wg show
+```
 
-Router configuration
+Your router normally needs to forward the WireGuard UDP port to the Raspberry Pi.
 
-For remote access, the router normally needs to forward the WireGuard UDP port to the Raspberry Pi.
+If your public IP changes, dynamic DNS can provide a stable hostname.
 
-For example:
+### Important routing detail
 
-UDP 51820
-    |
-    v
-192.168.1.50
+A VPN does not automatically make every connection behave as if the client were physically plugged into the LAN.
 
-Only forward the VPN port that you actually need.
+The result depends on the WireGuard configuration, particularly:
 
-Avoid exposing SSH or unrelated management services directly to the Internet.
+- `AllowedIPs`
+- Routing
+- NAT
+- Firewall rules
+- Split-tunnel or full-tunnel design
 
-If your ISP changes your public IP address, a dynamic DNS service can provide a stable hostname for your VPN endpoint.
+### Security
 
-Security considerations
+Only expose the VPN port that you actually need. Do not expose SSH directly to the Internet just because you are running a VPN server.
 
-A VPN should still be maintained like any other Internet-facing service.
+### What you learn
 
-Keep the operating system updated and protect private keys.
-
-Also think carefully about which networks and services each VPN peer should be able to reach.
+- VPNs
+- Public/private keys
+- Routing
+- NAT
+- Firewall concepts
+- Remote access
 
 ---
 
-Network Monitoring with Prometheus and Grafana
+## 6. Raspberry Pi Network Monitoring with Prometheus and Grafana
 
-Monitoring is where a Raspberry Pi becomes a useful infrastructure observability platform.
+**Difficulty:** Intermediate–Advanced  
+**Recommended hardware:** Raspberry Pi 4 or Raspberry Pi 5  
+**Main software:** Prometheus, Node Exporter, Grafana  
+**Storage:** Depends on targets, scrape interval, and retention  
+**Network:** Ethernet recommended
 
-The architecture is:
+A Raspberry Pi can become a small observability server.
 
-Linux Host
+Prometheus collects metrics, while Grafana can visualize them in dashboards.
+
+A typical setup is:
+
+```text
+Raspberry Pi
     |
-Node Exporter
+    +---- Prometheus
     |
-    v
-Prometheus
+    +---- Grafana
     |
-    v
-Grafana
+    +---- Node Exporter
+              |
+              v
+       System metrics
+```
 
-Node Exporter exposes system metrics.
+You can also monitor multiple machines:
 
-Prometheus collects those metrics.
+```text
+Pi 1 ──┐
+Pi 2 ──┤
+Server ┼──> Prometheus ──> Grafana
+PC  ───┘
+```
 
-Grafana queries Prometheus and presents them in dashboards.
+A representative Prometheus configuration is:
 
-Monitor the Raspberry Pi
-
-Install Node Exporter using the current official Prometheus documentation and choose the appropriate ARM architecture for your Raspberry Pi.
-
-Then configure Prometheus to scrape the exporter.
-
-A representative configuration:
-
+```yaml
 scrape_configs:
   - job_name: "raspberry-pi"
     static_configs:
       - targets:
           - "192.168.1.50:9100"
+```
 
-The important fields are:
+Multiple targets can be added:
 
-- "job_name" — identifies the group of monitored targets.
-- "targets" — contains the hostname/IP and port of each exporter.
-
-Node Exporter commonly exposes metrics on port "9100".
-
-Monitor multiple systems
-
-You can extend the configuration:
-
+```yaml
 scrape_configs:
-  - job_name: "linux-servers"
+  - job_name: "home-lab"
     static_configs:
       - targets:
           - "192.168.1.50:9100"
           - "192.168.1.51:9100"
           - "192.168.1.52:9100"
+```
 
-This allows a single Raspberry Pi to monitor several Linux systems.
+Grafana includes a Prometheus data source, which can be configured to use an address such as:
 
-Add Grafana
-
-Configure Prometheus as a Grafana data source.
-
-If both services are running on the same Raspberry Pi, Prometheus is commonly accessible locally at:
-
+```text
 http://localhost:9090
+```
 
-From Grafana, you can build dashboards showing:
+when Prometheus and Grafana are running on the same Raspberry Pi.
 
-- CPU usage
-- memory
-- filesystem usage
-- network traffic
-- system load
-- uptime
+Use the current official documentation for installation commands because package versions and installation methods can change.
 
-For installation commands, use the current official Prometheus and Grafana documentation rather than relying on a fixed installation script. Repository configuration and release packaging can change over time.
+### What you learn
 
----
+- Metrics
+- Time-series databases
+- PromQL
+- Dashboards
+- System monitoring
+- Observability
 
-Raspberry Pi IT Projects for Beginners
+### Possible upgrades
 
-If you're new to Linux, don't start with Nextcloud or a complicated Docker stack.
-
-A better path is:
-
-1. Home Server
-
-Learn:
-
-- SSH
-- hostnames
-- IP addressing
-- users
-- permissions
-- services
-
-2. Pi-hole
-
-Then learn:
-
-- DNS
-- DHCP
-- network configuration
-
-3. Samba NAS
-
-Then learn:
-
-- storage
-- mounts
-- permissions
-- network shares
-
-These three projects establish the foundation for almost everything else in this article.
-
-[Internal Link: Raspberry Pi GPIO Guide]
-
-Intermediate Raspberry Pi IT Projects
-
-Once you're comfortable administering Linux, move to:
-
-- rsync backups
-- WireGuard
-- local DNS
-- Prometheus
-- Grafana
-- Docker
-
-These projects introduce concepts such as:
-
-- automation
-- VPNs
-- routing
-- monitoring
-- containers
-- service orchestration
-
-Advanced Raspberry Pi IT Projects
-
-Nextcloud is a good example of an advanced deployment because it combines several components.
-
-You need to understand:
-
-- Linux administration
-- persistent storage
-- web applications
-- databases
-- authentication
-- HTTPS
-- backups
-- application updates
-
-Docker can also become advanced when you operate many containers, persistent volumes, databases, reverse proxies, and external access.
+- Alertmanager
+- Multiple Raspberry Pis
+- Network device monitoring
+- Docker monitoring
+- Disk-space alerts
+- Temperature monitoring
 
 ---
 
-Combining Raspberry Pi IT Projects
+## 7. Raspberry Pi Docker Home Server
 
-The real power of these projects comes from combining them.
+**Difficulty:** Intermediate  
+**Recommended hardware:** Raspberry Pi 4 or Raspberry Pi 5  
+**Main software:** Docker and Docker Compose  
+**Storage:** Depends on containers and application data  
+**Network:** Ethernet recommended
+
+Docker makes it easier to run multiple applications on one Raspberry Pi.
+
+Instead of installing every application directly into the operating system, you can isolate services into containers.
 
 For example:
 
-                         Internet
-                            |
-                         Router
-                            |
-              +-------------+-------------+
-              |                           |
-           Pi-hole                    WireGuard
-              |                           |
-              +-------------+-------------+
-                            |
-                       Home Network
-                            |
-                     Raspberry Pi
-                       Home Server
-                            |
-              +-------------+-------------+
-              |             |             |
-            Samba         Docker      Monitoring
-                                          |
-                                      Prometheus
-                                          |
-                                       Grafana
+```text
+Raspberry Pi
+│
+├── Pi-hole
+├── Grafana
+├── Prometheus
+├── Home Assistant
+└── Other services
+```
 
-A second Raspberry Pi can handle backups:
+Docker introduces important concepts:
 
-Main Server
-     |
-   rsync
-     |
-     v
-Backup Raspberry Pi
-     |
- External SSD/HDD
+- Images
+- Containers
+- Volumes
+- Networks
+- Environment variables
+- Compose files
+- Application deployment
 
-This creates a small but realistic home IT environment.
+An SSD is particularly useful if containers write frequently to disk.
 
-You can then experiment with:
+### Possible upgrades
 
-- Linux administration
-- networking
-- storage
-- backups
-- VPNs
-- monitoring
-- containers
-- security
+A Docker home server can later include:
+
+- Reverse proxy
+- Monitoring
+- Centralized logs
+- Automatic updates
+- Multiple application stacks
 
 ---
 
-Raspberry Pi Network Diagnostic Server
+## 8. Raspberry Pi Local DNS Server
 
-A dedicated diagnostic Raspberry Pi can be surprisingly useful.
+**Difficulty:** Intermediate  
+**Recommended hardware:** Raspberry Pi 3 or newer  
+**Main software:** dnsmasq or Pi-hole  
+**Storage:** Minimal  
+**Network:** Ethernet recommended
 
-Some of the tools worth learning include:
+A local DNS server can make devices and services easier to access.
 
-ip addr
-ip route
-ping
-traceroute
-ss
-dig
-curl
-tcpdump
+Instead of remembering addresses such as:
 
-For example, check DNS:
+```text
+192.168.1.50
+192.168.1.51
+192.168.1.52
+```
 
-dig example.com
+you can use meaningful hostnames.
 
-Check listening services:
+For example:
 
-ss -tulpn
+```text
+nas.home
+server.home
+monitor.home
+```
 
-Test HTTP connectivity:
+A local DNS service can provide name resolution for your internal network.
 
-curl -I https://example.com
+### What you learn
 
-Test network throughput between two systems using "iperf3":
+- DNS records
+- Name resolution
+- DNS caching
+- DHCP/DNS relationships
+- Internal networking
 
-iperf3 -s
-
-on the server, and:
-
-iperf3 -c 192.168.1.50
-
-on the client.
-
-Only run network scans such as "nmap" against systems and networks you own or have explicit permission to test.
-
-This project can eventually feed measurements into Prometheus and Grafana, turning occasional diagnostics into historical network data.
+This project also works particularly well alongside Pi-hole or a home server.
 
 ---
 
-Security Basics for Raspberry Pi Servers
+# Advanced Raspberry Pi IT Projects
 
-Once your Raspberry Pi becomes an always-on server, treat it like a real computer rather than an experiment.
+## 9. Nextcloud Personal Cloud
 
-Keep the operating system updated
+**Difficulty:** Advanced  
+**Recommended hardware:** Raspberry Pi 5 preferred; Raspberry Pi 4 for smaller installations  
+**Main software:** Nextcloud plus a supported web server, PHP, and database  
+**Storage:** SSD strongly recommended  
+**Network:** Ethernet strongly recommended
 
-A basic update process is:
+Nextcloud can turn a Raspberry Pi into a self-hosted personal cloud.
 
+Depending on the deployment, it can provide:
+
+- File synchronization
+- File sharing
+- Calendars
+- Contacts
+- Collaboration features
+
+A simplified architecture is:
+
+```text
+Phone / Laptop
+      |
+   Internet
+      |
+      v
+Reverse Proxy / Web Server
+      |
+      v
+   Nextcloud
+      |
+      +---- Database
+      |
+      +---- SSD Storage
+```
+
+For a serious installation, use a supported 64-bit operating system and pay attention to the current Nextcloud system requirements.
+
+An SSD is strongly recommended because Nextcloud can generate substantial filesystem and database activity.
+
+### What you learn
+
+- Web servers
+- PHP
+- Databases
+- Authentication
+- HTTPS
+- Storage
+- Application administration
+
+### Possible upgrades
+
+- Reverse proxy
+- HTTPS
+- Automated backups
+- Monitoring
+- External storage
+- VPN access
+
+---
+
+## 10. Raspberry Pi Network Utility and Diagnostic Server
+
+**Difficulty:** Intermediate  
+**Recommended hardware:** Raspberry Pi 3 or newer  
+**Main software:** iperf3, nmap, Smokeping, and Linux networking tools  
+**Storage:** Small  
+**Network:** Ethernet strongly recommended
+
+A Raspberry Pi can be kept permanently connected to your network as a diagnostic appliance.
+
+Useful tools include:
+
+- `ping`
+- `dig`
+- `ss`
+- `ip`
+- `traceroute`
+- `iperf3`
+- `nmap`
+- Smokeping
+
+For example, `iperf3` can help measure network throughput between two endpoints.
+
+You can also use the Raspberry Pi to investigate:
+
+- DNS problems
+- Open ports
+- Latency
+- Packet loss
+- Network throughput
+- Connectivity issues
+
+This is particularly useful in a home lab because the diagnostic machine is always available.
+
+---
+
+# Raspberry Pi IT Projects Comparison
+
+| Project | Difficulty | Main software | Storage | Best for |
+|---|---|---|---|---|
+| Home Server | Beginner | Raspberry Pi OS, SSH, Samba | Low–Medium | Learning Linux administration |
+| Pi-hole | Beginner | Pi-hole | Low | DNS filtering |
+| NAS | Beginner–Intermediate | Samba | High | Network storage |
+| Backup Server | Intermediate | rsync, cron | High | Automated backups |
+| WireGuard VPN | Intermediate | WireGuard | Low | Secure remote access |
+| Monitoring | Intermediate–Advanced | Prometheus, Grafana | Medium | Observability |
+| Docker Server | Intermediate | Docker | Medium–High | Running multiple services |
+| Local DNS | Intermediate | dnsmasq/Pi-hole | Low | Internal networking |
+| Nextcloud | Advanced | Nextcloud, PHP, database | High | Self-hosted cloud |
+| Network Utility Server | Intermediate | iperf3, nmap, Smokeping | Low | Network diagnostics |
+
+---
+
+# Build a Raspberry Pi Home Lab
+
+The most interesting approach is not necessarily to run every service on one Raspberry Pi.
+
+You can gradually build a small home laboratory.
+
+For example:
+
+```text
+                    Home Network
+                         |
+                 ┌───────┴───────┐
+                 |               |
+              Router          Switch
+                 |               |
+             Pi-hole        ┌─────┴─────┐
+                            |           |
+                         Server       NAS
+                            |
+                    ┌───────┼────────┐
+                    |       |        |
+                 Docker  Monitoring  VPN
+```
+
+You can start with one Raspberry Pi and add services as you learn.
+
+A more advanced setup could use multiple Raspberry Pis:
+
+```text
+Pi 1 → DNS / Pi-hole
+Pi 2 → Docker services
+Pi 3 → Monitoring
+Pi 4 → Storage / backups
+```
+
+This gives you experience with distributed services, networking, monitoring, and failure isolation.
+
+---
+
+# Raspberry Pi IT Projects and Security
+
+A useful server should also be a secure server.
+
+At minimum:
+
+### Keep the operating system updated
+
+```bash
 sudo apt update
 sudo apt upgrade
+```
 
-Protect SSH
+### Protect SSH
 
-Avoid exposing SSH directly to the Internet unless there is a specific reason to do so.
+Use strong authentication and avoid exposing SSH directly to the public Internet unless you have a specific reason and understand the risks.
 
-For remote administration, a VPN can provide a controlled access path.
+### Minimize Internet exposure
 
-Use strong authentication
+Only expose services that need external access.
 
-Use strong passwords and, where appropriate, SSH keys.
+For remote access, a VPN is generally preferable to exposing multiple internal services.
 
-Don't leave unnecessary accounts or services enabled.
+### Back up configuration
 
-Minimize exposed services
+Depending on your setup, important backup targets can include:
 
-If you need remote access, avoid forwarding every application port through your router.
+- `/etc/`
+- Docker Compose files
+- Application configuration
+- Database backups
+- Samba configuration
+- WireGuard configuration
+- Prometheus configuration
 
-A better architecture can be:
+### Monitor the server
 
-Internet
-   |
-WireGuard
-   |
-Home Network
-   |
-Internal Services
+A service that silently fails is difficult to trust.
 
-Back up configuration
+Monitoring can help detect:
 
-Don't only back up personal files.
-
-Depending on your setup, consider backing up:
-
-/etc/
-Docker Compose files
-Application configuration
-Database backups
-Samba configuration
-WireGuard configuration
-Prometheus configuration
-
-The exact backup set depends on which services you operate.
+- Disk-space problems
+- High CPU usage
+- Memory pressure
+- Network failures
+- Service failures
+- Temperature problems
 
 ---
 
-Troubleshooting Raspberry Pi IT Projects
+# Raspberry Pi Server Troubleshooting
 
-When something stops working, avoid immediately reinstalling it.
+When something stops working, troubleshoot from the bottom up.
 
-Work through the system layer by layer.
+A useful model is:
 
-1. Is the Raspberry Pi running?
-
-uptime
-
-2. Does it have an IP address?
-
-hostname -I
-
-3. Is the local network reachable?
-
-ping 192.168.1.1
-
-Replace the address with your actual router address.
-
-4. Is DNS working?
-
-dig example.com
-
-5. Is the service running?
-
-systemctl status SERVICE_NAME
-
-6. Is the expected port listening?
-
-ss -tulpn
-
-7. Are there useful logs?
-
-journalctl -u SERVICE_NAME
-
-This gives you a repeatable troubleshooting model:
-
+```text
 Hardware
    ↓
-Operating system
+Operating System
    ↓
 Network
    ↓
 Service
    ↓
 Application
+```
 
-Learning to isolate problems systematically is one of the most valuable skills these Raspberry Pi IT projects can teach.
+Start with basic checks.
 
----
+### Check uptime
 
-Building These Projects with Embedded Nerd
+```bash
+uptime
+```
 
-The role of Embedded Nerd is to make the practical implementation easier to follow.
+### Check the IP address
 
-A pillar article like this helps answer:
+```bash
+hostname -I
+```
 
-What should I build?
+### Test the router
 
-The individual tutorials can then answer:
+```bash
+ping 192.168.1.1
+```
 
-How exactly do I build it?
+### Test DNS
 
-Depending on the project, Embedded Nerd can provide:
+```bash
+dig example.com
+```
 
-- annotated diagrams
-- configuration examples
-- ready-to-run code
-- command explanations
-- troubleshooting guides
-- calculators and tools
-- Raspberry Pi tutorials
-- ESP32 tutorials
-- Arduino tutorials
+### Check a service
 
-For example, a Raspberry Pi monitoring server could collect data from an ESP32 sensor node, combining IT infrastructure with embedded hardware.
+```bash
+systemctl status SERVICE_NAME
+```
 
-[Internal Link: Raspberry Pi GPIO Guide]
+### Check listening ports
 
-[Internal Link: ESP32 Projects]
+```bash
+ss -tulpn
+```
 
-Hardware-focused articles can also provide a natural bridge between Embedded Nerd's electronics and IT content.
+### Check service logs
 
-[Internal Link: MPU6050 Calibration]
+```bash
+journalctl -u SERVICE_NAME
+```
 
-[Internal Link: I2C Pull-up Resistor Calculator]
-
-Only add these links when they genuinely help the reader continue their project.
-
----
-
-Which Raspberry Pi IT Project Should You Start With?
-
-New to Linux?
-
-Start with the Raspberry Pi Home Server.
-
-Get SSH, hostname configuration, networking, users, permissions, and basic services working before adding anything complicated.
-
-Want a useful household project?
-
-Try Pi-hole.
-
-It provides a practical reason to learn DNS and network configuration.
-
-Need centralized storage?
-
-Build the Raspberry Pi NAS with Samba and connect an external SSD or HDD.
-
-Want to learn backups?
-
-Build the rsync Backup Server.
-
-Spend as much time testing restoration as you do configuring the backup itself.
-
-Want secure remote access?
-
-Build a WireGuard VPN after you're comfortable with basic Linux networking.
-
-Want to learn monitoring?
-
-Build Prometheus and Grafana.
-
-It's an excellent introduction to metrics, observability, dashboards, and infrastructure monitoring.
-
-Want to run several services?
-
-Move to Docker.
-
-Start with one or two containers and learn how volumes, networks, logs, and updates work before building a large stack.
-
-Want a self-hosted cloud?
-
-Try Nextcloud once you're comfortable with Linux, storage, databases, backups, and application administration.
+This layered approach prevents you from debugging an application when the actual problem is a network connection or operating-system failure.
 
 ---
 
-Frequently Asked Questions
+# Connecting Raspberry Pi IT Projects with Embedded Nerd
 
-What can a Raspberry Pi be used for in IT?
+The strongest approach for Embedded Nerd is to use this article as a **pillar page**.
 
-A Raspberry Pi can run real IT services at home or in a small lab, including DNS filtering, file sharing, VPN endpoints, backup automation, container hosting, network monitoring, and self-hosted applications.
+This page answers:
 
-It provides a practical environment for learning Linux administration, networking, storage, security, and troubleshooting.
+> **What Raspberry Pi IT project should I build?**
 
-Can a Raspberry Pi be used as a server?
+Individual tutorials can then answer:
 
-Yes. Raspberry Pi 4 and Raspberry Pi 5 systems can run many lightweight server workloads, including SSH, Samba, DNS, VPN software, monitoring tools, Docker containers, and self-hosted applications.
+> **How exactly do I build it?**
 
-The appropriate model depends on the workload and number of services.
+That creates a natural content cluster.
 
-Can Raspberry Pi run Pi-hole?
+For example:
 
-Yes. Pi-hole is designed to run on Raspberry Pi and is a relatively lightweight workload.
+```text
+Raspberry Pi IT Projects
+│
+├── Raspberry Pi Home Server Setup
+├── Raspberry Pi NAS with Samba
+├── Raspberry Pi WireGuard VPN
+├── Pi-hole Installation
+├── Prometheus + Grafana Monitoring
+├── Raspberry Pi Docker Home Server
+├── Raspberry Pi rsync Backup Server
+├── Raspberry Pi Local DNS
+└── Raspberry Pi Network Diagnostics
+```
 
-The important networking requirement is that clients must actually use the Raspberry Pi as their DNS server.
+Add internal links when they genuinely help the reader, including relevant Embedded Nerd content such as:
 
-Can Raspberry Pi run a VPN?
+- `[Internal Link: Raspberry Pi Pico Projects]`
+- `[Internal Link: Raspberry Pi GPIO Guide]`
+- `[Internal Link: ESP32 Projects]`
+- `[Internal Link: MPU6050 Calibration]`
+- `[Internal Link: I2C Pull-up Resistor Calculator]`
 
-Yes. WireGuard can run on Raspberry Pi and provide secure remote access to a home network.
-
-A complete deployment requires peer keys, addressing, routing, firewall configuration, and appropriate router configuration for remote access.
-
-Is Raspberry Pi good for network monitoring?
-
-Yes. Raspberry Pi 4 and Raspberry Pi 5 systems can run monitoring software such as Prometheus, Node Exporter, and Grafana for small home networks and labs.
-
-Larger deployments with many targets or long retention periods benefit from additional memory and SSD storage.
-
-Do I need a static IP for these Raspberry Pi projects?
-
-Not necessarily.
-
-What matters is that services such as Pi-hole, WireGuard, NAS, and local DNS have a predictable address.
-
-For many home networks, a DHCP reservation on the router is simpler than manually configuring a static IP on the Raspberry Pi.
-
-Is a microSD card reliable enough for a Raspberry Pi server?
-
-A microSD card can be suitable for the operating system and lightweight services.
-
-For write-intensive workloads such as databases, Nextcloud, or long-term monitoring, an external SSD is generally a better choice for the main data volume.
-
-Regardless of storage type, important data should be backed up.
-
-Can I run multiple Raspberry Pi IT projects on the same Raspberry Pi?
-
-Yes.
-
-Lightweight services such as Pi-hole, WireGuard, Samba, and some monitoring workloads can coexist on a sufficiently capable Raspberry Pi.
-
-Docker can make multi-service deployments easier to manage, although containers do not remove the need to consider CPU, memory, storage, networking, security, and application dependencies.
+Do not add unrelated links simply to increase the number of internal links.
 
 ---
 
-Conclusion
+# Future Raspberry Pi IT Articles
 
-The most useful Raspberry Pi IT projects are the ones that treat the Raspberry Pi as infrastructure rather than simply as an electronics controller.
+This pillar page can support several focused tutorials:
 
-A single board can become a:
+1. **Raspberry Pi Home Server Setup: Complete Beginner's Guide**
+2. **Raspberry Pi NAS with Samba: Step-by-Step Guide**
+3. **Raspberry Pi WireGuard VPN Server: Complete Tutorial**
+4. **How to Install Pi-hole on Raspberry Pi**
+5. **Raspberry Pi Prometheus and Grafana Monitoring Tutorial**
+6. **Raspberry Pi Docker Home Server: Beginner's Guide**
+7. **Raspberry Pi Backup Server with rsync**
+8. **Raspberry Pi Local DNS Server for Home Networks**
+9. **Raspberry Pi Network Monitoring and Diagnostic Tools**
+10. **Raspberry Pi SSD Storage and Boot Guide**
+11. **Raspberry Pi Home Lab: Build a Mini IT Laboratory**
+12. **Raspberry Pi Server Security: SSH, Firewall, Updates and Backups**
 
-- Linux home server
-- DNS filtering server
-- NAS
-- backup server
-- WireGuard VPN
-- monitoring platform
-- Docker host
-- personal cloud
-- local DNS server
-- network diagnostic appliance
-
-More importantly, each project teaches skills that transfer beyond Raspberry Pi.
-
-You'll learn how to manage Linux, configure networks, work with storage, secure services, automate backups, monitor systems, troubleshoot failures, and deploy self-hosted applications.
-
-Start with the home server if you're new to Linux. Add services gradually and choose projects that solve problems you actually have.
-
-As the individual Embedded Nerd tutorials are developed, they can take each project further with complete configurations, diagrams, troubleshooting procedures, and practical examples.
-
-The result is not just a collection of Raspberry Pi projects. It's a small IT laboratory that you can build, break, troubleshoot, and improve over time.
+These individual articles can link back to this pillar page and to each other where relevant.
 
 ---
 
-SEO Information
+# Which Raspberry Pi IT Project Should You Start With?
 
-SEO Title
+Choose the project based on what you want to learn.
 
-Raspberry Pi IT Projects: Home Server, Pi-hole, VPN & Monitoring
+**New to Linux?**  
+Start with a **Raspberry Pi Home Server**.
 
-Meta Description
+**Want something useful for the entire household?**  
+Build **Pi-hole**.
 
-Explore practical Raspberry Pi IT projects for home servers, Pi-hole, NAS, backups, WireGuard VPN, Docker, monitoring, DNS, and self-hosting.
+**Need centralized file storage?**  
+Build a **Raspberry Pi NAS with Samba**.
 
-Suggested URL Slug
+**Want automated backups?**  
+Build an **rsync backup server**.
 
-/raspberry-pi-it-projects/
+**Need secure remote access?**  
+Build a **WireGuard VPN server**.
 
-Suggested Excerpt
+**Want to learn observability?**  
+Build **Prometheus and Grafana monitoring**.
 
-Real Raspberry Pi IT projects for home servers, networking, storage, and self-hosting — with hardware picks, commands, and difficulty ratings for beginners through advanced users.
+**Want to run multiple services?**  
+Build a **Docker home server**.
 
-Primary Keyword
+**Want your own cloud?**  
+Try **Nextcloud**.
 
-raspberry pi it projects
+The important part is not how many services you install. Start with one project, understand how it works, secure it, monitor it, and then build outward.
 
-Secondary Keywords
+---
 
-raspberry pi projects
-raspberry pi projects for beginners
-useful raspberry pi projects
-raspberry pi home server
-raspberry pi home server setup
-raspberry pi server projects
-raspberry pi projects server
-raspberry pi projects network
-raspberry pi networking projects
-raspberry pi NAS
-raspberry pi Samba
-raspberry pi backup server
-raspberry pi rsync
-raspberry pi Pi-hole
-raspberry pi VPN
-raspberry pi WireGuard
-raspberry pi network monitoring
-raspberry pi Prometheus Grafana
-raspberry pi Docker
-raspberry pi Nextcloud
-raspberry pi DNS server
-raspberry pi home lab
-raspberry pi self hosted server
-raspberry pi Linux projects
+# Conclusion
 
-Suggested Internal Links
+The Raspberry Pi is capable of being much more than an electronics project platform.
 
-[Internal Link: Raspberry Pi Pico Projects]
-[Internal Link: Raspberry Pi GPIO Guide]
-[Internal Link: ESP32 Projects]
-[Internal Link: MPU6050 Calibration]
-[Internal Link: I2C Pull-up Resistor Calculator]
+With the right software and storage, it can become:
 
-Recommended contextual placement:
+- A Linux home server
+- A DNS filtering appliance
+- A NAS
+- A backup server
+- A WireGuard VPN endpoint
+- A monitoring platform
+- A Docker host
+- A personal cloud
+- A local DNS server
+- A network diagnostic appliance
 
-- Raspberry Pi Pico Projects — when distinguishing Raspberry Pi computers from Pico microcontrollers.
-- Raspberry Pi GPIO Guide — when explaining the difference between electronics and IT projects.
-- ESP32 Projects — when discussing Raspberry Pi + ESP32 monitoring or sensor architectures.
-- MPU6050 Calibration — only where the article naturally discusses sensor nodes.
-- I2C Pull-up Resistor Calculator — only in hardware/I2C crossover content.
+These **Raspberry Pi IT projects** are valuable because they teach skills that extend beyond the Raspberry Pi itself.
 
-Suggested Future Embedded Nerd Articles
+You learn Linux administration, networking, storage, security, automation, monitoring, and self-hosting while building infrastructure that can actually be useful at home.
 
-1. Raspberry Pi Home Server Setup: Complete Beginner's Guide
-2. Raspberry Pi NAS with Samba: Step-by-Step Guide
-3. Raspberry Pi WireGuard VPN Server: Complete Tutorial
-4. How to Install Pi-hole on Raspberry Pi
-5. Raspberry Pi Prometheus and Grafana Monitoring Tutorial
-6. Raspberry Pi Docker Home Server: Beginner's Guide
-7. Raspberry Pi Backup Server with rsync
-8. Raspberry Pi Local DNS Server for Home Networks
-9. Raspberry Pi Network Monitoring and Diagnostic Tools
-10. Raspberry Pi SSD Storage and Boot Guide
-11. Raspberry Pi Home Lab: Build a Mini IT Laboratory
-12. Raspberry Pi Server Security: SSH, Firewall, Updates and Backups
+Start small, build one service properly, and turn your Raspberry Pi into your own little IT laboratory.
 
-FAQ Schema Questions
+---
 
-What can a Raspberry Pi be used for in IT?
-Can a Raspberry Pi be used as a server?
-Can Raspberry Pi run Pi-hole?
-Can Raspberry Pi run a VPN?
-Is Raspberry Pi good for network monitoring?
-Do I need a static IP for Raspberry Pi projects?
-Is a microSD card reliable enough for a Raspberry Pi server?
-Can I run multiple Raspberry Pi IT projects on the same Raspberry Pi?
+# FAQ
+
+## What can a Raspberry Pi be used for in IT?
+
+A Raspberry Pi can run lightweight servers and infrastructure services such as DNS filtering, network storage, backups, VPNs, monitoring, Docker containers, local DNS, and self-hosted applications.
+
+## Can a Raspberry Pi be used as a server?
+
+Yes. Raspberry Pi computers can run Linux server software and provide services over a local network or, with appropriate security and configuration, remotely.
+
+## Can Raspberry Pi run Pi-hole?
+
+Yes. Pi-hole is designed to run on supported Raspberry Pi hardware and can provide DNS-based network filtering.
+
+## Can Raspberry Pi run a VPN?
+
+Yes. WireGuard is one option for running a VPN endpoint on a Raspberry Pi. The exact setup depends on routing, firewall, NAT, and whether you want split-tunnel or full-tunnel access.
+
+## Is Raspberry Pi good for network monitoring?
+
+Yes. A Raspberry Pi 4 or Raspberry Pi 5 can run lightweight monitoring stacks such as Prometheus and Grafana, depending on the number of monitored targets, retention settings, and workload.
+
+## Do I need a static IP for these Raspberry Pi projects?
+
+Not necessarily. Many home networks can use a **DHCP reservation** so the Raspberry Pi receives the same address. The important requirement for many server applications is having a predictable address.
+
+## Is a microSD card reliable enough for a Raspberry Pi server?
+
+A microSD card can be suitable for light workloads, but an SSD is generally preferable for write-intensive services such as databases, Nextcloud, Docker volumes, and long-term monitoring.
+
+## Can I run multiple Raspberry Pi IT projects on the same Raspberry Pi?
+
+Yes, provided the hardware has enough CPU, RAM, storage, and network capacity. Docker can make managing multiple services easier, but combining many workloads on one machine also creates a larger single point of failure.
