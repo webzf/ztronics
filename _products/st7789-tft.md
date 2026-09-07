@@ -1,6 +1,8 @@
 ---
 layout: product
 
+internal_links: true
+
 title: "ST7789 TFT Display"
 
 product_id: st7789-tft
