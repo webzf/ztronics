@@ -4,7 +4,7 @@ layout: product
 title: "SSD1306 OLED Display"
 
 product_id: ssd1306-oled
-
+internal_links: true
 category: Displays
 
 manufacturer: Generic
