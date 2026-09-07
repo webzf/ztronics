@@ -82,10 +82,7 @@ specifications:
     value: "Depends on module version"
 
 links:
-  - title: Buy on AliExpress
-    icon: fas fa-cart-shopping
-    description: "ILI9341 + XPT2046 2.8-inch touchscreen module"
-    url: "https://s.click.aliexpress.com/"
+  
 
   - title: ILI9341 Datasheet
     icon: fas fa-file-lines
@@ -465,6 +462,6 @@ As dedicated ILI9341 and XPT2046 tutorials are published on Embedded Nerd, they 
 
 If you're looking for an inexpensive touchscreen module for an ESP32 or Arduino project, the ILI9341 + XPT2046 combination is a practical starting point for building graphical embedded interfaces.
 
-**[Check the ILI9341 + XPT2046 2.8-inch Touchscreen on AliExpress](https://s.click.aliexpress.com/)**
+**[Check the ILI9341 + XPT2046 2.8-inch Touchscreen on AliExpress](https://s.click.aliexpress.com/e/_c4kUDNBB)**
 
 *This page contains an affiliate link. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you.*
