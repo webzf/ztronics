@@ -3,6 +3,7 @@ layout: product
 
 title: "Jumper Wires"
 
+internal_links: true
 product_id: jumper-wires
 
 category: Accessories
