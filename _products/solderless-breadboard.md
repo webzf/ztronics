@@ -1,6 +1,8 @@
 ---
 layout: product
 
+internal_links: true
+
 title: "Solderless Breadboard"
 
 product_id: solderless-breadboard
