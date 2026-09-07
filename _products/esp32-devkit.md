@@ -1,6 +1,8 @@
 ---
 layout: product
 
+internal_links: true
+
 title: "ESP32 DevKit V1"
 
 product_id: esp32-devkit
