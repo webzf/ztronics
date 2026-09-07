@@ -1,6 +1,7 @@
 ---
 layout: product
 
+internal_links: true
 title: "ILI9341 + XPT2046 2.8-inch Touchscreen"
 
 product_id: ili9341-xpt2046-2-8-touchscreen
