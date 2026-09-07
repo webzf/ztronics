@@ -1,6 +1,8 @@
 ---
 layout: product
 
+internal_links: true
+
 title: "Raspberry Pi Pico W"
 
 product_id: raspberry-pi-pico-w
