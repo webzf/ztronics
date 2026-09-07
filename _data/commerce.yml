@@ -3,6 +3,34 @@
 # ============================================================================
 
 
+ili9341-xpt2046-2-8-touchscreen:
+
+  preferred_store: aliexpress
+
+  notes: ""
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: true
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c4kUDNBB"
+
+
+#----------------
+
+
 raspberry-pi-pico:
 
   preferred_store: amazon
