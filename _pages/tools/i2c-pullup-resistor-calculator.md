@@ -3,7 +3,7 @@ title: "I2C Pull-up Resistor Calculator"
 tool: true
 layout: single
 permalink: /tools/i2c-pullup-resistor-calculator/
-
+internal_links: true
 sidebar:
   nav: "embedded"
 
