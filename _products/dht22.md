@@ -1,6 +1,8 @@
 ---
 layout: product
 
+internal_links: true
+
 title: "DHT22 Temperature & Humidity Sensor"
 
 product_id: dht22
