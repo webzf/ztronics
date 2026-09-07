@@ -1,6 +1,8 @@
 ---
 layout: product
 
+internal_links: true
+
 title: "KY-023 Analog Joystick Module: Pinout & Specifications"
 
 product_id: ky-023-joystick
