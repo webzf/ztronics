@@ -97,10 +97,6 @@ links:
 related:
   - esp32-devkit
   - ssd1306-oled
-  - solderless-breadboard
-  - jumper-wires
-  - bma400
-
 ---
 
 The **ILI9341 + XPT2046 2.8-inch Touchscreen** is a compact TFT display module combining a 240×320 LCD panel driven by the ILI9341 display controller with a resistive touch layer read by the XPT2046 touch controller.
