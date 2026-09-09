@@ -38,11 +38,54 @@ overrides:
     keywords:
       - "MPU6050"
       - "MPU-6050"
+      - "MPU6050 sensor"
+      - "MPU6050 accelerometer"
+      - "MPU6050 gyroscope"
 
   esp32-devkit:
     keywords:
       - "ESP32"
       - "ESP32 DevKit"
+      - "ESP32 DevKit V1"
+      - "ESP32 development board"
+
+  bma400:
+    keywords:
+      - "BMA400"
+      - "BMA400 accelerometer"
+      - "BMA400 sensor"
+      - "BMA400 module"
+      - "BMA400 accelerometer module"
+
+  bme280:
+    keywords:
+      - "BME280"
+      - "BME280 sensor"
+      - "BME280 temperature sensor"
+      - "BME280 humidity sensor"
+      - "BME280 pressure sensor"
+
+  dht22:
+    keywords:
+      - "DHT22"
+      - "DHT22 sensor"
+      - "DHT22 temperature sensor"
+      - "DHT22 humidity sensor"
+      - "AM2302"
+
+  ssd1306:
+    keywords:
+      - "SSD1306"
+      - "SSD1306 OLED"
+      - "SSD1306 OLED display"
+      - "OLED display"
+
+  st7789:
+    keywords:
+      - "ST7789"
+      - "ST7789 TFT"
+      - "ST7789 display"
+      - "ST7789 TFT display"
 
   ili9341-xpt2046-2-8-touchscreen:
     keywords:
@@ -50,3 +93,53 @@ overrides:
       - "ILI9341 touchscreen"
       - "XPT2046 touchscreen"
       - "2.8 inch touchscreen"
+      - "ILI9341 display"
+      - "ILI9341 TFT"
+      - "ILI9341 TFT display"
+
+  icm-42670-p:
+    keywords:
+      - "ICM-42670-P"
+      - "ICM42670P"
+      - "ICM-42670"
+      - "ICM42670"
+
+  icm-42688-p:
+    keywords:
+      - "ICM-42688-P"
+      - "ICM42688P"
+      - "ICM-42688"
+      - "ICM42688"
+
+  ky-023:
+    keywords:
+      - "KY-023"
+      - "KY023"
+      - "KY-023 joystick"
+      - "analog joystick module"
+
+  raspberry-pi-pico:
+    keywords:
+      - "Raspberry Pi Pico"
+      - "Pico"
+      - "RP2040"
+      - "Pico board"
+
+  raspberry-pi-pico-w:
+    keywords:
+      - "Raspberry Pi Pico W"
+      - "Pico W"
+      - "RP2040"
+      - "Pico W board"
+
+  jumper-wires:
+    keywords:
+      - "jumper wires"
+      - "Dupont wires"
+      - "Dupont jumper wires"
+
+  solderless-breadboard:
+    keywords:
+      - "solderless breadboard"
+      - "breadboard"
+      - "prototype breadboard"
