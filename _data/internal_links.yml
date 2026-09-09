@@ -12,14 +12,14 @@ settings:
   analysis_only: false
 
   # Maximum automatic links per article/page
-  max_total_links_per_page: 5
+  max_total_links_per_page: 8
 
   # Maximum links by type
-  max_product_links_per_page: 2
-  max_article_links_per_page: 2
+  max_product_links_per_page: 4
+  max_article_links_per_page: 4
 
   # Minimum score required for an automatic relation
-  minimum_relevance: 60
+  minimum_relevance: 65
 
   # Number of relations shown in the analysis log
   analysis_results_per_page: 5
