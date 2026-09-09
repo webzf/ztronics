@@ -1,5 +1,5 @@
 # ============================================================================
-# Embedded Nerd - Internal Link Engine V3.6.1
+# Embedded Nerd - Internal Link Engine V3.7
 # ============================================================================
 #
 # Jekyll 3.10 compatible
@@ -10,7 +10,7 @@
 #   Product -> Article
 #   Product -> Product
 #
-# V3.6.1 improvements:
+# V3.7 improvements:
 #   - Supports internal_links.overrides
 #   - Strong natural-anchor validation
 #   - Generic keyword protection
@@ -19,8 +19,10 @@
 #   - Automatically derives useful technical product anchors
 #   - Better handling of technical product names
 #   - Required hardware gets highest relevance
-#   - Product -> Article can use required hardware anchors
-#   - Product -> Article can use hardware-derived anchors
+#   - Product -> Article relation can use required hardware for scoring
+#   - Product -> Article anchors NEVER use unrelated required hardware
+#   - Product -> Article anchors are based only on the target article
+#   - Article title is the primary Product -> Article anchor
 #   - General index pages are excluded from article graph
 #   - Product-to-product remains deliberately conservative
 #   - Existing HTML/Markdown links are protected
@@ -202,7 +204,7 @@ module EmbeddedNerd
 
         Jekyll.logger.info(
           "Embedded Nerd:",
-          "V3.6.1 inserted #{count_generated_links(new_content)} automatic link(s)"
+          "V3.7 inserted #{count_generated_links(new_content)} automatic link(s)"
         )
 
       end
@@ -215,7 +217,7 @@ module EmbeddedNerd
     def self.build_graph(site)
 
       cache_key =
-        :@embedded_nerd_internal_graph_v361
+        :@embedded_nerd_internal_graph_v370
 
       if site.instance_variable_defined?(cache_key)
 
@@ -382,7 +384,7 @@ module EmbeddedNerd
 
       Jekyll.logger.info(
         "Embedded Nerd:",
-        "Content Graph V3.6.1: #{products.length} products, #{articles.length} articles"
+        "Content Graph V3.7: #{products.length} products, #{articles.length} articles"
       )
 
       graph
@@ -400,6 +402,10 @@ module EmbeddedNerd
           hash[key] = []
 
         end
+
+      # ----------------------------------------------------------------------
+      # Explicit required_hardware relationships
+      # ----------------------------------------------------------------------
 
       graph[:articles].each do |article|
 
@@ -421,6 +427,10 @@ module EmbeddedNerd
         end
 
       end
+
+      # ----------------------------------------------------------------------
+      # Explicit product mentions
+      # ----------------------------------------------------------------------
 
       graph[:articles].each do |article|
 
@@ -722,8 +732,7 @@ module EmbeddedNerd
           opportunity =
             find_article_link_opportunity(
               current,
-              article,
-              graph
+              article
             )
 
           next unless
@@ -1196,11 +1205,28 @@ module EmbeddedNerd
     # ========================================================================
     # PRODUCT -> ARTICLE LINK OPPORTUNITY
     # ========================================================================
+    #
+    # IMPORTANT V3.7:
+    #
+    # required_hardware is used to establish RELATIONSHIP RELEVANCE.
+    #
+    # It must NOT be used as an anchor candidate.
+    #
+    # Example:
+    #
+    # Product: ESP32 DevKit
+    # Article: MPU6050 Calibration Guide
+    #
+    # Even if the article requires an ESP32 DevKit, the product page must
+    # never use "ESP32 DevKit" as the anchor to link to the MPU6050 article.
+    #
+    # The anchor must describe the TARGET ARTICLE.
+    #
+    # ========================================================================
 
     def self.find_article_link_opportunity(
       source,
-      article,
-      graph
+      article
     )
 
       return nil if
@@ -1209,10 +1235,13 @@ module EmbeddedNerd
           article[:url]
         )
 
+      # Only keywords belonging to the TARGET ARTICLE.
+      #
+      # This deliberately does NOT include required_hardware product
+      # keywords.
       keywords =
         article_link_keywords(
-          article,
-          graph
+          article
         )
 
       keywords =
@@ -1240,36 +1269,30 @@ module EmbeddedNerd
     # ========================================================================
     # ARTICLE LINK KEYWORDS
     # ========================================================================
+    #
+    # V3.7:
+    #   - Article title
+    #   - Explicit internal_link_keywords
+    #
+    # NOT:
+    #   - required_hardware product keywords
+    #
+    # This prevents semantically incorrect anchors.
+    #
+    # ========================================================================
 
     def self.article_link_keywords(
-      article,
-      graph
+      article
     )
 
       keywords =
         []
 
-      # Explicit article keywords / title.
+      # Article title and explicit article keywords are the only
+      # valid automatic anchors for Product -> Article.
       keywords.concat(
         article[:keywords]
       )
-
-      # Required hardware product keywords.
-      article[:required_hardware].each do |product_id|
-
-        product =
-          graph[:by_product_id][product_id]
-
-        next unless
-          product
-
-        keywords.concat(
-          preferred_product_keywords(
-            product
-          )
-        )
-
-      end
 
       keywords
         .map do |keyword|
@@ -1281,9 +1304,10 @@ module EmbeddedNerd
         .uniq
         .sort_by do |keyword|
 
-          -anchor_specificity(
-            keyword
-          )
+          [
+            -anchor_specificity(keyword),
+            -keyword.length
+          ]
 
         end
     end
@@ -1583,8 +1607,7 @@ module EmbeddedNerd
 
             find_article_link_opportunity(
               source,
-              relation[:target],
-              graph
+              relation[:target]
             )
 
           else
@@ -2709,7 +2732,7 @@ module EmbeddedNerd
 
       Jekyll.logger.info(
         "Embedded Nerd:",
-        "Internal Link Analysis V3.6.1"
+        "Internal Link Analysis V3.7"
       )
 
       Jekyll.logger.info(
