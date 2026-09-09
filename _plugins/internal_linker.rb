@@ -1,5 +1,5 @@
 # ============================================================================
-# Embedded Nerd - Internal Link Engine V3.6
+# Embedded Nerd - Internal Link Engine V3.6.1
 # ============================================================================
 #
 # Jekyll 3.10 compatible
@@ -10,7 +10,7 @@
 #   Product -> Article
 #   Product -> Product
 #
-# V3.6 improvements:
+# V3.6.1 improvements:
 #   - Supports internal_links.overrides
 #   - Strong natural-anchor validation
 #   - Generic keyword protection
@@ -27,6 +27,7 @@
 #   - Protected HTML/code blocks are never modified
 #   - Duplicate hook protection
 #   - Analysis mode supported
+#   - Graph is passed explicitly to insertion stage
 #
 # ============================================================================
 
@@ -190,7 +191,8 @@ module EmbeddedNerd
         insert_links(
           current,
           relations,
-          settings
+          settings,
+          graph
         )
 
       if new_content != current[:content]
@@ -200,7 +202,7 @@ module EmbeddedNerd
 
         Jekyll.logger.info(
           "Embedded Nerd:",
-          "V3.6 inserted #{count_generated_links(new_content)} automatic link(s)"
+          "V3.6.1 inserted #{count_generated_links(new_content)} automatic link(s)"
         )
 
       end
@@ -213,7 +215,7 @@ module EmbeddedNerd
     def self.build_graph(site)
 
       cache_key =
-        :@embedded_nerd_internal_graph_v36
+        :@embedded_nerd_internal_graph_v361
 
       if site.instance_variable_defined?(cache_key)
 
@@ -380,7 +382,7 @@ module EmbeddedNerd
 
       Jekyll.logger.info(
         "Embedded Nerd:",
-        "Content Graph V3.6: #{products.length} products, #{articles.length} articles"
+        "Content Graph V3.6.1: #{products.length} products, #{articles.length} articles"
       )
 
       graph
@@ -974,10 +976,7 @@ module EmbeddedNerd
       graph
     )
 
-      # ----------------------------------------------------------------------
-      # Required hardware = definitive relationship
-      # ----------------------------------------------------------------------
-
+      # Required hardware = definitive relationship.
       if article[:required_hardware].include?(
         product[:id]
       )
@@ -986,10 +985,8 @@ module EmbeddedNerd
 
       end
 
-      # ----------------------------------------------------------------------
-      # Article explicitly mentions product
-      # ----------------------------------------------------------------------
-
+      # Article must explicitly mention the product for
+      # non-required-hardware relationships.
       unless product_mentioned_in_article?(
         product,
         article
@@ -1002,10 +999,6 @@ module EmbeddedNerd
       score =
         75
 
-      # ----------------------------------------------------------------------
-      # Product/article index confirmation
-      # ----------------------------------------------------------------------
-
       if graph[:product_articles][product[:id]].include?(
         article[:id]
       )
@@ -1013,10 +1006,6 @@ module EmbeddedNerd
         score += 10
 
       end
-
-      # ----------------------------------------------------------------------
-      # Shared tags
-      # ----------------------------------------------------------------------
 
       score += [
         shared_values_score(
@@ -1026,10 +1015,6 @@ module EmbeddedNerd
         ),
         5
       ].min
-
-      # ----------------------------------------------------------------------
-      # Shared categories
-      # ----------------------------------------------------------------------
 
       score += [
         shared_values_score(
@@ -1075,7 +1060,8 @@ module EmbeddedNerd
         ]
 
       shared_articles =
-        articles_a & articles_b
+        articles_a &
+        articles_b
 
       return 0 unless
         explicit_related ||
@@ -1260,39 +1246,15 @@ module EmbeddedNerd
       graph
     )
 
-      keywords = []
+      keywords =
+        []
 
-      # ----------------------------------------------------------------------
-      # Explicit article keywords / title
-      # ----------------------------------------------------------------------
-
+      # Explicit article keywords / title.
       keywords.concat(
         article[:keywords]
       )
 
-      # ----------------------------------------------------------------------
-      # Required hardware
-      #
-      # This is the important V3.6 change.
-      #
-      # Example:
-      #
-      # Article:
-      #   ILI9341 Display with ESP32
-      #
-      # required_hardware:
-      #   - ili9341-xpt2046-2-8-touchscreen
-      #
-      # Product page contains:
-      #   ILI9341
-      #
-      # The product can now naturally link to the article using:
-      #
-      #   ILI9341
-      #
-      # instead of requiring the complete article title to appear.
-      # ----------------------------------------------------------------------
-
+      # Required hardware product keywords.
       article[:required_hardware].each do |product_id|
 
         product =
@@ -1351,9 +1313,6 @@ module EmbeddedNerd
 
         end
 
-      # Explicit / derived keywords first.
-      # Product title second.
-      # Product ID last.
       explicit +
         [title, product_id]
     end
@@ -1425,7 +1384,6 @@ module EmbeddedNerd
       return false if
         value.empty?
 
-      # Explicitly configured keywords are allowed.
       return true if
         explicit
 
@@ -1501,7 +1459,6 @@ module EmbeddedNerd
 
         end
 
-      # Protect Markdown links/images.
       markdown_pattern =
         /!?\[[^\]]+\]\([^)]+\)/
 
@@ -1514,7 +1471,6 @@ module EmbeddedNerd
 
         end
 
-      # Protect Markdown headings.
       markdown_heading_pattern =
         /^\s{0,3}\#{1,6}\s+.*$/
 
@@ -1557,7 +1513,8 @@ module EmbeddedNerd
     def self.insert_links(
       current,
       relations,
-      settings
+      settings,
+      graph
     )
 
       content =
@@ -1621,17 +1578,13 @@ module EmbeddedNerd
             content: content
           )
 
-        # Product -> Article uses the V3.6 hardware-aware
-        # opportunity finder.
         opportunity =
           if relation[:type] == "product_to_article"
 
             find_article_link_opportunity(
               source,
               relation[:target],
-              build_graph(
-                current[:site]
-              )
+              graph
             )
 
           else
@@ -1642,12 +1595,6 @@ module EmbeddedNerd
             )
 
           end
-
-        # The current node does not normally carry :site.
-        # Therefore fall back to the opportunity already calculated
-        # during relation discovery when necessary.
-        opportunity ||=
-          relation[:opportunity]
 
         next unless
           opportunity
@@ -2018,20 +1965,14 @@ module EmbeddedNerd
       score =
         0
 
-      # Technical identifiers:
-      # ILI9341
-      # XPT2046
-      # MPU6050
       score +=
         value.scan(
           /\b[a-z]{2,}\d{2,}[a-z0-9_-]*\b/i
         ).length * 20
 
-      # Multi-word phrases.
       score +=
         value.split.length * 10
 
-      # Longer phrases are usually more specific.
       score +=
         [
           value.length,
@@ -2265,10 +2206,7 @@ module EmbeddedNerd
       title =
         data["title"].to_s.strip
 
-      # ----------------------------------------------------------------------
-      # Override keywords - highest priority
-      # ----------------------------------------------------------------------
-
+      # Override keywords - highest priority.
       if override.is_a?(Hash)
 
         Array(
@@ -2285,10 +2223,7 @@ module EmbeddedNerd
         end
       end
 
-      # ----------------------------------------------------------------------
-      # Explicit front matter keywords
-      # ----------------------------------------------------------------------
-
+      # Explicit front matter keywords.
       Array(
         data["internal_link_keywords"]
       ).each do |keyword|
@@ -2302,28 +2237,19 @@ module EmbeddedNerd
 
       end
 
-      # ----------------------------------------------------------------------
-      # Automatically derived keywords
-      # ----------------------------------------------------------------------
-
+      # Automatically derived keywords.
       keywords.concat(
         derived_product_keywords(
           title
         )
       )
 
-      # ----------------------------------------------------------------------
-      # Product title
-      # ----------------------------------------------------------------------
-
+      # Product title.
       keywords <<
         title unless
         title.empty?
 
-      # ----------------------------------------------------------------------
-      # Product ID - final fallback
-      # ----------------------------------------------------------------------
-
+      # Product ID - final fallback.
       keywords <<
         product_id unless
         product_id.empty?
@@ -2366,10 +2292,6 @@ module EmbeddedNerd
       words =
         normalized.split
 
-      # ----------------------------------------------------------------------
-      # Technical identifiers
-      # ----------------------------------------------------------------------
-
       identifiers =
         normalized
           .scan(
@@ -2381,20 +2303,12 @@ module EmbeddedNerd
         identifiers
       )
 
-      # ----------------------------------------------------------------------
-      # Identifier combinations
-      # ----------------------------------------------------------------------
-
       if identifiers.length >= 2
 
         candidates <<
           identifiers.join(" ")
 
       end
-
-      # ----------------------------------------------------------------------
-      # Relevant technical terms
-      # ----------------------------------------------------------------------
 
       relevant_terms =
         words.select do |word|
@@ -2414,10 +2328,6 @@ module EmbeddedNerd
 
         end
 
-      # ----------------------------------------------------------------------
-      # Identifier + technical term
-      # ----------------------------------------------------------------------
-
       identifiers.each do |identifier|
 
         relevant_terms.each do |term|
@@ -2428,10 +2338,6 @@ module EmbeddedNerd
         end
 
       end
-
-      # ----------------------------------------------------------------------
-      # Display size + technical term
-      # ----------------------------------------------------------------------
 
       size_match =
         value.match(
@@ -2803,7 +2709,7 @@ module EmbeddedNerd
 
       Jekyll.logger.info(
         "Embedded Nerd:",
-        "Internal Link Analysis V3.6"
+        "Internal Link Analysis V3.6.1"
       )
 
       Jekyll.logger.info(
