@@ -5,7 +5,7 @@ title: "Waveshare ESP32-S3-Touch-LCD-4.3"
 
 product_id: waveshare-esp32-s3-touch-lcd-4-3
 
-category: Development Boards
+category:  Displays
 
 manufacturer: "Waveshare"
 
