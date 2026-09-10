@@ -5,6 +5,13 @@ permalink: /esp32-snake-game-with-mpu6050-and-oled-display/
 
 howto: true
 
+internal_link_keywords:
+  - "ESP32 Snake Game"
+  - "ESP32 Snake"
+  - "Snake Game ESP32"
+  - "MPU6050 Snake Game"
+  - "ESP32 game"
+
 layout: single
 
 sidebar:
