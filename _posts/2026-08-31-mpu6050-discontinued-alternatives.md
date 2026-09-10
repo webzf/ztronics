@@ -18,6 +18,13 @@ categories:
   - Sensors
   - ESP32
   - Arduino
+internal_link_keywords:
+  - "MPU6050 discontinued"
+  - "MPU6050 alternatives"
+  - "MPU6050 alternative"
+  - "MPU6050 replacement"
+  - "MPU6050 alternatives 2026"
+
 tags:
   - MPU6050
   - BMA400
