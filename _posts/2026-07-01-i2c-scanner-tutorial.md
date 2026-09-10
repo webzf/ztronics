@@ -10,6 +10,13 @@ sidebar:
 
 permalink: /i2c-scanner-tutorial/
 
+internal_link_keywords:
+  - "I2C Scanner"
+  - "I2C scanner"
+  - "I2C address scanner"
+  - "find I2C address"
+  - "I2C device address"
+
 excerpt: "Learn how to use an I2C Scanner with Arduino, ESP32 and ESP8266 to find I2C device addresses, verify wiring and troubleshoot OLED displays, sensors and modules."
 
 show_date: false
