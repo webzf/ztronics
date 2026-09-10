@@ -13,6 +13,13 @@ description: "Complete ESP32 joystick tutorial for beginners and makers. Learn h
 categories:
   - ESP32
 
+internal_link_keywords:
+  - "ESP32 joystick"
+  - "KY-023 joystick"
+  - "ESP32 analog joystick"
+  - "analog joystick ESP32"
+  - "KY-023 ESP32"
+
 tags:
   - ESP32
   - KY-023
