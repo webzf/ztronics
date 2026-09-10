@@ -2,6 +2,33 @@
 # Embedded Nerd Commerce Database v2.0
 # ============================================================================
 
+waveshare-esp32-s3-touch-lcd-4-3:
+
+  preferred_store: amazon
+
+  notes: ""
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: true
+    best_value: false
+    fast_shipping: true
+
+  stores:
+
+    amazon:
+      enabled: true
+      affiliate_url: "https://amzn.to/4xKolNV"
+
+    aliexpress:
+      enabled: false
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3LI5MHD"
+
+
+#----------------
+
 
 ili9341-xpt2046-2-8-touchscreen:
 
