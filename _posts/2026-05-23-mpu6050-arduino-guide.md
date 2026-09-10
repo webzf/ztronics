@@ -17,6 +17,13 @@ required_hardware:
   - id: jumper-wires
     component: Male-to-Female Jumper Wires
 
+internal_link_keywords:
+  - "MPU6050 Arduino"
+  - "MPU6050 Arduino guide"
+  - "MPU6050 Arduino tutorial"
+  - "MPU6050 wiring"
+  - "MPU6050 I2C"
+
 sidebar:
    nav: "embedded"
 
