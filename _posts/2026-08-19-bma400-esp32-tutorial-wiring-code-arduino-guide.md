@@ -58,6 +58,12 @@ required_hardware:
   - id: jumper-wires
     component: Jumper Wires
 
+internal_link_keywords:
+  - "BMA400 ESP32"
+  - "BMA400 ESP32 tutorial"
+  - "BMA400 tutorial"
+  - "BMA400 accelerometer"
+
 ---
 
 The **BMA400** is a low-power 3-axis digital accelerometer designed for applications where motion sensing and energy efficiency are important.
