@@ -20,6 +20,14 @@ required_hardware:
   - id: jumper-wires
     component: Male-to-Female Jumper Wires
 
+internal_link_keywords:
+  - "ESP32 OLED"
+  - "ESP32 OLED tutorial"
+  - "SSD1306 OLED"
+  - "SSD1306 ESP32"
+  - "ESP32 OLED display"
+
+
 sidebar:
   nav: "embedded"
 
