@@ -20,6 +20,13 @@ required_hardware:
   - id: jumper-wires
     component: Male-to-Female Jumper Wires
 
+internal_link_keywords:
+  - "MPU6050 calibration"
+  - "MPU6050 calibration guide"
+  - "MPU6050 calibrate"
+  - "calibrate MPU6050"
+  - "MPU6050 offsets"
+
 sidebar:
   nav: "embedded"
 
