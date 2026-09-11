@@ -2,6 +2,33 @@
 # Embedded Nerd Commerce Database v2.0
 # ============================================================================
 
+waveshare-esp32-s3-touch-lcd-7:
+
+  preferred_store: aliexpress
+
+  notes: ""
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: true
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3B9ASO9"
+
+
+#----------------
+
 waveshare-esp32-s3-touch-lcd-4-3:
 
   preferred_store: amazon
