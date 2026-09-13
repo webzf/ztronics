@@ -45,6 +45,8 @@ related: true
 share: true
 ---
 
+![Esp32 touchscreen displays.webp](assets/images/esp32-touchscreen-displays.webp)
+
 An **ESP32 touchscreen** display combines a microcontroller, a graphical display, and a touch-input system, allowing you to build interactive interfaces that users can tap, drag, and control directly. Unlike a simple TFT display, a touchscreen adds a second hardware path for detecting user input, usually through a separate touch controller.
 
 Choosing the right **ESP32 touchscreen display** therefore involves more than selecting a screen size. You also need to consider the touch technology, display interface, touch interface, resolution, ESP32 variant, Flash and PSRAM, power requirements, software support, and the complexity of the graphical interface you want to build.
