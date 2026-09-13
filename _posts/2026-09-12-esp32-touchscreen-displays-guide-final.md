@@ -45,7 +45,7 @@ related: true
 share: true
 ---
 
-![Esp32 touchscreen displays](assets/images/esp32-touchscreen-displays.webp)
+![Esp32 touchscreen displays](/assets/images/esp32-touchscreen-displays.webp)
 
 An **ESP32 touchscreen** display combines a microcontroller, a graphical display, and a touch-input system, allowing you to build interactive interfaces that users can tap, drag, and control directly. Unlike a simple TFT display, a touchscreen adds a second hardware path for detecting user input, usually through a separate touch controller.
 
