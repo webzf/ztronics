@@ -192,7 +192,7 @@ Common controllers found in ESP32 projects include:
 - FT6236 / FT5x06 families;
 - CST816 and related controllers.
 
-Many capacitive touch controllers communicate with the ESP32 through I2C.
+Many capacitive touch controllers communicate with the ESP32 through I2C. If you need to identify the address of a touch controller or check which devices are present on the bus, you can use our [I2C Address Lookup Tool](/tools/i2c-address-lookup/).
 
 Capacitive touch is often a good choice for:
 
