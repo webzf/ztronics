@@ -135,8 +135,7 @@ Touch controllers may communicate using:
 
 ### ILI9341 + XPT2046
 
-A common small-display combination is an **ILI9341** TFT controller paired with an **XPT2046** resistive touch controller.
-
+A common small-display combination is an **[**ILI9341** TFT controller paired with an **XPT2046** resistive touch controller.](/products/ili9341-xpt2046-2-8-touchscreen/)
 The ILI9341 handles the display, while the XPT2046 handles the resistive touch panel. Both can use SPI, depending on the module's design.
 
 ### RGB Display + Capacitive Touch
@@ -223,7 +222,7 @@ The display interface is another major factor when choosing an ESP32 touchscreen
 
 SPI displays use a serial interface and are very common on small TFT modules.
 
-Controllers such as the **ILI9341** and **ST7789** are widely used in ESP32 and Arduino projects.
+Controllers such as the **ILI9341** and **[ST7789](/products/st7789-tft/)** are widely used in ESP32 and Arduino projects.
 
 Advantages include:
 
