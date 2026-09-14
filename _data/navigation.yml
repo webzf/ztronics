@@ -64,6 +64,9 @@ embedded:
        # url: /ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/
       - title: "I2C Pull-up Resistor Calculator"
         url: /tools/i2c-pullup-resistor-calculator/
+      - title: "Free ESP32 touchscreen selector"
+        url: /tools/esp32-touchscreen-selector/
+        
 
 #  - title: Sensors
      #children:
