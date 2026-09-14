@@ -738,6 +738,8 @@ PSRAM can therefore be particularly useful for larger RGB touchscreen projects.
 
 ## ESP32 Touchscreen Buying Guide
 
+If you're comparing different display technologies, see our [displays for Arduino, ESP32 & Raspberry Pi guide](/products/displays/).
+
 Before buying an ESP32 touchscreen display, check the following.
 
 ### Display Size and Resolution
