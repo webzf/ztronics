@@ -65,6 +65,14 @@ If you're not sure where to start, this table provides a useful starting point r
 
 The best choice ultimately depends on the requirements of your particular project.
 
+**Not sure which ESP32 touchscreen to choose?**
+
+![ESP32 touchscreen tool](/assets/images/esp32-touchscreen-selector-promo.webp)
+
+Answer a few questions and get a practical recommendation based on your ESP32 board, display size, resolution, interface, touch technology, PSRAM and LVGL requirements.
+
+[Try the ESP32 Touchscreen Selector →](/tools/esp32-touchscreen-selector/)
+
 ## What Is an ESP32 Touchscreen?
 
 An **ESP32 touchscreen** setup combines three main elements:
