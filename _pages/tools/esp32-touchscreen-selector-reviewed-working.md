@@ -48,6 +48,7 @@ tags:
   - I2C
   - Electronics
 ---
+![ESP32 Touchscreen Selector & Compatibility Tool](/assets/images/esp32-touchscreen-selector.webp)
 
 # ESP32 Touchscreen Selector & Compatibility Tool
 
