@@ -337,13 +337,13 @@ ESP32 Touchscreen Displays: Complete Guide to Choosing and Using a Touchscreen
 </li>
 
 <li>
-<a href="/tools/i2c-pullup-resistor-calculator/">
+<a href="/tools/i2c-address-lookup/">
 I²C Address Lookup Tool
 </a>
 </li>
 
 <li>
-<a href="/tools/i2c-pull-up-resistor-calculator/">
+<a href="/tools/i2c-pullup-resistor-calculator/">
 I²C Pull-up Resistor Calculator
 </a>
 </li>
