@@ -45,6 +45,7 @@ tags:
   - Raspberry Pi
   - Electronics
 ---
+![I2C Address Lookup & Compatibility Checker](/assets/images/i2c-scanner-tutorial-arduino-esp32.webp)
 
 # I2C Address Lookup & Compatibility Checker
 
