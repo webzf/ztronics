@@ -1,8 +1,10 @@
 ---
-title: "Is the MPU6050 Discontinued? Best Alternatives and Replacements"
+title: "Is the MPU6050 Discontinued? Alternatives & Replacements for Arduino and ESP32"
+excerpt: "Is the MPU6050 discontinued? See its current EOL status, GY-521 availability and modern alternatives including BMA400, ICM-42670-P and ICM-42688-P for Arduino and ESP32."
+#title: "Is the MPU6050 Discontinued? Best Alternatives and Replacements"
 layout: single
 permalink: /mpu6050-discontinued-alternatives/
-excerpt: "Is the MPU6050 discontinued or obsolete? Here's what TDK InvenSense's official EOL notice actually says, whether GY-521 modules are still worth buying, and which alternative — BMA400, ICM-42670-P or ICM-42688-P — fits your next Arduino or ESP32 project."
+#excerpt: "Is the MPU6050 discontinued or obsolete? Here's what TDK InvenSense's official EOL notice actually says, whether GY-521 modules are still worth buying, and which alternative — BMA400, ICM-42670-P or ICM-42688-P — fits your next Arduino or ESP32 project."
 show_date: false
 read_time: false
 last_modified_at: false
