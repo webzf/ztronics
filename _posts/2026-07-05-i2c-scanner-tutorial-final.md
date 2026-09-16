@@ -1,65 +1,76 @@
 ---
 title: "I2C Scanner Tutorial: Find I2C Address on Arduino, ESP32 & ESP8266"
+
 howto: true
+
 layout: single
+
 sidebar:
-nav: "embedded"
+   nav: "embedded"
+
 permalink: /i2c-scanner-tutorial/
+
 internal_link_keywords:
+  - "I2C Scanner"
+  - "I2C scanner"
+  - "I2C address scanner"
+  - "find I2C address"
+  - "I2C device address"
 
-- "I2C Scanner"
-- "I2C scanner"
-- "I2C address scanner"
-- "find I2C address"
-- "I2C device address"
+excerpt: "Learn how to use an I2C Scanner with Arduino, ESP32 and ESP8266 to find I2C device addresses, verify wiring and troubleshoot OLED displays, sensors and modules."
 
-excerpt: "Learn how to use an I2C Scanner with Arduino, ESP32 and ESP8266 to find I2C device addresses, verify wiring, troubleshoot sensors and OLED displays, and diagnose common I2C problems."
 show_date: false
 read_time: false
 last_modified_at: false
+
 toc: true
 toc_sticky: true
 toc_label: "Contents"
-header:
-teaser: /assets/images/i2c-scanner-tutorial-arduino-esp32.webp
-image: /assets/images/i2c-scanner-tutorial-arduino-esp32.webp
-og_image: /assets/images/i2c-scanner-tutorial-arduino-esp32.webp
-overlay_image: /assets/images/header3.webp
-overlay_filter: 0.25
-categories:
 
-- Arduino
-- ESP32
-- Tutorials
+header:
+  teaser: /assets/images/i2c-scanner-tutorial-arduino-esp32.webp
+  image: /assets/images/i2c-scanner-tutorial-arduino-esp32.webp
+  og_image: /assets/images/i2c-scanner-tutorial-arduino-esp32.webp
+  overlay_image: /assets/images/header3.webp
+  overlay_filter: 0.25
+
+categories:
+  - Arduino
+  - ESP32
+  - Tutorials
 
 tags:
-
-- I2C
-- I2C Scanner
-- Arduino
-- ESP32
-- ESP8266
-- Wire Library
-- SSD1306
-- MPU6050
-- Electronics
+  - I2C
+  - I2C Scanner
+  - Arduino
+  - ESP32
+  - ESP8266
+  - Wire Library
+  - SSD1306
+  - MPU6050
+  - Electronics
 
 related: true
 share: true
-required_hardware:
 
-- id: esp32-devkit
-  component: ESP32 Development Board
-- id: mpu6050
-  component: MPU6050 Accelerometer & Gyroscope
-- id: ssd1306-oled
-  component: SSD1306 OLED Display
-- id: solderless-breadboard
-  component: Breadboard
-- id: jumper-wires
-  component: Male-to-Female Jumper Wires
+required_hardware:
+  - id: esp32-devkit
+    component: ESP32 Development Board
+
+  - id: mpu6050
+    component: MPU6050 Accelerometer & Gyroscope
+
+  - id: ssd1306-oled
+    component: SSD1306 OLED Display
+
+  - id: solderless-breadboard
+    component: Breadboard
+
+  - id: jumper-wires
+    component: Male-to-Female Jumper Wires
 
 ---
+
 
 ## I2C Scanner Tutorial: Find I2C Address on Arduino, ESP32 & ESP8266
 
