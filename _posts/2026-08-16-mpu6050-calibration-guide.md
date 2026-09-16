@@ -1,5 +1,7 @@
 ---
-title: "MPU6050 Calibration Guide: How to Calibrate Accelerometer & Gyroscope"
+title: "MPU6050 Calibration: Step-by-Step Arduino Guide for Accelerometer & Gyroscope"
+excerpt: "Learn how to calibrate an MPU6050 with Arduino, calculate accelerometer and gyroscope offsets, verify the results, and fix common calibration problems."
+#title: "MPU6050 Calibration Guide: How to Calibrate Accelerometer & Gyroscope"
 
 permalink: /mpu6050-calibration-guide/
 
@@ -30,7 +32,7 @@ internal_link_keywords:
 sidebar:
   nav: "embedded"
 
-excerpt: "Learn how to calibrate an MPU6050 accelerometer and gyroscope, calculate sensor offsets, verify calibration results, and improve motion sensor accuracy."
+#excerpt: "Learn how to calibrate an MPU6050 accelerometer and gyroscope, calculate sensor offsets, verify calibration results, and improve motion sensor accuracy."
 
 show_date: false
 read_time: false
