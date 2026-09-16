@@ -1,3 +1,4 @@
+---
 title: "I2C Scanner Tutorial: Find I2C Address on Arduino, ESP32 & ESP8266"
 howto: true
 layout: single
