@@ -265,7 +265,7 @@ More options are available in the
 <h2 id="guide-heading">How to choose an ESP32 touchscreen display</h2>
 
 <p>
-Choosing the <strong>best ESP32 display</strong> is about matching the
+<a href="/esp32-touchscreen-displays-guide/">Choosing the <strong>best ESP32 display</strong></a> is about matching the
 board, display resolution, interface, touch controller and memory
 requirements rather than simply choosing the largest screen.
 </p>
