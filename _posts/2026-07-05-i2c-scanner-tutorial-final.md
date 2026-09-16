@@ -77,7 +77,9 @@ required_hardware:
 An **I2C Scanner** is a small diagnostic program that scans the I2C bus and reports the address of every device that responds. It's the fastest way to **find an I2C address**, confirm the **I2C device address** of a sensor or display, and verify that your wiring is correct — before you write a single line of application code.
 If you've connected an [OLED Display](/products/ssd1306-oled/), MPU6050, BME280, RTC module or another I2C device to an **Arduino**, **ESP32** or **ESP8266**, one of the first things you may need to know is its I2C address. Datasheets and tutorials list "common" addresses, but the real address on your bus can differ depending on the module, its wiring, and any address-select pins it exposes. Running a scanner removes the guesswork.
 If your project reports **"No I2C devices found"**, running an I2C Scanner should usually be one of the very first troubleshooting steps.
+
 ![I2C Scanner tutorial showing Arduino Uno, ESP32, SSD1306 OLED and MPU6050 with wiring and detected I2C addresses.]({{ '/assets/images/i2c-scanner-tutorial-arduino-esp32.webp' | relative_url }})
+
 In this tutorial you'll learn:
 
 - What I2C communication is and how I2C addresses work
@@ -192,6 +194,7 @@ When multiple I2C devices are used, the SDA and SCL lines can normally be shared
 ## Arduino I2C Scanner
 
 ![Arduino Uno I2C wiring showing A4 as SDA and A5 as SCL.]({{ '/assets/images/mpu6050-wiring.webp' | relative_url }})
+
 On an **Arduino Uno**, the I2C pins are fixed:
 
 | Arduino Uno | I2C Device |
@@ -214,6 +217,7 @@ To use the scanner, simply upload the sketch from the [I2C Scanner Code](#arduin
 ## ESP32 I2C Scanner
 
 ![ESP32 I2C wiring showing GPIO21 as SDA and GPIO22 as SCL.]({{ '/assets/images/Pinout-and-wiring-diagram-of-the-ESP32-with-I2C-OLED-display.webp' | relative_url }})
+
 A typical **ESP32** development board uses:
 
 | ESP32 | I2C Device |
