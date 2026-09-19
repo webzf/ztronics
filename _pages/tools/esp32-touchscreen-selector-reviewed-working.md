@@ -120,7 +120,7 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 <div class="form-actions"><button type="submit" class="btn-primary">Find compatible hardware</button><button type="button" id="reset-btn" class="btn-secondary">Reset</button></div>
 </form>
 
-<div id="browse-note" class="browse-panel" hidden><label for="hardware-search">Search the catalog</label><input id="hardware-search" type="search" placeholder="Product, manufacturer, MCU, display or tag"></div>
+<div id="browse-note" class="browse-panel" hidden><label for="hardware-search">Search all hardware</label><p>Search by product, manufacturer, MCU, display or tag.</p><input id="hardware-search" type="search" placeholder="e.g. ESP32-S3, Waveshare, OLED, touch"></div>
 <div id="catalog-error" class="error-panel" hidden></div>
 </section>
 
