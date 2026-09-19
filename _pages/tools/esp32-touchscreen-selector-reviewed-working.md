@@ -67,7 +67,7 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 <h3 id="tool-title" class="sr-only">Hardware selector</h3>
 
 <div class="mode-bar">
-  <button type="button" id="mode-requirements" class="mode-button active" data-mode="requirements">Find hardware</button>
+  <button type="button" id="mode-requirements" class="mode-button active" data-mode="requirements">Filter &amp; find hardware</button>
   <button type="button" id="browse-btn" class="mode-button" data-mode="browse">Browse all hardware</button>
   <span class="catalog-status"><span id="catalog-count">0</span> catalog entries</span>
 </div>
