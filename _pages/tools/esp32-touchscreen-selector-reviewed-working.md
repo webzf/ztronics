@@ -74,7 +74,7 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 
 <form id="selector-form">
 <section class="filter-section">
-<div class="section-heading"><div><span class="step">01</span><h3>Hardware type &amp; ESP32 family</h3></div><p>Mark a choice as <strong>Required</strong> only when the hardware must satisfy it.</p></div>
+<div class="section-heading"><div><span class="step">01</span><h3>Hardware type &amp; ESP32 family</h3></div><p>Selections become <strong>Required</strong> automatically. Uncheck <strong>Required</strong> when you want a preference instead.</p></div>
 <div class="filter-grid">
 <div class="filter-card"><label for="category">Hardware type</label><select id="category" name="category"><option value="">Any hardware</option><option value="display_module">Display module</option><option value="board_with_display">Board with display</option><option value="development_board">Development board</option></select><label class="required-toggle"><input id="category-required" type="checkbox"> Required</label></div>
 <div class="filter-card"><label for="family">ESP32 family</label><select id="family" name="family"><option value="">Any family</option><option>ESP32</option><option>ESP32-S2</option><option>ESP32-S3</option><option>ESP32-C3</option><option>ESP32-C5</option><option>ESP32-C6</option></select><label class="required-toggle"><input id="family-required" type="checkbox"> Required</label></div>
