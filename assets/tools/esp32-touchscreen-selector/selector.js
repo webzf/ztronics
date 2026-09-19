@@ -7,6 +7,7 @@ var productGrid=document.getElementById("product-grid");
 var results=document.getElementById("results");
 var products=[];
 var lastEvaluation=null;
+var requiredTouched={};
 
 var EMBEDDED_NERD_ORIGIN="https://embeddednerd.com";
 var COMMERCE_PATH="/go/hardware/";
@@ -33,6 +34,14 @@ function num(n){
 function required(n){
   var e=$(n+"-required");
   return !!(e&&e.checked);
+}
+function hasValue(n){
+  var e=$(n);
+  return !!(e&&e.value!==""&&e.value!==null&&e.value!==undefined);
+}
+function autoRequire(n){
+  var e=$(n+"-required");
+  if(e&&!requiredTouched[n]&&hasValue(n)) e.checked=true;
 }
 
 function build(){
@@ -157,7 +166,7 @@ function card(item){
     '</div>'+
     '<div class="product-actions">'+
       '<a class="btn-small btn-link" href="'+esc(p.product_url ? (p.product_url.indexOf("http")===0 ? p.product_url : EMBEDDED_NERD_ORIGIN + p.product_url) : "#")+'">View technical details</a>'+
-      '<a class="btn-small btn-commerce" href="'+esc(commerceUrl(p))+'" rel="sponsored">Where to buy</a>'+
+      '<a class="btn-small btn-commerce" href="'+esc(commerceUrl(p))+'" rel="nofollow sponsored noopener">Where to buy</a>'+
     '</div>'+
   '</article>';
 }
@@ -221,13 +230,23 @@ function run(){
 
 function reset(){
   form.reset();
+  requiredTouched={};
   $("hardware-search").value="";
   results.hidden=true;
   setMode("requirements");
   conditional();
 }
 
-form.addEventListener("change",conditional);
+form.addEventListener("change",function(e){
+  if(e.target&&e.target.id){
+    if(/-required$/.test(e.target.id)){
+      requiredTouched[e.target.id.replace(/-required$/,"")]=true;
+    }else{
+      autoRequire(e.target.id);
+    }
+  }
+  conditional();
+});
 form.addEventListener("submit",function(e){e.preventDefault();run();});
 $("browse-btn").addEventListener("click",function(){setMode("browse");browse();});
 $("hardware-search").addEventListener("input",browse);
