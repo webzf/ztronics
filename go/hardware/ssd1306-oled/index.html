@@ -1,0 +1,33 @@
+---
+layout: null
+product_id: ssd1306-oled
+permalink: /go/hardware/ssd1306-oled/
+---
+{% assign commerce = site.data.commerce[page.product_id] %}
+{% assign preferred = commerce.stores[commerce.preferred_store] %}
+{% assign product = site.products | where: "product_id", page.product_id | first %}
+{% assign product_title = product.title | default: page.product_id %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,follow">
+  <title>Where to Buy {{ product_title }} | Embedded Nerd</title>
+  {% if preferred.enabled and preferred.affiliate_url %}
+  <meta http-equiv="refresh" content="0;url={{ preferred.affiliate_url }}">
+  {% endif %}
+</head>
+<body>
+  <main>
+    <h1>Where to Buy {{ product_title }}</h1>
+    {% if preferred.enabled and preferred.affiliate_url %}
+    <p>Redirecting you to the selected store…</p>
+    <p><a href="{{ preferred.affiliate_url }}" rel="nofollow sponsored noopener">Continue to the store</a></p>
+    <script>window.location.replace({{ preferred.affiliate_url | jsonify }});</script>
+    {% else %}
+    <p>There is currently no active store offer for this product.</p>
+    {% if product %}<p><a href="{{ product.url | relative_url }}">View technical details</a></p>{% endif %}
+    {% endif %}
+  </main>
+</body>
+</html>
