@@ -153,8 +153,8 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 </div>
 {:/nomarkdown}
 
-<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/selector.js" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-2" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260920-2" defer></script>
 
 ## How to choose ESP32 hardware for a touchscreen project
 
