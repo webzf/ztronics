@@ -227,7 +227,8 @@ function show(ev){
     productGrid.innerHTML="";
   }else{
     $("empty-state").hidden=true;
-    var currentRequirements=build().r;\n    productGrid.innerHTML=ev.ranked.slice(0,50).map(function(item){return card(item,currentRequirements);}).join("");
+    var currentRequirements=build().r;
+    productGrid.innerHTML=ev.ranked.slice(0,50).map(function(item){return card(item,currentRequirements);}).join("");
   }
 
   results.hidden=false;
