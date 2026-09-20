@@ -67,9 +67,17 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 <h3 id="tool-title" class="sr-only">Hardware selector</h3>
 
 <div class="mode-bar">
-  <button type="button" id="mode-requirements" class="mode-button active" data-mode="requirements">Filter &amp; find hardware</button>
-  <button type="button" id="browse-btn" class="mode-button" data-mode="browse">Browse all hardware</button>
+  <div class="mode-buttons">
+    <button type="button" id="mode-requirements" class="mode-button active" data-mode="requirements">Filter &amp; find hardware</button>
+    <button type="button" id="browse-btn" class="mode-button" data-mode="browse">Browse all hardware</button>
+  </div>
   <span class="catalog-status"><span id="catalog-count">0</span> catalog entries</span>
+</div>
+
+<div id="browse-note" class="browse-panel" hidden>
+  <label for="hardware-search">Search all hardware</label>
+  <p>Search by product, manufacturer, MCU, display or tag.</p>
+  <input id="hardware-search" type="search" placeholder="e.g. ESP32-S3, Waveshare, OLED, touch">
 </div>
 
 <form id="selector-form">
@@ -120,7 +128,6 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 <div class="form-actions"><button type="submit" class="btn-primary">Find compatible hardware</button><button type="button" id="reset-btn" class="btn-secondary">Reset</button></div>
 </form>
 
-<div id="browse-note" class="browse-panel" hidden><label for="hardware-search">Search all hardware</label><p>Search by product, manufacturer, MCU, display or tag.</p><input id="hardware-search" type="search" placeholder="e.g. ESP32-S3, Waveshare, OLED, touch"></div>
 <div id="catalog-error" class="error-panel" hidden></div>
 </section>
 
