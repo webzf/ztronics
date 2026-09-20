@@ -9,6 +9,7 @@ var products=[];
 var lastEvaluation=null;
 var requiredTouched={};
 var pendingPreset=null;
+var urlStateFound=false;
 
 var EMBEDDED_NERD_ORIGIN="https://embeddednerd.com";
 var COMMERCE_PATH="/go/hardware/";
@@ -105,7 +106,7 @@ function syncFilterDependencies(){var display=selected("display_present"),touch=
 function relaxSuggestions(){var b=build(),keys=Object.keys(b.r);return keys.map(function(k){var r=Object.assign({},b.r);delete r[k];return {key:k,count:Engine.evaluate(products,r,b.p).passed};}).filter(function(x){return x.count>0;}).sort(function(a,b){return b.count-a.count;}).slice(0,3);}
 function updateLiveCount(){if(!products.length){$("live-count").textContent="Catalog loading…";return;}var b=build(),e=Engine.evaluate(products,b.r,b.p);$("live-count").textContent=e.passed+" compatible now · "+e.valid+" valid catalog entries";}
 function syncUrl(){var u=new URL(window.location.href),p=u.searchParams,ids=["category","family","display_present","display_technology","display_shape","size_min","resolution","touch","touch_type","touch_interface","display_interface","native_usb","microsd","battery_charging","ce","fcc","flash_min","psram_min","free_gpio_min"];Array.from(p.keys()).forEach(function(k){if(k.endsWith("_req")||ids.indexOf(k)>=0)p.delete(k);});ids.forEach(function(k){var v=val(k);if(v!==""){p.set(k,v);if(required(k))p.set(k+"_req","1");}});history.replaceState(null,"",u.pathname+(p.toString()?"?"+p.toString():"")+u.hash);}
-function loadUrl(){var p=new URLSearchParams(location.search),found=false;p.forEach(function(v,k){if(k.endsWith("_req"))return;var e=$(k);if(e){e.value=v;found=true;var r=$(k+"-required");if(r)r.checked=p.get(k+"_req")==="1";}});if(found){conditional();syncFilterDependencies();updateLiveCount();}}
+function loadUrl(){var p=new URLSearchParams(location.search),found=false;p.forEach(function(v,k){if(k==="preset"){pendingPreset=v;found=true;return;}if(k.endsWith("_req"))return;var e=$(k);if(e){e.value=v;found=true;var r=$(k+"-required");if(r){r.checked=p.get(k+"_req")==="1";requiredTouched[k]=r.checked;}}});urlStateFound=found;if(found&&!pendingPreset){conditional();syncFilterDependencies();updateLiveCount();}}
 function setMode(mode){
   document.querySelectorAll("[data-mode]").forEach(function(b){
     b.classList.toggle("active",b.dataset.mode===mode);
@@ -274,7 +275,7 @@ fetch("/assets/tools/esp32-touchscreen-selector/data/products.json")
     $("catalog-count").textContent=products.length;
     conditional();syncFilterDependencies();updateLiveCount();
     if(pendingPreset){var preset=pendingPreset;pendingPreset=null;applyPreset(preset);}
-    else if(new URLSearchParams(location.search).size)run();
+    else if(urlStateFound)run();
   })
   .catch(function(e){
     $("catalog-error").hidden=false;
