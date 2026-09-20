@@ -99,7 +99,8 @@ window.EmbeddedNerdApplyPresetDirect=function(id){
   });
   var adv=document.getElementById("advanced-filters");
   if(adv && id!=="native-usb")adv.open=true;
-  if(window.EmbeddedNerdApplyPreset)window.EmbeddedNerdApplyPreset(id);
+  var form=document.getElementById("selector-form");
+  if(form && typeof form.requestSubmit==="function") form.requestSubmit();
   return false;
 };
 </script></div></div></div>
