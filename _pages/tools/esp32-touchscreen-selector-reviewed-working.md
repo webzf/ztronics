@@ -80,6 +80,7 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
   <input id="hardware-search" type="search" placeholder="e.g. ESP32-S3, Waveshare, OLED, touch">
 </div>
 
+<div id="quick-start" class="quick-start"><div class="quick-start-heading"><strong>Quick start</strong><span>Start with a common profile or customize the filters below.</span></div><div class="preset-grid"><button type="button" class="preset-button" data-preset="s3-psram">ESP32-S3 + PSRAM 8 MB</button><button type="button" class="preset-button" data-preset="touch-spi">Touchscreen + SPI</button><button type="button" class="preset-button" data-preset="native-usb">Native USB</button><button type="button" class="preset-button" data-preset="large-display">Large display</button></div></div>
 <form id="selector-form">
 <section class="filter-section">
 <div class="section-heading"><div><span class="step">01</span><h3>Hardware type &amp; ESP32 family</h3></div><p>Selections become <strong>Required</strong> automatically. Uncheck <strong>Required</strong> when you want a preference instead.</p></div>
@@ -125,7 +126,7 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 <div class="filter-card"><label for="fcc">FCC</label><select id="fcc" name="fcc"><option value="">Any</option><option value="yes">FCC</option><option value="no">No FCC</option></select><label class="required-toggle"><input id="fcc-required" type="checkbox"> Required</label></div>
 </div></section>
 
-<div class="form-actions"><button type="submit" class="btn-primary">Find compatible hardware</button><button type="button" id="reset-btn" class="btn-secondary">Reset</button></div>
+<div class="form-actions"><button type="submit" class="btn-primary">Find compatible hardware</button><button type="button" id="reset-btn" class="btn-secondary">Reset</button><button type="button" id="share-btn" class="btn-secondary">Share setup</button><span id="live-count" class="live-count" aria-live="polite">Choose filters to see matching hardware.</span></div>
 </form>
 
 <div id="catalog-error" class="error-panel" hidden></div>
