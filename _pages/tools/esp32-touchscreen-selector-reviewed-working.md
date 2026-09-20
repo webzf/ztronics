@@ -80,7 +80,7 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
   <input id="hardware-search" type="search" placeholder="e.g. ESP32-S3, Waveshare, OLED, touch">
 </div>
 
-<div id="quick-start" class="quick-start"><div class="quick-start-heading"><strong>Quick start</strong><span>Start with a common profile or customize the filters below.</span></div><div class="preset-grid"><a class="preset-button" href="?preset=s3-psram#results">ESP32-S3 + PSRAM 8 MB</a><a class="preset-button" href="?preset=touch-spi#results">Touchscreen + SPI</a><a class="preset-button" href="?preset=native-usb#results">Native USB</a><a class="preset-button" href="?preset=large-display#results">Large display</a></div></div>
+<div id="quick-start" class="quick-start"><div class="quick-start-heading"><strong>Quick start</strong><span>Start with a common profile or customize the filters below.</span></div><div class="preset-grid"><a class="preset-link" href="?preset=s3-psram#results">ESP32-S3 + PSRAM 8 MB</a><a class="preset-link" href="?preset=touch-spi#results">Touchscreen + SPI</a><a class="preset-link" href="?preset=native-usb#results">Native USB</a><a class="preset-link" href="?preset=large-display#results">Large display</a></div></div>
 <form id="selector-form">
 <section class="filter-section">
 <div class="section-heading"><div><span class="step">01</span><h3>Hardware type &amp; ESP32 family</h3></div><p>Selections become <strong>Required</strong> automatically. Uncheck <strong>Required</strong> when you want a preference instead.</p></div>
