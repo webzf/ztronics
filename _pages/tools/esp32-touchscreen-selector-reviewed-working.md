@@ -153,8 +153,8 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 </div>
 {:/nomarkdown}
 
-<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-8" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260920-8" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-9" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260920-9" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
   var m=location.hash.match(/^#preset=(s3-psram|touch-spi|native-usb|large-display)$/);
