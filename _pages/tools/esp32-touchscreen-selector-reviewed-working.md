@@ -80,7 +80,7 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
   <input id="hardware-search" type="search" placeholder="e.g. ESP32-S3, Waveshare, OLED, touch">
 </div>
 
-<div id="quick-start" class="quick-start"><div class="quick-start-heading"><strong>Quick start</strong><span>Start with a common profile or customize the filters below.</span></div><div class="preset-grid"><button type="button" class="preset-button" data-preset="s3-psram">ESP32-S3 + PSRAM 8 MB</button><button type="button" class="preset-button" data-preset="touch-spi">Touchscreen + SPI</button><button type="button" class="preset-button" data-preset="native-usb">Native USB</button><button type="button" class="preset-button" data-preset="large-display">Large display</button></div></div>
+<div id="quick-start" class="quick-start"><div class="quick-start-heading"><strong>Quick start</strong><span>Start with a common profile or customize the filters below.</span></div><div class="preset-grid"><button type="button" class="preset-button" data-preset="s3-psram" onclick="return window.EmbeddedNerdApplyPreset && (window.EmbeddedNerdApplyPreset('s3-psram'), false)">ESP32-S3 + PSRAM 8 MB</button><button type="button" class="preset-button" data-preset="touch-spi" onclick="return window.EmbeddedNerdApplyPreset && (window.EmbeddedNerdApplyPreset('touch-spi'), false)">Touchscreen + SPI</button><button type="button" class="preset-button" data-preset="native-usb" onclick="return window.EmbeddedNerdApplyPreset && (window.EmbeddedNerdApplyPreset('native-usb'), false)">Native USB</button><button type="button" class="preset-button" data-preset="large-display" onclick="return window.EmbeddedNerdApplyPreset && (window.EmbeddedNerdApplyPreset('large-display'), false)">Large display</button></div></div>
 <form id="selector-form">
 <section class="filter-section">
 <div class="section-heading"><div><span class="step">01</span><h3>Hardware type &amp; ESP32 family</h3></div><p>Selections become <strong>Required</strong> automatically. Uncheck <strong>Required</strong> when you want a preference instead.</p></div>
@@ -153,8 +153,8 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 </div>
 {:/nomarkdown}
 
-<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-2" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260920-2" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-3" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260920-3" defer></script>
 
 ## How to choose ESP32 hardware for a touchscreen project
 
