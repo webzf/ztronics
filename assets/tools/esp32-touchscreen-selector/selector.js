@@ -133,6 +133,7 @@ function commerceUrl(p){
 }
 
 function card(item,requirements){
+  requirements=requirements||{};
   var p=item.product,d=p.display||{},t=p.touch||{},u=p.usb||{},h=p.hardware||{};
   var display=d.display_present
     ? ((d.size_inches?d.size_inches+'″ ':'')+
