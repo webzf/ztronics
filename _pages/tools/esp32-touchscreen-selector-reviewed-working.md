@@ -101,12 +101,29 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 </div></section>
 
 <section class="filter-section">
-<div class="section-heading"><div><span class="step">03</span><h3>Touch &amp; connectivity</h3></div><p>Native USB is distinct from a UART bridge. Unknown catalog values are not guessed.</p></div>
+<div class="section-heading"><div><span class="step">03</span><h3>Touch &amp; USB</h3></div><p>Choose the core connectivity requirements for your project.</p></div>
 <div class="filter-grid">
 <div class="filter-card"><label for="touch">Touch</label><select id="touch" name="touch"><option value="">Any</option><option value="yes">Touch required</option><option value="no">No touch</option></select><label class="required-toggle"><input id="touch-required" type="checkbox"> Required</label></div>
+<div class="filter-card"><label for="native_usb">USB</label><select id="native_usb" name="native_usb"><option value="">Any</option><option value="yes">Native USB</option><option value="no">No native USB</option></select><label class="required-toggle"><input id="native_usb-required" type="checkbox"> Required</label><small>UART bridges never satisfy a Native USB requirement.</small></div>
+</div></section>
+
+<details id="advanced-filters" class="advanced-filters">
+<summary><strong>Advanced options</strong><span>Display details, touch details, memory, GPIO, storage and certification</span></summary>
+<section class="filter-section">
+<div class="section-heading"><div><span class="step">02</span><h3>Display</h3></div><p>Use technical display properties as hard constraints or soft preferences.</p></div>
+<div class="filter-grid">
+<div class="filter-card"><label for="display_technology">Technology</label><select id="display_technology" name="display_technology"><option value="">Any</option><option>OLED</option><option>LCD</option><option>TFT</option><option>e-paper</option><option>other</option></select><label class="required-toggle"><input id="display_technology-required" type="checkbox"> Required</label></div>
+<div class="filter-card"><label for="display_shape">Shape</label><select id="display_shape" name="display_shape"><option value="">Any</option><option>rectangular</option><option>square</option><option>round</option><option>other</option></select><label class="required-toggle"><input id="display_shape-required" type="checkbox"> Required</label></div>
+<div class="filter-card"><label for="size_min">Minimum display size (inches)</label><select id="size_min" name="size_min"><option value="">Any</option><option value="2">2″</option><option value="3">3″</option><option value="4">4″</option><option value="5">5″</option></select><label class="required-toggle"><input id="size_min-required" type="checkbox"> Required</label></div>
+<div class="filter-card"><label for="resolution">Resolution</label><select id="resolution" name="resolution"><option value="">Any</option><option value="240x320">240×320</option><option value="320x240">320×240</option><option value="480x320">480×320</option><option value="800x480">800×480</option><option value="1024x600">1024×600</option></select><label class="required-toggle"><input id="resolution-required" type="checkbox"> Required</label></div>
+<div class="filter-card"><label for="display_interface">Display interface</label><select id="display_interface" name="display_interface"><option value="">Any</option><option>SPI</option><option>RGB</option><option>8080</option><option>QSPI</option><option>other</option></select><label class="required-toggle"><input id="display_interface-required" type="checkbox"> Required</label></div>
+</div></section>
+
+<section class="filter-section advanced-inner">
+<div class="section-heading"><div><span class="step">A1</span><h3>Touch details</h3></div><p>Use touch type and interface when the exact controller connection matters.</p></div>
+<div class="filter-grid">
 <div class="filter-card"><label for="touch_type">Touch type</label><select id="touch_type" name="touch_type"><option value="">Any</option><option>capacitive</option><option>resistive</option></select><label class="required-toggle"><input id="touch_type-required" type="checkbox"> Required</label></div>
 <div class="filter-card"><label for="touch_interface">Touch interface</label><select id="touch_interface" name="touch_interface"><option value="">Any</option><option>I2C</option><option>SPI</option><option>other</option></select><label class="required-toggle"><input id="touch_interface-required" type="checkbox"> Required</label></div>
-<div class="filter-card"><label for="native_usb">USB</label><select id="native_usb" name="native_usb"><option value="">Any</option><option value="yes">Native USB</option><option value="no">No native USB</option></select><label class="required-toggle"><input id="native_usb-required" type="checkbox"> Required</label><small>UART bridges never satisfy a Native USB requirement.</small></div>
 </div></section>
 
 <section class="filter-section">
@@ -125,6 +142,9 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 <div class="filter-card"><label for="ce">CE</label><select id="ce" name="ce"><option value="">Any</option><option value="yes">CE</option><option value="no">No CE</option></select><label class="required-toggle"><input id="ce-required" type="checkbox"> Required</label></div>
 <div class="filter-card"><label for="fcc">FCC</label><select id="fcc" name="fcc"><option value="">Any</option><option value="yes">FCC</option><option value="no">No FCC</option></select><label class="required-toggle"><input id="fcc-required" type="checkbox"> Required</label></div>
 </div></section>
+
+
+</details>
 
 <div class="form-actions"><button type="submit" class="btn-primary">Find compatible hardware</button><button type="button" id="reset-btn" class="btn-secondary">Reset</button><button type="button" id="share-btn" class="btn-secondary">Share setup</button><span id="live-count" class="live-count" aria-live="polite">Choose filters to see matching hardware.</span></div>
 </form>
