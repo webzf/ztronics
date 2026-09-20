@@ -157,7 +157,7 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 {:/nomarkdown}
 
 <script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-10" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260920-13" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260920-14" defer></script>
 <script src="/assets/tools/esp32-touchscreen-selector/presets.js?v=20260920-1" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
