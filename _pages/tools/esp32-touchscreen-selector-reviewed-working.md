@@ -69,15 +69,8 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 <div class="mode-bar">
   <div class="mode-buttons">
     <button type="button" id="mode-requirements" class="mode-button active" data-mode="requirements">Filter &amp; find hardware</button>
-    <button type="button" id="browse-btn" class="mode-button" data-mode="browse">Browse all hardware</button>
   </div>
   <span class="catalog-status"><span id="catalog-count">0</span> catalog entries</span>
-</div>
-
-<div id="browse-note" class="browse-panel" hidden>
-  <label for="hardware-search">Search all hardware</label>
-  <p>Search by product, manufacturer, MCU, display or tag.</p>
-  <input id="hardware-search" type="search" placeholder="e.g. ESP32-S3, Waveshare, OLED, touch">
 </div>
 
 <div id="quick-start" class="quick-start"><div class="quick-start-heading"><strong>Quick start</strong><span>Choose a common setup or customize the filters below.</span></div><div class="preset-grid"><label for="preset-select">Preset</label><div class="preset-controls"><select id="preset-select" name="preset" aria-label="Quick start preset"><option value="">Choose a preset…</option><option value="s3-psram">ESP32-S3 + PSRAM 8 MB</option><option value="touch-spi">Touchscreen + SPI</option><option value="native-usb">Native USB</option><option value="large-display">Large display</option></select><button type="button" id="apply-preset-btn" class="btn-secondary">Apply preset</button></div></div></div>
@@ -140,6 +133,16 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 </form>
 
 <div id="catalog-error" class="error-panel" hidden></div>
+
+<div class="browse-launch">
+  <button type="button" id="browse-btn" class="btn-secondary">Browse all hardware</button>
+</div>
+
+<div id="browse-note" class="browse-panel" hidden>
+  <label for="hardware-search">Search all hardware</label>
+  <p>Search by product, manufacturer, MCU, display or tag.</p>
+  <input id="hardware-search" type="search" placeholder="e.g. ESP32-S3, Waveshare, OLED, touch">
+</div>
 </section>
 
 <section id="results" class="results" hidden aria-live="polite">
