@@ -80,30 +80,7 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
   <input id="hardware-search" type="search" placeholder="e.g. ESP32-S3, Waveshare, OLED, touch">
 </div>
 
-<div id="quick-start" class="quick-start"><div class="quick-start-heading"><strong>Quick start</strong><span>Choose a common setup or customize the filters below.</span></div><div class="preset-grid"><label for="preset-select">Preset</label><div class="preset-controls"><select id="preset-select" name="preset" aria-label="Quick start preset"><option value="">Choose a preset…</option><option value="s3-psram">ESP32-S3 + PSRAM 8 MB</option><option value="touch-spi">Touchscreen + SPI</option><option value="native-usb">Native USB</option><option value="large-display">Large display</option></select><button type="button" id="apply-preset-btn" class="btn-secondary" onclick="return window.EmbeddedNerdApplyPresetDirect ? window.EmbeddedNerdApplyPresetDirect(document.getElementById('preset-select').value) : false;">Apply preset</button><script>
-window.EmbeddedNerdApplyPresetDirect=function(id){
-  var presets={
-    "s3-psram":{family:"ESP32-S3",psram_min:"8"},
-    "touch-spi":{display_present:"yes",touch:"yes",touch_interface:"SPI"},
-    "native-usb":{native_usb:"yes"},
-    "large-display":{display_present:"yes",size_min:"4"}
-  };
-  var m=presets[id];
-  if(!m)return false;
-  Object.keys(m).forEach(function(k){
-    var el=document.getElementById(k);
-    if(el)el.value=m[k];
-    var req=document.getElementById(k+"-required");
-    if(req)req.checked=true;
-    if(el)el.dispatchEvent(new Event("change",{bubbles:true}));
-  });
-  var adv=document.getElementById("advanced-filters");
-  if(adv && id!=="native-usb")adv.open=true;
-  var form=document.getElementById("selector-form");
-  if(form && typeof form.requestSubmit==="function") form.requestSubmit();
-  return false;
-};
-</script></div></div></div>
+<div id="quick-start" class="quick-start"><div class="quick-start-heading"><strong>Quick start</strong><span>Choose a common setup or customize the filters below.</span></div><div class="preset-grid"><label for="preset-select">Preset</label><div class="preset-controls"><select id="preset-select" name="preset" aria-label="Quick start preset"><option value="">Choose a preset…</option><option value="s3-psram">ESP32-S3 + PSRAM 8 MB</option><option value="touch-spi">Touchscreen + SPI</option><option value="native-usb">Native USB</option><option value="large-display">Large display</option></select><button type="button" id="apply-preset-btn" class="btn-secondary">Apply preset</button></div></div></div>
 <form id="selector-form">
 <section class="filter-section">
 <div class="section-heading"><div><span class="step">01</span><h3>Hardware type &amp; ESP32 family</h3></div><p>Selections become <strong>Required</strong> automatically. Uncheck <strong>Required</strong> when you want a preference instead.</p></div>
@@ -178,6 +155,7 @@ window.EmbeddedNerdApplyPresetDirect=function(id){
 
 <script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-10" defer></script>
 <script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260920-12" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/presets.js?v=20260920-1" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
   var m=location.hash.match(/^#preset=(s3-psram|touch-spi|native-usb|large-display)$/);
