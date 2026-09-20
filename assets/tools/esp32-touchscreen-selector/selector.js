@@ -174,15 +174,16 @@ function card(item,requirements){
 
   var image=p.image||"";
   var imageAlt=p.image_alt||p.name||"Hardware product";
+  var technicalUrl=p.product_url ? (p.product_url.indexOf("http")===0 ? p.product_url : EMBEDDED_NERD_ORIGIN + p.product_url) : "#";
   var imageHtml=image
-    ? '<a class="product-image-link" href="'+esc(p.product_url ? (p.product_url.indexOf("http")===0 ? p.product_url : EMBEDDED_NERD_ORIGIN + p.product_url) : "#")+'"><img class="product-image" src="'+esc(image)+'" alt="'+esc(imageAlt)+'" loading="lazy" width="640" height="400"></a>'
+    ? '<div class="product-image-wrap"><img class="product-image" src="'+esc(image)+'" alt="'+esc(imageAlt)+'" loading="lazy" width="640" height="400"></div>'
     : '';
 
   return '<article class="product-card">'+
     imageHtml+
     '<div class="product-head"><div>'+
       '<span class="eyebrow">'+esc(p.manufacturer||"Manufacturer unknown")+'</span>'+
-      '<h3>'+esc(p.name)+'</h3>'+
+      '<h3><a class="product-title-link" href="'+esc(technicalUrl)+'">'+esc(p.name)+'</a></h3>'+
       '<span class="type-badge">'+esc((p.product_type||"hardware").replace(/_/g," "))+'</span>'+
     '</div>'+
     (item.score?'<strong class="match-badge">'+item.score+'% preference match</strong>':"")+
