@@ -8,6 +8,7 @@ var results=document.getElementById("results");
 var products=[];
 var lastEvaluation=null;
 var requiredTouched={};
+var pendingPreset=null;
 
 var EMBEDDED_NERD_ORIGIN="https://embeddednerd.com";
 var COMMERCE_PATH="/go/hardware/";
@@ -97,7 +98,8 @@ function conditional(){
   }else if(note){note.hidden=true;}syncFilterDependencies();}
 
 function setupAdvancedFilters(){var d=$("advanced-filters");if(d)d.open=false;}
-function setupPresets(){var box=document.querySelector(".preset-grid");if(!box)return;box.addEventListener("click",function(e){var b=e.target.closest(".preset-button");if(!b)return;e.preventDefault();var m={"s3-psram":{family:"ESP32-S3",psram_min:"8"},"touch-spi":{display_present:"yes",touch:"yes",touch_interface:"SPI"},"native-usb":{native_usb:"yes"},"large-display":{display_present:"yes",size_min:"4"}}[b.dataset.preset];if(!m)return;reset(false);Object.keys(m).forEach(function(k){var el=$(k);if(el){el.value=m[k];var r=$(k+"-required");if(r){r.checked=true;requiredTouched[k]=true;}}});setMode("requirements");conditional();syncFilterDependencies();syncUrl();if(products.length){run();window.requestAnimationFrame(function(){results.scrollIntoView({behavior:"smooth",block:"start"});});}else $("live-count").textContent="Preset selected · waiting for catalog…";});}
+function applyPreset(id){var presets={"s3-psram":{family:"ESP32-S3",psram_min:"8"},"touch-spi":{display_present:"yes",touch:"yes",touch_interface:"SPI"},"native-usb":{native_usb:"yes"},"large-display":{display_present:"yes",size_min:"4"}};var m=presets[id];if(!m)return;pendingPreset=id;reset(false);Object.keys(m).forEach(function(k){var el=$(k);if(el){el.value=m[k];var r=$(k+"-required");if(r){r.checked=true;requiredTouched[k]=true;}}});setMode("requirements");conditional();syncFilterDependencies();syncUrl();if(products.length){pendingPreset=null;run();}else $("live-count").textContent="Preset selected · waiting for catalog…";}
+function setupPresets(){var box=document.querySelector(".preset-grid");if(!box)return;box.addEventListener("click",function(e){var b=e.target.closest(".preset-button");if(!b)return;e.preventDefault();applyPreset(b.dataset.preset);});}
 function disableFilter(ids,off){ids.forEach(function(id){var e=$(id),r=$(id+"-required");if(e)e.disabled=off;if(r)r.disabled=off;if(off){if(e)e.value="";if(r)r.checked=false;requiredTouched[id]=false;}});}
 function syncFilterDependencies(){var display=selected("display_present"),touch=selected("touch");disableFilter(["display_technology","display_shape","size_min","resolution","display_interface"],display==="no");disableFilter(["touch_type","touch_interface"],display==="no"||touch==="no");}
 function relaxSuggestions(){var b=build(),keys=Object.keys(b.r);return keys.map(function(k){var r=Object.assign({},b.r);delete r[k];return {key:k,count:Engine.evaluate(products,r,b.p).passed};}).filter(function(x){return x.count>0;}).sort(function(a,b){return b.count-a.count;}).slice(0,3);}
@@ -256,7 +258,7 @@ form.addEventListener("change",function(e){
   conditional();syncFilterDependencies();updateLiveCount();syncUrl();
 });
 form.addEventListener("submit",function(e){e.preventDefault();run();syncUrl();});
-$("browse-btn").addEventListener("click",function(){setMode("browse");browse();window.requestAnimationFrame(function(){var r=$("results");if(r)r.scrollIntoView({behavior:"smooth",block:"start"});var p=$("browse-note");if(p)$("hardware-search").focus();});});
+$("browse-btn").addEventListener("click",function(){setMode("browse");browse();window.requestAnimationFrame(function(){var p=$("browse-note");if(p)$("hardware-search").focus();});});
 $("hardware-search").addEventListener("input",browse);
 $("reset-btn").addEventListener("click",function(){reset(true);});
 $("share-btn").addEventListener("click",function(){syncUrl();var b=$("share-btn");if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(location.href).then(function(){b.textContent="Link copied";setTimeout(function(){b.textContent="Share setup";},1800);});}else{window.prompt("Copy this selector URL:",location.href);}});
@@ -270,7 +272,9 @@ fetch("/assets/tools/esp32-touchscreen-selector/data/products.json")
   .then(function(data){
     products=(data.products||[]).map(Engine.normalizeProduct);
     $("catalog-count").textContent=products.length;
-    conditional();syncFilterDependencies();updateLiveCount();if(new URLSearchParams(location.search).size)run();
+    conditional();syncFilterDependencies();updateLiveCount();
+    if(pendingPreset){var preset=pendingPreset;pendingPreset=null;applyPreset(preset);}
+    else if(new URLSearchParams(location.search).size)run();
   })
   .catch(function(e){
     $("catalog-error").hidden=false;
