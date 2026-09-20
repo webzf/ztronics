@@ -254,7 +254,7 @@ form.addEventListener("change",function(e){
   conditional();
 });
 form.addEventListener("submit",function(e){e.preventDefault();run();});
-$("browse-btn").addEventListener("click",function(){setMode("browse");browse();});
+$("browse-btn").addEventListener("click",function(){setMode("browse");browse();window.requestAnimationFrame(function(){var panel=$("browse-note");if(panel){panel.scrollIntoView({behavior:"smooth",block:"nearest"});$("hardware-search").focus();}});});
 $("hardware-search").addEventListener("input",browse);
 $("reset-btn").addEventListener("click",reset);
 $("mode-requirements").addEventListener("click",function(){setMode("requirements");});
