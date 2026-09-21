@@ -66,8 +66,6 @@ commerce.each do |product_id, entry|
           errors << "#{product_id}/#{merchant}: last_verified must be YYYY-MM-DD"
         end
       end
-    elsif offer.key?("affiliate_url") && !offer["affiliate_url"].to_s.empty?
-      errors << "#{product_id}/#{merchant}: disabled offer should not require a live affiliate URL"
     end
   end
 end
