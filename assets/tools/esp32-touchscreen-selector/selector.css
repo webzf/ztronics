@@ -9,3 +9,8 @@
 .en-v2-selector .product-actions{margin-top:auto;padding-top:14px;display:flex;gap:8px;flex-wrap:wrap}
 .en-v2-selector .product-actions .btn-small{flex:1 1 150px;text-align:center}
 @media(max-width:560px){.en-v2-selector .product-image-wrap{margin:-14px -14px 12px}.en-v2-selector .product-actions{display:grid;grid-template-columns:1fr}.en-v2-selector .product-actions .btn-small{width:100%}}
+
+.en-v2-selector .compat-badge{display:inline-flex;align-items:center;gap:3px}
+.en-v2-selector .compat-required{font-weight:800}
+.en-v2-selector .compat-preference{font-weight:650;opacity:.9}
+.en-v2-selector .match-badges:empty{display:none}
