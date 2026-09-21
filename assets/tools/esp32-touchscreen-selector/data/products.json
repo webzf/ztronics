@@ -130,7 +130,9 @@
         "imu": null,
         "rtc": null,
         "audio": null
-      }
+      },
+      "image": "/assets/images/products/ili9341-xpt2046-2-8-touchscreen.webp",
+      "image_alt": "ILI9341 2.8\" SPI TFT + XPT2046 Touch"
     },
     {
       "id": "waveshare-esp32-s3-touch-lcd-4-3",
@@ -263,7 +265,9 @@
         "imu": null,
         "rtc": null,
         "audio": null
-      }
+      },
+      "image": "/assets/images/products/waveshare-esp32-s3-touch-lcd-4-3.webp",
+      "image_alt": "Waveshare ESP32-S3-Touch-LCD-4.3"
     },
     {
       "id": "waveshare-esp32-s3-touch-lcd-7",
@@ -396,7 +400,9 @@
         "imu": null,
         "rtc": null,
         "audio": null
-      }
+      },
+      "image": "/assets/images/products/waveshare-esp32-s3-touch-lcd-7.webp",
+      "image_alt": "Waveshare ESP32-S3-Touch-LCD-7"
     }
   ]
 }
