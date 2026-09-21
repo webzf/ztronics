@@ -126,6 +126,16 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 <div class="filter-card"><label for="fcc">FCC</label><select id="fcc" name="fcc"><option value="">Any</option><option value="yes">FCC</option><option value="no">No FCC</option></select><label class="required-toggle"><input id="fcc-required" type="checkbox"> Required</label></div>
 </div></section>
 
+<section class="filter-section">
+<div class="section-heading"><div><span class="step">06</span><h3>Project features</h3></div><p>Use these when your project depends on software or onboard hardware capabilities. Unknown catalog data is never treated as a match for Required.</p></div>
+<div class="filter-grid">
+<div class="filter-card"><label for="lvgl_support">LVGL</label><select id="lvgl_support" name="lvgl_support"><option value="">Any</option><option value="yes">Supported</option><option value="no">Not supported</option></select><label class="required-toggle"><input id="lvgl_support-required" type="checkbox"> Required</label></div>
+<div class="filter-card"><label for="lvgl_level">LVGL support level</label><select id="lvgl_level" name="lvgl_level"><option value="">Any</option><option value="ready">LVGL-ready</option><option value="compatible">LVGL-compatible</option></select><label class="required-toggle"><input id="lvgl_level-required" type="checkbox"> Required</label></div>
+<div class="filter-card"><label for="battery">Battery</label><select id="battery" name="battery"><option value="">Any</option><option value="yes">Onboard battery support</option><option value="no">No onboard battery support</option></select><label class="required-toggle"><input id="battery-required" type="checkbox"> Required</label></div>
+<div class="filter-card"><label for="imu">IMU</label><select id="imu" name="imu"><option value="">Any</option><option value="yes">Onboard IMU</option><option value="no">No onboard IMU</option></select><label class="required-toggle"><input id="imu-required" type="checkbox"> Required</label></div>
+<div class="filter-card"><label for="rtc">RTC</label><select id="rtc" name="rtc"><option value="">Any</option><option value="yes">Onboard RTC</option><option value="no">No onboard RTC</option></select><label class="required-toggle"><input id="rtc-required" type="checkbox"> Required</label></div>
+<div class="filter-card"><label for="audio">Audio</label><select id="audio" name="audio"><option value="">Any</option><option value="yes">Onboard audio</option><option value="no">No onboard audio</option></select><label class="required-toggle"><input id="audio-required" type="checkbox"> Required</label></div>
+</div></section>
 
 </details>
 
@@ -156,8 +166,8 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 </div>
 {:/nomarkdown}
 
-<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-10" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260920-15" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-11" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260920-16" defer></script>
 <script src="/assets/tools/esp32-touchscreen-selector/presets.js?v=20260920-1" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
