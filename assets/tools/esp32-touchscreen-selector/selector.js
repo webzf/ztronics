@@ -151,10 +151,12 @@ function card(item,requirements){
     ["MCU",(p.esp32.family||[]).join(", ")||"Unknown"],
     ["Display",display],
     ["Touch",t.touch===true?(t.touch_type||"Yes"):t.touch===false?"No":"Unknown"],
-    ["Flash",p.esp32.flash_mb!=null?p.esp32.flash_mb+" MB":"Unknown"],
-    ["PSRAM",p.esp32.psram_mb!=null?p.esp32.psram_mb+" MB":"Unknown"],
+    ["Memory",[
+      p.esp32.flash_mb!=null?p.esp32.flash_mb+" MB Flash":null,
+      p.esp32.psram_mb!=null?p.esp32.psram_mb+" MB PSRAM":null
+    ].filter(Boolean).join(" · ")||"Unknown"],
     ["USB",u.native_usb===true?"Native USB":u.uart_bridge===true?"UART bridge":u.usb_available===true?"USB":"Unknown"],
-    ["Peripherals",[h.microsd===true?"microSD":null,h.battery_charging===true?"Battery charging":null].filter(Boolean).join(" · ")||"—"]
+    ["Features",[h.microsd===true?"microSD":null,h.battery_charging===true?"Battery charging":null].filter(Boolean).join(" · ")||"—"]
   ];
 
   var mandatory=[];
