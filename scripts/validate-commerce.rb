@@ -12,6 +12,8 @@ abort "Missing #{commerce_path}" unless File.file?(commerce_path)
 commerce = YAML.load_file(commerce_path) || {}
 errors = []
 warnings = []
+structured_offers = 0
+unstructured_enabled_offers = 0
 
 product_ids = Dir[File.join(ROOT, "_products", "*.md")].filter_map do |path|
   text = File.read(path, encoding: "UTF-8")
@@ -56,6 +58,12 @@ commerce.each do |product_id, entry|
     url = offer["affiliate_url"].to_s
 
     if offer["enabled"] == true
+      if offer.key?("product_id")
+        structured_offers += 1
+      else
+        unstructured_enabled_offers += 1
+      end
+
       errors << "#{product_id}/#{merchant}: enabled offer needs affiliate_url" if url.empty?
       errors << "#{product_id}/#{merchant}: affiliate_url must be http(s)" unless url.match?(/\Ahttps?:\/\//)
     end
@@ -105,6 +113,7 @@ if errors.any?
 end
 
 puts "Commerce validation: PASS (#{commerce.length} products)"
+puts "Commerce audit: #{structured_offers} structured enabled offers; #{unstructured_enabled_offers} enabled offers without product metadata"
 if warnings.any?
   puts "Commerce validation warnings:"
   warnings.each { |warning| puts " - #{warning}" }
