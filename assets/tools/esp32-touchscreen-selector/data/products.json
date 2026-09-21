@@ -267,7 +267,8 @@
         "audio": null
       },
       "image": "/assets/images/products/waveshare-esp32-s3-touch-lcd-4-3.webp",
-      "image_alt": "Waveshare ESP32-S3-Touch-LCD-4.3"
+      "image_alt": "Waveshare ESP32-S3-Touch-LCD-4.3",
+      "manufacturer_sku": "25948"
     },
     {
       "id": "waveshare-esp32-s3-touch-lcd-7",
@@ -402,7 +403,8 @@
         "audio": null
       },
       "image": "/assets/images/products/waveshare-esp32-s3-touch-lcd-7.webp",
-      "image_alt": "Waveshare ESP32-S3-Touch-LCD-7"
+      "image_alt": "Waveshare ESP32-S3-Touch-LCD-7",
+      "manufacturer_sku": "27078"
     },
     {
       "id": "waveshare-esp32-s3-touch-lcd-1-85b",
