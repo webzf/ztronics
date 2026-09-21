@@ -6,6 +6,7 @@ product_id: waveshare-esp32-s3-touch-lcd-1-85b
 category: Displays
 manufacturer: "Waveshare"
 alt: "Waveshare ESP32-S3-Touch-LCD-1.85B 1.85 inch ESP32-S3 touchscreen board"
+image: "https://www.waveshare.com/img/devkit/ESP32-S3-Touch-LCD-1.85B/ESP32-S3-Touch-LCD-1.85B-details-1.jpg"
 excerpt: "Waveshare ESP32-S3-Touch-LCD-1.85B with a 1.85-inch 360×360 capacitive touchscreen, 8MB PSRAM, IMU, RTC, audio, battery support, microSD, and native USB."
 description: "The Waveshare ESP32-S3-Touch-LCD-1.85B is a compact ESP32-S3 touchscreen development board combining a 1.85-inch 360×360 QSPI display with capacitive I2C touch, 8MB PSRAM, 16MB Flash, native USB, IMU, RTC, audio, microSD, and 3.7V lithium battery charging/discharging support."
 categories:
