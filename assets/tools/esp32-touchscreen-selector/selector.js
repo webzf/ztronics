@@ -187,6 +187,16 @@ function card(item,requirements){
     ? '<div class="product-image-wrap"><img class="product-image" src="'+esc(image)+'" alt="'+esc(imageAlt)+'" loading="lazy" width="640" height="400"></div>'
     : '';
 
+  var contextual=[];
+  if(Object.keys(requirements).length){
+    mandatory.forEach(function(x){contextual.push('<span class="compat-badge compat-required">'+esc(x)+' ✓</span>');});
+    item.matches.slice(0,5).forEach(function(x){contextual.push('<span class="compat-badge compat-preference">'+esc(x)+' ✓</span>');});
+  }else{
+    [p.esp32.family&&p.esp32.family[0],d.display_present===true?(d.interface||d.technology||"Display"):null,t.touch===true?"Touch":null,p.esp32.psram_mb!=null?"PSRAM "+p.esp32.psram_mb+"MB":null,u.native_usb===true?"Native USB":null].filter(Boolean).forEach(function(x){
+      contextual.push('<span class="compat-badge">'+esc(x)+' ✓</span>');
+    });
+  }
+
   return '<article class="product-card">'+
     imageHtml+
     '<div class="product-head"><div>'+
@@ -196,7 +206,7 @@ function card(item,requirements){
     '</div>'+
     (item.score?'<strong class="match-badge">'+item.score+'% preference match</strong>':"")+
     '</div>'+
-    '<div class="match-badges">'+[p.esp32.family&&p.esp32.family[0],d.display_present===true?(d.interface||d.technology||"Display"):null,t.touch===true?"Touch":null,p.esp32.psram_mb!=null?"PSRAM "+p.esp32.psram_mb+"MB":null,u.native_usb===true?"Native USB":null].filter(Boolean).map(function(x){return '<span class="compat-badge">'+esc(x)+' ✓</span>';}).join('')+'</div>'+
+    '<div class="match-badges">'+contextual.join('')+'</div>'+
     '<div class="quick-specs">'+specs.map(function(x){
       return '<div><span>'+esc(x[0])+'</span><strong>'+esc(x[1])+'</strong></div>';
     }).join("")+'</div>'+
