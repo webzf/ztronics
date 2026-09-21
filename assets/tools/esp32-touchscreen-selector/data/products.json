@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "2.1",
   "products": [
     {
       "id": "ili9341-xpt2046-2-8-touchscreen",
@@ -118,8 +118,19 @@
         }
       ],
       "data_quality": "migrated_legacy",
-      "image": "/assets/images/products/ili9341-xpt2046-2-8-touchscreen.webp",
-      "image_alt": "ILI9341 2.8\" SPI TFT + XPT2046 Touch"
+      "software": {
+        "lvgl": {
+          "support": null,
+          "level": null,
+          "framework": null
+        }
+      },
+      "features": {
+        "battery": null,
+        "imu": null,
+        "rtc": null,
+        "audio": null
+      }
     },
     {
       "id": "waveshare-esp32-s3-touch-lcd-4-3",
@@ -240,8 +251,19 @@
         }
       ],
       "data_quality": "verified_manufacturer",
-      "image": "/assets/images/products/waveshare-esp32-s3-touch-lcd-4-3.webp",
-      "image_alt": "Waveshare ESP32-S3-Touch-LCD-4.3"
+      "software": {
+        "lvgl": {
+          "support": null,
+          "level": null,
+          "framework": null
+        }
+      },
+      "features": {
+        "battery": null,
+        "imu": null,
+        "rtc": null,
+        "audio": null
+      }
     },
     {
       "id": "waveshare-esp32-s3-touch-lcd-7",
@@ -362,8 +384,19 @@
         }
       ],
       "data_quality": "verified_manufacturer",
-      "image": "/assets/images/products/waveshare-esp32-s3-touch-lcd-7.webp",
-      "image_alt": "Waveshare ESP32-S3-Touch-LCD-7"
+      "software": {
+        "lvgl": {
+          "support": null,
+          "level": null,
+          "framework": null
+        }
+      },
+      "features": {
+        "battery": null,
+        "imu": null,
+        "rtc": null,
+        "audio": null
+      }
     }
   ]
 }
