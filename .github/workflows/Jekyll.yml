@@ -32,6 +32,9 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Validate commerce database
+        run: ruby scripts/validate-commerce.rb
+
       - name: Build site
         run: bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build
 
