@@ -5,6 +5,7 @@ var FAMILY_ORDER=["ESP32","ESP32-S2","ESP32-S3","ESP32-C3","ESP32-C5","ESP32-C6"
 var DISPLAY_TECH=["OLED","LCD","TFT","e-paper","other"];
 var DISPLAY_SHAPES=["rectangular","square","round","other"];
 var PRODUCT_TYPES=["development_board","board_with_display","display_module"];
+var LVGL_LEVELS=["ready","compatible"];
 
 function normalize(value){
   if(value === undefined || value === null || value === "") return null;
@@ -31,6 +32,18 @@ function validateProduct(p){
   if(p.touch){
     if(!validBoolOrNull(p.touch.touch)) errors.push("touch.touch must be boolean/null");
   }
+  if(p.software){
+    if(!p.software.lvgl || typeof p.software.lvgl!=="object") errors.push("software.lvgl is required");
+    else {
+      if(!validBoolOrNull(p.software.lvgl.support)) errors.push("software.lvgl.support must be boolean/null");
+      if(p.software.lvgl.level!==null && p.software.lvgl.level!==undefined && LVGL_LEVELS.indexOf(p.software.lvgl.level)===-1) errors.push("Invalid LVGL level");
+    }
+  }
+  if(p.features){
+    ["battery","imu","rtc","audio"].forEach(function(k){
+      if(!validBoolOrNull(p.features[k])) errors.push("features."+k+" must be boolean/null");
+    });
+  }
   if(p.hardware){
     ["microsd","battery","battery_charging","buttons","led","camera","audio"].forEach(function(k){
       if(!validBoolOrNull(p.hardware[k])) errors.push("hardware."+k+" must be boolean/null");
@@ -49,10 +62,14 @@ function normalizeProduct(p){
   out.touch=out.touch||{};
   out.usb=out.usb||{};
   out.hardware=out.hardware||{};
+  out.software=out.software||{};
+  out.software.lvgl=out.software.lvgl||{support:null,level:null,framework:null};
+  out.features=out.features||{};
   out.certification=out.certification||{};
   out.interfaces=out.interfaces||{};
   out.display_touch_bus=out.display_touch_bus||{};
   out.esp32.family=normalize(out.esp32.family)||[];
+  ["battery","imu","rtc","audio"].forEach(function(k){if(!(k in out.features))out.features[k]=null;});
   return out;
 }
 
@@ -94,6 +111,9 @@ function matchesRequirement(p, req){
   if(req.psram_min!==null && req.psram_min!==undefined && !numericAtLeast(p.esp32.psram_mb, req.psram_min)) return false;
   if(req.flash_min!==null && req.flash_min!==undefined && !numericAtLeast(p.esp32.flash_mb, req.flash_min)) return false;
   if(req.free_gpio_min!==null && req.free_gpio_min!==undefined && !numericAtLeast(p.hardware.free_gpio, req.free_gpio_min)) return false;
+  if(req.lvgl_support!==null && req.lvgl_support!==undefined && !meetsBoolean(p.software.lvgl.support, req.lvgl_support)) return false;
+  if(req.lvgl_level && !fieldMatches(p.software.lvgl.level, req.lvgl_level)) return false;
+  for(var i=0;i<4;i++){var feature=["battery","imu","rtc","audio"][i];if(req[feature]!==null && req[feature]!==undefined && !meetsBoolean(p.features[feature],req[feature])) return false;}
   return true;
 }
 
@@ -121,6 +141,9 @@ function reasonForFailure(p, req){
   if(req.psram_min!==null && req.psram_min!==undefined) add(numericAtLeast(p.esp32.psram_mb,req.psram_min),"Insufficient/unknown PSRAM");
   if(req.flash_min!==null && req.flash_min!==undefined) add(numericAtLeast(p.esp32.flash_mb,req.flash_min),"Insufficient/unknown Flash");
   if(req.free_gpio_min!==null && req.free_gpio_min!==undefined) add(numericAtLeast(p.hardware.free_gpio,req.free_gpio_min),"Insufficient/unknown free GPIO");
+  if(req.lvgl_support!==null && req.lvgl_support!==undefined) add(meetsBoolean(p.software.lvgl.support,req.lvgl_support),"LVGL support requirement not met");
+  if(req.lvgl_level) add(fieldMatches(p.software.lvgl.level,req.lvgl_level),"LVGL support level not met");
+  ["battery","imu","rtc","audio"].forEach(function(k){if(req[k]!==null && req[k]!==undefined) add(meetsBoolean(p.features[k],req[k]),k+" requirement not met");});
   return reasons.length?reasons:["Mandatory compatibility rule not met"];
 }
 
@@ -150,6 +173,9 @@ function scorePreferences(p, prefs){
   if(prefs.flash_min!==null && prefs.flash_min!==undefined){soft("Flash ≥ "+prefs.flash_min+" MB",numericAtLeast(p.esp32.flash_mb,prefs.flash_min),valueKnown(p.esp32.flash_mb));}
   if(prefs.psram_min!==null && prefs.psram_min!==undefined){soft("PSRAM ≥ "+prefs.psram_min+" MB",numericAtLeast(p.esp32.psram_mb,prefs.psram_min),valueKnown(p.esp32.psram_mb));}
   if(prefs.free_gpio_min!==null && prefs.free_gpio_min!==undefined){soft("Free GPIO ≥ "+prefs.free_gpio_min,numericAtLeast(p.hardware.free_gpio,prefs.free_gpio_min),valueKnown(p.hardware.free_gpio));}
+  if(prefs.lvgl_support!==null && prefs.lvgl_support!==undefined){soft("LVGL support",p.software.lvgl.support===prefs.lvgl_support,valueKnown(p.software.lvgl.support));}
+  if(prefs.lvgl_level){soft("LVGL: "+prefs.lvgl_level,p.software.lvgl.level===prefs.lvgl_level,valueKnown(p.software.lvgl.level));}
+  ["battery","imu","rtc","audio"].forEach(function(k){if(prefs[k]!==null && prefs[k]!==undefined)soft(k.charAt(0).toUpperCase()+k.slice(1),p.features[k]===prefs[k],valueKnown(p.features[k]));});
   return {score:possible?Math.round(score/possible*100):0,matches:matches,misses:misses};
 }
 
