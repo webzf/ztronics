@@ -14,3 +14,7 @@
 .en-v2-selector .compat-required{font-weight:800}
 .en-v2-selector .compat-preference{font-weight:650;opacity:.9}
 .en-v2-selector .match-badges:empty{display:none}
+
+.en-v2-selector .relax-action{display:block;width:100%;text-align:left;border:1px solid color-mix(in srgb,currentColor 16%,transparent);border-radius:10px;background:color-mix(in srgb,currentColor 5%,transparent);color:inherit;padding:9px 11px;margin:6px 0;font:inherit;font-size:.82rem;cursor:pointer}
+.en-v2-selector .relax-action:hover{text-decoration:underline}
+.en-v2-selector .relax-action:focus-visible{outline:3px solid currentColor;outline-offset:2px}
