@@ -77,6 +77,12 @@ function build(){
   both("flash_min",num("flash_min"));
   both("psram_min",num("psram_min"));
   both("free_gpio_min",num("free_gpio_min"));
+  both("lvgl_support",boolVal("lvgl_support"));
+  both("lvgl_level",selected("lvgl_level"));
+  both("battery",boolVal("battery"));
+  both("imu",boolVal("imu"));
+  both("rtc",boolVal("rtc"));
+  both("audio",boolVal("audio"));
 
   return {r:r,p:p};
 }
@@ -104,7 +110,7 @@ function setupPresets(){window.EmbeddedNerdApplyPreset=applyPreset;var s=$("pres
 function syncFilterDependencies(){var display=selected("display_present"),touch=selected("touch");disableFilter(["display_technology","display_shape","size_min","resolution","display_interface"],display==="no");disableFilter(["touch_type","touch_interface"],display==="no"||touch==="no");}
 function relaxSuggestions(){var b=build(),keys=Object.keys(b.r);return keys.map(function(k){var r=Object.assign({},b.r);delete r[k];return {key:k,count:Engine.evaluate(products,r,b.p).passed};}).filter(function(x){return x.count>0;}).sort(function(a,b){return b.count-a.count;}).slice(0,3);}
 function updateLiveCount(){if(!products.length){$("live-count").textContent="Catalog loading…";return;}var b=build(),e=Engine.evaluate(products,b.r,b.p);$("live-count").textContent=e.passed+" compatible now · "+e.valid+" valid catalog entries";}
-function syncUrl(){var u=new URL(window.location.href),p=u.searchParams,ids=["category","family","display_present","display_technology","display_shape","size_min","resolution","touch","touch_type","touch_interface","display_interface","native_usb","microsd","battery_charging","ce","fcc","flash_min","psram_min","free_gpio_min"];Array.from(p.keys()).forEach(function(k){if(k.endsWith("_req")||ids.indexOf(k)>=0)p.delete(k);});ids.forEach(function(k){var v=val(k);if(v!==""){p.set(k,v);if(required(k))p.set(k+"_req","1");}});history.replaceState(null,"",u.pathname+(p.toString()?"?"+p.toString():"")+u.hash);}
+function syncUrl(){var u=new URL(window.location.href),p=u.searchParams,ids=["category","family","display_present","display_technology","display_shape","size_min","resolution","touch","touch_type","touch_interface","display_interface","native_usb","microsd","battery_charging","ce","fcc","flash_min","psram_min","free_gpio_min","lvgl_support","lvgl_level","battery","imu","rtc","audio"];Array.from(p.keys()).forEach(function(k){if(k.endsWith("_req")||ids.indexOf(k)>=0)p.delete(k);});ids.forEach(function(k){var v=val(k);if(v!==""){p.set(k,v);if(required(k))p.set(k+"_req","1");}});history.replaceState(null,"",u.pathname+(p.toString()?"?"+p.toString():"")+u.hash);}
 function loadUrl(){var p=new URLSearchParams(location.search),found=false;var hash=location.hash.replace(/^#/,"");if(hash.indexOf("preset=")===0){pendingPreset=decodeURIComponent(hash.slice(8));found=true;}p.forEach(function(v,k){if(k==="preset"){pendingPreset=v;found=true;return;}if(k.endsWith("_req"))return;var e=$(k);if(e){e.value=v;found=true;var r=$(k+"-required");if(r){r.checked=p.get(k+"_req")==="1";requiredTouched[k]=r.checked;}}});urlStateFound=found;if(found&&!pendingPreset){conditional();syncFilterDependencies();updateLiveCount();}}
 function setMode(mode){
   document.querySelectorAll("[data-mode]").forEach(function(b){
