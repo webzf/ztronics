@@ -212,10 +212,10 @@ function card(item,requirements){
     '<div class="quick-specs">'+specs.map(function(x){
       return '<div><span>'+esc(x[0])+'</span><strong>'+esc(x[1])+'</strong></div>';
     }).join("")+'</div>'+
-    (mandatory.length?'<div class="match-explanation mandatory-match"><strong>Mandatory requirements met</strong><ul>'+mandatory.map(function(x){return "<li>✓ "+esc(x)+"</li>";}).join("")+'</ul></div>':"")+
-    '<div class="match-explanation preference-match"><strong>Preference match</strong>'+
-      (item.matches.length?'<ul>'+item.matches.map(function(x){return "<li>✓ "+esc(x)+"</li>";}).join("")+'</ul>':"<p>No optional preferences selected.</p>")+
-      (item.misses.length?'<strong>Preferences not met</strong><ul>'+item.misses.slice(0,4).map(function(x){return "<li>~ "+esc(x)+"</li>";}).join("")+'</ul>':"")+
+    (mandatory.length?'<div class="match-explanation mandatory-match"><strong>✓ Required</strong><ul>'+mandatory.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul></div>':"")+
+    '<div class="match-explanation preference-match"><strong>✓ Preferences matched</strong>'+
+      (item.matches.length?'<ul>'+item.matches.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul>':"<p>No optional preferences selected.</p>")+
+      (item.misses.length?'<strong class="not-matched-heading">~ Not matched</strong><ul class="not-matched-list">'+item.misses.slice(0,4).map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul>':"")+
     '</div>'+
     '<div class="product-actions">'+
       '<a class="btn-small btn-link" href="'+esc(p.product_url ? (p.product_url.indexOf("http")===0 ? p.product_url : EMBEDDED_NERD_ORIGIN + p.product_url) : "#")+'">View technical details</a>'+
