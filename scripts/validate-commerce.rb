@@ -52,19 +52,20 @@ commerce.each do |product_id, entry|
       next
     end
 
+    url = offer["affiliate_url"].to_s
+
     if offer["enabled"] == true
-      url = offer["affiliate_url"].to_s
       errors << "#{product_id}/#{merchant}: enabled offer needs affiliate_url" if url.empty?
       errors << "#{product_id}/#{merchant}: affiliate_url must be http(s)" unless url.match?(/\Ahttps?:\/\//)
+    end
 
-      if offer.key?("product_id")
-        errors << "#{product_id}/#{merchant}: product_id requires product_url" if offer["product_url"].to_s.empty?
-        errors << "#{product_id}/#{merchant}: product_url must be http(s)" unless offer["product_url"].to_s.match?(/\Ahttps?:\/\//)
-        begin
-          Date.iso8601(offer["last_verified"].to_s)
-        rescue ArgumentError
-          errors << "#{product_id}/#{merchant}: last_verified must be YYYY-MM-DD"
-        end
+    if offer.key?("product_id")
+      errors << "#{product_id}/#{merchant}: product_id requires product_url" if offer["product_url"].to_s.empty?
+      errors << "#{product_id}/#{merchant}: product_url must be http(s)" unless offer["product_url"].to_s.match?(/\Ahttps?:\/\//)
+      begin
+        Date.iso8601(offer["last_verified"].to_s)
+      rescue ArgumentError
+        errors << "#{product_id}/#{merchant}: last_verified must be YYYY-MM-DD"
       end
     end
   end
