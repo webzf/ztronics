@@ -416,9 +416,9 @@ ssd1306-oled:
 
 waveshare-esp32-s3-touch-lcd-1-85b:
 
-  preferred_store: waveshare
+  preferred_store: aliexpress
 
-  notes: "Official store offer; affiliate mapping not configured yet."
+  notes: "AliExpress affiliate offer verified against the 1.85B hardware specifications."
 
   disclaimer: false
 
@@ -439,6 +439,6 @@ waveshare-esp32-s3-touch-lcd-1-85b:
       affiliate_url: ""
 
     aliexpress:
-      enabled: false
-      affiliate_url: ""
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3RWgBg5"
 
