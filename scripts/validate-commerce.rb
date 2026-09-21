@@ -11,6 +11,7 @@ abort "Missing #{commerce_path}" unless File.file?(commerce_path)
 
 commerce = YAML.load_file(commerce_path) || {}
 errors = []
+warnings = []
 
 product_ids = Dir[File.join(ROOT, "_products", "*.md")].filter_map do |path|
   text = File.read(path, encoding: "UTF-8")
@@ -71,6 +72,26 @@ commerce.each do |product_id, entry|
   end
 end
 
+# Flag affiliate URLs reused across different products. Reuse can be legitimate,
+# but it is often a sign that a generic or wrong destination was copied.
+affiliate_usage = Hash.new { |hash, key| hash[key] = [] }
+commerce.each do |product_id, entry|
+  next unless entry.is_a?(Hash) && entry["stores"].is_a?(Hash)
+
+  entry["stores"].each do |merchant, offer|
+    next unless offer.is_a?(Hash)
+    url = offer["affiliate_url"].to_s.strip
+    next if url.empty?
+
+    affiliate_usage[[merchant, url]] << product_id
+  end
+end
+
+affiliate_usage.each do |(merchant, url), products|
+  next if products.length < 2
+  warnings << "#{merchant}: affiliate_url reused by #{products.length} products: #{products.join(", ")}"
+end
+
 routes_dir = File.join(ROOT, "go", "hardware")
 commerce.each_key do |product_id|
   route = File.join(routes_dir, product_id, "index.html")
@@ -84,3 +105,7 @@ if errors.any?
 end
 
 puts "Commerce validation: PASS (#{commerce.length} products)"
+if warnings.any?
+  puts "Commerce validation warnings:"
+  warnings.each { |warning| puts " - #{warning}" }
+end
