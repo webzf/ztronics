@@ -212,7 +212,7 @@ function card(item,requirements){
     '<div class="quick-specs">'+specs.map(function(x){
       return '<div><span>'+esc(x[0])+'</span><strong>'+esc(x[1])+'</strong></div>';
     }).join("")+'</div>'+
-    (mandatory.length?'<div class="match-explanation mandatory-match"><strong>✓ Required</strong><ul>'+mandatory.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul></div>':"")+
+    (mandatory.length?'<div class="match-explanation mandatory-match"><strong>✓ Why this matches</strong><p class="match-intro">This product satisfies your required hardware constraints.</p><ul>'+mandatory.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul></div>':"")+
     '<div class="match-explanation preference-match"><strong>✓ Preferences matched</strong>'+
       (item.matches.length?'<ul>'+item.matches.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul>':"<p>No optional preferences selected.</p>")+
       (item.misses.length?'<strong class="not-matched-heading">~ Not matched</strong><ul class="not-matched-list">'+item.misses.slice(0,4).map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul>':"")+
