@@ -127,12 +127,11 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 </div>
 {:/nomarkdown}
 
-<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-11" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260921-22" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/presets.js?v=20260920-1" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260922-1" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260922-1" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
-  var m=location.hash.match(/^#preset=(s3-psram|touch-spi|native-usb|large-display)$/);
+  var m=location.hash.match(/^#preset=(s3-psram|touch-spi|native-usb|large-display|c6-amoled-touch-battery)$/);
   if(m&&window.EmbeddedNerdApplyPreset) window.EmbeddedNerdApplyPreset(m[1]);
 });
 </script>
