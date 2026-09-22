@@ -5,7 +5,8 @@ var presets={
   "s3-psram":{family:"ESP32-S3",psram_min:"8"},
   "touch-spi":{display_present:"yes",touch:"yes",touch_interface:"SPI"},
   "native-usb":{native_usb:"yes"},
-  "large-display":{display_present:"yes",size_min:"4"}
+  "large-display":{display_present:"yes",size_min:"4"},
+  "c6-amoled-touch-battery":{family:"ESP32-C6",display_present:"yes",display_technology:"AMOLED",resolution:"368x448",touch:"yes",touch_type:"capacitive",touch_interface:"I2C",display_interface:"QSPI",battery:"yes",battery_charging:"yes"}
 };
 
 function applyPreset(id){
