@@ -440,3 +440,28 @@ waveshare-esp32-s3-touch-lcd-1-85b:
       product_url: "https://pt.aliexpress.com/item/1005012341488260.html"
       affiliate_url: "https://s.click.aliexpress.com/e/_c3RWgBg5"
       last_verified: "2026-09-22"
+#----------------
+
+waveshare-esp32-c6-touch-amoled-1-8:
+
+  preferred_store: aliexpress
+
+  notes: "Product offer not yet configured."
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: false
+      affiliate_url: ""
