@@ -20,16 +20,11 @@ waveshare-esp32-s3-touch-lcd-7:
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c3B9ASO9"
-      last_verified: "2026-09-22"
 
 
 #----------------
@@ -52,15 +47,10 @@ waveshare-esp32-s3-touch-lcd-4-3:
 
     amazon:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://amzn.to/4xKolNV"
-      last_verified: "2026-09-22"
 
     aliexpress:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c3LI5MHD"
 
 
@@ -85,16 +75,11 @@ ili9341-xpt2046-2-8-touchscreen:
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c4kUDNBB"
-      last_verified: "2026-09-22"
 
 
 #----------------
@@ -118,15 +103,10 @@ raspberry-pi-pico:
 
     amazon:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://amzn.to/3UoICdl"
-      last_verified: "2026-09-22"
 
     aliexpress:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
 
@@ -150,15 +130,10 @@ raspberry-pi-pico-w:
 
     amazon:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://amzn.to/4dbsORp"
-      last_verified: "2026-09-22"
 
     aliexpress:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
 
@@ -182,16 +157,11 @@ icm-42670-p:
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c3LI5MHD"
-      last_verified: "2026-09-22"
 
 
 #----------------
@@ -214,16 +184,11 @@ icm-42688-p:
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c3WbKl4x"
-      last_verified: "2026-09-22"
 
 
 #----------------
@@ -246,16 +211,11 @@ st7789-tft:
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c3eJg7z1"
-      last_verified: "2026-09-22"
 
 
 #----------------
@@ -279,16 +239,11 @@ bme280:
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c3eJg7z1"
-      last_verified: "2026-09-22"
 
 
 #----------------
@@ -312,16 +267,11 @@ dht22:
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c3BzxWD5"
-      last_verified: "2026-09-22"
 
 
 #----------------
@@ -344,16 +294,11 @@ bma400:
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c3RBiLUT"
-      last_verified: "2026-09-22"
 
 
 #----------------
@@ -377,16 +322,11 @@ mpu6050:
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c2uAjJYP"
-      last_verified: "2026-09-22"
 
 
 #----------------
@@ -409,16 +349,11 @@ ky-023-joystick:
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c3jqbrz5"
-      last_verified: "2026-09-22"
 
 
 #----------------
@@ -440,18 +375,12 @@ esp32-devkit:
   stores:
 
     amazon:
-      enabled: true
-      product_id: ""
-      product_url: ""
+      enabled: false
       affiliate_url: ""
-      last_verified: "2026-09-22"
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_c4n38hZ9"
-      last_verified: "2026-09-22"
 
 
 ssd1306-oled:
@@ -472,16 +401,11 @@ ssd1306-oled:
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
       enabled: true
-      product_id: ""
-      product_url: ""
       affiliate_url: "https://s.click.aliexpress.com/e/_EIt4LOO"
-      last_verified: "2026-09-22"
 
 
 #----------------
@@ -504,14 +428,10 @@ waveshare-esp32-s3-touch-lcd-1-85b:
 
     waveshare:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     amazon:
       enabled: false
-      product_id: ""
-      product_url: ""
       affiliate_url: ""
 
     aliexpress:
@@ -519,4 +439,3 @@ waveshare-esp32-s3-touch-lcd-1-85b:
       product_id: "1005012341488260"
       product_url: "https://pt.aliexpress.com/item/1005012341488260.html"
       affiliate_url: "https://s.click.aliexpress.com/e/_c3RWgBg5"
-      last_verified: "2026-09-22"
