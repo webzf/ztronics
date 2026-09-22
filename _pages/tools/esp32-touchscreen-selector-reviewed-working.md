@@ -143,22 +143,14 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 </form>
 
 <div id="catalog-error" class="error-panel" hidden></div>
-
-<div class="browse-launch">
-  <button type="button" id="browse-btn" class="btn-secondary">Browse all hardware</button>
-</div>
-
-<div id="browse-note" class="browse-panel" hidden>
-  <label for="hardware-search">Search all hardware</label>
-  <p>Search by product, manufacturer, MCU, display or tag.</p>
-  <input id="hardware-search" type="search" placeholder="e.g. ESP32-S3, Waveshare, OLED, touch">
-</div>
+<div class="browse-launch"><button type="button" id="browse-btn" class="btn-secondary">Browse all hardware</button></div>
+<div id="browse-note" class="browse-panel" hidden><label for="hardware-search">Search all hardware</label><p>Search by product, manufacturer, MCU, display or tag.</p><input id="hardware-search" type="search" placeholder="e.g. ESP32-S3, Waveshare, OLED, touch"></div>
 </section>
 
 <section id="results" class="results" hidden aria-live="polite">
 <div class="results-heading"><span class="eyebrow">RESULTS</span><h3><span id="result-count">0</span> matching hardware</h3><p id="result-summary"></p><p class="result-meta"><span id="result-total">0</span> valid catalog entries · <span id="result-excluded">0</span> excluded</p></div>
 <div id="empty-state" class="empty-state" hidden><h4>No hardware meets all mandatory requirements.</h4><p id="empty-state-text"></p><p>Try changing one or more filters from <strong>Required</strong> to a preference.</p></div>
-<div id="exclusion-panel" class="exclusion-panel"><h4>Why other products were excluded</h4><p>Mandatory filters are evaluated before preference scoring.</p><ul id="exclusion-list"></ul></div>
+<div id="exclusion-panel" class="exclusion-panel"><h4>Why other products were excluded</h4><p>Mandatory filters are evaluated before preference scoring. The most common exclusion reasons are shown first.</p><ul id="exclusion-list"></ul></div>
 <div id="product-grid" class="product-grid"></div>
 </section>
 
@@ -167,7 +159,7 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 {:/nomarkdown}
 
 <script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-11" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260923-4" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260923-5" defer></script>
 <script src="/assets/tools/esp32-touchscreen-selector/presets.js?v=20260923-1" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
