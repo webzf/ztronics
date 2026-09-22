@@ -8,6 +8,8 @@ var results=document.getElementById("results");
 var products=[];
 var lastEvaluation=null;
 var requiredTouched={};
+var pendingPreset=null;
+var urlStateFound=false;
 
 var EMBEDDED_NERD_ORIGIN="https://embeddednerd.com";
 var COMMERCE_PATH="/go/hardware/";
@@ -102,16 +104,16 @@ function conditional(){
     }
   }else if(note){note.hidden=true;}syncFilterDependencies();}
 
-function setupAdvancedFilters(){var f=$("selector-form"),s=f.querySelectorAll(".filter-section");if(s.length<5)return;var d=document.createElement("details");d.id="advanced-filters";d.className="advanced-filters";var m=document.createElement("summary");m.innerHTML="<strong>Advanced filters</strong><span>Display details, memory, GPIO, storage and certification</span>";d.appendChild(m);for(var i=1;i<s.length;i++)d.appendChild(s[i]);s[0].parentNode.insertBefore(d,s[0].nextSibling);}
-function setupPresets(){document.querySelectorAll(".preset-button").forEach(function(b){b.addEventListener("click",function(){reset(false);var m={"s3-psram":{family:"ESP32-S3",psram_min:"8"},"touch-spi":{display_present:"yes",touch:"yes",touch_interface:"SPI"},"native-usb":{native_usb:"yes"},"large-display":{display_present:"yes",size_min:"4"},"c6-amoled-touch-battery":{family:"ESP32-C6",display_present:"yes",display_technology:"AMOLED",touch:"yes",touch_type:"capacitive",touch_interface:"I2C",display_interface:"QSPI",battery:"yes",battery_charging:"yes"}}[b.dataset.preset]||{};Object.keys(m).forEach(function(k){var e=$(k);if(e){e.value=m[k];var r=$(k+"-required");if(r)r.checked=true;}});conditional();updateLiveCount();var d=$("advanced-filters");if(d&&(b.dataset.preset==="touch-spi"||b.dataset.preset==="large-display"))d.open=true;run();});});}
-function disableFilter(ids,off){ids.forEach(function(id){var e=$(id),r=$(id+"-required");if(e)e.disabled=off;if(r)r.disabled=off;if(off){if(e)e.value="";if(r)r.checked=false;requiredTouched[id]=false;}});}
+function setupAdvancedFilters(){var d=$("advanced-filters");if(d)d.open=false;}
+function applyPreset(id){var presets={"s3-psram":{family:"ESP32-S3",psram_min:8},"touch-spi":{display_present:true,touch:true,touch_interface:"SPI"},"native-usb":{native_usb:true},"large-display":{display_present:true,size_min:4}};var m=presets[id];if(!m)return;pendingPreset=id;reset(false);Object.keys(m).forEach(function(k){var ui=typeof m[k]==="boolean"?(m[k]?"yes":"no"):String(m[k]);var el=$(k);if(el){el.value=ui;var r=$(k+"-required");if(r){r.checked=true;requiredTouched[k]=true;}}});var ps=$("preset-select");if(ps)ps.value=id;setMode("requirements");conditional();syncFilterDependencies();syncUrl();updateLiveCount();pendingPreset=null;}
+function setupPresets(){window.EmbeddedNerdApplyPreset=applyPreset;var s=$("preset-select"),b=$("apply-preset-btn");if(b)b.addEventListener("click",function(){if(s&&s.value)applyPreset(s.value);});}function disableFilter(ids,off){ids.forEach(function(id){var e=$(id),r=$(id+"-required");if(e)e.disabled=off;if(r)r.disabled=off;if(off){if(e)e.value="";if(r)r.checked=false;requiredTouched[id]=false;}});}
 function syncFilterDependencies(){var display=selected("display_present"),touch=selected("touch");disableFilter(["display_technology","display_shape","size_min","resolution","display_interface"],display==="no");disableFilter(["touch_type","touch_interface"],display==="no"||touch==="no");}
 function formatRelaxLabel(k){var labels={family:"ESP32 family",product_type:"Hardware type",display_present:"Display requirement",display_technology:"Display technology",display_shape:"Display shape",size_min:"Minimum display size",resolution:"Resolution",touch:"Touch requirement",touch_type:"Touch type",touch_interface:"Touch interface",display_interface:"Display interface",native_usb:"Native USB",microsd:"microSD",battery_charging:"Battery charging",flash_min:"Minimum Flash",psram_min:"Minimum PSRAM",free_gpio_min:"Minimum free GPIO",ce:"CE certification",fcc:"FCC certification",lvgl_support:"LVGL support",lvgl_level:"LVGL support level",battery:"Battery",imu:"IMU",rtc:"RTC",audio:"Audio"};return labels[k]||k.replace(/_/g," ");}
 function relaxSuggestions(){var b=build(),keys=Object.keys(b.r),base=Engine.evaluate(products,b.r,b.p).passed;return keys.map(function(k){var r=Object.assign({},b.r);delete r[k];var count=Engine.evaluate(products,r,b.p).passed;return {key:k,label:formatRelaxLabel(k),count:count,gain:Math.max(0,count-base)};}).filter(function(x){return x.count>0;}).sort(function(a,b){return b.gain-a.gain||b.count-a.count;}).slice(0,3);}
 function applyRelax(key){var r=$(key+"-required");if(r){r.checked=false;requiredTouched[key]=true;}conditional();syncFilterDependencies();syncUrl();updateLiveCount();run();}
 function updateLiveCount(){if(!products.length){$("live-count").textContent="Catalog loading…";return;}var b=build(),e=Engine.evaluate(products,b.r,b.p);$("live-count").textContent=e.passed+" compatible now · "+e.valid+" valid catalog entries";}
-function syncUrl(){var u=new URL(window.location.href),p=u.searchParams,ids=["category","family","display_present","display_technology","display_shape","size_min","resolution","touch","touch_type","touch_interface","display_interface","native_usb","microsd","battery_charging","ce","fcc","flash_min","psram_min","free_gpio_min"];Array.from(p.keys()).forEach(function(k){if(k.endsWith("_req")||ids.indexOf(k)>=0)p.delete(k);});ids.forEach(function(k){var v=val(k);if(v!==""){p.set(k,v);if(required(k))p.set(k+"_req","1");}});history.replaceState(null,"",u.pathname+(p.toString()?"?"+p.toString():"")+u.hash);}
-function loadUrl(){var p=new URLSearchParams(location.search),found=false;p.forEach(function(v,k){if(k.endsWith("_req"))return;var e=$(k);if(e){e.value=v;found=true;var r=$(k+"-required");if(r)r.checked=p.get(k+"_req")==="1";}});if(found){conditional();syncFilterDependencies();updateLiveCount();}}
+function syncUrl(){var u=new URL(window.location.href),p=u.searchParams,ids=["category","family","display_present","display_technology","display_shape","size_min","resolution","touch","touch_type","touch_interface","display_interface","native_usb","microsd","battery_charging","ce","fcc","flash_min","psram_min","free_gpio_min","lvgl_support","lvgl_level","battery","imu","rtc","audio"];Array.from(p.keys()).forEach(function(k){if(k.endsWith("_req")||ids.indexOf(k)>=0)p.delete(k);});ids.forEach(function(k){var v=val(k);if(v!==""){p.set(k,v);if(required(k))p.set(k+"_req","1");}});history.replaceState(null,"",u.pathname+(p.toString()?"?"+p.toString():"")+u.hash);}
+function loadUrl(){var p=new URLSearchParams(location.search),found=false;var hash=location.hash.replace(/^#/,"");if(hash.indexOf("preset=")===0){pendingPreset=decodeURIComponent(hash.slice(8));found=true;}p.forEach(function(v,k){if(k==="preset"){pendingPreset=v;found=true;return;}if(k.endsWith("_req"))return;var e=$(k);if(e){e.value=v;found=true;var r=$(k+"-required");if(r){r.checked=p.get(k+"_req")==="1";requiredTouched[k]=r.checked;}}});urlStateFound=found;if(found&&!pendingPreset){conditional();syncFilterDependencies();updateLiveCount();}}
 function setMode(mode){
   document.querySelectorAll("[data-mode]").forEach(function(b){
     b.classList.toggle("active",b.dataset.mode===mode);
@@ -249,7 +251,8 @@ function show(ev){
     productGrid.innerHTML="";
   }else{
     $("empty-state").hidden=true;
-    productGrid.innerHTML=ev.ranked.slice(0,50).map(card).join("");
+    var currentRequirements=build().r;
+    productGrid.innerHTML=ev.ranked.slice(0,50).map(function(item){return card(item,currentRequirements);}).join("");
   }
 
   results.hidden=false;
@@ -304,13 +307,13 @@ form.addEventListener("change",function(e){
   conditional();syncFilterDependencies();updateLiveCount();syncUrl();
 });
 form.addEventListener("submit",function(e){e.preventDefault();run();syncUrl();});
-$("browse-btn").addEventListener("click",function(){setMode("browse");browse();window.requestAnimationFrame(function(){var p=$("browse-note");if(p){p.scrollIntoView({behavior:"smooth",block:"nearest"});$("hardware-search").focus();}});});
+$("browse-btn").addEventListener("click",function(){setMode("browse");browse();window.requestAnimationFrame(function(){var p=$("browse-note");if(p)$("hardware-search").focus();});});
 $("hardware-search").addEventListener("input",browse);
 $("reset-btn").addEventListener("click",function(){reset(true);});
 $("share-btn").addEventListener("click",function(){syncUrl();var b=$("share-btn");if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(location.href).then(function(){b.textContent="Link copied";setTimeout(function(){b.textContent="Share setup";},1800);});}else{window.prompt("Copy this selector URL:",location.href);}});
 $("mode-requirements").addEventListener("click",function(){setMode("requirements");});setupAdvancedFilters();setupPresets();loadUrl();
 
-fetch("data/products.json?v=20260922-1")
+fetch("/assets/tools/esp32-touchscreen-selector/data/products.json?v=20260921-4")
   .then(function(r){
     if(!r.ok)throw Error("Catalog load failed");
     return r.json();
@@ -318,7 +321,9 @@ fetch("data/products.json?v=20260922-1")
   .then(function(data){
     products=(data.products||[]).map(Engine.normalizeProduct);
     $("catalog-count").textContent=products.length;
-    conditional();syncFilterDependencies();updateLiveCount();if(new URLSearchParams(location.search).size)run();
+    conditional();syncFilterDependencies();updateLiveCount();
+    if(pendingPreset){var preset=pendingPreset;pendingPreset=null;applyPreset(preset);}
+    else if(urlStateFound)run();
   })
   .catch(function(e){
     $("catalog-error").hidden=false;
