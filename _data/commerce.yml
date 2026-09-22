@@ -446,7 +446,7 @@ waveshare-esp32-c6-touch-amoled-1-8:
 
   preferred_store: aliexpress
 
-  notes: "AliExpress offer verified on 2026-09-22."
+  notes: "AliExpress affiliate offer verified on 2026-09-22."
 
   disclaimer: false
 
@@ -463,5 +463,8 @@ waveshare-esp32-c6-touch-amoled-1-8:
       affiliate_url: ""
 
     aliexpress:
-      enabled: false
-      affiliate_url: ""
+      enabled: true
+      product_id: "1005010644388674"
+      product_url: "https://www.aliexpress.com/item/1005010644388674.html"
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3VEnLgd"
+      last_verified: "2026-09-22"
