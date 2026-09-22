@@ -106,11 +106,8 @@ raspberry-pi-pico:
       affiliate_url: "https://amzn.to/3UoICdl"
 
     aliexpress:
-      enabled: true
-      product_id: "1005010644388674"
-      product_url: "https://www.aliexpress.com/item/1005010644388674.html"
-      affiliate_url: "https://s.click.aliexpress.com/e/_c30yTgh3"
-      last_verified: "2026-09-22"
+      enabled: false
+      affiliate_url: ""
 
 
 #----------------
