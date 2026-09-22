@@ -106,8 +106,11 @@ raspberry-pi-pico:
       affiliate_url: "https://amzn.to/3UoICdl"
 
     aliexpress:
-      enabled: false
-      affiliate_url: ""
+      enabled: true
+      product_id: "1005010644388674"
+      product_url: "https://www.aliexpress.com/item/1005010644388674.html"
+      affiliate_url: "https://s.click.aliexpress.com/e/_c30yTgh3"
+      last_verified: "2026-09-22"
 
 
 #----------------
@@ -446,7 +449,7 @@ waveshare-esp32-c6-touch-amoled-1-8:
 
   preferred_store: aliexpress
 
-  notes: "Product offer not yet configured."
+  notes: "AliExpress offer verified on 2026-09-22."
 
   disclaimer: false
 
