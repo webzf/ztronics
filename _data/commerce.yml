@@ -107,7 +107,7 @@ raspberry-pi-pico:
 
     aliexpress:
       enabled: false
-      affiliate_url: "https://s.click.aliexpress.com/e/_c3LI5MHD"
+      affiliate_url: ""
 
 
 #----------------
@@ -134,7 +134,7 @@ raspberry-pi-pico-w:
 
     aliexpress:
       enabled: false
-      affiliate_url: "https://s.click.aliexpress.com/e/_c3LI5MHD"
+      affiliate_url: ""
 
 
 #----------------
@@ -239,7 +239,7 @@ bme280:
 
     amazon:
       enabled: false
-      affiliate_url: "https://amzn.to/3RC1jZV"
+      affiliate_url: ""
 
     aliexpress:
       enabled: true
@@ -268,7 +268,7 @@ dht22:
 
     amazon:
       enabled: false
-      affiliate_url: "https://amzn.to/3RC1jZV"
+      affiliate_url: ""
 
     aliexpress:
       enabled: true
@@ -299,7 +299,7 @@ bma400:
 
     amazon:
       enabled: false
-      affiliate_url: "https://amzn.to/3RC1jZV"
+      affiliate_url: ""
 
     aliexpress:
       enabled: true
@@ -327,7 +327,7 @@ mpu6050:
 
     amazon:
       enabled: false
-      affiliate_url: "https://amzn.to/3RC1jZV"
+      affiliate_url: ""
 
     aliexpress:
       enabled: true
@@ -354,7 +354,7 @@ ky-023-joystick:
 
     amazon:
       enabled: false
-      affiliate_url: "https://amzn.to/3RC1jZV"
+      affiliate_url: ""
 
     aliexpress:
       enabled: true
@@ -381,7 +381,7 @@ esp32-devkit:
 
     amazon:
       enabled: true
-      affiliate_url: "https://amzn.to/3RC1jZV"
+      affiliate_url: ""
 
     aliexpress:
       enabled: true
@@ -406,7 +406,7 @@ ssd1306-oled:
 
     amazon:
       enabled: false
-      affiliate_url: "https://amzn.to/3RC1jZV"
+      affiliate_url: ""
 
     aliexpress:
       enabled: true
