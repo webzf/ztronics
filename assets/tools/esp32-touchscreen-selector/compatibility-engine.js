@@ -2,7 +2,7 @@
 "use strict";
 
 var FAMILY_ORDER=["ESP32","ESP32-S2","ESP32-S3","ESP32-C3","ESP32-C5","ESP32-C6"];
-var DISPLAY_TECH=["OLED","LCD","TFT","e-paper","other"];
+var DISPLAY_TECH=["OLED","LCD","TFT","AMOLED","e-paper","other"];
 var DISPLAY_SHAPES=["rectangular","square","round","other"];
 var PRODUCT_TYPES=["development_board","board_with_display","display_module"];
 var LVGL_LEVELS=["ready","compatible"];
