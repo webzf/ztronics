@@ -189,6 +189,20 @@ function card(item,requirements){
     ? '<div class="product-image-wrap"><img class="product-image" src="'+esc(image)+'" alt="'+esc(imageAlt)+'" loading="lazy" width="640" height="400"></div>'
     : '';
 
+  var productHighlights=[];
+  if(p.esp32&&p.esp32.family&&p.esp32.family.length) productHighlights.push(p.esp32.family[0]);
+  if(d.display_present===true){
+    if(d.technology) productHighlights.push(d.technology);
+    if(d.resolution&&d.resolution.width&&d.resolution.height) productHighlights.push(d.resolution.width+"×"+d.resolution.height);
+    if(d.interface) productHighlights.push(d.interface);
+  }
+  if(t.touch===true){
+    productHighlights.push(t.touch_type||"Touch");
+    if(t.interface) productHighlights.push(t.interface+" touch");
+  }
+  if(h.battery===true||h.battery_support===true) productHighlights.push("Battery");
+  if(h.battery_charging===true) productHighlights.push("Charging");
+
   var contextual=[];
   if(Object.keys(requirements).length){
     mandatory.forEach(function(x){contextual.push('<span class="compat-badge compat-required">'+esc(x)+' ✓</span>');});
@@ -208,6 +222,7 @@ function card(item,requirements){
     '</div>'+
     (item.score?'<strong class="match-badge">'+item.score+'% preference match</strong>':"")+
     '</div>'+
+    '<div class="product-highlights">'+productHighlights.slice(0,8).map(function(x){return '<span class="compat-badge">'+esc(x)+'</span>';}).join('')+'</div>'+
     '<div class="match-badges">'+contextual.join('')+'</div>'+
     '<div class="quick-specs">'+specs.map(function(x){
       return '<div><span>'+esc(x[0])+'</span><strong>'+esc(x[1])+'</strong></div>';
