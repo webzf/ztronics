@@ -215,6 +215,16 @@ Capacitive touch is commonly paired with I²C controllers, while resistive contr
 
 PSRAM becomes increasingly useful as framebuffer size and graphical complexity increase. GPIO availability also matters: a board can have many GPIOs on paper but fewer usable pins after display, touch, storage and other peripherals are reserved.
 
+## ESP32 selector presets
+
+These focused pages help you start with a common hardware requirement before opening the full selector:
+
+- [ESP32-S3 LVGL Display Selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
+- [ESP32 AMOLED Touchscreen Battery Selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/)
+- [ESP32-C6 Display Selector](/tools/esp32-touchscreen-selector/esp32-c6-display/)
+- [ESP32 800×480 Display Selector](/tools/esp32-touchscreen-selector/800x480/)
+- [ESP32 Touchscreen SPI Selector](/tools/esp32-touchscreen-selector/spi-touchscreen/)
+
 ## Related Embedded Nerd resources
 
 - [ESP32 Touchscreen Displays: Complete Guide to Choosing and Using a Touchscreen](/esp32-touchscreen-displays-guide/)
