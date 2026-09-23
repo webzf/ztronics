@@ -5,6 +5,7 @@ sidebar:
   nav: "embedded"
 internal_links: true
 permalink: /tools/esp32-touchscreen-selector/
+canonical_url: /tools/esp32-touchscreen-selector/
 excerpt: "Free ESP32 hardware and display selector. Filter boards, display modules and ESP32 touchscreen hardware by MCU family, display, touch, USB, PSRAM, GPIO, certification and other compatibility requirements."
 show_date: false
 read_time: false
@@ -43,7 +44,7 @@ tags:
 
 # ESP32 Hardware & Display Selector
 
-Find ESP32 boards, boards with displays and display modules that fit your project requirements.
+Find ESP32 boards, touchscreen displays and display modules that fit your project requirements. Compare ESP32 families, display interfaces, touch, resolution, PSRAM, GPIO, LVGL and onboard hardware before choosing a module.
 
 The V2 selector separates **mandatory compatibility requirements** from **preferences**. Required filters exclude hardware that cannot satisfy the constraint; optional selections influence the preference ranking.
 
@@ -168,6 +169,30 @@ document.addEventListener("DOMContentLoaded",function(){
 });
 </script>
 
+## What can this ESP32 hardware selector help you find?
+
+Use the selector to narrow down hardware for common ESP32 display and embedded GUI projects, including:
+
+- **ESP32-S3 touchscreen projects** with demanding graphics or LVGL interfaces
+- **ESP32 LVGL displays** where memory, PSRAM and display interface matter
+- **ESP32 AMOLED displays** with capacitive touch and battery support
+- **ESP32-C6 display projects** where the MCU family and peripheral requirements are important
+- **800×480 ESP32 displays** for dashboards, HMIs and larger graphical interfaces
+- **SPI, RGB and 8080 displays** where the display bus changes the hardware requirements
+- **ESP32 boards with PSRAM, native USB, microSD or battery charging**
+
+The selector treats **Required** filters as compatibility constraints and other selections as preferences. This makes it useful both for finding hardware that meets a strict specification and for comparing several plausible boards or display modules.
+
+### Popular ESP32 display configurations
+
+**ESP32-S3 + LVGL + PSRAM** — a common starting point for larger graphical interfaces. Check the exact display bus, framebuffer requirements and available GPIO before choosing a board.
+
+**ESP32-S3 + AMOLED + touch + battery** — useful for compact handheld interfaces where display technology, touch controller and power hardware need to work together.
+
+**ESP32-C6 + AMOLED + touch + battery** — a newer MCU/display combination where the exact board implementation and peripheral support should be verified rather than assumed from the MCU family alone.
+
+**ESP32 + 800×480 display** — a larger display requirement that can change the choice of interface, memory and GPIO requirements significantly.
+
 ## How to choose ESP32 hardware for a touchscreen project
 
 Choosing an ESP32 touchscreen is not only about screen size. Compatibility can depend on the **ESP32 variant, display resolution, interface, touch controller, touch interface, PSRAM, GPIO availability and graphics requirements**.
@@ -190,6 +215,16 @@ Capacitive touch is commonly paired with I²C controllers, while resistive contr
 
 PSRAM becomes increasingly useful as framebuffer size and graphical complexity increase. GPIO availability also matters: a board can have many GPIOs on paper but fewer usable pins after display, touch, storage and other peripherals are reserved.
 
+## ESP32 selector presets
+
+These focused pages help you start with a common hardware requirement before opening the full selector:
+
+- [ESP32-S3 LVGL Display Selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
+- [ESP32 AMOLED Touchscreen Battery Selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/)
+- [ESP32-C6 Display Selector](/tools/esp32-touchscreen-selector/esp32-c6-display/)
+- [ESP32 800×480 Display Selector](/tools/esp32-touchscreen-selector/800x480/)
+- [ESP32 Touchscreen SPI Selector](/tools/esp32-touchscreen-selector/spi-touchscreen/)
+
 ## Related Embedded Nerd resources
 
 - [ESP32 Touchscreen Displays: Complete Guide to Choosing and Using a Touchscreen](/esp32-touchscreen-displays-guide/)
@@ -197,6 +232,31 @@ PSRAM becomes increasingly useful as framebuffer size and graphical complexity i
 - [I²C Pull-up Resistor Calculator](/tools/i2c-pullup-resistor-calculator/)
 
 ## Frequently asked questions
+
+<details>
+<summary>How do I choose an ESP32 display?</summary>
+<p>Start with the required resolution, display interface, touch technology and ESP32 family. Then check memory, PSRAM, GPIO availability and the software or driver requirements of the project.</p>
+</details>
+
+<details>
+<summary>Which ESP32 is suitable for LVGL?</summary>
+<p>The right choice depends on the display and GUI complexity. ESP32-S3 boards are often used for demanding graphical interfaces, but the selector should be used with the actual display interface, resolution, memory and PSRAM requirements.</p>
+</details>
+
+<details>
+<summary>What is the difference between SPI and RGB displays on ESP32?</summary>
+<p>SPI generally uses fewer signal pins, while RGB uses substantially more GPIO and higher parallel data throughput. The interface affects board selection, wiring and available pins.</p>
+</details>
+
+<details>
+<summary>Do I need PSRAM for an ESP32 display?</summary>
+<p>Not always. Smaller displays and simpler interfaces may work without it, while larger framebuffers and more demanding LVGL interfaces can make PSRAM much more useful.</p>
+</details>
+
+<details>
+<summary>Can an ESP32-C6 drive a touchscreen display?</summary>
+<p>It can be used in display projects, but compatibility depends on the specific display bus, controller, touch controller, memory and board implementation. Verify the complete hardware combination rather than relying only on the MCU family.</p>
+</details>
 
 <details>
 <summary>Which ESP32 board should I use for a touchscreen display?</summary>
@@ -217,6 +277,20 @@ PSRAM becomes increasingly useful as framebuffer size and graphical complexity i
 <summary>Can the selector guarantee hardware compatibility?</summary>
 <p>No. It is a filtering and ranking tool based on the catalog data. Exact manufacturer specifications, pinouts, voltage, memory and driver support should always be verified before purchase.</p>
 </details>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"ESP32 Hardware & Display Selector",
+  "url":"https://embeddednerd.com/tools/esp32-touchscreen-selector/",
+  "description":"Free ESP32 hardware and display compatibility selector for boards, touchscreen displays, display interfaces, PSRAM, GPIO, LVGL and related requirements.",
+  "applicationCategory":"DeveloperApplication",
+  "operatingSystem":"Web browser",
+  "isAccessibleForFree":true,
+  "publisher":{"@type":"Organization","name":"Embedded Nerd","url":"https://embeddednerd.com/"}
+}
+</script>
 
 <script>
 (function(){
