@@ -73,7 +73,7 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
   <span class="catalog-status"><span id="catalog-count">0</span> catalog entries</span>
 </div>
 
-<div id="quick-start" class="quick-start"><div class="quick-start-heading"><strong>Quick start</strong><span>Choose a common setup or customize the filters below.</span></div><div class="preset-grid"><label for="preset-select">Preset</label><div class="preset-controls"><select id="preset-select" name="preset" aria-label="Quick start preset"><option value="">Choose a preset…</option><option value="s3-psram">ESP32-S3 + PSRAM 8 MB</option><option value="touch-spi">Touchscreen + SPI</option><option value="native-usb">Native USB</option><option value="large-display">Large display</option><option value="c6-amoled-touch-battery">ESP32-C6 + AMOLED + Touch + Battery</option><option value="s3-amoled-touch">ESP32-S3 + AMOLED + Touch + Battery</option></select><button type="button" id="apply-preset-btn" class="btn-secondary" onclick="if(window.EmbeddedNerdApplyPreset){window.EmbeddedNerdApplyPreset(document.getElementById('preset-select').value)}">Apply preset</button></div></div></div>
+<div id="quick-start" class="quick-start"><div class="quick-start-heading"><strong>Quick start</strong><span>Choose a common setup or customize the filters below.</span></div><div class="preset-grid"><label for="preset-select">Preset</label><div class="preset-controls"><select id="preset-select" name="preset" aria-label="Quick start preset"><option value="">Choose a preset…</option><option value="s3-psram">ESP32-S3 + PSRAM 8 MB</option><option value="touch-spi">Touchscreen + SPI</option><option value="native-usb">Native USB</option><option value="large-display">Large display</option><option value="c6-amoled-touch-battery">ESP32-C6 + AMOLED + Touch + Battery</option><option value="s3-amoled-touch">ESP32-S3 + AMOLED + Touch + Battery</option></select><button type="button" id="apply-preset-btn" class="btn-secondary">Apply preset</button></div></div></div>
 <form id="selector-form">
 <section class="filter-section">
 <div class="section-heading"><div><span class="step">01</span><h3>Hardware type &amp; ESP32 family</h3></div><p>Selections become <strong>Required</strong> automatically. Uncheck <strong>Required</strong> when you want a preference instead.</p></div>
@@ -159,10 +159,10 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
 {:/nomarkdown}
 
 <script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260920-11" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260923-12" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260923-13" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
-  var m=location.hash.match(/^#preset=(s3-psram|touch-spi|native-usb|large-display|c6-amoled-touch-battery|s3-amoled-touch)$/);
+  var m=location.hash.match(/^#preset=(s3-psram|touch-spi|native-usb|large-display|c6-amoled-touch-battery)$/);
   if(m&&window.EmbeddedNerdApplyPreset) window.EmbeddedNerdApplyPreset(m[1]);
 });
 </script>
