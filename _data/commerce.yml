@@ -3,7 +3,7 @@ sunton-esp32-8048s043c:
 
   preferred_store: aliexpress
 
-  notes: "AliExpress affiliate offer supplied by the site owner. Exact product ID is not exposed by the short affiliate URL."
+  notes: "Product listing verified for the ESP32-8048S043C. No affiliate URL is currently configured."
 
   disclaimer: false
 
@@ -20,8 +20,10 @@ sunton-esp32-8048s043c:
       affiliate_url: ""
 
     aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_c2zi4HDn"
+      enabled: false
+      product_id: "1005006110360174"
+      product_url: "https://www.aliexpress.com/item/1005006110360174.html"
+      affiliate_url: ""
       last_verified: "2026-09-24"
 
 #----------------
@@ -172,7 +174,7 @@ icm-42670-p:
 
   preferred_store: aliexpress
 
-  notes: "Used in this tutorial"
+  notes: ""
 
   disclaimer: false
 
@@ -199,7 +201,7 @@ icm-42688-p:
 
   preferred_store: aliexpress
 
-  notes: "Used in this tutorial"
+  notes: ""
 
   disclaimer: false
 
@@ -213,6 +215,10 @@ icm-42688-p:
 
     amazon:
       enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: true
       affiliate_url: "https://s.click.aliexpress.com/e/_c3WbKl4x"
 
 
@@ -408,8 +414,6 @@ esp32-devkit:
       affiliate_url: "https://s.click.aliexpress.com/e/_c4n38hZ9"
 
 
-#----------------
-
 ssd1306-oled:
 
   preferred_store: aliexpress
@@ -428,6 +432,10 @@ ssd1306-oled:
 
     amazon:
       enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: true
       affiliate_url: "https://s.click.aliexpress.com/e/_EIt4LOO"
 
 
@@ -448,6 +456,10 @@ waveshare-esp32-s3-touch-lcd-1-85b:
     fast_shipping: false
 
   stores:
+
+    waveshare:
+      enabled: false
+      affiliate_url: ""
 
     amazon:
       enabled: false
@@ -536,6 +548,10 @@ waveshare-esp32-s3-touch-amoled-2-41:
   stores:
 
     amazon:
+      enabled: false
+      affiliate_url: ""
+
+    aliexpress:
       enabled: true
       product_id: "1005008691057926"
       product_url: "https://pt.aliexpress.com/item/1005008691057926.html"
