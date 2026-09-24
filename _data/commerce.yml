@@ -3,7 +3,7 @@ sunton-esp32-8048s043c:
 
   preferred_store: aliexpress
 
-  notes: "Product listing verified for the ESP32-8048S043C. No affiliate URL is currently configured."
+  notes: "AliExpress affiliate offer supplied by the site owner. Exact product ID is not exposed by the short affiliate URL."
 
   disclaimer: false
 
@@ -20,10 +20,8 @@ sunton-esp32-8048s043c:
       affiliate_url: ""
 
     aliexpress:
-      enabled: false
-      product_id: "1005006110360174"
-      product_url: "https://www.aliexpress.com/item/1005006110360174.html"
-      affiliate_url: ""
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c2zi4HDn"
       last_verified: "2026-09-24"
 
 #----------------
