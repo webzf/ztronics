@@ -1349,7 +1349,7 @@
         "rtc": null,
         "audio": null
       },
-      "image": "https://raw.githubusercontent.com/BOlaerts/ESP32-2432s028/main/Pictures/esp32_2432s028_demo.jpg",
+      "image": "https://cdn.espboards.net/boards/cyd-esp32-2432s028/cover-804.png",
       "image_alt": "ESP32-2432S028 2.8-inch CYD touchscreen board"
     }
   ]
