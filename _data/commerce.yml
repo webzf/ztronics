@@ -585,3 +585,31 @@ esp32-2432s028-2-8-cyd:
       affiliate_url: "https://s.click.aliexpress.com/e/_c392R7IZ"
       last_verified: "2026-09-24"
 
+waveshare-esp32-s3-touch-amoled-2-16:
+
+  preferred_store: aliexpress
+
+  notes: "AliExpress offer verified from the supplied listing 1005011976105072. Affiliate URL not yet supplied."
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: false
+      product_id: "1005011976105072"
+      product_url: "https://pt.aliexpress.com/item/1005011976105072.html"
+      affiliate_url: ""
+      last_verified: "2026-09-24"
+
+#----------------
