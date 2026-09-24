@@ -564,7 +564,7 @@ esp32-2432s028-2-8-cyd:
 
   preferred_store: aliexpress
 
-  notes: "AliExpress product offer tracked from listing 1005006604267846. Affiliate URL not yet verified; keep disabled until a valid affiliate link is supplied."
+  notes: "AliExpress affiliate offer supplied by the site owner for listing 1005006604267846."
 
   disclaimer: false
 
@@ -581,9 +581,9 @@ esp32-2432s028-2-8-cyd:
       affiliate_url: ""
 
     aliexpress:
-      enabled: false
+      enabled: true
       product_id: "1005006604267846"
       product_url: "https://www.aliexpress.com/item/1005006604267846.html"
-      affiliate_url: ""
+      affiliate_url: "https://s.click.aliexpress.com/e/_c392R7IZ"
       last_verified: "2026-09-24"
 
