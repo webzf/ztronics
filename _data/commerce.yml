@@ -557,3 +557,33 @@ waveshare-esp32-s3-touch-amoled-2-41:
       product_url: "https://pt.aliexpress.com/item/1005008691057926.html"
       affiliate_url: "https://s.click.aliexpress.com/e/_c3wsxiRJ"
       last_verified: "2026-09-24"
+
+#----------------
+
+esp32-2432s028-2-8-cyd:
+
+  preferred_store: aliexpress
+
+  notes: "AliExpress product offer tracked from listing 1005006604267846. Affiliate URL not yet verified; keep disabled until a valid affiliate link is supplied."
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: false
+      product_id: "1005006604267846"
+      product_url: "https://www.aliexpress.com/item/1005006604267846.html"
+      affiliate_url: ""
+      last_verified: "2026-09-24"
+
