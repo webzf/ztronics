@@ -1,3 +1,32 @@
+
+sunton-esp32-8048s043c:
+
+  preferred_store: aliexpress
+
+  notes: "Product listing verified for the ESP32-8048S043C. No affiliate URL is currently configured."
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: false
+      product_id: "1005006110360174"
+      product_url: "https://www.aliexpress.com/item/1005006110360174.html"
+      affiliate_url: ""
+      last_verified: "2026-09-24"
+
+#----------------
 # ============================================================================
 # Embedded Nerd Commerce Database v3.1
 # ============================================================================
