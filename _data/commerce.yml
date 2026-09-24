@@ -589,7 +589,7 @@ waveshare-esp32-s3-touch-amoled-2-16:
 
   preferred_store: aliexpress
 
-  notes: "AliExpress offer verified from the supplied listing 1005011976105072. Affiliate URL not yet supplied."
+  notes: "AliExpress affiliate offer supplied by the site owner for listing 1005011976105072."
 
   disclaimer: false
 
@@ -606,10 +606,10 @@ waveshare-esp32-s3-touch-amoled-2-16:
       affiliate_url: ""
 
     aliexpress:
-      enabled: false
+      enabled: true
       product_id: "1005011976105072"
       product_url: "https://pt.aliexpress.com/item/1005011976105072.html"
-      affiliate_url: ""
+      affiliate_url: "https://s.click.aliexpress.com/e/_c4djpv4N"
       last_verified: "2026-09-24"
 
 #----------------
