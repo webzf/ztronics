@@ -34,436 +34,83 @@ waveshare-esp32-s3-touch-lcd-7:
 waveshare-esp32-s3-touch-lcd-4-3:
 
   preferred_store: amazon
-
   notes: ""
-
   disclaimer: false
-
   badges:
     recommended: false
     editor_choice: true
     best_value: false
     fast_shipping: true
-
   stores:
-
     amazon:
       enabled: true
       affiliate_url: "https://amzn.to/4xKolNV"
-
     aliexpress:
       enabled: false
       affiliate_url: "https://s.click.aliexpress.com/e/_c3LI5MHD"
 
-
 #----------------
-
 
 ili9341-xpt2046-2-8-touchscreen:
 
   preferred_store: aliexpress
-
   notes: ""
-
   disclaimer: false
-
   badges:
     recommended: false
     editor_choice: true
     best_value: false
     fast_shipping: false
-
   stores:
-
     amazon:
       enabled: false
       affiliate_url: ""
-
     aliexpress:
       enabled: true
       affiliate_url: "https://s.click.aliexpress.com/e/_c4kUDNBB"
-
-
-#----------------
-
-
-raspberry-pi-pico:
-
-  preferred_store: amazon
-
-  notes: ""
-
-  disclaimer: false
-
-  badges:
-    recommended: false
-    editor_choice: false
-    best_value: false
-    fast_shipping: true
-
-  stores:
-
-    amazon:
-      enabled: true
-      affiliate_url: "https://amzn.to/3UoICdl"
-
-    aliexpress:
-      enabled: false
-      affiliate_url: ""
-
-
-#----------------
-
-raspberry-pi-pico-w:
-
-  preferred_store: amazon
-
-  notes: ""
-
-  disclaimer: false
-
-  badges:
-    recommended: false
-    editor_choice: true
-    best_value: false
-    fast_shipping: true
-
-  stores:
-
-    amazon:
-      enabled: true
-      affiliate_url: "https://amzn.to/4dbsORp"
-
-    aliexpress:
-      enabled: false
-      affiliate_url: ""
-
-
-#----------------
-
-icm-42670-p:
-
-  preferred_store: aliexpress
-
-  notes: ""
-
-  disclaimer: false
-
-  badges:
-    recommended: false
-    editor_choice: false
-    best_value: false
-    fast_shipping: true
-
-  stores:
-
-    amazon:
-      enabled: false
-      affiliate_url: ""
-
-    aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_c3LI5MHD"
-
-
-#----------------
-
-icm-42688-p:
-
-  preferred_store: aliexpress
-
-  notes: ""
-
-  disclaimer: false
-
-  badges:
-    recommended: false
-    editor_choice: false
-    best_value: false
-    fast_shipping: true
-
-  stores:
-
-    amazon:
-      enabled: false
-      affiliate_url: ""
-
-    aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_c3WbKl4x"
-
-
-#----------------
-
-st7789-tft:
-
-  preferred_store: aliexpress
-
-  notes: "Used in this tutorial"
-
-  disclaimer: false
-
-  badges:
-    recommended: false
-    editor_choice: false
-    best_value: false
-    fast_shipping: true
-
-  stores:
-
-    amazon:
-      enabled: false
-      affiliate_url: ""
-
-    aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_c2xA3IpF"
-
-
-#----------------
-
-
-bme280:
-
-  preferred_store: aliexpress
-
-  notes: "Used in this tutorial"
-
-  disclaimer: false
-
-  badges:
-    recommended: false
-    editor_choice: false
-    best_value: false
-    fast_shipping: false
-
-  stores:
-
-    amazon:
-      enabled: false
-      affiliate_url: ""
-
-    aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_c3eJg7z1"
-
-
-#----------------
-
-
-dht22:
-
-  preferred_store: aliexpress
-
-  notes: "Used in this tutorial"
-
-  disclaimer: false
-
-  badges:
-    recommended: false
-    editor_choice: false
-    best_value: false
-    fast_shipping: false
-
-  stores:
-
-    amazon:
-      enabled: false
-      affiliate_url: ""
-
-    aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_c3BzxWD5"
-
-
-#----------------
-
-bma400:
-
-  preferred_store: aliexpress
-
-  notes: "Used in this tutorial"
-
-  disclaimer: false
-
-  badges:
-    recommended: false
-    editor_choice: false
-    best_value: false
-    fast_shipping: false
-
-  stores:
-
-    amazon:
-      enabled: false
-      affiliate_url: ""
-
-    aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_c3RBiLUT"
-
-
-#----------------
-
-
-mpu6050:
-
-  preferred_store: aliexpress
-
-  notes: "Used in this tutorial"
-
-  disclaimer: false
-
-  badges:
-    recommended: false
-    editor_choice: false
-    best_value: false
-    fast_shipping: false
-
-  stores:
-
-    amazon:
-      enabled: false
-      affiliate_url: ""
-
-    aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_c2uAjJYP"
-
-
-#----------------
-
-ky-023-joystick:
-
-  preferred_store: aliexpress
-
-  notes: "Used in this tutorial"
-
-  disclaimer: false
-
-  badges:
-    recommended: false
-    editor_choice: true
-    best_value: false
-    fast_shipping: false
-
-  stores:
-
-    amazon:
-      enabled: false
-      affiliate_url: ""
-
-    aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_c3jqbrz5"
-
-
-#----------------
-
-esp32-devkit:
-
-  preferred_store: aliexpress
-
-  notes: "Used in this tutorial"
-
-  disclaimer: false
-
-  badges:
-    recommended: true
-    editor_choice: false
-    best_value: true
-    fast_shipping: false
-
-  stores:
-
-    amazon:
-      enabled: false
-      affiliate_url: ""
-
-    aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_c4n38hZ9"
-
-
-ssd1306-oled:
-
-  preferred_store: aliexpress
-
-  notes: "Used in this tutorial"
-
-  disclaimer: false
-
-  badges:
-    recommended: true
-    editor_choice: true
-    best_value: true
-    fast_shipping: false
-
-  stores:
-
-    amazon:
-      enabled: false
-      affiliate_url: ""
-
-    aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_EIt4LOO"
-
 
 #----------------
 
 waveshare-esp32-s3-touch-lcd-1-85b:
 
   preferred_store: aliexpress
-
   notes: "AliExpress affiliate offer verified against the 1.85B hardware specifications."
-
   disclaimer: false
-
   badges:
     recommended: false
     editor_choice: false
     best_value: false
     fast_shipping: false
-
   stores:
-
     waveshare:
       enabled: false
       affiliate_url: ""
-
     amazon:
       enabled: false
       affiliate_url: ""
-
     aliexpress:
       enabled: true
       product_id: "1005012341488260"
       product_url: "https://pt.aliexpress.com/item/1005012341488260.html"
       affiliate_url: "https://s.click.aliexpress.com/e/_c3RWgBg5"
       last_verified: "2026-09-22"
+
 #----------------
 
 waveshare-esp32-c6-touch-amoled-1-8:
 
   preferred_store: aliexpress
-
   notes: "AliExpress affiliate offer verified on 2026-09-22."
-
   disclaimer: false
-
   badges:
     recommended: false
     editor_choice: false
     best_value: false
     fast_shipping: false
-
   stores:
-
     amazon:
       enabled: false
       affiliate_url: ""
-
     aliexpress:
       enabled: true
       product_id: "1005010644388674"
@@ -476,26 +123,43 @@ waveshare-esp32-c6-touch-amoled-1-8:
 waveshare-esp32-s3-touch-amoled-1-75:
 
   preferred_store: aliexpress
-
   notes: "AliExpress affiliate offer verified on 2026-09-23."
-
   disclaimer: false
-
   badges:
     recommended: false
     editor_choice: false
     best_value: false
     fast_shipping: false
-
   stores:
-
     amazon:
       enabled: false
       affiliate_url: ""
-
     aliexpress:
       enabled: true
       product_id: "1005008985857452"
       product_url: "https://www.aliexpress.com/item/1005008985857452.html"
       affiliate_url: "https://s.click.aliexpress.com/e/_c4XPBQ81"
       last_verified: "2026-09-23"
+
+#----------------
+
+waveshare-esp32-s3-touch-amoled-2-41:
+
+  preferred_store: aliexpress
+  notes: "AliExpress affiliate offer verified from the supplied product listing (1005008691057926)."
+  disclaimer: false
+  badges:
+    recommended: false
+    editor_choice: true
+    best_value: false
+    fast_shipping: false
+  stores:
+    amazon:
+      enabled: false
+      affiliate_url: ""
+    aliexpress:
+      enabled: true
+      product_id: "1005008691057926"
+      product_url: "https://pt.aliexpress.com/item/1005008691057926.html"
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3wsxiRJ"
+      last_verified: "2026-09-24"
