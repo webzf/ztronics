@@ -395,6 +395,11 @@ The SSD1306 display is widely used in:
 products="esp32-starter-kit,esp32-devkit,ssd1306-oled,mpu6050"
 %}
 
+
+### Need help choosing an ESP32 display?
+
+If you are comparing ESP32 boards and displays for a new project, use the [ESP32 Board & Display Selector](/tools/esp32-touchscreen-selector/). You can filter by screen size, resolution, display interface, touch, PSRAM, GPIO and other hardware requirements before choosing a board.
+
 ---
 
 ## GitHub Source Code
