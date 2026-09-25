@@ -1,12 +1,12 @@
 ---
-title: "ESP32 Hardware & Display Selector | Compatibility Checker"
+title: "ESP32 Board & Display Selector | Find Compatible Hardware"
 layout: single
 sidebar:
   nav: "embedded"
 internal_links: true
 permalink: /tools/esp32-touchscreen-selector/
 canonical_url: /tools/esp32-touchscreen-selector/
-excerpt: "Free ESP32 hardware and display selector. Filter boards, display modules and ESP32 touchscreen hardware by MCU family, display, touch, USB, PSRAM, GPIO, certification and other compatibility requirements."
+excerpt: "Find compatible ESP32 boards, displays and touchscreen hardware by MCU family, screen size, resolution, interface, touch, PSRAM, LVGL, USB, GPIO and more."
 show_date: false
 read_time: false
 last_modified_at: false
@@ -42,9 +42,9 @@ tags:
 
 ![ESP32 Hardware & Display Selector](/assets/images/esp32-touchscreen-selector.webp)
 
-# ESP32 Hardware & Display Selector
+# ESP32 Board & Display Selector
 
-Find ESP32 boards, touchscreen displays and display modules that fit your project requirements. Compare ESP32 families, display interfaces, touch, resolution, PSRAM, GPIO, LVGL and onboard hardware before choosing a module.
+Find compatible **ESP32 boards, displays and touchscreen hardware** by project requirements. Compare ESP32 families, display size and resolution, SPI/RGB/8080/QSPI interfaces, touch technology, PSRAM, GPIO, LVGL, USB and onboard hardware before choosing a module.
 
 The V2 selector separates **mandatory compatibility requirements** from **preferences**. Required filters exclude hardware that cannot satisfy the constraint; optional selections influence the preference ranking.
 
@@ -59,8 +59,8 @@ Always verify the exact manufacturer's documentation, controller, pinout, voltag
   <span class="site-label">EMBEDDED NERD · OPEN SOURCE TOOL</span>
   <div class="hero">
     <span class="eyebrow">ESP32 HARDWARE DISCOVERY</span>
-    <h2 id="selector-title">ESP32 Hardware &amp; Display Selector</h2>
-    <p>Find hardware using technical requirements first, then compare the products that best match your preferences.</p>
+    <h2 id="selector-title">ESP32 Board &amp; Display Selector</h2>
+    <p>Find compatible hardware using technical requirements first, then compare the products that best match your preferences.</p>
   </div>
 </section>
 
