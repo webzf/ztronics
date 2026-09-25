@@ -34,3 +34,10 @@ https://embeddednerd.com/contact/
 
 Copyright:
 © Embedded Nerd
+
+
+Key tool:
+https://embeddednerd.com/tools/esp32-touchscreen-selector/
+
+ESP32 Board & Display Selector:
+A free hardware compatibility selector for ESP32 boards and display modules. Users can filter by MCU family, display size, resolution, display interface, touch, PSRAM, GPIO, LVGL, USB and other hardware requirements.
