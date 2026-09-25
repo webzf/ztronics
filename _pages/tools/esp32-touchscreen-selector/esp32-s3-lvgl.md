@@ -17,23 +17,90 @@ tags:
 ---
 # ESP32-S3 LVGL Display Selector
 
-Looking for an **ESP32-S3 board for an LVGL display**? Start with the requirements that actually affect compatibility: display interface, resolution, PSRAM, GPIO availability, touch and onboard hardware.
+Looking for an **ESP32-S3 board for an LVGL display**? The right choice depends on much more than the MCU family. Display interface, resolution, framebuffer requirements, PSRAM, GPIO availability, touch hardware and software support can all affect compatibility.
 
-The Embedded Nerd selector separates **Required** compatibility constraints from optional preferences, so you can narrow the catalog without treating every specification as a hard requirement.
+The Embedded Nerd selector lets you start with those technical requirements and narrow the hardware catalog before comparing individual boards.
 
-<a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/#preset=s3-psram">Open the ESP32 Hardware &amp; Display Selector</a>
+<a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/#preset=s3-psram">Open the ESP32-S3 + PSRAM selector</a>
+
+## Why ESP32-S3 is popular for LVGL projects
+
+The ESP32-S3 is widely used for graphical embedded projects because it combines a capable MCU with features useful for displays, USB and external memory. However, two ESP32-S3 boards can have very different display interfaces, PSRAM capacity, GPIO availability and power features.
+
+A board with the right MCU can still be inconvenient if the display requires an interface that the board does not expose, or if too many GPIOs are already allocated.
 
 ## What to check for an ESP32-S3 LVGL project
 
-- Display resolution and interface: SPI, RGB, 8080 or another supported bus
-- PSRAM capacity for larger framebuffers and graphical assets
-- Available GPIO after the display, touch and storage peripherals are connected
-- Touch controller and touch interface when a touchscreen is required
-- LVGL support and the actual display driver used by the project
+### Display interface
 
-An ESP32-S3 is not automatically compatible with every display. The complete board, controller and software combination still needs verification.
+Identify the display interface first. Common options include **SPI, RGB and 8080-style parallel interfaces**, while some modules use QSPI or controller-specific arrangements. Interface choice affects bandwidth, GPIO usage and driver configuration.
+
+### PSRAM and memory
+
+LVGL applications can use substantially more memory than simple sensor or text projects. Larger displays, framebuffers, images, fonts and animations all contribute to memory requirements.
+
+PSRAM can therefore be an important selection criterion. The amount available should be checked against the actual application's buffering and asset requirements.
+
+### GPIO availability
+
+Do not consider GPIO in isolation. Display, touch, microSD, buttons, sensors and other peripherals may already consume pins. A board can look suitable on paper while leaving too few convenient pins for the complete project.
+
+### Touchscreen requirements
+
+For an interactive LVGL interface, check the touch controller as well as the display. Capacitive touch commonly uses I²C, while other implementations may use SPI. The controller and its software driver must be supported by your chosen stack.
+
+## ESP32-S3 LVGL compatibility checklist
+
+Before buying hardware, check:
+
+- ESP32-S3 variant and board implementation
+- Display size and resolution
+- Display controller and interface
+- PSRAM and flash capacity
+- GPIO availability
+- Touch controller and interface
+- microSD or other storage
+- USB requirements
+- Battery or power-management features
+- LVGL and display/touch driver support
+
+The selector is designed to reduce the hardware search; it does not replace the manufacturer's schematic or documentation.
+
+## When an ESP32-S3 LVGL board makes sense
+
+ESP32-S3 display boards can suit dashboards, control panels, instrument interfaces, IoT displays and other graphical embedded projects. A small interface may work well with SPI, while a larger graphical UI can benefit from PSRAM and a faster display interface.
+
+This is why it is useful to select the **display and MCU together**, rather than choosing an ESP32 board first and trying to fit a display afterward.
+
+## How to use the selector
+
+Start with the **ESP32-S3 + PSRAM preset**, then refine the requirements:
+
+1. Select display size and resolution.
+2. Choose the required display interface.
+3. Add touchscreen requirements if needed.
+4. Check PSRAM, flash and GPIO.
+5. Add USB, storage or battery requirements.
+6. Compare the resulting hardware.
+7. Verify the exact board documentation before purchase.
+
+## Frequently asked questions
+
+### Is every ESP32-S3 board suitable for LVGL?
+
+No. LVGL is a graphics library; actual compatibility depends on the display, interface, memory and available drivers.
+
+### How much PSRAM is needed?
+
+There is no universal value. Resolution, color depth, buffering, images, fonts and application complexity determine the requirement.
+
+### Is SPI enough for an LVGL display?
+
+It can be, especially for smaller displays and interfaces with modest update requirements. Larger or faster displays may need a different interface.
 
 ## Related resources
 
 - [ESP32 Touchscreen Displays: Complete Guide to Choosing and Using a Touchscreen](/esp32-touchscreen-displays-guide/)
 - [ESP32 Hardware & Display Selector](/tools/esp32-touchscreen-selector/)
+- [ESP32 Touchscreen SPI Selector](/tools/esp32-touchscreen-selector/spi-touchscreen/)
+- [ESP32 800×480 Display Selector](/tools/esp32-touchscreen-selector/800x480/)
