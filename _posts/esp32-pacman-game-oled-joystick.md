@@ -266,6 +266,11 @@ The complete circuit uses only a small number of connections.
  │   ─────┼──── GND
  └────────┘
 
+### Choosing an ESP32 display for your next project
+
+If you want to move beyond a small SSD1306 OLED and compare ESP32 display hardware, the [ESP32 Board & Display Selector](/tools/esp32-touchscreen-selector/) lets you filter boards and displays by screen size, resolution, interface, touch, PSRAM, GPIO and other requirements.
+
+
 Testing the ESP32 Pac-Man Game in Wokwi
 
 Before assembling the physical circuit, you can test the complete project in Wokwi.
