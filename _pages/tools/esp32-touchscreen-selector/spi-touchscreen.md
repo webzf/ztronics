@@ -124,7 +124,7 @@ The catalog includes both integrated ESP32 touchscreen boards and standalone SPI
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1rem 0 2rem;">
   <a href="/products/esp32-2432s028-2-8-cyd/" style="text-decoration:none;">
-    <img src="/assets/images/products/esp32-2432s028-2-8-cyd.webp" alt="ESP32-2432S028 2.8-inch CYD SPI touchscreen board" style="width:100%;height:180px;object-fit:contain;" loading="lazy">
+    <img src="https://cdn.espboards.net/boards/cyd-esp32-2432s028/cover-804.png" alt="ESP32-2432S028 2.8-inch CYD SPI touchscreen board" style="width:100%;height:180px;object-fit:contain;" loading="lazy">
     <strong>ESP32 · 2.8″ · SPI Touch</strong>
   </a>
   <a href="/products/ili9341-xpt2046-2-8-touchscreen/" style="text-decoration:none;">
