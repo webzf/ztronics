@@ -23,7 +23,7 @@ The Embedded Nerd selector lets you start with those technical requirements and 
 
 
 ![Waveshare ESP32-S3-Touch-LCD-4.3 LVGL touchscreen board](https://docs.waveshare.com/assets/images/ESP32-S3-Touch-LCD-4.3-details-intro-412ade570ab519921350b8144d907b94.webp)
-<a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/#preset=s3-psram">Open the ESP32-S3 + PSRAM selector</a>
+<a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/?family=ESP32-S3&family_req=1&psram_min=8&psram_min_req=1">Open the ESP32-S3 + PSRAM selector</a>
 
 ## Why ESP32-S3 is popular for LVGL projects
 
