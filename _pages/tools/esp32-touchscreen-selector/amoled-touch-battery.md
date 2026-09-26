@@ -23,7 +23,7 @@ The Embedded Nerd selector lets you filter AMOLED, touchscreen, battery and ESP3
 
 
 ![Waveshare ESP32-S3-Touch-AMOLED-1.75 touchscreen board](https://www.waveshare.com/img/devkit/ESP32-S3-Touch-AMOLED-1.75/ESP32-S3-Touch-AMOLED-1.75-details-1.jpg)
-<a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/#preset=s3-amoled-touch">Open the AMOLED + Touch + Battery selector</a>
+<a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/?family=ESP32-S3&family_req=1&display_present=yes&display_present_req=1&display_technology=AMOLED&display_technology_req=1&touch=yes&touch_req=1&touch_type=capacitive&touch_type_req=1&touch_interface=I2C&touch_interface_req=1&display_interface=QSPI&display_interface_req=1&battery=yes&battery_req=1&battery_charging=yes&battery_charging_req=1">Open the AMOLED + Touch + Battery selector</a>
 
 ## Why AMOLED ESP32 boards need careful selection
 
