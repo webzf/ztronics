@@ -120,3 +120,17 @@ No. Some modules integrate touch while others do not. The touch controller and s
 - [ESP32 Hardware & Display Selector](/tools/esp32-touchscreen-selector/)
 - [ESP32-S3 LVGL Display Selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
 - [ESP32-C6 Display Selector](/tools/esp32-touchscreen-selector/esp32-c6-display/)
+
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Embedded Nerd","item":"https://embeddednerd.com/"},
+    {"@type":"ListItem","position":2,"name":"Tools","item":"https://embeddednerd.com/tools/"},
+    {"@type":"ListItem","position":3,"name":"ESP32 Board & Display Selector","item":"https://embeddednerd.com/tools/esp32-touchscreen-selector/"},
+    {"@type":"ListItem","position":4,"name":"amoled-touch-battery","item":"https://embeddednerd.com/tools/esp32-touchscreen-selector/amoled-touch-battery/" }
+  ]
+}
+</script>
