@@ -104,3 +104,17 @@ It can be, especially for smaller displays and interfaces with modest update req
 - [ESP32 Hardware & Display Selector](/tools/esp32-touchscreen-selector/)
 - [ESP32 Touchscreen SPI Selector](/tools/esp32-touchscreen-selector/spi-touchscreen/)
 - [ESP32 800×480 Display Selector](/tools/esp32-touchscreen-selector/800x480/)
+
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Embedded Nerd","item":"https://embeddednerd.com/"},
+    {"@type":"ListItem","position":2,"name":"Tools","item":"https://embeddednerd.com/tools/"},
+    {"@type":"ListItem","position":3,"name":"ESP32 Board & Display Selector","item":"https://embeddednerd.com/tools/esp32-touchscreen-selector/"},
+    {"@type":"ListItem","position":4,"name":"esp32-s3-lvgl","item":"https://embeddednerd.com/tools/esp32-touchscreen-selector/esp32-s3-lvgl/" }
+  ]
+}
+</script>
