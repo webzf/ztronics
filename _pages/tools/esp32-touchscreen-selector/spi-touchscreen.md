@@ -135,3 +135,17 @@ No. The display and touch controller are separate hardware components in many mo
 - [ESP32 Hardware & Display Selector](/tools/esp32-touchscreen-selector/)
 - [ESP32-S3 LVGL Display Selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
 - [ESP32 AMOLED Touchscreen Battery Selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/)
+
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Embedded Nerd","item":"https://embeddednerd.com/"},
+    {"@type":"ListItem","position":2,"name":"Tools","item":"https://embeddednerd.com/tools/"},
+    {"@type":"ListItem","position":3,"name":"ESP32 Board & Display Selector","item":"https://embeddednerd.com/tools/esp32-touchscreen-selector/"},
+    {"@type":"ListItem","position":4,"name":"spi-touchscreen","item":"https://embeddednerd.com/tools/esp32-touchscreen-selector/spi-touchscreen/" }
+  ]
+}
+</script>
