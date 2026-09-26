@@ -30,8 +30,35 @@ Choosing an **ESP32 touchscreen display** can be difficult because boards combin
 The Embedded Nerd **ESP32 Touchscreen Selector** lets you search these requirements together instead of comparing product listings one specification at a time.
 
 
-![Waveshare ESP32-S3-Touch-LCD-4.3 touchscreen board with 800×480 display](https://docs.waveshare.com/assets/images/ESP32-S3-Touch-LCD-4.3-details-intro-412ade570ab519921350b8144d907b94.webp)
 <a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/">Open the ESP32 Touchscreen Selector</a>
+
+## Example ESP32 touchscreen hardware
+
+These real products from the Embedded Nerd catalog show the range of hardware covered by the selector.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.5rem 0 2rem;">
+
+  <a href="/products/waveshare-esp32-s3-touch-lcd-4-3/" style="text-decoration:none;">
+    <img src="https://docs.waveshare.com/assets/images/ESP32-S3-Touch-LCD-4.3-details-intro-412ade570ab519921350b8144d907b94.webp" alt="Waveshare ESP32-S3-Touch-LCD-4.3 800×480 touchscreen board" style="width:100%;height:180px;object-fit:contain;">
+    <strong>ESP32-S3 · 4.3″ · 800×480</strong>
+  </a>
+
+  <a href="/products/waveshare-esp32-c6-touch-amoled-1-8/" style="text-decoration:none;">
+    <img src="https://docs.waveshare.com/assets/images/ESP32-C6-Touch-AMOLED-1.8-intro-45dc721c2271aec3041376e5d1df6236.webp" alt="Waveshare ESP32-C6-Touch-AMOLED-1.8 touchscreen board" style="width:100%;height:180px;object-fit:contain;">
+    <strong>ESP32-C6 · AMOLED · Touch</strong>
+  </a>
+
+  <a href="/products/waveshare-esp32-s3-touch-amoled-1-75/" style="text-decoration:none;">
+    <img src="https://www.waveshare.com/img/devkit/ESP32-S3-Touch-AMOLED-1.75/ESP32-S3-Touch-AMOLED-1.75-details-1.jpg" alt="Waveshare ESP32-S3-Touch-AMOLED-1.75 touchscreen board" style="width:100%;height:180px;object-fit:contain;">
+    <strong>ESP32-S3 · AMOLED · Touch</strong>
+  </a>
+
+  <a href="/products/ili9341-xpt2046-2-8-touchscreen/" style="text-decoration:none;">
+    <img src="https://raw.githubusercontent.com/mboehmerm/Touch-Display-ili9341-320x240/main/pictures/Touch_Display_ili9341_2.8.jpg" alt="ILI9341 2.8-inch SPI TFT touchscreen with XPT2046 touch controller" style="width:100%;height:180px;object-fit:contain;">
+    <strong>SPI · 2.8″ · Touch</strong>
+  </a>
+
+</div>
 
 ## What can you find?
 
