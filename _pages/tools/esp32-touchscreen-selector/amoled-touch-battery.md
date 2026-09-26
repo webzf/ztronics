@@ -109,7 +109,7 @@ The catalog includes different AMOLED ESP32 form factors, so the selector can be
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1rem 0 2rem;">
   <a href="/products/waveshare-esp32-c6-touch-amoled-1-8/" style="text-decoration:none;">
-    <img src="/assets/images/products/waveshare-esp32-c6-touch-amoled-1-8.webp" alt="Waveshare ESP32-C6-Touch-AMOLED-1.8 AMOLED touchscreen board" style="width:100%;height:180px;object-fit:contain;" loading="lazy">
+    <img src="https://docs.waveshare.com/assets/images/ESP32-C6-Touch-AMOLED-1.8-intro-45dc721c2271aec3041376e5d1df6236.webp" alt="Waveshare ESP32-C6-Touch-AMOLED-1.8 AMOLED touchscreen board" style="width:100%;height:180px;object-fit:contain;" loading="lazy">
     <strong>ESP32-C6 · 1.8″ · AMOLED</strong>
   </a>
   <a href="/products/waveshare-esp32-s3-touch-amoled-2-41/" style="text-decoration:none;">
