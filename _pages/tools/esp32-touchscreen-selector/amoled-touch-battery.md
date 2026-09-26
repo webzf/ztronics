@@ -102,6 +102,22 @@ Start with the **ESP32-S3 + AMOLED + Touch + Battery** preset, then refine it:
 
 The preset is a starting point rather than a guarantee of electrical or software compatibility.
 
+
+## More AMOLED touchscreen examples
+
+The catalog includes different AMOLED ESP32 form factors, so the selector can be useful when comparing size and platform choices.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1rem 0 2rem;">
+  <a href="/products/waveshare-esp32-c6-touch-amoled-1-8/" style="text-decoration:none;">
+    <img src="/assets/images/products/waveshare-esp32-c6-touch-amoled-1-8.webp" alt="Waveshare ESP32-C6-Touch-AMOLED-1.8 AMOLED touchscreen board" style="width:100%;height:180px;object-fit:contain;" loading="lazy">
+    <strong>ESP32-C6 · 1.8″ · AMOLED</strong>
+  </a>
+  <a href="/products/waveshare-esp32-s3-touch-amoled-2-41/" style="text-decoration:none;">
+    <img src="https://www.waveshare.com/img/devkit/ESP32-S3-Touch-AMOLED-2.41/ESP32-S3-Touch-AMOLED-2.41-details-1.jpg" alt="Waveshare ESP32-S3-Touch-AMOLED-2.41 AMOLED touchscreen board" style="width:100%;height:180px;object-fit:contain;" loading="lazy">
+    <strong>ESP32-S3 · 2.41″ · AMOLED</strong>
+  </a>
+</div>
+
 ## Frequently asked questions
 
 ### Is an AMOLED display automatically suitable for LVGL?
