@@ -117,6 +117,22 @@ Start with the **Touchscreen + SPI preset**, then refine the search:
 7. Compare the remaining boards.
 8. Verify the manufacturer's documentation.
 
+
+## SPI touchscreen examples
+
+The catalog includes both integrated ESP32 touchscreen boards and standalone SPI display modules, useful for comparing different hardware approaches.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1rem 0 2rem;">
+  <a href="/products/esp32-2432s028-2-8-cyd/" style="text-decoration:none;">
+    <img src="/assets/images/products/esp32-2432s028-2-8-cyd.webp" alt="ESP32-2432S028 2.8-inch CYD SPI touchscreen board" style="width:100%;height:180px;object-fit:contain;" loading="lazy">
+    <strong>ESP32 · 2.8″ · SPI Touch</strong>
+  </a>
+  <a href="/products/ili9341-xpt2046-2-8-touchscreen/" style="text-decoration:none;">
+    <img src="/assets/images/products/ili9341-xpt2046-2-8-touchscreen.webp" alt="ILI9341 2.8-inch SPI TFT with XPT2046 touchscreen" style="width:100%;height:180px;object-fit:contain;" loading="lazy">
+    <strong>ILI9341 · 2.8″ · SPI Touch</strong>
+  </a>
+</div>
+
 ## Frequently asked questions
 
 ### Can an ESP32 touchscreen use SPI for both display and touch?
