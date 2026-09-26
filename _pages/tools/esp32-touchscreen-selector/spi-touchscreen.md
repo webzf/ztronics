@@ -21,6 +21,8 @@ If your project uses an **ESP32 touchscreen with SPI**, the display and touch in
 
 This Embedded Nerd selector preset starts with a touchscreen + SPI configuration and lets you refine the requirements by display size, resolution, touch, memory, USB, GPIO and other hardware features.
 
+
+![ILI9341 2.8-inch SPI TFT touchscreen with XPT2046 touch controller](https://raw.githubusercontent.com/mboehmerm/Touch-Display-ili9341-320x240/main/pictures/Touch_Display_ili9341_2.8.jpg)
 <a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/#preset=touch-spi">Open the ESP32 SPI touchscreen selector</a>
 
 ## Why SPI is common for ESP32 displays
