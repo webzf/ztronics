@@ -29,6 +29,8 @@ Choosing an **ESP32 touchscreen display** can be difficult because boards combin
 
 The Embedded Nerd **ESP32 Touchscreen Selector** lets you search these requirements together instead of comparing product listings one specification at a time.
 
+
+![Waveshare ESP32-S3-Touch-LCD-4.3 touchscreen board with 800×480 display](https://docs.waveshare.com/assets/images/ESP32-S3-Touch-LCD-4.3-details-intro-412ade570ab519921350b8144d907b94.webp)
 <a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/">Open the ESP32 Touchscreen Selector</a>
 
 ## What can you find?
