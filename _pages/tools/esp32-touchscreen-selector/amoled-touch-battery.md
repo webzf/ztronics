@@ -21,6 +21,8 @@ Looking for a compact **ESP32 AMOLED touchscreen with battery support**? These b
 
 The Embedded Nerd selector lets you filter AMOLED, touchscreen, battery and ESP32 requirements together, making it easier to compare boards before buying.
 
+
+![Waveshare ESP32-S3-Touch-AMOLED-1.75 touchscreen board](https://www.waveshare.com/img/devkit/ESP32-S3-Touch-AMOLED-1.75/ESP32-S3-Touch-AMOLED-1.75-details-1.jpg)
 <a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/#preset=s3-amoled-touch">Open the AMOLED + Touch + Battery selector</a>
 
 ## Why AMOLED ESP32 boards need careful selection
