@@ -21,6 +21,8 @@ Choosing an **ESP32-C6 display or touchscreen board** requires more than checkin
 
 This Embedded Nerd selector preset is designed around ESP32-C6 display configurations, including boards that combine **AMOLED, touch and battery support**.
 
+
+![Waveshare ESP32-C6-Touch-AMOLED-1.8 display and touchscreen board](https://docs.waveshare.com/assets/images/ESP32-C6-Touch-AMOLED-1.8-intro-45dc721c2271aec3041376e5d1df6236.webp)
 <a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/#preset=c6-amoled-touch-battery">Open the ESP32-C6 display selector</a>
 
 ## Why choose ESP32-C6 for a display project?
