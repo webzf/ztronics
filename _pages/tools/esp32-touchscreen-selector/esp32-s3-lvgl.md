@@ -86,6 +86,22 @@ Start with the **ESP32-S3 + PSRAM preset**, then refine the requirements:
 6. Compare the resulting hardware.
 7. Verify the exact board documentation before purchase.
 
+
+## ESP32-S3 LVGL hardware examples
+
+Different ESP32-S3 display boards can target very different interface sizes, so comparing real hardware alongside the technical filters can help narrow the choice.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1rem 0 2rem;">
+  <a href="/products/waveshare-esp32-s3-touch-lcd-1-85b/" style="text-decoration:none;">
+    <img src="https://www.waveshare.com/img/devkit/ESP32-S3-Touch-LCD-1.85B/ESP32-S3-Touch-LCD-1.85B-details-1.jpg" alt="Waveshare ESP32-S3-Touch-LCD-1.85B compact touchscreen board" style="width:100%;height:180px;object-fit:contain;" loading="lazy">
+    <strong>ESP32-S3 · 1.85″ · QSPI</strong>
+  </a>
+  <a href="/products/waveshare-esp32-s3-touch-lcd-7/" style="text-decoration:none;">
+    <img src="/assets/images/products/waveshare-esp32-s3-touch-lcd-7.webp" alt="Waveshare ESP32-S3-Touch-LCD-7 touchscreen board for graphical interfaces" style="width:100%;height:180px;object-fit:contain;" loading="lazy">
+    <strong>ESP32-S3 · 7″ · RGB</strong>
+  </a>
+</div>
+
 ## Frequently asked questions
 
 ### Is every ESP32-S3 board suitable for LVGL?
