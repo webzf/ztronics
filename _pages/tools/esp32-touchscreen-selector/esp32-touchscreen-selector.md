@@ -1,8 +1,8 @@
 ---
 title: "ESP32 Touchscreen Selector | Find the Right Display Hardware"
 layout: single
-permalink: /tools/esp32-touchscreen-selector/esp32-touchscreen-selector/
-canonical_url: /tools/esp32-touchscreen-selector/esp32-touchscreen-selector/
+permalink: /tools/esp32-touchscreen-selector/esp32-touchscreen/
+canonical_url: /tools/esp32-touchscreen-selector/esp32-touchscreen/
 excerpt: "Find ESP32 touchscreen boards and display modules by screen size, resolution, interface, touch, PSRAM, GPIO, LVGL, USB and battery requirements."
 show_date: false
 read_time: false
@@ -205,7 +205,7 @@ No. It is a filtering tool based on catalog data. Always verify the exact contro
   "@context":"https://schema.org",
   "@type":"WebPage",
   "name":"ESP32 Touchscreen Selector",
-  "url":"https://embeddednerd.com/tools/esp32-touchscreen-selector/esp32-touchscreen-selector/",
+  "url":"https://embeddednerd.com/tools/esp32-touchscreen-selector/esp32-touchscreen/",
   "description":"ESP32 touchscreen and display selector for comparing boards and modules by resolution, interface, touch, PSRAM, GPIO, LVGL and other hardware requirements.",
   "isPartOf":{"@type":"WebSite","name":"Embedded Nerd","url":"https://embeddednerd.com/"}
 }
@@ -218,7 +218,7 @@ No. It is a filtering tool based on catalog data. Always verify the exact contro
   "itemListElement":[
     {"@type":"ListItem","position":1,"name":"Embedded Nerd","item":"https://embeddednerd.com/"},
     {"@type":"ListItem","position":2,"name":"Tools","item":"https://embeddednerd.com/tools/"},
-    {"@type":"ListItem","position":3,"name":"ESP32 Touchscreen Selector","item":"https://embeddednerd.com/tools/esp32-touchscreen-selector/esp32-touchscreen-selector/"}
+    {"@type":"ListItem","position":3,"name":"ESP32 Touchscreen Selector","item":"https://embeddednerd.com/tools/esp32-touchscreen-selector/esp32-touchscreen/"}
   ]
 }
 </script>
