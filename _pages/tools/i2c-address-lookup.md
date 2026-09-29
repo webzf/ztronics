@@ -429,3 +429,8 @@ For Arduino and ESP32 projects, see our [I2C Scanner Tutorial](/i2c-scanner-tuto
 ## Disclaimer
 
 I2C addresses can vary between IC variants, breakout boards and hardware configurations. This tool is intended as a practical reference and should not replace the manufacturer's datasheet or the documentation for your specific module.
+
+
+## Related I2C tools
+
+After identifying an I2C device, use the [I2C Pull-up Resistor Calculator](/tools/i2c-pullup-resistor-calculator/) when you need to check pull-up resistor values. For a practical hardware workflow, see the [I2C Scanner Tutorial](/i2c-scanner-tutorial/).
