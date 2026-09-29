@@ -54,6 +54,10 @@ Check flash and PSRAM where applicable rather than assuming every ESP32-C6 board
 
 GPIO is equally important. Display signals, touch, microSD, buttons and sensors can quickly consume available pins. Integrated display boards can sometimes simplify this compared with combining a generic development board with several separate modules.
 
+## ESP32-C6 display hardware
+
+The current selector catalog includes the [Waveshare ESP32-C6-Touch-AMOLED-1.8](/products/waveshare-esp32-c6-touch-amoled-1-8/), which combines an ESP32-C6 with an AMOLED touchscreen, battery support, USB and additional peripherals.
+
 ## ESP32-C6 touchscreen and battery boards
 
 A board that combines MCU, display, touch and battery circuitry can simplify a portable project, but its power architecture still needs to be understood.
