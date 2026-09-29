@@ -143,7 +143,7 @@ The SSD1306 OLED Display is widely used in embedded projects, including:
 - Weather stations
 - Sensor dashboards
 - Home automation
-- [Robotics](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)
+- [Robotics](/ESP32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)
 - Battery-powered electronics
 - Portable instruments
 - Data loggers
