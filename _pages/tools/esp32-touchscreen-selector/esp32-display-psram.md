@@ -108,6 +108,19 @@ The selector is intended to narrow the catalog, not replace the board schematic 
 8. Compare the matching hardware.
 9. Verify the exact board documentation.
 
+## ESP32 display boards with PSRAM
+
+The selector can narrow the catalog by PSRAM, but these product pages are useful starting points when you want to inspect the hardware in more detail:
+
+- [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — 4.3-inch 800×480 RGB touchscreen with 8 MB PSRAM.
+- [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/) — 7-inch 800×480 RGB touchscreen with 8 MB PSRAM.
+- [Waveshare ESP32-S3-Touch-LCD-1.85B](/products/waveshare-esp32-s3-touch-lcd-1-85b/) — compact 1.85-inch QSPI touchscreen with 8 MB PSRAM.
+- [Waveshare ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) — 1.75-inch AMOLED touchscreen with 8 MB PSRAM.
+- [Waveshare ESP32-S3-Touch-AMOLED-2.16](/products/waveshare-esp32-s3-touch-amoled-2-16/) — 2.16-inch AMOLED touchscreen with 8 MB PSRAM.
+- [Waveshare ESP32-S3-Touch-AMOLED-2.41](/products/waveshare-esp32-s3-touch-amoled-2-41/) — 2.41-inch AMOLED touchscreen with 8 MB PSRAM.
+
+These are examples from the current Embedded Nerd selector catalog; use the selector to apply additional requirements such as resolution, interface, touch and LVGL support.
+
 ## FAQ
 
 ### Do I need PSRAM for an ESP32 display?
