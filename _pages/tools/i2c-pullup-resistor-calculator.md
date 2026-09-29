@@ -517,3 +517,8 @@ manual](https://www.nxp.com/docs/en/user-guide/UM10204.pdf).
 > substitute for checking the electrical specifications of the actual
 > devices in your design. For production hardware, verify SDA/SCL rise
 > and fall times, LOW-level voltage and current on the completed bus.
+
+
+## Related I2C resources
+
+Use the [I2C Address Lookup Tool](/tools/i2c-address-lookup/) to identify common device addresses, or follow the [I2C Scanner Tutorial](/i2c-scanner-tutorial/) to detect devices connected to an Arduino or ESP32 bus.
