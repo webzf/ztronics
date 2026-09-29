@@ -139,4 +139,4 @@ Typical use cases include:
 ## Official Documentation
 
 Waveshare's documentation provides the hardware reference, ESP-IDF examples, Arduino support, and tests for the onboard IMU, RTC, battery gauge, and other peripherals.
-
+\n## Embedded Nerd Guides & Selector\n\n- [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.\n- [ESP32-S3 + LVGL selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) — filter for ESP32-S3 LVGL boards.\n- [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — compare display technologies and interfaces.\n- [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — larger 800×480 option.\n- [Waveshare ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) — AMOLED alternative.\n
