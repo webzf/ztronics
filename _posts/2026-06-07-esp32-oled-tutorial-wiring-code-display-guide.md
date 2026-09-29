@@ -93,7 +93,7 @@ This tutorial includes:
 
 After connecting the OLED display, you can show live accelerometer and gyroscope values from an MPU6050 sensor.
 
-This combination is one of the most common in robotics, self-balancing robots, drone controllers, and motion detection projects and [games](https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/).
+This combination is one of the most common in robotics, self-balancing robots, drone controllers, and motion detection projects and [games](/esp32-snake-game-with-mpu6050-and-oled-display/).
 
 Follow our complete
 [MPU6050 Arduino Guide](/mpu6050-arduino-guide/)
@@ -120,7 +120,7 @@ These displays are widely used in:
 - IoT devices
 - ESP32 projects
 - Arduino projects
-- [Games projects](https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
+- [Games projects](/esp32-snake-game-with-mpu6050-and-oled-display/)
 - Robotics
 - Home automation
 - DIY electronics
@@ -167,7 +167,7 @@ Some displays use:
 0x3D
 ```
 
-If your display is not detected, run an I2C Scanner sketch to find the correct address.
+If your display is not detected, run an [I2C Scanner sketch](/i2c-scanner-tutorial/) to find the correct address. If you are troubleshooting unreliable I2C communication, the [I2C Pull-up Resistor Calculator](/tools/i2c-pullup-resistor-calculator/) can help estimate suitable resistor values.
 
 ---
 
@@ -387,7 +387,7 @@ The SSD1306 display is widely used in:
 - Sensor dashboards
 - GPS displays
 - Home automation
-- [Arcade games](https://embeddednerd.com/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
+- [Arcade games](/esp32-snake-game-with-mpu6050-and-oled-display/)
 
 ---
 
@@ -419,12 +419,12 @@ You can extend this tutorial by adding:
 
 ## Related Tutorials
 
-- [ESP32 WiFi Tutorial](../esp32-wifi/)
-- [Esp32 Joystick Tutorial](../esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)
-- [MPU6050 Arduino Guide](../mpu6050-arduino-guide/)
-- [I2C Scanner Tutorial](../i2c-scanner-tutorial/)
-- [BME280 ESP32 Tutorial](../bme280-esp32/)
-- [ESP32 Snake Game with MPU6050 and OLED Display](../ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
+- [ESP32 Joystick Tutorial](/ESP32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)
+- [MPU6050 Arduino Guide](/mpu6050-arduino-guide/)
+- [MPU6050 Calibration Guide](/mpu6050-calibration-guide/)
+- [I2C Scanner Tutorial](/i2c-scanner-tutorial/)
+- [I2C Address Lookup Tool](/tools/i2c-address-lookup/)
+- [ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-with-mpu6050-and-oled-display/)
 
 ---
 
