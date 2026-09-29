@@ -1,10 +1,17 @@
 ---
 title: "ESP32 4.3 Inch Touchscreen Display Selector | Embedded Nerd"
 layout: single
+sidebar:
+  nav: "embedded"
 permalink: /tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/
 canonical_url: /tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/
 excerpt: "Find ESP32 4.3-inch touchscreen displays by resolution, touch technology, interface, PSRAM and ESP32 family."
 show_date: false
+toc: true
+toc_sticky: true
+toc_label: "Contents"
+related: true
+share: true
 categories:
   - Tools
   - ESP32
