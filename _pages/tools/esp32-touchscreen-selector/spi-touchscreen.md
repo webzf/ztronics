@@ -1,10 +1,17 @@
 ---
 title: "ESP32 Touchscreen SPI Selector | Embedded Nerd"
 layout: single
+sidebar:
+  nav: "embedded"
 permalink: /tools/esp32-touchscreen-selector/spi-touchscreen/
 canonical_url: /tools/esp32-touchscreen-selector/spi-touchscreen/
 excerpt: "Find ESP32 touchscreen hardware using SPI display and touch requirements with the Embedded Nerd compatibility selector."
 show_date: false
+toc: true
+toc_sticky: true
+toc_label: "Contents"
+related: true
+share: true
 categories:
   - Tools
   - ESP32
