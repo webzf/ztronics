@@ -154,6 +154,7 @@ No. Some modules integrate touch while others do not. The touch controller and s
 - [ESP32 Hardware & Display Selector](/tools/esp32-touchscreen-selector/)
 - [ESP32-S3 LVGL Display Selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
 - [ESP32-C6 Display Selector](/tools/esp32-touchscreen-selector/esp32-c6-display/)
+- [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/)
 
 
 <script type="application/ld+json">
