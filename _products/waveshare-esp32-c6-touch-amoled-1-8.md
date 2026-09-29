@@ -177,3 +177,4 @@ This board is particularly relevant for:
 - Compact IoT controllers
 
 *Specifications and revision details are based on Waveshare's official ESP32-C6-Touch-AMOLED-1.8 documentation.*
+\n## Embedded Nerd Guides & Selector\n\n- [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.\n- [ESP32-C6 display selector](/tools/esp32-touchscreen-selector/esp32-c6-display/) — focus on ESP32-C6 display boards.\n- [AMOLED + battery selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/) — find AMOLED boards with touch and battery support.\n- [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — compare display and touch technologies.\n- [Waveshare ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) — related Waveshare AMOLED option.\n
