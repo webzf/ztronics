@@ -1,10 +1,17 @@
 ---
 title: "ESP32-S3 LVGL Display Selector | Embedded Nerd"
 layout: single
+sidebar:
+  nav: "embedded"
 permalink: /tools/esp32-touchscreen-selector/esp32-s3-lvgl/
 canonical_url: /tools/esp32-touchscreen-selector/esp32-s3-lvgl/
 excerpt: "Choose ESP32-S3 hardware for LVGL displays using PSRAM, display interface, resolution and compatibility requirements."
 show_date: false
+toc: true
+toc_sticky: true
+toc_label: "Contents"
+related: true
+share: true
 categories:
   - Tools
   - ESP32
