@@ -133,6 +133,7 @@ Not as a universal rule, but PSRAM can be particularly useful for large graphica
 - [ESP32 800×480 Display Selector](/tools/esp32-touchscreen-selector/800x480/)
 - [ESP32-S3 LVGL Display Selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
 - [ESP32 4.3-inch Touchscreen Selector](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/)
+- [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/)
 
 <script type="application/ld+json">
 {
