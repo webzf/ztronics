@@ -106,6 +106,13 @@ Not universally. The need depends on resolution, color depth, buffering and GUI 
 
 ESP32-S3 boards can be well suited to this class of project, especially when the board provides suitable PSRAM and a compatible display interface. Verify the exact board configuration.
 
+## 4.3-inch ESP32 touchscreen boards
+
+- [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — 4.3-inch 800×480 RGB touchscreen.
+- [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — another 4.3-inch 800×480 ESP32-S3 touchscreen option.
+
+## Related selectors
+
 ## Related selectors
 
 - [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/)
