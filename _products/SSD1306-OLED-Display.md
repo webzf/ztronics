@@ -93,7 +93,7 @@ The **SSD1306 OLED Display** is one of the most popular display modules used in 
 
 Whether you're building an IoT device, weather station, robotics project or portable instrument, the SSD1306 pairs perfectly with development boards such as the **[ESP32 DevKit](/products/esp32-devkit/)**, Arduino and Raspberry Pi.
 
-If you're getting started, follow our **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)** to learn how to connect the display, install the required libraries and display your first graphics.
+If you're getting started, follow our **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)** to learn how to connect the display, install the required libraries and display your first graphics.
 
 ---
 
@@ -199,7 +199,7 @@ The SSD1306 is suitable for countless embedded applications, such as:
 - Portable measurement devices
 - Home automation controllers
 
-Looking for a practical project? Our **[ESP32 Snake Game with MPU6050 and OLED Display](/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)** demonstrates how to combine an SSD1306 display with the **[MPU6050](/mpu6050-arduino-guide/)** to create a fun motion-controlled game.
+Looking for a practical project? Our **[ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-with-mpu6050-and-oled-display/)** demonstrates how to combine an SSD1306 display with the **[MPU6050](/mpu6050-arduino-guide/)** to create a fun motion-controlled game.
 
 ---
 
@@ -207,10 +207,10 @@ Looking for a practical project? Our **[ESP32 Snake Game with MPU6050 and OLED D
 
 To get the most from your SSD1306 OLED Display, we recommend these guides:
 
-- **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)**
+- **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)**
 - **[I2C Scanner Tutorial](/i2c-scanner-tutorial/)**
 - **[MPU6050 Arduino Guide](/mpu6050-arduino-guide/)**
-- **[ESP32 Snake Game with MPU6050 and OLED Display](/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)**
+- **[ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-with-mpu6050-and-oled-display/)**
 
 You can also explore our complete **[Products](/products/)** collection and discover more components in our **[Recommended Hardware](/recommended-hardware/)** guide.
 
