@@ -141,6 +141,7 @@ Typical use cases include:
 Waveshare's documentation provides the hardware reference, ESP-IDF examples, Arduino support, and tests for the onboard IMU, RTC, battery gauge, and other peripherals.
 
 ## Embedded Nerd Guides & Selector
+- [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/) — filter boards with documented PSRAM for larger GUIs.
 
 - [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.
 - [ESP32-S3 + LVGL selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) — filter for ESP32-S3 LVGL boards.
