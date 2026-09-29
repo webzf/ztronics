@@ -1,10 +1,17 @@
 ---
 title: "ESP32-C6 Display Selector | Touchscreen & Display Compatibility"
 layout: single
+sidebar:
+  nav: "embedded"
 permalink: /tools/esp32-touchscreen-selector/esp32-c6-display/
 canonical_url: /tools/esp32-touchscreen-selector/esp32-c6-display/
 excerpt: "Compare ESP32-C6 display and touchscreen hardware by interface, touch, battery and compatibility requirements."
 show_date: false
+toc: true
+toc_sticky: true
+toc_label: "Contents"
+related: true
+share: true
 categories:
   - Tools
   - ESP32
