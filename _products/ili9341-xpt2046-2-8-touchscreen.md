@@ -462,3 +462,4 @@ If you're looking for an inexpensive touchscreen module for an ESP32 or Arduino 
 **[Check the ILI9341 + XPT2046 2.8-inch Touchscreen on AliExpress](https://s.click.aliexpress.com/e/_c4kUDNBB)**
 
 *This page contains an affiliate link. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you.*
+\n## Embedded Nerd Guides & Selector\n\n- [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare this module with integrated ESP32 touchscreen boards.\n- [SPI Touchscreen Selector](/tools/esp32-touchscreen-selector/spi-touchscreen/) — focus on SPI-based touchscreen options.\n- [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — compare display interfaces and touchscreen technologies.\n- [ESP32 DevKit V1](/products/esp32-devkit/) — pair the display with a general-purpose ESP32 board.\n- [ESP32-2432S028 CYD](/products/esp32-2432s028-2-8-cyd/) — integrated 2.8-inch ESP32 touchscreen alternative.\n
