@@ -276,7 +276,7 @@ function show(ev){
     productGrid.innerHTML="";
   }else{
     $("empty-state").hidden=true;
-    productGrid.innerHTML=ev.ranked.slice(0,50).map(card).join("");
+    productGrid.innerHTML=ev.ranked.slice(0,50).map(function(item){return card(item,build().r);}).join("");
   }
 
   results.hidden=false;
