@@ -84,7 +84,7 @@ In this tutorial you'll learn:
 
 - ESP32 Snake Game wiring
 - MPU6050 tilt controls
-- [OLED display connections](/ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)
+- [OLED display connections](/esp32-oled-tutorial-wiring-code-display-guide/)
 - Required libraries
 - Complete Arduino code
 - GitHub source code
@@ -783,7 +783,7 @@ The repository includes:
 ## Related Tutorials
 
 - [MPU6050 Arduino Guide](../mpu6050-arduino-guide/)
-- [ESP32 OLED Display Guide](../ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)
+- [ESP32 OLED Display Guide](../esp32-oled-tutorial-wiring-code-display-guide/)
 - [I2C Scanner Tutorial](../i2c-scanner-tutorial/)
 - [ESP32 Joystick Tutorial](../esp32-joystick/)
 
