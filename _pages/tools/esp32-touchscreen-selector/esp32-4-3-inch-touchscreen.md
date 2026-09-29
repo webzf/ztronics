@@ -65,6 +65,8 @@ The Embedded Nerd catalog includes 4.3-inch ESP32 display hardware such as the W
 
 See the product page for the exact hardware configuration and documentation.
 
+You can also compare the [Waveshare ESP32-S3-Touch-LCD-4.3 product page](/products/waveshare-esp32-s3-touch-lcd-4-3/) with other hardware returned by the selector.
+
 ## How to use the selector
 
 1. Start with the 4.3-inch requirement.
