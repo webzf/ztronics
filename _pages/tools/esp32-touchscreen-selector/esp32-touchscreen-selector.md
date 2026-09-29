@@ -1,6 +1,8 @@
 ---
 title: "ESP32 Touchscreen Selector | Find the Right Display Hardware"
 layout: single
+sidebar:
+  nav: "embedded"
 permalink: /tools/esp32-touchscreen-selector/esp32-touchscreen/
 canonical_url: /tools/esp32-touchscreen-selector/esp32-touchscreen/
 excerpt: "Find ESP32 touchscreen boards and display modules by screen size, resolution, interface, touch, PSRAM, GPIO, LVGL, USB and battery requirements."
@@ -9,6 +11,8 @@ read_time: false
 toc: true
 toc_sticky: true
 toc_label: "Contents"
+related: true
+share: true
 categories:
   - Tools
   - ESP32
