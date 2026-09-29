@@ -118,6 +118,7 @@ The selector can narrow the catalog by PSRAM, but these product pages are useful
 - [Waveshare ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) — 1.75-inch AMOLED touchscreen with 8 MB PSRAM.
 - [Waveshare ESP32-S3-Touch-AMOLED-2.16](/products/waveshare-esp32-s3-touch-amoled-2-16/) — 2.16-inch AMOLED touchscreen with 8 MB PSRAM.
 - [Waveshare ESP32-S3-Touch-AMOLED-2.41](/products/waveshare-esp32-s3-touch-amoled-2-41/) — 2.41-inch AMOLED touchscreen with 8 MB PSRAM.
+- [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — 4.3-inch 800×480 ESP32-S3 touchscreen board with 8 MB PSRAM.
 
 These are examples from the current Embedded Nerd selector catalog; use the selector to apply additional requirements such as resolution, interface, touch and LVGL support.
 
