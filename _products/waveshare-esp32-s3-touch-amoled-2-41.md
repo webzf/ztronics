@@ -137,6 +137,7 @@ The board supports development with **Arduino IDE and ESP-IDF**.
 - [Waveshare ESP32-S3-Touch-AMOLED-2.41 Product Page](https://www.waveshare.com/esp32-s3-touch-amoled-2.41.htm)
 
 ## Embedded Nerd Guides & Selector
+- [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/) — filter boards with documented PSRAM for larger GUIs.
 
 - [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.
 - [AMOLED + battery selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/) — filter for AMOLED, touch and battery support.
