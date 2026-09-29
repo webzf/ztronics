@@ -857,3 +857,9 @@ Keep this small utility in your Arduino toolkit and use it whenever an I2C devic
   ]
 }
 </script>
+
+
+## Related I2C tools
+
+- [I2C Address Lookup Tool](/tools/i2c-address-lookup/)
+- [I2C Pull-up Resistor Calculator](/tools/i2c-pullup-resistor-calculator/)
