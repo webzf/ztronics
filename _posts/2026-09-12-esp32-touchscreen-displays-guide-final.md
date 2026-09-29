@@ -65,6 +65,18 @@ If you're not sure where to start, this table provides a useful starting point r
 
 The best choice ultimately depends on the requirements of your particular project.
 
+### Use the ESP32 touchscreen selector by project requirement
+
+If you already know the type of hardware you need, you can jump directly to a focused selector:
+
+- [ESP32-S3 LVGL Display Selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) — for LVGL, PSRAM and graphical-interface projects.
+- [ESP32 800×480 Display Selector](/tools/esp32-touchscreen-selector/800x480/) — for larger 800×480 displays and dashboards.
+- [ESP32 4.3-inch Touchscreen Selector](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/) — for 4.3-inch touchscreen hardware.
+- [ESP32 7-inch Touchscreen Selector](/tools/esp32-touchscreen-selector/esp32-7-inch-touchscreen/) — for large HMI and dashboard displays.
+- [ESP32 AMOLED Touchscreen Battery Selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/) — for AMOLED, touch and battery requirements.
+- [ESP32-C6 Display Selector](/tools/esp32-touchscreen-selector/esp32-c6-display/) — for ESP32-C6 display projects.
+- [ESP32 Touchscreen SPI Selector](/tools/esp32-touchscreen-selector/spi-touchscreen/) — when SPI is a key hardware constraint.
+
 **Not sure which ESP32 touchscreen to choose?**
 
 ![ESP32 touchscreen tool](/assets/images/esp32-touchscreen-selector-promo.webp)
