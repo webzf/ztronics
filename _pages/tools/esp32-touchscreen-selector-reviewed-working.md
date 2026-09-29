@@ -121,16 +121,18 @@ tags:
 The selector catalog includes real ESP32 boards and display modules with dedicated technical pages on Embedded Nerd. Open a product page for detailed specifications, documentation links and available purchasing options.
 
 <div class="selector-catalog-links">
-- [**ILI9341 2.8″ SPI TFT + XPT2046 Touch**](/products/ili9341-xpt2046-2-8-touchscreen/) — 2.8″ · 240×320 · SPI · resistive touch
-- [**Waveshare ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) — 4.3″ · 800×480 · RGB · capacitive touch
-- [**Waveshare ESP32-S3-Touch-LCD-7**](/products/waveshare-esp32-s3-touch-lcd-7/) — 7″ · 800×480 · RGB · capacitive touch
-- [**Waveshare ESP32-S3-Touch-LCD-1.85B**](/products/waveshare-esp32-s3-touch-lcd-1-85b/) — 1.85″ · 360×360 · QSPI · IMU · RTC
-- [**Waveshare ESP32-C6-Touch-AMOLED-1.8**](/products/waveshare-esp32-c6-touch-amoled-1-8/) — 1.8″ · AMOLED · touch · ESP32-C6
-- [**Waveshare ESP32-S3-Touch-AMOLED-1.75**](/products/waveshare-esp32-s3-touch-amoled-1-75/) — 1.75″ · AMOLED · touch · ESP32-S3
-- [**Waveshare ESP32-S3-Touch-AMOLED-2.41**](/products/waveshare-esp32-s3-touch-amoled-2-41/) — 2.41″ · AMOLED · touch · ESP32-S3
-- [**Sunton ESP32-8048S043C**](/products/sunton-esp32-8048s043c/) — 4.3″ · 800×480 · ESP32 touchscreen
-- [**ESP32-2432S028 2.8″ CYD**](/products/esp32-2432s028-2-8-cyd/) — 2.8″ · 320×240 · touchscreen
-- [**Waveshare ESP32-S3-Touch-AMOLED-2.16**](/products/waveshare-esp32-s3-touch-amoled-2-16/) — 2.16″ · AMOLED · touch · ESP32-S3
+<ul>
+<li><a href="/products/ili9341-xpt2046-2-8-touchscreen/"><strong>ILI9341 2.8″ SPI TFT + XPT2046 Touch</strong></a> — 2.8″ · 240×320 · SPI · resistive touch</li>
+<li><a href="/products/waveshare-esp32-s3-touch-lcd-4-3/"><strong>Waveshare ESP32-S3-Touch-LCD-4.3</strong></a> — 4.3″ · 800×480 · RGB · capacitive touch</li>
+<li><a href="/products/waveshare-esp32-s3-touch-lcd-7/"><strong>Waveshare ESP32-S3-Touch-LCD-7</strong></a> — 7″ · 800×480 · RGB · capacitive touch</li>
+<li><a href="/products/waveshare-esp32-s3-touch-lcd-1-85b/"><strong>Waveshare ESP32-S3-Touch-LCD-1.85B</strong></a> — 1.85″ · 360×360 · QSPI · IMU · RTC</li>
+<li><a href="/products/waveshare-esp32-c6-touch-amoled-1-8/"><strong>Waveshare ESP32-C6-Touch-AMOLED-1.8</strong></a> — 1.8″ · AMOLED · touch · ESP32-C6</li>
+<li><a href="/products/waveshare-esp32-s3-touch-amoled-1-75/"><strong>Waveshare ESP32-S3-Touch-AMOLED-1.75</strong></a> — 1.75″ · AMOLED · touch · ESP32-S3</li>
+<li><a href="/products/waveshare-esp32-s3-touch-amoled-2-41/"><strong>Waveshare ESP32-S3-Touch-AMOLED-2.41</strong></a> — 2.41″ · AMOLED · touch · ESP32-S3</li>
+<li><a href="/products/sunton-esp32-8048s043c/"><strong>Sunton ESP32-8048S043C</strong></a> — 4.3″ · 800×480 · ESP32 touchscreen</li>
+<li><a href="/products/esp32-2432s028-2-8-cyd/"><strong>ESP32-2432S028 2.8″ CYD</strong></a> — 2.8″ · 320×240 · touchscreen</li>
+<li><a href="/products/waveshare-esp32-s3-touch-amoled-2-16/"><strong>Waveshare ESP32-S3-Touch-AMOLED-2.16</strong></a> — 2.16″ · AMOLED · touch · ESP32-S3</li>
+</ul>
 </div>
 
 ## What can this ESP32 hardware selector help you find?
