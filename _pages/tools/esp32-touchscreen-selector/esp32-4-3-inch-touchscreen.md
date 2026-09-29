@@ -117,6 +117,7 @@ ESP32-S3 boards can be well suited to this class of project, especially when the
 - [ESP32 800×480 Display Selector](/tools/esp32-touchscreen-selector/800x480/)
 - [ESP32-S3 LVGL Display Selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
 - [ESP32 AMOLED Touchscreen Battery Selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/)
+- [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/)
 
 <script type="application/ld+json">
 {
