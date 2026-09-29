@@ -137,4 +137,12 @@ Waveshare lists SKU **33969** for the standard product and **33970** for the EN 
 
 - [Waveshare ESP32-S3-Touch-AMOLED-2.16 Documentation](https://docs.waveshare.com/ESP32-S3-Touch-AMOLED-2.16)
 - [Waveshare ESP32-S3-Touch-AMOLED-2.16 Product Page](https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm)
-\n## Embedded Nerd Guides & Selector\n\n- [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.\n- [AMOLED + battery selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/) — filter for AMOLED, touch and battery support.\n- [ESP32-S3 + LVGL selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) — focus on ESP32-S3 LVGL boards.\n- [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — compare display technologies and interfaces.\n- [Waveshare ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) — related AMOLED option.\n- [Waveshare ESP32-S3-Touch-AMOLED-2.41](/products/waveshare-esp32-s3-touch-amoled-2-41/) — related AMOLED option.\n
+
+## Embedded Nerd Guides & Selector
+
+- [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.
+- [AMOLED + battery selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/) — filter for AMOLED, touch and battery support.
+- [ESP32-S3 + LVGL selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) — focus on ESP32-S3 LVGL boards.
+- [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — compare display technologies and interfaces.
+- [Waveshare ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) — related AMOLED option.
+- [Waveshare ESP32-S3-Touch-AMOLED-2.41](/products/waveshare-esp32-s3-touch-amoled-2-41/) — related AMOLED option.
