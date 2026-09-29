@@ -152,6 +152,8 @@ If you need a gyroscope as well as an accelerometer, the MPU6050 is still a usef
 
 If your project only needs acceleration and motion sensing, especially where low power is important, the BMA400 is worth considering.
 
+For a direct comparison with the MPU6050, see our [BMA400 vs MPU6050 comparison]({{ '/bma400-vs-mpu6050/' | relative_url }}). If you are choosing a breakout for a project, you can also check the [BMA400 product page]({{ '/products/bma400/' | relative_url }}) for the available hardware.
+
 You can learn more about the MPU6050 in our [MPU6050 Arduino Guide]({{ '/mpu6050-arduino-guide/' | relative_url }}).
 
 For projects that require sensor calibration, our [MPU6050 Calibration Guide]({{ '/mpu6050-calibration-guide/' | relative_url }}) also explains the importance of sensor offsets and calibration.
