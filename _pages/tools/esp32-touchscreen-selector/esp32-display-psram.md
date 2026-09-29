@@ -1,10 +1,17 @@
 ---
 title: "ESP32 Display with PSRAM Selector | Embedded Nerd"
 layout: single
+sidebar:
+  nav: "embedded"
 permalink: /tools/esp32-touchscreen-selector/esp32-display-psram/
 canonical_url: /tools/esp32-touchscreen-selector/esp32-display-psram/
 excerpt: "Find ESP32 display boards with PSRAM for LVGL, framebuffers and demanding graphical interfaces."
 show_date: false
+toc: true
+toc_sticky: true
+toc_label: "Contents"
+related: true
+share: true
 categories:
   - Tools
   - ESP32
