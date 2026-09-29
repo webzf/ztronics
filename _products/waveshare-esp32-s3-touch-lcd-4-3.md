@@ -291,6 +291,7 @@ The **ILI9341 + XPT2046 2.8-inch Touchscreen** is the compact, low-cost resistiv
 *Specifications are based on Waveshare's documentation for the ESP32-S3-Touch-LCD-4.3, SKU 25948. Check the manufacturer's documentation for the exact hardware revision before using revision-specific electrical details.* 
 
 ## Embedded Nerd Guides & Selector
+- [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/) — filter boards with documented PSRAM for larger GUIs.
 
 - [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.
 - [4.3-inch touchscreen selector](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/) — compare 4.3-inch options.
