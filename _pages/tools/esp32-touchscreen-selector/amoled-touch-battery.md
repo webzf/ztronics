@@ -125,6 +125,15 @@ The catalog includes different AMOLED ESP32 form factors, so the selector can be
   </a>
 </div>
 
+## AMOLED ESP32 boards with touch and battery support
+
+Examples from the current selector catalog:
+
+- [Waveshare ESP32-C6-Touch-AMOLED-1.8](/products/waveshare-esp32-c6-touch-amoled-1-8/) — ESP32-C6, AMOLED, touch and battery support.
+- [Waveshare ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) — 1.75-inch round AMOLED touchscreen.
+- [Waveshare ESP32-S3-Touch-AMOLED-2.16](/products/waveshare-esp32-s3-touch-amoled-2-16/) — 2.16-inch AMOLED touchscreen.
+- [Waveshare ESP32-S3-Touch-AMOLED-2.41](/products/waveshare-esp32-s3-touch-amoled-2-41/) — 2.41-inch AMOLED touchscreen.
+
 ## Frequently asked questions
 
 ### Is an AMOLED display automatically suitable for LVGL?
