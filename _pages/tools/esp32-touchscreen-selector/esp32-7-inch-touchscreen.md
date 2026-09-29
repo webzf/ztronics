@@ -75,6 +75,8 @@ For example, the Embedded Nerd catalog includes a Waveshare ESP32-S3-Touch-LCD-7
 
 Always verify the exact SKU and manufacturer documentation before purchase.
 
+See the [Waveshare ESP32-S3-Touch-LCD-7 product page](/products/waveshare-esp32-s3-touch-lcd-7/) for the detailed hardware information and purchasing options.
+
 ## Typical 7-inch ESP32 touchscreen projects
 
 A 7-inch display can be useful for:
