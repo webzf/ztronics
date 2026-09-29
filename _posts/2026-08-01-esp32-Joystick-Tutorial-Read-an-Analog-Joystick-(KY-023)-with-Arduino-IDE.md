@@ -94,7 +94,7 @@ By the end of this tutorial you will be able to:
 
 ✔ Control an SG90 servo
 
-✔ Navigate [OLED](/ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/) menus
+✔ Navigate [OLED](/esp32-oled-tutorial-wiring-code-display-guide/) menus
 
 ✔ Control robot movement
 
@@ -203,7 +203,7 @@ The KY-023 joystick module is commonly found in projects such as:
 - Electronic games
 - Industrial operator panels
 - Educational robotics
-- [DIY game consoles](/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)
+- [DIY game consoles](/esp32-snake-game-with-mpu6050-and-oled-display/)
 
 If you have ever used a PlayStation, Xbox, or Nintendo controller, you have already used the same basic principle explained in this tutorial.
 
