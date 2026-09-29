@@ -141,6 +141,7 @@ It can be, especially for smaller displays and interfaces with modest update req
 - [ESP32 Hardware & Display Selector](/tools/esp32-touchscreen-selector/)
 - [ESP32 Touchscreen SPI Selector](/tools/esp32-touchscreen-selector/spi-touchscreen/)
 - [ESP32 800×480 Display Selector](/tools/esp32-touchscreen-selector/800x480/)
+- [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/)
 
 
 <script type="application/ld+json">
