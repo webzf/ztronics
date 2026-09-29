@@ -228,6 +228,7 @@ Before programming the board, check the current documentation for the exact hard
 - **ESP32 DevKit** — general-purpose ESP32 development board for projects using separate displays.
 
 ## Embedded Nerd Guides & Selector
+- [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/) — filter boards with documented PSRAM for larger GUIs.
 
 - [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.
 - [7-inch touchscreen selector](/tools/esp32-touchscreen-selector/esp32-7-inch-touchscreen/) — focus on 7-inch boards.
