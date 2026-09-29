@@ -99,7 +99,7 @@ It combines the ESP32-C6 RISC-V microcontroller with 16MB Flash, capacitive touc
 
 ## Display and Touch
 
-The board uses a **1.8-inch 368×448 capacitive AMOLED display**. The display interface is QSPI and the touch interface is I2C. citeturn905410view0
+The board uses a **1.8-inch 368×448 capacitive AMOLED display**. The display interface is QSPI and the touch interface is I2C. 
 
 The controller combination depends on the hardware revision:
 
@@ -108,11 +108,11 @@ The controller combination depends on the hardware revision:
 | V1 | SH8601 | FT3168 / FT6146 |
 | V2 | CO5300 | CST820 |
 
-Waveshare states that the board-level interfaces and pin assignments are shared between V1 and V2, while the display and touch drivers are revision-specific. citeturn905410view0
+Waveshare states that the board-level interfaces and pin assignments are shared between V1 and V2, while the display and touch drivers are revision-specific. 
 
 ## ESP32-C6 Platform
 
-The board uses an **ESP32-C6 32-bit RISC-V processor** with an operating frequency up to 160 MHz and 16MB external Flash. The ESP32-C6 also provides Wi-Fi 6, Bluetooth 5 and IEEE 802.15.4 wireless capabilities. citeturn905410view0
+The board uses an **ESP32-C6 32-bit RISC-V processor** with an operating frequency up to 160 MHz and 16MB external Flash. The ESP32-C6 also provides Wi-Fi 6, Bluetooth 5 and IEEE 802.15.4 wireless capabilities. 
 
 ## Onboard Peripherals
 
@@ -129,15 +129,15 @@ Waveshare lists the following onboard hardware:
 - 3.7V lithium-battery connector with charging and discharging
 - USB Type-C
 - Reserved GPIO pads
-- I2C, UART and USB breakout interfaces citeturn905410view0
+- I2C, UART and USB breakout interfaces 
 
 ## Battery and Power Management
 
-The board includes an **AXP2101 PMU** and an MX1.25 2-pin header for a 3.7V lithium battery. Waveshare specifies charging and discharging support and also provides backup-battery pads for maintaining RTC power during a main-battery replacement. citeturn905410view0
+The board includes an **AXP2101 PMU** and an MX1.25 2-pin header for a 3.7V lithium battery. Waveshare specifies charging and discharging support and also provides backup-battery pads for maintaining RTC power during a main-battery replacement. 
 
 ## USB and Development
 
-The USB Type-C interface is provided by the ESP32-C6 USB interface and is documented for program flashing and log output. The board supports development with both **Arduino IDE and ESP-IDF**. citeturn905410view0
+The USB Type-C interface is provided by the ESP32-C6 USB interface and is documented for program flashing and log output. The board supports development with both **Arduino IDE and ESP-IDF**. 
 
 ## LVGL Projects
 
@@ -157,7 +157,7 @@ Typical applications include:
 
 One of the most important details when developing for this board is the hardware revision.
 
-V1 uses **SH8601 + FT3168/FT6146**, while V2 uses **CO5300 + CST820**. Waveshare's ESP-IDF BSP detects the touch address and selects the matching drivers, but Arduino projects should use the example and bundled libraries corresponding to the installed hardware version. citeturn905410view0
+V1 uses **SH8601 + FT3168/FT6146**, while V2 uses **CO5300 + CST820**. Waveshare's ESP-IDF BSP detects the touch address and selects the matching drivers, but Arduino projects should use the example and bundled libraries corresponding to the installed hardware version. 
 
 ## Official Documentation
 
@@ -177,4 +177,11 @@ This board is particularly relevant for:
 - Compact IoT controllers
 
 *Specifications and revision details are based on Waveshare's official ESP32-C6-Touch-AMOLED-1.8 documentation.*
-\n## Embedded Nerd Guides & Selector\n\n- [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.\n- [ESP32-C6 display selector](/tools/esp32-touchscreen-selector/esp32-c6-display/) — focus on ESP32-C6 display boards.\n- [AMOLED + battery selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/) — find AMOLED boards with touch and battery support.\n- [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — compare display and touch technologies.\n- [Waveshare ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) — related Waveshare AMOLED option.\n
+
+## Embedded Nerd Guides & Selector
+
+- [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.
+- [ESP32-C6 display selector](/tools/esp32-touchscreen-selector/esp32-c6-display/) — focus on ESP32-C6 display boards.
+- [AMOLED + battery selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/) — find AMOLED boards with touch and battery support.
+- [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — compare display and touch technologies.
+- [Waveshare ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) — related Waveshare AMOLED option.
