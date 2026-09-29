@@ -149,6 +149,7 @@ The official Waveshare documentation contains the hardware specifications, pin d
 *Specifications are based on Waveshare's official ESP32-S3-Touch-AMOLED-1.75 documentation.*
 
 ## Embedded Nerd Guides & Selector
+- [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/) — filter boards with documented PSRAM for larger GUIs.
 
 - [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.
 - [AMOLED + battery selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/) — filter for AMOLED, touch and battery support.
