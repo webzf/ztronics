@@ -43,7 +43,7 @@ tags:
 <link rel="stylesheet" href="/assets/tools/esp32-touchscreen-selector/selector.css?v=20260929">
 
 <p class="site-label">Embedded Nerd · Open Source Tool</p>
-<header class="hero"><span class="eyebrow">ESP32 HARDWARE DISCOVERY</span><h1>ESP32 Board &amp; Display Selector</h1><p>Find compatible ESP32 boards, displays and touchscreen hardware for your project. Choose the requirements that matter and compare matching hardware. <strong>Required</strong> filters exclude incompatible hardware; other selections influence ranking.</p></header>
+<header class="selector-hero"><span class="eyebrow">ESP32 HARDWARE DISCOVERY</span><h1>ESP32 Board &amp; Display Selector</h1><p>Find compatible ESP32 boards, displays and touchscreen hardware for your project. Choose the requirements that matter and compare matching hardware. <strong>Required</strong> filters exclude incompatible hardware; other selections influence ranking.</p></header>
 <section class="tool" aria-labelledby="tool-title">
 <h2 id="tool-title" class="sr-only">Hardware selector</h2>
 <div class="mode-bar"><div class="mode-buttons"><button type="button" id="mode-requirements" class="mode-button active" data-mode="requirements">Filter &amp; find hardware</button><button type="button" id="browse-btn" class="mode-button" data-mode="browse">Browse all hardware</button></div><span class="catalog-status"><span id="catalog-count">0</span> catalog entries</span></div>
