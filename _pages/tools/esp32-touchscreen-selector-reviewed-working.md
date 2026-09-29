@@ -187,6 +187,9 @@ These focused pages help you start with a common hardware requirement before ope
 - [ESP32 AMOLED Touchscreen Battery Selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/)
 - [ESP32-C6 Display Selector](/tools/esp32-touchscreen-selector/esp32-c6-display/)
 - [ESP32 800×480 Display Selector](/tools/esp32-touchscreen-selector/800x480/)
+- [ESP32 4.3-inch Touchscreen Selector](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/)
+- [ESP32 7-inch Touchscreen Selector](/tools/esp32-touchscreen-selector/esp32-7-inch-touchscreen/)
+- [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/)
 - [ESP32 Touchscreen SPI Selector](/tools/esp32-touchscreen-selector/spi-touchscreen/)
 
 ## Related Embedded Nerd resources
