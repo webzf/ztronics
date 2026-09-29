@@ -40,7 +40,7 @@ tags:
   - Electronics
 ---
 
-<link rel="stylesheet" href="/assets/tools/esp32-touchscreen-selector/selector.css?v=20260929c">
+<link rel="stylesheet" href="/assets/tools/esp32-touchscreen-selector/selector.css?v=20260929d">
 
 <section class="tool" aria-labelledby="tool-title">
 <h2 id="tool-title" class="sr-only">Hardware selector</h2>
