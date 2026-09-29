@@ -109,6 +109,18 @@ Different ESP32-S3 display boards can target very different interface sizes, so 
   </a>
 </div>
 
+## ESP32-S3 boards with LVGL support
+
+Examples from the current selector catalog include:
+
+- [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — 800×480 RGB touchscreen.
+- [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/) — 7-inch 800×480 RGB touchscreen.
+- [Waveshare ESP32-S3-Touch-LCD-1.85B](/products/waveshare-esp32-s3-touch-lcd-1-85b/) — compact QSPI touchscreen.
+- [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — 4.3-inch RGB touchscreen.
+- [Waveshare ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) — round AMOLED touchscreen.
+- [Waveshare ESP32-S3-Touch-AMOLED-2.16](/products/waveshare-esp32-s3-touch-amoled-2-16/) — square AMOLED touchscreen.
+- [Waveshare ESP32-S3-Touch-AMOLED-2.41](/products/waveshare-esp32-s3-touch-amoled-2-41/) — 2.41-inch AMOLED touchscreen.
+
 ## Frequently asked questions
 
 ### Is every ESP32-S3 board suitable for LVGL?
