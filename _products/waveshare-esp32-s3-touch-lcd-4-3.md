@@ -163,7 +163,7 @@ The board is particularly interesting for projects using **LVGL**, dashboards, s
 * TF card slot
 * LVGL-compatible platform
 
-Waveshare documents the board as a GUI/HMI platform for applications such as IoT, mobile devices and smart-home interfaces. citeturn0search0turn0search1
+Waveshare documents the board as a GUI/HMI platform for applications such as IoT, mobile devices and smart-home interfaces. 
 
 ## ESP32-S3 Controller
 
@@ -201,7 +201,7 @@ Typical applications include:
 * Portable instruments
 * Touch-based control systems
 
-Waveshare provides Arduino and ESP-IDF examples and hardware resources for the board. citeturn0search0turn0search3
+Waveshare provides Arduino and ESP-IDF examples and hardware resources for the board. 
 
 ## Interfaces
 
@@ -239,7 +239,7 @@ The ILI9341 + XPT2046 remains a good low-cost option for small projects. The Wav
 
 Waveshare specifies a **5V Type-C power supply**, approximately **5V / 450mA power consumption**, and an operating temperature range of **0°C to 65°C**.
 
-The touch version measures approximately **106.1 × 67.8 mm**. citeturn0search0
+The touch version measures approximately **106.1 × 67.8 mm**. 
 
 ## Development Resources
 
@@ -253,7 +253,7 @@ Waveshare provides:
 * ESP-IDF examples
 * LVGL-related resources
 
-The official resources page provides access to the schematic, component datasheets and example projects. citeturn0search3
+The official resources page provides access to the schematic, component datasheets and example projects. 
 
 ## Things to Consider
 
@@ -288,5 +288,14 @@ The **ILI9341 + XPT2046 2.8-inch Touchscreen** is the compact, low-cost resistiv
 
 ---
 
-*Specifications are based on Waveshare's documentation for the ESP32-S3-Touch-LCD-4.3, SKU 25948. Check the manufacturer's documentation for the exact hardware revision before using revision-specific electrical details.* citeturn0search0turn0search3
-\n## Embedded Nerd Guides & Selector\n\n- [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.\n- [4.3-inch touchscreen selector](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/) — compare 4.3-inch options.\n- [800×480 touchscreen selector](/tools/esp32-touchscreen-selector/800x480/) — focus on 800×480 displays.\n- [ESP32-S3 + LVGL selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) — filter for ESP32-S3 LVGL boards.\n- [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — background and selection criteria.\n- [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/) — larger related option.\n- [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — another 4.3-inch 800×480 ESP32-S3 board.\n
+*Specifications are based on Waveshare's documentation for the ESP32-S3-Touch-LCD-4.3, SKU 25948. Check the manufacturer's documentation for the exact hardware revision before using revision-specific electrical details.* 
+
+## Embedded Nerd Guides & Selector
+
+- [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.
+- [4.3-inch touchscreen selector](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/) — compare 4.3-inch options.
+- [800×480 touchscreen selector](/tools/esp32-touchscreen-selector/800x480/) — focus on 800×480 displays.
+- [ESP32-S3 + LVGL selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) — filter for ESP32-S3 LVGL boards.
+- [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — background and selection criteria.
+- [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/) — larger related option.
+- [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — another 4.3-inch 800×480 ESP32-S3 board.
