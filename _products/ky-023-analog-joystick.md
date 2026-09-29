@@ -315,7 +315,7 @@ The KY-023 Analog Joystick Module can be used in many embedded and IoT projects,
 - Educational robotics
 - Embedded gaming projects
 
-For a complete example combining a joystick with an OLED display and MPU6050, see our **[ESP32 Snake Game with MPU6050 and OLED Display](/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)** project.
+For a complete example combining a joystick with an OLED display and MPU6050, see our **[ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-with-mpu6050-and-oled-display/)** project.
 
 ---
 
@@ -351,10 +351,10 @@ These components provide a convenient starting point for prototyping interactive
 To get the most from your KY-023 Analog Joystick Module, see:
 
 - **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)**
-- **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)**
+- **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)**
 - **[I2C Scanner Tutorial](/i2c-scanner-tutorial/)**
 - **[MPU6050 Arduino Guide](/mpu6050-arduino-guide/)**
-- **[ESP32 Snake Game with MPU6050 and OLED Display](/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)**
+- **[ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-with-mpu6050-and-oled-display/)**
 
 These tutorials cover practical microcontroller projects involving analog inputs, displays, sensors and interactive interfaces.
 
