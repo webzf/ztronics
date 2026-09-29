@@ -93,7 +93,7 @@ The **ESP32 DevKit V1** is a popular ESP32 development board for Arduino, IoT an
 
 The board is compatible with the **Arduino IDE**, PlatformIO and Espressif's ESP-IDF framework. It is also supported by platforms such as MicroPython and ESPHome, giving developers a wide range of options for building connected devices.
 
-If you're getting started with the ESP32, our **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)** shows how to connect an **[SSD1306 OLED Display](/products/ssd1306-oled/)** and create a practical ESP32 display project.
+If you're getting started with the ESP32, our **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)** shows how to connect an **[SSD1306 OLED Display](/products/ssd1306-oled/)** and create a practical ESP32 display project.
 
 ---
 
@@ -290,7 +290,7 @@ Popular project ideas include:
 - Robotics projects
 - Internet-connected displays
 
-For a complete practical project, see our **[ESP32 Snake Game with MPU6050 and OLED Display](/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)**, which combines the ESP32 with an **SSD1306 OLED Display** and an **MPU6050** motion sensor.
+For a complete practical project, see our **[ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-with-mpu6050-and-oled-display/)**, which combines the ESP32 with an **SSD1306 OLED Display** and an **MPU6050** motion sensor.
 
 ---
 
@@ -308,9 +308,9 @@ You can also browse our **[Products](/products/)** section for compatible hardwa
 
 To get the most from your ESP32 DevKit V1, explore these practical guides:
 
-- **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/ESP32-OLED-Tutorial-Wiring-Code-&-Display-Guide/)**
+- **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)**
 - **[I2C Scanner Tutorial](/i2c-scanner-tutorial/)**
 - **[MPU6050 Arduino Guide](/mpu6050-arduino-guide/)**
-- **[ESP32 Snake Game with MPU6050 and OLED Display](/ESP32-Snake-Game-with-MPU6050-and-OLED-Display/)**
+- **[ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-with-mpu6050-and-oled-display/)**
 
 These tutorials cover displays, sensors, I2C communication and complete ESP32 projects, helping you build practical embedded systems with the ESP32 DevKit V1.
