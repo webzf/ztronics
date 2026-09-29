@@ -130,5 +130,6 @@ Do not assume that the N or R variants have the same touch hardware: the N varia
 - [800×480 touchscreen selector](/tools/esp32-touchscreen-selector/800x480/) — focus on 800×480 displays.
 - [4.3-inch touchscreen selector](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/) — compare 4.3-inch ESP32 touchscreen boards.
 - [ESP32-S3 + LVGL selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) — filter for ESP32-S3 and LVGL projects.
+- [ESP32 display boards with PSRAM](/tools/esp32-touchscreen-selector/esp32-display-psram/) — focus on ESP32 display hardware with PSRAM.
 - [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — background and buying considerations.
 - [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — closely related 4.3-inch 800×480 option.
