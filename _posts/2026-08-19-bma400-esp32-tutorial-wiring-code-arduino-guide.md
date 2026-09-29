@@ -233,7 +233,7 @@ If the ESP32 cannot detect the sensor, checking the I2C address should be one of
 
 An I2C scanner is especially useful when working with sensors and displays.
 
-Our [I2C Scanner Tutorial]({{ '/i2c-scanner-tutorial-arduino-esp32/' | relative_url }}) explains how to detect I2C devices and identify their addresses.
+Our [I2C Scanner Tutorial]({{ '/i2c-scanner-tutorial/' | relative_url }}) explains how to detect I2C devices and identify their addresses.
 
 ## BMA400 ESP32 Wiring
 
@@ -785,6 +785,12 @@ Once the basic sensor is working, there are several directions you can take the 
 These projects can be developed from the same basic I2C connection used in this tutorial.
 
 ## Related Embedded Nerd Tutorials
+
+## Related Embedded Nerd Resources
+
+- [BMA400 vs MPU6050]({{ '/bma400-vs-mpu6050/' | relative_url }}) — compare the BMA400 with the MPU6050.
+- [BMA400 Product Guide]({{ '/products/bma400/' | relative_url }}) — hardware reference and related resources.
+
 
 The BMA400 fits naturally into the Embedded Nerd sensor and ESP32 content cluster.
 
