@@ -59,7 +59,7 @@ jobs:
         run: |
           PR_DIR="${{ github.event.pull_request.number }}"
           bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build \
-            --source pr-site
+            --source pr-site \
             --drafts \
             --baseurl "/preview/pr-${PR_DIR}" \
             --destination "_site/preview/pr-${PR_DIR}"
