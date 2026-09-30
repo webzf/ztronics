@@ -1,28 +1,65 @@
 ---
-author: Embedded Nerd
-description: An engineering deep dive into Harald Kreuzer's ESP32-P4
-  Weather Station, covering its multi-MCU architecture, MIPI-DSI
-  display, ESP-NOW, LoRa, I2C protocol, LVGL and OTA design.
-slug: esp32-p4-weather-station
-title: "ESP32-P4 Weather Station: How MIPI-DSI, LoRa, ESP-NOW and LVGL
-  Work Together"
+title: "ESP32-P4 Weather Station: How MIPI-DSI, LoRa, ESP-NOW and LVGL Work Together"
+excerpt: "An engineering deep dive into Harald Kreuzer's ESP32-P4 Weather Station, exploring its multi-MCU architecture, MIPI-DSI display, ESP-NOW, LoRa, I2C protocol, LVGL interface and OTA design."
+layout: single
+permalink: /esp32-p4-weather-station/
+show_date: false
+read_time: false
+last_modified_at: false
+toc: true
+toc_label: "Contents"
+toc_sticky: true
+toc_levels: 2
+header:
+  teaser: /assets/images/esp32-p4-weather-station.webp
+  overlay_image: /assets/images/header3.webp
+  overlay_filter: 0.5
+  image: /assets/images/esp32-p4-weather-station.webp
+  og_image: /assets/images/esp32-p4-weather-station.webp
+categories:
+  - ESP32
+  - Embedded Systems
+  - IoT
+internal_link_keywords:
+  - "ESP32-P4 weather station"
+  - "ESP32-P4"
+  - "ESP32 weather station"
+  - "ESP32 touchscreen"
+  - "ESP-NOW"
+  - "LoRa"
+  - "LVGL"
+  - "MIPI-DSI"
+tags:
+  - ESP32-P4
+  - ESP32-C6
+  - ESP32-S3
+  - ESP-NOW
+  - LoRa
+  - MIPI-DSI
+  - LVGL
+  - I2C
+  - ESP-IDF
+  - Weather Station
+  - Environmental Monitoring
+  - IoT
+  - Embedded Systems
+sidebar:
+  nav: "embedded"
+related: true
+share: true
 ---
 
 # ESP32-P4 Weather Station: How MIPI-DSI, LoRa, ESP-NOW and LVGL Work Together
 
-*An engineering deep dive into Harald Kreuzer's ESP32-P4 Weather Station
-& Environmental Monitor.*
+*An engineering deep dive into Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor.*
 
-![Harald Kreuzer's ESP32-P4 Weather Station & Environmental
-Monitor](https://github.com/user-attachments/assets/f58d5611-99e7-4674-8ca6-b77585577fb7)
+This article is an engineering case study of [Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor](https://www.haraldkreuzer.net/en/news/build-guide-esp32-weather-station-and-environmental-monitor), based on his original project and build guide. Harald has kindly granted permission to use project photography. The images currently included in this draft are provisional and can be replaced with original/high-resolution photographs if Harald provides them.
 
-*Photo: Harald Kreuzer --- used with permission. Source: [project
-repository](https://github.com/HarryVienna/ESP32-Weather-Station-and-Air-Quality-Monitor).*
+![Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor](https://github.com/user-attachments/assets/f58d5611-99e7-4674-8ca6-b77585577fb7)
 
-> **Editorial note:** This article is an engineering analysis of Harald
-> Kreuzer's project, not a replacement for the original build guide.
-> Hardware details and behavior described as "current" refer to the
-> project state observed during preparation of this article.
+*Photo: Harald Kreuzer — used with permission. Source: [project repository](https://github.com/HarryVienna/ESP32-Weather-Station-and-Air-Quality-Monitor).*
+
+> **Editorial note:** This article is an engineering analysis of Harald Kreuzer's project, not a replacement for the original build guide. Hardware details and behavior described as "current" refer to the project state observed during preparation of this article.
 
 ## Introduction
 
