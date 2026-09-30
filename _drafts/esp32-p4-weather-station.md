@@ -103,6 +103,21 @@ It is:
 
 That is what we will examine here.
 
+### The Project Evolved Before the ESP32-P4
+
+The current Weather Station 3.0 is the result of several hardware and
+software iterations. Harald's earlier ESP32 weather-station generations
+already established the combination of a dedicated display, environmental
+sensors and low-power wireless sensor nodes. The move to the P4 represents
+an architectural response to the requirements of the larger display and
+the resulting communication split.
+
+![Earlier generation of Harald Kreuzer's ESP32 Weather Station](https://www.haraldkreuzer.net/application/files/7316/9125/1012/ESP32-Weather-Station-DSC_8226.jpg)
+
+*Photo: Harald Kreuzer — earlier-generation Weather Station, shown as
+historical context for the evolution toward Weather Station 3.0. Source:
+Harald Kreuzer's website.*
+
 ------------------------------------------------------------------------
 
 ## Architecture at a Glance
