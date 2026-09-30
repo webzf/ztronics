@@ -71,7 +71,7 @@ jobs:
             "/repos/${{ github.repository }}/pulls?state=open&base=master&per_page=100" \
             --jq '.[] | [.number, .head.sha] | @tsv' > /tmp/open-prs.tsv
 
-          while IFS=$'\\t' read -r pr_number pr_sha; do
+          while read -r pr_number pr_sha; do
             [ -n "$pr_number" ] || continue
 
             echo "Building preview for PR #${pr_number} (${pr_sha})"
