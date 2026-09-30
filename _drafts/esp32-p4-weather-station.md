@@ -59,7 +59,7 @@ This article is an engineering case study of [Harald Kreuzer's ESP32-P4 Weather 
 
 *Photo: Harald Kreuzer — used with permission. Source: [project repository](https://github.com/HarryVienna/ESP32-Weather-Station-and-Air-Quality-Monitor).*
 
-> **Editorial note:** This article is an engineering analysis of Harald Kreuzer's project, not a replacement for the original build guide. Hardware details and behavior described as "current" refer to the project state observed during preparation of this article.
+> **Editorial note:** This article is an engineering analysis of Harald Kreuzer's project, not a replacement for the original build guide. For the complete step-by-step build instructions, wiring, component details and latest project state, see [Harald Kreuzer's original build guide](https://www.haraldkreuzer.net/en/news/build-guide-esp32-weather-station-and-environmental-monitor). Hardware details and behavior described as "current" refer to the project state observed during preparation of this article.
 
 ## Introduction
 
@@ -507,6 +507,10 @@ The P4 does not need to know how the receiver works internally.
 
 It just reads and writes registers.
 
+For readers debugging their own I²C hardware, the [Embedded Nerd I²C Scanner Tutorial](/i2c-scanner-tutorial/)
+is useful for checking whether devices respond on the bus, while the [I²C Address Lookup Tool](/tools/i2c-address-lookup/)
+can help identify common device addresses.
+
 ------------------------------------------------------------------------
 
 ## 9. The Interesting I²C Detail: ISR → Queue → Task
@@ -588,6 +592,12 @@ The display is one of the reasons the whole architecture exists.
 The panel used in the current design is a **10.1-inch IPS display with
 800 × 1280 native resolution**, connected through a two-lane MIPI-DSI
 interface.
+
+If you are evaluating ESP32 touchscreen hardware for a different project,
+our [ESP32 Touchscreen Displays guide](/esp32-touchscreen-displays-guide/)
+covers display interfaces, touch controllers, resolution, PSRAM and LVGL.
+You can also use the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/)
+to narrow down compatible hardware by project requirements.
 
 The touch controller communicates through I²C.
 
