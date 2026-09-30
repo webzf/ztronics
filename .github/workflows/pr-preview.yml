@@ -52,19 +52,17 @@ jobs:
       - name: Prepare preview robots policy
         if: github.event.action != 'closed'
         run: |
-          cat > pr-site/_includes/head/custom.html <<'EOF'
-          <meta name="robots" content="noindex,nofollow,noarchive">
-          EOF
+          sed -i 's#<meta name="robots" content="index,follow,max-image-preview:large">#<meta name="robots" content="noindex,nofollow,noarchive">#' pr-site/_includes/head/custom.html
 
       - name: Build PR preview
         if: github.event.action != 'closed'
         run: |
           PR_DIR="${{ github.event.pull_request.number }}"
-          cd pr-site
           bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build \
+            --source pr-site
             --drafts \
             --baseurl "/preview/pr-${PR_DIR}" \
-            --destination "../_site/preview/pr-${PR_DIR}"
+            --destination "_site/preview/pr-${PR_DIR}"
 
       - name: Upload combined Pages artifact
         uses: actions/upload-pages-artifact@v4
