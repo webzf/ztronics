@@ -15,7 +15,7 @@ on:
         required: false
         type: string
       pr_action:
-        description: "Pull request action"
+        description: "Pull request action for immediate preview rebuild"
         required: false
         default: "synchronize"
         type: string
@@ -41,6 +41,21 @@ jobs:
           ref: master
           fetch-depth: 0
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Validate commerce database
+        run: ruby scripts/validate-commerce.rb
+
+      - name: Build production site
+        run: bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build
+
       - name: Build active PR previews
         env:
           GH_TOKEN: ${{ github.token }}
@@ -56,15 +71,19 @@ jobs:
             "/repos/${{ github.repository }}/pulls?state=open&base=master&per_page=100" \
             --jq '.[] | [.number, .head.sha] | @tsv' > /tmp/open-prs.tsv
 
-          while IFS=$'\t' read -r pr_number pr_sha; do
+          while IFS=$'\\t' read -r pr_number pr_sha; do
             [ -n "$pr_number" ] || continue
 
             echo "Building preview for PR #${pr_number} (${pr_sha})"
-            git worktree add --detach "pr-site-${pr_number}" "$pr_sha"
+
+            # Fetch the PR head explicitly so the SHA is guaranteed to exist locally.
+            git fetch --no-tags origin "pull/${pr_number}/head"
+            git worktree add --detach "pr-site-${pr_number}" FETCH_HEAD
 
             sed -i 's#<meta name="robots" content="index,follow,max-image-preview:large">#<meta name="robots" content="noindex,nofollow,noarchive">#' "pr-site-${pr_number}/_includes/head/custom.html"
 
-            bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build \
+            bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb \
+              $(bundle show jekyll)/exe/jekyll build \
               --source "pr-site-${pr_number}" \
               --drafts \
               --baseurl "/preview/pr-${pr_number}" \
@@ -72,6 +91,7 @@ jobs:
 
             git worktree remove --force "pr-site-${pr_number}"
           done < /tmp/open-prs.tsv
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
