@@ -507,9 +507,7 @@ The P4 does not need to know how the receiver works internally.
 
 It just reads and writes registers.
 
-For readers debugging their own I²C hardware, the [Embedded Nerd I²C Scanner Tutorial](/i2c-scanner-tutorial/)
-is useful for checking whether devices respond on the bus, while the [I²C Address Lookup Tool](/tools/i2c-address-lookup/)
-can help identify common device addresses.
+For readers debugging their own I²C hardware, the [Embedded Nerd I²C Scanner Tutorial](/i2c-scanner-tutorial/) is useful for checking whether devices respond on the bus. The [I²C Address Lookup Tool](/tools/i2c-address-lookup/) can also help identify common device addresses.
 
 ------------------------------------------------------------------------
 
@@ -593,11 +591,7 @@ The panel used in the current design is a **10.1-inch IPS display with
 800 × 1280 native resolution**, connected through a two-lane MIPI-DSI
 interface.
 
-If you are evaluating ESP32 touchscreen hardware for a different project,
-our [ESP32 Touchscreen Displays guide](/esp32-touchscreen-displays-guide/)
-covers display interfaces, touch controllers, resolution, PSRAM and LVGL.
-You can also use the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/)
-to narrow down compatible hardware by project requirements.
+For a broader look at the hardware decisions involved in ESP32 touchscreen projects, see the [ESP32 Touchscreen Displays guide](/esp32-touchscreen-displays-guide/). When the display requirements are not yet fixed, the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) can help narrow down compatible hardware.
 
 The touch controller communicates through I²C.
 
@@ -620,10 +614,6 @@ I²C is appropriate for relatively small control/input transactions.
 
 This is a good example of choosing an interface around the workload
 rather than trying to standardize everything onto one bus.
-
-> **Embedded Nerd related guide:** [ESP32 Touchscreen Displays: Complete
-> Guide to Choosing and Using a
-> Touchscreen](/esp32-touchscreen-displays-guide/)
 
 ------------------------------------------------------------------------
 
