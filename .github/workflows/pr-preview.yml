@@ -1,0 +1,84 @@
+name: Preview Pull Request on GitHub Pages
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Create PR worktree
+        if: github.event.action != 'closed'
+        run: git worktree add --detach pr-site "${{ github.event.pull_request.head.sha }}"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Validate commerce database
+        run: ruby scripts/validate-commerce.rb
+
+      - name: Build production site
+        run: bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build
+
+      - name: Prepare preview robots policy
+        if: github.event.action != 'closed'
+        run: |
+          cat > pr-site/_includes/head/custom.html <<'EOF'
+          <meta name="robots" content="noindex,nofollow,noarchive">
+          EOF
+
+      - name: Build PR preview
+        if: github.event.action != 'closed'
+        run: |
+          PR_DIR="${{ github.event.pull_request.number }}"
+          cd pr-site
+          bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build \
+            --drafts \
+            --baseurl "/preview/pr-${PR_DIR}" \
+            --destination "../_site/preview/pr-${PR_DIR}"
+
+      - name: Upload combined Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
