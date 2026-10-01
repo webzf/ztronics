@@ -121,18 +121,26 @@ Harald Kreuzer's website.*
 <style>
 .en-diagram{margin:1.75rem 0;padding:1.1rem;border:1px solid rgba(127,127,127,.28);border-radius:12px;background:rgba(127,127,127,.045);overflow:hidden}
 .en-diagram-title{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.7;margin:0 0 .9rem}
-.en-diagram-flow{display:flex;align-items:center;justify-content:center;gap:.7rem;flex-wrap:wrap}
-.en-diagram-node{min-width:145px;max-width:220px;padding:.85rem 1rem;border:1px solid rgba(127,127,127,.38);border-radius:10px;background:rgba(127,127,127,.08);text-align:center}
+.en-diagram-subtitle{font-size:.8rem;opacity:.68;margin:-.45rem 0 .9rem}
+.en-diagram-node{padding:.8rem 1rem;border:1px solid rgba(127,127,127,.38);border-radius:10px;background:rgba(127,127,127,.08);text-align:center}
 .en-diagram-node strong{display:block;font-size:.95rem}
 .en-diagram-node span{display:block;margin-top:.25rem;font-size:.78rem;opacity:.72}
-.en-diagram-arrow{font-weight:700;opacity:.65;font-size:1.15rem}
-.en-diagram-stack{display:flex;flex-direction:column;align-items:center;gap:.65rem}
-.en-diagram-branches{display:grid;grid-template-columns:repeat(2,minmax(130px,1fr));gap:.7rem;width:100%;max-width:520px}
-.en-diagram-branches.three{grid-template-columns:repeat(3,minmax(100px,1fr));max-width:680px}
-.en-diagram-wide{max-width:760px;margin-inline:auto}
-.en-diagram-note{font-size:.78rem;opacity:.7;text-align:center;margin-top:.75rem}
+.en-diagram-arrow{font-weight:700;opacity:.65;font-size:1.05rem;text-align:center;line-height:1}
+.en-diagram-stack{display:flex;flex-direction:column;align-items:stretch;gap:.55rem;max-width:520px;margin-inline:auto}
+.en-diagram-pipeline{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:.55rem;max-width:900px;margin-inline:auto}
+.en-diagram-pipeline .en-diagram-node{min-width:0}
+.en-diagram-branches{display:grid;grid-template-columns:repeat(2,minmax(130px,1fr));gap:.7rem;width:100%;max-width:620px;margin-inline:auto}
+.en-diagram-branches.three{grid-template-columns:repeat(3,minmax(100px,1fr));max-width:720px}
+.en-diagram-lane{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:.7rem;max-width:760px;margin:.35rem auto}
+.en-diagram-boundary{margin:.9rem 0;padding:.8rem;border-top:1px dashed rgba(127,127,127,.38);border-bottom:1px dashed rgba(127,127,127,.38);text-align:center;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;opacity:.68}
+.en-diagram-note{font-size:.78rem;opacity:.7;text-align:center;margin-top:.7rem}
 .en-photo-crop{margin:1.5rem 0;overflow:hidden;border-radius:12px}.en-photo-crop img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;object-position:center}
-@media(max-width:600px){.en-diagram{padding:.8rem}.en-diagram-branches,.en-diagram-branches.three{grid-template-columns:1fr}.en-diagram-node{max-width:none;width:100%}.en-diagram-flow .en-diagram-arrow{transform:rotate(90deg)}}
+@media(max-width:700px){
+  .en-diagram{padding:.8rem}
+  .en-diagram-pipeline,.en-diagram-lane{grid-template-columns:1fr;gap:.4rem}
+  .en-diagram-pipeline .en-diagram-arrow,.en-diagram-lane .en-diagram-arrow{transform:rotate(90deg)}
+  .en-diagram-branches,.en-diagram-branches.three{grid-template-columns:1fr}
+}
 </style>
 ------------------------------------------------------------------------
 
@@ -264,7 +272,7 @@ Harald specifically notes that ESP-NOW is not supported through
 
 The resulting architecture looks roughly like this:
 
-<div class="en-diagram en-diagram-wide" role="img" aria-label="System architecture"><div class="en-diagram-title">System architecture</div><div class="en-diagram-stack"><div class="en-diagram-node"><strong>ESP32-P4</strong><span>Application • LVGL • OTA</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-branches three"><div class="en-diagram-node"><strong>10.1″ Display</strong><span>MIPI-DSI + Touch</span></div><div class="en-diagram-node"><strong>ESP32-S3</strong><span>Radio receiver</span></div><div class="en-diagram-node"><strong>ESP32-C6</strong><span>Wi-Fi coprocessor</span></div></div></div></div>
+<div class="en-diagram en-diagram-wide" role="img" aria-label="System architecture"><div class="en-diagram-title">Who does what?</div><div class="en-diagram-subtitle">The P4 runs the application; the other processors handle specialized I/O.</div><div class="en-diagram-node"><strong>ESP32-P4</strong><span>Application • LVGL • system management</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-branches three"><div class="en-diagram-node"><strong>10.1″ display</strong><span>MIPI-DSI • touch</span></div><div class="en-diagram-node"><strong>ESP32-S3</strong><span>ESP-NOW • LoRa receiver</span></div><div class="en-diagram-node"><strong>ESP32-C6</strong><span>Wi-Fi via SDIO</span></div></div></div>
 
 Meanwhile, the ESP32-C6 sits beside the P4 and provides Wi-Fi through
 Espressif's ESP-Hosted-MCU mechanism.
@@ -346,7 +354,7 @@ The receiver subsequently adds link-related metadata such as:
 
 The result is a useful separation:
 
-<div class="en-diagram en-diagram-wide" role="img" aria-label="Sensor packet structure"><div class="en-diagram-title">Sensor packet structure</div><div class="en-diagram-stack"><div class="en-diagram-node"><strong>Packet header</strong><span>4 bytes</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>Sensor payload</strong><span>up to 64 bytes</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>Link metadata</strong><span>RSSI • SNR • timestamp</span></div></div></div>
+<div class="en-diagram en-diagram-wide" role="img" aria-label="Sensor packet lifecycle"><div class="en-diagram-title">What happens to a sensor packet?</div><div class="en-diagram-pipeline"><div class="en-diagram-node"><strong>Header</strong><span>4 bytes</span></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>Sensor payload</strong><span>up to 64 bytes</span></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>Receiver metadata</strong><span>RSSI • SNR • timestamp</span></div></div><div class="en-diagram-note">The receiver adds link metadata without needing to understand the sensor payload.</div></div>
 
 The key design decision is that the receiver **does not interpret the
 sensor payload**.
@@ -363,17 +371,11 @@ structure.
 
 ## 6. Why the Receiver Buffers Packets
 
-The receiver acts as a boundary between two different worlds.
+The receiver acts as a gateway between two systems with very different timing.
 
-On one side:
+A radio packet can arrive whenever a sensor wakes up. The P4, however, reads the receiver periodically.
 
-<div class="en-diagram" role="img" aria-label="Communication boundary"><div class="en-diagram-title">Communication boundary</div><div class="en-diagram-flow"><div class="en-diagram-node"><strong>ESP-NOW / LoRa</strong><span>Radio input</span></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>ESP32-S3</strong><span>Gateway</span></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>I²C / ESP32-P4</strong><span>Application</span></div></div></div>
-
-These systems do not operate at the same timing.
-
-A radio packet can arrive whenever a sensor wakes up.
-
-The P4, however, reads the receiver periodically.
+<div class="en-diagram en-diagram-wide" role="img" aria-label="Receiver gateway between wireless sensors and the application"><div class="en-diagram-title">The receiver is the gateway</div><div class="en-diagram-pipeline"><div class="en-diagram-node"><strong>Sensor nodes</strong><span>Measurement</span></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>ESP32-S3</strong><span>Receive • validate • buffer</span></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>ESP32-P4</strong><span>Process • display</span></div></div><div class="en-diagram-boundary">Wireless network → local application bus</div><div class="en-diagram-note">ESP-NOW / LoRa arrive asynchronously; the P4 retrieves buffered data over I²C.</div></div>
 
 The receiver therefore needs buffering.
 
@@ -383,7 +385,7 @@ retrieve them later.
 This means the radio subsystem does not have to wait for the application
 processor.
 
-<div class="en-diagram en-diagram-wide" role="img" aria-label="Sensor data flow from radio reception to buffered I2C retrieval"><div class="en-diagram-title">Sensor data flow</div><div class="en-diagram-stack"><div class="en-diagram-node"><strong>Sensor</strong><span>Measurement</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>Radio packet</strong><span>ESP-NOW / LoRa</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>ESP32-S3 receiver</strong><span>Validate • metadata • buffer</span></div><div class="en-diagram-note">The P4 polls the S3 over I²C; the buffered packet is returned when requested.</div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>ESP32-P4</strong><span>Application processing</span></div></div></div>
+<div class="en-diagram en-diagram-wide" role="img" aria-label="Sensor data flow"><div class="en-diagram-title">From measurement to the UI</div><div class="en-diagram-stack"><div class="en-diagram-node"><strong>1. Sensor measures</strong><span>Temperature, humidity, air quality, etc.</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>2. Radio transmits</strong><span>ESP-NOW or LoRa</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>3. S3 receives and buffers</strong><span>Validates packet and adds link metadata</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>4. P4 polls over I²C</strong><span>Retrieves the buffered packet when ready</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>5. Application updates</strong><span>Process data and refresh the LVGL UI</span></div></div></div>
 
 That decoupling is one of the strongest architectural aspects of the
 system.
@@ -465,7 +467,7 @@ inside an interrupt.
 
 The architecture is effectively:
 
-<div class="en-diagram en-diagram-wide" role="img" aria-label="I2C interrupt and task flow"><div class="en-diagram-title">I²C request handling</div><div class="en-diagram-stack"><div class="en-diagram-node"><strong>I²C transaction</strong></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>ISR / callback</strong><span>Capture event</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>FreeRTOS queue</strong><span>Defer work</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>Processing task</strong><span>Prepare response</span></div></div></div>
+<div class="en-diagram en-diagram-wide" role="img" aria-label="I2C request handling"><div class="en-diagram-title">I²C request handling</div><div class="en-diagram-stack"><div class="en-diagram-node"><strong>I²C transaction</strong><span>Hardware event</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>ISR / callback</strong><span>Capture quickly</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>FreeRTOS queue</strong><span>Defer processing</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>Processing task</strong><span>Prepare the response</span></div></div><div class="en-diagram-note">Fast interrupt context on the left; normal task context on the right.</div></div>
 
 That matters because interrupt handlers should remain lightweight.
 
@@ -490,7 +492,7 @@ preceding write.
 
 The P4 performs:
 
-<div class="en-diagram en-diagram-wide" role="img" aria-label="I2C request response timing"><div class="en-diagram-title">I²C request / response timing</div><div class="en-diagram-flow"><div class="en-diagram-node"><strong>WRITE</strong></div> <div class="en-diagram-arrow" aria-hidden="true">→</div> <div class="en-diagram-node"><strong>STOP</strong></div> <div class="en-diagram-arrow" aria-hidden="true">→</div> <div class="en-diagram-node"><strong>~50 ms</strong><span>Response preparation</span></div> <div class="en-diagram-arrow" aria-hidden="true">→</div> <div class="en-diagram-node"><strong>READ</strong></div></div></div>
+<div class="en-diagram en-diagram-wide" role="img" aria-label="I2C request response timing"><div class="en-diagram-title">Why is there a delay?</div><div class="en-diagram-pipeline"><div class="en-diagram-node"><strong>1. WRITE</strong><span>P4 requests data</span></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>2. STOP</strong><span>Transaction ends</span></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>3. ~50 ms</strong><span>S3 task prepares response</span></div></div><div class="en-diagram-arrow" aria-hidden="true" style="margin:.55rem 0">↓</div><div class="en-diagram-node" style="max-width:260px;margin:auto"><strong>4. READ</strong><span>P4 retrieves the prepared response</span></div><div class="en-diagram-note">The pause gives the receiver's task time to prepare data because the slave driver does not provide clock stretching.</div></div>
 
 rather than attempting an immediate repeated-start read.
 
@@ -525,7 +527,7 @@ The software rotates the display into the desired landscape orientation.
 The project therefore combines two very different display-related
 interfaces:
 
-<div class="en-diagram en-diagram-wide" role="img" aria-label="Display and touch interfaces"><div class="en-diagram-title">Display and touch interfaces</div><div class="en-diagram-flow"><div class="en-diagram-node"><strong>ESP32-P4</strong><span>Application processor</span></div><div class="en-diagram-stack"><div class="en-diagram-node"><strong>MIPI-DSI</strong><span>Display pixels</span></div><div class="en-diagram-node"><strong>I²C</strong><span>Touch controller</span></div></div></div></div>
+<div class="en-diagram en-diagram-wide" role="img" aria-label="Display and touch interfaces"><div class="en-diagram-title">Two interfaces, two jobs</div><div class="en-diagram-node"><strong>ESP32-P4</strong><span>Application processor</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-branches"><div class="en-diagram-node"><strong>MIPI-DSI</strong><span>High-bandwidth display pixels</span></div><div class="en-diagram-node"><strong>I²C</strong><span>Low-bandwidth touch input</span></div></div></div>
 
 MIPI-DSI is responsible for moving large amounts of pixel data.
 
@@ -584,7 +586,7 @@ measurement.**
 
 The more interesting engineering lesson is the feedback loop:
 
-<div class="en-diagram en-diagram-wide" role="img" aria-label="Display thermal feedback loop"><div class="en-diagram-title">Display thermal feedback loop</div><div class="en-diagram-flow"><div class="en-diagram-node"><strong>Display brightness</strong></div> <div class="en-diagram-arrow" aria-hidden="true">→</div> <div class="en-diagram-node"><strong>Heat generation</strong></div> <div class="en-diagram-arrow" aria-hidden="true">→</div> <div class="en-diagram-node"><strong>Sensor temperature</strong></div> <div class="en-diagram-arrow" aria-hidden="true">→</div> <div class="en-diagram-node"><strong>Measurement accuracy</strong></div></div></div>
+<div class="en-diagram en-diagram-wide" role="img" aria-label="Display thermal feedback loop"><div class="en-diagram-title">A display can affect the measurement</div><div class="en-diagram-pipeline"><div class="en-diagram-node"><strong>Higher brightness</strong></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>More heat</strong></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>Warmer sensor environment</strong></div></div><div class="en-diagram-arrow" aria-hidden="true" style="margin:.55rem 0">↓</div><div class="en-diagram-node" style="max-width:360px;margin:auto"><strong>Potential measurement error</strong><span>Brightness and presence control can reduce unnecessary heat.</span></div></div>
 
 The display is therefore not merely a UI component.
 
@@ -684,7 +686,7 @@ The UI does not need to fundamentally change when the provider changes.
 Instead, provider-specific data is mapped into the application's
 internal representation.
 
-<div class="en-diagram en-diagram-wide" role="img" aria-label="Weather provider abstraction"><div class="en-diagram-title">Weather provider abstraction</div><div class="en-diagram-branches three"><div class="en-diagram-node"><strong>Open-Meteo</strong></div><div class="en-diagram-node"><strong>OpenWeatherMap</strong></div><div class="en-diagram-node"><strong>Visual Crossing</strong></div></div><div class="en-diagram-arrow" style="text-align:center;margin:.6rem 0">↓</div><div style="display:flex;justify-content:center"><div class="en-diagram-node"><strong>Internal weather model</strong></div></div><div class="en-diagram-arrow" style="text-align:center;margin:.6rem 0">↓</div><div style="display:flex;justify-content:center"><div class="en-diagram-node"><strong>LVGL</strong><span>UI layer</span></div></div></div>
+<div class="en-diagram en-diagram-wide" role="img" aria-label="Weather provider abstraction"><div class="en-diagram-title">External APIs stop at the boundary</div><div class="en-diagram-branches three"><div class="en-diagram-node"><strong>Open-Meteo</strong><span>Provider API</span></div><div class="en-diagram-node"><strong>OpenWeatherMap</strong><span>Provider API</span></div><div class="en-diagram-node"><strong>Visual Crossing</strong><span>Provider API</span></div></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node" style="max-width:360px;margin:auto"><strong>Internal weather model</strong><span>Provider-neutral application data</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node" style="max-width:240px;margin:auto"><strong>LVGL</strong><span>UI layer</span></div></div>
 
 Again, the architectural lesson is bigger than the weather station.
 
@@ -704,7 +706,7 @@ The sensor nodes are energy-oriented.
 
 A typical sensor node performs roughly:
 
-<div class="en-diagram en-diagram-wide" role="img" aria-label="Battery sensor node lifecycle"><div class="en-diagram-title">Battery sensor node lifecycle</div><div class="en-diagram-flow"><div class="en-diagram-node"><strong>Wake</strong></div> <div class="en-diagram-arrow" aria-hidden="true">→</div> <div class="en-diagram-node"><strong>Initialize</strong></div> <div class="en-diagram-arrow" aria-hidden="true">→</div> <div class="en-diagram-node"><strong>Measure</strong></div> <div class="en-diagram-arrow" aria-hidden="true">→</div> <div class="en-diagram-node"><strong>Transmit</strong></div> <div class="en-diagram-arrow" aria-hidden="true">→</div> <div class="en-diagram-node"><strong>Deep sleep</strong></div></div></div>
+<div class="en-diagram en-diagram-wide" role="img" aria-label="Battery sensor node lifecycle"><div class="en-diagram-title">The sensor node spends most of its life asleep</div><div class="en-diagram-pipeline"><div class="en-diagram-node"><strong>Wake</strong></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>Measure</strong></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>Transmit</strong></div></div><div class="en-diagram-arrow" aria-hidden="true" style="margin:.55rem 0">↓</div><div class="en-diagram-node" style="max-width:260px;margin:auto"><strong>Deep sleep</strong><span>Wait for the next measurement interval</span></div></div>
 
 This is exactly what a battery-powered embedded node should be doing.
 
@@ -769,7 +771,7 @@ and receiver.
 
 The OTA architecture can be understood as:
 
-<div class="en-diagram en-diagram-wide" role="img" aria-label="Technical flow diagram"><div class="en-diagram-flow"><div class="en-diagram-node"><strong>GitHub Release</strong></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>▼</strong></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>ESP32-P4</strong></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>Update P4 Update S3</strong></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>I²C</strong></div><div class="en-diagram-arrow" aria-hidden="true">→</div><div class="en-diagram-node"><strong>Receiver firmware</strong></div></div></div>
+<div class="en-diagram en-diagram-wide" role="img" aria-label="OTA update architecture"><div class="en-diagram-title">OTA update architecture</div><div class="en-diagram-stack"><div class="en-diagram-node"><strong>GitHub Release</strong><span>New firmware</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>ESP32-P4</strong><span>Wi-Fi through ESP32-C6 • update coordinator</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>I²C control link</strong><span>Credentials and OTA command</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>ESP32-S3 receiver</strong><span>Temporarily connects to Wi-Fi and updates</span></div></div></div>
 
 The important detail is that the receiver itself is not the component
 doing the complete cloud-facing update process.
