@@ -930,3 +930,56 @@ That is a useful limitation to identify rather than hide.
 ## 23. The Runtime Architecture Is the Real Story
 
 The most useful way to understand this project is to stop thinking about
+it as a weather station with a large display.
+
+It is a distributed embedded system in which each processor has a
+specific role:
+
+<div class="en-diagram en-diagram-wide" role="img" aria-label="Runtime architecture"><div class="en-diagram-title">The runtime architecture</div><div class="en-diagram-stack"><div class="en-diagram-node"><strong>Sensor nodes</strong><span>Measure • transmit • sleep</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>ESP32-S3</strong><span>Receive • validate • timestamp • buffer</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>ESP32-P4</strong><span>Process • render • coordinate</span></div><div class="en-diagram-arrow" aria-hidden="true">↓</div><div class="en-diagram-node"><strong>User interface</strong><span>MIPI-DSI display • touch • LVGL</span></div></div></div>
+
+The C6 adds Wi-Fi without making the P4 responsible for implementing the
+wireless stack itself.
+
+The S3 isolates the timing-sensitive radio reception from the application
+processor.
+
+The P4 then operates at a higher level, consuming already-buffered sensor
+data and turning it into an application experience.
+
+That separation is the central engineering idea behind the project.
+
+### The broader embedded-systems lessons
+
+Several lessons from the Weather Station 3.0 apply well beyond weather
+monitoring:
+
+- **Choose the processor around the system bottleneck.** Here, the large
+  MIPI-DSI display helped drive the move to the P4.
+- **Separate responsibilities when timing or interfaces differ.** The
+  radio receiver does not have to run at the same pace as the UI.
+- **Abstract transport details at the boundary.** The P4 can consume
+  sensor packets without caring whether they arrived over ESP-NOW or
+  LoRa.
+- **Treat communication protocols as both data and timing.** The custom
+  I²C interface depends on transaction sequencing as well as register
+  definitions.
+- **Design for maintenance, not just first boot.** OTA support affects
+  firmware boundaries, control interfaces and failure handling.
+- **Remember the physical system.** A display that produces heat can
+  influence an environmental sensor inside the same enclosure.
+
+The project is therefore interesting not because it uses three ESP32
+chips, a 10.1-inch display or two wireless technologies individually.
+
+It is interesting because those pieces have been turned into a set of
+clearly separated subsystems with explicit communication boundaries.
+
+That is the real engineering story.
+
+---
+
+*This article was prepared as a technical case study based on Harald
+Kreuzer's published project, source code and additional project
+information. Harald's review is welcome before publication so that
+technical details, current behavior and attribution can be corrected or
+updated where necessary.*
