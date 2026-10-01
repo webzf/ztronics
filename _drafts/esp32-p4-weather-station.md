@@ -53,11 +53,11 @@ share: true
 
 *An engineering deep dive into Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor.*
 
-This article is an engineering case study of [Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor](https://www.haraldkreuzer.net/en/news/build-guide-esp32-weather-station-and-environmental-monitor), based on his original project and build guide. Harald has kindly granted permission to use project photography. The images currently included in this draft are provisional and can be replaced with original/high-resolution photographs if Harald provides them.
+This article is an engineering case study of [Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor](https://www.haraldkreuzer.net/en/news/build-guide-esp32-weather-station-and-environmental-monitor), based on his original project and build guide. Harald has kindly granted permission to use project photography. The photographs currently used in this draft are from Harald’s published project article and can be opened at higher resolution.
 
 ![Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor](https://github.com/user-attachments/assets/f58d5611-99e7-4674-8ca6-b77585577fb7)
 
-*Photo: Harald Kreuzer — used with permission. Source: [project repository](https://github.com/HarryVienna/ESP32-Weather-Station-and-Air-Quality-Monitor).*
+*Photo: Harald Kreuzer — used with permission. [Read Harald’s original project article](https://www.haraldkreuzer.net/en/news/build-guide-esp32-weather-station-and-environmental-monitor).*
 
 > **Editorial note:** This article is an engineering analysis of Harald Kreuzer's project, not a replacement for the original build guide. For the complete step-by-step build instructions, wiring, component details and latest project state, see [Harald Kreuzer's original build guide](https://www.haraldkreuzer.net/en/news/build-guide-esp32-weather-station-and-environmental-monitor). Hardware details and behavior described as "current" refer to the project state observed during preparation of this article.
 
@@ -122,34 +122,18 @@ Harald Kreuzer's website.*
 
 ## Architecture at a Glance
 
-  -----------------------------------------------------------------------
-  Component               Primary responsibility  Main interfaces
-  ----------------------- ----------------------- -----------------------
-  **ESP32-P4**            Application processor,  MIPI-DSI, I²C, SDIO
-                          graphics, system        
-                          management              
-
-  **ESP32-C6**            Wi-Fi connectivity      ESP-Hosted-MCU / SDIO
-
-  **ESP32-S3**            Sensor/radio receiver   ESP-NOW, LoRa, I²C
-
-  **Sensor nodes**        Measurement and         ESP-NOW or LoRa
-                          transmission            
-
-  **10.1-inch display**   Main user interface     MIPI-DSI
-
-  **Touch controller**    Capacitive touch input  I²C
-
-  **SEN66**               Indoor environmental    I²C
-                          monitoring              
-
-  **BH1750**              Ambient-light           I²C
-                          measurement             
-
-  **C4001**               Presence detection      I²C
-
-  **LVGL**                GUI                     Runs on P4
-  -----------------------------------------------------------------------
+| Component | Primary responsibility | Main interfaces |
+|---|---|---|
+| **ESP32-P4** | Application processor, graphics, system management | MIPI-DSI, I²C, SDIO |
+| **ESP32-C6** | Wi-Fi connectivity | ESP-Hosted-MCU / SDIO |
+| **ESP32-S3** | Sensor/radio receiver | ESP-NOW, LoRa, I²C |
+| **Sensor nodes** | Measurement and transmission | ESP-NOW or LoRa |
+| **10.1-inch display** | Main user interface | MIPI-DSI |
+| **Touch controller** | Capacitive touch input | I²C |
+| **SEN66** | Indoor environmental monitoring | I²C |
+| **BH1750** | Ambient-light measurement | I²C |
+| **C4001** | Presence detection | I²C |
+| **LVGL** | GUI | Runs on P4 |
 
 Harald describes the P4 as the central component of the station, with
 the C6 providing Wi-Fi and a separate S3-based receiver handling ESP-NOW
@@ -503,18 +487,18 @@ The interface is register-based.
 
 Important registers include:
 
-  Register   Function
-  ---------- ------------------------
-  `0x00`     Packet count
-  `0x01`     Read packet
-  `0x10`     Set time
-  `0x11`     Set timezone
-  `0x12`     Wi-Fi SSID
-  `0x13`     Wi-Fi password
-  `0x14`     Start OTA
-  `0x23`     Reset drop counter
-  `0x24`     Received statistics
-  `0x28`     Overwritten statistics
+| Register | Function |
+|---|---|
+| `0x00` | Packet count |
+| `0x01` | Read packet |
+| `0x10` | Set time |
+| `0x11` | Set timezone |
+| `0x12` | Wi-Fi SSID |
+| `0x13` | Wi-Fi password |
+| `0x14` | Start OTA |
+| `0x23` | Reset drop counter |
+| `0x24` | Received statistics |
+| `0x28` | Overwritten statistics |
 
 This is essentially a small custom peripheral protocol.
 
