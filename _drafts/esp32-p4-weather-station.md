@@ -557,9 +557,9 @@ Harald addresses this with a combination of:
 -   automatic display dimming;
 -   a temperature correction approach for the SEN66.
 
-![BH1750 ambient light sensor module](https://www.haraldkreuzer.net/download_file/view_inline/6b85f5da-4acb-4174-b8d6-366262a145c4)
+![SHT45 temperature and humidity sensor used in the thermal test](https://www.haraldkreuzer.net/download_file/view_inline/6b85f5da-4acb-4174-b8d6-366262a145c4)
 
-*BH1750 ambient-light sensor module used for display brightness control. Photo: Harald Kreuzer — used with permission.*
+*SHT45 sensor used in Harald Kreuzer's thermal comparison test. Photo: Harald Kreuzer — used with permission.*
 
 When nobody is present, the display can be dimmed significantly.
 
