@@ -131,7 +131,7 @@ Harald Kreuzer's website.*
 .en-diagram-branches.three{grid-template-columns:repeat(3,minmax(100px,1fr));max-width:680px}
 .en-diagram-wide{max-width:760px;margin-inline:auto}
 .en-diagram-note{font-size:.78rem;opacity:.7;text-align:center;margin-top:.75rem}
-@media(max-width:600px){.en-diagram{padding:.8rem}.en-diagram-branches,.en-diagram-branches.three{grid-template-columns:1fr}.en-diagram-node{max-width:none;width:100%}.en-diagram-arrow{transform:rotate(90deg)}}
+@media(max-width:600px){.en-diagram{padding:.8rem}.en-diagram-branches,.en-diagram-branches.three{grid-template-columns:1fr}.en-diagram-node{max-width:none;width:100%}.en-diagram-flow .en-diagram-arrow{transform:rotate(90deg)}}
 </style>
 ------------------------------------------------------------------------
 
@@ -382,7 +382,7 @@ retrieve them later.
 This means the radio subsystem does not have to wait for the application
 processor.
 
-<div class="en-diagram en-diagram-wide" role="img" aria-label="Sensor data flow"><div class="en-diagram-title">Sensor data flow</div><div class="en-diagram-stack"><div class="en-diagram-node"><strong>Sensor</strong><span>Measurement</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>Radio packet</strong><span>ESP-NOW / LoRa</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>ESP32-S3 receiver</strong><span>Validate • metadata • buffer</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>I²C read</strong><span>Later, when requested</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>ESP32-P4</strong><span>Application processing</span></div></div></div>
+<div class="en-diagram en-diagram-wide" role="img" aria-label="Sensor data flow from radio reception to buffered I2C retrieval"><div class="en-diagram-title">Sensor data flow</div><div class="en-diagram-stack"><div class="en-diagram-node"><strong>Sensor</strong><span>Measurement</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>Radio packet</strong><span>ESP-NOW / LoRa</span></div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>ESP32-S3 receiver</strong><span>Validate • metadata • buffer</span></div><div class="en-diagram-note">The P4 polls the S3 over I²C; the buffered packet is returned when requested.</div><div class="en-diagram-arrow">↓</div><div class="en-diagram-node"><strong>ESP32-P4</strong><span>Application processing</span></div></div></div>
 
 That decoupling is one of the strongest architectural aspects of the
 system.
