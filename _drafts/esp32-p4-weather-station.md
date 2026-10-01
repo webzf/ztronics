@@ -118,6 +118,9 @@ the resulting communication split.
 historical context for the evolution toward Weather Station 3.0. Source:
 Harald Kreuzer's website.*
 
+<style>
+.article-diagram{margin:1.5rem 0;padding:1rem;border:1px solid rgba(127,127,127,.35);border-radius:8px;background:rgba(127,127,127,.06);overflow-x:auto}.article-diagram pre{margin:0;white-space:pre;line-height:1.35;font-size:.86rem}
+</style>
 ------------------------------------------------------------------------
 
 ## Architecture at a Glance
@@ -248,8 +251,7 @@ Harald specifically notes that ESP-NOW is not supported through
 
 The resulting architecture looks roughly like this:
 
-``` text
-                         ┌──────────────────────┐
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>                         ┌──────────────────────┐
                          │      GitHub          │
                          │      Releases        │
                          └──────────┬───────────┘
@@ -278,7 +280,7 @@ The resulting architecture looks roughly like this:
                               └─────────┬─────────┘
                                         │
                                Wireless sensors
-```
+</pre></div>
 
 Meanwhile, the ESP32-C6 sits beside the P4 and provides Wi-Fi through
 Espressif's ESP-Hosted-MCU mechanism.
@@ -360,8 +362,7 @@ The receiver subsequently adds link-related metadata such as:
 
 The result is a useful separation:
 
-``` text
-┌──────────────────────────────┐
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>┌──────────────────────────────┐
 │ Packet Header                │
 │ 4 bytes                      │
 ├──────────────────────────────┤
@@ -371,7 +372,7 @@ The result is a useful separation:
 │ Receiver Link Metadata       │
 │ RSSI / SNR / timestamp       │
 └──────────────────────────────┘
-```
+</pre></div>
 
 The key design decision is that the receiver **does not interpret the
 sensor payload**.
@@ -392,15 +393,13 @@ The receiver acts as a boundary between two different worlds.
 
 On one side:
 
-``` text
-ESP-NOW / LoRa
-```
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>ESP-NOW / LoRa
+</pre></div>
 
 On the other:
 
-``` text
-I²C / ESP32-P4
-```
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>I²C / ESP32-P4
+</pre></div>
 
 These systems do not operate at the same timing.
 
@@ -416,8 +415,7 @@ retrieve them later.
 This means the radio subsystem does not have to wait for the application
 processor.
 
-``` text
-Sensor
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>Sensor
    │
    ▼
 Radio packet
@@ -435,7 +433,7 @@ ESP32-S3 receiver
           │
           ▼
        ESP32-P4
-```
+</pre></div>
 
 That decoupling is one of the strongest architectural aspects of the
 system.
@@ -517,8 +515,7 @@ inside an interrupt.
 
 The architecture is effectively:
 
-``` text
-I²C transaction
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>I²C transaction
       │
       ▼
    ISR/callback
@@ -531,7 +528,7 @@ I²C transaction
       │
       ▼
  Prepare response
-```
+</pre></div>
 
 That matters because interrupt handlers should remain lightweight.
 
@@ -556,15 +553,14 @@ preceding write.
 
 The P4 performs:
 
-``` text
-WRITE
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>WRITE
   ↓
 STOP
   ↓
 ~50 ms delay
   ↓
 READ
-```
+</pre></div>
 
 rather than attempting an immediate repeated-start read.
 
@@ -599,13 +595,12 @@ The software rotates the display into the desired landscape orientation.
 The project therefore combines two very different display-related
 interfaces:
 
-``` text
-P4
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>P4
  │
  ├── MIPI-DSI → Display pixels
  │
  └── I²C → Touch controller
-```
+</pre></div>
 
 MIPI-DSI is responsible for moving large amounts of pixel data.
 
@@ -656,15 +651,14 @@ measurement.**
 
 The more interesting engineering lesson is the feedback loop:
 
-``` text
-Display brightness
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>Display brightness
        ↓
 Heat generation
        ↓
 Sensor temperature
        ↓
 Measurement accuracy
-```
+</pre></div>
 
 The display is therefore not merely a UI component.
 
@@ -760,11 +754,10 @@ The UI does not need to fundamentally change when the provider changes.
 Instead, provider-specific data is mapped into the application's
 internal representation.
 
-``` text
-Open-Meteo ───────┐
-OpenWeatherMap ──┼──> Internal weather model ──> LVGL
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>Open-Meteo ───────┐
+OpenWeatherMap ──┼──&gt; Internal weather model ──&gt; LVGL
 Visual Crossing ─┘
-```
+</pre></div>
 
 Again, the architectural lesson is bigger than the weather station.
 
@@ -784,8 +777,7 @@ The sensor nodes are energy-oriented.
 
 A typical sensor node performs roughly:
 
-``` text
-Wake
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>Wake
  ↓
 Initialize hardware
  ↓
@@ -796,7 +788,7 @@ Build packet
 Transmit
  ↓
 Deep sleep
-```
+</pre></div>
 
 This is exactly what a battery-powered embedded node should be doing.
 
@@ -861,8 +853,7 @@ and receiver.
 
 The OTA architecture can be understood as:
 
-``` text
-                 GitHub Release
+<div class="article-diagram" role="img" aria-label="Embedded system architecture diagram"><pre>                 GitHub Release
                        │
                        ▼
                   ESP32-P4
@@ -875,7 +866,7 @@ The OTA architecture can be understood as:
                                 │
                                 ▼
                          Receiver firmware
-```
+</pre></div>
 
 The important detail is that the receiver itself is not the component
 doing the complete cloud-facing update process.
