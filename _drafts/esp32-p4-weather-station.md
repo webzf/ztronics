@@ -557,6 +557,10 @@ Harald addresses this with a combination of:
 -   automatic display dimming;
 -   a temperature correction approach for the SEN66.
 
+![BH1750 ambient light sensor module](https://www.haraldkreuzer.net/download_file/view_inline/6b85f5da-4acb-4174-b8d6-366262a145c4)
+
+*BH1750 ambient-light sensor module used for display brightness control. Photo: Harald Kreuzer — used with permission.*
+
 When nobody is present, the display can be dimmed significantly.
 
 When somebody approaches, normal brightness can be restored.
@@ -588,6 +592,10 @@ It becomes part of the sensing environment.
 
 The graphical interface uses **LVGL 9.5**, with the layout designed
 using **EEZ Studio**. The project uses ESP-IDF 6.x.
+
+![ESP32-P4 Weather Station setup screen](https://www.haraldkreuzer.net/download_file/view_inline/0a7a05dc-5268-4547-bb6d-c011a779fd5c)
+
+*ESP32-P4 Weather Station setup screen. Screenshot: Harald Kreuzer — used with permission.*
 
 The interface is intentionally focused rather than menu-heavy.
 
