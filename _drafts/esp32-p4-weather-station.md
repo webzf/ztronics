@@ -55,7 +55,7 @@ share: true
 
 This article is an engineering case study of [Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor](https://www.haraldkreuzer.net/en/news/build-guide-esp32-weather-station-and-environmental-monitor), based on his original project and build guide. Harald has kindly granted permission to use project photography. The photographs currently used in this draft are from Harald’s published project article and can be opened at higher resolution.
 
-![Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor](https://github.com/user-attachments/assets/f58d5611-99e7-4674-8ca6-b77585577fb7)
+<div class="en-photo-crop"><img src="https://www.haraldkreuzer.net/download_file/view_inline/783138de-b8e7-4e34-8119-e1a50f606875" alt="Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor"></div>
 
 *Photo: Harald Kreuzer — used with permission. [Read Harald’s original project article](https://www.haraldkreuzer.net/en/news/build-guide-esp32-weather-station-and-environmental-monitor).*
 
@@ -131,6 +131,7 @@ Harald Kreuzer's website.*
 .en-diagram-branches.three{grid-template-columns:repeat(3,minmax(100px,1fr));max-width:680px}
 .en-diagram-wide{max-width:760px;margin-inline:auto}
 .en-diagram-note{font-size:.78rem;opacity:.7;text-align:center;margin-top:.75rem}
+.en-photo-crop{margin:1.5rem 0;overflow:hidden;border-radius:12px}.en-photo-crop img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;object-position:center}
 @media(max-width:600px){.en-diagram{padding:.8rem}.en-diagram-branches,.en-diagram-branches.three{grid-template-columns:1fr}.en-diagram-node{max-width:none;width:100%}.en-diagram-flow .en-diagram-arrow{transform:rotate(90deg)}}
 </style>
 ------------------------------------------------------------------------
