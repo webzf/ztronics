@@ -11,11 +11,11 @@ toc_label: "Contents"
 toc_sticky: true
 toc_levels: 2
 header:
-  teaser: /assets/images/esp32-p4-weather-station.webp
+  teaser: https://github.com/user-attachments/assets/f58d5611-99e7-4674-8ca6-b77585577fb7
   overlay_image: /assets/images/header3.webp
   overlay_filter: 0.5
-  image: /assets/images/esp32-p4-weather-station.webp
-  og_image: /assets/images/esp32-p4-weather-station.webp
+  image: https://github.com/user-attachments/assets/f58d5611-99e7-4674-8ca6-b77585577fb7
+  og_image: https://github.com/user-attachments/assets/f58d5611-99e7-4674-8ca6-b77585577fb7
 categories:
   - ESP32
   - Embedded Systems
