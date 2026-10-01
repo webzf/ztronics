@@ -975,11 +975,3 @@ It is interesting because those pieces have been turned into a set of
 clearly separated subsystems with explicit communication boundaries.
 
 That is the real engineering story.
-
----
-
-*This article was prepared as a technical case study based on Harald
-Kreuzer's published project, source code and additional project
-information. Harald's review is welcome before publication so that
-technical details, current behavior and attribution can be corrected or
-updated where necessary.*
