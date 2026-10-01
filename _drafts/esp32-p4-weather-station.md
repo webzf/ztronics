@@ -553,6 +553,10 @@ is trying to make.
 Harald addresses this with a combination of:
 
 -   ambient-light sensing through the BH1750;
+
+![BH1750 ambient light sensor module](https://www.haraldkreuzer.net/download_file/view_inline/99c67edc-6590-4053-a3b9-c8f2ce996212)
+
+*BH1750 ambient-light sensor module used for display brightness control. Photo: Harald Kreuzer — used with permission.*
 -   presence detection through the C4001 mmWave sensor;
 -   automatic display dimming;
 -   a temperature correction approach for the SEN66.
