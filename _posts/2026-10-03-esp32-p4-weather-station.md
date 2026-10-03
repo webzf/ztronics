@@ -53,7 +53,7 @@ share: true
 
 *An engineering deep dive into Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor.*
 
-This article is an engineering case study of [Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor](https://www.haraldkreuzer.net/en/news/build-guide-esp32-weather-station-and-environmental-monitor), based on his original project and build guide. Harald has kindly granted permission to use project photography. The photographs currently used in this draft are from Harald’s published project article and can be opened at higher resolution.
+This article is an engineering case study of [Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor](https://www.haraldkreuzer.net/en/news/build-guide-esp32-weather-station-and-environmental-monitor), based on his original project and build guide. Harald has kindly granted permission to use project photography. The photographs currently used are from Harald’s published project article and can be opened at higher resolution.
 
 <div class="en-photo-crop"><img src="https://www.haraldkreuzer.net/download_file/view_inline/783138de-b8e7-4e34-8119-e1a50f606875" alt="Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor"></div>
 
