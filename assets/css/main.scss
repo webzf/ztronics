@@ -10,9 +10,13 @@
 
 @import "product-box";
 
-/* Featured tool in the left sidebar */
+/* Featured tools in the left sidebar */
 .sidebar .nav__list a[href="/tools/esp32-touchscreen-selector/"],
-.sidebar .nav__list a[href$="/tools/esp32-touchscreen-selector/"] {
+.sidebar .nav__list a[href$="/tools/esp32-touchscreen-selector/"],
+.sidebar .nav__list a[href="/tools/i2c-address-lookup/"],
+.sidebar .nav__list a[href$="/tools/i2c-address-lookup/"],
+.sidebar .nav__list a[href="/tools/i2c-pullup-resistor-calculator/"],
+.sidebar .nav__list a[href$="/tools/i2c-pullup-resistor-calculator/"] {
   display: block;
   margin: 0.25rem 0;
   padding: 0.45rem 0.6rem;
@@ -25,7 +29,11 @@
 }
 
 .sidebar .nav__list a[href="/tools/esp32-touchscreen-selector/"]:hover,
-.sidebar .nav__list a[href$="/tools/esp32-touchscreen-selector/"]:hover {
+.sidebar .nav__list a[href$="/tools/esp32-touchscreen-selector/"]:hover,
+.sidebar .nav__list a[href="/tools/i2c-address-lookup/"]:hover,
+.sidebar .nav__list a[href$="/tools/i2c-address-lookup/"]:hover,
+.sidebar .nav__list a[href="/tools/i2c-pullup-resistor-calculator/"]:hover,
+.sidebar .nav__list a[href$="/tools/i2c-pullup-resistor-calculator/"]:hover {
   background: rgba(255, 255, 255, 0.11);
   text-decoration: none;
 }
