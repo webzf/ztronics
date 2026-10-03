@@ -1,0 +1,17 @@
+{% unless page.url == '/tools/esp32-touchscreen-selector/' %}
+<section class="display-tool-banner" aria-label="ESP32 Display Selector">
+  <div class="display-tool-banner__icon" aria-hidden="true">
+    <i class="fas fa-display"></i>
+  </div>
+  <div class="display-tool-banner__content">
+    <span class="display-tool-banner__eyebrow">Embedded Nerd Tool</span>
+    <h2>Choosing an ESP32 display?</h2>
+    <p>Compare touchscreen boards by resolution, interface, touch technology, PSRAM and LVGL support.</p>
+  </div>
+  <div class="display-tool-banner__action">
+    <a href="{{ '/tools/esp32-touchscreen-selector/' | relative_url }}" class="btn btn--primary">
+      Try the Selector <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+{% endunless %}
