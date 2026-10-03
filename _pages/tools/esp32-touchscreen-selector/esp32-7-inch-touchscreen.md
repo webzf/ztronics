@@ -1,5 +1,5 @@
 ---
-title: "ESP32 7 Inch Touchscreen Display Selector | Embedded Nerd"
+title: "ESP32 7 Inch Touchscreen Display Selector"
 layout: single
 sidebar:
   nav: "embedded"
