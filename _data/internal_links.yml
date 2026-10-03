@@ -80,6 +80,23 @@ overrides:
       - "SSD1306 OLED display"
       - "OLED display"
 
+  sunton-esp32-8048s043c:
+    keywords:
+      - "Sunton ESP32-8048S043C"
+      - "ESP32-8048S043C"
+      - "ESP32-8048S043"
+      - "Sunton ESP32"
+      - "4.3 inch ESP32 touchscreen"
+      - "800x480 ESP32 touchscreen"
+
+  waveshare-esp32-s3-touch-lcd-1-85b:
+    keywords:
+      - "Waveshare ESP32-S3-Touch-LCD-1.85B"
+      - "ESP32-S3-Touch-LCD-1.85B"
+      - "ESP32-S3 1.85 inch touchscreen"
+      - "1.85 inch ESP32 touchscreen"
+      - "360x360 ESP32 touchscreen"
+
   st7789:
     keywords:
       - "ST7789"
