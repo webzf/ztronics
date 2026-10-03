@@ -1,18 +1,47 @@
 {% assign excluded_pages = '/tools/esp32-touchscreen-selector/,/about/,/contact/,/privacy-policy/,/terms/,/disclaimer/,/cookies/,/sitemap/' | split: ',' %}
+{% assign page_tags = page.tags | join: ' ' | downcase %}
+{% assign page_categories = page.categories | join: ' ' | downcase %}
+{% assign page_title = page.title | default: '' | downcase %}
+{% assign context = page_title | append: ' ' | append: page_tags | append: ' ' | append: page_categories %}
+
+{% assign strong_display = false %}
+{% if context contains 'display' or context contains 'touchscreen' or context contains 'lvgl' or context contains 'esp32-s3' or context contains 'esp32-p4' %}
+  {% assign strong_display = true %}
+{% endif %}
+
+{% assign related_esp32 = false %}
+{% if context contains 'esp32' or context contains 'esp-idf' %}
+  {% assign related_esp32 = true %}
+{% endif %}
+
 {% unless page.layout == 'product' or excluded_pages contains page.url %}
-<section class="display-tool-banner" aria-label="ESP32 Display Selector">
-  <div class="display-tool-banner__icon" aria-hidden="true">
-    <i class="fas fa-display"></i>
-  </div>
-  <div class="display-tool-banner__content">
-    <span class="display-tool-banner__eyebrow">Embedded Nerd Tool</span>
-    <h2>Choosing an ESP32 display?</h2>
-    <p>Compare touchscreen boards by resolution, interface, touch technology, PSRAM and LVGL support.</p>
-  </div>
-  <div class="display-tool-banner__action">
-    <a href="{{ '/tools/esp32-touchscreen-selector/' | relative_url }}" class="btn btn--primary">
-      Try the Selector <span aria-hidden="true">→</span>
-    </a>
-  </div>
-</section>
+  {% if strong_display %}
+  <section class="display-tool-banner display-tool-banner--strong" aria-label="ESP32 Display Selector">
+    <div class="display-tool-banner__icon" aria-hidden="true">
+      <i class="fas fa-display"></i>
+    </div>
+    <div class="display-tool-banner__content">
+      <span class="display-tool-banner__eyebrow">Embedded Nerd Tool</span>
+      <h2>Choosing an ESP32 display?</h2>
+      <p>Compare boards by resolution, interface, touch technology, PSRAM and LVGL support.</p>
+    </div>
+    <div class="display-tool-banner__action">
+      <a href="{{ '/tools/esp32-touchscreen-selector/' | relative_url }}" class="btn btn--primary">
+        Try the Selector <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+  {% elsif related_esp32 %}
+  <section class="display-tool-banner display-tool-banner--compact" aria-label="ESP32 Display Selector">
+    <div class="display-tool-banner__content">
+      <span class="display-tool-banner__eyebrow">Embedded Nerd Tool</span>
+      <p><strong>Need an ESP32 display?</strong> Compare touchscreen boards by resolution, interface, touch, PSRAM and LVGL support.</p>
+    </div>
+    <div class="display-tool-banner__action">
+      <a href="{{ '/tools/esp32-touchscreen-selector/' | relative_url }}" class="btn btn--primary">
+        Browse Displays →
+      </a>
+    </div>
+  </section>
+  {% endif %}
 {% endunless %}
