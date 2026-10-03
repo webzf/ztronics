@@ -85,6 +85,43 @@ Answer a few questions and get a practical recommendation based on your ESP32 bo
 
 [Try the ESP32 Touchscreen Selector →](/tools/esp32-touchscreen-selector/)
 
+## What Is the Best Screen for an ESP32 Project?
+
+There is no single **best screen for ESP32** projects. The right display depends on the interface size, resolution, touch technology, display interface, memory, available GPIO, power budget and the ESP32 variant being used.
+
+As a practical starting point:
+
+| Project requirement | Display type to consider |
+|---|---|
+| Compact, low-cost touchscreen | 2.4–2.8-inch SPI TFT with resistive touch |
+| Modern finger-driven interface | Capacitive touchscreen |
+| 4.3-inch dashboard | 800×480 ESP32-S3 display with RGB and PSRAM |
+| Large HMI | 7-inch ESP32-S3 touchscreen |
+| Complex LVGL interface | ESP32-S3 with PSRAM and a suitable display interface |
+| Portable touchscreen device | Compact display with battery support and PSRAM |
+
+These are starting points, not universal rules. The exact board and software stack should be checked before purchase.
+
+If you already know constraints such as **screen size, SPI, RGB, PSRAM, LVGL, ESP32-S3 or battery support**, the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) can narrow the available hardware without requiring you to compare every product manually.
+
+## How to Choose a Touchscreen for ESP32
+
+When choosing a **touchscreen for ESP32**, treat the display and touch systems as two related but separate hardware paths.
+
+Check:
+
+1. **Display technology and size** — LCD, TFT or AMOLED, and the physical screen size.
+2. **Resolution** — higher resolutions increase pixel-data and memory requirements.
+3. **Display interface** — SPI is common on smaller modules, while RGB is common on larger ESP32-S3 boards.
+4. **Touch technology** — resistive and capacitive touch have different interaction characteristics.
+5. **Touch controller and interface** — for example, XPT2046 over SPI or GT911 over I2C.
+6. **ESP32 variant** — ESP32-S3 is common for more demanding graphical interfaces, but the complete board configuration matters.
+7. **Flash and PSRAM** — important for framebuffers, images, fonts and LVGL applications.
+8. **GPIO availability** — display, touch, storage and other peripherals can consume pins.
+9. **Software support** — verify the exact controller, driver and library support for the board.
+
+For example, the [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) combines an ESP32-S3, 4.3-inch 800×480 RGB display, GT911 capacitive touch, 16 MB Flash and 8 MB PSRAM. A much smaller [ILI9341 + XPT2046 touchscreen](/products/ili9341-xpt2046-2-8-touchscreen/) uses SPI and resistive touch. These represent different design trade-offs rather than one universally correct choice.
+
 ## What Is an ESP32 Touchscreen?
 
 An **ESP32 touchscreen** setup combines three main elements:
