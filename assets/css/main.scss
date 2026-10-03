@@ -9,3 +9,23 @@
 @import "minimal-mistakes";
 
 @import "product-box";
+
+/* Featured tool in the left sidebar */
+.sidebar .nav__list a[href="/tools/esp32-touchscreen-selector/"],
+.sidebar .nav__list a[href$="/tools/esp32-touchscreen-selector/"] {
+  display: block;
+  margin: 0.25rem 0;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.sidebar .nav__list a[href="/tools/esp32-touchscreen-selector/"]:hover,
+.sidebar .nav__list a[href$="/tools/esp32-touchscreen-selector/"]:hover {
+  background: rgba(255, 255, 255, 0.11);
+  text-decoration: none;
+}
