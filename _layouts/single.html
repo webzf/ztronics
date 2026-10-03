@@ -55,6 +55,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {% endunless %}
 
       <section class="page__content e-content" itemprop="text">
+        {% include display-tool-banner.html %}
         {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
             <nav class="toc" aria-label="Table of contents">
@@ -66,8 +67,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
 
-        {% comment %} Display selector promotion {% endcomment %}
-        {% include display-tool-banner.html %}
       </section>
 
       
