@@ -43,7 +43,7 @@ embedded:
 
   - title: "Tools"
     children:
-      - title: "ESP32 Touchscreen Selector"
+      - title: "★ ESP32 Touchscreen Selector"
         url: /tools/esp32-touchscreen-selector/
       - title: "I2C Address Lookup Tool"
         url: /tools/i2c-address-lookup/
