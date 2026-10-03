@@ -1,5 +1,5 @@
 ---
-title: "ESP32 Display with PSRAM Selector | Embedded Nerd"
+title: "ESP32 Display with PSRAM Selector"
 layout: single
 sidebar:
   nav: "embedded"
