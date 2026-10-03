@@ -1,5 +1,5 @@
 ---
-title: "ESP32-S3 LVGL Display Selector | Embedded Nerd"
+title: "ESP32-S3 LVGL Display Selector"
 layout: single
 sidebar:
   nav: "embedded"
