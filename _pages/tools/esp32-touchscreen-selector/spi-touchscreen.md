@@ -1,5 +1,5 @@
 ---
-title: "ESP32 Touchscreen SPI Selector | Embedded Nerd"
+title: "ESP32 Touchscreen SPI Selector"
 layout: single
 sidebar:
   nav: "embedded"
