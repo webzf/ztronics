@@ -64,6 +64,36 @@ These real products from the Embedded Nerd catalog show the range of hardware co
 
 </div>
 
+## Choose an ESP32 touchscreen by project requirements
+
+The right **ESP32 touchscreen display** depends on what the project needs, not only on screen size. A compact sensor interface may work well with a small SPI TFT, while a larger dashboard may need an ESP32-S3, PSRAM, RGB and capacitive touch.
+
+Use the focused selectors below when one requirement is already known:
+
+- [ESP32-S3 LVGL Display Selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) — ESP32-S3 boards for LVGL and graphical interfaces.
+- [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/) — displays where external PSRAM is an important requirement.
+- [ESP32 800×480 Display Selector](/tools/esp32-touchscreen-selector/800x480/) — larger 800×480 touchscreen and dashboard hardware.
+- [ESP32 4.3-inch Touchscreen Selector](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/) — 4.3-inch ESP32 touchscreen boards.
+- [ESP32 7-inch Touchscreen Selector](/tools/esp32-touchscreen-selector/esp32-7-inch-touchscreen/) — large touchscreen HMI and dashboard hardware.
+- [ESP32 Touchscreen SPI Selector](/tools/esp32-touchscreen-selector/spi-touchscreen/) — SPI-based touchscreen modules and boards.
+- [ESP32-C6 Display Selector](/tools/esp32-touchscreen-selector/esp32-c6-display/) — ESP32-C6 display hardware.
+- [AMOLED Touchscreen Battery Selector](/tools/esp32-touchscreen-selector/amoled-touch-battery/) — compact AMOLED, touch and battery projects.
+
+If you are comparing several possibilities rather than starting from a specific constraint, use the [full ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/).
+
+## ESP32 touchscreen displays in the Embedded Nerd catalog
+
+The selector is connected to individual product pages so you can move from a filtered result to detailed specifications, interfaces, controllers and documented compatibility.
+
+Some useful starting points include:
+
+- [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — 4.3-inch 800×480 ESP32-S3 touchscreen with RGB, GT911, 16 MB Flash and 8 MB PSRAM.
+- [Waveshare ESP32-S3-Touch-LCD-1.85B](/products/waveshare-esp32-s3-touch-lcd-1-85b/) — compact 1.85-inch 360×360 ESP32-S3 touchscreen with QSPI, PSRAM and battery support.
+- [ILI9341 + XPT2046 2.8-inch Touchscreen](/products/ili9341-xpt2046-2-8-touchscreen/) — compact SPI display with resistive touch.
+- [ST7789 TFT Display](/products/st7789-tft/) — compact colour TFT controller commonly used with SPI displays.
+
+For a broader explanation of display interfaces, touch technologies, screen sizes and ESP32-S3 graphics, see the [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/).
+
 ## What can you find?
 
 You can filter hardware by:
