@@ -66,6 +66,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
 
+        {% comment %} Display selector promotion {% endcomment %}
         {% include display-tool-banner.html %}
       </section>
 
