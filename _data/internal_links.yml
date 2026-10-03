@@ -104,6 +104,38 @@ overrides:
       - "ST7789 display"
       - "ST7789 TFT display"
 
+  waveshare-esp32-c6-touch-amoled-1-8:
+    keywords:
+      - "Waveshare ESP32-C6-Touch-AMOLED-1.8"
+      - "ESP32-C6-Touch-AMOLED-1.8"
+      - "ESP32-C6 AMOLED"
+      - "ESP32-C6 touchscreen"
+      - "1.8 inch AMOLED ESP32"
+
+  waveshare-esp32-s3-touch-amoled-1-75:
+    keywords:
+      - "Waveshare ESP32-S3-Touch-AMOLED-1.75"
+      - "ESP32-S3-Touch-AMOLED-1.75"
+      - "ESP32-S3 1.75 inch AMOLED"
+      - "1.75 inch ESP32 AMOLED"
+      - "ESP32-S3 AMOLED touchscreen"
+
+  waveshare-esp32-s3-touch-lcd-4-3:
+    keywords:
+      - "Waveshare ESP32-S3-Touch-LCD-4.3"
+      - "ESP32-S3-Touch-LCD-4.3"
+      - "ESP32-S3 4.3 inch touchscreen"
+      - "4.3 inch ESP32 touchscreen"
+      - "ESP32 800x480 touchscreen"
+
+  waveshare-esp32-s3-touch-lcd-7:
+    keywords:
+      - "Waveshare ESP32-S3-Touch-LCD-7"
+      - "ESP32-S3-Touch-LCD-7"
+      - "ESP32-S3 7 inch touchscreen"
+      - "7 inch ESP32 touchscreen"
+      - "ESP32 800x480 7 inch display"
+
   ili9341-xpt2046-2-8-touchscreen:
     keywords:
       - "ILI9341 XPT2046"
