@@ -1,5 +1,5 @@
 ---
-title: "ESP32 Board & Display Selector | Find Compatible Hardware"
+title: "ESP32 Touchscreen Display & Board Selector | Find Compatible Hardware"
 layout: single
 sidebar:
   nav: "embedded"
