@@ -1,4 +1,5 @@
-{% unless page.url == '/tools/esp32-touchscreen-selector/' or page.layout == 'product' %}
+{% assign excluded_pages = '/tools/esp32-touchscreen-selector/,/about/,/contact/,/privacy-policy/,/terms/,/disclaimer/,/cookies/,/sitemap/' | split: ',' %}
+{% unless page.layout == 'product' or excluded_pages contains page.url %}
 <section class="display-tool-banner" aria-label="ESP32 Display Selector">
   <div class="display-tool-banner__icon" aria-hidden="true">
     <i class="fas fa-display"></i>
