@@ -1,5 +1,5 @@
 ---
-title: "ESP32 AMOLED Touchscreen Battery Selector | Embedded Nerd"
+title: "ESP32 AMOLED Touchscreen Battery Selector"
 layout: single
 sidebar:
   nav: "embedded"
