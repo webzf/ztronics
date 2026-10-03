@@ -66,3 +66,14 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "yeaksd51pa");
 </script>
+
+<!-- Keep filtered tool states out of the search index. The clean selector URL remains indexable. -->
+<script>
+(function () {
+  if (!window.location.search) return;
+  var meta = document.createElement('meta');
+  meta.name = 'robots';
+  meta.content = 'noindex,follow,max-image-preview:large';
+  document.head.appendChild(meta);
+})();
+</script>
