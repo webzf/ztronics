@@ -22,6 +22,20 @@ sidebar:
 
 ---
 
+## ESP32 Touchscreen Displays
+
+Embedded Nerd also includes a growing collection of **ESP32 touchscreen displays**, from compact SPI modules to larger ESP32-S3 boards with RGB interfaces, PSRAM and capacitive touch.
+
+If you are choosing a display for an ESP32 project, start with the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) or read the [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/).
+
+Useful display groups include:
+
+- **ESP32-S3 touchscreen displays** — suitable for more demanding graphical interfaces and LVGL projects.
+- **800×480 touchscreen displays** — useful for larger dashboards and HMI interfaces.
+- **SPI touchscreen displays** — compact modules with relatively simple wiring.
+- **AMOLED touchscreen displays** — compact, high-contrast interfaces for portable projects.
+- **Displays with PSRAM** — useful when framebuffer and graphical asset memory is an important constraint.
+
 ## Products
 
 {% include products-list.html category=page.category %}
