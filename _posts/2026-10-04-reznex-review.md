@@ -570,7 +570,7 @@ P=VI
 \]
 
 \[
-P=5imes0.02=0.1W
+P=5\\times0.02=0.1W
 \]
 
 That makes this type of calculator useful for quick sanity checks.
