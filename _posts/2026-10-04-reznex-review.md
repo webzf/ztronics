@@ -1,9 +1,56 @@
 ---
-published: false
-date: 2026-10-04
 title: "Reznex Review: ESP32 Pinouts, Hardware Tools, CLI and More"
-description: "Reznex review covering ESP32 pinouts, hardware comparison, CLI, RF calculators, LoRa, RFID and the Engineering Vault — plus where datasheets remain essential."
-slug: "/reznex-review/"
+excerpt: "Reznex review covering ESP32 pinouts, hardware comparison, CLI, RF calculators, LoRa, RFID and the Engineering Vault — plus where datasheets remain essential."
+layout: single
+permalink: /reznex-review/
+show_date: false
+read_time: false
+last_modified_at: false
+toc: true
+toc_label: "Contents"
+toc_sticky: true
+toc_levels: 2
+header:
+  teaser: /assets/images/reznex-cli-terminal.webp
+  overlay_image: /assets/images/header3.webp
+  overlay_filter: 0.5
+  image: /assets/images/reznex-cli-terminal.webp
+  og_image: /assets/images/reznex-cli-terminal.webp
+categories:
+  - ESP32
+  - Embedded Systems
+  - Electronics
+  - Tools
+internal_link_keywords:
+  - "Reznex"
+  - "Reznex review"
+  - "ESP32 pinout"
+  - "ESP32 GPIO"
+  - "ESP32 hardware tools"
+  - "ESP32 CLI"
+  - "ESP32 tools"
+  - "RF calculators"
+  - "LoRa"
+  - "RFID"
+tags:
+  - Reznex
+  - ESP32
+  - ESP32 Pinout
+  - ESP32 GPIO
+  - Embedded Systems
+  - Electronics
+  - Hardware Tools
+  - CLI
+  - LoRa
+  - RFID
+  - RF
+  - Amateur Radio
+  - Engineering Tools
+sidebar:
+  nav: "embedded"
+related: true
+share: true
+published: false
 ---
 
 # Reznex Review: ESP32 Pinouts, Hardware Tools, CLI and More
