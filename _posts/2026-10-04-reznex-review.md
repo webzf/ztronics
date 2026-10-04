@@ -112,13 +112,13 @@ They are not.
 
 ## The classic ESP32 has GPIO restrictions
 
-Espressif's GPIO documentation identifies 34 physical GPIOs on the original ESP32 and specifically documents several restrictions. citeturn0search1
+Espressif's GPIO documentation identifies 34 physical GPIOs on the original ESP32 and specifically documents several restrictions.
 
-GPIO34–39 are input-only, with no software-enabled pull-ups or pull-downs. GPIO0, GPIO2, GPIO5, GPIO12 and GPIO15 are strapping pins. citeturn0search1
+GPIO34–39 are input-only, with no software-enabled pull-ups or pull-downs. GPIO0, GPIO2, GPIO5, GPIO12 and GPIO15 are strapping pins.
 
 GPIO6–11 are associated with the SPI flash interface, while GPIO16–17 can also be associated with SPI0/1 depending on the module configuration.
 
-The classic ESP32 also has an important ADC limitation: ADC2 cannot be used by the application while Wi-Fi is active. citeturn0search1
+The classic ESP32 also has an important ADC limitation: ADC2 cannot be used by the application while Wi-Fi is active.
 
 These details can materially change a hardware design.
 
@@ -570,7 +570,7 @@ P=VI
 \]
 
 \[
-P=5	imes0.02=0.1W
+P=5imes0.02=0.1W
 \]
 
 That makes this type of calculator useful for quick sanity checks.
