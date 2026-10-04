@@ -50,7 +50,7 @@ sidebar:
   nav: "embedded"
 related: true
 share: true
-published: false
+
 ---
 
 # Reznex Review: ESP32 Pinouts, Hardware Tools, CLI and More
