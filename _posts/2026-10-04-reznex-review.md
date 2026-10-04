@@ -87,7 +87,7 @@ That distinction becomes important when deciding whether Reznex is suitable for 
 
 The ESP32 is where Reznex becomes particularly relevant to Embedded Nerd.
 
-The current web pinout focuses on the **ESP32 DevKit V1 / ESP-WROOM-32**, presenting an interactive board with filters for functions such as:
+The current web pinout focuses on the **ESP32 DevKit V1 / ESP-WROOM-32**, presented as a 30-pin interactive board with filters for functions such as:
 
 ![Reznex ESP32 DevKit V1 pinout with GPIO and peripheral filters](../assets/images/reznex-esp32-devkit-v1-pinout.webp)
 
@@ -112,15 +112,13 @@ They are not.
 
 ## The classic ESP32 has GPIO restrictions
 
-Espressif's documentation identifies 34 physical GPIOs on the original ESP32 and specifically documents several restrictions.
+Espressif's GPIO documentation identifies 34 physical GPIOs on the original ESP32 and specifically documents several restrictions. citeturn0search1
 
-GPIO34–39 are input-only.
-
-GPIO0, GPIO2, GPIO5, GPIO12 and GPIO15 are strapping pins.
+GPIO34–39 are input-only, with no software-enabled pull-ups or pull-downs. GPIO0, GPIO2, GPIO5, GPIO12 and GPIO15 are strapping pins. citeturn0search1
 
 GPIO6–11 are associated with the SPI flash interface, while GPIO16–17 can also be associated with SPI0/1 depending on the module configuration.
 
-The classic ESP32 also has an important ADC limitation: ADC2 cannot be used by the application while Wi-Fi is active.
+The classic ESP32 also has an important ADC limitation: ADC2 cannot be used by the application while Wi-Fi is active. citeturn0search1
 
 These details can materially change a hardware design.
 
@@ -555,14 +553,14 @@ Using:
 
 \[
 R=
-rac{V}{I}
+\frac{V}{I}
 \]
 
 gives:
 
 \[
 R=
-rac{5}{0.02}=250\Omega
+\frac{5}{0.02}=250\Omega
 \]
 
 The corresponding power is:
@@ -607,18 +605,18 @@ The standard equation is:
 
 \[
 V_{out}=V_{in}
-rac{R_2}{R_1+R_2}
+\frac{R_2}{R_1+R_2}
 \]
 
 Therefore:
 
 \[
 V_{out}=5
-rac{20000}{10000+20000}
+\frac{20000}{10000+20000}
 \]
 
 \[
-V_{out}pprox3.33V
+V_{out}\approx3.33V
 \]
 
 This is an excellent example of a calculator that is simple but useful.
@@ -662,14 +660,14 @@ At 145.5 MHz:
 
 \[
 \lambda=
-rac{299.79}{145.5}pprox2.06m
+\frac{299.79}{145.5}\approx2.06m
 \]
 
 A half-wave is therefore approximately:
 
 \[
 
-rac{2.06}{2}pprox1.03m
+\frac{2.06}{2}\approx1.03m
 \]
 
 That provides a useful independent check against the order of magnitude of the dimensions produced by the calculator.
@@ -686,6 +684,8 @@ Real antenna dimensions depend on:
 - construction
 - frequency
 - matching
+
+One detail deserves caution: Reznex currently displays an estimated impedance note alongside the dipole result. Impedance depends on antenna geometry, environment and feed arrangement; "balanced" versus "unbalanced" describes the feed system rather than being a simple alternative impedance value. Treat the displayed impedance as an estimate, not as a substitute for an antenna analyser or the manufacturer's/feed-system design guidance.
 
 Reznex itself presents its antenna dimensions as starting estimates rather than guaranteed final dimensions.
 
@@ -1295,103 +1295,29 @@ It would also be particularly valuable for the ESP32 ecosystem, where board and 
 
 ---
 
-# Internal Linking Opportunities for Embedded Nerd
+# Related Embedded Nerd Resources
 
-This article should become part of an Embedded Nerd content cluster rather than an isolated review.
+The ESP32 GPIO example in this review connects naturally with the Embedded Nerd hardware-selection content.
 
-### ESP32 touchscreen guide
+- [ESP32 touchscreen display guide](/esp32-touchscreen-displays-guide/) — detailed guidance on choosing display size, resolution, interface, touch technology, PSRAM and ESP32 family.
+- [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — filter and compare ESP32 touchscreen hardware by board family, display, touch, PSRAM, LVGL, GPIO and other requirements.
 
-**Anchor:** `ESP32 touchscreen display guide`
-
-**Purpose:** Move readers from the GPIO-planning example into the main Embedded Nerd touchscreen resource.
-
-### ESP32 Touchscreen Selector
-
-**Anchor:** `ESP32 Touchscreen Selector`
-
-**Purpose:** Use after discussing display, touch controller and SD-card selection.
-
-The article identifies the engineering problem; the selector can help with hardware selection.
-
-### ESP32-related guides
-
-Potential contextual anchors:
-
-- `ESP32 GPIO guide`
-- `ESP32 development board guide`
-- `ESP32 display guide`
-
-Only use these where the destination actually exists and adds information.
-
-### Future ESP32 GPIO tool
-
-Once Embedded Nerd publishes a dedicated GPIO tool, this Reznex article becomes a natural place to link to it.
-
-Suggested anchor:
-
-`ESP32 GPIO tool`
-
-This creates a useful relationship between the third-party platform being reviewed and Embedded Nerd's own engineering tools.
+These resources solve a complementary problem: Reznex is useful for broad technical research, while the Embedded Nerd selector focuses specifically on narrowing down real ESP32 display hardware for a project.
 
 ---
 
-# Affiliate and Monetization Opportunities
+# Sources and Verification
 
-The article can be monetized without becoming a product roundup.
+The most important technical claims in this review were checked against the current Reznex pages and Espressif documentation:
 
-## ESP32 development boards
+- [Reznex interactive pinouts](https://www.reznex.ro/pinouts/) — current ESP32 DevKit V1 pinout and pin-function filters.
+- [Reznex CLI documentation](https://www.reznex.ro/terminal) — documented CLI commands and version 1.2.0.
+- [Reznex antenna calculator](https://www.reznex.ro/radio/calculator-antene) — current antenna-calculator behaviour and the 145.5 MHz example.
+- [Reznex homepage](https://www.reznex.ro/) — current description of the platform, CLI and account/activity API.
+- [Espressif ESP32 GPIO documentation](https://docs.espressif.com/projects/esp-idf/en/release-v5.2/esp32/api-reference/peripherals/gpio.html) — GPIO count, strapping pins, input-only GPIOs, SPI flash/PSRAM reservations and the ADC2/Wi-Fi limitation.
+- [Espressif hardware-design FAQ](https://docs.espressif.com/projects/esp-faq/en/latest/hardware-related/hardware-design.html) — additional GPIO and board-level guidance.
 
-Place naturally after the ESP32 pinout discussion.
-
-Relevant categories:
-
-- ESP32 DevKit boards
-- ESP32-S3 development boards
-- ESP32-C3 boards
-
-## Touchscreen displays
-
-The strongest commercial opportunity is probably the display/touchscreen example.
-
-The sequence should be:
-
-**GPIO problem → touchscreen requirements → Embedded Nerd guide → selector → relevant products**
-
-rather than immediately inserting affiliate products.
-
-## Programmers and debugging tools
-
-Natural placement in the verification/testing workflow:
-
-- USB-to-UART adapters
-- JTAG/SWD debuggers
-- logic analyzers
-- oscilloscopes
-
-## RFID
-
-Natural placement in the RC522 section.
-
-## LoRa
-
-Natural placement in the RF section:
-
-- SX1276/SX1278 modules
-- ESP32 LoRa boards
-- antennas
-- RF accessories
-
-## Electronics equipment
-
-The calculator section creates natural context for:
-
-- multimeters
-- bench power supplies
-- logic analyzers
-- resistor kits
-- breadboards
-
-Affiliate links should support the engineering task being discussed, rather than interrupting it.
+Where this review discusses Reznex features visible on the site, the wording describes what Reznex currently documents or presents. The Reznex CLI and Vault projects were not independently executed or audited as part of this review, so those sections do not claim independent functional testing.
 
 ---
 
