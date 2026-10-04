@@ -998,3 +998,454 @@ Hardware comparison tables should make it obvious when a value is:
 This is particularly important for power consumption and flash.
 
 ## A richer hardware API
+The current API is useful for account/activity synchronization.
+
+A structured hardware API would be a much bigger opportunity.
+
+Imagine being able to query:
+
+```text
+MCU
+Board
+GPIO
+Peripheral
+Restrictions
+Voltage
+```
+
+programmatically.
+
+That could enable a new generation of embedded development tools.
+
+## More examples in the CLI documentation
+
+The CLI documentation would be stronger with representative output for each major command.
+
+The command:
+
+```bash
+npx reznex pinout esp32
+```
+
+tells us what to execute.
+
+Example output would tell us what the developer actually receives.
+
+---
+
+# Who Should Use Reznex?
+
+## Beginners
+
+Reznex can make the first steps easier.
+
+The visual pinouts and calculators reduce unnecessary friction.
+
+But beginners still need to learn:
+
+- voltage
+- current
+- resistance
+- logic levels
+- pull-ups
+- pull-downs
+- datasheet reading
+
+## Makers
+
+This is one of the clearest use cases.
+
+A maker can quickly:
+
+- inspect a pinout
+- compare boards
+- calculate resistor values
+- check an RF module
+- find example code
+- download a 3D enclosure
+
+## Embedded Developers
+
+The most interesting features are:
+
+- pinouts
+- CLI
+- comparison
+- calculators
+- project resources
+- API integration
+
+The value is mainly workflow efficiency.
+
+## RF and LoRa Developers
+
+The antenna calculators and radio resources are useful for quick calculations and references.
+
+Serious RF development still requires proper measurement and manufacturer data.
+
+## Professional Engineers
+
+Reznex can be useful as an index or research layer.
+
+It should not be the source of record for production hardware.
+
+For that, use:
+
+- datasheets
+- reference manuals
+- schematics
+- errata
+- application notes
+- manufacturer specifications
+- laboratory measurements
+
+---
+
+# Reznex for an ESP32 Developer: Practical Workflow
+
+A practical workflow would look like this:
+
+### 1. Define the requirements
+
+For example:
+
+```text
+ESP32
+SPI display
+SPI touchscreen
+SD card
+I2C sensor
+touch interrupt
+three chip-select signals
+```
+
+### 2. Identify the exact ESP32
+
+Do not simply write "ESP32."
+
+Identify the actual SoC and development board.
+
+### 3. Check the board schematic
+
+Determine which GPIOs are exposed and what the board connects to them.
+
+### 4. Use Reznex for rapid exploration
+
+Use the web pinout or CLI to shortlist candidate GPIOs.
+
+### 5. Check restrictions
+
+Look for:
+
+- strapping pins
+- flash/PSRAM connections
+- input-only pins
+- ADC restrictions
+- debug interfaces
+- existing board connections
+
+### 6. Verify against Espressif
+
+Check the relevant datasheet and technical reference manual.
+
+### 7. Prototype
+
+Build the hardware and test the actual peripheral combination.
+
+### 8. Document the final assignment
+
+For example:
+
+| Function | GPIO | Notes |
+|---|---:|---|
+| SPI SCLK | GPIOx | Shared |
+| SPI MOSI | GPIOx | Shared |
+| SPI MISO | GPIOx | Shared |
+| Display CS | GPIOx | Dedicated |
+| Touch CS | GPIOx | Dedicated |
+| SD CS | GPIOx | Dedicated |
+| Touch IRQ | GPIOx | Input |
+| Display RESET | GPIOx | Output |
+
+The final project-specific mapping is more useful than any generic pinout because it documents what was actually tested.
+
+---
+
+# Reznex Review: FAQ
+
+## What is Reznex?
+
+Reznex is an electronics, embedded, RF and maker-oriented technical platform combining hardware references, calculators, projects, guides, CLI tools and API functionality.
+
+## Is Reznex useful for ESP32 projects?
+
+Yes, particularly for quick pinout research, hardware comparisons, calculators and starter projects.
+
+It should be used alongside, rather than instead of, Espressif's documentation.
+
+## Does Reznex provide ESP32 pinouts?
+
+Yes. The current web resource provides an interactive ESP32 DevKit V1 / ESP-WROOM-32 pinout.
+
+The CLI documentation also provides an ESP32 pinout command.
+
+## Can Reznex replace an ESP32 datasheet?
+
+No.
+
+A pinout is a convenient reference, while the datasheet and technical reference manual contain much more detailed electrical and peripheral information.
+
+## Does Reznex have a CLI?
+
+Yes.
+
+The current documentation identifies the Reznex CLI as version 1.2.0 and provides `npx reznex` commands.
+
+The commands were documented but could not be independently executed in the review environment.
+
+## Does Reznex have an API?
+
+Yes.
+
+Reznex documents a REST API for accessing account/activity information using API keys.
+
+It should not currently be described as a general-purpose hardware-data API.
+
+## Can Reznex compare microcontrollers?
+
+Yes.
+
+Its comparison tool supports up to four boards and provides parameters covering architecture, memory, connectivity, GPIO and other characteristics.
+
+## Does Reznex include RF or LoRa tools?
+
+Yes.
+
+It includes antenna and RF calculators and documents hardware references for SX1276/SX1278 and nRF24L01.
+
+## Does Reznex include RFID tools?
+
+Yes.
+
+The platform includes RC522/RFID resources and an ESP32 + RC522 project in the Engineering Vault.
+
+## Is Reznex free?
+
+The platform currently provides free-access resources, including the Engineering Vault. Some areas are presented separately as premium or workshop content, so users should check the current site for the exact availability of individual features.
+
+## Who should use Reznex?
+
+Makers, embedded developers, electronics enthusiasts, RF hobbyists, radio amateurs and people learning embedded engineering are the clearest audiences.
+
+Professional engineers can also use it as a quick reference, while relying on manufacturer documentation for authoritative decisions.
+
+---
+
+# What Reznex Could Become
+
+There is an interesting opportunity in the direction Reznex is taking.
+
+It already has several pieces:
+
+```text
+Pinouts
+   +
+Hardware comparison
+   +
+Calculators
+   +
+CLI
+   +
+API
+   +
+Projects
+```
+
+The next logical step would be structured engineering data.
+
+Imagine selecting:
+
+```text
+ESP32-S3
++
+SPI display
++
+touch controller
++
+SD card
++
+I2C sensor
+```
+
+and receiving:
+
+```text
+Candidate GPIOs
+Peripheral conflicts
+Boot-sensitive pins
+ADC restrictions
+Available buses
+Chip-select assignments
+Potential conflicts
+```
+
+That would turn Reznex from a useful reference platform into something closer to an **embedded design-assistance layer**.
+
+It would also be particularly valuable for the ESP32 ecosystem, where board and peripheral combinations can become complicated very quickly.
+
+---
+
+# Internal Linking Opportunities for Embedded Nerd
+
+This article should become part of an Embedded Nerd content cluster rather than an isolated review.
+
+### ESP32 touchscreen guide
+
+**Anchor:** `ESP32 touchscreen display guide`
+
+**Purpose:** Move readers from the GPIO-planning example into the main Embedded Nerd touchscreen resource.
+
+### ESP32 Touchscreen Selector
+
+**Anchor:** `ESP32 Touchscreen Selector`
+
+**Purpose:** Use after discussing display, touch controller and SD-card selection.
+
+The article identifies the engineering problem; the selector can help with hardware selection.
+
+### ESP32-related guides
+
+Potential contextual anchors:
+
+- `ESP32 GPIO guide`
+- `ESP32 development board guide`
+- `ESP32 display guide`
+
+Only use these where the destination actually exists and adds information.
+
+### Future ESP32 GPIO tool
+
+Once Embedded Nerd publishes a dedicated GPIO tool, this Reznex article becomes a natural place to link to it.
+
+Suggested anchor:
+
+`ESP32 GPIO tool`
+
+This creates a useful relationship between the third-party platform being reviewed and Embedded Nerd's own engineering tools.
+
+---
+
+# Affiliate and Monetization Opportunities
+
+The article can be monetized without becoming a product roundup.
+
+## ESP32 development boards
+
+Place naturally after the ESP32 pinout discussion.
+
+Relevant categories:
+
+- ESP32 DevKit boards
+- ESP32-S3 development boards
+- ESP32-C3 boards
+
+## Touchscreen displays
+
+The strongest commercial opportunity is probably the display/touchscreen example.
+
+The sequence should be:
+
+**GPIO problem → touchscreen requirements → Embedded Nerd guide → selector → relevant products**
+
+rather than immediately inserting affiliate products.
+
+## Programmers and debugging tools
+
+Natural placement in the verification/testing workflow:
+
+- USB-to-UART adapters
+- JTAG/SWD debuggers
+- logic analyzers
+- oscilloscopes
+
+## RFID
+
+Natural placement in the RC522 section.
+
+## LoRa
+
+Natural placement in the RF section:
+
+- SX1276/SX1278 modules
+- ESP32 LoRa boards
+- antennas
+- RF accessories
+
+## Electronics equipment
+
+The calculator section creates natural context for:
+
+- multimeters
+- bench power supplies
+- logic analyzers
+- resistor kits
+- breadboards
+
+Affiliate links should support the engineering task being discussed, rather than interrupting it.
+
+---
+
+# Final Assessment
+
+Reznex is interesting because it addresses a genuine problem in embedded development: **technical information is fragmented across many different resources.**
+
+Its current strengths are the combination of:
+
+- ESP32 and other hardware pinouts
+- hardware comparison
+- electronics calculators
+- RF/antenna calculators
+- CLI access
+- project resources
+- Engineering Vault
+- RF and LoRa material
+- RFID resources
+- smart-home and cybersecurity guides
+
+The CLI is particularly interesting because it extends the platform beyond the normal browser-based electronics reference.
+
+The Engineering Vault also gives the platform a practical dimension by connecting documentation with code and 3D-printable hardware.
+
+But there are clear limitations.
+
+The web pinout coverage is still relatively narrow, especially for the wider ESP32 family. Technical information is not always accompanied by detailed source/revision information. The current API is primarily an account/activity API rather than a general hardware database. And the project library, while useful, is still small compared with large open-source repositories.
+
+Most importantly, Reznex should not replace manufacturer documentation.
+
+For an ESP32 project, the sensible workflow is:
+
+**Reznex for fast research → official documentation for verification → board schematic for hardware-specific details → testing for validation.**
+
+That is where Reznex provides the most value today.
+
+It is best understood not as a replacement for datasheets, technical reference manuals and established engineering resources, but as a **convenient research layer that can reduce the time spent finding and organizing information**.
+
+For makers and embedded developers, that can be genuinely useful.
+
+For production hardware, the final authority should still be the manufacturer documentation and the hardware itself.
+
+---
+
+# SEO Metadata
+
+**SEO title:** Reznex Review: ESP32 Pinouts, CLI and Hardware Tools
+
+**Meta description:** Reznex review covering ESP32 pinouts, hardware comparison, CLI, RF calculators, LoRa, RFID and the Engineering Vault — plus where datasheets remain essential.
+
+**Suggested URL:** `/reznex-review/`
+
+**H1:** Reznex Review: ESP32 Pinouts, Hardware Tools, CLI and More
+
+**Social title:** Reznex Review: Is It a Useful ESP32 Research Tool?
+
+**Social description:** Pinouts, a terminal CLI, RF calculators and a project vault. See where Reznex saves time and where you still need the Espressif datasheet.
