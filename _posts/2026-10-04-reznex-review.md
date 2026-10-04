@@ -103,7 +103,7 @@ Not every feature has the same technical depth, which matters when deciding what
 
 <figure>
   <img src="/assets/images/reznex-esp32-devkit-v1-pinout.webp" alt="Reznex ESP32 DevKit v1 interactive pinout showing 30 pins and GPIO36 input-only details" loading="lazy" width="1485" height="768">
-  <figcaption>Reznex's ESP32 DevKit v1 pinout, including GPIO filters and the GPIO36 input-only warning.</figcaption>
+  <figcaption>Reznex's Esp32 DevKit v1 pinout, including GPIO filters and the GPIO36 input-only warning.</figcaption>
 </figure>
 
 The ESP32 is where Reznex is most relevant to Embedded Nerd readers. The [web pinout](https://www.reznex.ro/pinouts) focuses on the **ESP32 DevKit V1 / ESP-WROOM-32** and offers filters for GPIO, ADC, PWM, I2C, SPI, UART, input-only pins, boot-related pins, power and ground. Selecting a pin shows its characteristics. GPIO36, for example, is flagged as input-only.
