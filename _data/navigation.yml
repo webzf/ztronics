@@ -42,6 +42,7 @@ embedded:
         url: /esp32-web-server/
 
   - title: "Tools"
+    url: /tools/
     children:
       - title: "★ ESP32 Touchscreen Selector"
         url: /tools/esp32-touchscreen-selector/
