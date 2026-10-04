@@ -1472,7 +1472,7 @@ module EmbeddedNerd
         keyword.to_s.empty?
 
       protected_pattern =
-        /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
+        /(?:<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>|<(?:img|input|br|hr|source|meta|link)\b[^>]*>)/im
 
       masked_content =
         content.gsub(
@@ -1693,7 +1693,7 @@ module EmbeddedNerd
         []
 
       protected_pattern =
-        /<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>/im
+        /(?:<(#{PROTECTED_TAGS.join("|")})(?:\s[^>]*)?>.*?<\/\1>|<(?:img|input|br|hr|source|meta|link)\b[^>]*>)/im
 
       working =
         content.gsub(
