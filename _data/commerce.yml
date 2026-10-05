@@ -613,3 +613,32 @@ waveshare-esp32-s3-touch-amoled-2-16:
       last_verified: "2026-09-24"
 
 #----------------
+
+#----------------
+
+waveshare-esp32-p4-wifi6-touch-lcd-7b:
+
+  preferred_store: aliexpress
+
+  notes: "AliExpress and Amazon affiliate offers verified for the ESP32-P4-WIFI6-Touch-LCD-7B."
+
+  disclaimer: false
+
+  badges:
+    recommended: true
+    editor_choice: true
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: true
+      affiliate_url: "https://amzn.to/4ee0Q88"
+
+    aliexpress:
+      enabled: true
+      product_id: "1005010055870735"
+      product_url: "https://www.aliexpress.com/item/1005010055870735.html"
+      affiliate_url: "https://s.click.aliexpress.com/e/_c2uOhjfn"
+      last_verified: "2026-10-06"
