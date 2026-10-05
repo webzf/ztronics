@@ -5,11 +5,11 @@ title: "Waveshare ESP32-P4-WIFI6-Touch-LCD-7B"
 product_id: waveshare-esp32-p4-wifi6-touch-lcd-7b
 category: Displays
 manufacturer: "Waveshare"
-image: /assets/images/products/waveshare-esp32-p4-wifi6-touch-lcd-7b.webp
+image: https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7B/ESP32-P4-WIFI6-Touch-LCD-7B-details-1.jpg
 alt: "Waveshare ESP32-P4-WIFI6-Touch-LCD-7B 7 inch touchscreen development board"
 header:
-  teaser: /assets/images/products/waveshare-esp32-p4-wifi6-touch-lcd-7b.webp
-og_image: /assets/images/products/waveshare-esp32-p4-wifi6-touch-lcd-7b.webp
+  teaser: https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7B/ESP32-P4-WIFI6-Touch-LCD-7B-details-1.jpg
+og_image: https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7B/ESP32-P4-WIFI6-Touch-LCD-7B-details-1.jpg
 excerpt: "Waveshare ESP32-P4-WIFI6-Touch-LCD-7B with a 7-inch 1024×600 IPS touchscreen, ESP32-P4, 32MB PSRAM, Wi-Fi 6, Bluetooth 5, MIPI-DSI and rich HMI interfaces."
 description: "The Waveshare ESP32-P4-WIFI6-Touch-LCD-7B is a high-performance 7-inch HMI development board based on ESP32-P4 and ESP32-C6, with 1024×600 capacitive touch, MIPI-DSI, MIPI-CSI, audio, CAN, RS485, Wi-Fi 6 and Bluetooth 5."
 categories:
