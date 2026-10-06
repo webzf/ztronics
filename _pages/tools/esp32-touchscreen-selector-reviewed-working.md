@@ -40,7 +40,7 @@ tags:
   - Electronics
 ---
 
-<link rel="stylesheet" href="/assets/tools/esp32-touchscreen-selector/selector.css?v=20260929d">
+<link rel="stylesheet" href="/assets/tools/esp32-touchscreen-selector/selector.css?v=20261006d">
 
 <section class="tool" aria-labelledby="tool-title">
 <h2 id="tool-title" class="sr-only">Hardware selector</h2>
@@ -111,8 +111,8 @@ tags:
 <div id="exclusion-panel" class="exclusion-panel"><h3>Why other products were excluded</h3><p>Mandatory filters are evaluated before preference scoring.</p><ul id="exclusion-list"></ul></div>
 <div id="product-grid" class="product-grid"></div></section>
 
-<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20260929" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20260929" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20261006" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20261006" defer></script>
 
 ## Hardware currently covered by the selector
 
