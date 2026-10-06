@@ -22,7 +22,7 @@ Usage:
        href="{{ include.product.url | relative_url }}">
 
         <img
-            src="{% if include.product.image contains "://" %}{{ include.product.image }}{% else %}{{ include.product.image | relative_url }}{% endif %}"
+            src="{{ product_image }}"
             alt="{{ include.product.title }}"
             loading="lazy">
 
