@@ -1438,7 +1438,7 @@ We'll start by driving an SG90 servo motor smoothly, then expand the project to 
 
 ## Mini Project: Smooth Servo Control with the ESP32 Joystick
 
-For this example, you'll also need an **SG90 micro servo** in addition to the ESP32 and KY-023 joystick. The joystick controls the servo position, making this a simple way to experiment with proportional motion.
+For this example, you'll also need an **[SG90 micro servo](/products/sg90-micro-servo/)** in addition to the ESP32 and KY-023 joystick. The joystick controls the servo position, making this a simple way to experiment with proportional motion.
 
 Now that we have clean, calibrated joystick readings, it's time to control a real actuator.
 
@@ -1844,7 +1844,7 @@ In the next chapter, you'll learn how to use the joystick to drive a DC motor th
 
 ## Mini Project: Controlling a DC Motor with the ESP32 Joystick
 
-For the motor example, you'll need a DC motor and a motor driver such as the **L298N** or the more efficient **TB6612FNG**. The joystick provides proportional speed and direction control.
+For the motor example, you'll need a DC motor and a motor driver such as the **[L298N](/products/l298n-motor-driver/)** or the more efficient **[TB6612FNG](/products/tb6612fng-motor-driver/)**. The joystick provides proportional speed and direction control.
 
 So far we've learned how to read the joystick accurately and use it to control a servo motor.
 
@@ -4552,13 +4552,13 @@ Below are the parts we recommend for this project.
 |----------|---------------------|-----|
 | [ESP32 DevKit V1](/products/esp32-devkit/) | Powerful Wi-Fi and Bluetooth microcontroller with a 240 MHz dual-core CPU | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c4n38hZ9) |
 | [KY-023 Analog Joystick](/products/ky-023-analog-joystick/) | Low-cost analog joystick with two potentiometers and a push button | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c3jqbrz5) |
-| SG90 Micro Servo | Ideal for learning motion control and robotics | — |
+| [SG90 Micro Servo](/products/sg90-micro-servo/) | Ideal for learning motion control and robotics | — |
 | [SSD1306 OLED Display](/products/ssd1306-oled/) | Perfect for menus, sensors, and user interfaces | [🛒 AliExpress](https://s.click.aliexpress.com/e/_EIt4LOO) |
-| L298N Motor Driver | Beginner-friendly H-bridge for DC motors | — |
-| TB6612FNG Motor Driver | More efficient alternative to the L298N | — |
+| [L298N Motor Driver](/products/l298n-motor-driver/) | Beginner-friendly H-bridge for DC motors | — |
+| [TB6612FNG Motor Driver](/products/tb6612fng-motor-driver/) | More efficient alternative to the L298N | — |
 | [Solderless Breadboard](/products/solderless-breadboard/) | Reusable prototyping platform | — |
 | [Jumper Wires](/products/jumper-wires/) | Reliable electrical connections | — |
-| USB Power Supply (5V 2A) | Stable power for ESP32 projects | — |
+| [USB Power Supply (5V 2A)](/products/usb-5v-2a-power-supply/) | Stable power for ESP32 projects | — |
 
 ---
 
