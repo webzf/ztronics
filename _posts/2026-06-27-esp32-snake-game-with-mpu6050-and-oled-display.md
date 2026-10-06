@@ -185,7 +185,7 @@ Install the following libraries:
 
 ## ESP32 Snake Game Code
 
-The complete project is available on [GitHub](https://github.com/webzf/esp32-snake-game).
+The complete project is available on [GitHub](https://github.com/webzf/esp32-oled-ic2-snake-mpu6050).
 
 ```cpp
 // =====================================================
@@ -770,7 +770,7 @@ If you are comparing ESP32 boards and displays for a new project, use the [ESP32
 
 ## GitHub Source Code
 
-The complete ESP32 Snake Game source code is available in the [GitHub repository](https://github.com/webzf/esp32-snake-game).
+The complete ESP32 Snake Game source code is available in the [GitHub repository](https://github.com/webzf/esp32-oled-ic2-snake-mpu6050).
 
 The repository includes:
 
