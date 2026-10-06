@@ -551,6 +551,24 @@ Because Waveshare offers different versions, verify the exact Flash configuratio
 
 The combination of a large display, ESP32-S3 and additional interfaces makes it particularly interesting for HMI, smart-home and embedded control-panel applications.
 
+### Waveshare ESP32-P4-WIFI6-Touch-LCD-7B
+
+[Waveshare ESP32-P4-WIFI6-Touch-LCD-7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/)
+
+The P4 model is the more performance-oriented option in this comparison. It combines a 7-inch 1024×600 capacitive touchscreen with MIPI-DSI, 32 MB Flash, 32 MB PSRAM, Wi-Fi 6/Bluetooth 5 through an ESP32-C6, and additional interfaces including CAN and RS485.
+
+It is particularly interesting for:
+
+- higher-resolution 7-inch HMIs;
+- advanced LVGL interfaces;
+- applications that benefit from MIPI-DSI;
+- camera or multimedia-oriented projects using MIPI-CSI;
+- more demanding embedded control panels.
+
+Unlike the ESP32-S3 7-inch board above, the P4 board is not simply a faster version of the same architecture. The processor, display interface, memory configuration and wireless subsystem are different, so the choice should be based on the complete system requirements.
+
+For a practical example of the ESP32-P4 architecture in a larger touchscreen system, see the [ESP32-P4 Weather Station](/esp32-p4-weather-station/), which uses an ESP32-P4 with a separate wireless subsystem and MIPI-DSI display architecture. Note that the Weather Station uses a different 10.1-inch display, so the product linked here is a related P4 platform rather than the exact hardware used in that project.
+
 ## Which ESP32 Touchscreen Should You Choose?
 
 ### Choose the ILI9341 + XPT2046 if:
