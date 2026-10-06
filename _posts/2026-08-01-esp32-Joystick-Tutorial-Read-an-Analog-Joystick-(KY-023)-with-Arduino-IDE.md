@@ -267,7 +267,14 @@ In this section you'll learn:
 
 ### Hardware Required
 
-{% include required-hardware.html products=page.required_hardware %}
+For the base circuit, you'll need:
+
+- ESP32 Development Board
+- KY-023 Analog Joystick Module
+- Solderless Breadboard
+- Male-to-Female Jumper Wires
+
+These are the same core components listed in the **Material para este projeto** section above.
 
 ---
 
@@ -1431,6 +1438,8 @@ We'll start by driving an SG90 servo motor smoothly, then expand the project to 
 
 ## Mini Project: Smooth Servo Control with the ESP32 Joystick
 
+For this example, you'll also need an **SG90 micro servo** in addition to the ESP32 and KY-023 joystick. The joystick controls the servo position, making this a simple way to experiment with proportional motion.
+
 Now that we have clean, calibrated joystick readings, it's time to control a real actuator.
 
 In this project, the joystick's X-axis will control the position of an SG90 micro servo.
@@ -1835,6 +1844,8 @@ In the next chapter, you'll learn how to use the joystick to drive a DC motor th
 
 ## Mini Project: Controlling a DC Motor with the ESP32 Joystick
 
+For the motor example, you'll need a DC motor and a motor driver such as the **L298N** or the more efficient **TB6612FNG**. The joystick provides proportional speed and direction control.
+
 So far we've learned how to read the joystick accurately and use it to control a servo motor.
 
 The next logical step is controlling DC motors.
@@ -2222,6 +2233,8 @@ In the next chapter we'll use the joystick to navigate menus on an OLED display,
 ---
 
 ## Mini Project: OLED Menu Navigation with the ESP32 Joystick
+
+This example uses an **[SSD1306 OLED display](/products/ssd1306-oled/)** to turn the joystick into a simple menu controller. If you want to build the same display setup, the SSD1306 product page is available in the project hardware recommendations above.
 
 Until now, we've used the joystick to control actuators such as servo motors and DC motors.
 
