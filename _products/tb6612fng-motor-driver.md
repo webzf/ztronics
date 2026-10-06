@@ -7,7 +7,7 @@ internal_links: true
 
 product_id: tb6612fng-motor-driver
 
-category: Motor Drivers
+category: Modules
 
 manufacturer: Toshiba
 
