@@ -1529,6 +1529,318 @@
       ],
       "image": "https://www.waveshare.com/img/devkit/ESP32-S3-Touch-AMOLED-2.16/ESP32-S3-Touch-AMOLED-2.16-details-1.jpg",
       "image_alt": "Waveshare ESP32-S3-Touch-AMOLED-2.16 2.16-inch AMOLED touchscreen board"
+    },
+    {
+      "id": "ssd1306-oled-display",
+      "name": "SSD1306 OLED Display",
+      "manufacturer": "Generic",
+      "product_type": "display_module",
+      "category": "display_module",
+      "description": "Compact 0.96-inch monochrome OLED display module using the SSD1306 controller with I2C interface.",
+      "product_url": "/products/ssd1306-oled/",
+      "documentation_url": "https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf",
+      "tags": [
+        "SSD1306",
+        "OLED",
+        "128x64",
+        "I2C",
+        "monochrome"
+      ],
+      "esp32": {
+        "family": [
+          "ESP32",
+          "ESP32-S2",
+          "ESP32-S3",
+          "ESP32-C3",
+          "ESP32-C6"
+        ],
+        "exact_mcu": null,
+        "cores": null,
+        "cpu_frequency_mhz": null,
+        "flash_mb": null,
+        "ram_mb": null,
+        "psram_mb": null
+      },
+      "wireless": {
+        "wifi": null,
+        "bluetooth": null,
+        "ble": null
+      },
+      "usb": {
+        "usb_available": null,
+        "usb_type": null,
+        "native_usb": null,
+        "uart_bridge": null,
+        "native_usb_functionality": [],
+        "usb_notes": null
+      },
+      "display": {
+        "display_present": true,
+        "technology": "OLED",
+        "monochrome": true,
+        "color": false,
+        "transparent": null,
+        "shape": "rectangular",
+        "size_inches": 0.96,
+        "resolution": {
+          "width": 128,
+          "height": 64
+        },
+        "aspect_ratio": "2:1",
+        "controller": "SSD1306",
+        "interface": "I2C"
+      },
+      "touch": {
+        "touch": false,
+        "touch_type": null,
+        "touch_controller": null,
+        "touch_interface": null
+      },
+      "interfaces": {
+        "i2c": true,
+        "spi": null,
+        "uart": null,
+        "rgb": null,
+        "other": []
+      },
+      "display_touch_bus": {
+        "display_bus": "I2C",
+        "touch_bus": null,
+        "shared_bus": null,
+        "separate_bus": null,
+        "chip_select": null,
+        "dc": null,
+        "irq": null,
+        "reset": null,
+        "relevant_gpio": []
+      },
+      "hardware": {
+        "total_gpio": null,
+        "free_gpio": null,
+        "reserved_gpio": [],
+        "display_gpio": [],
+        "touch_gpio": [],
+        "microsd": null,
+        "battery": null,
+        "battery_charging": null,
+        "power_input": "3.3-5V module power (check module specification)",
+        "connectors": [
+          "I2C"
+        ],
+        "buttons": null,
+        "led": null,
+        "camera": null,
+        "audio": null,
+        "sensors": [],
+        "other_peripherals": []
+      },
+      "certification": {
+        "ce": null,
+        "fcc": null,
+        "other": []
+      },
+      "physical": {
+        "dimensions": null,
+        "mounting_holes": null,
+        "form_factor": "0.96-inch OLED module"
+      },
+      "sources": [
+        {
+          "type": "manufacturer-datasheet",
+          "url": "https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf"
+        },
+        {
+          "type": "embedded-nerd-product",
+          "url": "/products/ssd1306-oled/"
+        }
+      ],
+      "data_quality": "verified_secondary",
+      "software": {
+        "lvgl": {
+          "support": null,
+          "level": null,
+          "framework": null
+        }
+      },
+      "features": {
+        "battery": null,
+        "imu": null,
+        "rtc": null,
+        "audio": null
+      }
+    },
+    {
+      "id": "waveshare-esp32-p4-wifi6-touch-lcd-7b",
+      "name": "Waveshare ESP32-P4-WIFI6-Touch-LCD-7B",
+      "manufacturer": "Waveshare",
+      "product_type": "board_with_display",
+      "category": "board_with_display",
+      "description": "ESP32-P4 touchscreen development board with a 7-inch 1024×600 IPS display, capacitive touch, Wi-Fi 6, Bluetooth 5, audio, camera interface and industrial interfaces.",
+      "product_url": "/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/",
+      "documentation_url": "https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-7B",
+      "tags": [
+        "Waveshare",
+        "ESP32-P4",
+        "ESP32-C6",
+        "1024x600",
+        "MIPI-DSI",
+        "capacitive-touch",
+        "Wi-Fi 6",
+        "Bluetooth 5",
+        "LVGL",
+        "CAN",
+        "RS485",
+        "audio",
+        "camera"
+      ],
+      "esp32": {
+        "family": [
+          "ESP32-P4"
+        ],
+        "exact_mcu": "ESP32-P4NRW32",
+        "cores": 2,
+        "cpu_frequency_mhz": 360,
+        "flash_mb": 32,
+        "ram_mb": null,
+        "psram_mb": 32
+      },
+      "wireless": {
+        "wifi": true,
+        "bluetooth": true,
+        "ble": true
+      },
+      "usb": {
+        "usb_available": true,
+        "usb_type": "USB-C",
+        "native_usb": true,
+        "uart_bridge": true,
+        "native_usb_functionality": [
+          "programming",
+          "logging",
+          "USB OTG"
+        ],
+        "usb_notes": "Includes USB 2.0 OTG and USB-to-UART connectivity."
+      },
+      "display": {
+        "display_present": true,
+        "technology": "TFT",
+        "monochrome": false,
+        "color": true,
+        "transparent": null,
+        "shape": "rectangular",
+        "size_inches": 7,
+        "resolution": {
+          "width": 1024,
+          "height": 600
+        },
+        "aspect_ratio": "128:75",
+        "controller": "EK79007",
+        "interface": "MIPI-DSI"
+      },
+      "touch": {
+        "touch": true,
+        "touch_type": "capacitive",
+        "touch_controller": "GT911",
+        "touch_interface": "I2C"
+      },
+      "interfaces": {
+        "i2c": true,
+        "spi": null,
+        "uart": true,
+        "rgb": null,
+        "other": [
+          "MIPI-DSI",
+          "MIPI-CSI",
+          "CAN",
+          "RS485",
+          "USB 2.0 OTG",
+          "TF card"
+        ]
+      },
+      "display_touch_bus": {
+        "display_bus": "MIPI-DSI",
+        "touch_bus": "I2C",
+        "shared_bus": false,
+        "separate_bus": true,
+        "chip_select": null,
+        "dc": null,
+        "irq": null,
+        "reset": null,
+        "relevant_gpio": []
+      },
+      "hardware": {
+        "total_gpio": null,
+        "free_gpio": 17,
+        "reserved_gpio": [],
+        "display_gpio": [],
+        "touch_gpio": [],
+        "microsd": true,
+        "battery": true,
+        "battery_charging": null,
+        "power_input": "USB-C",
+        "connectors": [
+          "USB-C",
+          "I2C",
+          "UART",
+          "CAN",
+          "RS485",
+          "MIPI-CSI",
+          "MIPI-DSI"
+        ],
+        "buttons": true,
+        "led": true,
+        "camera": true,
+        "audio": true,
+        "sensors": [],
+        "other_peripherals": [
+          "ES8311 audio codec",
+          "ES7210 echo cancellation",
+          "dual microphones",
+          "speaker header",
+          "RTC battery holder"
+        ]
+      },
+      "certification": {
+        "ce": null,
+        "fcc": null,
+        "other": []
+      },
+      "physical": {
+        "dimensions": null,
+        "mounting_holes": true,
+        "form_factor": "7-inch HMI development board"
+      },
+      "sources": [
+        {
+          "type": "manufacturer-documentation",
+          "url": "https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-7B"
+        },
+        {
+          "type": "manufacturer-product-page",
+          "url": "https://www.waveshare.com/product/arduino/displays/esp32-p4-wifi6-touch-lcd-7b.htm"
+        },
+        {
+          "type": "product-offer",
+          "url": "https://www.aliexpress.com/item/1005010055870735.html"
+        }
+      ],
+      "data_quality": "verified_manufacturer",
+      "software": {
+        "lvgl": {
+          "support": true,
+          "level": "ready",
+          "framework": "Arduino, ESP-IDF"
+        }
+      },
+      "features": {
+        "battery": true,
+        "imu": null,
+        "rtc": true,
+        "audio": true
+      },
+      "manufacturer_sku": "30738",
+      "image": "https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7B/ESP32-P4-WIFI6-Touch-LCD-7B-details-1.jpg",
+      "image_alt": "Waveshare ESP32-P4-WIFI6-Touch-LCD-7B 7-inch touchscreen development board"
     }
   ]
 }
