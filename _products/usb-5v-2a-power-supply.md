@@ -7,7 +7,7 @@ internal_links: true
 
 product_id: usb-5v-2a-power-supply
 
-category: Power
+category: Accessories
 
 manufacturer: Generic
 
