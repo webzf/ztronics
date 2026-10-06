@@ -7,7 +7,7 @@ internal_links: true
 
 product_id: l298n-motor-driver
 
-category: Motor Drivers
+category: Modules
 
 manufacturer: Generic
 
