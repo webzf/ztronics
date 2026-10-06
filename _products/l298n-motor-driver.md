@@ -10,6 +10,8 @@ product_id: l298n-motor-driver
 category: Modules
 
 manufacturer: Generic
+image: "https://www.ic-components.com/upfile/images/21/20240724142422966.png"
+
 
 excerpt: "L298N dual H-bridge motor driver module for controlling DC motors with Arduino, ESP32 and other microcontrollers."
 
