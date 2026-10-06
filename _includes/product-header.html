@@ -6,7 +6,7 @@
   <div class="en-product-image">
     <a href="{{ product.url | relative_url }}">
       <img
-        src="{% if product.image contains "://" %}{{ product.image }}{% else %}{{ product.image | relative_url }}{% endif %}"
+        src="{{ product_image }}"
         alt="{{ product.alt | default: product.title }}"
         loading="lazy"
         width="220"
