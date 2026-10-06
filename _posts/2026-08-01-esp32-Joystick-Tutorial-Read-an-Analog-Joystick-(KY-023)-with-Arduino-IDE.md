@@ -62,6 +62,16 @@ required_hardware:
     component: Male-to-Female Jumper Wires
 ---
 
+### 🛒 Material para este projeto
+
+Para montar o circuito base, estes são os componentes que usamos. Os produtos disponíveis no Embedded Nerd incluem uma opção de compra junto à respetiva ficha:
+
+{% include required-hardware.html products=page.required_hardware %}
+
+> **Dica:** Se pretende experimentar os exemplos de servo, OLED ou motor mais abaixo, pode acrescentar esses componentes ao kit base.
+
+---
+
 ## ESP32 Joystick Tutorial
 
 *Learn how to connect, calibrate, and program an analog joystick module with the [ESP32](/products/esp32-devkit/) using the Arduino IDE.*
@@ -4525,17 +4535,17 @@ Investing in quality components not only makes your projects more reliable but a
 
 Below are the parts we recommend for this project.
 
-| Product | Why We Recommend It | Link |
-|----------|---------------------|------|
-| ESP32 Dev Board | Powerful Wi-Fi and Bluetooth microcontroller with a 240 MHz dual-core CPU | Amazon Affiliate |
-| KY-023 Analog Joystick | Low-cost analog joystick with two potentiometers and a push button | Amazon Affiliate |
-| SG90 Micro Servo | Ideal for learning motion control and robotics | Amazon Affiliate |
-| SSD1306 OLED Display (128×64) | Perfect for menus, sensors, and user interfaces | Amazon Affiliate |
-| L298N Motor Driver | Beginner-friendly H-bridge for DC motors | Amazon Affiliate |
-| TB6612FNG Motor Driver | More efficient alternative to the L298N | Amazon Affiliate |
-| Breadboard Kit | Reusable prototyping platform | Amazon Affiliate |
-| Premium Jumper Wires | Reliable electrical connections | Amazon Affiliate |
-| USB Power Supply (5V 2A) | Stable power for ESP32 projects | Amazon Affiliate |
+| Product | Why We Recommend It | Buy |
+|----------|---------------------|-----|
+| [ESP32 DevKit V1](/products/esp32-devkit/) | Powerful Wi-Fi and Bluetooth microcontroller with a 240 MHz dual-core CPU | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c4n38hZ9) |
+| [KY-023 Analog Joystick](/products/ky-023-analog-joystick/) | Low-cost analog joystick with two potentiometers and a push button | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c3jqbrz5) |
+| SG90 Micro Servo | Ideal for learning motion control and robotics | — |
+| [SSD1306 OLED Display](/products/ssd1306-oled/) | Perfect for menus, sensors, and user interfaces | [🛒 AliExpress](https://s.click.aliexpress.com/e/_EIt4LOO) |
+| L298N Motor Driver | Beginner-friendly H-bridge for DC motors | — |
+| TB6612FNG Motor Driver | More efficient alternative to the L298N | — |
+| [Solderless Breadboard](/products/solderless-breadboard/) | Reusable prototyping platform | — |
+| [Jumper Wires](/products/jumper-wires/) | Reliable electrical connections | — |
+| USB Power Supply (5V 2A) | Stable power for ESP32 projects | — |
 
 ---
 
@@ -4647,6 +4657,17 @@ By following this sequence, each new topic builds on knowledge you've already ga
 
 The complete Arduino sketch used throughout this tutorial is available for download.
 
+{% comment %}
+Lead-magnet placeholder: connect this section to the site's email provider/form
+when the newsletter endpoint is configured. Do not expose non-existent download URLs.
+{% endcomment %}
+
+> **📦 Get the Complete Joystick Project Pack**
+>
+> The full project pack is planned to include the complete Arduino sketch, wiring diagrams, high-resolution pinout, OLED menu example, servo example, motor example, and PDF wiring reference.
+>
+> **Email delivery:** this download gate will be connected once the Embedded Nerd newsletter/form endpoint is configured.
+
 The code includes:
 
 - Hardware initialization
@@ -4665,6 +4686,11 @@ Feel free to modify and adapt the code for your own projects.
 ### Downloads
 
 To help you get started quickly, we've also prepared several resources.
+
+{% comment %}
+No direct download links are added until the files are present at stable URLs.
+This avoids publishing dead links or pretending that downloads exist when they do not.
+{% endcomment %}
 
 Available downloads include:
 
