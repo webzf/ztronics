@@ -10,6 +10,8 @@ product_id: usb-5v-2a-power-supply
 category: Accessories
 
 manufacturer: Generic
+image: "https://mall.iopenmall.tw/website/uploads_product/website_59522/P5952208858341_4_79395531.jpg?hash=14688"
+
 
 excerpt: "5V 2A USB power supply for ESP32 projects, servos, displays and other embedded electronics."
 
