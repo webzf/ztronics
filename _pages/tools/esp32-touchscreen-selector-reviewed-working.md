@@ -1,6 +1,7 @@
 ---
 title: "ESP32 Touchscreen Display & Board Selector | Find Compatible Hardware"
 layout: single
+classes: wide
 sidebar:
   nav: "embedded"
 internal_links: true
