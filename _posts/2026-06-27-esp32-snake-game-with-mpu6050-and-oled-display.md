@@ -78,6 +78,8 @@ Learn how to build a classic Snake game using an ESP32, an MPU6050 motion sensor
 
 Instead of pressing buttons, you control the snake by tilting the [MPU6050 sensor](/mpu6050-arduino-guide/), making this a fun project for learning ESP32 graphics, sensors and game programming.
 
+> **MPU6050 note:** The original MPU6050 is now obsolete for new designs. See our guide to [MPU6050 discontinuation and modern alternatives](/mpu6050-discontinued-alternatives/), including the [BMA400](/products/bma400/) for low-power acceleration and motion sensing.
+
 {% include video id="LN0geCgHQUs" provider="youtube" %}
 
 In this tutorial you'll learn:
@@ -183,7 +185,7 @@ Install the following libraries:
 
 ## ESP32 Snake Game Code
 
-The complete project is available on GitHub.
+The complete project is available on [GitHub](https://github.com/webzf/esp32-snake-game).
 
 ```cpp
 // =====================================================
@@ -768,7 +770,7 @@ If you are comparing ESP32 boards and displays for a new project, use the [ESP32
 
 ## GitHub Source Code
 
-The complete ESP32 Snake Game source code is available in the GitHub repository.
+The complete ESP32 Snake Game source code is available in the [GitHub repository](https://github.com/webzf/esp32-snake-game).
 
 The repository includes:
 
@@ -780,12 +782,24 @@ The repository includes:
 
 ---
 
+## MPU6050 Alternative: BMA400
+
+The MPU6050 is ideal here because the Snake Game uses both acceleration and the sensor's motion data. For new projects, however, the original MPU6050 is obsolete, so it is worth knowing the alternatives.
+
+The **[BMA400 Accelerometer Module](/products/bma400/)** is a modern low-power option when you only need acceleration, tilt or motion detection. It does not include a gyroscope, so it is not a drop-in replacement for every MPU6050 project.
+
+[Buy the BMA400 Accelerometer Module on AliExpress →](/go/hardware/bma400/)
+
+For the full comparison, see [Is the MPU6050 Discontinued? Alternatives & Replacements for Arduino and ESP32](/mpu6050-discontinued-alternatives/).
+
+---
+
 ## Related Tutorials
 
 - [MPU6050 Arduino Guide](../mpu6050-arduino-guide/)
 - [ESP32 OLED Display Guide](../esp32-oled-tutorial-wiring-code-display-guide/)
 - [I2C Scanner Tutorial](../i2c-scanner-tutorial/)
-- [ESP32 Joystick Tutorial](../esp32-joystick/)
+- [ESP32 Joystick Tutorial](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)
 
 ---
 
