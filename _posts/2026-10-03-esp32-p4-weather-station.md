@@ -948,6 +948,12 @@ data and turning it into an application experience.
 
 That separation is the central engineering idea behind the project.
 
+### Related ESP32-P4 Hardware
+
+If you are evaluating the **ESP32-P4** for a touchscreen HMI rather than this exact weather-station hardware, the [Waveshare ESP32-P4-WIFI6-Touch-LCD-7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/) is a relevant 7-inch platform to compare. It combines the P4 with a 1024×600 capacitive display, MIPI-DSI, 32 MB PSRAM and an ESP32-C6 wireless subsystem.
+
+This is a related platform, not the hardware used in Harald Kreuzer's Weather Station, which uses a different 10.1-inch MIPI-DSI display.
+
 ### The broader embedded-systems lessons
 
 Several lessons from the Weather Station 3.0 apply well beyond weather
