@@ -464,19 +464,19 @@ This is one reason ESP32-S3 touchscreen boards with several megabytes of PSRAM a
 
 The following options represent three different levels of touchscreen project.
 
-| | ILI9341 + XPT2046 2.8" | Waveshare ESP32-S3-Touch-LCD-4.3 | Waveshare ESP32-S3-Touch-LCD-7 |
-|---|---|---|---|
-| Screen size | 2.8" | 4.3" | 7" |
-| Resolution | 320×240* | 800×480 | 800×480 |
-| Touch technology | Resistive | Capacitive | Capacitive |
-| Display interface | SPI | RGB | RGB |
-| Touch interface | SPI | I2C | I2C |
-| ESP32 included | Module-dependent | ESP32-S3 | ESP32-S3 |
-| PSRAM | Module-dependent | 8 MB | 8 MB |
-| Flash | Module-dependent | 16 MB | Check exact version |
-| Intended use | Compact projects | Modern GUI/HMI | Large dashboards/HMI |
-| Complexity | Low | Moderate | Moderate–High |
-| Best for | Budget/prototyping | Balanced touchscreen GUI | Large-screen interfaces |
+| | ILI9341 + XPT2046 2.8" | Waveshare ESP32-S3-Touch-LCD-4.3 | Waveshare ESP32-S3-Touch-LCD-7 | [Waveshare ESP32-P4-WIFI6-Touch-LCD-7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/) |
+|---|---|---|---|---|
+| Screen size | 2.8" | 4.3" | 7" | 7" |
+| Resolution | 320×240* | 800×480 | 800×480 | 1024×600 |
+| Touch technology | Resistive | Capacitive | Capacitive | Capacitive |
+| Display interface | SPI | RGB | RGB | MIPI-DSI |
+| Touch interface | SPI | I2C | I2C | I2C |
+| ESP32 included | Module-dependent | ESP32-S3 | ESP32-S3 | ESP32-P4 + ESP32-C6 |
+| PSRAM | Module-dependent | 8 MB | 8 MB | 32 MB |
+| Flash | Module-dependent | 16 MB | Check exact version | 32 MB |
+| Intended use | Compact projects | Modern GUI/HMI | Large dashboards/HMI | Advanced HMI / multimedia |
+| Complexity | Low | Moderate | Moderate–High | High |
+| Best for | Budget/prototyping | Balanced touchscreen GUI | Large-screen interfaces | Higher-resolution P4 projects |
 
 \*Resolution and exact configuration should be checked against the specific ILI9341 module before purchase.
 
@@ -595,6 +595,14 @@ For a practical example of the ESP32-P4 architecture in a larger touchscreen sys
 - You want a large LVGL interface.
 - You need additional interfaces such as CAN or RS485.
 - The physical user interface is a major part of the project.
+
+### Choose the ESP32-P4-WIFI6-Touch-LCD-7B if:
+
+- You want a higher-resolution 7-inch display.
+- You need MIPI-DSI rather than RGB.
+- You want the additional performance and memory of the ESP32-P4 platform.
+- You are building a demanding LVGL, HMI or multimedia-oriented interface.
+- Features such as MIPI-CSI, CAN or RS485 are relevant to your project.
 
 The key decision is often not simply "which display is best?" but rather:
 
@@ -1001,6 +1009,7 @@ However, it is not necessary for every touchscreen project. A small SPI touchscr
 - [ILI9341 + XPT2046 2.8-inch Touchscreen](/products/ili9341-xpt2046-2-8-touchscreen/)
 - [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/)
 - [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/)
+- [Waveshare ESP32-P4-WIFI6-Touch-LCD-7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/)
 
 ## Conclusion
 
