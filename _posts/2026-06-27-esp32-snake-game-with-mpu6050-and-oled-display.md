@@ -784,11 +784,11 @@ The repository includes:
 
 ## MPU6050 Alternative: BMA400
 
-The MPU6050 is ideal here because the Snake Game uses both acceleration and the sensor's motion data. For new projects, however, the original MPU6050 is obsolete, so it is worth knowing the alternatives.
+The MPU6050 is ideal here because the Snake Game uses tilt input. For new projects, however, the original MPU6050 is obsolete, so it is worth knowing the alternatives.
 
 The **[BMA400 Accelerometer Module](/products/bma400/)** is a modern low-power option when you only need acceleration, tilt or motion detection. It does not include a gyroscope, so it is not a drop-in replacement for every MPU6050 project.
 
-[Buy the BMA400 Accelerometer Module on AliExpress →](/go/hardware/bma400/)
+[Buy the BMA400 Accelerometer Module →](/go/hardware/bma400/)
 
 For the full comparison, see [Is the MPU6050 Discontinued? Alternatives & Replacements for Arduino and ESP32](/mpu6050-discontinued-alternatives/).
 
