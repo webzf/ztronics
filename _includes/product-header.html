@@ -1,5 +1,9 @@
 {% assign product = include.product %}
 {% assign commerce = include.commerce %}
+{% assign product_image = product.image %}
+{% unless product_image contains "://" %}
+  {% assign product_image = product_image | relative_url %}
+{% endunless %}
 
 <div class="en-product-header">
 

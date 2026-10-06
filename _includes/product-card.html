@@ -11,6 +11,10 @@ Usage:
 {% endcomment %}
 
 {% assign commerce = site.data.commerce[include.product.product_id] %}
+{% assign product_image = include.product.image %}
+{% unless product_image contains "://" %}
+    {% assign product_image = product_image | relative_url %}
+{% endunless %}
 
 <div class="en-product-card"
      data-title="{{ include.product.title | downcase }}"
