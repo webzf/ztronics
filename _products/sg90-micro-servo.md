@@ -7,7 +7,7 @@ internal_links: true
 
 product_id: sg90-micro-servo
 
-category: Actuators
+category: Modules
 
 manufacturer: TowerPro
 
