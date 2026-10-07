@@ -1,6 +1,9 @@
 ---
 title: "MPU6050 Alternative 2026: 3 Replacements Compared"
+
 description: "MPU6050 alternative for 2026: yes, it's discontinued (EOL). Compare ICM-42670-P, ICM-42688-P and BMA400 and see which to buy."
+excerpt: "MPU6050 alternative for 2026: yes, it's discontinued (EOL). Compare ICM-42670-P, ICM-42688-P and BMA400 and see which to buy."
+
 layout: single
 permalink: /mpu6050-discontinued-alternatives/
 show_date: true
