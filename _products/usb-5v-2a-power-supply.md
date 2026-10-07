@@ -1,7 +1,7 @@
 ---
 layout: product
 
-title: "USB 5V 2A Power Supply"
+title: "MB102 Breadboard Power Supply Module"
 
 internal_links: true
 
@@ -10,57 +10,57 @@ product_id: usb-5v-2a-power-supply
 category: Accessories
 
 manufacturer: Generic
-image: "https://mall.iopenmall.tw/website/uploads_product/website_59522/P5952208858341_4_79395531.jpg?hash=14688"
+image: "https://m.media-amazon.com/images/I/61yfIwAxe0L._SX522_.jpg"
 
+excerpt: "MB102 breadboard power supply module with selectable 5V and 3.3V outputs for Arduino, ESP32 and breadboard projects."
 
-excerpt: "5V 2A USB power supply for ESP32 projects, servos, displays and other embedded electronics."
-
-description: "A regulated 5V USB power supply suitable for powering small embedded projects and peripherals such as micro servos and motor-control circuits when a separate supply is required."
+description: "A compact MB102 breadboard power supply module that provides selectable 5V and 3.3V rails and plugs directly into compatible breadboards. It is a practical power solution for small Arduino, ESP32 and electronics prototypes."
 
 categories:
   - Power
   - Accessories
 
 tags:
+  - MB102
   - 5V
-  - USB Power Supply
+  - 3.3V
+  - Breadboard
   - Power Supply
   - ESP32
-  - Servo
-  - Robotics
-  - Electronics
+  - Arduino
 
-permalink: /products/usb-5v-2a-power-supply/
+permalink: /products/mb102-breadboard-power-supply/
 
 specifications:
   - name: Output Voltage
-    value: 5V DC
-  - name: Maximum Current
-    value: 2A
-  - name: Connector
-    value: USB
+    value: 5V / 3.3V selectable
+  - name: Input
+    value: USB or DC barrel jack, depending on version
+  - name: Output
+    value: Breadboard power rails
   - name: Application
-    value: Embedded projects and peripheral power
+    value: Breadboard prototypes and embedded projects
 
 related:
   - esp32-devkit
+  - solderless-breadboard
+  - jumper-wires
   - sg90-micro-servo
-  - l298n-motor-driver
-  - tb6612fng-motor-driver
 
 ---
 
-A **5V 2A USB power supply** is useful when peripherals such as servos or motor drivers require more current than the ESP32 development board should provide directly.
+The **MB102 Breadboard Power Supply Module** is a compact way to power compatible breadboards with **5V or 3.3V rails**. It is commonly used in Arduino, ESP32 and electronics prototyping kits.
 
 ## Typical Uses
 
-- SG90 servo projects
-- Small robotics projects
-- External peripheral power
-- Embedded prototypes
+- Powering breadboard prototypes
+- ESP32 and Arduino projects
+- 5V and 3.3V module testing
+- Small sensors and peripherals
+- Educational electronics kits
 
-> **Important:** Always verify the voltage and current requirements of the connected hardware before powering it. When using an external supply with an ESP32-controlled circuit, connect the grounds together where required.
+> **Important:** Check the input voltage and output selection on your specific MB102 module before connecting it to a circuit. The available current depends on the module and input supply.
 
-## Related Project
+## Related Components
 
-A separate 5V supply is recommended for the servo and motor examples in the [ESP32 Joystick Tutorial](/esp32-joystick-tutorial-read-an-analog-joystick-ky-023-with-arduino-ide/).
+Pair the MB102 with a [solderless breadboard](/products/solderless-breadboard/), [jumper wires](/products/jumper-wires/) and an ESP32 development board for a simple prototyping setup.
