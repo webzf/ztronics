@@ -10,7 +10,7 @@ product_id: usb-5v-2a-power-supply
 category: Accessories
 
 manufacturer: Generic
-image: "https://m.media-amazon.com/images/I/61yfIwAxe0L._SX522_.jpg"
+image: "https://www.electropi.in/image/cache/catalog/mb102-breadboard-power-supply-module-800x800.jpg"
 
 excerpt: "MB102 breadboard power supply module with selectable 5V and 3.3V outputs for Arduino, ESP32 and breadboard projects."
 
@@ -35,9 +35,11 @@ specifications:
   - name: Output Voltage
     value: 5V / 3.3V selectable
   - name: Input
-    value: USB or DC barrel jack, depending on version
+    value: USB 5V or DC input, depending on version
   - name: Output
     value: Breadboard power rails
+  - name: Maximum Current
+    value: Typically under 700 mA, depending on version
   - name: Application
     value: Breadboard prototypes and embedded projects
 
@@ -49,7 +51,7 @@ related:
 
 ---
 
-The **MB102 Breadboard Power Supply Module** is a compact way to power compatible breadboards with **5V or 3.3V rails**. It is commonly used in Arduino, ESP32 and electronics prototyping kits.
+The **MB102 Breadboard Power Supply Module** is a compact way to power compatible breadboards with **5V or 3.3V rails**. It is a common accessory in Arduino and electronics prototyping kits.
 
 ## Typical Uses
 
@@ -59,7 +61,7 @@ The **MB102 Breadboard Power Supply Module** is a compact way to power compatibl
 - Small sensors and peripherals
 - Educational electronics kits
 
-> **Important:** Check the input voltage and output selection on your specific MB102 module before connecting it to a circuit. The available current depends on the module and input supply.
+> **Important:** Check the input voltage and output capability of your specific MB102 module before connecting it to a circuit. These modules are intended for relatively low-current breadboard loads, not for powering high-current motors directly.
 
 ## Related Components
 
