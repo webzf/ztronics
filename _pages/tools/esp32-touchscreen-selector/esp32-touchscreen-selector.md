@@ -27,7 +27,7 @@ tags:
   - RGB
 ---
 
-# ESP32 Touchscreen Selector
+## ESP32 Touchscreen Selector
 
 Choosing an **ESP32 touchscreen display** can be difficult because boards combine different ESP32 families, display controllers, resolutions, touch controllers, interfaces, memory configurations, GPIO layouts and power features.
 
