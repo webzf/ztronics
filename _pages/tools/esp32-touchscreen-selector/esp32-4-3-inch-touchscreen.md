@@ -23,7 +23,7 @@ tags:
   - 800x480
 ---
 
-# ESP32 4.3-Inch Touchscreen Display Selector
+## ESP32 4.3-Inch Touchscreen Display Selector
 
 A **4.3-inch ESP32 touchscreen** is a practical size for dashboards, control panels, IoT interfaces and embedded HMIs. The screen is large enough for useful touch controls without the physical footprint of a 7-inch panel.
 
