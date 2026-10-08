@@ -5,7 +5,7 @@ layout: single
 author_profile: true
 ---
 
-# Contact Embedded Nerd
+## Contact Embedded Nerd
 
 Thank you for visiting Embedded Nerd.
 
