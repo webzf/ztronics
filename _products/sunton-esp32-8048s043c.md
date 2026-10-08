@@ -126,9 +126,9 @@ Do not assume that the N or R variants have the same touch hardware: the N varia
 
 ## Purchase Options
 
-The exact Sunton ESP32-8048S043C listing at Makerfabs was marked **out of stock** when checked on 9 October 2026. Check the listing again before buying.
+Compare these purchase options before ordering. Availability, price and shipping can vary by seller and destination.
 
-- **[Check availability at Makerfabs](https://www.makerfabs.com/sunton-esp32-s3-4-3-inch-ips-with-touch.html)** — distributor listing for the 4.3-inch capacitive-touch Sunton board; currently marked out of stock.
+- **[Check the Makerfabs listing](https://www.makerfabs.com/sunton-esp32-s3-4-3-inch-ips-with-touch.html)** — manufacturer/distributor listing and documentation for the 4.3-inch capacitive-touch Sunton board. Check the current availability on the store page.
 - **[Check the AliExpress listing](https://www.aliexpress.com/item/1005006110360174.html)** — marketplace offer already referenced in the selector data. Confirm that the listing is specifically the ESP32-8048S043C capacitive GT911 variant, and check the display controller, seller, included accessories and shipping before ordering.
 
 These are direct product links, not confirmed Embedded Nerd affiliate links. Replace them with your own affiliate URLs only after verifying that the destination and variant match this product. Stock and listing details can change.
