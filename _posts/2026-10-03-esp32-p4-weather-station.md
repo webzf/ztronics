@@ -49,7 +49,7 @@ related: true
 share: true
 ---
 
-# ESP32-P4 Weather Station: How MIPI-DSI, LoRa, ESP-NOW and LVGL Work Together
+## ESP32-P4 Weather Station: How MIPI-DSI, LoRa, ESP-NOW and LVGL Work Together
 
 *An engineering deep dive into Harald Kreuzer's ESP32-P4 Weather Station & Environmental Monitor.*
 
