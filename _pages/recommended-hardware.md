@@ -8,7 +8,7 @@ sidebar:
   nav: "embedded"
 ---
 
-# Recommended Hardware
+## Recommended Hardware
 
 These are the boards, displays and sensors used throughout Embedded Nerd tutorials.
 
