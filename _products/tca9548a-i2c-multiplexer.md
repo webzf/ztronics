@@ -6,7 +6,7 @@ title: "TCA9548A I2C Multiplexer"
 internal_links: true
 product_id: tca9548a-i2c-multiplexer
 
-category: I2C
+category: Modules
 
 manufacturer: HiLetgo
 
