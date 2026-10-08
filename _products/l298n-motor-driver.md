@@ -71,4 +71,4 @@ The L298N is easy to understand and widely documented, although it is less effic
 
 ## Related Project
 
-The L298N can be used with the [ESP32 Joystick Tutorial](/esp32-joystick-tutorial-read-an-analog-joystick-ky-023-with-arduino-ide/) for proportional DC motor control.
+The L298N can be used with the [ESP32 Joystick Tutorial](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-%28KY-023%29-with-Arduino-IDE/) for proportional DC motor control.
