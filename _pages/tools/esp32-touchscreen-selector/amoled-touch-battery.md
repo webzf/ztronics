@@ -22,7 +22,7 @@ tags:
   - Battery
   - ESP32-S3
 ---
-# ESP32 AMOLED Touchscreen Battery Selector
+## ESP32 AMOLED Touchscreen Battery Selector
 
 Looking for a compact **ESP32 AMOLED touchscreen with battery support**? These boards combine several subsystems, so display size alone is not enough to determine whether the hardware fits a project.
 
