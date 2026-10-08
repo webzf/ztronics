@@ -93,6 +93,8 @@ The **Waveshare ESP32-P4-WIFI6-Touch-LCD-7B** is a high-performance 7-inch HMI d
 
 It combines a 1024×600 IPS capacitive touchscreen with MIPI-DSI, MIPI-CSI, Wi-Fi 6, Bluetooth 5, audio, CAN, RS485, USB and TF-card connectivity.
 
+If you're comparing ESP32 touchscreen boards, use the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) to explore compatible options, and read our [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) for an overview of display interfaces, touch technologies and board trade-offs.
+
 ## Key Features
 
 - ESP32-P4 RISC-V dual-core processor up to 360 MHz
@@ -126,7 +128,7 @@ The MIPI-CSI interface also allows compatible cameras to be added for computer-v
 
 ## ESP32-P4 vs ESP32-S3 7-Inch
 
-| Feature | ESP32-S3-Touch-LCD-7 | ESP32-P4-WIFI6-Touch-LCD-7B |
+| Feature | [ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/) | ESP32-P4-WIFI6-Touch-LCD-7B |
 |---|---|---|
 | Display | 7" | 7" |
 | Resolution | 800 × 480 | **1024 × 600** |

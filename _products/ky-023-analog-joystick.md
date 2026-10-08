@@ -91,7 +91,7 @@ The KY-023 joystick module provides a simple **analog interface** for directiona
 
 The module is commonly used with **Arduino, ESP32, Raspberry Pi-based projects and other microcontroller platforms** for robotics, game controllers, menu navigation, servo control, remote controllers and human-machine interfaces.
 
-If you're using the **[ESP32 DevKit V1](/products/esp32-devkit/)**, our **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)** provides a complete practical example covering wiring, analog readings and button input.
+If you're using the **[ESP32 DevKit V1](/products/esp32-devkit/)**, our **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-%28KY-023%29-with-Arduino-IDE/)** provides a complete practical example covering wiring, analog readings and button input.
 
 ---
 
@@ -216,7 +216,7 @@ The push button can be connected to a digital input and configured with a pull-u
 
 The Arduino's `analogRead()` function can then be used to measure the joystick position.
 
-For practical wiring, code examples and joystick input handling, see our **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)**.
+For practical wiring, code examples and joystick input handling, see our **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-%28KY-023%29-with-Arduino-IDE/)**.
 
 ---
 
@@ -234,7 +234,7 @@ The ESP32's higher-resolution ADC can provide more detailed position readings th
 
 When connecting the module to an ESP32, pay particular attention to the voltage supplied to the module and the voltage presented to the ESP32 input pins.
 
-For a complete ESP32 implementation, including wiring, code, calibration and dead-zone handling, see the **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)**.
+For a complete ESP32 implementation, including wiring, code, calibration and dead-zone handling, see the **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-%28KY-023%29-with-Arduino-IDE/)**.
 
 ---
 
@@ -296,7 +296,7 @@ These techniques are especially useful for:
 - Pan-and-tilt systems
 - Menu navigation
 
-For a practical implementation of joystick calibration and dead-zone handling, see our **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)**.
+For a practical implementation of joystick calibration and dead-zone handling, see our **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-%28KY-023%29-with-Arduino-IDE/)**.
 
 ---
 
@@ -350,7 +350,7 @@ These components provide a convenient starting point for prototyping interactive
 
 To get the most from your KY-023 Analog Joystick Module, see:
 
-- **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)**
+- **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-%28KY-023%29-with-Arduino-IDE/)**
 - **[ESP32 OLED Tutorial – Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)**
 - **[I2C Scanner Tutorial](/i2c-scanner-tutorial/)**
 - **[MPU6050 Arduino Guide](/mpu6050-arduino-guide/)**
@@ -416,4 +416,4 @@ Yes. The two analog axes can provide directional or movement input, while the in
 
 The **KY-023 Analog Joystick Module** is a simple and versatile input device combining two analog axes with an integrated push button. Its straightforward interface makes it easy to use with Arduino, ESP32 and other microcontroller platforms.
 
-For the module's **pinout, specifications and basic characteristics**, this page provides a technical reference. For practical implementation, including wiring, Arduino IDE code, calibration and dead-zone handling, see our **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)**.
+For the module's **pinout, specifications and basic characteristics**, this page provides a technical reference. For practical implementation, including wiring, Arduino IDE code, calibration and dead-zone handling, see our **[ESP32 Joystick Tutorial – Read an Analog Joystick (KY-023) with Arduino IDE](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-%28KY-023%29-with-Arduino-IDE/)**.
