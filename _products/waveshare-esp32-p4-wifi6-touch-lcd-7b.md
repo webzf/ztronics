@@ -76,7 +76,7 @@ links:
   - title: "Waveshare Product Page"
     icon: "fas fa-external-link-alt"
     description: "Official product page and specifications."
-    url: "https://www.waveshare.com/product/arduino/displays/esp32-p4-wifi6-touch-lcd-7b.htm"
+    url: "https://www.waveshare.com/product/iot-communication/short-range-wireless/esp32-p4-wifi6-touch-lcd-7b.htm"
   - title: "Waveshare Documentation"
     icon: "fas fa-book"
     description: "Official documentation, examples and development resources."
@@ -159,6 +159,15 @@ This board is particularly interesting for:
 - High-resolution touchscreen dashboards
 
 For simple sensor displays, a smaller ESP32-S3 board will usually be cheaper and easier to use.
+
+## Purchase Options
+
+The official Waveshare store currently lists the board in standard and camera-bundle versions. Check the selected version, price, shipping to your country and stock before ordering.
+
+- **[Buy from Waveshare (official store)](https://www.waveshare.com/product/iot-communication/short-range-wireless/esp32-p4-wifi6-touch-lcd-7b.htm)** — official purchase page; choose the standard version or the camera bundle as required.
+- **[Check the AliExpress listing](https://www.aliexpress.com/item/1005010055870735.html)** — marketplace option; verify the seller, exact SKU and included accessories before purchase.
+
+These are currently direct product links, not confirmed Embedded Nerd affiliate links. Replace them with your own affiliate URLs if you have approved tracking links for these exact offers. Prices, stock and shipping costs can change.
 
 ## Development Resources
 
