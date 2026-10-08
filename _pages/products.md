@@ -70,7 +70,11 @@ Electronic components.
 
 {% endcase %}
 
+{% if products.size > 3 %}
+**Showing 3 of {{ products.size }} products**
+{% else %}
 **{{ products.size }} Products**
+{% endif %}
 
 <div class="en-product-grid">
 
@@ -87,7 +91,7 @@ Electronic components.
 <a class="btn btn--primary"
 href="{{ '/products/' | append: slug | append:'/' | relative_url }}">
 
-Browse {{ category }}
+Browse all {{ category }}
 
 </a>
 
