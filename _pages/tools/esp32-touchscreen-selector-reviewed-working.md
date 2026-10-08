@@ -11,7 +11,7 @@ excerpt: "Find compatible ESP32 boards, displays and touchscreen hardware by MCU
 show_date: false
 read_time: false
 last_modified_at: false
-toc: true
+toc: false
 toc_sticky: true
 toc_label: "Contents"
 related: true
