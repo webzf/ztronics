@@ -53,7 +53,7 @@ share: true
 
 ---
 
-# Reznex Review: ESP32 Pinouts, Hardware Tools, CLI and More
+## Reznex Review: ESP32 Pinouts, Hardware Tools, CLI and More
 
 *Last updated: October 2026 · Reznex CLI version covered: 1.2.0*
 
@@ -81,7 +81,7 @@ This review is based on the current Reznex website and its published CLI documen
 
 ---
 
-# What Is Reznex?
+## What Is Reznex?
 
 [Reznex](https://www.reznex.ro/) is an electronics, embedded, RF and maker-oriented platform that combines reference material, tools, calculators, projects and community resources. It has a noticeably Romanian and amateur-radio orientation (the site is in Romanian, with an English version available), but most of its hardware resources are useful internationally. It also states that it is ad-free.
 
@@ -99,7 +99,7 @@ Not every feature has the same technical depth, which matters when deciding what
 
 ---
 
-# Reznex ESP32 Pinout Tools
+## Reznex ESP32 Pinout Tools
 
 <figure>
   <img src="/assets/images/reznex-esp32-devkit-v1-pinout.webp" alt="Reznex ESP32 DevKit v1 interactive pinout showing 30 pins and GPIO36 input-only details" loading="lazy" width="1485" height="768">
@@ -128,7 +128,7 @@ The ESP32-S3, ESP32-C3, ESP32-C6 and others have different GPIO arrangements and
 
 ---
 
-# Reznex vs an ESP32 Datasheet
+## Reznex vs an ESP32 Datasheet
 
 A pinout page answers one question: "What does this pin do?"
 
@@ -170,7 +170,7 @@ If this is the kind of project you are planning, see the Embedded Nerd [ESP32 to
 
 ---
 
-# Reznex Hardware Comparison
+## Reznex Hardware Comparison
 
 <figure>
   <img src="/assets/images/reznex-hardware-comparison.webp" alt="Reznex hardware comparison showing ESP32 WROOM-32, Raspberry Pi Pico W and Arduino Uno R3" loading="lazy" width="1485" height="768">
@@ -185,7 +185,7 @@ The caveat is that tables flatten important differences. Flash capacity depends 
 
 ---
 
-# Reznex CLI
+## Reznex CLI
 
 <figure>
   <img src="/assets/images/reznex-cli-terminal.webp" alt="Reznex CLI documentation showing npx reznex menu and the interactive terminal menu" loading="lazy" width="1485" height="768">
@@ -215,7 +215,7 @@ It is also notable that the CLI documents more hardware pinouts than the web pin
 
 ---
 
-# Reznex API
+## Reznex API
 
 Reznex advertises a [REST API](https://www.reznex.ro/api-key) (v1) with API keys, scoped permissions, CORS support, an activity endpoint and cURL and web integration examples.
 
@@ -225,7 +225,7 @@ It is not a general-purpose hardware database API. Nothing in the documentation 
 
 ---
 
-# Electronics Calculators
+## Electronics Calculators
 
 The [resources hub](https://www.reznex.ro/resurse) lists eight technical tools: Ohm's law, voltage divider, LED series resistor, passive RC filter cutoff, battery life, capacitor unit converter, resistor color code and frequency-to-period conversion. They are not circuit simulators. Their value is speed. I checked the Ohm's law and voltage divider examples by hand.
 
@@ -248,7 +248,7 @@ The math is right, but be careful with this exact example on an ESP32. 3.33 V is
 
 ---
 
-# RF and Antenna Calculators
+## RF and Antenna Calculators
 
 <figure>
   <img src="/assets/images/reznex-antenna-calculator.webp" alt="Reznex dipole antenna calculator at 145.5 MHz showing estimated 485 mm arms" loading="lazy" width="1485" height="768">
@@ -269,7 +269,7 @@ That is very close to the 485 mm the calculator shows, so the result is plausibl
 
 ---
 
-# Engineering Vault
+## Engineering Vault
 
 <figure>
   <img src="/assets/images/reznex-engineering-vault.webp" alt="Reznex Engineering Vault showing ESP32 C++ projects, 3D models and ESPHome YAML resources" loading="lazy" width="1485" height="768">
@@ -284,7 +284,7 @@ It connects reference information with projects you can actually build. But this
 
 ---
 
-# Other Resources: LoRa, RFID, Smart Home and Security
+## Other Resources: LoRa, RFID, Smart Home and Security
 
 These sections are broader than they are deep, and I only evaluated them as reference material.
 
@@ -295,7 +295,7 @@ These sections are broader than they are deep, and I only evaluated them as refe
 
 ---
 
-# Reznex vs Traditional Research
+## Reznex vs Traditional Research
 
 | Task | Traditional workflow | Reznex approach | Best use |
 |---|---|---|---|
@@ -316,7 +316,7 @@ If your main need is an ESP32 pinout, there are other options worth knowing: [es
 
 ---
 
-# What I Like
+## What I Like
 
 1. **It reduces context switching.** Pinouts, comparison, calculators, RF resources and projects in one place is the central value, and it helps most in early development.
 2. **The CLI is a real differentiator.** A terminal interface for electronics references is unusual.
@@ -324,7 +324,7 @@ If your main need is an ESP32 pinout, there are other options worth knowing: [es
 4. **The Vault links theory to projects**, with code and 3D-printable hardware next to the documentation.
 5. **The scope is unusually broad.** ESP32, Arduino, Pico, STM32, LoRa, RFID, smart home and security are normally spread over many unrelated sites.
 
-# What Could Be Improved
+## What Could Be Improved
 
 - **More ESP32 variants.** A single classic ESP32 pinout is not enough today. Coverage of the S3, C3 and C6 would be highly valuable, especially for display projects.
 - **Source and revision info on each page**, for example "Source: Espressif ESP32 documentation · Revision · Last checked", so readers can judge how current the data is.
@@ -334,7 +334,7 @@ If your main need is an ESP32 pinout, there are other options worth knowing: [es
 
 ---
 
-# Who Should Use Reznex?
+## Who Should Use Reznex?
 
 - **Beginners:** visual pinouts and calculators remove friction, but you still need to learn voltage, current, logic levels, pull-ups and how to read a datasheet.
 - **Makers:** the clearest fit. Inspect a pinout, compare boards, calculate a resistor, check an RF module, grab example code, download an enclosure.
@@ -344,7 +344,7 @@ If your main need is an ESP32 pinout, there are other options worth knowing: [es
 
 ---
 
-# A Practical ESP32 Workflow
+## A Practical ESP32 Workflow
 
 1. **Define the requirements**, for example an SPI display, SPI touchscreen, SD card, I2C sensor, touch interrupt and three chip-selects.
 2. **Identify the exact ESP32.** Not just "ESP32", but the actual SoC and development board.
@@ -368,7 +368,7 @@ If your main need is an ESP32 pinout, there are other options worth knowing: [es
 
 ---
 
-# Reznex Review: FAQ
+## Reznex Review: FAQ
 
 ## What is Reznex?
 
@@ -408,7 +408,7 @@ The platform currently offers free resources, including the Engineering Vault. S
 
 ---
 
-# Final Assessment
+## Final Assessment
 
 Reznex addresses a genuine problem in embedded development: **technical information is scattered across many resources.** Its strengths are the combination of ESP32 and other pinouts, hardware comparison, calculators, RF tools, the CLI and the Engineering Vault. The CLI in particular takes it beyond a typical browser-based reference.
 
