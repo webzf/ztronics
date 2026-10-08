@@ -22,7 +22,7 @@ tags:
   - PSRAM
   - ESP32 Display
 ---
-# ESP32-S3 LVGL Display Selector
+## ESP32-S3 LVGL Display Selector
 
 Looking for an **ESP32-S3 board for an LVGL display**? The right choice depends on much more than the MCU family. Display interface, resolution, framebuffer requirements, PSRAM, GPIO availability, touch hardware and software support can all affect compatibility.
 
