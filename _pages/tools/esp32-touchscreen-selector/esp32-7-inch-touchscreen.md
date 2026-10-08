@@ -24,7 +24,7 @@ tags:
   - 800x480
 ---
 
-# ESP32 7-Inch Touchscreen Display Selector
+## ESP32 7-Inch Touchscreen Display Selector
 
 A **7-inch ESP32 touchscreen** is useful when the physical interface matters as much as the microcontroller. Larger screens are common in smart-home dashboards, industrial-style HMIs, IoT control panels and wall-mounted interfaces.
 
