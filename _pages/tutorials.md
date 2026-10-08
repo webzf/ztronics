@@ -9,7 +9,7 @@ sidebar:
 ---
 
 
-# Tutorials
+## Tutorials
 
 Explore our ESP32, Arduino, Raspberry Pi, sensor and display tutorials.
 
