@@ -642,3 +642,30 @@ waveshare-esp32-p4-wifi6-touch-lcd-7b:
       product_url: "https://www.aliexpress.com/item/1005010055870735.html"
       affiliate_url: "https://s.click.aliexpress.com/e/_c2uOhjfn"
       last_verified: "2026-10-06"
+
+#----------------
+
+l298n-motor-driver:
+
+  preferred_store: amazon
+
+  notes: "Amazon and AliExpress affiliate links supplied by the site owner."
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: true
+      affiliate_url: "https://amzn.to/4zgLkk2"
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c2Rxe1yV"
+
