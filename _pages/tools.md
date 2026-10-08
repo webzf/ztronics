@@ -22,7 +22,7 @@ tags:
   - I2C
 ---
 
-# Embedded Nerd Tools
+## Embedded Nerd Tools
 
 Practical tools for **ESP32, Arduino, Raspberry Pi and embedded hardware projects**. Use these tools to choose compatible hardware, check interfaces and solve common electronics design problems.
 
