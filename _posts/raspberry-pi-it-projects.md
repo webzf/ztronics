@@ -56,7 +56,7 @@ These projects are useful because the skills transfer directly to larger Linux s
 
 ---
 
-# Raspberry Pi Hardware for IT Projects
+## Raspberry Pi Hardware for IT Projects
 
 The Raspberry Pi model you choose depends on the workload.
 
@@ -104,7 +104,7 @@ Wi-Fi can work well for lightweight services, but wired Ethernet is generally th
 
 ---
 
-# Raspberry Pi IT Projects for Beginners
+## Raspberry Pi IT Projects for Beginners
 
 These projects are good starting points if you are new to Linux servers and networking.
 
@@ -425,7 +425,7 @@ A backup is only useful if you can restore from it, so test your recovery proces
 
 ---
 
-# Intermediate Raspberry Pi IT Projects
+## Intermediate Raspberry Pi IT Projects
 
 ## 5. WireGuard VPN Server
 
@@ -699,7 +699,7 @@ This project also works particularly well alongside Pi-hole or a home server.
 
 ---
 
-# Advanced Raspberry Pi IT Projects
+## Advanced Raspberry Pi IT Projects
 
 ## 9. Nextcloud Personal Cloud
 
@@ -798,7 +798,7 @@ This is particularly useful in a home lab because the diagnostic machine is alwa
 
 ---
 
-# Raspberry Pi IT Projects Comparison
+## Raspberry Pi IT Projects Comparison
 
 | Project | Difficulty | Main software | Storage | Best for |
 |---|---|---|---|---|
@@ -815,7 +815,7 @@ This is particularly useful in a home lab because the diagnostic machine is alwa
 
 ---
 
-# Build a Raspberry Pi Home Lab
+## Build a Raspberry Pi Home Lab
 
 The most interesting approach is not necessarily to run every service on one Raspberry Pi.
 
@@ -854,7 +854,7 @@ This gives you experience with distributed services, networking, monitoring, and
 
 ---
 
-# Raspberry Pi IT Projects and Security
+## Raspberry Pi IT Projects and Security
 
 A useful server should also be a secure server.
 
@@ -904,7 +904,7 @@ Monitoring can help detect:
 
 ---
 
-# Raspberry Pi Server Troubleshooting
+## Raspberry Pi Server Troubleshooting
 
 When something stops working, troubleshoot from the bottom up.
 
@@ -970,7 +970,7 @@ This layered approach prevents you from debugging an application when the actual
 
 ---
 
-# Connecting Raspberry Pi IT Projects with Embedded Nerd
+## Connecting Raspberry Pi IT Projects with Embedded Nerd
 
 The strongest approach for Embedded Nerd is to use this article as a **pillar page**.
 
@@ -1012,7 +1012,7 @@ Do not add unrelated links simply to increase the number of internal links.
 
 ---
 
-# Future Raspberry Pi IT Articles
+## Future Raspberry Pi IT Articles
 
 This pillar page can support several focused tutorials:
 
@@ -1033,7 +1033,7 @@ These individual articles can link back to this pillar page and to each other wh
 
 ---
 
-# Which Raspberry Pi IT Project Should You Start With?
+## Which Raspberry Pi IT Project Should You Start With?
 
 Choose the project based on what you want to learn.
 
@@ -1065,7 +1065,7 @@ The important part is not how many services you install. Start with one project,
 
 ---
 
-# Conclusion
+## Conclusion
 
 The Raspberry Pi is capable of being much more than an electronics project platform.
 
@@ -1090,7 +1090,7 @@ Start small, build one service properly, and turn your Raspberry Pi into your ow
 
 ---
 
-# FAQ
+## FAQ
 
 ## What can a Raspberry Pi be used for in IT?
 
