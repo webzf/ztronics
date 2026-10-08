@@ -5,7 +5,7 @@ author_profile: true
 ---
 
 
-# About Embedded Nerd
+## About Embedded Nerd
 
 Welcome to Embedded Nerd, a website dedicated to embedded systems, microcontrollers, electronics, and IoT development.
 
