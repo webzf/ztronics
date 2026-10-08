@@ -528,7 +528,7 @@ This is a strong option when you want a modern finger-driven interface without b
 
 This is another 4.3-inch 800×480 ESP32-S3 option, with an RGB display interface, capacitive GT911 touch, 16 MB Flash and 8 MB PSRAM. Its USB-C connection uses a CH340C USB-to-UART bridge rather than exposing the ESP32-S3 native USB interface.
 
-It is worth comparing with the Waveshare 4.3-inch board when cost and the exact USB implementation matter. Check the [Sunton product page](/products/sunton-esp32-8048s043c/) for current purchase options and availability; the Makerfabs listing may be out of stock.
+It is worth comparing with the Waveshare 4.3-inch board when cost and the exact USB implementation matter. Check the [Sunton product page](/products/sunton-esp32-8048s043c/) for purchase options, and verify current stock and delivery details with the seller before ordering.
 
 ### Waveshare ESP32-S3-Touch-LCD-7
 
