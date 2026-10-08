@@ -22,7 +22,7 @@ tags:
   - ESP32 Display
   - Touch
 ---
-# ESP32 Touchscreen SPI Selector
+## ESP32 Touchscreen SPI Selector
 
 If your project uses an **ESP32 touchscreen with SPI**, the display and touch interfaces should be considered together. A board that works with the display may still have GPIO, controller, memory or touch-bus constraints.
 
