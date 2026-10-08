@@ -128,7 +128,7 @@ The MIPI-CSI interface also allows compatible cameras to be added for computer-v
 
 ## ESP32-P4 vs ESP32-S3 7-Inch
 
-| Feature | ESP32-S3-Touch-LCD-7 | ESP32-P4-WIFI6-Touch-LCD-7B |
+| Feature | [ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/) | ESP32-P4-WIFI6-Touch-LCD-7B |
 |---|---|---|
 | Display | 7" | 7" |
 | Resolution | 800 × 480 | **1024 × 600** |
