@@ -695,3 +695,29 @@ usb-5v-2a-power-supply:
       enabled: true
       affiliate_url: "https://s.click.aliexpress.com/e/_c3lXdcjT"
 
+#----------------
+
+sg90-micro-servo:
+
+  preferred_store: amazon
+
+  notes: "Amazon and AliExpress affiliate links for the SG90 Micro Servo supplied by the site owner."
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: true
+      affiliate_url: "https://amzn.to/3WgG9lO"
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c2xE75vB"
+
