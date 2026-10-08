@@ -124,14 +124,13 @@ Do not assume that the N or R variants have the same touch hardware: the N varia
 - ESP3D hardware reference: https://esp3d.io/esp3d-tft/version_1x/hardware/esp32-s3/sunton-43-8048/
 - Makerfabs Sunton documentation: https://wiki.makerfabs.com/Sunton_ESP32_S3_4.3_inch_800x400_IPS_with_Touch.html
 
-## Purchase Options
+## Purchase Option
 
-Compare these purchase options before ordering. Availability, price and shipping can vary by seller and destination.
+The AliExpress offer below is already referenced in the ESP32 Touchscreen Selector. Availability, price and shipping can vary, so verify the listing details before ordering.
 
-- **[Check the Makerfabs listing](https://www.makerfabs.com/sunton-esp32-s3-4-3-inch-ips-with-touch.html)** — manufacturer/distributor listing and documentation for the 4.3-inch capacitive-touch Sunton board. Check the current availability on the store page.
-- **[Check the AliExpress listing](https://www.aliexpress.com/item/1005006110360174.html)** — marketplace offer already referenced in the selector data. Confirm that the listing is specifically the ESP32-8048S043C capacitive GT911 variant, and check the display controller, seller, included accessories and shipping before ordering.
+- **[Check the AliExpress listing](https://www.aliexpress.com/item/1005006110360174.html)** — confirm that the listing is specifically the ESP32-8048S043C capacitive GT911 variant, and check the display controller, seller, included accessories and shipping before ordering.
 
-These are direct product links, not confirmed Embedded Nerd affiliate links. Replace them with your own affiliate URLs only after verifying that the destination and variant match this product. Stock and listing details can change.
+This is a direct product link, not a confirmed Embedded Nerd affiliate link. Replace it with your approved affiliate URL once the destination and variant have been verified. Stock and listing details can change.
 
 ## Embedded Nerd Guides & Selector
 
