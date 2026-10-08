@@ -24,7 +24,7 @@ tags:
   - Framebuffer
 ---
 
-# ESP32 Display with PSRAM Selector
+## ESP32 Display with PSRAM Selector
 
 If an ESP32 display project needs **PSRAM**, choosing the microcontroller family alone is not enough. Display resolution, color depth, framebuffer strategy, LVGL assets and other peripherals all affect memory requirements.
 
