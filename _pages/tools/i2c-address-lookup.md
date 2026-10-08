@@ -47,7 +47,7 @@ tags:
 ---
 ![I2C Address Lookup & Compatibility Checker](/assets/images/i2c-scanner-tutorial-arduino-esp32.webp)
 
-# I2C Address Lookup & Compatibility Checker
+## I2C Address Lookup & Compatibility Checker
 
 Use this free I2C tool to find common I2C device addresses and check whether multiple devices can share the same I2C bus.
 
