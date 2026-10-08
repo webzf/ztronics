@@ -24,7 +24,7 @@ Browse our collection of electronic components, development boards and accessori
 
 ---
 
-{% assign category_order = "Development Boards|Sensors|Displays|Modules|Components|Communication|Power|Accessories|Tools & Equipment" | split:"|" %}
+{% assign category_order = "Development Boards|Sensors|Displays|Modules|Components|Accessories|Tools & Equipment" | split:"|" %}
 
 {% for category in category_order %}
 
@@ -48,7 +48,7 @@ Temperature, humidity, motion, pressure and environmental sensors.
 OLED, LCD, TFT and e-paper displays.
 
 {% when "Modules" %}
-Relay, RFID, joystick and interface modules.
+Motor drivers, power supply modules, joystick and interface modules.
 
 {% when "Components" %}
 Electronic components for embedded systems, prototyping and hardware projects.
