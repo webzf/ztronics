@@ -188,7 +188,7 @@ For a full head-to-head, see [BMA400 vs MPU6050: Which Motion Sensor Should You 
 
 ### ICM-42670-P
 
-The **ICM-42670-P** is one of the most important modern alternatives to consider when the project requires both acceleration and gyroscope measurements.
+The [ICM-42670-P](/products/icm-42670-p/) is one of the most important modern alternatives to consider when the project requires both acceleration and gyroscope measurements. Its product page covers the specifications and interfaces in more detail.
 
 There is a particularly strong reason for considering it:
 
@@ -227,7 +227,7 @@ For most new Arduino or ESP32 projects that need both an accelerometer and a gyr
 
 ### ICM-42688-P
 
-The **ICM-42688-P** is another current-production 6-axis IMU from TDK InvenSense.
+The [ICM-42688-P](/products/icm-42688-p/) is another current-production 6-axis IMU from TDK InvenSense. Its product page provides the detailed specifications and design considerations.
 
 It is aimed more strongly at applications where sensor performance and low noise are important.
 
