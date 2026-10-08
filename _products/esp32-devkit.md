@@ -83,7 +83,7 @@ links:
 
 related:
 
-  - esp32-cam
+  - raspberry-pi-pico-w
   - ssd1306-oled
   - mpu6050
   - jumper-wires
