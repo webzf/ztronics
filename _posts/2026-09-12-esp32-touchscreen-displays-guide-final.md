@@ -522,6 +522,14 @@ The documented configuration used for this guide includes:
 
 This is a strong option when you want a modern finger-driven interface without building the display and ESP32 hardware as separate modules.
 
+### Sunton ESP32-8048S043C — 4.3-inch alternative
+
+[Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/)
+
+This is another 4.3-inch 800×480 ESP32-S3 option, with an RGB display interface, capacitive GT911 touch, 16 MB Flash and 8 MB PSRAM. Its USB-C connection uses a CH340C USB-to-UART bridge rather than exposing the ESP32-S3 native USB interface.
+
+It is worth comparing with the Waveshare 4.3-inch board when cost and the exact USB implementation matter. Check the [Sunton product page](/products/sunton-esp32-8048s043c/) for current purchase options and availability; the Makerfabs listing may be out of stock.
+
 ### Waveshare ESP32-S3-Touch-LCD-7
 
 [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/)
@@ -566,6 +574,8 @@ It is particularly interesting for:
 - more demanding embedded control panels.
 
 Unlike the ESP32-S3 7-inch board above, the P4 board is not simply a faster version of the same architecture. The processor, display interface, memory configuration and wireless subsystem are different, so the choice should be based on the complete system requirements.
+
+For current purchase options, version differences and availability, see the [ESP32-P4-WIFI6-Touch-LCD-7B product page](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/).
 
 For a practical example of the ESP32-P4 architecture in a larger touchscreen system, see the [ESP32-P4 Weather Station](/esp32-p4-weather-station/), which uses an ESP32-P4 with a separate wireless subsystem and MIPI-DSI display architecture. Note that the Weather Station uses a different 10.1-inch display, so the product linked here is a related P4 platform rather than the exact hardware used in that project.
 
