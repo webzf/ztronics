@@ -583,9 +583,9 @@ You can then troubleshoot the OLED application separately from the I2C connectio
 
 These inexpensive parts can help when a basic **I2C bus scanner** shows a wiring, voltage, address-conflict or signal problem.
 
-| Tool | When it helps | Amazon | AliExpress |
-|---|---|---|---|
-| TCA9548A I2C multiplexer | Two devices share the same fixed address, or you need separate I2C channels | [LINK AMAZON] | [LINK ALIEXPRESS] |
+| Tool | Embedded Nerd | When it helps | Amazon | AliExpress |
+|---|---|---|---|---|
+| TCA9548A I2C multiplexer | [TCA9548A product page](/products/tca9548a-i2c-multiplexer/) | Two devices share the same fixed address, or you need separate I2C channels | See product page | See product page |
 | Bidirectional 3.3 V / 5 V logic level shifter | Safely interface buses that use different logic voltages when level shifting is required | [LINK AMAZON] | [LINK ALIEXPRESS] |
 | USB logic analyzer | Inspect SDA/SCL activity when the scanner alone cannot explain a bus problem | [LINK AMAZON] | [LINK ALIEXPRESS] |
 
@@ -641,7 +641,7 @@ Possible solutions include:
 
 - Change one device's address if the module provides an address-select pin or jumper.
 - Use an address-selection jumper where available.
-- Use an I2C multiplexer such as the **TCA9548A** to put each device on its own logical channel.
+- Use an I2C multiplexer such as the [**TCA9548A**](/products/tca9548a-i2c-multiplexer/) to put each device on its own logical channel.
 - Use separate I2C buses when your microcontroller supports more than one.
 
 Always check the device documentation before changing an address.
@@ -856,7 +856,7 @@ Yes. Multiple I2C devices can share the same bus as long as their addresses do n
 
 ### Can two I2C devices have the same address?
 
-They can be connected physically, but if both devices respond to the same address, the microcontroller cannot independently select them using that address. You may need to change one device's address or use an I2C multiplexer such as the TCA9548A.
+They can be connected physically, but if both devices respond to the same address, the microcontroller cannot independently select them using that address. You may need to change one device's address or use an [I2C multiplexer such as the TCA9548A](/products/tca9548a-i2c-multiplexer/).
 
 ### What is the difference between 7-bit and 8-bit I2C addresses?
 
