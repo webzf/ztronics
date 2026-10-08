@@ -7,7 +7,7 @@ internal_links: true
 
 product_id: usb-5v-2a-power-supply
 
-category: Accessories
+category: Modules
 
 manufacturer: Generic
 image: "https://www.electropi.in/image/cache/catalog/mb102-breadboard-power-supply-module-800x800.jpg"
