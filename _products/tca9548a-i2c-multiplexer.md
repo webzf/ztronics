@@ -12,6 +12,10 @@ manufacturer: HiLetgo
 
 image: /assets/images/products/tca9548a-i2c-multiplexer.webp
 
+alt: "TCA9548A 8-channel I2C multiplexer breakout board"
+
+last_modified_at: 2026-10-09
+
 og_image: /assets/images/products/tca9548a-i2c-multiplexer.webp
 
 header:
@@ -62,6 +66,15 @@ related:
 The **TCA9548A I2C Multiplexer** is an 8-channel switch that allows multiple I2C devices to be separated into independent bus channels. It is particularly useful when two or more devices use the same I2C address and cannot be distinguished on a single bus.
 
 For example, if two identical OLED displays both respond at the same I2C address, a TCA9548A can place them on separate channels so the microcontroller can communicate with each one independently.
+
+## Where to Buy
+
+Compare the current price and availability using the purchase links below. These buttons lead directly to the product listings.
+
+<div class="product-buy-buttons">
+  <a class="btn btn--primary" href="https://amzn.to/4dVc55m" target="_blank" rel="sponsored nofollow noopener">Check Price on Amazon</a>
+  <a class="btn btn--success" href="https://s.click.aliexpress.com/e/_c2RIcacD" target="_blank" rel="sponsored nofollow noopener">Check Price on AliExpress</a>
+</div>
 
 ---
 
@@ -128,7 +141,7 @@ If two devices use the same address, first check whether one device can be moved
 
 ## Buy the TCA9548A I2C Multiplexer
 
-The product links above are affiliate links. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you.
+The Amazon and AliExpress buttons above are affiliate links. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you.
 
 ---
 
