@@ -39,6 +39,34 @@ tags:
 
 permalink: /products/tca9548a-i2c-multiplexer/
 
+specifications:
+  - name: Multiplexer IC
+    value: "Texas Instruments TCA9548A"
+
+  - name: Interface
+    value: "I2C / IIC"
+
+  - name: Number of Channels
+    value: "8 Bidirectional Channels"
+
+  - name: IC Supply Voltage
+    value: "1.65V to 5.5V"
+
+  - name: Maximum I2C Clock
+    value: "400 kHz"
+
+  - name: I2C Address Range
+    value: "0x70 to 0x77 (7-bit)"
+
+  - name: Address Selection
+    value: "A0, A1 and A2"
+
+  - name: Channel Selection
+    value: "Control Register; Multiple Channels Can Be Enabled"
+
+  - name: Reset
+    value: "Active-Low RESET Input"
+
 links:
 
   - title: Texas Instruments TCA9548A
