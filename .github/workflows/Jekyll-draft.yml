@@ -1,0 +1,49 @@
+name: Build Jekyll Drafts
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "_drafts/**"
+      - "_posts/**"
+      - "_layouts/**"
+      - "_includes/**"
+      - "_sass/**"
+      - "assets/**"
+      - "_config.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "_plugins/**"
+      - ".github/workflows/Jekyll-draft.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Validate commerce database
+        run: ruby scripts/validate-commerce.rb
+
+      - name: Build Jekyll with drafts
+        run: bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build --drafts
+
+      - name: Upload rendered site
+        uses: actions/upload-artifact@v4
+        with:
+          name: jekyll-draft-site
+          path: ./_site
+          retention-days: 7
