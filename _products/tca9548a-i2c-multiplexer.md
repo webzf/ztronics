@@ -69,25 +69,6 @@ For example, if two identical OLED displays both respond at the same I2C address
 
 ---
 
-## TCA9548A Specifications
-
-| Specification | Details |
-|---|---|
-| Multiplexer IC | Texas Instruments TCA9548A |
-| Interface | I2C / IIC |
-| Number of downstream channels | 8 bidirectional channels |
-| IC supply voltage | 1.65–5.5 V |
-| Maximum I2C clock frequency | 400 kHz |
-| Address pins | A0, A1 and A2 |
-| Configurable I2C addresses | 0x70–0x77 (7-bit address) |
-| Channel selection | One or more channels can be enabled through the control register |
-| Reset | Active-low RESET input on the IC |
-| Typical applications | Multiple I2C devices with duplicate addresses; separating I2C bus segments |
-
-**Important:** These are specifications of the TCA9548A IC, not a guarantee of every breakout board's implementation. The module's pin labels, pull-up resistors, voltage connections and availability of the RESET or address pins can vary by manufacturer. Check the exact board before wiring it. The IC's 1.65–5.5 V supply range should not be interpreted as proof that every module pin is 5 V tolerant.
-
----
-
 ## When to Use a TCA9548A
 
 A TCA9548A multiplexer is useful when:
