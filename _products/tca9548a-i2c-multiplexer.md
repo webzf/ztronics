@@ -67,15 +67,6 @@ The **TCA9548A I2C Multiplexer** is an 8-channel switch that allows multiple I2C
 
 For example, if two identical OLED displays both respond at the same I2C address, a TCA9548A can place them on separate channels so the microcontroller can communicate with each one independently.
 
-## Where to Buy
-
-Compare the current price and availability using the purchase links below. These buttons lead directly to the product listings.
-
-<div class="product-buy-buttons">
-  <a class="btn btn--primary" href="https://amzn.to/4dVc55m" target="_blank" rel="sponsored nofollow noopener">Check Price on Amazon</a>
-  <a class="btn btn--success" href="https://s.click.aliexpress.com/e/_c2RIcacD" target="_blank" rel="sponsored nofollow noopener">Check Price on AliExpress</a>
-</div>
-
 ---
 
 ## When to Use a TCA9548A
