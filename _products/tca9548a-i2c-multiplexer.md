@@ -74,16 +74,6 @@ links:
     description: Official TCA9548A datasheet and product information
     url: https://www.ti.com/product/TCA9548A
 
-  - title: Amazon
-    icon: fab fa-amazon
-    description: HiLetgo TCA9548A I2C IIC Multiplexer, 8 Channel
-    url: https://amzn.to/4dVc55m
-
-  - title: AliExpress
-    icon: fas fa-cart-shopping
-    description: TCA9548A I2C IIC 8-channel multiplexer module
-    url: https://s.click.aliexpress.com/e/_c2RIcacD
-
 related:
 
   - esp32-devkit
