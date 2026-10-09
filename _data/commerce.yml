@@ -721,3 +721,29 @@ sg90-micro-servo:
       enabled: true
       affiliate_url: "https://s.click.aliexpress.com/e/_c2xE75vB"
 
+
+#----------------
+
+tca9548a-i2c-multiplexer:
+
+  preferred_store: amazon
+
+  notes: "Amazon and AliExpress affiliate links supplied by the site owner."
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: true
+      affiliate_url: "https://amzn.to/4dVc55m"
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c2RIcacD"
