@@ -10,16 +10,16 @@ category: Modules
 
 manufacturer: HiLetgo
 
-image: /assets/images/products/tca9548a-i2c-multiplexer.webp
+image: https://ae04.alicdn.com/kf/HTB16_j8biDxK1RjSsphq6zHrpXat.jpg
 
 alt: "TCA9548A 8-channel I2C multiplexer breakout board"
 
 last_modified_at: 2026-10-09
 
-og_image: /assets/images/products/tca9548a-i2c-multiplexer.webp
+og_image: https://ae04.alicdn.com/kf/HTB16_j8biDxK1RjSsphq6zHrpXat.jpg
 
 header:
-  teaser: /assets/images/products/tca9548a-i2c-multiplexer.webp
+  teaser: https://ae04.alicdn.com/kf/HTB16_j8biDxK1RjSsphq6zHrpXat.jpg
 
 excerpt: "8-channel TCA9548A I2C multiplexer for connecting I2C devices with conflicting addresses to Arduino and ESP32 projects."
 
