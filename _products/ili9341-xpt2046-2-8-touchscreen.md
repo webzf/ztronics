@@ -3,6 +3,7 @@ layout: product
 
 internal_links: true
 title: "ILI9341 + XPT2046 2.8-inch Touchscreen"
+product_verdict: "Choose this standalone module if you already have a microcontroller and want a flexible SPI touchscreen; choose the CYD if you prefer an all-in-one ESP32 board."
 
 seo_title: "ILI9341 vs CYD: Which 2.8-Inch Display to Buy?"
 seo_description: "Compare the 2.8-inch ILI9341 and XPT2046 SPI touchscreen module with the ESP32 CYD board. Check resolution, touch, pros, cons and buying options."
@@ -101,6 +102,18 @@ related:
   - esp32-devkit
   - ssd1306-oled
 ---
+
+## Should You Buy the ILI9341 + XPT2046 Module?
+
+This module is a good fit when you already have an ESP32 or Arduino and want to add a 2.8-inch colour touchscreen without replacing your controller. It does require wiring, compatible libraries and touch calibration.
+
+| Choose this option | Best for | Main trade-off |
+|---|---|---|
+| **ILI9341 + XPT2046 module** | Adding a display to an existing ESP32 or Arduino | More wiring and configuration |
+| [**ESP32 CYD 2.8-inch board**](/products/esp32-2432s028-2-8-cyd/) | An integrated ESP32, display and resistive touch on one PCB | Board revisions can vary; less modular |
+| [**Sunton ESP32-8048S043C**](/products/sunton-esp32-8048s043c/) | A larger 4.3-inch 800×480 touchscreen setup | Larger board and a different hardware/software setup |
+
+Before ordering, confirm the module's pin labels and power circuitry with the seller. Generic breakout boards are not all identical. Use the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) to compare integrated alternatives.
 
 The **ILI9341 + XPT2046 2.8-inch Touchscreen** is a compact TFT display module combining a 240×320 LCD panel driven by the ILI9341 display controller with a resistive touch layer read by the XPT2046 touch controller.
 
