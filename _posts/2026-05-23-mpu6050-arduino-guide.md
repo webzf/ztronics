@@ -473,8 +473,9 @@ If you're working with the MPU6050 or other I2C devices, these tutorials may als
 - [I2C Scanner Tutorial](/i2c-scanner-tutorial/)
 - [ESP32 OLED Tutorial – Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)
 - [ESP32 Snake Game](/esp32-snake-game-with-mpu6050-and-oled-display/)
+- [BMA400 vs MPU6050 Comparison](/bma400-vs-mpu6050/)
 
-The I2C Scanner is especially useful when the MPU6050 is not detected, while the calibration guide is useful when the sensor is working but the readings need better accuracy.
+The I2C Scanner is especially useful when the MPU6050 is not detected, while the calibration guide is useful when the sensor is working but the readings need better accuracy. If you are choosing a sensor for a new design, the [MPU6050 alternatives guide](/mpu6050-discontinued-alternatives/) explains the replacement options.
 
 ---
 
