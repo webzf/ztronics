@@ -29,7 +29,7 @@ A **4.3-inch ESP32 touchscreen** is a practical size for dashboards, control pan
 
 The Embedded Nerd selector lets you compare 4.3-inch ESP32 display hardware using resolution, display interface, touch technology, touch interface, PSRAM, GPIO and other requirements.
 
-<a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/?display_present=yes&display_present_req=1&size_min=4&size_min_req=1&size_max=4.3&size_max_req=1">Open the 4.3-inch ESP32 selector</a>
+<a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/?display_present=yes&display_present_req=1&size_min=4&size_min_req=1&touch=yes&touch_req=1">Compare 4-inch-and-larger ESP32 touchscreens</a>
 
 ## What to check on a 4.3-inch ESP32 touchscreen
 
