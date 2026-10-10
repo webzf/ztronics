@@ -1,5 +1,6 @@
 ---
 title: "ESP32 Joystick Tutorial: Read an Analog Joystick (KY-023) with Arduino IDE"
+permalink: /esp32-joystick-tutorial/
 howto: true
 layout: single
 
