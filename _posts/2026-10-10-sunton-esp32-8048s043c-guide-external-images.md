@@ -1,9 +1,11 @@
 ---
-title: "Sunton ESP32-8048S043C: Arduino Pinout and Setup Guide"
+title: "Sunton ESP32-8048S043C Arduino Pinout, Code & Setup"
+title_tag: "Sunton ESP32-8048S043C Arduino Pinout & Setup"
+hide_post_pagination: true
 layout: single
 permalink: /sunton-esp32-8048s043c-guide/
 nav: embedded
-excerpt: "Sunton ESP32-8048S043C pinout, Arduino example, GT911 touch, microSD GPIOs, ESPHome setup, specifications and buying comparisons."
+excerpt: "Arduino code and pinout for the Sunton ESP32-8048S043C: RGB display setup, GT911 touch, microSD GPIOs, LVGL, ESPHome and buying tips."
 show_date: false
 last_modified_at: 2026-10-10
 author: "Embedded Nerd"
@@ -16,6 +18,9 @@ overlay_image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
 overlay_filter: 0.5
 image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
 og_image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
+header:
+  og_image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
+  og_image_alt: "Sunton ESP32-8048S043C yellow PCB with 4.3-inch 800x480 touchscreen and ESP32-S3"
 categories:
   - Displays
 tags:
@@ -33,7 +38,7 @@ The **Sunton ESP32-8048S043C** is an all-in-one board built around an ESP32-S3, 
 
 > **Testing note:** This guide is based on manufacturer documentation and publicly available hardware references and example projects. Embedded Nerd has not independently tested this board for this article. Pin assignments can vary by revision, so confirm them against your board's schematic before wiring peripherals.
 
-> **Affiliate disclosure:** Some links on Embedded Nerd may be affiliate links. If you buy through an eligible link, we may earn a commission at no extra cost to you.
+> **Affiliate disclosure:** The AliExpress link in this guide is an affiliate link. Embedded Nerd may earn a commission if you purchase through it, at no extra cost to you.
 
 Before buying one, however, there are a few things worth checking. Sunton sells several similar boards, including capacitive and resistive versions, and the exact hardware revision can affect the pinout and recommended configuration.
 
@@ -176,9 +181,82 @@ The important point when evaluating the board before buying is that it can handl
 
 ## Arduino code example: display and touch
 
-For a complete Arduino_GFX + GT911 + LVGL implementation, start from the [Sunton-ESP32-8048S043 PlatformIO example on GitHub](https://github.com/clumsyCoder00/Sunton-ESP32-8048S043). It includes the project configuration and required libraries; the UI is built with EEZ Studio and LVGL 9.x.
+The sketch below is a **minimal Arduino_GFX display and GT911 touch test** for the common 8048S043C pin mapping. It draws a test message and prints touch coordinates to Serial. It is based on published hardware references, not a bench test by Embedded Nerd; timing and touch behavior can vary by board revision.
 
-There is no single universally safe copy-and-paste sketch for every board sold under this name: RGB timing, touch configuration, PSRAM settings and library versions need to match the hardware. The project README specifies Arduino_GFX 1.4.7, GT911 1.0.2 and LVGL 9.1.0, so use those versions as a reproducible starting point rather than mixing libraries arbitrarily.
+Install **Arduino_GFX** and **TAMC_GT911** from Library Manager, install Espressif's ESP32 board package, select **ESP32S3 Dev Module**, enable **OPI PSRAM**, and select the flash size that matches your module (commonly 16 MB for N16R8).
+
+
+
+```cpp
+#include <Arduino.h>
+#include <Arduino_GFX_Library.h>
+#include <TAMC_GT911.h>
+
+#define SCREEN_WIDTH  800
+#define SCREEN_HEIGHT 480
+#define TFT_BL        2
+#define TOUCH_SDA     19
+#define TOUCH_SCL     20
+#define TOUCH_RST     38
+// The GT911 INT line is normally not connected on this board; use polling.
+#define TOUCH_INT     -1
+
+Arduino_ESP32RGBPanel *rgbPanel = new Arduino_ESP32RGBPanel(
+  40, 41, 39, 42,                         // DE, VSYNC, HSYNC, PCLK
+  45, 48, 47, 21, 14,                     // R0-R4
+  5, 6, 7, 15, 16, 4,                      // G0-G5
+  8, 3, 46, 9, 1,                          // B0-B4
+  0, 8, 4, 8,                              // HSYNC polarity, front porch, pulse, back porch
+  0, 8, 4, 8,                              // VSYNC polarity, front porch, pulse, back porch
+  1, 12500000                              // PCLK active-negative, target pixel clock (12.5 MHz)
+);
+
+Arduino_RGB_Display *gfx = new Arduino_RGB_Display(
+  SCREEN_WIDTH, SCREEN_HEIGHT, rgbPanel
+);
+
+TAMC_GT911 touch(TOUCH_SDA, TOUCH_SCL, TOUCH_INT, TOUCH_RST,
+                 SCREEN_WIDTH, SCREEN_HEIGHT);
+
+void setup() {
+  Serial.begin(115200);
+  delay(300);
+
+  pinMode(TFT_BL, OUTPUT);
+  digitalWrite(TFT_BL, HIGH);
+
+  if (!psramFound()) {
+    Serial.println("PSRAM not found: enable OPI PSRAM in Tools.");
+    while (true) delay(1000);
+  }
+
+  if (!gfx->begin()) {
+    Serial.println("Display initialization failed.");
+    while (true) delay(1000);
+  }
+  gfx->fillScreen(BLACK);
+  gfx->setTextColor(WHITE);
+  gfx->setTextSize(2);
+  gfx->setCursor(24, 24);
+  gfx->println("8048S043C display OK");
+
+  touch.begin();
+  touch.setRotation(ROTATION_NORMAL);
+  Serial.println("Touch initialized; tap the screen to read coordinates.");
+}
+
+void loop() {
+  touch.read();
+  if (touch.isTouched) {
+    Serial.printf("Touch: x=%d, y=%d\\n",
+                  touch.points[0].x, touch.points[0].y);
+    delay(100);
+  }
+  delay(10);
+}
+```
+
+If the screen is blank or unstable, do not guess new timing values: compare the display timing and GPIO map against the [ESP3D hardware reference](https://esp3d.io/esp3d-tft/version_1x/hardware/esp32-s3/sunton-43-8048/) and your exact revision. For a complete LVGL project, use the [Sunton-ESP32-8048S043 example](https://github.com/clumsyCoder00/Sunton-ESP32-8048S043), which includes its library configuration.
 
 A sensible bring-up sequence is:
 
@@ -282,9 +360,11 @@ Compare screen size, resolution and PSRAM before choosing, using our [ESP32 touc
 
 ## Sunton ESP32-8048S043C price & availability
 
-**Check current price and availability on the [Embedded Nerd product page]({{ site.url }}/products/sunton-esp32-8048s043c/).** Before ordering, confirm that the listing is for the **8048S043C capacitive GT911 variant**, not the R resistive or N no-touch version.
+**[Check the Sunton ESP32-8048S043C on AliExpress →](https://s.click.aliexpress.com/e/_c2zi4HDn){: rel="sponsored nofollow noopener" target="_blank"}**
 
-Prices, shipping costs, taxes and stock can change by seller and destination. Compare the total delivered price and verify the board revision before buying. The link above leads to our product information page; use the current purchase options shown there.
+Before ordering, confirm that the listing is for the **8048S043C capacitive GT911 variant**, not the R resistive or N no-touch version. The exact model identifier behind the short affiliate URL is not exposed to Embedded Nerd, so verify the seller's photos and specifications carefully.
+
+Prices, shipping, taxes and stock vary by seller and destination. Compare the **total delivered price** and check the board revision before buying. You can also review the [technical product page]({{ site.url }}/products/sunton-esp32-8048s043c/) before deciding.
 
 ## FAQ
 
@@ -302,7 +382,11 @@ The common N16R8 version has **8 MB of octal PSRAM** and **16 MB of flash**. Che
 
 ### Is the 8048S043C capacitive or resistive?
 
-The **C** version is capacitive and uses the GT911. The **R** version uses resistive touch hardware and a different controller.
+The **C** version is capacitive and uses the GT911. The **R** version uses resistive touch hardware and a different controller. Some listings also use **8048S043** without the suffix as a family name, and an **N** variant is listed without touch. Verify the exact board before buying.
+
+### Is the 8048S043N version touchscreen-enabled?
+
+The N variant is listed as a no-touch version in some references. Do not assume it has a GT911; confirm the listing and board revision.
 
 ### Is it suitable for LVGL?
 
@@ -323,6 +407,50 @@ For example, I2C sensors such as the [MPU6050]({{ site.url }}/mpu6050-arduino-gu
 ## About the author
 
 **Embedded Nerd** publishes practical guides on ESP32 boards, embedded hardware, displays, sensors and development tools. This guide is based on manufacturer documentation and referenced community projects; the board was not independently tested for this article.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.excerpt | strip_html | strip_newlines | jsonify }},
+  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ page.url | absolute_url | jsonify }} },
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+  "author": { "@type": "Organization", "name": "Embedded Nerd", "url": {{ site.url | jsonify }} },
+  "publisher": { "@type": "Organization", "name": "Embedded Nerd", "url": {{ site.url | jsonify }} },
+  "image": [{{ page.image | absolute_url | jsonify }}]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ site.url | append: "/" | jsonify }} },
+    { "@type": "ListItem", "position": 2, "name": "ESP32 Touchscreen Displays Guide", "item": {{ "/esp32-touchscreen-displays-guide/" | absolute_url | jsonify }} },
+    { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": {{ page.url | absolute_url | jsonify }} }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is the Sunton ESP32-8048S043C worth buying?", "acceptedAnswer": { "@type": "Answer", "text": "It is a good option if you want an integrated ESP32-S3 and 4.3-inch 800×480 capacitive touchscreen in a single board. Confirm the exact hardware revision and software configuration." } },
+    { "@type": "Question", "name": "Which touch controller does the 8048S043C use?", "acceptedAnswer": { "@type": "Answer", "text": "The capacitive version uses a GT911 over I2C, normally on GPIO19 and GPIO20." } },
+    { "@type": "Question", "name": "Does the 8048S043C have PSRAM?", "acceptedAnswer": { "@type": "Answer", "text": "The common N16R8 version has 8 MB of octal PSRAM and 16 MB of flash. Verify the exact listing because variants exist." } },
+    { "@type": "Question", "name": "Is the 8048S043C capacitive or resistive?", "acceptedAnswer": { "@type": "Answer", "text": "The C version is capacitive and uses the GT911. The R version uses resistive touch hardware and a different controller." } },
+    { "@type": "Question", "name": "Is the 8048S043N version touchscreen-enabled?", "acceptedAnswer": { "@type": "Answer", "text": "The N variant is listed as a no-touch version in some references. Verify the seller's exact board and specifications." } },
+    { "@type": "Question", "name": "Is it suitable for LVGL?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The ESP32-S3, RGB display and PSRAM are suitable for graphics-heavy LVGL interfaces when the display configuration is correct." } },
+    { "@type": "Question", "name": "Should I buy the 8048S043C or another ESP32 touchscreen?", "acceptedAnswer": { "@type": "Answer", "text": "Compare display size, resolution, touch technology, GPIO requirements, PSRAM and software support before choosing." } },
+    { "@type": "Question", "name": "Can I connect other sensors?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use free expansion pins and ensure I2C addresses do not conflict with the touch controller." } }
+  ]
+}
+</script>
 
 ## Final verdict
 
