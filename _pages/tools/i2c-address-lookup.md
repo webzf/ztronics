@@ -407,7 +407,7 @@ Possible solutions include:
 
 - Changing one device's address
 - Using another I2C bus
-- Using an I2C multiplexer such as the TCA9548A
+- Using an [I2C multiplexer such as the TCA9548A](/products/tca9548a-i2c-multiplexer/) to place same-address devices on separate channels
 - Using a different module with a configurable address
 
 ## I2C Scanner
