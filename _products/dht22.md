@@ -4,6 +4,7 @@ layout: product
 internal_links: true
 
 title: "DHT22 Temperature & Humidity Sensor"
+product_verdict: "A straightforward option for temperature and humidity only; choose the BME280 if you also need barometric pressure or SPI."
 
 seo_title: "DHT22 vs BME280: Which Sensor to Buy?"
 seo_description: "DHT22 offers simple temperature and humidity readings; BME280 adds barometric pressure and I2C/SPI. Compare specs, pros, cons and buying options."
@@ -97,6 +98,20 @@ related:
   - solderless-breadboard
   - jumper-wires
 ---
+## DHT22 vs BME280: Which Should You Buy?
+
+Choose the **DHT22** for basic temperature and humidity monitoring when pressure readings are unnecessary. Its single-bus interface is easy to use, although readings are slower than many modern digital sensors.
+
+Choose the **[BME280](/products/bme280/)** for temperature, humidity and barometric pressure in weather stations or compact environmental monitors. It also offers I²C and SPI interfaces.
+
+| Requirement | Better fit |
+|---|---|
+| Temperature and humidity only | DHT22 |
+| Temperature, humidity and pressure | [BME280](/products/bme280/) |
+| SPI interface | BME280 |
+| Simple basic monitoring | DHT22 |
+
+
 
 The **DHT22** is a digital temperature and relative humidity sensor commonly used in Arduino, ESP32, Raspberry Pi, and other embedded electronics projects. It is also known as the **AM2302**.
 
