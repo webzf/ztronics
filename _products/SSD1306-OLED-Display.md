@@ -1,7 +1,7 @@
 ---
 layout: product
-
 title: "SSD1306 OLED Display"
+product_verdict: "A good choice for compact monochrome status screens and sensor readouts; choose a TFT if you need colour or a larger interface."
 seo_title: "SSD1306 OLED: Specs & Where to Buy"
 seo_description: "Compare 0.96-inch SSD1306 OLED displays with 128×64 resolution, I2C and low power use. See pros, cons, alternatives and where to buy."
 
@@ -88,6 +88,15 @@ related:
   - solderless-breadboard
   - jumper-wires
 ---
+## Is an SSD1306 OLED the Right Display?
+
+Choose a 0.96-inch SSD1306 OLED when you want a compact, high-contrast monochrome display for sensor values, menus or status information. The common I2C version uses only SDA and SCL, which keeps wiring simple.
+
+Choose an **[ST7789 TFT](/products/st7789-tft/)** or an **[ILI9341 touchscreen module](/products/ili9341-xpt2046-2-8-touchscreen/)** if your project needs colour graphics. For ESP32 projects with a display and processor integrated on one board, use the **[ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/)**.
+
+Check the module's actual resolution, pin labels, I2C address and supply arrangement before buying; breakout boards sold under the SSD1306 name can differ.
+
+
 
 
 
