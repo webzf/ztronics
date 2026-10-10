@@ -5,6 +5,8 @@ internal_links: true
 
 title: "DHT22 Temperature & Humidity Sensor"
 
+seo_title: "DHT22 vs BME280: Which Sensor to Buy?"
+seo_description: "DHT22 offers simple temperature and humidity readings; BME280 adds barometric pressure and I2C/SPI. Compare specs, pros, cons and buying options."
 product_id: dht22
 
 category: Sensors
