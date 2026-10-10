@@ -4,6 +4,8 @@ layout: product
 internal_links: true
 
 title: "ESP32 DevKit V1"
+seo_title: "ESP32 DevKit V1: Specs, Pros & Cons"
+seo_description: "ESP32 DevKit V1 with dual-core 240 MHz CPU, Wi-Fi and Bluetooth. Compare specs, pros and cons, alternatives and where to buy."
 
 product_id: esp32-devkit
 
