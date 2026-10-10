@@ -1036,6 +1036,7 @@ If you want to learn more about the MPU6050 and related projects, these guides a
 - [I2C Scanner Tutorial](/i2c-scanner-tutorial/) — Check whether your MPU6050 is detected correctly on the I2C bus.
 - [ESP32 Snake Game with MPU6050 and OLED Display](/esp32-snake-game-with-mpu6050-and-oled-display/) — Use the MPU6050 as a motion controller in an ESP32 project.
 - [ESP32 OLED Tutorial](/esp32-oled-tutorial-wiring-code-display-guide/) — Learn how to connect and use an SSD1306 OLED display with the ESP32.
+- [MPU6050 Alternatives and Replacements](/mpu6050-discontinued-alternatives/) — Compare newer sensors if you are starting a new design.
 
 Future MPU6050 guides can cover topics such as gyroscope drift, troubleshooting, advanced accelerometer calibration, and using the MPU6050 with the ESP32.
 
