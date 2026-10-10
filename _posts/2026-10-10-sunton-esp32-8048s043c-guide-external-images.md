@@ -358,7 +358,7 @@ The main trade-off is not only screen size: resolution, touch technology, displa
 
 Check each vendor's current documentation for memory, connector and touch-controller details; similar model names do not guarantee interchangeable pinouts or software configurations.
 
-Compare screen size, resolution and PSRAM before choosing, using our [ESP32 touchscreen comparison tool]({{ site.url }}/tools/esp32-touchscreen-selector/).
+For a focused comparison, use the [ESP32 4.3-inch touchscreen selector]({{ site.url }}/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/) or the [800×480 display selector]({{ site.url }}/tools/esp32-touchscreen-selector/800x480/).
 
 ## Sunton ESP32-8048S043C price & availability
 
