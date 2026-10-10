@@ -76,7 +76,7 @@ waveshare-esp32-s3-touch-lcd-4-3:
 
     amazon:
       enabled: true
-      affiliate_url: "https://amzn.to/4xKolNV"
+      affiliate_url: "https://www.amazon.com/dp/B0D7HN3XQ5?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: true
@@ -132,7 +132,7 @@ raspberry-pi-pico:
 
     amazon:
       enabled: true
-      affiliate_url: "https://amzn.to/3UoICdl"
+      affiliate_url: "https://www.amazon.com/dp/B09KVB8LVR?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: false
@@ -159,7 +159,7 @@ raspberry-pi-pico-w:
 
     amazon:
       enabled: true
-      affiliate_url: "https://amzn.to/4dbsORp"
+      affiliate_url: "https://www.amazon.com/dp/B0DP54FWX1?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: false
@@ -634,7 +634,7 @@ waveshare-esp32-p4-wifi6-touch-lcd-7b:
 
     amazon:
       enabled: true
-      affiliate_url: "https://amzn.to/4ee0Q88"
+      affiliate_url: "https://www.amazon.com/dp/B0FTLW5RKN?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: true
@@ -663,7 +663,7 @@ l298n-motor-driver:
 
     amazon:
       enabled: true
-      affiliate_url: "https://amzn.to/4zgLkk2"
+      affiliate_url: "https://www.amazon.com/dp/B0C5JCF5RS?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: true
@@ -689,7 +689,7 @@ usb-5v-2a-power-supply:
 
     amazon:
       enabled: true
-      affiliate_url: "https://amzn.to/4dormvj"
+      affiliate_url: "https://www.amazon.com/dp/B0BP9V6WXX?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: true
@@ -715,7 +715,7 @@ sg90-micro-servo:
 
     amazon:
       enabled: true
-      affiliate_url: "https://amzn.to/3WgG9lO"
+      affiliate_url: "https://www.amazon.com/dp/B0BKPL2Y21?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: true
@@ -742,7 +742,7 @@ tca9548a-i2c-multiplexer:
 
     amazon:
       enabled: true
-      affiliate_url: "https://amzn.to/4dVc55m"
+      affiliate_url: "https://www.amazon.com/dp/B06XXG5G3L?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: true
