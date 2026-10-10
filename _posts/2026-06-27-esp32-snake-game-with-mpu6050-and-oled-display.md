@@ -790,15 +790,16 @@ The **[BMA400 Accelerometer Module](/products/bma400/)** is a modern low-power o
 
 [Buy the BMA400 Accelerometer Module →](/go/hardware/bma400/)
 
-For the full comparison, see [Is the MPU6050 Discontinued? Alternatives & Replacements for Arduino and ESP32](/mpu6050-discontinued-alternatives/).
+For the full comparison, see [Is the MPU6050 Discontinued? Alternatives & Replacements for Arduino and ESP32](/mpu6050-discontinued-alternatives/). For a direct feature-by-feature comparison, read [BMA400 vs MPU6050](/bma400-vs-mpu6050/).
 
 ---
 
 ## Related Tutorials
 
-- [MPU6050 Arduino Guide](../mpu6050-arduino-guide/)
-- [ESP32 OLED Display Guide](../esp32-oled-tutorial-wiring-code-display-guide/)
-- [I2C Scanner Tutorial](../i2c-scanner-tutorial/)
+- [MPU6050 Arduino Guide](/mpu6050-arduino-guide/)
+- [MPU6050 Calibration Guide](/mpu6050-calibration-guide/)
+- [ESP32 OLED Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)
+- [I2C Scanner Tutorial](/i2c-scanner-tutorial/)
 - [ESP32 Joystick Tutorial](/esp32-joystick-tutorial/)
 
 ---
