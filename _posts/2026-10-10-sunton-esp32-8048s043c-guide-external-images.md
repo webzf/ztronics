@@ -392,7 +392,7 @@ The N variant is listed as a no-touch version in some references. Do not assume 
 
 ### Is it suitable for LVGL?
 
-Yes. The ESP32-S3, RGB display and PSRAM make it suitable for graphics-heavy LVGL interfaces, provided the display configuration is correct.
+Yes. The ESP32-S3, RGB display and PSRAM make it suitable for graphics-heavy LVGL interfaces, provided the display configuration is correct. If you are comparing boards for this type of project, use the [ESP32-S3 LVGL Display Selector]({{ site.url }}/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) to narrow the options by family and memory requirements.
 
 ### Should I buy the 8048S043C or another ESP32 touchscreen?
 
