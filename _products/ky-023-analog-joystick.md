@@ -3,6 +3,8 @@ layout: product
 
 internal_links: true
 
+seo_title: "KY-023 Joystick: Specs, Wiring & Where to Buy"
+seo_description: "KY-023 analog joystick with dual-axis outputs and push button for Arduino and ESP32. Check specs, pros and cons, wiring guide and buying options."
 title: "KY-023 Analog Joystick Module: Pinout & Specifications"
 
 product_id: ky-023-joystick
