@@ -1,6 +1,8 @@
 ---
 layout: product
 
+seo_title: "TB6612FNG vs L298N: Which Motor Driver to Buy?"
+seo_description: "Compare TB6612FNG and L298N motor drivers by voltage, current, efficiency and heat. Find the right driver for Arduino and ESP32 projects."
 title: "TB6612FNG Motor Driver Module"
 
 internal_links: true
