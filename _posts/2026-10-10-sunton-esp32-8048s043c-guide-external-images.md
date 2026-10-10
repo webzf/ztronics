@@ -163,7 +163,9 @@ The published hardware reference describes these header assignments:
 | P3 | GPIO20, GPIO19, GPIO18, GPIO17 |
 | P4 | GPIO18, GPIO17, 3.3 V, GND |
 
-**These are not all independent GPIOs.** GPIO19/20 are shared with touch I2C, GPIO11–13 are used by microSD, and GPIO18 may be associated with touch interrupt. Confirm the connector orientation and the schematic for your exact revision before connecting hardware. The RGB bus occupies many other GPIOs.
+**These are not all independent GPIOs.** GPIO19/20 are shared with touch I2C, GPIO11–13 are used by microSD, and GPIO18 is associated with the optional GT911 interrupt modification. Confirm the connector orientation and the schematic for your exact revision before connecting hardware. The RGB bus occupies many other GPIOs.
+
+On the published ESP3D pin reference, **GPIO17 is marked NC on the main pin list but is routed to the P3/P4 expansion headers**. It is the most promising candidate for a simple extra digital signal, but treat it as *potentially available*, not guaranteed free, until you confirm the exact board schematic. GPIO33/34 are listed as NA and GPIO35–37 as NC/NA; do not assume they are exposed or usable. Avoid GPIO43/44 for general peripherals because they are used by the USB-to-UART serial path.
 
 ## Software and library compatibility
 
