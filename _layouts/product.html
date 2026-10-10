@@ -7,6 +7,10 @@ classes: wide
 
 <div class="product-page">
 
+  {% if page.product_verdict %}
+    <p class="product-verdict"><strong>Verdict:</strong> {{ page.product_verdict | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  {% endif %}
+
   {% comment %}
   ============================================================================
   Product Header / Commerce Box
