@@ -2,6 +2,8 @@
 layout: product
 internal_links: true
 title: "Sunton ESP32-8048S043C"
+seo_title: "Sunton ESP32-8048S043C: Specs & Buying Guide"
+seo_description: "Sunton ESP32-S3 board with 4.3-inch 800×480 IPS, GT911 capacitive touch, 16MB Flash and 8MB PSRAM. Compare pros, alternatives and where to buy."
 product_id: sunton-esp32-8048s043c
 category: Displays
 manufacturer: "Sunton"
