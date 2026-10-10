@@ -65,7 +65,14 @@
 
   <span class="en-buy-text">
 
-    <strong>Check Price</strong>
+    {% case store_key %}
+      {% when "amazon" %}
+        <strong>Check Price</strong>
+      {% when "aliexpress" %}
+        <strong>View Offer</strong>
+      {% else %}
+        <strong>View Product</strong>
+    {% endcase %}
 
     <small>on {{ store_info.name }}</small>
 
