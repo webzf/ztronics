@@ -2,6 +2,7 @@
 layout: product
 
 title: "TCA9548A I2C Multiplexer"
+product_verdict: "Use the TCA9548A when multiple I²C devices share the same fixed address; if each device can use a different address, a multiplexer may not be necessary."
 
 internal_links: true
 seo_title: "TCA9548A I2C Multiplexer: Specs & Buying Guide"
@@ -101,6 +102,18 @@ A TCA9548A multiplexer is useful when:
 Before adding a multiplexer, check whether the device provides an address-select pin or jumper. Changing the address may be simpler when that option is available.
 
 ---
+
+## Is a TCA9548A Multiplexer Necessary?
+
+Use a TCA9548A when two or more I²C devices need the same address and cannot be reconfigured to different addresses. If the devices already have unique addresses, they can normally share one bus and you may not need a multiplexer.
+
+The chip provides eight selectable downstream channels and supports up to 400 kHz I²C clocking. Check the breakout board's voltage and pull-up arrangement: the IC supports 1.65–5.5 V, but a module's wiring and pull-up resistors affect how it should be connected to a 3.3 V or 5 V host.
+
+| Situation | Recommended approach |
+|---|---|
+| Devices have unique I²C addresses | Share one bus, subject to bus loading and wiring limits |
+| Same-address devices with configurable addresses | Change an address if practical |
+| Same-address devices with fixed addresses | Use separate TCA9548A channels |
 
 ## TCA9548A and I2C Address Conflicts
 
