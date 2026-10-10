@@ -628,7 +628,7 @@ The two BMA400 I2C addresses are `0x14` and `0x15`.
 
 If the sensor does not respond, use an I2C scanner.
 
-Our [I2C Scanner Tutorial]({{ '/i2c-scanner-tutorial-arduino-esp32/' | relative_url }}) explains how to detect devices connected to an I2C bus.
+Our [I2C Scanner Tutorial]({{ '/i2c-scanner-tutorial/' | relative_url }}) explains how to detect devices connected to an I2C bus.
 
 ### Sensor Values Do Not Change
 
@@ -804,7 +804,7 @@ The [MPU6050 Calibration Guide]({{ '/mpu6050-calibration-guide/' | relative_url 
 
 ### I2C Scanner
 
-The [I2C Scanner Tutorial]({{ '/i2c-scanner-tutorial-arduino-esp32/' | relative_url }}) is useful when troubleshooting BMA400 communication or working with multiple I2C devices.
+The [I2C Scanner Tutorial]({{ '/i2c-scanner-tutorial/' | relative_url }}) is useful when troubleshooting BMA400 communication or working with multiple I2C devices.
 
 ### ESP32 OLED
 
