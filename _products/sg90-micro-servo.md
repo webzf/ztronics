@@ -1,6 +1,8 @@
 ---
 layout: product
 
+seo_title: "SG90 Micro Servo: Specs, Pros & Where to Buy"
+seo_description: "SG90 9g micro servo with PWM control and roughly 180° travel. Compare specs, pros and cons, power requirements and where to buy."
 title: "SG90 Micro Servo"
 
 internal_links: true
