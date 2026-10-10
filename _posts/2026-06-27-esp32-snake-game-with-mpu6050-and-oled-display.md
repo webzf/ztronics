@@ -799,7 +799,7 @@ For the full comparison, see [Is the MPU6050 Discontinued? Alternatives & Replac
 - [MPU6050 Arduino Guide](../mpu6050-arduino-guide/)
 - [ESP32 OLED Display Guide](../esp32-oled-tutorial-wiring-code-display-guide/)
 - [I2C Scanner Tutorial](../i2c-scanner-tutorial/)
-- [ESP32 Joystick Tutorial](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)
+- [ESP32 Joystick Tutorial](/esp32-joystick-tutorial/)
 
 ---
 
