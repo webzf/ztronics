@@ -140,11 +140,9 @@ Do not assume that the N or R variants have the same touch hardware: the N varia
 - ESP3D hardware reference: https://esp3d.io/esp3d-tft/version_1x/hardware/esp32-s3/sunton-43-8048/
 - Makerfabs Sunton documentation: https://wiki.makerfabs.com/Sunton_ESP32_S3_4.3_inch_800x400_IPS_with_Touch.html
 
-## Purchase Option
+## Purchase Considerations
 
-**[Check the Sunton ESP32-8048S043C on AliExpress →](https://s.click.aliexpress.com/e/_c2zi4HDn){: rel="sponsored nofollow noopener" target="_blank"}**
-
-This is an affiliate link. Embedded Nerd may earn a commission from eligible purchases at no extra cost to you. The exact product ID behind the short URL is not exposed to Embedded Nerd, so verify the listing, seller photos and the **8048S043C capacitive GT911 variant** before ordering. Prices, shipping and stock can change; compare the total delivered cost.
+Use the purchase option above to check the current offer. The exact product ID behind the short affiliate URL is not exposed to Embedded Nerd, so verify the listing, seller photos and the **8048S043C capacitive GT911 variant** before ordering. Compare the total delivered cost and confirm the model suffix, display interface, touch controller and included accessories.
 
 For wiring, code, touch setup and known limitations, read the [Sunton ESP32-8048S043C Arduino pinout and setup guide](/sunton-esp32-8048s043c-guide/).
 
