@@ -4,6 +4,8 @@ layout: product
 title: "TCA9548A I2C Multiplexer"
 
 internal_links: true
+seo_title: "TCA9548A I2C Multiplexer: Specs & Buying Guide"
+seo_description: "Connect up to 8 I2C bus channels and isolate address conflicts with the TCA9548A. Compare alternatives, key specs, wiring guide and where to buy."
 product_id: tca9548a-i2c-multiplexer
 
 category: Modules
