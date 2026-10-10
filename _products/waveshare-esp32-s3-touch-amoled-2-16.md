@@ -2,7 +2,7 @@
 layout: product
 internal_links: true
 title: "Waveshare ESP32-S3-Touch-AMOLED-2.16"
-product_verdict: "A good fit for a compact square 480×480 AMOLED UI; choose the 2.41-inch model for more vertical resolution or a larger LCD board for a conventional HMI panel."
+product_verdict: "A good fit for a compact square 480×480 AMOLED UI; choose the 2.41-inch model for a larger physical panel, or a larger LCD board for a conventional HMI."
 seo_title: "Waveshare ESP32-S3 AMOLED 2.16: Specs & Guide"
 seo_description: "Explore the Waveshare ESP32-S3-Touch-AMOLED-2.16: 480×480 AMOLED touchscreen, ESP32-S3, PSRAM, IMU, RTC, audio and alternatives."
 product_id: waveshare-esp32-s3-touch-amoled-2-16
