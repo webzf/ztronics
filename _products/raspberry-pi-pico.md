@@ -3,6 +3,8 @@ layout: product
 
 internal_links: true
 
+seo_title: "Raspberry Pi Pico: Specs, Pros & Where to Buy"
+seo_description: "RP2040 microcontroller board with dual-core 133 MHz CPU, 264 KB SRAM and 26 GPIO. Compare specs, alternatives and where to buy."
 title: "Raspberry Pi Pico"
 
 product_id: raspberry-pi-pico
