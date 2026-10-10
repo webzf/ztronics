@@ -79,8 +79,8 @@ waveshare-esp32-s3-touch-lcd-4-3:
       affiliate_url: "https://amzn.to/4xKolNV"
 
     aliexpress:
-      enabled: false
-      affiliate_url: "https://s.click.aliexpress.com/e/_c3LI5MHD"
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3leL4xB"
 
 
 #----------------
