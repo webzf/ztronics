@@ -30,7 +30,7 @@ A **7-inch ESP32 touchscreen** is useful when the physical interface matters as 
 
 The Embedded Nerd selector helps compare 7-inch ESP32 display hardware by resolution, interface, touch, PSRAM, GPIO, USB, storage and other requirements.
 
-<a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/?display_present=yes&display_present_req=1&size_min=7&size_min_req=1">Open the 7-inch ESP32 selector</a>
+<a class="btn btn--primary" href="/tools/esp32-touchscreen-selector/?display_present=yes&display_present_req=1&size_min=7&size_min_req=1&touch=yes&touch_req=1">Open the 7-inch ESP32 touchscreen selector</a>
 
 ## Why choose a 7-inch ESP32 display?
 
