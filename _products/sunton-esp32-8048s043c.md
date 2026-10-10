@@ -126,13 +126,15 @@ Do not assume that the N or R variants have the same touch hardware: the N varia
 
 ## Purchase Option
 
-The AliExpress offer below is already referenced in the ESP32 Touchscreen Selector. Availability, price and shipping can vary, so verify the listing details before ordering.
+**[Check the Sunton ESP32-8048S043C on AliExpress →](https://s.click.aliexpress.com/e/_c2zi4HDn){: rel="sponsored nofollow noopener" target="_blank"}**
 
-- **[Check the AliExpress listing](https://www.aliexpress.com/item/1005006110360174.html)** — confirm that the listing is specifically the ESP32-8048S043C capacitive GT911 variant, and check the display controller, seller, included accessories and shipping before ordering.
+This is an affiliate link. Embedded Nerd may earn a commission from eligible purchases at no extra cost to you. The exact product ID behind the short URL is not exposed to Embedded Nerd, so verify the listing, seller photos and the **8048S043C capacitive GT911 variant** before ordering. Prices, shipping and stock can change; compare the total delivered cost.
 
-This is a direct product link, not a confirmed Embedded Nerd affiliate link. Replace it with your approved affiliate URL once the destination and variant have been verified. Stock and listing details can change.
+For wiring, code, touch setup and known limitations, read the [Sunton ESP32-8048S043C Arduino pinout and setup guide](/sunton-esp32-8048s043c-guide/).
 
 ## Embedded Nerd Guides & Selector
+
+- [Sunton ESP32-8048S043C Arduino pinout and setup guide](/sunton-esp32-8048s043c-guide/) — informational guide with GPIO tables, a minimal code example and troubleshooting.
 
 - [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare this board with other ESP32 touchscreen hardware.
 - [800×480 touchscreen selector](/tools/esp32-touchscreen-selector/800x480/) — focus on 800×480 displays.

@@ -65,6 +65,8 @@ If you're not sure where to start, this table provides a useful starting point r
 
 The best choice ultimately depends on the requirements of your particular project.
 
+For a closer look at one popular 4.3-inch option, see our [Sunton ESP32-8048S043C Arduino pinout, code and setup guide](/sunton-esp32-8048s043c-guide/). It covers the GT911, microSD pins, RGB setup and software examples.
+
 ### Use the ESP32 touchscreen selector by project requirement
 
 If you already know the type of hardware you need, you can jump directly to a focused selector:
