@@ -3,6 +3,8 @@ layout: product
 
 internal_links: true
 
+seo_title: "ST7789 vs ILI9341: Which Display to Buy?"
+seo_description: "Compare ST7789 and ILI9341 TFT controllers for ESP32 and Arduino. Check resolution, SPI support, compatibility, pros and cons, and buying options."
 title: "ST7789 TFT Display"
 
 product_id: st7789-tft
