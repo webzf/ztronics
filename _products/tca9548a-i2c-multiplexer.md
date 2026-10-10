@@ -157,9 +157,9 @@ Software support depends on the platform and library being used.
 
 ## Troubleshooting I2C Conflicts
 
-Start with an **[I2C Scanner](/i2c-scanner-tutorial/)** to see which addresses respond on the physical bus.
+Start with an **[I2C Scanner](/i2c-scanner-tutorial/)** to see which addresses respond on the physical bus. If you are unsure which component may be using a detected address, check the [I2C Address Lookup Tool](/tools/i2c-address-lookup/).
 
-If two devices use the same address, first check whether one device can be moved to another address. When that is not possible, an I2C multiplexer such as the TCA9548A can separate the devices into independent channels.
+If two devices use the same address, first check whether one device can be moved to another address. When that is not possible, the TCA9548A can separate them into independent channels. For a bus with unreliable communication, also check the pull-up arrangement and use the [I2C Pull-up Resistor Calculator](/tools/i2c-pullup-resistor-calculator/) to assess suitable resistor values.
 
 ---
 
