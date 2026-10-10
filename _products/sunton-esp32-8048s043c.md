@@ -90,9 +90,13 @@ related:
 
 Choose this board when your project benefits from a 4.3-inch 800×480 display, ESP32-S3, capacitive touch and extra memory for a richer interface. It is suited to dashboards and HMI projects where screen area matters.
 
-Choose the **[2.8-inch ESP32 CYD](/products/esp32-2432s028-2-8-cyd/)** for a more compact, usually lower-cost build, or use the **[ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/)** to compare other integrated displays.
+| Option | Best for | Main trade-off |
+|---|---|---|
+| **Sunton ESP32-8048S043C** | A 4.3-inch 800×480 ESP32-S3 board with GT911 capacitive touch, 16MB Flash and 8MB PSRAM | Confirm the exact model suffix and interface before ordering |
+| [**ESP32 CYD 2.8-inch**](/products/esp32-2432s028-2-8-cyd/) | A more compact integrated ESP32 touchscreen for smaller interfaces | Smaller 240×320 display and resistive touch |
+| [**Waveshare ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | Another integrated 4.3-inch 800×480 ESP32-S3 option to compare | Check connector layout, interface details and accessories against your project |
 
-Before ordering, confirm the exact model suffix, display interface, touch controller and included accessories in the listing. Similar-looking Sunton boards may have different hardware.
+Use the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) to compare other integrated displays. Before ordering, confirm the exact model suffix, display interface, touch controller and included accessories in the listing. Similar-looking Sunton boards may have different hardware.
 
 
 
