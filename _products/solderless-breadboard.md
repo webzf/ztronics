@@ -3,6 +3,8 @@ layout: product
 
 internal_links: true
 
+seo_title: "Solderless Breadboard: Sizes, Pros & Where to Buy"
+seo_description: "Choose a solderless breadboard for Arduino and ESP32 prototyping. Compare common sizes, power rails, jumper compatibility and buying options."
 title: "Solderless Breadboard"
 
 product_id: solderless-breadboard
