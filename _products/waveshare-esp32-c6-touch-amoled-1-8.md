@@ -2,6 +2,9 @@
 layout: product
 internal_links: true
 title: "Waveshare ESP32-C6-Touch-AMOLED-1.8"
+product_verdict: "A compact AMOLED option for ESP32-C6 projects that benefit from onboard sensing, audio and storage; check the hardware revision because display and touch controllers differ."
+seo_title: "Waveshare ESP32-C6 AMOLED 1.8: Specs & Guide"
+seo_description: "Review the Waveshare ESP32-C6-Touch-AMOLED-1.8: 368×448 AMOLED, touch, ESP32-C6, IMU, RTC, audio, storage, revision differences and alternatives."
 product_id: waveshare-esp32-c6-touch-amoled-1-8
 category: Displays
 manufacturer: "Waveshare"
@@ -90,6 +93,19 @@ related:
   - waveshare-esp32-s3-touch-lcd-4-3
   - ili9341-xpt2046-2-8-touchscreen
 ---
+
+## Should You Choose the ESP32-C6-Touch-AMOLED-1.8?
+
+This board is worth considering for **compact, portable interfaces** that benefit from an AMOLED screen and integrated peripherals. One important detail: Waveshare documents different display and touch controllers for V1 and V2, so confirm the revision before choosing libraries or following a setup guide.
+
+| Option | Choose it when | Main trade-off |
+|---|---|---|
+| **ESP32-C6-Touch-AMOLED-1.8** | You want a small 368×448 AMOLED touchscreen on an ESP32-C6 board | Controller details depend on hardware revision |
+| [**ESP32-S3-Touch-AMOLED-1.75**](/products/waveshare-esp32-s3-touch-amoled-1-75/) | You prefer a round 466×466 AMOLED screen and ESP32-S3 | Round UI layout needs different design choices |
+| [**ESP32-S3-Touch-AMOLED-2.41**](/products/waveshare-esp32-s3-touch-amoled-2-41/) | You want a larger 600×450 AMOLED display | Larger display and different layout |
+| [**ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | Your interface needs a conventional larger rectangular panel | Less portable than the compact AMOLED boards |
+
+Before ordering or installing libraries, verify the hardware revision, controller names and included accessories. The [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) is a starting point for comparing integrated display boards, but always check the manufacturer's revision-specific documentation.
 
 ## Overview
 
