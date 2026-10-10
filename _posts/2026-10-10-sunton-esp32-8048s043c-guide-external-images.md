@@ -248,7 +248,7 @@ void setup() {
 void loop() {
   touch.read();
   if (touch.isTouched) {
-    Serial.printf("Touch: x=%d, y=%d\\n",
+    Serial.printf("Touch: x=%d, y=%d\n",
                   touch.points[0].x, touch.points[0].y);
     delay(100);
   }
