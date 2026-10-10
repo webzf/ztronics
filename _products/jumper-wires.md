@@ -1,6 +1,8 @@
 ---
 layout: product
 
+seo_title: "Jumper Wires: Types, Sizes & Where to Buy"
+seo_description: "Compare male-to-male, male-to-female and female-to-female jumper wires for breadboards, Arduino and ESP32. Check types and buying options."
 title: "Jumper Wires"
 
 internal_links: true
