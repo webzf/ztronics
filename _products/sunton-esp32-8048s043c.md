@@ -1,6 +1,7 @@
 ---
 layout: product
-internal_links: truetitle: "Sunton ESP32-8048S043C"
+internal_links: true
+title: "Sunton ESP32-8048S043C"
 product_verdict: "A strong option for a larger 4.3-inch ESP32-S3 HMI; choose a smaller CYD if price and compact size matter more."
 seo_title: "Sunton ESP32-8048S043C: Specs & Buying Guide"
 seo_description: "Sunton ESP32-S3 board with 4.3-inch 800×480 IPS, GT911 capacitive touch, 16MB Flash and 8MB PSRAM. Compare pros, alternatives and where to buy."
