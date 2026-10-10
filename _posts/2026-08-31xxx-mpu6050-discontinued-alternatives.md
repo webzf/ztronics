@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Is the MPU6050 Discontinued? Alternatives & Replacements for Arduino and ESP32"
 excerpt: "Is the MPU6050 discontinued? See its current EOL status, GY-521 availability and modern alternatives including BMA400, ICM-42670-P and ICM-42688-P for Arduino and ESP32."
 #title: "Is the MPU6050 Discontinued? Best Alternatives and Replacements"
