@@ -464,8 +464,11 @@ The main trade-off is that the RGB display, PSRAM configuration and hardware var
 
 If those characteristics match your project, the 8048S043C is worth considering. Make sure the exact suffix and hardware revision match your software before buying.
 
-### Related guides
+### Related guides and tools
 
-- [ESP32 touchscreen displays guide]({{ site.url }}/esp32-touchscreen-displays-guide/) — compare display sizes, touch technologies and interfaces.
-- [ESP32 Touchscreen Selector]({{ site.url }}/tools/esp32-touchscreen-selector/) — filter boards by resolution, PSRAM and touch type.
-- [Sunton ESP32-8048S043C product page]({{ site.url }}/products/sunton-esp32-8048s043c/) — check current purchase options.
+- [ESP32 touchscreen displays guide]({{ site.url }}/esp32-touchscreen-displays-guide/) — compare display sizes, touch technologies, interfaces and memory requirements.
+- [ESP32 Touchscreen Selector]({{ site.url }}/tools/esp32-touchscreen-selector/) — filter boards by resolution, PSRAM, touch type and interface.
+- [Waveshare ESP32-S3-Touch-LCD-4.3 product page]({{ site.url }}/products/waveshare-esp32-s3-touch-lcd-4-3/) — compare another integrated 4.3-inch ESP32-S3 display.
+- [I2C Scanner for Arduino, ESP32 and ESP8266]({{ site.url }}/i2c-scanner-tutorial/) — check which I2C devices respond on the bus when debugging touch or sensor connections.
+- [I2C Address Lookup & Compatibility Checker]({{ site.url }}/tools/i2c-address-lookup/) — check I2C addresses and investigate possible conflicts with the GT911 touch controller.
+- [Sunton ESP32-8048S043C product page]({{ site.url }}/products/sunton-esp32-8048s043c/) — review the product specifications and current purchase options.
