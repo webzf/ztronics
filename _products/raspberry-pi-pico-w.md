@@ -3,6 +3,8 @@ layout: product
 
 internal_links: true
 
+seo_title: "Raspberry Pi Pico W: Specs, Pros & Where to Buy"
+seo_description: "RP2040 board with 2.4 GHz Wi-Fi and Bluetooth LE. Compare Pico W specs, wireless features, standard Pico alternatives and where to buy."
 title: "Raspberry Pi Pico W"
 
 product_id: raspberry-pi-pico-w
