@@ -1,6 +1,8 @@
 ---
 layout: product
 
+seo_title: "MB102 Breadboard Power Supply: Specs & Buying Guide"
+seo_description: "MB102 breadboard power module with selectable 3.3 V and 5 V outputs. Check input limits, compatibility, safety notes and where to buy."
 title: "MB102 Breadboard Power Supply Module"
 
 internal_links: true
