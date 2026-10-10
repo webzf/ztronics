@@ -4,6 +4,8 @@ layout: product
 internal_links: true
 title: "ILI9341 + XPT2046 2.8-inch Touchscreen"
 
+seo_title: "ILI9341 vs CYD: Which 2.8-Inch Display to Buy?"
+seo_description: "Compare the 2.8-inch ILI9341 and XPT2046 SPI touchscreen module with the ESP32 CYD board. Check resolution, touch, pros, cons and buying options."
 product_id: ili9341-xpt2046-2-8-touchscreen
 
 category: Displays
