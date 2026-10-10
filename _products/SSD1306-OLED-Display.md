@@ -2,6 +2,8 @@
 layout: product
 
 title: "SSD1306 OLED Display"
+seo_title: "SSD1306 OLED: Specs, Pros & Cons"
+seo_description: "Compare 0.96-inch SSD1306 OLED displays with 128×64 resolution, I2C and low power use. See pros, cons, alternatives and where to buy."
 
 product_id: ssd1306-oled
 internal_links: true
