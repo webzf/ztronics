@@ -2,8 +2,8 @@
 layout: product
 
 internal_links: true
-
 title: "ESP32 DevKit V1"
+product_verdict: "A sensible general-purpose board for Arduino and Wi-Fi/Bluetooth projects; check the exact DevKit revision and USB interface before ordering."
 seo_title: "ESP32 DevKit V1: Specs & Where to Buy"
 seo_description: "ESP32 DevKit V1 with dual-core 240 MHz CPU, Wi-Fi and Bluetooth. Compare specs, pros and cons, alternatives and where to buy."
 
@@ -90,6 +90,15 @@ related:
   - mpu6050
   - jumper-wires
 ---
+## Is the ESP32 DevKit V1 the Right Board?
+
+Choose the ESP32 DevKit V1 for general-purpose Arduino development, Wi-Fi, Bluetooth and sensor projects. It is a strong starting point when you need more connectivity than an entry-level microcontroller board.
+
+Choose a **[Raspberry Pi Pico](/products/raspberry-pi-pico/)** if you do not need built-in wireless, or the **[Raspberry Pi Pico W](/products/raspberry-pi-pico-w/)** if you want a different RP2040-based platform with wireless connectivity. For touchscreen interfaces, compare integrated boards in the **[ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/)**.
+
+Before buying, verify the exact board revision, USB connector, USB-to-serial chip and pinout: third-party boards sold as “DevKit V1” are not always identical.
+
+
 
 The **ESP32 DevKit V1** is a popular ESP32 development board for Arduino, IoT and embedded projects. It combines a dual-core processor with integrated Wi-Fi and Bluetooth, making it suitable for wireless applications, sensor projects, automation and rapid prototyping.
 
