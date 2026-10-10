@@ -1,6 +1,8 @@
 ---
 layout: product
 
+seo_title: "L298N vs TB6612FNG: Which Motor Driver to Buy?"
+seo_description: "Compare L298N and TB6612FNG dual H-bridge drivers for DC motors. Check current limits, voltage drop, heat, pros and cons and buying options."
 title: "L298N Motor Driver Module"
 
 internal_links: true
