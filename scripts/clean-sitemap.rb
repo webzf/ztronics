@@ -38,6 +38,18 @@ REXML::XPath.each(doc, "//*[local-name()='url']") do |url_node|
   end
 end
 
+
+# Guard important recently published articles against accidental sitemap omission.
+expected_paths = [
+  "/reznex-review/",
+  "/esp32-p4-weather-station/"
+]
+present_paths = REXML::XPath.match(doc, "//*[local-name()='url']/*[local-name()='loc']").map do |loc|
+  URI.parse(loc.text).path
+end
+missing_paths = expected_paths - present_paths
+abort "Sitemap validation failed; expected URLs missing: #{missing_paths.join(', ')}" unless missing_paths.empty?
+
 File.write(path, doc.to_s)
 puts "Sitemap cleanup: removed #{removed.length} URLs"
 puts removed
