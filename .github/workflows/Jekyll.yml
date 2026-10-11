@@ -56,6 +56,9 @@ jobs:
       - name: Build production site
         run: bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build
 
+      - name: Clean generated sitemap
+        run: ruby scripts/clean-sitemap.rb
+
       - name: Build active PR previews
         env:
           GH_TOKEN: ${{ github.token }}
