@@ -206,7 +206,7 @@ On an **Arduino Uno**, the I2C pins are fixed:
 | A5                              | SCL |
 
 **A4 is SDA** and **A5 is SCL**. The correct supply voltage depends on the I2C module — always check the module documentation before connecting it to 5 V.
-To use the scanner, simply upload the sketch from the [I2C Scanner Code](#arduino--esp32-i2c-scanner-code) section below with no changes; the default `Wire.begin()` call already uses A4/A5 on Uno-compatible boards. Other Arduino boards (Mega, Leonardo, Nano) may use different physical I2C pins, so check your board's pinout before wiring.
+To use the scanner, simply upload the sketch from the [I2C Scanner Code](#i2c-scanner-sketch-arduino-esp32-esp8266) section below with no changes; the default `Wire.begin()` call already uses A4/A5 on Uno-compatible boards. Other Arduino boards (Mega, Leonardo, Nano) may use different physical I2C pins, so check your board's pinout before wiring.
 **Common Arduino I2C mistakes:**
 
 - Swapping SDA and SCL
