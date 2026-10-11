@@ -6,6 +6,7 @@ excerpt: "MPU6050 alternative for 2026: yes, it's discontinued (EOL). Compare IC
 
 layout: single
 permalink: /mpu6050-discontinued-alternatives/
+id: "https://embeddednerd.com/mpu6050-discontinued-alternatives/"
 show_date: true
 last_modified_at: 2026-10-07
 read_time: false
@@ -84,7 +85,7 @@ None of the alternatives is a drop-in replacement. Hardware, registers, pinout a
 
 ### ICM-42670-P
 
-The [ICM-42670-P](/products/icm-42670-p/) is a modern 6-axis IMU combining a 3-axis accelerometer and 3-axis gyroscope. TDK currently lists the MPU-6050 as obsolete and identifies the ICM-42670-P as its **Recommended Alternate Part No.**, while explicitly warning that interchangeability is not guaranteed. citeturn0search0turn2search0
+The [ICM-42670-P](/products/icm-42670-p/) is a modern 6-axis IMU combining a 3-axis accelerometer and 3-axis gyroscope. TDK currently lists the MPU-6050 as obsolete and identifies the ICM-42670-P as its **Recommended Alternate Part No.**, while explicitly warning that interchangeability is not guaranteed.
 
 Key features include:
 
@@ -147,7 +148,7 @@ If your application needs angular velocity, choose a 6-axis IMU instead.
 
 **Need an accelerometer and a gyroscope for a new design?**
 
-→ Start with the **ICM-42670-P**. It is the balanced general-purpose choice and TDK's current recommended alternate for the obsolete MPU-6050. citeturn0search0
+→ Start with the **ICM-42670-P**. It is the balanced general-purpose choice and TDK's current recommended alternate for the obsolete MPU-6050.
 
 **Need lower noise or higher precision?**
 
@@ -165,7 +166,7 @@ There is no universal "best" replacement. The choice depends on sensor axes, pow
 
 ## Is the MPU6050 Discontinued? What the EOL Notice Says
 
-TDK InvenSense issued the official **EOL notification PCN-000614 on July 23, 2023**. The notice covers the MPU-6050 and states that the affected components would be discontinued. citeturn0search31
+TDK InvenSense issued the official **EOL notification PCN-000614 on July 23, 2023**. The notice covers the MPU-6050 and states that the affected components would be discontinued.
 
 The schedule was:
 
@@ -174,7 +175,7 @@ The schedule was:
 
 That Last Time Ship date has now passed.
 
-TDK's current product page lists the MPU-6050 as **Obsolete** and identifies the ICM-42670-P as the recommended alternate, with the explicit qualification that interchangeability is not guaranteed. citeturn0search0
+TDK's current product page lists the MPU-6050 as **Obsolete** and identifies the ICM-42670-P as the recommended alternate, with the explicit qualification that interchangeability is not guaranteed.
 
 ### Discontinued vs Obsolete vs EOL
 
@@ -184,7 +185,7 @@ These terms are related but not identical:
 - **Discontinued:** production has ended or is being ended.
 - **Obsolete:** the component is no longer manufactured.
 
-For the MPU-6050, the EOL schedule has already passed its Last Time Ship date, and TDK now lists the product as obsolete. citeturn0search0turn0search31
+For the MPU-6050, the EOL schedule has already passed its Last Time Ship date, and TDK now lists the product as obsolete.
 
 ## Should You Still Buy an MPU6050 or GY-521?
 
