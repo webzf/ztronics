@@ -1,4 +1,7 @@
 ---
+sitemap:
+  priority: 0.8
+  changefreq: weekly
 title: "Reznex Review: ESP32 Pinouts, Hardware Tools, CLI and More"
 excerpt: "Reznex review covering ESP32 pinouts, hardware comparison, CLI, RF calculators, LoRa, RFID and the Engineering Vault — plus where datasheets remain essential."
 layout: single
