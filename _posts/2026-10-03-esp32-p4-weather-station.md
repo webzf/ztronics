@@ -1,4 +1,7 @@
 ---
+sitemap:
+  priority: 0.8
+  changefreq: weekly
 title: "ESP32-P4 Weather Station: How MIPI-DSI, LoRa, ESP-NOW and LVGL Work Together"
 excerpt: "An engineering deep dive into Harald Kreuzer's ESP32-P4 Weather Station, exploring its multi-MCU architecture, MIPI-DSI display, ESP-NOW, LoRa, I2C protocol, LVGL interface and OTA design."
 layout: single
