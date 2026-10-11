@@ -5,4 +5,5 @@ layout: tags
 author_profile: true
 sidebar: 
     nav: "embedded"
+sitemap: false
 ---
