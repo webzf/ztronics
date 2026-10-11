@@ -306,7 +306,7 @@ For MPU6050 projects, see the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/).
 - [BMA400 vs MPU6050: Which Motion Sensor Should You Buy?](/bma400-vs-mpu6050/)
 - [BMA400 ESP32 Tutorial: Wiring, Code & Arduino Guide](/bma400-esp32-tutorial-wiring-code-arduino-guide/)
 - [I2C Address Lookup & Compatibility Checker](/tools/i2c-address-lookup/)
-- [Best Sensors for ESP32](/products/sensors/)
+- [Best Sensors for ESP32](/products/#sensors)
 
 ## FAQ
 
