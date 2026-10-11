@@ -43,6 +43,8 @@ tags:
 
 <link rel="stylesheet" href="/assets/tools/esp32-touchscreen-selector/selector.css?v=20261006d">
 
+<p class="page-intro">Not sure which ESP32 touchscreen fits your project? Read the <a href="/tools/esp32-touchscreen-selector/esp32-touchscreen/">ESP32 touchscreen selector guide</a> for help comparing display interfaces, touch technologies, PSRAM and board requirements.</p>
+
 <section class="tool" aria-labelledby="tool-title">
 <h2 id="tool-title" class="sr-only">Hardware selector</h2>
 <div class="mode-bar"><div class="mode-buttons"><button type="button" id="mode-requirements" class="mode-button active" data-mode="requirements">Filter &amp; find hardware</button><button type="button" id="browse-btn" class="mode-button" data-mode="browse">Browse all hardware</button></div><span class="catalog-status"><span id="catalog-count">0</span> catalog entries</span></div>
