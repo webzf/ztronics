@@ -4,10 +4,11 @@ title_tag: "Sunton ESP32-8048S043C Arduino Pinout & Setup"
 hide_post_pagination: true
 layout: single
 permalink: /sunton-esp32-8048s043c-guide/
+id: "https://embeddednerd.com/sunton-esp32-8048s043c-guide/"
 nav: embedded
 excerpt: "Arduino code and pinout for the Sunton ESP32-8048S043C: RGB display setup, GT911 touch, microSD GPIOs, LVGL, ESPHome and buying tips."
 show_date: false
-last_modified_at: 2026-10-10
+last_modified_at: 2026-10-11
 author: "Embedded Nerd"
 read_time: false
 toc: true
@@ -63,7 +64,8 @@ This guide covers the specifications, display and touch hardware, important pins
 | USB | USB-C |
 | Other | BOOT button on GPIO0, expansion header, speaker and battery connectors vary by revision |
 
-> **Check the exact revision before buying.** Sunton sells several similar boards with confusingly close names, including the 4827S043C and resistive "R" versions. Compare the silkscreen on the board with the seller's documentation before relying on any pin number, memory configuration or demo. {: .notice--warning}
+> **Check the exact revision before buying.** Sunton sells several similar boards with confusingly close names, including the 4827S043C and resistive "R" versions. Compare the silkscreen on the board with the seller's documentation before relying on any pin number, memory configuration or demo.
+{: .notice--warning}
 
 ## Is the Sunton ESP32-8048S043C a good choice?
 
@@ -294,7 +296,8 @@ For the common N16R8 version, the relevant Arduino IDE settings are:
 
 Without the correct PSRAM configuration, graphics applications may fail to allocate the frame buffer and can result in a blank screen or reboot loop.
 
-> **Important:** These settings apply to the common N16R8 configuration. Check the exact board revision and seller documentation before copying them. {: .notice--warning}
+> **Important:** These settings apply to the common N16R8 configuration. Check the exact board revision and seller documentation before copying them.
+{: .notice--warning}
 
 ## Common problems to know before buying
 
