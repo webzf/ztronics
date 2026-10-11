@@ -39,6 +39,9 @@ copyright_url            : "https://embeddednerd.com/"
 comments:
   provider               : false
 
+feed:
+  excerpt_only: true
+
 atom_feed:
   path                   :
   hide                   : false
