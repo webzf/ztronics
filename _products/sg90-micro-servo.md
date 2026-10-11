@@ -74,4 +74,4 @@ The servo signal is controlled with PWM. The ESP32 generates the control signal 
 
 ## Related Project
 
-The SG90 is used in the [ESP32 Joystick Tutorial](/esp32-joystick-tutorial-read-an-analog-joystick-ky-023-with-arduino-ide/) to demonstrate proportional servo control.
+The SG90 is used in the [ESP32 Joystick Tutorial](/esp32-joystick-tutorial/) to demonstrate proportional servo control.
