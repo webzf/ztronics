@@ -52,7 +52,7 @@ Both share the same core hardware:
 - A 40-pin GPIO header and an SH1.0 4-pin I²C header for external sensors
 - Optical-bonded toughened glass front
 
-You can compare the two variants on the [official Waveshare product page](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm). Prices and stock change, so confirm the selected size before ordering. The AliExpress listing should only be linked through Embedded Nerd's `/go/hardware/` commerce route once its affiliate URL has been verified.
+For current availability and official specifications, compare the two variants on the [Waveshare product page](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm). Prices and stock change, so confirm the selected size before ordering.
 
 **Why the P4 instead of an ESP32-S3?** Resolution and speed. An S3 round board is typically 240 × 240 over SPI. The P4 drives an 800 × 800 panel over MIPI-DSI with a 2D pixel accelerator (PPA) and plenty of PSRAM for frame buffers. If your project is a small gadget, an S3 or a plain SPI module is cheaper and simpler. If you want a polished control panel, the P4 is the better fit.
 
@@ -329,8 +329,6 @@ Lower the animation load first: fewer redraws, smaller changing areas, and no fu
 - On a tighter budget, a 1.28" SPI round module on a classic ESP32 or an ESP32-S3 round board is a good first step, with lower resolution and no MIPI-DSI.
 - For help comparing display boards by size, touch and interface, try the [ESP32 Touchscreen Selector]({{ site.baseurl }}/tools/esp32-touchscreen-selector/).
 - For another ESP32-P4 design, see our [ESP32-P4 Weather Station architecture guide]({{ site.baseurl }}/esp32-p4-weather-station/).
-
-<!-- TODO: link to your ESP32 Touchscreen Selector tool and other internal pages here -->
 
 ## FAQ
 
