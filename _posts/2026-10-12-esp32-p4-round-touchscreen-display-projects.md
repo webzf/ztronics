@@ -1,10 +1,22 @@
 ---
 title: "ESP32-P4 Round Touchscreen Display Projects (with LVGL Code)"
-description: "Build 3 ESP32-P4 round touchscreen display projects with LVGL: a thermostat dial, a live gauge and a focus timer. Board specs, setup and code."
-excerpt: "What the Waveshare ESP32-P4 round touch boards offer, how to get started, and three LVGL projects: a touch thermostat dial, a live gauge and a tap-to-start focus timer."
+title_tag: "ESP32-P4 Round Touchscreen Projects: 3 LVGL Examples"
+description: "Build three ESP32-P4 round touchscreen projects with LVGL 9: a thermostat dial, live sensor gauge and focus timer, with setup steps and working UI code."
+excerpt: "Learn the Waveshare ESP32-P4 3.4C and 4C round display hardware, then build three LVGL 9 interfaces: a thermostat dial, sensor gauge and focus timer."
 date: 2026-10-12
 last_modified_at: 2026-10-12
+layout: single
+hide_post_pagination: true
+author: "Embedded Nerd"
+show_date: true
+read_time: false
 permalink: /esp32-p4-round-touchscreen-display-projects/
+teaser: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
+image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
+og_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
+header:
+  og_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
+  og_image_alt: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C round touchscreen board, front view"
 categories:
   - ESP32-P4
   - Displays
@@ -23,8 +35,8 @@ Round touchscreens used to mean tiny 1.28" modules with a few hundred pixels. Th
 
 This guide covers the **ESP32-P4 round touchscreen display boards** that are available now, how a round screen changes the way you design a UI, and **three LVGL projects** you can build on them.
 
-![Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C round touchscreen](https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-3.4C/ESP32-P4-WIFI6-Touch-LCD-3.4C-details-1.jpg)
-*The 3.4-inch ESP32-P4 round touchscreen board. [View product specifications and purchase options](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/).*
+![Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C round touchscreen, front view](/assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp)
+*The 3.4-inch ESP32-P4 round touchscreen board. [View the product specifications and purchase options](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/).*
 
 1. A touch thermostat dial
 2. A live sensor gauge
@@ -56,6 +68,11 @@ Both share the same core hardware:
 - Optical-bonded toughened glass front
 
 For current availability and official specifications, compare the two variants on the [Waveshare product page](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm). You can also [view the ESP32-P4-WIFI6-Touch-LCD-3.4C product page on Embedded Nerd](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) and use the purchase link there. Prices and stock change, so confirm the selected size before ordering.
+
+![Rear view of the Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C showing its connectors and expansion header](/assets/images/products/esp32-p4-touch-lcd-3.4c-back.webp)
+*Rear view: check connector placement, expansion headers and enclosure clearance before planning a build.*
+
+The 3.4C and 4C are two variants of the same product family, not interchangeable panels: the 3.4C is 800 × 800 in a 115 × 115 mm outline, while the 4C is 720 × 720 in a 126 × 126 mm outline. Check the exact SKU in the seller's variant selector before checkout.
 
 **Why the P4 instead of an ESP32-S3?** Resolution and speed. An S3 round board is typically 240 × 240 over SPI. The P4 drives an 800 × 800 panel over MIPI-DSI with a 2D pixel accelerator (PPA) and plenty of PSRAM for frame buffers. If your project is a small gadget, an S3 or a plain SPI module is cheaper and simpler. If you want a polished control panel, the P4 is the better fit.
 
@@ -323,6 +340,20 @@ Wi-Fi runs on the ESP32-C6 module, not on the P4. Use the networking example fro
 
 **UI feels slow**
 Lower the animation load first: fewer redraws, smaller changing areas, and no full-screen redraw on every timer tick. In the demo's LVGL settings, make sure the draw buffers are in PSRAM and sized sensibly.
+
+## Product page and buying checklist
+
+If you want the exact 3.4-inch board shown in the photos, see the [Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C product page on Embedded Nerd](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/). It includes the board specifications and a purchase link for this specific model.
+
+Before ordering, verify these details on the listing:
+
+- **Variant:** select 3.4C (800 × 800), not 4C (720 × 720).
+- **Included items:** check whether the listing includes the speaker and the two 4-pin cables; bundle contents can vary.
+- **Power and programming:** review the manufacturer's documentation for the correct USB connector and flashing procedure.
+- **Mechanical fit:** the board outline is about 115 × 115 mm, so plan the enclosure around the complete assembly, not only the visible glass.
+- **Software support:** begin with the manufacturer's ESP-IDF demo and confirm the screen and touch work before porting custom LVGL code.
+
+The product link may earn Embedded Nerd a commission if you buy through it, at no extra cost to you.
 
 ## Where to go next
 
