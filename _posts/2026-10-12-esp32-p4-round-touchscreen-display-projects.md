@@ -1,7 +1,7 @@
 ---
 title: "ESP32-P4 Round Touchscreen Display Projects (with LVGL Code)"
 title_tag: "ESP32-P4 Round Touchscreen Projects: 3 LVGL Examples"
-description: "Build three ESP32-P4 round touchscreen projects with LVGL 9: a thermostat dial, live sensor gauge and focus timer, with setup steps and working UI code."
+description: "Build three ESP32-P4 round touchscreen projects with LVGL 9: a thermostat dial, live sensor gauge and focus timer, with setup steps and example UI code."
 excerpt: "Learn the Waveshare ESP32-P4 3.4C and 4C round display hardware, then build three LVGL 9 interfaces: a thermostat dial, sensor gauge and focus timer."
 date: 2026-10-12
 last_modified_at: 2026-10-12
