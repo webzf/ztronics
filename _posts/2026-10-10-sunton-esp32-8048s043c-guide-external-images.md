@@ -7,7 +7,7 @@ permalink: /sunton-esp32-8048s043c-guide/
 id: "https://embeddednerd.com/sunton-esp32-8048s043c-guide/"
 nav: embedded
 excerpt: "Arduino code and pinout for the Sunton ESP32-8048S043C: RGB display setup, GT911 touch, microSD GPIOs, LVGL, ESPHome and buying tips."
-show_date: false
+show_date: true
 last_modified_at: 2026-10-11
 author: "Embedded Nerd"
 read_time: false
