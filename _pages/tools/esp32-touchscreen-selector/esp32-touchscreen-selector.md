@@ -1,11 +1,11 @@
 ---
-title: "ESP32 Touchscreen Selector | Find the Right Display Hardware"
+title: "ESP32 Touchscreen Boards & Display Modules: Comparison"
 layout: single
 sidebar:
   nav: "embedded"
 permalink: /tools/esp32-touchscreen-selector/esp32-touchscreen/
 canonical_url: /tools/esp32-touchscreen-selector/esp32-touchscreen/
-excerpt: "Find ESP32 touchscreen boards and display modules by screen size, resolution, interface, touch, PSRAM, GPIO, LVGL, USB and battery requirements."
+excerpt: "Compare ESP32 touchscreen boards and display modules by screen size, display and touch interfaces, PSRAM, GPIO, LVGL and project requirements."
 show_date: false
 read_time: false
 toc: true
@@ -27,7 +27,7 @@ tags:
   - RGB
 ---
 
-## ESP32 Touchscreen Selector
+## Compare ESP32 Touchscreen Boards and Display Modules
 
 Choosing an **ESP32 touchscreen display** can be difficult because boards combine different ESP32 families, display controllers, resolutions, touch controllers, interfaces, memory configurations, GPIO layouts and power features.
 
