@@ -137,7 +137,7 @@ tags:
 
 <script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20261012" defer></script>
 <script src="/assets/tools/esp32-touchscreen-selector/project-recommendations.js?v=20261012" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20261012" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20261013" defer></script>
 
 ## Hardware currently covered by the selector
 
