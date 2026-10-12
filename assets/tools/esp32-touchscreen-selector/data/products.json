@@ -1055,7 +1055,6 @@
       "category": "board_with_display",
       "description": "ESP32-S3 CYD board with a 4.3-inch 800×480 IPS TFT, RGB parallel display interface, capacitive GT911 touch, microSD and USB-C.",
       "product_url": "/products/sunton-esp32-8048s043c/",
-      "guide_url": "/sunton-esp32-8048s043c-guide/",
       "documentation_url": "https://github.com/rzeldent/platformio-espressif32-sunton",
       "tags": [
         "Sunton",
@@ -1205,7 +1204,8 @@
       },
       "manufacturer_sku": "ESP32-8048S043C",
       "image": "https://www.makerfabs.com/image/wiki_image/2022-10-28_22_36_00_0.jpg",
-      "image_alt": "Sunton ESP32-8048S043C 4.3-inch ESP32-S3 CYD touchscreen board"
+      "image_alt": "Sunton ESP32-8048S043C 4.3-inch ESP32-S3 CYD touchscreen board",
+      "guide_url": "/sunton-esp32-8048s043c-guide/"
     },
     {
       "id": "esp32-2432s028-2-8-cyd",
