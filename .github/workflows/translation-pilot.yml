@@ -1,0 +1,50 @@
+name: Translation Pilot (No Deploy)
+
+on:
+  push:
+    branches:
+      - test/auto-translation-pilot
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: translation-pilot
+  cancel-in-progress: true
+
+jobs:
+  translate-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout test branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Validate commerce database
+        run: ruby scripts/validate-commerce.rb
+
+      - name: Build site and translate the Sunton guide
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          test -n "$OPENAI_API_KEY" || (echo "Missing OPENAI_API_KEY repository secret" && exit 1)
+          bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb "$(bundle show jekyll)/exe/jekyll" build --destination _site
+
+      - name: Upload test build (no deployment)
+        uses: actions/upload-artifact@v4
+        with:
+          name: embedded-nerd-translation-pilot
+          path: _site
+          if-no-files-found: error
+          retention-days: 3
