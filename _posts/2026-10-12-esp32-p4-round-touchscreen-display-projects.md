@@ -45,6 +45,8 @@ This guide covers the **ESP32-P4 round touchscreen display boards** that are ava
 > **Heads up:** the code below is the UI layer, written for LVGL 9. Display, touch and LVGL initialization come from the manufacturer's demo project for your board. I explain how to plug the UI code into it in the setup section.
 {: .notice--info}
 
+> **Testing note:** this is a project guide based on the manufacturer's documentation and LVGL 9 APIs. The UI examples have not been verified on the physical 3.4C or 4C hardware as part of this article. Start from the matching Waveshare demo, confirm display and touch initialization, and then integrate one UI at a time.
+
 ## The ESP32-P4 round display boards
 
 At the time of writing, the board most makers find first is from Waveshare. It comes in two sizes. The specifications below are based on the [manufacturer's product listing](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm). Check the exact variant before ordering, because the 3.4C and 4C have different display sizes and resolutions.
