@@ -36,7 +36,7 @@ jobs:
 
       - name: Build site and translate the Sunton guide
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.TRANSLATEEMBEDDEDNERD }}
         run: |
           test -n "$OPENAI_API_KEY" || (echo "Missing OPENAI_API_KEY repository secret" && exit 1)
           bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb "$(bundle show jekyll)/exe/jekyll" build --destination _site
