@@ -329,7 +329,7 @@ void create_focus_timer_ui(void)
 Build and run the manufacturer's LVGL demo unchanged first. If that works, the problem is in your UI code. If it does not, check the power and programming connection, and use the USB-C port the wiki designates for flashing.
 
 **UI works but touch does nothing**
-Touch comes from the GT9271 over I²C. Confirm that touch works in the demo, then check that your project keeps the same initialization. Also check that the object you tap is clickable. Our gauge and timer arcs intentionally are not.
+Touch comes from the GT9271 over I²C. Confirm that touch works in the demo, then check that your project keeps the same initialization. Also check that the object you tap is clickable. The sensor gauge is display-only and ignores touch; the focus timer keeps its arc clickable so taps can start or pause the countdown.
 
 **Crash or watchdog reset inside LVGL calls**
 You probably called LVGL from your own task without the display lock. Use the lock functions from your demo, or move the code into an `lv_timer` callback.
