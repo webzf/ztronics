@@ -40,7 +40,7 @@ tags:
   - I2C
   - Electronics
 ---
-<link rel="stylesheet" href="/assets/tools/esp32-touchscreen-selector/selector.css?v=20261012">
+<link rel="stylesheet" href="/assets/tools/esp32-touchscreen-selector/selector.css?v=20261012b">
 
 <div class="selector-app-shell">
 <p class="site-label">Embedded Nerd · Open Source Tool</p>
