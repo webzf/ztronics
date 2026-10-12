@@ -8,11 +8,11 @@ seo_description: "Explore the Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C: 3.4-inch 
 product_id: waveshare-esp32-p4-wifi6-touch-lcd-3-4c
 category: Displays
 manufacturer: "Waveshare"
-image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
+image: https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-3.4C/ESP32-P4-WIFI6-Touch-LCD-3.4C-details-1.jpg
 alt: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C round touchscreen board, front view"
 header:
-  teaser: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
-og_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
+  teaser: https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-3.4C/ESP32-P4-WIFI6-Touch-LCD-3.4C-details-1.jpg
+og_image: https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-3.4C/ESP32-P4-WIFI6-Touch-LCD-3.4C-details-1.jpg
 excerpt: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C development board with a 3.4-inch 800×800 round capacitive touchscreen and ESP32-P4."
 description: "The Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C is a round-screen HMI development board combining an 800×800 IPS touchscreen with ESP32-P4 processing, ESP32-C6 wireless connectivity, audio interfaces and MIPI-DSI."
 categories:
@@ -99,10 +99,10 @@ It is less suitable for a compact, low-cost gadget: the board is physically larg
 
 The round glass front makes this board a good fit for circular gauges, thermostats, timers and smart-home control panels. Check the rear connectors and board layout before designing an enclosure.
 
-![Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C front view](/assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp)
+![Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C front view](https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-3.4C/ESP32-P4-WIFI6-Touch-LCD-3.4C-details-1.jpg)
 *Front view of the round touchscreen.*
 
-![Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C rear view showing connectors](/assets/images/products/esp32-p4-touch-lcd-3.4c-back.webp)
+![Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C rear view showing connectors](https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-3.4C/ESP32-P4-WIFI6-Touch-LCD-3.4C-details-2.jpg)
 *Rear view showing the board and connector layout.*
 
 ## Development Resources
