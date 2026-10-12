@@ -102,6 +102,9 @@ The round glass front makes this board a good fit for circular gauges, thermosta
 ![Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C front view](/assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp)
 *Front view of the round touchscreen.*
 
+![Close-up of the Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C circular glass display](/assets/images/products/esp32-p4-touch-lcd-3.4c-front-detail.webp)
+*Closer view of the display glass and front bezel.*
+
 ![Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C rear view showing connectors](/assets/images/products/esp32-p4-touch-lcd-3.4c-back.webp)
 *Rear view showing the board and connector layout.*
 
