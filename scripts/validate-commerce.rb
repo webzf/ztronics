@@ -3,6 +3,7 @@
 
 require "yaml"
 require "date"
+require "json"
 
 ROOT = File.expand_path("..", __dir__)
 commerce_path = File.join(ROOT, "_data", "commerce.yml")
@@ -104,6 +105,34 @@ routes_dir = File.join(ROOT, "go", "hardware")
 commerce.each_key do |product_id|
   route = File.join(routes_dir, product_id, "index.html")
   errors << "#{product_id}: missing /go/hardware route" unless File.file?(route)
+end
+
+# Validate the interactive selector catalog against the commerce database and routes.
+# Catalog IDs may differ from commerce IDs, so use the explicit commerce_id when provided.
+catalog_path = File.join(ROOT, "assets", "tools", "esp32-touchscreen-selector", "data", "products.json")
+if File.file?(catalog_path)
+  begin
+    catalog = JSON.parse(File.read(catalog_path, encoding: "UTF-8"))
+    selector_products = catalog["products"]
+    unless selector_products.is_a?(Array)
+      errors << "Selector catalog: products must be an array"
+    else
+      selector_products.each do |product|
+        next unless product.is_a?(Hash)
+        catalog_id = product["id"].to_s.strip
+        next if catalog_id.empty?
+        commerce_id = product["commerce_id"].to_s.strip
+        commerce_id = catalog_id if commerce_id.empty?
+        errors << "Selector catalog #{catalog_id}: no matching commerce entry '#{commerce_id}'" unless commerce.key?(commerce_id)
+        route = File.join(routes_dir, commerce_id, "index.html")
+        errors << "Selector catalog #{catalog_id}: missing /go/hardware/#{commerce_id}/ route" unless File.file?(route)
+      end
+    end
+  rescue JSON::ParserError => e
+    errors << "Selector catalog: invalid JSON (#{e.message})"
+  end
+else
+  errors << "Missing selector catalog at #{catalog_path}"
 end
 
 if errors.any?
