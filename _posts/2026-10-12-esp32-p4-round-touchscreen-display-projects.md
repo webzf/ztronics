@@ -5,13 +5,17 @@ description: "Build three ESP32-P4 round touchscreen projects with LVGL 9: a the
 excerpt: "Learn the Waveshare ESP32-P4 3.4C and 4C round display hardware, then build three LVGL 9 interfaces: a thermostat dial, sensor gauge and focus timer."
 date: 2026-10-12
 last_modified_at: 2026-10-12
-layout: single
 hide_post_pagination: true
-author: "Embedded Nerd"
-show_date: true
-read_time: false
+layout: single
 permalink: /esp32-p4-round-touchscreen-display-projects/
+id: "https://embeddednerd.com/esp32-p4-round-touchscreen-display-projects/"
+nav: embedded
+show_date: false
+author: "Embedded Nerd"
+read_time: false
 teaser: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
+overlay_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
+overlay_filter: 0.5
 image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
 og_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
 header:
@@ -26,8 +30,10 @@ tags:
   - touchscreen
   - lvgl
   - waveshare
+related: false
+share: true
 toc: true
-toc_label: "In this guide"
+toc_label: "Contents"
 toc_sticky: true
 ---
 
