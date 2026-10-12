@@ -21,7 +21,10 @@ toc_sticky: true
 
 Round touchscreens used to mean tiny 1.28" modules with a few hundred pixels. The **ESP32-P4** changes that. It has a MIPI-DSI display interface, a lot of PSRAM and enough CPU for smooth LVGL animations, so a round screen can finally be big, sharp and responsive.
 
-This guide covers the **ESP32-P4 round touchscreen display boards** that are available now, how a round screen changes the way you design a UI, and **three LVGL projects** you can build on them:
+This guide covers the **ESP32-P4 round touchscreen display boards** that are available now, how a round screen changes the way you design a UI, and **three LVGL projects** you can build on them.
+
+![Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C round touchscreen, front view](/assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp)
+*The 3.4-inch ESP32-P4 round touchscreen board. [View product specifications and purchase options](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/).*
 
 1. A touch thermostat dial
 2. A live sensor gauge
@@ -52,7 +55,7 @@ Both share the same core hardware:
 - A 40-pin GPIO header and an SH1.0 4-pin I²C header for external sensors
 - Optical-bonded toughened glass front
 
-For current availability and official specifications, compare the two variants on the [Waveshare product page](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm). Prices and stock change, so confirm the selected size before ordering.
+For current availability and official specifications, compare the two variants on the [Waveshare product page](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm). You can also [view the ESP32-P4-WIFI6-Touch-LCD-3.4C product page on Embedded Nerd](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) and use the purchase link there. Prices and stock change, so confirm the selected size before ordering.
 
 **Why the P4 instead of an ESP32-S3?** Resolution and speed. An S3 round board is typically 240 × 240 over SPI. The P4 drives an 800 × 800 panel over MIPI-DSI with a 2D pixel accelerator (PPA) and plenty of PSRAM for frame buffers. If your project is a small gadget, an S3 or a plain SPI module is cheaper and simpler. If you want a polished control panel, the P4 is the better fit.
 
