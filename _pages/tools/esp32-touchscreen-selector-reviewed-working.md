@@ -133,7 +133,7 @@ tags:
 <div id="empty-state" class="empty-state" hidden><h3>No hardware meets all mandatory requirements.</h3><p id="empty-state-text"></p><p>Try changing one or more technical filters from <strong>Required</strong> to a preference.</p></div>
 <div id="exclusion-panel" class="exclusion-panel"><h3>Why other products were excluded</h3><p>Mandatory technical filters are evaluated before project-fit scoring.</p><ul id="exclusion-list"></ul></div>
 <div id="product-grid" class="product-grid"></div></section>
-</main>
+</div>
 
 <script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20261012" defer></script>
 <script src="/assets/tools/esp32-touchscreen-selector/project-recommendations.js?v=20261012" defer></script>
@@ -141,7 +141,7 @@ tags:
 
 ## Hardware currently covered by the selector
 
-The selector catalog includes real ESP32 boards and display modules with dedicated technical pages on Embedded Nerd. Open a product page for detailed specifications, documentation links and available purchasing options.
+The interactive catalog currently covers 12 ESP32 boards and display modules. The linked product pages provide detailed specifications, documentation and available purchasing options.
 
 <div class="selector-catalog-links">
 <ul>
@@ -155,6 +155,8 @@ The selector catalog includes real ESP32 boards and display modules with dedicat
 <li><a href="/products/sunton-esp32-8048s043c/"><strong>Sunton ESP32-8048S043C</strong></a> — 4.3″ · 800×480 · ESP32 touchscreen</li>
 <li><a href="/products/esp32-2432s028-2-8-cyd/"><strong>ESP32-2432S028 2.8″ CYD</strong></a> — 2.8″ · 320×240 · touchscreen</li>
 <li><a href="/products/waveshare-esp32-s3-touch-amoled-2-16/"><strong>Waveshare ESP32-S3-Touch-AMOLED-2.16</strong></a> — 2.16″ · AMOLED · touch · ESP32-S3</li>
+<li><a href="/products/ssd1306-oled/"><strong>SSD1306 OLED Display</strong></a> — 0.96″ · 128×64 · monochrome OLED · I²C · no touch</li>
+<li><a href="/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/"><strong>Waveshare ESP32-P4-WIFI6-Touch-LCD-7B</strong></a> — 7″ · 1024×600 · MIPI-DSI · capacitive touch</li>
 </ul>
 </div>
 
@@ -256,8 +258,8 @@ These focused pages help you start with a common hardware requirement before ope
 </details>
 
 <details>
-<summary>Do I need PSRAM for an ESP32 touchscreen?</summary>
-<p>Not necessarily. Smaller SPI displays can often work without PSRAM, while larger frame buffers and more demanding graphical interfaces can benefit substantially from it.</p>
+<summary>How much PSRAM do I need for an ESP32 touchscreen?</summary>
+<p>It depends on resolution, color depth, buffering and GUI assets. As a reference, one full 800×480 RGB565 framebuffer uses about 768 kB; double buffering uses about 1.5 MB before accounting for fonts, images and other application memory. Check the display driver and framework requirements for your specific setup.</p>
 </details>
 
 <details>
@@ -274,9 +276,9 @@ These focused pages help you start with a common hardware requirement before ope
 {
   "@context":"https://schema.org",
   "@type":"WebApplication",
-  "name":"ESP32 Hardware & Display Selector",
+  "name":"ESP32 Touchscreen Display & Board Selector",
   "url":"https://embeddednerd.com/tools/esp32-touchscreen-selector/",
-  "description":"Free ESP32 hardware and display compatibility selector for boards, touchscreen displays, display interfaces, PSRAM, GPIO, LVGL and related requirements.",
+  "description":"Free interactive selector for ESP32 boards and display modules, with filters for display interface, touch, PSRAM, GPIO, LVGL, USB and onboard features.",
   "applicationCategory":"DeveloperApplication",
   "operatingSystem":"Web browser",
   "isAccessibleForFree":true,
