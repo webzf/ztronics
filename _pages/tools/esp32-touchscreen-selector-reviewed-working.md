@@ -42,7 +42,7 @@ tags:
 ---
 <link rel="stylesheet" href="/assets/tools/esp32-touchscreen-selector/selector.css?v=20261012">
 
-<main class="page-shell">
+<div class="selector-app-shell">
 <p class="site-label">Embedded Nerd · Open Source Tool</p>
 <header class="hero"><span class="eyebrow">ESP32 HARDWARE DISCOVERY</span><h1>ESP32 Touchscreen Selector</h1><p>Find compatible ESP32 boards, displays and touchscreen hardware for your project. Start with your project type or use technical requirements directly. <strong>Required</strong> filters exclude incompatible hardware; project intent and other preferences influence ranking.</p></header>
 <section class="tool" aria-labelledby="tool-title">
