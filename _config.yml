@@ -236,6 +236,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
+  - jekyll-chatgpt-translate
 
 # Whitelist
 whitelist:
@@ -311,3 +312,22 @@ defaults:
       author_profile: false
      
 
+
+
+# Isolated automatic-translation pilot. Do not merge into production without review.
+chatgpt-translate:
+  model: gpt-4o-mini
+  source: en
+  no_download: true
+  threshold: 2
+  min_chars: 128
+  version: "pilot-1"
+  targets:
+    - language: de
+      only: translation-test
+      permalink: /de/:slug/
+      layout: translation-test
+    - language: es
+      only: translation-test
+      permalink: /es/:slug/
+      layout: translation-test
