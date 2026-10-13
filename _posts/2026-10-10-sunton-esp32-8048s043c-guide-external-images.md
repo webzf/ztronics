@@ -19,7 +19,7 @@ toc_label: "Contents"
 toc_sticky: true
 header:
   teaser: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
-  overlay_image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
+  overlay_image: /assets/images/header3.webp
   overlay_filter: 0.5
   image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
   og_image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
