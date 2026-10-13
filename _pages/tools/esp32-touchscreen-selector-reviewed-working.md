@@ -141,7 +141,7 @@ tags:
 
 ## Hardware currently covered by the selector
 
-The interactive catalog currently covers 12 ESP32 boards and display modules. The linked product pages provide detailed specifications, documentation and available purchasing options.
+The interactive catalog currently covers 13 ESP32 boards and display modules. The linked product pages provide detailed specifications, documentation and available purchasing options.
 
 <div class="selector-catalog-links">
 <ul>
@@ -156,6 +156,7 @@ The interactive catalog currently covers 12 ESP32 boards and display modules. Th
 <li><a href="/products/esp32-2432s028-2-8-cyd/"><strong>ESP32-2432S028 2.8″ CYD</strong></a> — 2.8″ · 320×240 · touchscreen</li>
 <li><a href="/products/waveshare-esp32-s3-touch-amoled-2-16/"><strong>Waveshare ESP32-S3-Touch-AMOLED-2.16</strong></a> — 2.16″ · AMOLED · touch · ESP32-S3</li>
 <li><a href="/products/ssd1306-oled/"><strong>SSD1306 OLED Display</strong></a> — 0.96″ · 128×64 · monochrome OLED · I²C · no touch</li>
+<li><a href="/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/"><strong>Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C</strong></a> — 3.4″ · 800×800 · round IPS · MIPI-DSI · capacitive touch</li>
 <li><a href="/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/"><strong>Waveshare ESP32-P4-WIFI6-Touch-LCD-7B</strong></a> — 7″ · 1024×600 · MIPI-DSI · capacitive touch</li>
 </ul>
 </div>
