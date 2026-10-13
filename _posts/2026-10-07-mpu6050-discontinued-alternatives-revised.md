@@ -74,7 +74,7 @@ None of the alternatives is a drop-in replacement. Hardware, registers, pinout a
 
 | Sensor | Interface | Current draw | Range | Best choice when | Where to buy |
 |---|---|---|---|---|---|
-| **MPU6050** (obsolete) | I2C | See datasheet | ±2/4/8/16 g; ±250–2000 °/s | Existing projects, learning, prototypes | [Product page](/products/mpu6050/) · [AliExpress](https://s.click.aliexpress.com/e/_c2uAjJYP){: rel="sponsored nofollow noopener"} |
+| **MPU6050** (obsolete) | I2C | ~3.9 mA in normal 6-axis operation* | ±2/4/8/16 g; ±250–2000 °/s | Existing projects, learning, prototypes | [Product page](/products/mpu6050/) · [AliExpress](https://s.click.aliexpress.com/e/_c2uAjJYP){: rel="sponsored nofollow noopener"} |
 | **ICM-42670-P** | I2C, SPI, I3C | ~0.55 mA low-noise 6-axis | ±2/4/8/16 g; up to ±2000 °/s | New 6-axis project, general purpose | [Product page](/products/icm-42670-p/) |
 | **ICM-42688-P** | I2C, SPI, I3C | ~0.88 mA low-noise 6-axis | ±2/4/8/16 g; ±15.6–2000 °/s | Low noise, stabilization, demanding sensor fusion | [Product page](/products/icm-42688-p/) |
 | **BMA400** (no gyro) | I2C, SPI | ~3.5–14.5 µA* | ±2/4/8/16 g | Battery-powered, wake-on-motion, accel only | [Product page](/products/bma400/) · [AliExpress](https://s.click.aliexpress.com/e/_c3RBiLUT){: rel="sponsored nofollow noopener"} |
@@ -166,7 +166,7 @@ There is no universal "best" replacement. The choice depends on sensor axes, pow
 
 ## Is the MPU6050 Discontinued? What the EOL Notice Says
 
-TDK InvenSense issued the official **EOL notification PCN-000614 on July 23, 2023**. The notice covers the MPU-6050 and states that the affected components would be discontinued.
+TDK InvenSense issued the official [EOL notification PCN-000614](https://www.tdk.com/en/tech-support/pcn/2023/pcn230018.pdf) on July 23, 2023. The notice covers the MPU-6050 and states that the affected components would be discontinued.
 
 The schedule was:
 
@@ -263,6 +263,8 @@ Expect to use a different library and adapt the software.
 ### I2C addresses
 
 The MPU6050 typically uses `0x68`, or `0x69` when AD0 is HIGH.
+
+*The MPU6050 current figure is approximate and refers to normal 6-axis operation; actual consumption depends on enabled sensors, sample rate and operating mode. Consult the [MPU-6050 product documentation at TDK InvenSense](https://invensense.tdk.com/products/motion-tracking/6-axis/mpu-6050/) for the operating conditions and electrical specifications.
 
 The BMA400 uses `0x14` or `0x15`.
 
