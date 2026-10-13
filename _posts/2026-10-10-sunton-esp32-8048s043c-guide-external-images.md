@@ -17,13 +17,11 @@ read_time: false
 toc: true
 toc_label: "Contents"
 toc_sticky: true
-teaser: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
-overlay_image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
-overlay_filter: 0.5
-image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
-og_image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
 header:
   teaser: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
+  overlay_image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
+  overlay_filter: 0.5
+  image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
   og_image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
   og_image_alt: "Sunton ESP32-8048S043C yellow PCB with 4.3-inch 800x480 touchscreen and ESP32-S3"
 categories:
