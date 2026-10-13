@@ -328,6 +328,22 @@ No. The ICM-42670-P, ICM-42688-P and BMA400 all differ in package, pinout, regis
 
 It depends on what better means. The ICM-42688-P offers lower noise, the BMA400 offers far lower power but has no gyroscope, and the ICM-42670-P is the balanced general-purpose choice.
 
+### Is the MPU6050 obsolete?
+
+Yes. TDK InvenSense lists the MPU-6050 as obsolete. The published end-of-life schedule has passed its Last Time Buy date (January 31, 2024) and Last Time Ship date (December 31, 2024).
+
+### When was the MPU6050 discontinued?
+
+TDK InvenSense issued the EOL notice on July 23, 2023. It set January 31, 2024 as the Last Time Buy date and December 31, 2024 as the Last Time Ship date. See the [official PCN-000614 notice](https://www.tdk.com/en/tech-support/pcn/2023/pcn230018.pdf).
+
+### What is the best MPU6050 alternative for ESP32 or Arduino?
+
+For a project that needs acceleration and gyroscope measurements, the ICM-42670-P is a strong modern candidate. For acceleration-only projects where low power is important, consider the BMA400. The ICM-42688-P is worth evaluating when lower noise or higher performance matters. Existing MPU6050 sketches usually need adaptation because the registers and libraries differ.
+
+### What other alternatives are available?
+
+Other parts you may encounter include the ICM-20948, BMI270, BMI160, MPU6500 and MPU9250. Check each manufacturer's lifecycle status, documentation and availability before choosing one; don't assume that every older part is a long-term replacement.
+
 ### Can I still buy MPU6050 or GY-521 modules?
 
 Yes, modules are still sold and work fine for prototypes and existing projects. Availability does not mean the chip is in production, so avoid them for long-term manufactured products.
