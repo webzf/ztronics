@@ -9,12 +9,14 @@ hide_post_pagination: true
 layout: single
 permalink: /esp32-p4-round-touchscreen-display-projects/
 id: "https://embeddednerd.com/esp32-p4-round-touchscreen-display-projects/"
-nav: embedded
+sidebar:
+  nav: "embedded"
+  
 show_date: false
 author: "Embedded Nerd"
 read_time: false
 teaser: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
-overlay_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
+overlay_image: /assets/images/header3.webp
 overlay_filter: 0.5
 image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
 og_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
@@ -30,7 +32,7 @@ tags:
   - touchscreen
   - lvgl
   - waveshare
-related: false
+related: true
 share: true
 toc: true
 toc_label: "Contents"
