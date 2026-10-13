@@ -9,18 +9,17 @@ hide_post_pagination: true
 layout: single
 permalink: /esp32-p4-round-touchscreen-display-projects/
 id: "https://embeddednerd.com/esp32-p4-round-touchscreen-display-projects/"
-sidebar:
-  nav: "embedded"
-  
+nav: embedded
 show_date: false
 author: "Embedded Nerd"
 read_time: false
 teaser: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
-overlay_image: /assets/images/header3.webp
+overlay_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
 overlay_filter: 0.5
 image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
 og_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
 header:
+  teaser: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
   og_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
   og_image_alt: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C round touchscreen board, front view"
 categories:
