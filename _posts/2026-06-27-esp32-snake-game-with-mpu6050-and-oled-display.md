@@ -361,8 +361,8 @@ void setup() {
 void loop() {
 
   // ==========================================
-  // Start Screen
-  // ==========================================
+// Start Screen
+// ==========================================
 
   if (!gameStarted) {
 
@@ -399,8 +399,8 @@ void loop() {
   }
 
   // ==========================================
-  // Game Over Screen
-  // ==========================================
+// Game Over Screen
+// ==========================================
 
   if (gameOver) {
 
@@ -433,8 +433,8 @@ void loop() {
   }
 
   // ==========================================
-  // Read MPU6050 Sensor
-  // ==========================================
+// Read MPU6050 Sensor
+// ==========================================
 
   mpu6050.update();
 
@@ -445,8 +445,8 @@ void loop() {
   float y = mpu6050.getAccY();
 
   // ==========================================
-  // Dynamic Speed System
-  // ==========================================
+// Dynamic Speed System
+// ==========================================
 
   float tilt = max(abs(x), abs(y));
 
@@ -466,8 +466,8 @@ void loop() {
   }
 
   // ==========================================
-  // Tilt Controls
-  // ==========================================
+// Tilt Controls
+// ==========================================
 
   if (abs(x) > abs(y)) {
 
@@ -519,8 +519,8 @@ void loop() {
   }
 
   // ==========================================
-  // Snake Movement
-  // ==========================================
+// Snake Movement
+// ==========================================
 
   if (millis() - lastMove > gameSpeed) {
 
@@ -545,8 +545,8 @@ void loop() {
     snakeY[0] += dirY * grid;
 
     // ==========================================
-    // Screen Wrapping
-    // ==========================================
+// Screen Wrapping
+// ==========================================
 
     if (snakeX[0] < 0)
       snakeX[0] = SCREEN_WIDTH - grid;
@@ -561,8 +561,8 @@ void loop() {
       snakeY[0] = 0;
 
     // ==========================================
-    // Self Collision Detection
-    // ==========================================
+// Self Collision Detection
+// ==========================================
 
     for (int i = 1; i < snakeLength; i++) {
 
@@ -574,8 +574,8 @@ void loop() {
     }
 
     // ==========================================
-    // Food Collection
-    // ==========================================
+// Food Collection
+// ==========================================
 
     if (snakeX[0] == foodX &&
         snakeY[0] == foodY) {
@@ -595,8 +595,8 @@ void loop() {
   }
 
   // ==========================================
-  // Render Game
-  // ==========================================
+// Render Game
+// ==========================================
 
   display.clearDisplay();
 
@@ -811,3 +811,9 @@ Building a Snake game with an ESP32, MPU6050 and OLED display is an excellent wa
 This project introduces several important concepts including I2C communication, motion sensing, OLED graphics, game logic and real-time input handling.
 
 Once completed, you can extend it with additional features such as sound effects, wireless scoreboards or even multiplayer gameplay, making it a great foundation for more advanced ESP32 game development.
+
+---
+
+## More DIY Electronics Projects
+
+Looking for more electronics projects and inspiration? [TinkerNews](https://www.tinkernews.com/tools) offers free electronics tools and calculators, alongside a weekly roundup of DIY builds covering ESP32, Arduino, Raspberry Pi, robotics and IoT.
