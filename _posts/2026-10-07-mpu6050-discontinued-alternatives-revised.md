@@ -168,7 +168,7 @@ There is no universal "best" replacement. The choice depends on sensor axes, pow
 
 ## Is the MPU6050 Discontinued? What the EOL Notice Says
 
-TDK InvenSense issued the official [EOL notification PCN-000614](https://www.tdk.com/en/tech-support/pcn/2023/pcn230018.pdf) on July 23, 2023. The notice covers the MPU-6050 and states that the affected components would be discontinued.
+TDK InvenSense issued the official [EOL notification PCN-000614](https://invensense.tdk.com/wp-content/uploads/2023/09/PCN-000614.pdf) on July 23, 2023. The notice covers the MPU-6050 and states that the affected components would be discontinued.
 
 The schedule was:
 
@@ -266,7 +266,7 @@ Expect to use a different library and adapt the software.
 
 The MPU6050 typically uses `0x68`, or `0x69` when AD0 is HIGH.
 
-*The MPU6050 current figure is approximate and refers to normal 6-axis operation; actual consumption depends on enabled sensors, sample rate and operating mode. Consult the [MPU-6050 product documentation at TDK InvenSense](https://invensense.tdk.com/products/motion-tracking/6-axis/mpu-6050/) for the operating conditions and electrical specifications.
+*The MPU6050 current figure is approximate and refers to normal 6-axis operation; actual consumption depends on enabled sensors, sample rate and operating mode. Consult the [MPU-6050 product documentation at TDK InvenSense](https://product.tdk.com/system/files/dam/doc/product/sensor/mortion-inertial/imu/data_sheet/mpu-6000-datasheet1.pdf) for the operating conditions and electrical specifications.
 
 The BMA400 uses `0x14` or `0x15`.
 
