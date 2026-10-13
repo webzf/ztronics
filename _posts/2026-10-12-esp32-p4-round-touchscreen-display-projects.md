@@ -18,7 +18,7 @@ author: "Embedded Nerd"
 read_time: false
 header:
   teaser: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
-  overlay_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
+  overlay_image: /assets/images/header3.webp
   overlay_filter: 0.5
   image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
   og_image: /assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp
