@@ -5,7 +5,10 @@ hide_post_pagination: true
 layout: single
 permalink: /sunton-esp32-8048s043c-guide/
 id: "https://embeddednerd.com/sunton-esp32-8048s043c-guide/"
-nav: embedded
+sidebar:
+  nav: "embedded"
+  related: true
+  share: true
 excerpt: "Arduino code and pinout for the Sunton ESP32-8048S043C: RGB display setup, GT911 touch, microSD GPIOs, LVGL, ESPHome and buying tips."
 show_date: false
 last_modified_at: 2026-10-11
@@ -32,8 +35,6 @@ tags:
   - touchscreen
   - lvgl
   - gt911
-related: true
-share: true
 ---
 
 The **Sunton ESP32-8048S043C** is an all-in-one board built around an ESP32-S3, a 4.3" 800×480 IPS display and a capacitive touch panel on one PCB. It is aimed at projects that need a relatively large touchscreen without combining a separate ESP32 and display module.
