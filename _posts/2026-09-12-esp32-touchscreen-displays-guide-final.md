@@ -1016,6 +1016,8 @@ However, it is not necessary for every touchscreen project. A small SPI touchscr
 
 ## Related Embedded Nerd Tutorials
 
+- [ESP32-P4 Round Touchscreen Display Projects: three LVGL examples](/esp32-p4-round-touchscreen-display-projects/)
+
 - [ESP32 OLED Tutorial: Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)
 - [ST7789 TFT Display](/products/st7789-tft/)
 - [ILI9341 + XPT2046 2.8-inch Touchscreen](/products/ili9341-xpt2046-2-8-touchscreen/)
