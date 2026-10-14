@@ -78,7 +78,7 @@ Both share the same core hardware:
 - A 40-pin GPIO header and an SH1.0 4-pin I²C header for external sensors
 - Optical-bonded toughened glass front
 
-For current availability and official specifications, compare the two variants on the [Waveshare product page](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm). You can also [view the ESP32-P4-WIFI6-Touch-LCD-3.4C product page on Embedded Nerd](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) and use the purchase link there. Prices and stock change, so confirm the selected size before ordering.
+For current availability and official specifications, compare the two variants on the [Waveshare product page](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm). The Embedded Nerd product page linked above covers the 3.4C specifically. Prices and stock change, so confirm the selected size before ordering.
 
 ![Rear view of the Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C showing its connectors and expansion header](/assets/images/products/esp32-p4-touch-lcd-3.4c-back.webp)
 *Rear view: check connector placement, expansion headers and enclosure clearance before planning a build.*
