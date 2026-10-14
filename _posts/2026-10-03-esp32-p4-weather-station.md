@@ -608,6 +608,8 @@ using **EEZ Studio**. The project uses ESP-IDF 6.x.
 
 The interface is intentionally focused rather than menu-heavy.
 
+If you're exploring other ways to use LVGL on ESP32-P4 hardware, our [ESP32-P4 round touchscreen projects guide](/esp32-p4-round-touchscreen-display-projects/) walks through three UI examples. It uses different Waveshare round-display boards, not the 10.1-inch hardware in this Weather Station.
+
 There are two primary screens:
 
 1.  Setup
