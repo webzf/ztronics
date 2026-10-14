@@ -110,6 +110,6 @@ The round glass front makes this board a good fit for circular gauges, thermosta
 
 ## Development Resources
 
-Start with the [official Waveshare product page](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm) and the manufacturer's ESP-IDF demo before integrating custom LVGL code. For UI examples, see our [ESP32-P4 round touchscreen projects](/esp32-p4-round-touchscreen-display-projects/) guide.
+Start with the [official Waveshare product page](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm) and the manufacturer's ESP-IDF demo before integrating custom LVGL code. For UI examples, see our [ESP32-P4 round touchscreen projects](/esp32-p4-round-touchscreen-display-projects/) guide. If you're still comparing hardware, use the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) to filter boards by screen size, resolution, touch and display interface.
 
 Before ordering, verify the exact 3.4C model, included accessories, seller, shipping and return conditions.
