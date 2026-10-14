@@ -374,6 +374,7 @@ The product link may earn Embedded Nerd a commission if you buy through it, at n
 - On a tighter budget, a 1.28" SPI round module on a classic ESP32 or an ESP32-S3 round board is a good first step, with lower resolution and no MIPI-DSI.
 - For help comparing display boards by size, touch and interface, try the [ESP32 Touchscreen Selector]({{ site.baseurl }}/tools/esp32-touchscreen-selector/).
 - For another ESP32-P4 design, see our [ESP32-P4 Weather Station architecture guide]({{ site.baseurl }}/esp32-p4-weather-station/).
+- If you're considering a rectangular alternative, read our [Sunton ESP32-8048S043C guide]({{ site.baseurl }}/sunton-esp32-8048s043c-guide/) for an integrated 4.3-inch ESP32-S3 touchscreen.
 
 ## FAQ
 
