@@ -135,3 +135,37 @@
 .display-tool-banner--compact .display-tool-banner__action .btn {
   font-size: 0.82rem;
 }
+
+/* Social share buttons: Reddit and Copy Link */
+.page__share .btn--reddit {
+  background-color: #ff4500;
+  border-color: #ff4500;
+  color: #fff;
+}
+
+.page__share .btn--reddit:hover {
+  background-color: #e03d00;
+  border-color: #e03d00;
+  color: #fff;
+}
+
+.page__share button.btn--copy-link {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.page__share button.btn--copy-link:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.page__share button.btn--copy-link:focus-visible {
+  outline: 2px solid #7ec8c8;
+  outline-offset: 2px;
+}
+
