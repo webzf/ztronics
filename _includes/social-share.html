@@ -22,4 +22,59 @@
   <a href="https://bsky.app/intent/compose?text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="{{ site.data.ui-text[locale].share_on_label | default: 'Share on' }} Bluesky">
     <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
   </a>
+
+  <button type="button" class="btn btn--copy-link" data-copy-link="{{ page.url | absolute_url }}" title="Copy link" aria-label="Copy link">
+    <i class="fas fa-fw fa-link" aria-hidden="true"></i><span data-copy-link-label> Copy link</span>
+  </button>
+  <span class="screen-reader-text" data-copy-link-status aria-live="polite"></span>
+
+  <script>
+    (function () {
+      var button = document.querySelector('[data-copy-link]');
+      if (!button) return;
+
+      var label = button.querySelector('[data-copy-link-label]');
+      var status = button.parentNode.querySelector('[data-copy-link-status]');
+      var originalLabel = label.textContent;
+
+      button.addEventListener('click', function () {
+        var url = button.getAttribute('data-copy-link');
+
+        function showResult(success) {
+          label.textContent = success ? ' Copied!' : ' Copy failed';
+          if (status) status.textContent = success ? 'Link copied to clipboard.' : 'Could not copy the link. Please copy the page URL from the address bar.';
+          window.setTimeout(function () {
+            label.textContent = originalLabel;
+            if (status) status.textContent = '';
+          }, 2500);
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(url).then(function () {
+            showResult(true);
+          }).catch(function () {
+            showResult(false);
+          });
+          return;
+        }
+
+        var input = document.createElement('textarea');
+        input.value = url;
+        input.setAttribute('readonly', '');
+        input.style.position = 'absolute';
+        input.style.left = '-9999px';
+        document.body.appendChild(input);
+        input.select();
+
+        var copied = false;
+        try {
+          copied = document.execCommand('copy');
+        } catch (error) {
+          copied = false;
+        }
+        document.body.removeChild(input);
+        showResult(copied);
+      });
+    }());
+  </script>
 </section>
