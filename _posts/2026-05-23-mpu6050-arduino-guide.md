@@ -143,6 +143,19 @@ On the Arduino Uno and Nano:
 - **A4 → SDA**
 - **A5 → SCL**
 
+### ESP32 Connections
+
+For a typical classic ESP32 DevKit, the common default I2C pins are GPIO 21 (SDA) and GPIO 22 (SCL).
+
+| MPU6050 Pin | ESP32 DevKit (typical defaults) |
+|---|---|
+| VCC | 3.3V, unless your breakout board documentation specifies otherwise |
+| GND | GND |
+| SDA | GPIO 21 |
+| SCL | GPIO 22 |
+
+These GPIO numbers are common defaults, not universal pin assignments. Other ESP32 boards may use different pins, and your sketch can configure custom I2C pins. If you use different pins, initialize I2C explicitly with `Wire.begin(SDA_PIN, SCL_PIN);` before initializing the sensor. Check the breakout board's voltage requirements before connecting it.
+
 The correct supply voltage depends on the MPU6050 breakout board you are using.
 
 **Important:** the MPU6050 sensor itself is a low-voltage device. Some breakout boards include a voltage regulator and level shifting and can accept 5V on VCC, while others do not. Always check the specifications of your particular module before connecting it to 5V.
