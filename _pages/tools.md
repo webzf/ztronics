@@ -28,7 +28,7 @@ Practical tools for **ESP32, Arduino, Raspberry Pi and embedded hardware project
 
 ## ESP32 Display & Touchscreen Tools
 
-### [ESP32 Touchscreen Display & Board Selector](/tools/esp32-touchscreen-selector/)
+### ESP32 Touchscreen Display & Board Selector
 
 Find compatible ESP32 boards and touchscreen displays by **MCU family, screen size, resolution, display interface, touch technology, PSRAM, LVGL, USB, GPIO and other hardware requirements**.
 
@@ -51,13 +51,17 @@ Once you know the type of display you need, use a focused selector for a specifi
 
 ## I2C Tools
 
-### [I2C Address Lookup & Compatibility Checker](/tools/i2c-address-lookup/)
+### I2C Address Lookup & Compatibility Checker
 
 Look up common I2C device addresses, identify possible address conflicts and build a compatible I2C device configuration for Arduino, ESP32 and Raspberry Pi projects.
 
-### [I2C Pull-up Resistor Calculator](/tools/i2c-pullup-resistor-calculator/)
+**[Open the I2C Address Lookup Tool →](/tools/i2c-address-lookup/)**
+
+### I2C Pull-up Resistor Calculator
 
 Calculate a practical I2C pull-up resistor range from bus voltage, speed, sink current and bus capacitance.
+
+**[Open the I2C Pull-up Resistor Calculator →](/tools/i2c-pullup-resistor-calculator/)**
 
 ## Guides & Hardware Resources
 
