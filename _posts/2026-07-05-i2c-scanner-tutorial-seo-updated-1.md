@@ -1,5 +1,5 @@
 ---
-title: "I2C Scanner for Arduino, ESP32 & ESP8266 (Code + Fixes)"
+title: "ESP32 I2C Scanner: Arduino & ESP8266 Code"
 
 howto: true
 
@@ -17,7 +17,7 @@ internal_link_keywords:
   - "find I2C address"
   - "I2C device address"
 
-excerpt: "Copy-paste I2C scanner sketch for Arduino, ESP32 and ESP8266. Find device addresses and fix No I2C devices found errors fast."
+excerpt: "Run an I2C scanner on ESP32, ESP8266 or Arduino to find device addresses, check wiring and troubleshoot missing I2C sensors and displays."
 
 show_date: false
 read_time: false
@@ -73,7 +73,9 @@ required_hardware:
 
 
 
-An **I2C Scanner** is a small diagnostic program that scans the I2C bus and reports the address of every device that responds. It's the fastest way to **find an I2C address**, confirm the **I2C device address** of a sensor or display, and verify that your wiring is correct — before you write a single line of application code.
+An **I2C Scanner** is a small diagnostic program that scans the I2C bus and reports the address of every device that responds. It's the fastest way to check whether a sensor or display is responding. If you already have an address and want to identify the device, use the [I2C Address Lookup Tool](/tools/i2c-address-lookup/). An I2C scanner cannot identify every device with certainty from its address alone.
+
+ **find an I2C address**, confirm the **I2C device address** of a sensor or display, and verify that your wiring is correct — before you write a single line of application code.
 If you've connected an [OLED Display](/products/ssd1306-oled/), MPU6050, BME280, RTC module or another I2C device to an **Arduino**, **ESP32** or **ESP8266**, one of the first things you may need to know is its I2C address. Datasheets and tutorials list "common" addresses, but the real address on your bus can differ depending on the module, its wiring, and any address-select pins it exposes. Running a scanner removes the guesswork.
 If your project reports **"No I2C devices found"**, running an I2C Scanner should usually be one of the very first troubleshooting steps.
 
