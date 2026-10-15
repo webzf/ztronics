@@ -45,6 +45,12 @@ sidebar:
   nav: "embedded"
   related: true
   share: true
+related: true
+related_posts:
+  - /mpu6050-calibration-guide/
+  - /bma400-vs-mpu6050/
+  - /bma400-esp32-tutorial-wiring-code-arduino-guide/
+  - /mpu6050-arduino-guide/
 ---
 
 **Updated October 2026**
