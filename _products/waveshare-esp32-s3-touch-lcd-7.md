@@ -3,7 +3,7 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-S3-Touch-LCD-7"
 product_verdict: "Best suited to projects that need a large 7-inch 800×480 interface with ESP32-S3; consider the 4.3-inch model for a smaller enclosure or the ESP32-P4 7B for 1024×600."
-seo_title: "Waveshare ESP32-S3 7-Inch Display: Specs & Guide"
+seo_title: "Waveshare ESP32-S3-Touch-LCD-7: Specs"
 seo_description: "Explore the Waveshare ESP32-S3-Touch-LCD-7: 7-inch 800×480 IPS display, capacitive touch, ESP32-S3, PSRAM, interfaces and alternatives."
 product_id: waveshare-esp32-s3-touch-lcd-7
 category: Displays
