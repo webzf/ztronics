@@ -3,7 +3,7 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-C6-Touch-AMOLED-1.8"
 product_verdict: "A compact AMOLED option for ESP32-C6 projects that benefit from onboard sensing, audio and storage; check the hardware revision because display and touch controllers differ."
-seo_title: "Waveshare ESP32-C6 AMOLED 1.8: Specs & Guide"
+seo_title: "Waveshare ESP32-C6-Touch-AMOLED-1.8: Specs"
 seo_description: "Review the Waveshare ESP32-C6-Touch-AMOLED-1.8: 368×448 AMOLED, touch, ESP32-C6, IMU, RTC, audio, storage, revision differences and alternatives."
 product_id: waveshare-esp32-c6-touch-amoled-1-8
 category: Displays
