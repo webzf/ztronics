@@ -53,6 +53,11 @@ tags:
   - Esp32 Projects
 
 related: true
+related_posts:
+  - /esp32-oled-tutorial-wiring-code-display-guide/
+  - /mpu6050-arduino-guide/
+  - /mpu6050-calibration-guide/
+  - /i2c-scanner-tutorial/
 share: true
 
 required_hardware:
