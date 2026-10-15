@@ -73,6 +73,8 @@ The best choice ultimately depends on the requirements of your particular projec
 
 For a closer look at one popular 4.3-inch option, see our [Sunton ESP32-8048S043C Arduino pinout, code and setup guide](/sunton-esp32-8048s043c-guide/). It covers the GT911, microSD pins, RGB setup and software examples.
 
+If you're planning a round interface rather than a rectangular touchscreen, see our [ESP32-P4 round touchscreen projects guide](/esp32-p4-round-touchscreen-display-projects/) for three LVGL 9 UI examples and board-specific setup considerations.
+
 For a smaller all-in-one option, see the [ESP32-2432S028 (CYD) 2.8-inch touchscreen board](/products/esp32-2432s028-2-8-cyd/), with its integrated ESP32, resistive touch and revision-specific pinout details.
 
 ### Use the ESP32 touchscreen selector by project requirement
