@@ -3,7 +3,7 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-P4-WIFI6-Touch-LCD-7B"
 product_verdict: "Consider this board for a demanding 7-inch HMI that benefits from 1024×600 resolution and ESP32-P4 capabilities; it is excessive for a simple small-screen ESP32 project."
-seo_title: "Waveshare ESP32-P4 7-Inch HMI: Specs & Guide"
+seo_title: "Waveshare ESP32-P4-WIFI6-Touch-LCD-7B: Specs"
 seo_description: "Review the Waveshare ESP32-P4-WIFI6-Touch-LCD-7B: 7-inch 1024×600 capacitive display, ESP32-P4, memory, interfaces and alternatives."
 product_id: waveshare-esp32-p4-wifi6-touch-lcd-7b
 category: Displays
