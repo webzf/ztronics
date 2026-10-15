@@ -3,7 +3,7 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C"
 product_verdict: "A strong choice for a high-resolution circular HMI with ESP32-P4 performance, provided your project can accommodate the board's size and MIPI-DSI setup."
-seo_title: "Waveshare ESP32-P4 Round Touchscreen 3.4C: Specs & Guide"
+seo_title: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C: Specs"
 seo_description: "Explore the Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C: 3.4-inch 800×800 round capacitive touchscreen, ESP32-P4, memory, interfaces and LVGL projects."
 product_id: waveshare-esp32-p4-wifi6-touch-lcd-3-4c
 category: Displays
