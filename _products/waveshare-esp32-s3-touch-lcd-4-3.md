@@ -3,7 +3,7 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-S3-Touch-LCD-4.3"
 product_verdict: "A strong choice for a 4.3-inch 800×480 ESP32-S3 HMI with capacitive touch and PSRAM; choose the 7-inch model when screen size matters more than compactness."
-seo_title: "Waveshare ESP32-S3 4.3-Inch Display: Specs & Guide"
+seo_title: "Waveshare ESP32-S3-Touch-LCD-4.3: Specs"
 seo_description: "Review the Waveshare ESP32-S3-Touch-LCD-4.3: 800×480 RGB display, capacitive touch, 16MB flash, 8MB PSRAM, interfaces and alternatives."
 
 product_id: waveshare-esp32-s3-touch-lcd-4-3
