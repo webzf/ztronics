@@ -51,6 +51,11 @@ tags:
   - Electronics
 
 related: true
+related_posts:
+  - /mpu6050-arduino-guide/
+  - /esp32-oled-tutorial-wiring-code-display-guide/
+  - /mpu6050-calibration-guide/
+  - /bma400-esp32-tutorial-wiring-code-arduino-guide/
 share: true
 
 required_hardware:
