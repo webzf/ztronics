@@ -33,6 +33,10 @@ tags:
   - touchscreen
   - lvgl
   - gt911
+related: true
+related_posts:
+  - /esp32-touchscreen-displays-guide/
+  - /esp32-p4-round-touchscreen-display-projects/
 ---
 
 The **Sunton ESP32-8048S043C** is an all-in-one board built around an ESP32-S3, a 4.3" 800×480 IPS display and a capacitive touch panel on one PCB. It is aimed at projects that need a relatively large touchscreen without combining a separate ESP32 and display module.
