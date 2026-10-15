@@ -64,6 +64,10 @@ tags:
   - Electronics
 
 related: true
+related_posts:
+  - /esp32-snake-game-with-mpu6050-and-oled-display/
+  - /i2c-scanner-tutorial/
+  - /mpu6050-arduino-guide/
 share: true
 
 ---
