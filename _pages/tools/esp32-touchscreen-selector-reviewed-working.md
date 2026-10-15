@@ -1,5 +1,5 @@
 ---
-title: "ESP32 Touchscreen Display & Board Selector | Find Compatible Hardware"
+title: "ESP32 Touchscreen Selector & Hardware Picker"
 layout: single
 classes: wide
 sidebar:
@@ -7,7 +7,7 @@ sidebar:
 internal_links: true
 permalink: /tools/esp32-touchscreen-selector/
 canonical_url: /tools/esp32-touchscreen-selector/
-excerpt: "Find compatible ESP32 boards, displays and touchscreen hardware by MCU family, screen size, resolution, interface, touch, PSRAM, LVGL, USB, GPIO and more."
+excerpt: "Use this ESP32 touchscreen selector and hardware picker to find compatible boards and displays by size, resolution, interface, touch, PSRAM, LVGL, USB and GPIO."
 show_date: false
 read_time: false
 last_modified_at: false
@@ -44,7 +44,7 @@ tags:
 
 <div class="selector-app-shell">
 <p class="site-label">Embedded Nerd · Open Source Tool</p>
-<header class="hero"><span class="eyebrow">ESP32 HARDWARE DISCOVERY</span><h1>ESP32 Touchscreen Selector</h1><p>Find compatible ESP32 boards, displays and touchscreen hardware for your project. Start with your project type or use technical requirements directly. <strong>Required</strong> filters exclude incompatible hardware; project intent and other preferences influence ranking.</p></header>
+<header class="hero"><span class="eyebrow">ESP32 HARDWARE DISCOVERY</span><h1>ESP32 Touchscreen Selector</h1><p>Find compatible ESP32 boards, displays and touchscreen hardware for your project. Start with your project type or use technical requirements directly. <strong>Required</strong> filters exclude incompatible hardware; project intent and other preferences influence ranking.</p><p>Need help choosing a display first? Read our <a href="/esp32-touchscreen-displays-guide/">ESP32 touchscreen displays guide</a> for a practical comparison of screen sizes, touch technologies, SPI vs RGB, and ESP32-S3 options.</p></header>
 <section class="tool" aria-labelledby="tool-title">
 <h2 id="tool-title" class="sr-only">Hardware selector</h2>
 <div class="mode-bar"><div class="mode-buttons"><button type="button" id="mode-requirements" class="mode-button active" data-mode="requirements">Choose &amp; filter</button><button type="button" id="browse-btn" class="mode-button" data-mode="browse">Browse all hardware</button></div><span class="catalog-status"><span id="catalog-count">0</span> catalog entries</span></div>
