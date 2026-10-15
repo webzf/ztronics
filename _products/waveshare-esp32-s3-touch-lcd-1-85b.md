@@ -3,7 +3,7 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-S3-Touch-LCD-1.85B"
 product_verdict: "A versatile compact board for square 360×360 interfaces with audio, sensing and storage; choose a larger LCD HMI when you need more viewing area."
-seo_title: "Waveshare ESP32-S3 1.85B: Specs & Buying Guide"
+seo_title: "Waveshare ESP32-S3-Touch-LCD-1.85B: Specs"
 seo_description: "Waveshare ESP32-S3-Touch-LCD-1.85B guide: 1.85-inch 360×360 touchscreen, PSRAM, IMU, RTC, audio, USB, storage and alternatives."
 product_id: waveshare-esp32-s3-touch-lcd-1-85b
 category: Displays
