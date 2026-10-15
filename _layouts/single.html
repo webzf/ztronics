@@ -102,6 +102,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% include post-related-products.html %}
   </article>
 
-  
+  {% comment %}Show related posts only when the page enables them and Jekyll finds related posts.{% endcomment %}
+  {% if page.id and page.related and site.related_posts.size > 0 %}
+    {% include page__related.html locale=locale posts=site.related_posts %}
+  {% endif %}
 </div>
 
