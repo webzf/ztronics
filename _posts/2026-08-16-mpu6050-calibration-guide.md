@@ -66,6 +66,11 @@ tags:
   - Electronics
 
 related: true
+related_posts:
+  - /mpu6050-arduino-guide/
+  - /mpu6050-discontinued-alternatives/
+  - /bma400-vs-mpu6050/
+  - /esp32-snake-game-with-mpu6050-and-oled-display/
 share: true
 
 ---
