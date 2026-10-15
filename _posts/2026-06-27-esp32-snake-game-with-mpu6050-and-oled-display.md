@@ -3,6 +3,8 @@
 title: "ESP32 Snake Game Tutorial: MPU6050 Tilt Control & OLED"
 
 permalink: /esp32-snake-game-with-mpu6050-and-oled-display/
+redirect_from:
+  - /esp32-snake-game-with-mpu6050-and-oled-display
 
 howto: true
 
