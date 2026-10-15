@@ -35,6 +35,10 @@ tags:
 toc: true
 toc_label: "Contents"
 toc_sticky: true
+related: true
+related_posts:
+  - /esp32-touchscreen-displays-guide/
+  - /sunton-esp32-8048s043c-guide/
 ---
 
 Round touchscreens used to mean tiny 1.28" modules with a few hundred pixels. The **ESP32-P4** changes that. It has a MIPI-DSI display interface, a lot of PSRAM and enough CPU for smooth LVGL animations, so a round screen can finally be big, sharp and responsive.
