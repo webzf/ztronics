@@ -45,6 +45,9 @@ tags:
 sidebar:
   nav: "embedded"
 related: true
+related_posts:
+  - /esp32-p4-round-touchscreen-display-projects/
+  - /sunton-esp32-8048s043c-guide/
 share: true
 ---
 
