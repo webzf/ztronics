@@ -1,11 +1,11 @@
 ---
-title: "ESP32 Touchscreen Displays: Complete Guide to Choosing and Using a Touchscreen"
+title: "ESP32 Touchscreen Displays: How to Choose the Best"
 layout: single
 permalink: /esp32-touchscreen-displays-guide/
 redirect_from:
   - /esp32-s3-touchscreen-displays-guide/
   - /esp32-tft-touchscreen-displays-guide/
-excerpt: "Learn how to choose an ESP32 touchscreen display for your project. Compare resistive and capacitive touch, SPI and RGB displays, screen sizes, ESP32-S3 options, LVGL, and recommended touchscreen modules."
+excerpt: "Compare ESP32 touchscreen displays by size, touch technology, SPI vs RGB, ESP32-S3, PSRAM and LVGL. Use our touchscreen selector to find compatible hardware for your project."
 show_date: false
 read_time: false
 last_modified_at: false
