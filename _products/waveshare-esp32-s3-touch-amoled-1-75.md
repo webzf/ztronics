@@ -3,7 +3,7 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-S3-Touch-AMOLED-1.75"
 product_verdict: "Choose this board for a round 466×466 AMOLED interface in a compact form; it is less suitable for conventional rectangular dashboards or layouts built around square corners."
-seo_title: "Waveshare ESP32-S3 AMOLED 1.75: Specs & Guide"
+seo_title: "Waveshare ESP32-S3-Touch-AMOLED-1.75: Specs"
 seo_description: "Waveshare ESP32-S3-Touch-AMOLED-1.75 overview: round 466×466 AMOLED, ESP32-S3, PSRAM, IMU, RTC, audio, storage and alternatives."
 product_id: waveshare-esp32-s3-touch-amoled-1-75
 category: Displays
