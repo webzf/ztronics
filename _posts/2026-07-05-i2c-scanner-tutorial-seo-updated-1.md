@@ -82,7 +82,7 @@ An **I2C Scanner** is a small diagnostic program that scans the I2C bus and repo
 
  **find an I2C address**, confirm the **I2C device address** of a sensor or display, and verify that your wiring is correct — before you write a single line of application code.
 If you've connected an [OLED Display](/products/ssd1306-oled/), MPU6050, BME280, RTC module or another I2C device to an **Arduino**, **ESP32** or **ESP8266**, one of the first things you may need to know is its I2C address. Datasheets and tutorials list "common" addresses, but the real address on your bus can differ depending on the module, its wiring, and any address-select pins it exposes. Running a scanner removes the guesswork.
-If your project reports **"No I2C devices found"**, running an I2C Scanner should usually be one of the very first troubleshooting steps.
+If your project reports **"No I2C devices found"**, running an I2C Scanner should usually be one of the very first troubleshooting steps. If the missing device is an MPU6050, also check our [MPU6050 Arduino wiring guide](/mpu6050-arduino-guide/) for the correct SDA/SCL connections and platform-specific setup.
 
 ![I2C Scanner tutorial showing Arduino Uno, ESP32, SSD1306 OLED and MPU6050 with wiring and detected I2C addresses.]({{ '/assets/images/i2c-scanner-tutorial-arduino-esp32.webp' | relative_url }})
 
