@@ -275,7 +275,7 @@ For the base circuit, you'll need:
 - Solderless Breadboard
 - Male-to-Female Jumper Wires
 
-These are the same core components listed in the **Material para este projeto** section above.
+These are the same core components listed in the **Parts for This Project** section above.
 
 ---
 
