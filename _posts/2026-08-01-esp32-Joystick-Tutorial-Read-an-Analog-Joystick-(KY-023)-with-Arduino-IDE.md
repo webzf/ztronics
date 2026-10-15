@@ -63,13 +63,13 @@ required_hardware:
     component: Male-to-Female Jumper Wires
 ---
 
-### 🛒 Material para este projeto
+### 🛒 Parts for This Project
 
-Para montar o circuito base, estes são os componentes que usamos. Os produtos disponíveis no Embedded Nerd incluem uma opção de compra junto à respetiva ficha:
+These are the components used to build the basic circuit. Where available, Embedded Nerd product listings include a purchase option alongside each item:
 
 {% include required-hardware.html products=page.required_hardware %}
 
-> **Dica:** Se pretende experimentar os exemplos de servo, OLED ou motor mais abaixo, pode acrescentar esses componentes ao kit base.
+> **Tip:** If you want to try the servo, OLED, or motor examples later in this tutorial, you can add those components to the basic kit.
 
 ---
 
