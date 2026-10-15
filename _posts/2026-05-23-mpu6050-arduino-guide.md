@@ -60,6 +60,11 @@ tags:
   - I2C
 
 related: true
+related_posts:
+  - /i2c-scanner-tutorial/
+  - /mpu6050-calibration-guide/
+  - /esp32-snake-game-with-mpu6050-and-oled-display/
+  - /esp32-oled-tutorial-wiring-code-display-guide/
 share: true
 ---
 
