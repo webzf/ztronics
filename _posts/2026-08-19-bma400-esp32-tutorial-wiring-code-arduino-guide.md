@@ -42,6 +42,10 @@ tags:
   - Bosch Sensortec
 
 related: true
+related_posts:
+  - /bma400-vs-mpu6050/
+  - /mpu6050-discontinued-alternatives/
+  - /mpu6050-calibration-guide/
 share: true
 
 required_hardware:
