@@ -3,7 +3,7 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-S3-Touch-AMOLED-2.41"
 product_verdict: "A feature-rich compact board for a sharp AMOLED interface plus built-in motion sensing and RTC; choose an LCD touchscreen instead if your project prioritizes a larger panel over compactness."
-seo_title: "Waveshare ESP32-S3 AMOLED 2.41: Specs & Buying Guide"
+seo_title: "Waveshare ESP32-S3-Touch-AMOLED-2.41: Specs"
 seo_description: "Waveshare ESP32-S3-Touch-AMOLED-2.41 overview: 600×450 AMOLED, capacitive touch, ESP32-S3, IMU, RTC, storage and alternatives."
 product_id: waveshare-esp32-s3-touch-amoled-2-41
 category: Displays
