@@ -2,15 +2,12 @@
 <!-- begin _includes/seo.html -->
 {%- assign title_separator = site.title_separator | default: '-' -%}
 
+{%- comment -%} TITULO: sem sufixo da marca. seo_title no front matter tem prioridade. {%- endcomment -%}
 {%- assign page_title = page.title | default: site.title | replace: '|', '&#124;' -%}
 {%- if page.seo_title -%}
   {%- assign seo_title = page.seo_title | replace: '|', '&#124;' -%}
-{%- elsif page.title_tag -%}
-  {%- assign seo_title = page.title_tag | replace: '|', '&#124;' -%}
-{%- elsif page_title contains site.title -%}
-  {%- assign seo_title = page_title | replace: '|', '&#124;' -%}
 {%- else -%}
-  {%- assign seo_title = page_title | append: " " | append: title_separator | append: " " | append: site.title | replace: '|', '&#124;' -%}
+  {%- assign seo_title = page_title -%}
 {%- endif -%}
 
 {%- assign page_title = page_title | markdownify | strip_html | strip_newlines | escape_once -%}
@@ -18,9 +15,10 @@
 
 {%- assign canonical_url = page.canonical_url | default: page.url | replace: "/index.html", "/" | absolute_url %}
 
-{%- assign seo_description = page.seo_description | default: page.description | default: page.excerpt | default: site.description -%}
+{%- comment -%} DESCRICAO: ~155 caracteres {%- endcomment -%}
+{%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
 {%- if seo_description -%}
-  {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | escape_once | strip -%}
+  {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | strip | truncate: 155 | escape_once -%}
 {%- endif -%}
 
 {%- assign author = page.author | default: page.authors[0] | default: site.author -%}
@@ -32,7 +30,6 @@
 
 {%- assign page_large_image = page.header.og_image | default: page.header.overlay_image | default: page.header.image | absolute_url | escape -%}
 {%- assign page_teaser_image = page.header.teaser | default: site.og_image | absolute_url | escape -%}
-{%- assign site_og_image = site.og_image | absolute_url | escape -%}
 {%- assign og_image_alt = page.header.og_image_alt | default: site.og_image_alt | escape -%}
 
 {%- if page.date -%}
@@ -43,6 +40,13 @@
 
 <title>{{ seo_title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
 <meta name="description" content="{{ seo_description }}">
+<link rel="canonical" href="{{ canonical_url }}">
+
+{% if page.noindex %}
+  <meta name="robots" content="noindex, follow">
+{% else %}
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+{% endif %}
 
 {% if author.name %}
   <meta name="author" content="{{ author.name | default: author | escape_once | strip }}">
@@ -51,52 +55,49 @@
   {% endif %}
 {% endif %}
 
+<!-- Open Graph -->
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:locale" content="{{ locale | replace: "-", "_" | default: "en_US" }}">
 <meta property="og:site_name" content="{{ site.title | escape_once | strip }}">
-<meta property="og:title" content="{{ page_title }}">
+<meta property="og:title" content="{{ seo_title }}">
 <meta property="og:url" content="{{ canonical_url }}">
-
 {% if seo_description %}
   <meta property="og:description" content="{{ seo_description }}">
 {% endif %}
-
 {% if page_large_image %}
   <meta property="og:image" content="{{ page_large_image }}">
-  {% if og_image_alt %}
-    <meta property="og:image:alt" content="{{ og_image_alt }}">
-  {% endif %}
+  {% if og_image_alt %}<meta property="og:image:alt" content="{{ og_image_alt }}">{% endif %}
 {% elsif page_teaser_image %}
   <meta property="og:image" content="{{ page_teaser_image }}">
-  {% if og_image_alt %}
-    <meta property="og:image:alt" content="{{ og_image_alt }}">
-  {% endif %}
+  {% if og_image_alt %}<meta property="og:image:alt" content="{{ og_image_alt }}">{% endif %}
 {% endif %}
 
+{% if page.date %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% endif %}
+{% if og_type == "article" and page.last_modified_at %}
+  <meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">
+{% endif %}
+
+<!-- Twitter / X (sempre ativo, mesmo sem username) -->
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_description }}">
+<meta name="twitter:url" content="{{ canonical_url }}">
 {% if site.twitter.username %}
   <meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
-  <meta name="twitter:title" content="{{ page_title }}">
-  <meta name="twitter:description" content="{{ seo_description }}">
-  <meta name="twitter:url" content="{{ canonical_url }}">
-
-  {% if page_large_image %}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="{{ page_large_image }}">
-    {% if og_image_alt %}
-      <meta name="twitter:image:alt" content="{{ og_image_alt }}">
-    {% endif %}
-  {% else %}
-    <meta name="twitter:card" content="summary">
-    {% if page_teaser_image %}
-      <meta name="twitter:image" content="{{ page_teaser_image }}">
-      {% if og_image_alt %}
-        <meta name="twitter:image:alt" content="{{ og_image_alt }}">
-      {% endif %}
-    {% endif %}
-  {% endif %}
-
-  {% if author_twitter %}
-    <meta name="twitter:creator" content="@{{ author_twitter }}">
+{% endif %}
+{% if author_twitter %}
+  <meta name="twitter:creator" content="@{{ author_twitter }}">
+{% endif %}
+{% if page_large_image %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ page_large_image }}">
+  {% if og_image_alt %}<meta name="twitter:image:alt" content="{{ og_image_alt }}">{% endif %}
+{% else %}
+  <meta name="twitter:card" content="summary">
+  {% if page_teaser_image %}
+    <meta name="twitter:image" content="{{ page_teaser_image }}">
+    {% if og_image_alt %}<meta name="twitter:image:alt" content="{{ og_image_alt }}">{% endif %}
   {% endif %}
 {% endif %}
 
@@ -104,31 +105,13 @@
   <meta name="fediverse:creator" content="{{ author.fediverse }}">
 {% endif %}
 
-{% if page.date %}
-  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
-{% endif %}
-
-{% if og_type == "article" and page.last_modified_at %}
-  <meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">
-{% endif %}
-
 {% if site.facebook %}
   {% if site.facebook.publisher %}
     <meta property="article:publisher" content="{{ site.facebook.publisher }}">
   {% endif %}
-
   {% if site.facebook.app_id %}
     <meta property="fb:app_id" content="{{ site.facebook.app_id }}">
   {% endif %}
-{% endif %}
-
-<link rel="canonical" href="{{ canonical_url }}">
-
-{% if paginator.previous_page %}
-  <link rel="prev" href="{{ paginator.previous_page_path | absolute_url }}">
-{% endif %}
-{% if paginator.next_page %}
-  <link rel="next" href="{{ paginator.next_page_path | absolute_url }}">
 {% endif %}
 
 {% if page.url == '/' %}
@@ -141,16 +124,7 @@
 {% if site.bing_site_verification %}
   <meta name="msvalidate.01" content="{{ site.bing_site_verification }}">
 {% endif %}
-{% if site.alexa_site_verification %}
-  <meta name="alexaVerifyID" content="{{ site.alexaVerifyID }}">
-{% endif %}
 {% if site.yandex_site_verification %}
   <meta name="yandex-verification" content="{{ site.yandex_site_verification }}">
-{% endif %}
-{% if site.naver_site_verification %}
-  <meta name="naver-site-verification" content="{{ site.naver_site_verification }}">
-{% endif %}
-{% if site.baidu_site_verification %}
-  <meta name="baidu-site-verification" content="{{ site.baidu_site_verification }}">
 {% endif %}
 <!-- end _includes/seo.html -->

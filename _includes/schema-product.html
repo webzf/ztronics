@@ -1,0 +1,50 @@
+{%- comment -%}
+  _includes/schema-product.html
+  Só gera JSON-LD se a página tiver "product:" no front matter.
+{%- endcomment -%}
+{%- if page.product -%}
+{%- assign p = page.product -%}
+{%- assign p_image = p.image | default: page.header.og_image | default: page.header.image | default: page.header.teaser | default: site.og_image -%}
+{%- assign p_description = p.description | default: page.description | default: site.description | markdownify | strip_html | strip_newlines | strip -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ p.name | default: page.title | jsonify }},
+  "description": {{ p_description | jsonify }},
+  {%- if p_image %}
+  "image": {{ p_image | absolute_url | jsonify }},
+  {%- endif %}
+  {%- if p.sku %}
+  "sku": {{ p.sku | jsonify }},
+  {%- endif %}
+  {%- if p.mpn %}
+  "mpn": {{ p.mpn | jsonify }},
+  {%- endif %}
+  {%- if p.brand %}
+  "brand": { "@type": "Brand", "name": {{ p.brand | jsonify }} },
+  {%- endif %}
+  {%- if p.price %}
+  "offers": {
+    "@type": "Offer",
+    "url": {{ page.url | absolute_url | jsonify }},
+    "price": {{ p.price | jsonify }},
+    "priceCurrency": {{ p.currency | default: 'USD' | jsonify }},
+    "availability": "https://schema.org/{{ p.availability | default: 'InStock' }}",
+    {%- if p.price_valid_until %}
+    "priceValidUntil": {{ p.price_valid_until | jsonify }},
+    {%- endif %}
+    "itemCondition": "https://schema.org/NewCondition"
+  },
+  {%- endif %}
+  {%- if p.rating and p.rating_count %}
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ p.rating | jsonify }},
+    "reviewCount": {{ p.rating_count | jsonify }}
+  },
+  {%- endif %}
+  "url": {{ page.url | absolute_url | jsonify }}
+}
+</script>
+{%- endif -%}

@@ -1,0 +1,60 @@
+{%- comment -%}
+  _includes/schema-review.html
+  Só gera JSON-LD se a página tiver "review:" com "rating" no front matter.
+{%- endcomment -%}
+{%- if page.review and page.review.rating -%}
+{%- assign r = page.review -%}
+{%- assign r_image = r.image | default: page.header.og_image | default: page.header.image | default: page.header.teaser | default: site.og_image -%}
+{%- assign r_description = r.summary | default: page.description | default: site.description | markdownify | strip_html | strip_newlines | strip -%}
+{%- assign r_author = r.author | default: site.author.name | default: site.title -%}
+{%- assign r_date = r.date | default: page.date | default: site.time -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": {{ page.title | jsonify }},
+  "itemReviewed": {
+    "@type": "Product",
+    {%- if r_image %}
+    "image": {{ r_image | absolute_url | jsonify }},
+    {%- endif %}
+    {%- if r.brand %}
+    "brand": { "@type": "Brand", "name": {{ r.brand | jsonify }} },
+    {%- endif %}
+    {%- if r.sku %}
+    "sku": {{ r.sku | jsonify }},
+    {%- endif %}
+    "name": {{ r.product_name | default: page.title | jsonify }}
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": {{ r.rating | jsonify }},
+    "bestRating": {{ r.best_rating | default: 5 | jsonify }},
+    "worstRating": {{ r.worst_rating | default: 1 | jsonify }}
+  },
+  "author": { "@type": "Person", "name": {{ r_author | jsonify }} },
+  "datePublished": {{ r_date | date_to_xmlschema | jsonify }},
+  {%- if r.pros %}
+  "positiveNotes": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {%- for item in r.pros %}
+      { "@type": "ListItem", "position": {{ forloop.index }}, "name": {{ item | jsonify }} }{% unless forloop.last %},{% endunless %}
+      {%- endfor %}
+    ]
+  },
+  {%- endif %}
+  {%- if r.cons %}
+  "negativeNotes": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {%- for item in r.cons %}
+      { "@type": "ListItem", "position": {{ forloop.index }}, "name": {{ item | jsonify }} }{% unless forloop.last %},{% endunless %}
+      {%- endfor %}
+    ]
+  },
+  {%- endif %}
+  "reviewBody": {{ r_description | jsonify }}
+}
+</script>
+{%- endif -%}
