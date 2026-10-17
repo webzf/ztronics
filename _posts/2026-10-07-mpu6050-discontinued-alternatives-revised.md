@@ -12,7 +12,7 @@ permalink: /mpu6050-discontinued-alternatives/
 date: 2026-08-31
 id: "https://embeddednerd.com/mpu6050-discontinued-alternatives/"
 show_date: true
-last_modified_at: 2026-10-13
+last_modified_at: 2026-10-17
 read_time: false
 toc: true
 toc_label: "Contents"
@@ -67,7 +67,7 @@ Yes, the MPU6050 is discontinued. TDK InvenSense issued an end-of-life notice (P
 
 ## The Short Answer
 
-**Yes — the MPU6050 is discontinued and now obsolete.** TDK InvenSense's official EOL notice (PCN-000614) was issued on July 23, 2023. It set January 31, 2024 as the Last Time Buy and December 31, 2024 as the Last Time Ship date.
+**Yes — the MPU6050 is discontinued and now obsolete.** See the [EOL section](#is-the-mpu6050-discontinued-what-the-eol-notice-says) for the official notice and timeline.
 
 The important part for a buyer is what comes next:
 
@@ -84,12 +84,12 @@ None of the alternatives is a drop-in replacement. Hardware, registers, pinout a
 
 | Sensor | Interface | Current draw | Range | Best choice when | Where to buy |
 |---|---|---|---|---|---|
-| **MPU6050** (obsolete) | I2C | ~3.9 mA in normal 6-axis operation* | ±2/4/8/16 g; ±250–2000 °/s | Existing projects, learning, prototypes | [Product page](/products/mpu6050/) · [AliExpress](https://s.click.aliexpress.com/e/_c2uAjJYP){: rel="sponsored nofollow noopener"} |
+| **MPU6050** (obsolete) | I2C | ~3.9 mA in normal 6-axis operation* | ±2/4/8/16 g; ±250–2000 °/s | Existing projects, learning, prototypes | [Product page](/products/mpu6050/) · [AliExpress](https://s.click.aliexpress.com/e/_c2uAjJYP){: rel="sponsored nofollow noopener" } |
 | **ICM-42670-P** | I2C, SPI, I3C | ~0.55 mA low-noise 6-axis | ±2/4/8/16 g; up to ±2000 °/s | New 6-axis project, general purpose | [Product page](/products/icm-42670-p/) |
 | **ICM-42688-P** | I2C, SPI, I3C | ~0.88 mA low-noise 6-axis | ±2/4/8/16 g; ±15.6–2000 °/s | Low noise, stabilization, demanding sensor fusion | [Product page](/products/icm-42688-p/) |
-| **BMA400** (no gyro) | I2C, SPI | ~3.5–14.5 µA* | ±2/4/8/16 g | Battery-powered, wake-on-motion, accel only | [Product page](/products/bma400/) · [AliExpress](https://s.click.aliexpress.com/e/_c3RBiLUT){: rel="sponsored nofollow noopener"} |
+| **BMA400** (no gyro) | I2C, SPI | ~3.5–14.5 µA* | ±2/4/8/16 g | Battery-powered, wake-on-motion, accel only | [Product page](/products/bma400/) · [AliExpress](https://s.click.aliexpress.com/e/_c3RBiLUT){: rel="sponsored nofollow noopener" } |
 
-\* Sensor operating figures vary by mode; breakout-board consumption can be higher.
+* Sensor operating figures vary by mode; breakout-board consumption can be higher.
 
 **Not sure which one fits?** See [Which alternative should you choose?](#which-alternative-should-you-choose)
 
@@ -152,7 +152,7 @@ The BMA400 is therefore a strong alternative for motion detection, tilt sensing,
 
 If your application needs angular velocity, choose a 6-axis IMU instead.
 
-**Buy:** [BMA400 Accelerometer Module](/products/bma400/) · [AliExpress](https://s.click.aliexpress.com/e/_c3RBiLUT){: rel="sponsored nofollow noopener"}
+**Buy:** [BMA400 Accelerometer Module](/products/bma400/) · [AliExpress](https://s.click.aliexpress.com/e/_c3RBiLUT){: rel="sponsored nofollow noopener" }
 
 ## Which Alternative Should You Choose?
 
@@ -274,8 +274,6 @@ Expect to use a different library and adapt the software.
 
 The MPU6050 typically uses `0x68`, or `0x69` when AD0 is HIGH.
 
-*The MPU6050 current figure is approximate and refers to normal 6-axis operation; actual consumption depends on enabled sensors, sample rate and operating mode. Consult the [MPU-6050 product documentation at TDK InvenSense](https://product.tdk.com/system/files/dam/doc/product/sensor/mortion-inertial/imu/data_sheet/mpu-6000-datasheet1.pdf) for the operating conditions and electrical specifications.
-
 The BMA400 uses `0x14` or `0x15`.
 
 These different addresses mean an MPU6050 and BMA400 can potentially share the same I2C bus without an address conflict.
@@ -291,6 +289,8 @@ Address compatibility is only one part of successful integration. Also check:
 
 Use the [I2C Address Lookup & Compatibility Checker](/tools/i2c-address-lookup/) when planning a multi-sensor I2C bus.
 
+*Sensor operating figures vary by mode. The MPU6050's approximate current draw refers to normal 6-axis operation; actual consumption depends on enabled sensors, sample rate and operating mode. Consult the [MPU-6050 product documentation at TDK InvenSense](https://product.tdk.com/system/files/dam/doc/product/sensor/mortion-inertial/imu/data_sheet/mpu-6000-datasheet1.pdf) for the operating conditions and electrical specifications.*
+
 ### Arduino and ESP32 support
 
 All three alternatives can be used with Arduino and ESP32, but existing MPU6050 sketches should not be expected to run unchanged.
@@ -303,11 +303,11 @@ For MPU6050 projects, see the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/).
 
 | Component | Recommended Product | Buy |
 |---|---|---|
-| MPU6050 Accelerometer & Gyroscope — legacy/prototyping | [**MPU6050 Accelerometer & Gyroscope**](/products/mpu6050/) | [AliExpress](https://s.click.aliexpress.com/e/_c2uAjJYP){: rel="sponsored nofollow noopener"} |
+| MPU6050 Accelerometer & Gyroscope — legacy/prototyping | [**MPU6050 Accelerometer & Gyroscope**](/products/mpu6050/) | [AliExpress](https://s.click.aliexpress.com/e/_c2uAjJYP){: rel="sponsored nofollow noopener" } |
 | ICM-42670-P — 6-axis, low power | [**ICM-42670-P 6-Axis IMU**](/products/icm-42670-p/) | [Product page](/products/icm-42670-p/) |
 | ICM-42688-P — 6-axis, low noise | [**ICM-42688-P 6-Axis High-Precision IMU**](/products/icm-42688-p/) | [Product page](/products/icm-42688-p/) |
-| BMA400 — low power, accel only | [**BMA400 Accelerometer Module**](/products/bma400/) | [AliExpress](https://s.click.aliexpress.com/e/_c3RBiLUT){: rel="sponsored nofollow noopener"} |
-| ESP32 development board | [**ESP32 DevKit V1**](/products/esp32-devkit/) | [AliExpress](https://s.click.aliexpress.com/e/_c4n38hZ9){: rel="sponsored nofollow noopener"} |
+| BMA400 — low power, accel only | [**BMA400 Accelerometer Module**](/products/bma400/) | [AliExpress](https://s.click.aliexpress.com/e/_c3RBiLUT){: rel="sponsored nofollow noopener" } |
+| ESP32 development board | [**ESP32 DevKit V1**](/products/esp32-devkit/) | [AliExpress](https://s.click.aliexpress.com/e/_c4n38hZ9){: rel="sponsored nofollow noopener" } |
 
 > **Transparency Notice:** Some links on this page are affiliate links. If you purchase through them, Embedded Nerd may earn a small commission at no additional cost to you. This helps support the website and allows us to continue creating free tutorials and guides.
 
@@ -320,11 +320,13 @@ For MPU6050 projects, see the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/).
 - [I2C Address Lookup & Compatibility Checker](/tools/i2c-address-lookup/)
 - [Best Sensors for ESP32](/products/#sensors)
 
+> **Transparency Notice:** Some links on this page are affiliate links. If you purchase through them, Embedded Nerd may earn a small commission at no additional cost to you. This helps support the website and allows us to continue creating free tutorials and guides.
+
 ## FAQ
 
 ### Is the MPU6050 discontinued?
 
-Yes. TDK InvenSense issued an end-of-life notice (PCN-000614) with a last-time-buy of January 31, 2024 and a last-time-ship of December 31, 2024. GY-521 modules are still sold, but the original chip is obsolete.
+Yes. See the [EOL section](#is-the-mpu6050-discontinued-what-the-eol-notice-says) for the official notice and timeline. GY-521 modules are still sold, but the original chip is obsolete.
 
 ### What is the best MPU6050 replacement?
 
@@ -340,11 +342,11 @@ It depends on what better means. The ICM-42688-P offers lower noise, the BMA400 
 
 ### Is the MPU6050 obsolete?
 
-Yes. TDK InvenSense lists the MPU-6050 as obsolete. The published end-of-life schedule has passed its Last Time Buy date (January 31, 2024) and Last Time Ship date (December 31, 2024).
+Yes. TDK InvenSense lists the MPU-6050 as obsolete. See the [EOL section](#is-the-mpu6050-discontinued-what-the-eol-notice-says) for the published timeline.
 
 ### When was the MPU6050 discontinued?
 
-TDK InvenSense issued the EOL notice on July 23, 2023. It set January 31, 2024 as the Last Time Buy date and December 31, 2024 as the Last Time Ship date. See the [official PCN-000614 notice](https://www.tdk.com/en/tech-support/pcn/2023/pcn230018.pdf).
+TDK InvenSense issued the EOL notice on July 23, 2023. See the [official PCN-000614 notice](https://invensense.tdk.com/wp-content/uploads/2023/09/PCN-000614.pdf) and the timeline in the [EOL section](#is-the-mpu6050-discontinued-what-the-eol-notice-says).
 
 ### What is the best MPU6050 alternative for ESP32 or Arduino?
 
@@ -363,7 +365,7 @@ Other parts you may encounter include the ICM-20948, BMI270, BMI160, MPU6500 and
 Yes, modules are still sold and work fine for prototypes and existing projects. Availability does not mean the chip is in production, so avoid them for long-term manufactured products.
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the MPU6050 discontinued?","acceptedAnswer":{"@type":"Answer","text":"Yes. TDK InvenSense issued an end-of-life notice (PCN-000614) with a last-time-buy of January 31, 2024 and a last-time-ship of December 31, 2024. GY-521 modules are still sold, but the original chip is obsolete."}},{"@type":"Question","name":"What is the best MPU6050 replacement?","acceptedAnswer":{"@type":"Answer","text":"For a 6-axis replacement, start with the ICM-42670-P, which TDK lists as a recommended alternate. For accelerometer-only, low-power projects use the BMA400. For lower noise, evaluate the ICM-42688-P."}},{"@type":"Question","name":"Is there a drop-in replacement for the MPU6050?","acceptedAnswer":{"@type":"Answer","text":"No. The ICM-42670-P, ICM-42688-P and BMA400 all differ in package, pinout, registers and libraries, so moving from the MPU6050 is a design migration, not a swap."}},{"@type":"Question","name":"Is there a better alternative to the MPU6050?","acceptedAnswer":{"@type":"Answer","text":"It depends on what better means. The ICM-42688-P offers lower noise, the BMA400 offers far lower power but has no gyroscope, and the ICM-42670-P is the balanced general-purpose choice."}},{"@type":"Question","name":"BMI160 vs MPU6050: is it a direct replacement?","acceptedAnswer":{"@type":"Answer","text":"The BMI160 and MPU6050 are both 6-axis IMUs with an accelerometer and gyroscope, but the BMI160 is not a drop-in replacement. Verify lifecycle status, supply availability, package and pinout, register differences, and software support before choosing it for a new design."}},{"@type":"Question","name":"Can I still buy MPU6050 or GY-521 modules?","acceptedAnswer":{"@type":"Answer","text":"Yes, modules are still sold and work fine for prototypes and existing projects. Availability does not mean the chip is in production, so avoid them for long-term manufactured products."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the MPU6050 discontinued?","acceptedAnswer":{"@type":"Answer","text":"Yes. See the EOL section for the official notice and timeline. GY-521 modules are still sold, but the original chip is obsolete."}},{"@type":"Question","name":"What is the best MPU6050 replacement?","acceptedAnswer":{"@type":"Answer","text":"For a 6-axis replacement, start with the ICM-42670-P, which TDK lists as a recommended alternate. For accelerometer-only, low-power projects use the BMA400. For lower noise, evaluate the ICM-42688-P."}},{"@type":"Question","name":"Is there a drop-in replacement for the MPU6050?","acceptedAnswer":{"@type":"Answer","text":"No. The ICM-42670-P, ICM-42688-P and BMA400 all differ in package, pinout, registers and libraries, so moving from the MPU6050 is a design migration, not a swap."}},{"@type":"Question","name":"Is there a better alternative to the MPU6050?","acceptedAnswer":{"@type":"Answer","text":"It depends on what better means. The ICM-42688-P offers lower noise, the BMA400 offers far lower power but has no gyroscope, and the ICM-42670-P is the balanced general-purpose choice."}},{"@type":"Question","name":"BMI160 vs MPU6050: is it a direct replacement?","acceptedAnswer":{"@type":"Answer","text":"The BMI160 and MPU6050 are both 6-axis IMUs with an accelerometer and gyroscope, but the BMI160 is not a drop-in replacement. Verify lifecycle status, supply availability, package and pinout, register differences, and software support before choosing it for a new design."}},{"@type":"Question","name":"Can I still buy MPU6050 or GY-521 modules?","acceptedAnswer":{"@type":"Answer","text":"Yes, modules are still sold and work fine for prototypes and existing projects. Availability does not mean the chip is in production, so avoid them for long-term manufactured products."}}]}
 </script>
 
 ## Conclusion
