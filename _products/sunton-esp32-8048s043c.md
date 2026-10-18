@@ -96,7 +96,7 @@ Choose this board when your project benefits from a 4.3-inch 800×480 display, E
 | [**ESP32 CYD 2.8-inch**](/products/esp32-2432s028-2-8-cyd/) | A more compact integrated ESP32 touchscreen for smaller interfaces | Smaller 240×320 display and resistive touch |
 | [**Waveshare ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | Another integrated 4.3-inch 800×480 ESP32-S3 option to compare | Check connector layout, interface details and accessories against your project |
 
-Not sure this is the right screen for ESP32? See our [ESP32 touch screen display boards selector](/tools/esp32-touchscreen-selector/) to compare integrated options. Before ordering, confirm the exact model suffix, display interface, touch controller and included accessories in the listing. Similar-looking Sunton boards may have different hardware.
+Not sure this is the right screen for ESP32? See our [ESP32 display selector](/tools/esp32-touchscreen-selector/) to compare integrated options. Before ordering, confirm the exact model suffix, display interface, touch controller and included accessories in the listing. Similar-looking Sunton boards may have different hardware.
 
 
 
