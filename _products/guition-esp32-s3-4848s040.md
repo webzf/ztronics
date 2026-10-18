@@ -131,18 +131,7 @@ A community configuration is available for ESPHome, including the ST7701S displa
 
 Choose the configuration that fits your project. Prices are indicative and may change; check the selected option, shipping and final delivered price on AliExpress before ordering.
 
-<div class="en-buy-buttons en-buy-buttons--variants">
-  <a href="/go/hardware/guition-esp32-s3-4848s040-relay/" class="en-buy-button preferred" target="_blank" rel="nofollow sponsored noopener">
-    <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-    <span class="en-buy-text"><strong>With Relay Module — €43.81</strong><small>Check offer on AliExpress</small></span>
-    <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-  </a>
-  <a href="/go/hardware/guition-esp32-s3-4848s040-standard/" class="en-buy-button" target="_blank" rel="nofollow sponsored noopener">
-    <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-    <span class="en-buy-text"><strong>Lower-Cost Option — €33.57</strong><small>Check selected variant on AliExpress</small></span>
-    <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-  </a>
-</div>
+The three purchase options (Amazon and two AliExpress variants) are grouped together in the product header above. The first AliExpress offer is the relay version. For the €33.57 listing, verify the selected variant and included accessories on the seller's page before purchase; do not assume a relay module or enclosure is included.
 
 The first listing is the relay version. For the €33.57 listing, verify the selected variant and included accessories on the seller's page before purchase; do not assume a relay module or enclosure is included. The relay assembly may not fit a standard 60 mm EU round wall box.
 
