@@ -150,7 +150,7 @@ Choose this board if you need a **4.3-inch 800×480 capacitive touchscreen** wit
 | [**Waveshare ESP32-P4-WIFI6-Touch-LCD-7B**](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/) | You need a 7-inch 1024×600 panel and a more capable HMI platform | Different ESP32-P4 architecture and more complex project setup |
 | [**ESP32 CYD 2.8-inch**](/products/esp32-2432s028-2-8-cyd/) | You want a smaller, low-cost integrated ESP32 touchscreen | Smaller 240×320 screen and resistive touch |
 
-Before buying, confirm the exact board revision, included accessories and connector requirements on the listing. Compare additional sizes in the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/).
+Before buying, confirm the exact board revision, included accessories and connector requirements on the listing. Compare additional sizes in the [best screen for ESP32](/tools/esp32-touchscreen-selector/) selector.
 
 
 
@@ -311,7 +311,7 @@ The **ILI9341 + XPT2046 2.8-inch Touchscreen** is the compact, low-cost resistiv
 ## Embedded Nerd Guides & Selector
 - [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/) — filter boards with documented PSRAM for larger GUIs.
 
-- [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.
+- [ESP32 touch display](/tools/esp32-touchscreen-selector/) — compare ESP32 touchscreen boards.
 - [4.3-inch touchscreen selector](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/) — compare 4.3-inch options.
 - [800×480 touchscreen selector](/tools/esp32-touchscreen-selector/800x480/) — focus on 800×480 displays.
 - [ESP32-S3 + LVGL selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) — filter for ESP32-S3 LVGL boards.
