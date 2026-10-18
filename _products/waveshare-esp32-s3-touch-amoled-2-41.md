@@ -100,7 +100,7 @@ Choose this board if you want a **compact, high-resolution AMOLED touchscreen** 
 | [**Waveshare ESP32-S3-Touch-LCD-7**](/products/waveshare-esp32-s3-touch-lcd-7/) | You are building a large wall panel or dashboard | Much larger physical footprint |
 | [**Waveshare ESP32-P4-WIFI6-Touch-LCD-7B**](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/) | You need a 7-inch 1024×600 HMI | More complex platform and a much larger display assembly |
 
-Check the product listing for the exact revision, touch support and included accessories. The [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) is useful for comparing board formats, although this AMOLED board differs from conventional RGB LCD options.
+Check the product listing for the exact revision, touch support and included accessories. The [ESP32 display selector](/tools/esp32-touchscreen-selector/) is useful for comparing board formats, although this AMOLED board differs from conventional RGB LCD options.
 
 
 
