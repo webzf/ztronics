@@ -85,6 +85,8 @@ related:
   - esp32-2432s028-2-8-cyd
   - waveshare-esp32-s3-touch-lcd-4-3
 ---
+The Guition ESP32-S3-4848S040 is a 4-inch ESP32-S3 touchscreen board with a square 480×480 IPS display, GT911 capacitive touch, 16MB Flash and 8MB PSRAM. It is designed for compact Home Assistant dashboards, wall panels and custom LVGL interfaces.
+
 ## Is the Guition ESP32-S3-4848S040 Worth Buying?
 
 Choose this board if you want a square 4-inch touchscreen for a Home Assistant dashboard, wall panel or custom LVGL interface. The 480×480 resolution gives you a square layout, while 16MB Flash and 8MB PSRAM provide room for more involved interfaces.
@@ -136,6 +138,20 @@ The three purchase options (Amazon and two AliExpress variants) are grouped toge
 The first listing is the relay version. For the €33.57 listing, verify the selected variant and included accessories on the seller's page before purchase; do not assume a relay module or enclosure is included. The relay assembly may not fit a standard 60 mm EU round wall box.
 
 As an affiliate, Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you.
+
+## FAQ
+
+### Does the Guition ESP32-S3-4848S040 have capacitive touch?
+
+Yes. The documented 4848S040 configuration uses a GT911 capacitive touch controller. Confirm the model and revision in the listing before ordering.
+
+### Does the Guition ESP32-S3-4848S040 come with relays?
+
+Not always. It is sold in versions with and without a relay module, and some listings bundle an enclosure. Check the selected variant and included accessories.
+
+### Does the Guition ESP32-S3-4848S040 work with ESPHome?
+
+Yes. A community hardware profile and configuration are available for ESPHome. Check the configuration and pin definitions for the exact board variant before flashing.
 
 ## Compare other ESP32 touchscreen boards
 
