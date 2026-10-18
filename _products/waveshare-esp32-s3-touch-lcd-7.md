@@ -110,7 +110,7 @@ Choose this board when your project benefits from a **large 7-inch 800×480 inte
 | [**Waveshare ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | You want the same 800×480 resolution in a smaller panel | Smaller physical UI area |
 | [**Waveshare ESP32-P4-WIFI6-Touch-LCD-7B**](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/) | You need 1024×600 resolution and a more powerful HMI platform | Different processor architecture and software requirements |
 
-Do not choose by screen size alone: compare resolution, display interface, touch support, enclosure dimensions and available GPIO. Use the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) to narrow the options, and verify the exact model and included accessories before ordering.
+Do not choose by screen size alone: compare resolution, display interface, touch support, enclosure dimensions and available GPIO. Use the [ESP32 display selector](/tools/esp32-touchscreen-selector/) to narrow the options, and verify the exact model and included accessories before ordering.
 
 
 
