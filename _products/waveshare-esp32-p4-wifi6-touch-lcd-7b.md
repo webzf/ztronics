@@ -101,7 +101,7 @@ This board makes most sense for a **larger, more demanding HMI** where 1024×600
 | [**Waveshare ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | You want a smaller 800×480 integrated touchscreen | Less screen area and lower resolution |
 | [**ESP32 CYD 2.8-inch**](/products/esp32-2432s028-2-8-cyd/) | You want an inexpensive compact ESP32 touchscreen for a simple interface | 240×320 resolution and resistive touch |
 
-Before ordering, verify the exact 7B model, required power supply, connectors and accessories. Compare compatible board formats in the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/), then check the manufacturer's documentation for the final hardware details.
+Before ordering, verify the exact 7B model, required power supply, connectors and accessories. Compare compatible board formats in the [ESP32 display selector](/tools/esp32-touchscreen-selector/), then check the manufacturer's documentation for the final hardware details.
 
 
 
