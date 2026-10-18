@@ -1,0 +1,33 @@
+---
+layout: null
+product_id: guition-esp32-s3-4848s040
+variant_key: lower_cost
+permalink: /go/hardware/guition-esp32-s3-4848s040-standard/
+sitemap: false
+---
+{% assign commerce = site.data.commerce[page.product_id] %}
+{% assign offer = commerce.variants[page.variant_key] %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,follow">
+  <title>Guition ESP32-S3-4848S040 — Lower-Cost Option | Embedded Nerd</title>
+  {% if offer.affiliate_url %}
+  <meta http-equiv="refresh" content="0;url={{ offer.affiliate_url }}">
+  {% endif %}
+</head>
+<body>
+  <main>
+    <h1>Guition ESP32-S3-4848S040 — Lower-Cost Option</h1>
+    {% if offer.affiliate_url %}
+    <p>Redirecting you to the AliExpress offer…</p>
+    <p><a href="{{ offer.affiliate_url }}" rel="nofollow sponsored noopener">Continue to AliExpress</a></p>
+    <script>window.location.replace({{ offer.affiliate_url | jsonify }});</script>
+    {% else %}
+    <p>This offer is not currently available.</p>
+    <p><a href="{{ '/products/guition-esp32-s3-4848s040/' | relative_url }}">View product details</a></p>
+    {% endif %}
+  </main>
+</body>
+</html>
