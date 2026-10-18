@@ -4,7 +4,7 @@ guition-esp32-s3-4848s040:
 
   preferred_store: aliexpress
 
-  notes: "Two AliExpress affiliate variants supplied by the site owner. Variant-specific buttons and redirects are used because both offers are on the same retailer."
+  notes: "Amazon offer uses ASIN B0GCMXHQ8M. Two separate AliExpress affiliate variant links are displayed in the product content."
 
   disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
 
@@ -17,8 +17,8 @@ guition-esp32-s3-4848s040:
   stores:
 
     amazon:
-      enabled: false
-      affiliate_url: ""
+      enabled: true
+      affiliate_url: "https://www.amazon.com/dp/B0GCMXHQ8M?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: false
