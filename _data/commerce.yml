@@ -1,3 +1,34 @@
+#----------------
+
+guition-esp32-s3-4848s040:
+
+  preferred_store: aliexpress
+
+  notes: "Product page created; add Embedded Nerd affiliate URLs after generating them in the retailer dashboards."
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: false
+      product_id: "1005006494689995"
+      product_url: "https://www.aliexpress.com/item/1005006494689995.html"
+      affiliate_url: ""
+      last_verified: "2026-10-18"
+
+#----------------
+
 
 sunton-esp32-8048s043c:
 
