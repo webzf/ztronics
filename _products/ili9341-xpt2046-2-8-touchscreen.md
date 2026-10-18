@@ -113,7 +113,7 @@ This module is a good fit when you already have an ESP32 or Arduino and want to 
 | [**ESP32 CYD 2.8-inch board**](/products/esp32-2432s028-2-8-cyd/) | An integrated ESP32, display and resistive touch on one PCB | Board revisions can vary; less modular |
 | [**Sunton ESP32-8048S043C**](/products/sunton-esp32-8048s043c/) | A larger 4.3-inch 800×480 touchscreen setup | Larger board and a different hardware/software setup |
 
-Before ordering, confirm the module's pin labels and power circuitry with the seller. Generic breakout boards are not all identical. Use the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) to compare integrated alternatives.
+Before ordering, confirm the module's pin labels and power circuitry with the seller. Generic breakout boards are not all identical. Use the [ESP32 display selector](/tools/esp32-touchscreen-selector/) to compare integrated alternatives.
 
 The **ILI9341 + XPT2046 2.8-inch Touchscreen** is a compact TFT display module combining a 240×320 LCD panel driven by the ILI9341 display controller with a resistive touch layer read by the XPT2046 touch controller.
 
