@@ -1208,6 +1208,163 @@
       "guide_url": "/sunton-esp32-8048s043c-guide/"
     },
     {
+      "id": "guition-esp32-s3-4848s040",
+      "name": "Guition ESP32-S3-4848S040",
+      "manufacturer": "Guition",
+      "product_type": "board_with_display",
+      "category": "board_with_display",
+      "description": "Integrated ESP32-S3 touchscreen board with a 4-inch 480×480 IPS display, ST7701S driver, GT911 capacitive touch, 16MB Flash, 8MB PSRAM and optional relay assembly.",
+      "product_url": "/products/guition-esp32-s3-4848s040/",
+      "documentation_url": "https://devices.esphome.io/devices/guition-esp32-s3-4848s040/",
+      "tags": [
+        "Guition",
+        "ESP32-S3",
+        "4848S040",
+        "480x480",
+        "IPS",
+        "ST7701S",
+        "capacitive-touch",
+        "GT911",
+        "LVGL",
+        "ESPHome",
+        "PSRAM",
+        "Home Assistant"
+      ],
+      "esp32": {
+        "family": [
+          "ESP32-S3"
+        ],
+        "exact_mcu": "ESP32-S3",
+        "cores": 2,
+        "cpu_frequency_mhz": 240,
+        "flash_mb": 16,
+        "ram_mb": null,
+        "psram_mb": 8
+      },
+      "wireless": {
+        "wifi": true,
+        "bluetooth": true,
+        "ble": true
+      },
+      "usb": {
+        "usb_available": true,
+        "usb_type": "USB-C",
+        "native_usb": null,
+        "uart_bridge": null,
+        "native_usb_functionality": [],
+        "usb_notes": "USB Type-C is reported for common variants; verify the exact revision and interface on the listing."
+      },
+      "display": {
+        "display_present": true,
+        "technology": "IPS TFT",
+        "monochrome": false,
+        "color": true,
+        "transparent": null,
+        "shape": "square",
+        "size_inches": 4,
+        "resolution": {
+          "width": 480,
+          "height": 480
+        },
+        "aspect_ratio": "1:1",
+        "controller": "ST7701S",
+        "interface": "RGB"
+      },
+      "touch": {
+        "touch": true,
+        "touch_type": "capacitive",
+        "touch_controller": "GT911",
+        "touch_interface": "I2C"
+      },
+      "interfaces": {
+        "i2c": true,
+        "spi": true,
+        "uart": true,
+        "rgb": true,
+        "other": [
+          "RGB display bus",
+          "USB Type-C",
+          "TF card (verify variant)"
+        ]
+      },
+      "display_touch_bus": {
+        "display_bus": "RGB",
+        "touch_bus": "I2C",
+        "shared_bus": false,
+        "separate_bus": true,
+        "chip_select": null,
+        "dc": null,
+        "irq": null,
+        "reset": null,
+        "relevant_gpio": []
+      },
+      "hardware": {
+        "total_gpio": null,
+        "free_gpio": null,
+        "reserved_gpio": [],
+        "display_gpio": [],
+        "touch_gpio": [],
+        "microsd": null,
+        "battery": false,
+        "battery_charging": false,
+        "power_input": "5V; verify connector and supply requirements for the selected variant",
+        "connectors": [
+          "USB Type-C (verify revision)",
+          "I2C",
+          "RGB display",
+          "GPIO"
+        ],
+        "buttons": true,
+        "led": null,
+        "camera": null,
+        "audio": null,
+        "sensors": [],
+        "other_peripherals": [
+          "Optional relay module on some listings"
+        ]
+      },
+      "certification": {
+        "ce": null,
+        "fcc": null,
+        "other": []
+      },
+      "physical": {
+        "dimensions": "Verify exact board or relay-enclosure variant",
+        "mounting_holes": null,
+        "form_factor": "4-inch square touchscreen development board"
+      },
+      "sources": [
+        {
+          "type": "manufacturer-product-page",
+          "url": "https://www.guition.com/esp32-display-module/4-inch-esp32s3-display-module"
+        },
+        {
+          "type": "community-device-profile",
+          "url": "https://devices.esphome.io/devices/guition-esp32-s3-4848s040/"
+        },
+        {
+          "type": "product-offer",
+          "url": "https://www.aliexpress.com/item/1005006494689995.html"
+        }
+      ],
+      "data_quality": "verified_secondary",
+      "software": {
+        "lvgl": {
+          "support": true,
+          "level": "community",
+          "framework": "ESPHome, Arduino/LVGL (verify library and board revision)"
+        }
+      },
+      "features": {
+        "battery": false,
+        "imu": false,
+        "rtc": false,
+        "audio": false
+      },
+      "image": "https://www.guition.com/Uploads/product/2024-05-16/6645a9b6a0a3e.jpg",
+      "image_alt": "Guition ESP32-S3-4848S040 4-inch square touchscreen board"
+    },
+    {
       "id": "esp32-2432s028-2-8-cyd",
       "name": "ESP32-2432S028 2.8\" CYD Touch",
       "manufacturer": "Various Manufacturers",
