@@ -129,14 +129,24 @@ A community configuration is available for ESPHome, including the ST7701S displa
 
 ## Where to buy
 
-Listings can differ in relay configuration, enclosure, power supply and included accessories. Compare the exact selected variant and total delivered price before ordering.
+Choose the configuration that fits your project. Prices are indicative and may change; check the selected option, shipping and final delivered price on AliExpress before ordering.
 
-- [Search Guition ESP32-S3-4848S040 on Amazon](https://www.amazon.com/s?k=Guition+ESP32-S3-4848S040)
-- [AliExpress listing 1005006494689995](https://www.aliexpress.com/item/1005006494689995.html)
-- [AliExpress listing 1005006335587633](https://www.aliexpress.com/item/1005006335587633.html)
-- [GUITION Official Store on AliExpress](https://www.aliexpress.com/store/1102410813)
+<div class="en-buy-buttons en-buy-buttons--variants">
+  <a href="/go/hardware/guition-esp32-s3-4848s040-relay/" class="en-buy-button preferred" target="_blank" rel="nofollow sponsored noopener">
+    <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
+    <span class="en-buy-text"><strong>With Relay Module — €43.81</strong><small>Check offer on AliExpress</small></span>
+    <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
+  </a>
+  <a href="/go/hardware/guition-esp32-s3-4848s040-standard/" class="en-buy-button" target="_blank" rel="nofollow sponsored noopener">
+    <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
+    <span class="en-buy-text"><strong>Lower-Cost Option — €33.57</strong><small>Check selected variant on AliExpress</small></span>
+    <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
+  </a>
+</div>
 
-These are product/search links, not confirmed Embedded Nerd affiliate links yet. Use your affiliate dashboards to generate tracking links before enabling purchase buttons.
+The first listing is the relay version. For the €33.57 listing, verify the selected variant and included accessories on the seller's page before purchase; do not assume a relay module or enclosure is included. The relay assembly may not fit a standard 60 mm EU round wall box.
+
+As an affiliate, Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you.
 
 ## Compare other ESP32 touchscreen boards
 
