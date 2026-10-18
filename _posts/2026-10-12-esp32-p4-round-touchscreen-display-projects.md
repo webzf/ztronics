@@ -46,7 +46,7 @@ Round touchscreens used to mean tiny 1.28" modules with a few hundred pixels. Th
 This guide covers the **ESP32-P4 round touchscreen display boards** that are available now, how a round screen changes the way you design a UI, and **three LVGL projects** you can build on them.
 
 
-If you're still choosing hardware, start with our [complete ESP32 touchscreen displays guide]({{ site.baseurl }}/esp32-touchscreen-displays-guide/) for a broader comparison of screen sizes, touch technologies and display interfaces.
+If you're still choosing hardware, start with our [ESP32 touch display guide]({{ site.baseurl }}/esp32-touchscreen-displays-guide/) for a broader comparison of screen sizes, touch technologies and display interfaces.
 
 ![Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C round touchscreen, front view](/assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp)
 *The 3.4-inch ESP32-P4 round touchscreen board. [View the product specifications and purchase options](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/).*
