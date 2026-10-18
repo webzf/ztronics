@@ -157,3 +157,4 @@ For wiring, code, touch setup and known limitations, read the [Sunton ESP32-8048
 - [ESP32 display boards with PSRAM](/tools/esp32-touchscreen-selector/esp32-display-psram/) — focus on ESP32 display hardware with PSRAM.
 - [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — background and buying considerations.
 - [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — closely related 4.3-inch 800×480 option.
+- [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) — smaller square 4-inch 480×480 alternative with capacitive touch and optional relays.
