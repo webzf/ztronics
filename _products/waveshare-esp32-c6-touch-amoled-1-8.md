@@ -105,7 +105,7 @@ This board is worth considering for **compact, portable interfaces** that benefi
 | [**ESP32-S3-Touch-AMOLED-2.41**](/products/waveshare-esp32-s3-touch-amoled-2-41/) | You want a larger 600×450 AMOLED display | Larger display and different layout |
 | [**ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | Your interface needs a conventional larger rectangular panel | Less portable than the compact AMOLED boards |
 
-Before ordering or installing libraries, verify the hardware revision, controller names and included accessories. The [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) is a starting point for comparing integrated display boards, but always check the manufacturer's revision-specific documentation.
+Before ordering or installing libraries, verify the hardware revision, controller names and included accessories. The [ESP32 display selector](/tools/esp32-touchscreen-selector/) is a starting point for comparing integrated display boards, but always check the manufacturer's revision-specific documentation.
 
 ## Overview
 
