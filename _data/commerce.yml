@@ -4,9 +4,9 @@ guition-esp32-s3-4848s040:
 
   preferred_store: aliexpress
 
-  notes: "Product page created; add Embedded Nerd affiliate URLs after generating them in the retailer dashboards."
+  notes: "Two AliExpress affiliate variants supplied by the site owner. Variant-specific buttons and redirects are used because both offers are on the same retailer."
 
-  disclaimer: false
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
 
   badges:
     recommended: false
@@ -22,9 +22,21 @@ guition-esp32-s3-4848s040:
 
     aliexpress:
       enabled: false
-      product_id: "1005006494689995"
-      product_url: "https://www.aliexpress.com/item/1005006494689995.html"
       affiliate_url: ""
+
+  variants:
+    with_relays:
+      label: "With Relay Module"
+      price: "€43.81"
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3pQWEv3"
+      redirect_url: "/go/hardware/guition-esp32-s3-4848s040-relay/"
+      last_verified: "2026-10-18"
+
+    lower_cost:
+      label: "Lower-Cost Option — verify selected variant"
+      price: "€33.57"
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3Z73SPr"
+      redirect_url: "/go/hardware/guition-esp32-s3-4848s040-standard/"
       last_verified: "2026-10-18"
 
 #----------------
