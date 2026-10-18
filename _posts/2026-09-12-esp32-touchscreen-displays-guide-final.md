@@ -77,6 +77,8 @@ If you're planning a round interface rather than a rectangular touchscreen, see 
 
 For a smaller all-in-one option, see the [ESP32-2432S028 (CYD) 2.8-inch touchscreen board](/products/esp32-2432s028-2-8-cyd/), with its integrated ESP32, resistive touch and revision-specific pinout details.
 
+For a square 4-inch alternative with capacitive touch, see the [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) product overview, including its relay variants and ESPHome support.
+
 Not sure which board suits your project? Compare the available options in our [ESP32 touch screen display boards selector](/tools/esp32-touchscreen-selector/).
 
 ### Use the ESP32 touchscreen selector by project requirement
