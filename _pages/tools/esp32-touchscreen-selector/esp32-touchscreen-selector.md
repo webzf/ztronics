@@ -250,6 +250,10 @@ Not necessarily. Smaller displays can work without it, while larger graphical in
 
 No. It is a filtering tool based on catalog data. Always verify the exact controller, pinout, voltage, memory and driver support in the manufacturer's documentation.
 
+## Featured 4-inch square touchscreen
+
+The [Guition ESP32-S3-4848S040 4-inch 480×480 touchscreen](/products/guition-esp32-s3-4848s040/) is an ESP32-S3 option with GT911 capacitive touch, 16MB Flash, 8MB PSRAM and optional relay assemblies.
+
 ## Related ESP32 display selectors
 
 - [ESP32-S3 LVGL Display Selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
