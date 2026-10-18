@@ -9,7 +9,7 @@ product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
 
-image: "https://www.guition.com/Uploads/product/2024-05-16/6645a9b6a0a3e.jpg"
+image: "/assets/images/products/guition-4848s040-home-assistant-review.webp"
 alt: "Guition ESP32-S3-4848S040 4-inch square touchscreen development board"
 
 excerpt: "Guition ESP32-S3-4848S040 with ESP32-S3, 4-inch 480×480 IPS display, GT911 capacitive touch, 16MB Flash and 8MB PSRAM."
