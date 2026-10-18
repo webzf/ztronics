@@ -105,7 +105,7 @@ Choose this model if your interface benefits from a **round 466×466 AMOLED scre
 | [**ESP32-C6-Touch-AMOLED-1.8**](/products/waveshare-esp32-c6-touch-amoled-1-8/) | You want a compact 368×448 AMOLED board based on ESP32-C6 | Different MCU family and display resolution |
 | [**ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | You need a larger rectangular interface | Larger board and enclosure |
 
-Confirm the exact product revision and the supplied accessories before ordering. Compare integrated display formats with the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/).
+Confirm the exact product revision and the supplied accessories before ordering. Compare integrated display formats with the [ESP32 display selector](/tools/esp32-touchscreen-selector/).
 
 ## Overview
 
