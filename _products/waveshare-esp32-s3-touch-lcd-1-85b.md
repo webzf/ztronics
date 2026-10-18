@@ -94,7 +94,7 @@ Choose this board when you want a **compact square touchscreen** and more than j
 | [**ESP32-S3-Touch-AMOLED-2.41**](/products/waveshare-esp32-s3-touch-amoled-2-41/) | You prefer a higher-resolution 600×450 AMOLED panel | Different display interface and setup |
 | [**ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | You need a larger 800×480 interface | Larger board and enclosure |
 
-Check the listing for the exact board revision and included accessories. Use the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) to compare larger integrated display boards.
+Check the listing for the exact board revision and included accessories. Use the [ESP32 display selector](/tools/esp32-touchscreen-selector/) to compare larger integrated display boards.
 
 ## Overview
 
