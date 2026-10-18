@@ -45,18 +45,37 @@
       {% assign preferred = commerce.preferred_store %}
       {% assign store = commerce.stores[preferred] %}
 
-      {% if store.enabled %}
-
+      {% if product.product_id == "guition-esp32-s3-4848s040" %}
+        {% assign amazon_offer = commerce.stores.amazon %}
+        <div class="en-product-cta__buttons">
+          {% if amazon_offer.enabled and amazon_offer.affiliate_url %}
+          <a class="en-buy-button preferred" href="{{ amazon_offer.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener">
+            <span class="en-buy-icon"><i class="fab fa-amazon"></i></span>
+            <span class="en-buy-text"><strong>Check Price on Amazon</strong><small>Guition ESP32-S3-4848S040</small></span>
+            <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
+          </a>
+          {% endif %}
+          {% assign relay_offer = commerce.variants.with_relays %}
+          <a class="en-buy-button" href="{{ relay_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
+            <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
+            <span class="en-buy-text"><strong>With Relay Module — {{ relay_offer.price }}</strong><small>Buy on AliExpress</small></span>
+            <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
+          </a>
+          {% assign lower_offer = commerce.variants.lower_cost %}
+          <a class="en-buy-button" href="{{ lower_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
+            <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
+            <span class="en-buy-text"><strong>Lower-Cost Option — {{ lower_offer.price }}</strong><small>Check variant on AliExpress</small></span>
+            <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
+          </a>
+        </div>
+      {% elsif store.enabled %}
       <a
         class="en-buy-button"
         href="{{ store.affiliate_url }}"
         target="_blank"
         rel="nofollow sponsored noopener">
-
         🛒 Check Price on {{ preferred | capitalize }}
-
       </a>
-
       {% endif %}
 
     </div>
