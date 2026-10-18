@@ -92,7 +92,7 @@ related:
 
 Choose a 0.96-inch SSD1306 OLED when you want a compact, high-contrast monochrome display for sensor values, menus or status information. The common I2C version uses only SDA and SCL, which keeps wiring simple.
 
-Choose an **[ST7789 TFT](/products/st7789-tft/)** or an **[ILI9341 touchscreen module](/products/ili9341-xpt2046-2-8-touchscreen/)** if your project needs colour graphics. For ESP32 projects with a display and processor integrated on one board, use the **[ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/)**.
+Choose an **[ST7789 TFT](/products/st7789-tft/)** or an **[ILI9341 touchscreen module](/products/ili9341-xpt2046-2-8-touchscreen/)** if your project needs colour graphics. For ESP32 projects with a display and processor integrated on one board, use the **[ESP32 display selector](/tools/esp32-touchscreen-selector/)**.
 
 Check the module's actual resolution, pin labels, I2C address and supply arrangement before buying; breakout boards sold under the SSD1306 name can differ.
 
