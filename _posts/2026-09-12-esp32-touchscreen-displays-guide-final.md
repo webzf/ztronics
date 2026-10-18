@@ -77,6 +77,8 @@ If you're planning a round interface rather than a rectangular touchscreen, see 
 
 For a smaller all-in-one option, see the [ESP32-2432S028 (CYD) 2.8-inch touchscreen board](/products/esp32-2432s028-2-8-cyd/), with its integrated ESP32, resistive touch and revision-specific pinout details.
 
+Not sure which board suits your project? Compare the available options in our [ESP32 touch screen display boards selector](/tools/esp32-touchscreen-selector/).
+
 ### Use the ESP32 touchscreen selector by project requirement
 
 If you already know the type of hardware you need, you can jump directly to a focused selector:
@@ -114,7 +116,7 @@ As a practical starting point:
 
 These are starting points, not universal rules. The exact board and software stack should be checked before purchase.
 
-If you already know constraints such as **screen size, SPI, RGB, PSRAM, LVGL, ESP32-S3 or battery support**, the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) can narrow the available hardware without requiring you to compare every product manually.
+If you already know constraints such as **screen size, SPI, RGB, PSRAM, LVGL, ESP32-S3 or battery support**, the [ESP32 touchscreen selector](/tools/esp32-touchscreen-selector/) can narrow the available hardware without requiring you to compare every product manually.
 
 ## How to Choose a Touchscreen for ESP32
 
