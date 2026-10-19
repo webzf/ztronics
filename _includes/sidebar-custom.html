@@ -15,18 +15,20 @@
 <script>
 (function () {
   function setupTallSidebar() {
-    var sidebar = document.querySelector('#main .sidebar.sticky');
-    if (!sidebar) return;
+    var sidebar = document.querySelector('#main .sidebar.sticky') ||
+                  document.querySelector('#main .sidebar__left.sticky') ||
+                  document.querySelector('#main .sidebar');
+    if (!sidebar || window.innerWidth < 1025) return;
 
     function updateSidebarOffset() {
-      if (window.innerWidth < 1025) {
-        sidebar.style.removeProperty('top');
-        return;
-      }
-      var sidebarHeight = sidebar.getBoundingClientRect().height;
-      var availableHeight = window.innerHeight - 16;
-      var topOffset = Math.min(16, availableHeight - sidebarHeight);
-      sidebar.style.top = topOffset + 'px';
+      sidebar.style.setProperty('position', 'sticky', 'important');
+      sidebar.style.setProperty('height', 'max-content', 'important');
+      sidebar.style.setProperty('max-height', 'none', 'important');
+      sidebar.style.setProperty('overflow', 'visible', 'important');
+
+      var fullHeight = Math.max(sidebar.scrollHeight, sidebar.getBoundingClientRect().height);
+      var topOffset = Math.min(16, window.innerHeight - fullHeight - 16);
+      sidebar.style.setProperty('top', topOffset + 'px', 'important');
     }
 
     updateSidebarOffset();
