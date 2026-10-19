@@ -1,4 +1,14 @@
-{% unless page.url == '/tools/esp32-touchscreen-selector/' or page.layout == 'product' %}
+{% assign sidebar_context = page.title | default: '' | append: ' ' | append: page.tags | join: ' ' | downcase %}
+{% assign sidebar_context = page.title | default: '' | append: ' ' | append: page.tags | join: ' ' | append: ' ' | append: page.categories | join: ' ' | append: ' ' | append: page.product_id | downcase %}
+
+{% assign show_display_selector = false %}
+{% if page.layout != 'product' %}
+  {% assign show_display_selector = true %}
+{% elsif sidebar_context contains 'display' or sidebar_context contains 'touchscreen' or sidebar_context contains 'esp32-s3' or sidebar_context contains 'lvgl' %}
+  {% assign show_display_selector = true %}
+{% endif %}
+
+{% if page.url != '/tools/esp32-touchscreen-selector/' and show_display_selector %}
   <section class="sidebar-display-banner" aria-label="ESP32 Display Selector">
     <div class="sidebar-display-banner__icon" aria-hidden="true">
       <i class="fas fa-display"></i>
@@ -10,6 +20,6 @@
       Try the Selector <span aria-hidden="true">→</span>
     </a>
   </section>
-{% endunless %}
+{% endif %}
 
 <script src="{{ '/assets/js/sidebar-scroll.js' | relative_url }}" defer></script>
