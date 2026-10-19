@@ -39,6 +39,44 @@
 }
 
 
+/* Dedicated display-selector promo card in the left navigation */
+.sidebar .nav__list a[href="/tools/esp32-touchscreen-selector/"],
+.sidebar .nav__list a[href$="/tools/esp32-touchscreen-selector/"] {
+  display: block;
+  margin: 0.65rem 0 0.9rem;
+  padding: 0.75rem 0.7rem;
+  border: 1px solid rgba(125, 211, 252, 0.42);
+  border-radius: 0.5rem;
+  background: rgba(125, 211, 252, 0.08);
+  font-size: 0.9rem;
+  line-height: 1.35;
+  white-space: normal;
+}
+
+.sidebar .nav__list a[href="/tools/esp32-touchscreen-selector/"]::after,
+.sidebar .nav__list a[href$="/tools/esp32-touchscreen-selector/"]::after {
+  content: "Compare displays by size, touch, PSRAM and LVGL.";
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 400;
+  line-height: 1.45;
+  opacity: 0.82;
+}
+
+.sidebar .nav__list a[href="/tools/esp32-touchscreen-selector/"]:focus-visible,
+.sidebar .nav__list a[href$="/tools/esp32-touchscreen-selector/"]:focus-visible {
+  outline: 2px solid #7dd3fc;
+  outline-offset: 3px;
+}
+
+/* On desktop, the sidebar card replaces the in-article display promo. */
+@media (min-width: 1025px) {
+  .display-tool-banner {
+    display: none;
+  }
+}
+
 /* ESP32 Touchscreen Selector banner */
 .display-tool-banner {
   display: flex;
