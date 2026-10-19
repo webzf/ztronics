@@ -296,11 +296,12 @@
   }
 }
 
-/* Let the left navigation grow naturally instead of scrolling inside its own panel. */
+/* Keep the left sidebar visible while the page scrolls, without an inner scrollbar. */
 @media (min-width: 1025px) {
   .sidebar.sticky {
-    position: static !important;
-    top: auto !important;
+    position: sticky !important;
+    top: 1rem !important;
+    align-self: start;
     max-height: none !important;
     overflow: visible !important;
   }
