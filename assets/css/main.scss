@@ -296,3 +296,18 @@
   }
 }
 
+/* Let the left navigation grow naturally instead of scrolling inside its own panel. */
+@media (min-width: 1025px) {
+  .sidebar.sticky {
+    position: static !important;
+    top: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .sidebar.sticky .nav__list,
+  .sidebar.sticky .nav__items {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
