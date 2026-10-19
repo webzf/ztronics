@@ -296,18 +296,21 @@
   }
 }
 
-/* Keep the full height of a tall sidebar accessible while scrolling. */
+/* Allow the left sidebar to use its full content height on desktop. */
 @media (min-width: 1025px) {
-  .sidebar.sticky {
-    position: sticky !important;
-    top: 1rem;
+  #main .sidebar.sticky,
+  #main .sidebar__left.sticky,
+  #main .sidebar {
     align-self: start;
+    height: max-content !important;
     max-height: none !important;
     overflow: visible !important;
   }
 
-  .sidebar.sticky .nav__list,
-  .sidebar.sticky .nav__items {
+  #main .sidebar .nav__list,
+  #main .sidebar .nav__items,
+  #main .sidebar__left .nav__list,
+  #main .sidebar__left .nav__items {
     max-height: none !important;
     overflow: visible !important;
   }
