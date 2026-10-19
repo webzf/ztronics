@@ -840,13 +840,6 @@ text-decoration:none;
     white-space:nowrap;
 }
 
-/* Esconder TOC em telemóveis e tablets */
-@media (max-width: 1024px) {
-  .sidebar__right {
-    display: none;
-  }
-}
-
 .en-product-grid{
 
     display:grid;
