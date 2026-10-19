@@ -44,13 +44,14 @@ embedded:
   - title: "Tools"
     url: /tools/
     children:
-      - title: "★ ESP32 Touchscreen Selector"
-        url: /tools/esp32-touchscreen-selector/
       - title: "I2C Address Lookup Tool"
         url: /tools/i2c-address-lookup/
       - title: "I2C Pull-up Resistor Calculator"
         url: /tools/i2c-pullup-resistor-calculator/
         
+
+  - title: "★ ESP32 Display Selector"
+    url: /tools/esp32-touchscreen-selector/
 
   - title: Arduino
     children:
