@@ -39,10 +39,10 @@
 }
 
 
-/* On desktop, the sidebar card replaces the in-article display promo. */
-@media (min-width: 1025px) {
-  .display-tool-banner {
-    display: none;
+/* Hide the in-article promo on desktop/tablet landscape; the sidebar card replaces it. */
+@media (min-width: 768px) {
+  .page__content .display-tool-banner {
+    display: none !important;
   }
 }
 
