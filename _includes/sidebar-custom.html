@@ -11,37 +11,3 @@
     </a>
   </section>
 {% endunless %}
-
-<script>
-(function () {
-  function setupTallSidebar() {
-    var sidebar = document.querySelector('#main .sidebar.sticky') ||
-                  document.querySelector('#main .sidebar__left.sticky') ||
-                  document.querySelector('#main .sidebar');
-    if (!sidebar || window.innerWidth < 1025) return;
-
-    function updateSidebarOffset() {
-      sidebar.style.setProperty('position', 'sticky', 'important');
-      sidebar.style.setProperty('height', 'max-content', 'important');
-      sidebar.style.setProperty('max-height', 'none', 'important');
-      sidebar.style.setProperty('overflow', 'visible', 'important');
-
-      var fullHeight = Math.max(sidebar.scrollHeight, sidebar.getBoundingClientRect().height);
-      var topOffset = Math.min(16, window.innerHeight - fullHeight - 16);
-      sidebar.style.setProperty('top', topOffset + 'px', 'important');
-    }
-
-    updateSidebarOffset();
-    window.addEventListener('resize', updateSidebarOffset, { passive: true });
-    if ('ResizeObserver' in window) {
-      new ResizeObserver(updateSidebarOffset).observe(sidebar);
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupTallSidebar, { once: true });
-  } else {
-    setupTallSidebar();
-  }
-})();
-</script>
