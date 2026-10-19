@@ -296,11 +296,11 @@
   }
 }
 
-/* Let a tall left sidebar scroll with the page, then stick at the viewport edge. */
+/* Keep the full height of a tall sidebar accessible while scrolling. */
 @media (min-width: 1025px) {
   .sidebar.sticky {
     position: sticky !important;
-    top: calc(100vh - 100%) !important;
+    top: 1rem;
     align-self: start;
     max-height: none !important;
     overflow: visible !important;
