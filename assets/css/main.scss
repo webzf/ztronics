@@ -46,6 +46,65 @@
   }
 }
 
+/* Full display-selector banner below the left sidebar navigation */
+.sidebar-display-banner {
+  display: none;
+}
+
+.sidebar-display-banner__icon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.8rem;
+  border-radius: 0.45rem;
+  background: rgba(125, 211, 252, 0.12);
+  color: #7dd3fc;
+  font-size: 1.15rem;
+}
+
+.sidebar-display-banner__eyebrow {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.sidebar-display-banner h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.sidebar-display-banner p {
+  margin: 0 0 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.sidebar-display-banner .btn {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.35;
+}
+
+@media (min-width: 1025px) {
+  .sidebar-display-banner {
+    display: block;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border: 1px solid rgba(125, 211, 252, 0.35);
+    border-radius: 0.6rem;
+    background: rgba(125, 211, 252, 0.055);
+  }
+}
+
 /* ESP32 Touchscreen Selector banner */
 .display-tool-banner {
   display: flex;
