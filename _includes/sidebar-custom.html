@@ -1,5 +1,8 @@
-{% assign sidebar_context = page.title | default: '' | append: ' ' | append: page.tags | join: ' ' | downcase %}
-{% assign sidebar_context = page.title | default: '' | append: ' ' | append: page.tags | join: ' ' | append: ' ' | append: page.categories | join: ' ' | append: ' ' | append: page.product_id | downcase %}
+{% assign sidebar_title = page.title | default: '' | downcase %}
+{% assign sidebar_tags = page.tags | join: ' ' | downcase %}
+{% assign sidebar_categories = page.categories | join: ' ' | downcase %}
+{% assign sidebar_product_id = page.product_id | default: '' | downcase %}
+{% assign sidebar_context = sidebar_title | append: ' ' | append: sidebar_tags | append: ' ' | append: sidebar_categories | append: ' ' | append: sidebar_product_id %}
 
 {% assign show_display_selector = false %}
 {% if page.layout != 'product' %}
