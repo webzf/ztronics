@@ -11,3 +11,35 @@
     </a>
   </section>
 {% endunless %}
+
+<script>
+(function () {
+  function setupTallSidebar() {
+    var sidebar = document.querySelector('#main .sidebar.sticky');
+    if (!sidebar) return;
+
+    function updateSidebarOffset() {
+      if (window.innerWidth < 1025) {
+        sidebar.style.removeProperty('top');
+        return;
+      }
+      var sidebarHeight = sidebar.getBoundingClientRect().height;
+      var availableHeight = window.innerHeight - 16;
+      var topOffset = Math.min(16, availableHeight - sidebarHeight);
+      sidebar.style.top = topOffset + 'px';
+    }
+
+    updateSidebarOffset();
+    window.addEventListener('resize', updateSidebarOffset, { passive: true });
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(updateSidebarOffset).observe(sidebar);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupTallSidebar, { once: true });
+  } else {
+    setupTallSidebar();
+  }
+})();
+</script>
