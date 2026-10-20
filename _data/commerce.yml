@@ -4,7 +4,7 @@ arduino-nano-esp32:
 
   preferred_store: amazon
 
-  notes: "Amazon search offer only; replace with a verified product-specific affiliate URL when available."
+  notes: "Amazon search affiliate link; listing and seller can vary by region."
 
   disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
 
@@ -17,8 +17,8 @@ arduino-nano-esp32:
   stores:
 
     amazon:
-      enabled: false
-      affiliate_url: ""
+      enabled: true
+      affiliate_url: "https://www.amazon.com/s?k=Arduino+Nano+ESP32&tag=embeddednerd2-20"
 
     aliexpress:
       enabled: false
