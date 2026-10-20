@@ -860,6 +860,10 @@ Keep this small utility in your Arduino toolkit and use it whenever an I2C devic
 </script>
 
 
+
+
+Using an [Arduino Nano ESP32](/products/arduino-nano-esp32/)? Its default I²C pins are SDA on A4 (GPIO11) and SCL on A5 (GPIO12).
+
 ## Related I2C tools
 
 - [I2C Address Lookup Tool](/tools/i2c-address-lookup/)
