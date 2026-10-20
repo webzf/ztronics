@@ -123,7 +123,7 @@ All header pins have specific electrical and peripheral constraints. Although th
 | Pin naming | Nano D/A labels mapped to ESP32 GPIOs | Arduino D/A labels | GPIO numbering varies by board |
 | Best fit | Compact wireless Nano projects | Legacy 5 V Arduino projects | Flexible prototyping and more board space |
 
-Choose the **Nano ESP32** when you want wireless connectivity in a Nano footprint. If you need the classic Nano's 5 V logic or depend on older 5 V shields, the original Nano may be easier to integrate. For a low-cost general-purpose ESP32 setup with a larger prototyping layout, compare the [ESP32 DevKit V1](/products/esp32-devkit/). For broader board selection, see our [ESP32 OLED and development guide](/esp32-oled-tutorial-wiring-code-display-guide/) and [Development Boards category](/product-categories/development-boards/).
+Choose the **Nano ESP32** when you want wireless connectivity in a Nano footprint. If you need the classic Nano's 5 V logic or depend on older 5 V shields, the original Nano may be easier to integrate. For a low-cost general-purpose ESP32 setup with a larger prototyping layout, compare the [ESP32 DevKit V1](/products/esp32-devkit/). For broader board selection, see our [ESP32 OLED and development guide](/esp32-oled-tutorial-wiring-code-display-guide/) and [Development Boards category](/products/development-boards/).
 
 ## Is the Arduino Nano ESP32 5 V tolerant?
 
