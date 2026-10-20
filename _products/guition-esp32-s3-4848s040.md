@@ -41,6 +41,34 @@ tags:
 
 permalink: /products/guition-esp32-s3-4848s040/
 
+specifications:
+  - name: Processor
+    value: "ESP32-S3, dual-core up to 240 MHz"
+  - name: Flash
+    value: "16 MB"
+  - name: PSRAM
+    value: "8 MB"
+  - name: Display Size
+    value: "4.0 inches"
+  - name: Display Type
+    value: "IPS TFT"
+  - name: Resolution
+    value: "480 × 480"
+  - name: Display Controller
+    value: "ST7701S"
+  - name: Touch Type
+    value: "Capacitive"
+  - name: Touch Controller
+    value: "GT911"
+  - name: Wireless
+    value: "2.4 GHz Wi-Fi and Bluetooth LE"
+  - name: USB
+    value: "USB Type-C (verify listing/revision)"
+  - name: Dimensions
+    value: "Board dimensions vary by assembly; verify the exact version and enclosure"
+  - name: Relay Module
+    value: "Optional; depends on the listing"
+
 links:
   - title: "GUITION manufacturer product page"
     icon: "fas fa-book"
