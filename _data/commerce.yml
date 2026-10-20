@@ -1,5 +1,30 @@
 #----------------
 
+arduino-nano-esp32:
+
+  preferred_store: amazon
+
+  notes: "Amazon search offer only; replace with a verified product-specific affiliate URL when available."
+
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: false
+      affiliate_url: ""
+
+#----------------
 guition-esp32-s3-4848s040:
 
   preferred_store: amazon
