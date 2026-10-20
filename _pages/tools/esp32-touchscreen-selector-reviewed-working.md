@@ -185,6 +185,8 @@ The selector treats **Required** filters as compatibility constraints and other 
 
 **ESP32 + 800×480 display** — a larger display requirement that can change the choice of interface, memory and GPIO requirements significantly.
 
+**ESP32-P4 + round touchscreen** — for circular dashboards, thermostat dials and other graphical interfaces, see our [ESP32-P4 round touchscreen projects with LVGL](https://embeddednerd.com/esp32-p4-round-touchscreen-display-projects/), which includes three UI examples and setup guidance for Waveshare's 3.4-inch and 4-inch boards.
+
 ## Which ESP32 displays are compatible?\n\nAn ESP32 display is compatible when the board, display interface, touch controller and memory work together. The selector checks these against 13 catalog entries, from 2.8″ SPI modules to 7″ RGB and MIPI-DSI boards.\n\n## How to choose ESP32 hardware for a touchscreen project
 
 Choosing an ESP32 touchscreen is not only about screen size. Compatibility can depend on the **ESP32 variant, display resolution, interface, touch controller, touch interface, PSRAM, GPIO availability and graphics requirements**.
