@@ -109,6 +109,10 @@ For the classic CYD, the XPT2046 is a resistive touch controller. Depending on t
 
 *Flight Tracker project photographed on the CYD touchscreen.*
 
+![ESP32 Marauder interface displayed on a CYD-style touchscreen](/assets/images/cyd-esp32-marauder-demo.webp)
+
+*ESP32 Marauder interface photographed by Embedded Nerd. Use security-testing tools only on devices and networks you own or are authorized to assess.*
+
 The CYD and similar integrated ESP32 touchscreen boards are useful for:
 
 - **Weather dashboard:** display local conditions and sensor readings.
