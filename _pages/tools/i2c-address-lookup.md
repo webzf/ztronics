@@ -352,6 +352,10 @@ For a real hardware check, use an I2C scanner to see which addresses actually re
 
 See our [I2C Scanner Tutorial](/i2c-scanner-tutorial/) for a practical Arduino and ESP32 example.
 
+
+
+**Using an Arduino Nano ESP32?** Its default I²C pins are SDA on A4 (GPIO11) and SCL on A5 (GPIO12). See the [Arduino Nano ESP32 pinout and specifications](/products/arduino-nano-esp32/) before wiring your bus.
+
 ## How to Check I2C Compatibility
 
 Use the **I2C Compatibility Checker** to select all devices you want to connect to the same bus.
