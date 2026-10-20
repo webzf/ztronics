@@ -18,11 +18,11 @@ toc: true
 toc_label: "Contents"
 toc_sticky: true
 header:
-  teaser: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
+  teaser: /assets/images/products/sunton-esp32-8048s043c-board.webp
   overlay_image: /assets/images/header3.webp
   overlay_filter: 0.5
-  image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
-  og_image: https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png
+  image: /assets/images/products/sunton-esp32-8048s043c-board.webp
+  og_image: /assets/images/products/sunton-esp32-8048s043c-board.webp
   og_image_alt: "Sunton ESP32-8048S043C yellow PCB with 4.3-inch 800x480 touchscreen and ESP32-S3"
 categories:
   - Displays
@@ -51,9 +51,9 @@ This guide covers the specifications, display and touch hardware, important pins
 
 > **Not sure which ESP32 touchscreen is right for your project?** Start with our [ESP32 touchscreen displays guide]({{ site.url }}/esp32-touchscreen-displays-guide/) and compare boards by resolution and memory requirements.
 
-![Sunton ESP32-8048S043C 4.3-inch ESP32-S3 touchscreen board on a white background](https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png)
+![Sunton ESP32-8048S043C-I 4.3-inch capacitive touchscreen board, annotated with the ESP32-S3 module and connectors](/assets/images/products/sunton-esp32-8048s043c-board.webp)
 
-*Image source: [ESPboards](https://www.espboards.dev/esp32/cyd-esp32-8048s043/).*
+*Board image supplied by Embedded Nerd.*
 
 ## Sunton ESP32-8048S043C specs
 

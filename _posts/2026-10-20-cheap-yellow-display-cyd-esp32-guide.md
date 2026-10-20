@@ -8,11 +8,11 @@ show_date: false
 read_time: false
 last_modified_at: 2026-10-20
 header:
-  teaser: https://cdn.espboards.net/boards/cyd-esp32-2432s028/cover-804.png
+  teaser: /assets/images/products/cyd-esp32-2432s028-board.webp
   overlay_image: /assets/images/header3.webp
   overlay_filter: 0.5
-  image: https://cdn.espboards.net/boards/cyd-esp32-2432s028/cover-804.png
-  og_image: https://cdn.espboards.net/boards/cyd-esp32-2432s028/cover-804.png
+  image: /assets/images/products/cyd-esp32-2432s028-board.webp
+  og_image: /assets/images/products/cyd-esp32-2432s028-board.webp
   og_image_alt: "ESP32-2432S028 2.8-inch Cheap Yellow Display touchscreen board"
 categories:
   - Displays
@@ -38,13 +38,13 @@ The **Cheap Yellow Display (CYD) ESP32** is a low-cost touchscreen development b
 
 Both boards combine an ESP32 microcontroller and a touchscreen on one PCB, making them useful for dashboards, IoT control panels and small human-machine interfaces (HMIs). However, they use different hardware and should not be treated as interchangeable.
 
-![ESP32-2432S028 classic CYD board with a 2.8-inch touchscreen](https://cdn.espboards.net/boards/cyd-esp32-2432s028/cover-804.png)
+![ESP32-2432S028 classic CYD board with a 2.8-inch touchscreen](/assets/images/products/cyd-esp32-2432s028-board.webp)
 
-*Image source: ESPboards. Check the exact revision before ordering.*
+*Photograph supplied by Embedded Nerd. Check the exact revision before ordering.*
 
-![Sunton ESP32-8048S043C board with a 4.3-inch 800 × 480 touchscreen](https://cdn.espboards.net/boards/cyd-esp32-8048s043/cover-468.png)
+![Sunton ESP32-8048S043C board with a 4.3-inch 800 × 480 touchscreen](/assets/images/products/sunton-esp32-8048s043c-board.webp)
 
-*Image source: ESPboards. Confirm the exact Sunton model and revision in the listing.*
+*Photograph supplied by Embedded Nerd. Confirm the exact model and revision in the listing.*
 
 ## CYD Models Compared
 
@@ -105,9 +105,9 @@ For the classic CYD, the XPT2046 is a resistive touch controller. Depending on t
 
 ## First Project Ideas
 
-![Flight Tracker interface running on a CYD touchscreen](/assets/images/esp32-touchscreen-displays.webp)
+![Flight Tracker interface running on a CYD touchscreen](/assets/images/cyd-flight-tracker-demo.webp)
 
-*An example of the touchscreen interface style possible on ESP32 display boards.*
+*Flight Tracker project photographed on the CYD touchscreen.*
 
 The CYD and similar integrated ESP32 touchscreen boards are useful for:
 

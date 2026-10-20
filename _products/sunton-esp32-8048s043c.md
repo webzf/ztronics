@@ -9,8 +9,8 @@ product_id: sunton-esp32-8048s043c
 category: Displays
 manufacturer: "Sunton"
 
-image: "https://www.makerfabs.com/image/wiki_image/2022-10-28_22_36_00_0.jpg"
-alt: "Sunton ESP32-8048S043C 4.3 inch ESP32-S3 CYD touchscreen board"
+image: "/assets/images/products/sunton-esp32-8048s043c-board.webp"
+alt: "Sunton ESP32-8048S043C-I 4.3-inch capacitive touchscreen board, with connectors and ESP32-S3 module annotated"
 
 excerpt: "Sunton ESP32-8048S043C CYD with ESP32-S3, 4.3-inch 800×480 IPS display, capacitive GT911 touch, 16MB Flash, 8MB PSRAM and microSD."
 
