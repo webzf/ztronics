@@ -1412,7 +1412,6 @@ module EmbeddedNerd
       # Keep specific anchors such as "ESP32 DevKit" and "ESP32 DevKit V1".
       return false if
         value == "esp32" &&
-        normalize_text("esp32-devkit") == "esp32 devkit" &&
         !explicit
 
       return true if
