@@ -78,7 +78,7 @@ The key detail to understand before wiring it is the **pin mapping**: Arduino na
 | USB connector | USB-C |
 | Wireless | 2.4 GHz Wi-Fi and Bluetooth 5 |
 | Programming | Arduino IDE / Arduino ESP32 core; MicroPython supported |
-| Board dimensions | 43.18 × 17.78 mm (board outline; connectors may overhang) |
+| Board dimensions | 43.2 × 17.8 mm (board outline; connectors may overhang) |
 
 Specifications above follow Arduino's board documentation and datasheet. Consult the official documentation for revision-specific details.
 
@@ -90,8 +90,8 @@ The physical headers use Nano-style names, but sketches and low-level ESP32 code
 
 | Arduino pin | ESP32-S3 GPIO | Common use / note |
 |---|---:|---|
-| D0 / RX | GPIO44 | UART RX label |
-| D1 / TX | GPIO43 | UART TX label |
+| D0 / RX | GPIO44 | UART RX label; PWM supported |
+| D1 / TX | GPIO43 | UART TX label; PWM supported |
 | D2 | GPIO5 | Digital I/O; PWM supported |
 | D3 | GPIO6 | Digital I/O; PWM supported |
 | D4 | GPIO7 | Digital I/O; PWM supported |
@@ -113,7 +113,7 @@ The physical headers use Nano-style names, but sketches and low-level ESP32 code
 | A6 | GPIO13 | ADC2 analog input / GPIO; PWM supported |
 | A7 | GPIO14 | ADC2 analog input / GPIO; PWM supported |
 
-PWM (LEDC) is supported on all exposed digital pins D0–D13 and analog pins A0–A7 through the Nano ESP32 Arduino core, subject to timer/resource limits; only five PWM signals can be generated simultaneously. This is not limited to the three pins marked with a tilde on some classic Nano pinouts.
+Arduino’s official Nano ESP32 User Manual states that PWM via `analogWrite()` is supported on all digital pins D0–D13 and all analog pins A0–A7. However, due to timer restrictions, only five PWM signals can be generated simultaneously. The `~` marks on some pinout diagrams should not be interpreted as the only PWM-capable pins on this board. See the [official Arduino Nano ESP32 User Manual](https://docs.arduino.cc/tutorials/nano-esp32/cheat-sheet/).
 
 For analog reads, **A0–A3 (GPIO1–GPIO4) use ADC1**. **A4–A7 (GPIO11–GPIO14) use ADC2**, which is also used by Wi-Fi and can fail or become unavailable while Wi-Fi is active. If you need stable analog measurements while using Wi-Fi, prefer A0–A3.
 
