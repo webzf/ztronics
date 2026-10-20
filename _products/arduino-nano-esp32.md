@@ -4,11 +4,12 @@ internal_links: true
 title: "Arduino Nano ESP32"
 product_verdict: "A compact Nano-format board for ESP32-S3 projects that need Wi-Fi, Bluetooth and Arduino-friendly pin names; remember that its GPIOs are 3.3 V only."
 seo_title: "Arduino Nano ESP32: Specs, Pinout & Where to Buy"
-seo_description: "Arduino Nano ESP32 specs, D0–D13 and A0–A7 GPIO mapping, 3.3 V limits, MicroPython support and buying tips."
+seo_description: "Arduino Nano ESP32 specs, full D0–D13 / A0–A7 to GPIO pinout table, 3.3 V limits, MicroPython support and where to buy."
 product_id: arduino-nano-esp32
 category: Development Boards
 manufacturer: "Arduino"
 alt: "Arduino Nano ESP32 development board with ESP32-S3, Wi-Fi, Bluetooth and USB-C"
+image: /assets/images/products/arduino-nano-esp32-board.webp
 excerpt: "Arduino Nano ESP32 with ESP32-S3, Wi-Fi, Bluetooth, USB-C and Nano-format pin headers. Check the pin mapping, 3.3 V limits and buying options."
 description: "The Arduino Nano ESP32 combines the familiar Nano form factor with an ESP32-S3-based NORA-W106 module, Wi-Fi, Bluetooth and USB-C. Its Arduino pin names map to ESP32-S3 GPIO numbers, so check the mapping before wiring existing projects."
 categories:
@@ -57,6 +58,8 @@ related:
   - raspberry-pi-pico
   - mpu6050
 ---
+![Arduino Nano ESP32 development board, top-side components and headers](/assets/images/products/arduino-nano-esp32-board.webp)
+
 The **Arduino Nano ESP32** brings Espressif's ESP32-S3 platform into the familiar Nano footprint. Compared with the classic Arduino Nano, it adds 2.4 GHz Wi-Fi and Bluetooth, uses a USB-C connector, and runs its GPIO at 3.3 V rather than 5 V. It is a good fit for compact IoT devices, wireless sensors, USB-connected projects and anyone who wants ESP32 capabilities without moving to a larger DevKit-style board.
 
 The key detail to understand before wiring it is the **pin mapping**: Arduino names such as D2 or A4 are not the same numbers as the ESP32-S3 GPIOs. Use the mapping table below instead of assuming the labels match GPIO numbers.
@@ -75,11 +78,13 @@ The key detail to understand before wiring it is the **pin mapping**: Arduino na
 | USB connector | USB-C |
 | Wireless | 2.4 GHz Wi-Fi and Bluetooth 5 |
 | Programming | Arduino IDE / Arduino ESP32 core; MicroPython supported |
-| Board dimensions | Check the official drawing for the exact mechanical details |
+| Board dimensions | 43.18 × 17.78 mm (board outline; connectors may overhang) |
 
 Specifications above follow Arduino's board documentation and datasheet. Consult the official documentation for revision-specific details.
 
 ## Arduino Nano ESP32 pinout: Arduino labels vs ESP32 GPIO
+
+![Arduino Nano ESP32 top-view pinout with D0–D13, A0–A7, power pins and ESP32 module](/assets/images/products/arduino-nano-esp32-pinout.webp)
 
 The physical headers use Nano-style names, but sketches and low-level ESP32 code may refer to the ESP32-S3 GPIO numbers. This is the default Arduino pin mapping documented for the Nano ESP32.
 
@@ -87,28 +92,30 @@ The physical headers use Nano-style names, but sketches and low-level ESP32 code
 |---|---:|---|
 | D0 / RX | GPIO44 | UART RX label |
 | D1 / TX | GPIO43 | UART TX label |
-| D2 | GPIO5 | Digital I/O |
-| D3 | GPIO6 | Digital I/O / PWM |
-| D4 | GPIO7 | Digital I/O |
-| D5 | GPIO8 | Digital I/O / PWM |
-| D6 | GPIO9 | Digital I/O / PWM |
-| D7 | GPIO10 | Digital I/O |
-| D8 | GPIO17 | Digital I/O |
-| D9 | GPIO18 | Digital I/O |
-| D10 | GPIO21 | Digital I/O / SPI chip-select convention varies by library |
-| D11 / COPI | GPIO38 | SPI controller-out peripheral-in (MOSI) |
-| D12 / CIPO | GPIO47 | SPI controller-in peripheral-out (MISO) |
-| D13 / SCK | GPIO48 | SPI clock; built-in LED |
-| A0 | GPIO1 | Analog input / GPIO |
-| A1 | GPIO2 | Analog input / GPIO |
-| A2 | GPIO3 | Analog input / GPIO |
-| A3 | GPIO4 | Analog input / GPIO |
-| A4 / SDA | GPIO11 | I²C data by default |
-| A5 / SCL | GPIO12 | I²C clock by default |
-| A6 | GPIO13 | Analog input / GPIO |
-| A7 | GPIO14 | Analog input / GPIO |
+| D2 | GPIO5 | Digital I/O; PWM supported |
+| D3 | GPIO6 | Digital I/O; PWM supported |
+| D4 | GPIO7 | Digital I/O; PWM supported |
+| D5 | GPIO8 | Digital I/O; PWM supported |
+| D6 | GPIO9 | Digital I/O; PWM supported |
+| D7 | GPIO10 | Digital I/O; PWM supported |
+| D8 | GPIO17 | Digital I/O; PWM supported |
+| D9 | GPIO18 | Digital I/O; PWM supported |
+| D10 | GPIO21 | Digital I/O; PWM supported |
+| D11 / COPI | GPIO38 | SPI COPI (MOSI); PWM also supported |
+| D12 / CIPO | GPIO47 | SPI CIPO (MISO); PWM also supported |
+| D13 / SCK | GPIO48 | SPI clock; built-in LED; PWM supported |
+| A0 | GPIO1 | ADC1 analog input / GPIO; PWM supported |
+| A1 | GPIO2 | ADC1 analog input / GPIO; PWM supported |
+| A2 | GPIO3 | ADC1 analog input / GPIO; PWM supported |
+| A3 | GPIO4 | ADC1 analog input / GPIO; PWM supported |
+| A4 / SDA | GPIO11 | ADC2; I²C data by default. See the [I2C Address Lookup](/tools/i2c-address-lookup/) and [I2C Scanner Tutorial](/i2c-scanner-tutorial/). |
+| A5 / SCL | GPIO12 | ADC2; I²C clock by default. See the [I2C Address Lookup](/tools/i2c-address-lookup/) and [I2C Scanner Tutorial](/i2c-scanner-tutorial/). |
+| A6 | GPIO13 | ADC2 analog input / GPIO; PWM supported |
+| A7 | GPIO14 | ADC2 analog input / GPIO; PWM supported |
 
-All header pins have specific electrical and peripheral constraints. Although the ESP32-S3 GPIO matrix allows many peripherals to be reassigned, use the official pinout and board package defaults when following examples. ADC2 use can conflict with Wi-Fi, so check the ESP32-S3 ADC documentation if an analog reading behaves unexpectedly while wireless is active.
+PWM (LEDC) is supported on all exposed digital pins D0–D13 and analog pins A0–A7 through the Nano ESP32 Arduino core, subject to timer/resource limits; only five PWM signals can be generated simultaneously. This is not limited to the three pins marked with a tilde on some classic Nano pinouts.
+
+For analog reads, **A0–A3 (GPIO1–GPIO4) use ADC1**. **A4–A7 (GPIO11–GPIO14) use ADC2**, which is also used by Wi-Fi and can fail or become unavailable while Wi-Fi is active. If you need stable analog measurements while using Wi-Fi, prefer A0–A3.
 
 **Important:** the mapping above is the default Nano ESP32 Arduino configuration. It is not a generic mapping for every ESP32-S3 board.
 
@@ -123,7 +130,35 @@ All header pins have specific electrical and peripheral constraints. Although th
 | Pin naming | Nano D/A labels mapped to ESP32 GPIOs | Arduino D/A labels | GPIO numbering varies by board |
 | Best fit | Compact wireless Nano projects | Legacy 5 V Arduino projects | Flexible prototyping and more board space |
 
-Choose the **Nano ESP32** when you want wireless connectivity in a Nano footprint. If you need the classic Nano's 5 V logic or depend on older 5 V shields, the original Nano may be easier to integrate. For a low-cost general-purpose ESP32 setup with a larger prototyping layout, compare the [ESP32 DevKit V1](/products/esp32-devkit/). For broader board selection, see our [ESP32 OLED and development guide](/esp32-oled-tutorial-wiring-code-display-guide/) and [Development Boards category](/products/development-boards/).
+Choose the **Nano ESP32** when you want wireless connectivity in a Nano footprint. If you need the classic Nano's 5 V logic or depend on older 5 V shields, the original Nano may be easier to integrate. For a low-cost general-purpose ESP32 setup with a larger prototyping layout, compare the [ESP32 DevKit V1](/products/esp32-devkit/). For broader board selection, compare our [Best ESP32 Boards](/best-esp32-boards/) and [Best Arduino Starter Kits](/best-arduino-starter-kits/) guides, or browse the [Development Boards category](/products/development-boards/).
+
+## Arduino Nano ESP32 example: blink and read A0
+
+This sketch blinks the built-in LED and prints an analog reading from A0. It also shows that the Arduino pin name D2 maps to ESP32-S3 GPIO5; in normal Arduino sketches, use the board label D2 rather than hard-coding the raw GPIO number.
+
+```cpp
+const int ledPin = LED_BUILTIN;
+const int digitalPin = D2; // Nano label D2 maps to ESP32-S3 GPIO5
+const int analogPin = A0;  // Nano label A0 maps to GPIO1 (ADC1)
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(ledPin, OUTPUT);
+  pinMode(digitalPin, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(ledPin, !digitalRead(ledPin));
+  digitalWrite(digitalPin, HIGH);
+  Serial.print("A0 = ");
+  Serial.println(analogRead(analogPin));
+  delay(500);
+  digitalWrite(digitalPin, LOW);
+  delay(500);
+}
+```
+
+Open Serial Monitor at **115200 baud** to see the A0 readings. For a real analog test, connect a voltage within the board’s allowed input range; never apply 5 V to a GPIO.
 
 ## Is the Arduino Nano ESP32 5 V tolerant?
 
@@ -140,6 +175,10 @@ Not automatically. The Nano form factor makes some accessories physically compat
 ## Arduino IDE or ESP-IDF?
 
 Use the Arduino IDE with the Arduino ESP32 board package for the simplest setup and for most Arduino libraries and examples. ESP-IDF is Espressif's lower-level development framework and can be preferable when you need direct access to ESP32 features, advanced configuration or an ESP-IDF-based project. Confirm the selected framework and library support before porting code between environments.
+
+## Arduino Nano ESP32 packaging
+
+![Arduino Nano ESP32 board beside its retail box](/assets/images/products/arduino-nano-esp32-box.webp)
 
 ## Where to buy the Arduino Nano ESP32
 
