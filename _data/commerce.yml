@@ -4,7 +4,7 @@ arduino-nano-esp32:
 
   preferred_store: amazon
 
-  notes: "Specific Amazon product listing supplied by the site owner (ASIN B0C947BHK5)."
+  notes: "Amazon product listing supplied by the site owner (ASIN B0C947BHK5); AliExpress affiliate short link supplied by the site owner."
 
   disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
 
@@ -21,8 +21,8 @@ arduino-nano-esp32:
       affiliate_url: "https://www.amazon.com/dp/B0C947BHK5?tag=embeddednerd2-20"
 
     aliexpress:
-      enabled: false
-      affiliate_url: ""
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3pZtcPn"
 
 #----------------
 guition-esp32-s3-4848s040:
