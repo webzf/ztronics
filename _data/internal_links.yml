@@ -49,7 +49,6 @@ overrides:
 
   esp32-devkit:
     keywords:
-      - "ESP32"
       - "ESP32 DevKit"
       - "ESP32 DevKit V1"
       - "ESP32 development board"
