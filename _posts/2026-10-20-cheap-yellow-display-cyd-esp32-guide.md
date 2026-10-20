@@ -8,11 +8,11 @@ show_date: false
 read_time: false
 last_modified_at: 2026-10-20
 header:
-  teaser: /assets/images/products/cyd-esp32-2432s028-board.webp
+  teaser: /assets/images/cyd-esp32-2432s028-board.webp
   overlay_image: /assets/images/header3.webp
   overlay_filter: 0.5
-  image: /assets/images/products/cyd-esp32-2432s028-board.webp
-  og_image: /assets/images/products/cyd-esp32-2432s028-board.webp
+  image: /assets/images/cyd-esp32-2432s028-board.webp
+  og_image: /assets/images/cyd-esp32-2432s028-board.webp
   og_image_alt: "ESP32-2432S028 2.8-inch Cheap Yellow Display touchscreen board"
 categories:
   - Displays
@@ -38,11 +38,11 @@ The **Cheap Yellow Display (CYD) ESP32** is a low-cost touchscreen development b
 
 Both boards combine an ESP32 microcontroller and a touchscreen on one PCB, making them useful for dashboards, IoT control panels and small human-machine interfaces (HMIs). However, they use different hardware and should not be treated as interchangeable.
 
-![ESP32-2432S028 classic CYD board with a 2.8-inch touchscreen](/assets/images/products/cyd-esp32-2432s028-board.webp)
+![ESP32-2432S028 classic CYD board with a 2.8-inch touchscreen](/assets/images/cyd-esp32-2432s028-board.webp)
 
 *Photograph supplied by Embedded Nerd. Check the exact revision before ordering.*
 
-![Sunton ESP32-8048S043C board with a 4.3-inch 800 × 480 touchscreen](/assets/images/products/sunton-esp32-8048s043c-board.webp)
+![Sunton ESP32-8048S043C board with a 4.3-inch 800 × 480 touchscreen](/assets/images/sunton-esp32-8048s043c-board.webp)
 
 *Photograph supplied by Embedded Nerd. Confirm the exact model and revision in the listing.*
 
