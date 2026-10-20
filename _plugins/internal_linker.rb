@@ -1411,8 +1411,7 @@ module EmbeddedNerd
       # Never auto-link a bare "ESP32" to the generic ESP32 DevKit product.
       # Keep specific anchors such as "ESP32 DevKit" and "ESP32 DevKit V1".
       return false if
-        value == "esp32" &&
-        !explicit
+        value == "esp32"
 
       return true if
         explicit
