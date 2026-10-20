@@ -143,10 +143,10 @@ Use the Arduino IDE with the Arduino ESP32 board package for the simplest setup 
 
 ## Where to buy the Arduino Nano ESP32
 
-Check the exact model and whether the board is supplied with headers soldered or unsoldered. Arduino's product listings and marketplace offers can differ by region, seller and included accessories. The purchase option above will be enabled once a verified product-specific affiliate URL is added; until then, use the official Arduino page or search Amazon directly rather than relying on an unverified affiliate link.
+Check the exact model and whether the board is supplied with headers soldered or unsoldered. Arduino's product listings and marketplace offers can differ by region, seller and included accessories. The purchase button uses the product-specific Amazon listing supplied for this board. Check the seller, delivery destination, price and whether headers are included before ordering; availability and offers can vary by region.
 
-- [Official Arduino Nano ESP32 product page](https://docs.arduino.cc/hardware/nano-esp32)
-- [Search Amazon for Arduino Nano ESP32](https://www.amazon.com/s?k=Arduino+Nano+ESP32)
+- [Official Arduino Nano ESP32 documentation](https://docs.arduino.cc/hardware/nano-esp32)
+- [View the Arduino Nano ESP32 listing on Amazon](https://www.amazon.com/dp/B0C947BHK5?tag=embeddednerd2-20)
 
 ## Official resources
 
