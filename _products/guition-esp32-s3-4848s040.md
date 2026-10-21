@@ -11,6 +11,7 @@ manufacturer: "Guition"
 
 image: "/assets/images/products/guition-4848s040-home-assistant-review.webp"
 header:
+  teaser: "/assets/images/products/guition-4848s040-home-assistant-review.webp"
   og_image: "/assets/images/products/guition-4848s040-home-assistant-review.webp"
   og_image_alt: "Guition ESP32-S3-4848S040 4-inch 480×480 touchscreen development board"
 alt: "Guition ESP32-S3-4848S040 4-inch square touchscreen development board"
