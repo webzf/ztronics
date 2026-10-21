@@ -1,0 +1,80 @@
+# Backup of _data/navigation.yml before the experimental navigation changes.
+# Original source commit: 2bc39d7f956faab6ff6e5deb5828b2208bc9424a
+# Restore by copying this file back to _data/navigation.yml if the experiment is reverted.
+
+main:
+  - title: "Home"
+    url: /
+   
+  - title: "ESP32"
+    url: /categories/#esp32
+
+  - title: "Arduino"
+    url: /categories/#arduino
+
+  - title: "Raspberry Pi"
+    url: /categories/#raspberry-pi
+
+  - title: "Products"
+    url: /products/
+    children:
+      - title: "Development Boards"
+        url: /products/development-boards/
+      - title: "Sensors"
+        url: /products/sensors/
+      - title: "Modules"
+        url: /products/modules/
+    
+  - title: "Projects"
+    url: /categories/
+
+  - title: "About"
+    url: /about/
+
+
+embedded:
+  - title: ESP32
+    children:
+      - title: "Getting Started"
+        url: /esp32-getting-started/
+      - title: "ESP32 Projects"
+        url: /categories/#esp32
+      - title: "ESP32 OLED"
+        url: /esp32-oled-tutorial-wiring-code-display-guide/
+      - title: "ESP32 Web Server"
+        url: /esp32-web-server/
+
+  - title: "Tools"
+    url: /tools/
+    children:
+      - title: "★ ESP32 Touchscreen Selector"
+        url: /tools/esp32-touchscreen-selector/
+      - title: "I2C Address Lookup Tool"
+        url: /tools/i2c-address-lookup/
+      - title: "I2C Pull-up Resistor Calculator"
+        url: /tools/i2c-pullup-resistor-calculator/
+        
+
+  - title: Arduino
+    children:
+      - title: "Arduino Basics"
+        url: /arduino-beginners-guide/
+      - title: "Arduino Projects"
+        url: /tags/#arduino
+
+  - title: Raspberry Pi
+    children:
+      - title: "Raspberry Pi Basics"
+        url: /raspberry-pi-guide/
+      - title: "GPIO Guide"
+        url: /raspberry-pi-gpio-guide/
+
+
+  - title: Top Hardware
+    children:
+      - title: "Best ESP32 Boards"
+        url: /best-esp32-boards/
+      - title: "Best Arduino Starter Kits"
+        url: /best-arduino-starter-kits/
+      - title: "Best Sensors for ESP32"
+        url: /best-esp32-sensors/
