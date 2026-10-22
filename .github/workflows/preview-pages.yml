@@ -38,8 +38,9 @@ jobs:
 
       - name: Keep standalone design mockup available
         run: |
-          mkdir -p _site/design-mockup
+          mkdir -p _site/design-mockup _site/article-mockup
           cp preview/product-page.html _site/design-mockup/index.html
+          cp preview/article-page.html _site/article-mockup/index.html
           touch _site/.nojekyll
 
       - name: Configure GitHub Pages
