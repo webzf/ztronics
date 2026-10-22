@@ -397,32 +397,3 @@ a:hover { color: var(--en-green-dark); }
   .archive__item { padding: 1em; }
   .feature__item { padding: .85em; }
 }
-
-
-/* Mobile search fix — keep search and hamburger controls visible and tappable. */
-@media (max-width: 767px) {
-  .masthead .greedy-nav {
-    min-width: 0;
-    flex: 1 1 auto;
-  }
-  .masthead .greedy-nav .search__toggle {
-    display: inline-flex;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
-    min-width: 40px;
-    min-height: 40px;
-    margin: 0 .1em 0 auto;
-    padding: .55em;
-    color: #f7fafb;
-    visibility: visible;
-    opacity: 1;
-  }
-  .masthead .greedy-nav .greedy-nav__toggle {
-    flex: 0 0 auto;
-    margin-left: .15em;
-  }
-  .masthead .greedy-nav .visible-links {
-    min-width: 0;
-  }
-}
