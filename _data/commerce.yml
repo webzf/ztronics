@@ -47,7 +47,7 @@ guition-esp32-s3-4848s040:
 
     aliexpress:
       enabled: true
-      affiliate_url: ""
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3Z73SPr"
 
   variants:
     with_relays:
