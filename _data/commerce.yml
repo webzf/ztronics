@@ -46,7 +46,7 @@ guition-esp32-s3-4848s040:
       affiliate_url: "https://www.amazon.com/dp/B0GCMXHQ8M?tag=embeddednerd2-20"
 
     aliexpress:
-      enabled: false
+      enabled: true
       affiliate_url: ""
 
   variants:
