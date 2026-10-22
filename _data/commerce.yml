@@ -27,7 +27,7 @@ arduino-nano-esp32:
 #----------------
 guition-esp32-s3-4848s040:
 
-  preferred_store: amazon
+  preferred_store: aliexpress
 
   notes: "Amazon offer uses ASIN B0GCMXHQ8M. Two separate AliExpress affiliate variant links are displayed in the product content."
 
@@ -42,7 +42,7 @@ guition-esp32-s3-4848s040:
   stores:
 
     amazon:
-      enabled: true
+      enabled: false
       affiliate_url: "https://www.amazon.com/dp/B0GCMXHQ8M?tag=embeddednerd2-20"
 
     aliexpress:
