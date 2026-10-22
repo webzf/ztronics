@@ -34,7 +34,7 @@ jobs:
       - name: Prepare preview site
         run: |
           mkdir -p _site
-          cp preview/theme-phase-1.html _site/index.html
+          cp preview/product-page.html _site/index.html
           touch _site/.nojekyll
 
       - name: Upload preview artifact
