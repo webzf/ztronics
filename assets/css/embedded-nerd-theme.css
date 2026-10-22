@@ -66,3 +66,57 @@ a:hover { color: var(--en-green-dark); }
   .page__title { font-size: 1.65em; }
   .page__content p, .page__content li { line-height: 1.68; }
 }
+
+
+/* Phase 2 — masthead and navigation refinements */
+.masthead {
+  box-shadow: 0 2px 14px rgba(6, 20, 27, .12);
+}
+.masthead__inner-wrap {
+  max-width: 1440px;
+  padding-top: .65em;
+  padding-bottom: .65em;
+}
+.masthead .site-title {
+  font-size: 1.12em;
+  letter-spacing: -.04em;
+}
+.masthead .site-logo img {
+  max-height: 38px;
+  width: auto;
+}
+.greedy-nav .visible-links {
+  align-items: center;
+  gap: .15em;
+}
+.greedy-nav .visible-links a {
+  border-radius: 5px;
+  padding: .55em .72em;
+  font-size: .82em;
+  font-weight: 600;
+}
+.greedy-nav .visible-links a:hover {
+  background: rgba(255, 255, 255, .08);
+}
+.greedy-nav .hidden-links {
+  border: 1px solid #2d424b;
+  border-radius: 8px;
+  background: #102128;
+  box-shadow: 0 12px 28px rgba(0,0,0,.22);
+}
+.greedy-nav .hidden-links a {
+  padding: .65em 1em;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.greedy-nav .hidden-links li:last-child a { border-bottom: 0; }
+.masthead .search__toggle { padding: .6em; }
+@media (min-width: 768px) {
+  .masthead__inner-wrap { display: flex; align-items: center; }
+  .greedy-nav { flex: 1 1 auto; }
+}
+@media (max-width: 767px) {
+  .masthead__inner-wrap { padding: .55em .8em; }
+  .masthead .site-logo img { max-height: 32px; }
+  .greedy-nav .visible-links a { padding: .55em .65em; }
+  .greedy-nav .hidden-links { right: 0; left: auto; }
+}
