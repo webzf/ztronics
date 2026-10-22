@@ -279,7 +279,8 @@ These focused pages help you start with a common hardware requirement before ope
 {
   "@context":"https://schema.org",
   "@type":"WebApplication",
-  "name":"ESP32 Display Selector",\n  "alternateName":"ESP32 Touchscreen Selector",
+  "name":"ESP32 Display Selector",
+  "alternateName":"ESP32 Touchscreen Selector",
   "url":"https://embeddednerd.com/tools/esp32-touchscreen-selector/",
   "description":"Free interactive selector for ESP32 boards and display modules, with filters for display interface, touch, PSRAM, GPIO, LVGL, USB and onboard features.",
   "applicationCategory":"DeveloperApplication",
