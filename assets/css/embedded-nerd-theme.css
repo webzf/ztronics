@@ -1,0 +1,68 @@
+/* Embedded Nerd visual refresh — isolated development branch only.
+   Light reading surfaces, dark masthead, green interaction accent.
+   Keep selectors scoped to the existing Minimal Mistakes structure. */
+:root {
+  --en-ink: #17232d;
+  --en-muted: #5c6b76;
+  --en-line: #dce4e8;
+  --en-green: #16a34a;
+  --en-green-dark: #08783a;
+  --en-surface: #ffffff;
+  --en-page: #f5f7f8;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--en-page); color: var(--en-ink); }
+a { text-underline-offset: .18em; }
+a:hover { color: var(--en-green-dark); }
+.masthead {
+  background: #0d1a20;
+  border-bottom: 1px solid #23343b;
+}
+.masthead__inner-wrap { background: transparent; }
+.masthead a, .masthead .site-title, .masthead .site-subtitle,
+.masthead .greedy-nav a, .masthead .search__toggle {
+  color: #f7fafb;
+}
+.masthead .site-title { font-weight: 800; letter-spacing: -.035em; }
+.masthead .site-title:hover, .masthead .greedy-nav a:hover { color: #63df91; }
+.greedy-nav { background: transparent; }
+.greedy-nav .visible-links a:before { background: var(--en-green); }
+.page, .archive, .page__inner-wrap, .archive__item,
+.sidebar .nav__title, .sidebar .nav__items {
+  border-color: var(--en-line);
+}
+.page__title, .archive__item-title, .page h2, .page h3 {
+  color: var(--en-ink);
+  letter-spacing: -.025em;
+}
+.page__content, .archive__item-excerpt { color: #354653; }
+.page__content p, .page__content li { line-height: 1.72; }
+.page__content a:not(.btn):not(.button) { text-decoration-thickness: 1px; }
+.btn, button, input[type="submit"] {
+  border-radius: 6px;
+  transition: background-color .15s ease, transform .15s ease;
+}
+.btn--primary, .page__content .btn--primary {
+  background: var(--en-green);
+}
+.btn--primary:hover, .page__content .btn--primary:hover {
+  background: var(--en-green-dark);
+}
+.archive__item, .list__item, .sidebar .nav__items,
+.toc, .notice, .page__content table {
+  border-radius: 8px;
+}
+.page__content table { overflow: hidden; }
+.page__content table th { background: #edf2f5; color: var(--en-ink); }
+.page__content table tr:nth-child(even) { background: #f8fafb; }
+.toc { border: 1px solid var(--en-line); background: #fff; padding: 1em 1.2em; }
+.sidebar .nav__title { background: #edf2f5; color: var(--en-ink); }
+.sidebar .nav__items { background: #fff; }
+.page__footer { border-top-color: var(--en-line); }
+.site-footer { background: #0d1a20; color: #d5dfe3; }
+.site-footer a { color: #f7fafb; }
+@media (max-width: 600px) {
+  .masthead__inner-wrap { padding-left: 1em; padding-right: 1em; }
+  .page__title { font-size: 1.65em; }
+  .page__content p, .page__content li { line-height: 1.68; }
+}
