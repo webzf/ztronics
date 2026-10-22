@@ -1,4 +1,4 @@
-name: Publish design preview
+name: Restore production from master
 
 on:
   push:
@@ -19,8 +19,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout design branch
+      - name: Checkout production master
         uses: actions/checkout@v4
+        with:
+          ref: master
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -31,22 +33,15 @@ jobs:
       - name: Install Jekyll dependencies
         run: bundle install
 
-      - name: Build full Jekyll site for project Pages
-        run: bundle exec jekyll build --baseurl "/ztronics"
+      - name: Build production site from master
+        run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
-
-      - name: Keep standalone design mockup available
-        run: |
-          mkdir -p _site/design-mockup _site/article-mockup
-          cp preview/product-page.html _site/design-mockup/index.html
-          cp preview/article-page.html _site/article-mockup/index.html
-          touch _site/.nojekyll
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload Pages artifact
+      - name: Upload production Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
@@ -58,6 +53,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy preview
+      - name: Restore production site from master
         id: deployment
         uses: actions/deploy-pages@v4
