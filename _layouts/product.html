@@ -8,16 +8,32 @@ classes: wide
 <div class="product-page">
 
   {% if page.product_verdict %}
-    <p class="product-verdict"><strong>Verdict:</strong> {{ page.product_verdict | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+    <p class="product-verdict">
+      <strong>Verdict{% if page.editorial_review and page.editorial_review.rating %} · {{ page.editorial_review.rating }}/{{ page.editorial_review.best_rating | default: 10 }}{% endif %}:</strong>
+      {{ page.product_verdict | markdownify | remove: '<p>' | remove: '</p>' }}
+    </p>
   {% endif %}
+
+  {% comment %}
+  ============================================================================
+  Product Header / Commerce Box
+  Handles product image, title, description, badges and purchase CTAs.
+  Keep this close to the verdict so visitors can reach the product and purchase
+  option without scrolling past the full editorial review.
+  ============================================================================
+  {% endcomment %}
+
+  {% include product-box.html
+     product=page.product_id
+     style=product_style %}
 
   {% if page.editorial_review and page.editorial_review.rating %}
     {% assign editorial_review = page.editorial_review %}
     <section class="product-editorial-review notice notice--info" aria-labelledby="embedded-nerd-verdict-title">
-      <h2 id="embedded-nerd-verdict-title">Embedded Nerd Verdict</h2>
+      <h2 id="embedded-nerd-verdict-title">Embedded Nerd Editorial Review</h2>
       <p class="product-editorial-score">
         <strong>{{ editorial_review.rating }}/{{ editorial_review.best_rating | default: 10 }}</strong>
-        <span> — Editorial assessment based on specifications and documentation</span>
+        <span> — Assessment based on specifications and documentation</span>
       </p>
       {% if editorial_review.summary %}
         <p>{{ editorial_review.summary | escape }}</p>
@@ -49,18 +65,6 @@ classes: wide
       {% endif %}
     </section>
   {% endif %}
-
-  {% comment %}
-  ============================================================================
-  Product Header / Commerce Box
-  Handles product image, title, description, badges and purchase CTAs.
-  ============================================================================
-  {% endcomment %}
-
-  {% include product-box.html
-     product=page.product_id
-     style=product_style %}
-
 
   {% comment %}
   ============================================================================
