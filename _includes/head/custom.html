@@ -50,10 +50,24 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
     })(window, document, "clarity", "script", "yeaksd51pa");
 </script>
 
-<!-- Keep filtered tool states out of the search index. The clean selector URL remains indexable. -->
+<!-- Keep filtered selector states out of the search index without affecting other pages. -->
 <script>
 (function () {
-  if (!window.location.search) return;
+  var path = window.location.pathname.replace(/\/$/, '');
+  if (path !== '/tools/esp32-touchscreen-selector') return;
+  var params = new URLSearchParams(window.location.search);
+  var selectorKeys = [
+    'preset', 'project', 'family', 'category', 'display_present',
+    'display_technology', 'display_shape', 'size_min', 'resolution',
+    'touch', 'touch_type', 'touch_interface', 'display_interface',
+    'native_usb', 'microsd', 'battery_charging', 'ce', 'fcc',
+    'flash_min', 'psram_min', 'free_gpio_min', 'lvgl_support',
+    'lvgl_level', 'battery', 'imu', 'rtc', 'audio'
+  ];
+  var hasSelectorState = selectorKeys.some(function (key) {
+    return params.has(key);
+  });
+  if (!hasSelectorState) return;
   var meta = document.createElement('meta');
   meta.name = 'robots';
   meta.content = 'noindex,follow,max-image-preview:large';
