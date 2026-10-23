@@ -10,15 +10,34 @@
 
   {% comment %}
   ==========================================================================
-  Product Schema
-  Product and editorial Review markup can exist without an Offer.
-  Emit Offer data only when an explicit price and currency are available.
-  Variant offers may use a displayed price with a recognized currency symbol.
-  Never generate fake prices or aggregate ratings.
-  Editorial Review data is emitted only when explicitly provided in front matter.
+  Product Schema eligibility
+  Emit Product JSON-LD only when Google rich-result requirements are met:
+  a valid Offer or an explicitly supplied editorial Review.
+  Never invent prices, offers, or ratings.
   ==========================================================================
   {% endcomment %}
 
+  {% assign has_valid_offer = false %}
+  {% if preferred
+        and preferred.enabled
+        and preferred.affiliate_url
+        and preferred.price != nil
+        and preferred.price != ""
+        and preferred.currency
+        and preferred.currency != "" %}
+    {% assign has_valid_offer = true %}
+  {% elsif commerce.variants %}
+    {% for variant_pair in commerce.variants %}
+      {% assign variant = variant_pair[1] %}
+      {% if variant.enabled != false and variant.affiliate_url and variant.price %}
+        {% if variant.price contains "€" or variant.price contains "$" or variant.price contains "£" %}
+          {% assign has_valid_offer = true %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if has_valid_offer or page.editorial_review.rating %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -136,5 +155,6 @@
   {% endif %}
 }
 </script>
+  {% endif %}
 
 {% endif %}
