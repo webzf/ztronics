@@ -12,13 +12,12 @@
   ==========================================================================
   Product Schema
   Product and editorial Review markup can exist without an Offer.
-  Only emit Offer data when a real price and currency are explicitly configured.
-  We do NOT generate fake prices or aggregate ratings.
-  Editorial Review data is emitted only when explicitly provided in page front matter.
+  Emit Offer data only when an explicit price and currency are available.
+  Variant offers may use a displayed price with a recognized currency symbol.
+  Never generate fake prices or aggregate ratings.
+  Editorial Review data is emitted only when explicitly provided in front matter.
   ==========================================================================
   {% endcomment %}
-
-  {% if product %}
 
 <script type="application/ld+json">
 {
@@ -58,6 +57,45 @@
     ,"availability": {{ preferred.availability | jsonify }}
     {% endif %}
   }
+  {% elsif commerce.variants %}
+    {% assign valid_variant_count = 0 %}
+    {% for variant_pair in commerce.variants %}
+      {% assign variant = variant_pair[1] %}
+      {% if variant.enabled != false and variant.affiliate_url and variant.price %}
+        {% if variant.price contains "€" or variant.price contains "$" or variant.price contains "£" %}
+          {% assign valid_variant_count = valid_variant_count | plus: 1 %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% if valid_variant_count > 0 %}
+  ,"offers": [
+      {% assign emitted_variant_count = 0 %}
+      {% for variant_pair in commerce.variants %}
+        {% assign variant = variant_pair[1] %}
+        {% if variant.enabled != false and variant.affiliate_url and variant.price %}
+          {% assign variant_currency = "" %}
+          {% if variant.price contains "€" %}
+            {% assign variant_currency = "EUR" %}
+          {% elsif variant.price contains "$" %}
+            {% assign variant_currency = "USD" %}
+          {% elsif variant.price contains "£" %}
+            {% assign variant_currency = "GBP" %}
+          {% endif %}
+          {% if variant_currency != "" %}
+            {% assign variant_price = variant.price | remove: "€" | remove: "$" | remove: "£" | strip %}
+            {% assign emitted_variant_count = emitted_variant_count | plus: 1 %}
+    {
+      "@type": "Offer",
+      "url": {{ variant.affiliate_url | jsonify }},
+      "price": {{ variant_price | jsonify }},
+      "priceCurrency": {{ variant_currency | jsonify }},
+      "name": {{ variant.label | default: variant_pair[0] | jsonify }}
+    }{% unless emitted_variant_count == valid_variant_count %},{% endunless %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+  ]
+    {% endif %}
   {% endif %}
   {% if page.editorial_review and page.editorial_review.rating %}
   ,"review": {
@@ -98,7 +136,5 @@
   {% endif %}
 }
 </script>
-
-  {% endif %}
 
 {% endif %}
