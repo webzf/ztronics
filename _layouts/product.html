@@ -13,7 +13,7 @@ classes: wide
 
   {% if page.editorial_review and page.editorial_review.rating %}
     {% assign editorial_review = page.editorial_review %}
-    <section class="product-editorial-review notice--info" aria-labelledby="embedded-nerd-verdict-title">
+    <section class="product-editorial-review notice notice--info" aria-labelledby="embedded-nerd-verdict-title">
       <h2 id="embedded-nerd-verdict-title">Embedded Nerd Verdict</h2>
       <p class="product-editorial-score">
         <strong>{{ editorial_review.rating }}/{{ editorial_review.best_rating | default: 10 }}</strong>
