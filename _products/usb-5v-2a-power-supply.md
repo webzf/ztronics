@@ -13,6 +13,9 @@ category: Modules
 
 manufacturer: Generic
 image: "https://www.electropi.in/image/cache/catalog/mb102-breadboard-power-supply-module-800x800.jpg"
+header:
+  teaser: "https://www.electropi.in/image/cache/catalog/mb102-breadboard-power-supply-module-800x800.jpg"
+  og_image: "https://www.electropi.in/image/cache/catalog/mb102-breadboard-power-supply-module-800x800.jpg"
 
 excerpt: "MB102 breadboard power supply module with selectable 5V and 3.3V outputs for Arduino, ESP32 and breadboard projects."
 
