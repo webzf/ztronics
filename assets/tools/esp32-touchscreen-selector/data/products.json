@@ -1256,7 +1256,7 @@
       },
       "display": {
         "display_present": true,
-        "technology": "IPS TFT",
+        "technology": "TFT",
         "monochrome": false,
         "color": true,
         "transparent": null,
