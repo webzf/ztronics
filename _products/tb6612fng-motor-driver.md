@@ -13,6 +13,9 @@ category: Modules
 
 manufacturer: Toshiba
 image: "https://keszoox.com/cdn/shop/files/tb6612fng-dual-motor-driver-arduino.webp?v=1761197735&width=1946"
+header:
+  teaser: "https://keszoox.com/cdn/shop/files/tb6612fng-dual-motor-driver-arduino.webp?v=1761197735&width=1946"
+  og_image: "https://keszoox.com/cdn/shop/files/tb6612fng-dual-motor-driver-arduino.webp?v=1761197735&width=1946"
 
 
 excerpt: "Efficient TB6612FNG dual motor driver for DC motors, robotics and ESP32 projects."
