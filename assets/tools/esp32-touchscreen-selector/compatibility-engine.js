@@ -5,7 +5,7 @@ var FAMILY_ORDER=["ESP32","ESP32-S2","ESP32-S3","ESP32-P4","ESP32-C3","ESP32-C5"
 var DISPLAY_TECH=["OLED","LCD","TFT","AMOLED","e-paper","other"];
 var DISPLAY_SHAPES=["rectangular","square","round","other"];
 var PRODUCT_TYPES=["development_board","board_with_display","display_module"];
-var LVGL_LEVELS=["ready","compatible"];
+var LVGL_LEVELS=["ready","compatible","community"];
 
 function normalize(value){if(value===undefined||value===null||value==="")return null;if(Array.isArray(value))return value.map(normalize);if(typeof value==="string")return value.trim();return value;}
 function validBoolOrNull(v){return v===null||typeof v==="boolean";}
