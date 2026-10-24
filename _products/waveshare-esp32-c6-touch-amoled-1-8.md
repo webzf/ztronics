@@ -10,6 +10,10 @@ category: Displays
 manufacturer: "Waveshare"
 
 image: "https://www.waveshare.com/img/devkit/ESP32-C6-Touch-AMOLED-1.8/ESP32-C6-Touch-AMOLED-1.8-details-1.jpg"
+header:
+  teaser: "https://www.waveshare.com/img/devkit/ESP32-C6-Touch-AMOLED-1.8/ESP32-C6-Touch-AMOLED-1.8-details-1.jpg"
+  og_image: "https://www.waveshare.com/img/devkit/ESP32-C6-Touch-AMOLED-1.8/ESP32-C6-Touch-AMOLED-1.8-details-1.jpg"
+  og_image_alt: "Waveshare ESP32-C6-Touch-AMOLED-1.8 1.8 inch ESP32-C6 AMOLED touchscreen board"
 alt: "Waveshare ESP32-C6-Touch-AMOLED-1.8 1.8 inch ESP32-C6 AMOLED touchscreen board"
 
 excerpt: "Waveshare ESP32-C6-Touch-AMOLED-1.8 with a 1.8-inch 368×448 AMOLED touchscreen, ESP32-C6, 16MB Flash, IMU, RTC, audio, microSD, battery charging and native USB."
