@@ -17,6 +17,7 @@ image: /assets/images/products/jumper-wires.webp
 og_image: /assets/images/products/jumper-wires.webp
 
 header:
+  og_image: "/assets/images/products/jumper-wires.webp"
   teaser: /assets/images/products/jumper-wires.webp
 
 excerpt: "Jumper wires for breadboard prototyping with Arduino, ESP32, Raspberry Pi and other embedded development boards."
