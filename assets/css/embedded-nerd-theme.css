@@ -397,3 +397,133 @@ a:hover { color: var(--en-green-dark); }
   .archive__item { padding: 1em; }
   .feature__item { padding: .85em; }
 }
+
+
+/* Aqua / Dark theme switch — isolated development branch */
+html[data-en-theme="dark"] {
+  color-scheme: dark;
+  --en-ink: #e5edf1;
+  --en-muted: #a6b5be;
+  --en-line: #34454f;
+  --en-green: #4ade80;
+  --en-green-dark: #86efac;
+  --en-surface: #17242c;
+  --en-page: #10191f;
+}
+html[data-en-theme="dark"] body,
+html[data-en-theme="dark"] .initial-content,
+html[data-en-theme="dark"] .page,
+html[data-en-theme="dark"] .archive {
+  background: var(--en-page);
+  color: var(--en-ink);
+}
+html[data-en-theme="dark"] .page__content,
+html[data-en-theme="dark"] .page__content p,
+html[data-en-theme="dark"] .page__content li,
+html[data-en-theme="dark"] .archive__item-excerpt,
+html[data-en-theme="dark"] .page__meta,
+html[data-en-theme="dark"] .page__lead,
+html[data-en-theme="dark"] .page__content blockquote {
+  color: #d2dde3;
+}
+html[data-en-theme="dark"] .page__title,
+html[data-en-theme="dark"] .archive__item-title,
+html[data-en-theme="dark"] .page h1,
+html[data-en-theme="dark"] .page h2,
+html[data-en-theme="dark"] .page h3,
+html[data-en-theme="dark"] .page h4,
+html[data-en-theme="dark"] .sidebar,
+html[data-en-theme="dark"] .toc__menu,
+html[data-en-theme="dark"] .author__name {
+  color: var(--en-ink);
+}
+html[data-en-theme="dark"] a { color: #7dd3fc; }
+html[data-en-theme="dark"] a:hover { color: #bae6fd; }
+html[data-en-theme="dark"] .masthead,
+html[data-en-theme="dark"] .site-footer { background: #080f13; }
+html[data-en-theme="dark"] .archive__item,
+html[data-en-theme="dark"] .feature__item,
+html[data-en-theme="dark"] .en-product-box,
+html[data-en-theme="dark"] .sidebar .nav__items,
+html[data-en-theme="dark"] .sidebar__right .toc,
+html[data-en-theme="dark"] .sidebar__right .toc-product-details,
+html[data-en-theme="dark"] .toc,
+html[data-en-theme="dark"] .pagination--pager,
+html[data-en-theme="dark"] .page__content table,
+html[data-en-theme="dark"] .page__content blockquote,
+html[data-en-theme="dark"] .notice {
+  background: #17242c;
+  color: #d2dde3;
+  border-color: var(--en-line);
+}
+html[data-en-theme="dark"] .page__content table th,
+html[data-en-theme="dark"] .sidebar .nav__title,
+html[data-en-theme="dark"] .sidebar__right .toc .nav__title {
+  background: #22333d;
+  color: #e5edf1;
+  border-color: var(--en-line);
+}
+html[data-en-theme="dark"] .page__content table tr,
+html[data-en-theme="dark"] .page__content table tr:nth-child(even) {
+  background: #17242c;
+  color: #d2dde3;
+}
+html[data-en-theme="dark"] .page__content table td,
+html[data-en-theme="dark"] .page__content table th { border-color: #34454f; }
+html[data-en-theme="dark"] input,
+html[data-en-theme="dark"] select,
+html[data-en-theme="dark"] textarea,
+html[data-en-theme="dark"] .search-content {
+  background: #17242c;
+  color: #e5edf1;
+  border-color: #435762;
+}
+html[data-en-theme="dark"] pre,
+html[data-en-theme="dark"] code,
+html[data-en-theme="dark"] .highlight {
+  background: #0b1217;
+  color: #e5edf1;
+  border-color: #34454f;
+}
+html[data-en-theme="dark"] .product-verdict {
+  background: #173626;
+  color: #d8fbe4;
+  border-color: #4ade80;
+}
+html[data-en-theme="dark"] .product-verdict strong { color: #86efac; }
+html[data-en-theme="dark"] .en-product-image { background: #10191f; }
+html[data-en-theme="dark"] .btn--primary,
+html[data-en-theme="dark"] .page__content .btn--primary {
+  background: #16803d;
+  color: #fff;
+}
+html[data-en-theme="dark"] .page__footer,
+html[data-en-theme="dark"] .page__share { border-color: var(--en-line); }
+
+.en-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2.5em;
+  height: 2.5em;
+  margin-left: .25em;
+  padding: 0;
+  border: 1px solid rgba(127, 150, 163, .45);
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+.masthead .en-theme-toggle { color: #f7fafb; }
+.en-theme-toggle:hover { background: rgba(127, 150, 163, .16); }
+.en-theme-toggle:focus-visible { outline: 2px solid #4ade80; outline-offset: 3px; }
+@media (max-width: 767px) {
+  .en-theme-toggle { width: 2.35em; height: 2.35em; margin-left: .15em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
