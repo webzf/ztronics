@@ -13,6 +13,9 @@ category: Modules
 
 manufacturer: TowerPro
 image: "https://www.diymore.cc/cdn/shop/products/060002_1_264.jpg?v=1588644453"
+header:
+  teaser: "https://www.diymore.cc/cdn/shop/products/060002_1_264.jpg?v=1588644453"
+  og_image: "https://www.diymore.cc/cdn/shop/products/060002_1_264.jpg?v=1588644453"
 
 
 excerpt: "Compact SG90 micro servo for Arduino, ESP32, robotics, pan-tilt mechanisms and beginner motion-control projects."
