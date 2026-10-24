@@ -109,7 +109,7 @@ tags:
 
 <section class="filter-section"><div class="section-heading"><div><span class="step">06</span><h2>Project features</h2></div><p>Use these when your project depends on software or onboard hardware capabilities.</p></div>
 <div class="filter-grid">
-<div class="filter-card"><label for="lvgl_level">LVGL support level</label><select id="lvgl_level" name="lvgl_level"><option value="">Any</option><option value="ready">LVGL-ready</option><option value="compatible">LVGL-compatible</option></select><label class="required-toggle"><input id="lvgl_level-required" type="checkbox"> Required</label></div>
+<div class="filter-card"><label for="lvgl_level">LVGL support level</label><select id="lvgl_level" name="lvgl_level"><option value="">Any</option><option value="ready">LVGL-ready</option><option value="compatible">LVGL-compatible</option><option value="community">Community-supported</option></select><label class="required-toggle"><input id="lvgl_level-required" type="checkbox"> Required</label></div>
 <div class="filter-card"><label for="battery">Battery</label><select id="battery" name="battery"><option value="">Any</option><option value="yes">Onboard battery support</option><option value="no">No onboard battery support</option></select><label class="required-toggle"><input id="battery-required" type="checkbox"> Required</label></div>
 <div class="filter-card"><label for="imu">IMU</label><select id="imu" name="imu"><option value="">Any</option><option value="yes">Onboard IMU</option><option value="no">No onboard IMU</option></select><label class="required-toggle"><input id="imu-required" type="checkbox"> Required</label></div>
 <div class="filter-card"><label for="rtc">RTC</label><select id="rtc" name="rtc"><option value="">Any</option><option value="yes">Onboard RTC</option><option value="no">No onboard RTC</option></select><label class="required-toggle"><input id="rtc-required" type="checkbox"> Required</label></div>
@@ -135,9 +135,9 @@ tags:
 <div id="product-grid" class="product-grid"></div></section>
 </div>
 
-<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20261012" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/compatibility-engine.js?v=20261024b" defer></script>
 <script src="/assets/tools/esp32-touchscreen-selector/project-recommendations.js?v=20261012" defer></script>
-<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20261015" defer></script>
+<script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20261024b" defer></script>
 
 ## Hardware currently covered by the selector
 
