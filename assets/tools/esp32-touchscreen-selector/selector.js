@@ -164,7 +164,7 @@ var TERM_HELP={
   battery_charging:"Whether the hardware provides onboard battery charging support.",
   flash_min:"Minimum onboard Flash storage in megabytes.",
   free_gpio_min:"Minimum number of GPIO pins documented as available for your project.",
-  lvgl_level:"How directly the catalog documents LVGL support: ready or compatible.",
+  lvgl_level:"How directly the catalog documents LVGL support: ready, compatible or community.",
   battery:"Whether onboard battery support is available.",
   imu:"Whether an onboard inertial measurement unit is present.",
   rtc:"Whether an onboard real-time clock is present.",
@@ -379,7 +379,7 @@ $("mode-requirements").addEventListener("click",function(){setMode("requirements
 $("clear-use-case").addEventListener("click",clearUseCase);
 setupAdvancedFilters();setupTermHelp();initUseCases();setupPresets();updatePlatformGuidance();loadUrl();if(selectedUseCase){selectUseCase(selectedUseCase);}updateActiveFilterSummary();
 
-fetch("/assets/tools/esp32-touchscreen-selector/data/products.json?v=20261014").then(function(r){if(!r.ok)throw Error("Catalog load failed");return r.json();}).then(function(data){
+fetch("/assets/tools/esp32-touchscreen-selector/data/products.json?v=20261024b").then(function(r){if(!r.ok)throw Error("Catalog load failed");return r.json();}).then(function(data){
   products=(data.products||[]).map(Engine.normalizeProduct);$("catalog-count").textContent=products.length;conditional();updateLiveCount();
   run();
 }).catch(function(e){$("catalog-error").hidden=false;$("catalog-error").textContent="The hardware catalog could not be loaded. "+e.message;});
