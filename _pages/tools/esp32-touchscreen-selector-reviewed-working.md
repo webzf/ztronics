@@ -7,7 +7,7 @@ sidebar:
 internal_links: true
 permalink: /tools/esp32-touchscreen-selector/
 canonical_url: https://embeddednerd.com/tools/esp32-touchscreen-selector/
-excerpt: "Filter ESP32 displays by size, touch, PSRAM, LVGL, interface and battery. Compare 13 touchscreen boards and find the right one for your project."
+excerpt: "Filter ESP32 displays by size, touch, PSRAM, LVGL, interface and battery. Compare 14 touchscreen boards and find the right one for your project."
 show_date: false
 read_time: false
 last_modified_at: false
@@ -141,7 +141,7 @@ tags:
 
 ## Hardware currently covered by the selector
 
-The interactive catalog currently covers 13 ESP32 boards and display modules. The linked product pages provide detailed specifications, documentation and available purchasing options.
+The interactive catalog currently covers 14 ESP32 boards and display modules. The linked product pages provide detailed specifications, documentation and available purchasing options.
 
 <div class="selector-catalog-links">
 <ul>
@@ -153,6 +153,7 @@ The interactive catalog currently covers 13 ESP32 boards and display modules. Th
 <li><a href="/products/waveshare-esp32-s3-touch-amoled-1-75/"><strong>Waveshare ESP32-S3-Touch-AMOLED-1.75</strong></a> — 1.75″ · AMOLED · touch · ESP32-S3</li>
 <li><a href="/products/waveshare-esp32-s3-touch-amoled-2-41/"><strong>Waveshare ESP32-S3-Touch-AMOLED-2.41</strong></a> — 2.41″ · AMOLED · touch · ESP32-S3</li>
 <li><a href="/products/sunton-esp32-8048s043c/"><strong>Sunton ESP32-8048S043C</strong></a> — 4.3″ · 800×480 · ESP32 touchscreen</li>
+<li><a href="/products/guition-esp32-s3-4848s040/"><strong>Guition ESP32-S3-4848S040</strong></a> — 4″ · 480×480 · RGB · capacitive touch · ESP32-S3</li>
 <li><a href="/products/esp32-2432s028-2-8-cyd/"><strong>ESP32-2432S028 2.8″ CYD</strong></a> — 2.8″ · 320×240 · touchscreen</li>
 <li><a href="/products/waveshare-esp32-s3-touch-amoled-2-16/"><strong>Waveshare ESP32-S3-Touch-AMOLED-2.16</strong></a> — 2.16″ · AMOLED · touch · ESP32-S3</li>
 <li><a href="/products/ssd1306-oled/"><strong>SSD1306 OLED Display</strong></a> — 0.96″ · 128×64 · monochrome OLED · I²C · no touch</li>
@@ -187,7 +188,7 @@ The selector treats **Required** filters as compatibility constraints and other 
 
 **ESP32-P4 + round touchscreen** — for circular dashboards, thermostat dials and other graphical interfaces, see our [ESP32-P4 round touchscreen projects with LVGL](https://embeddednerd.com/esp32-p4-round-touchscreen-display-projects/), which includes three UI examples and setup guidance for Waveshare's 3.4-inch and 4-inch boards.
 
-## Which ESP32 displays are compatible?\n\nAn ESP32 display is compatible when the board, display interface, touch controller and memory work together. The selector checks these against 13 catalog entries, from 2.8″ SPI modules to 7″ RGB and MIPI-DSI boards.\n\n## How to choose ESP32 hardware for a touchscreen project
+## Which ESP32 displays are compatible?\n\nAn ESP32 display is compatible when the board, display interface, touch controller and memory work together. The selector checks these against 14 catalog entries, from 2.8″ SPI modules to 7″ RGB and MIPI-DSI boards.\n\n## How to choose ESP32 hardware for a touchscreen project
 
 Choosing an ESP32 touchscreen is not only about screen size. Compatibility can depend on the **ESP32 variant, display resolution, interface, touch controller, touch interface, PSRAM, GPIO availability and graphics requirements**.
 
