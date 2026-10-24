@@ -11,6 +11,8 @@ manufacturer: "Sunton"
 
 image: "/assets/images/sunton-esp32-8048s043c-board.webp"
 header:
+  og_image: "/assets/images/sunton-esp32-8048s043c-board.webp"
+  og_image_alt: "Sunton ESP32-8048S043C-I 4.3-inch capacitive touchscreen board, with connectors and ESP32-S3 module annotated"
   teaser: "/assets/images/sunton-esp32-8048s043c-board.webp"
 alt: "Sunton ESP32-8048S043C-I 4.3-inch capacitive touchscreen board, with connectors and ESP32-S3 module annotated"
 
