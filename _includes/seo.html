@@ -13,7 +13,9 @@
 {%- assign page_title = page_title | markdownify | strip_html | strip_newlines | escape_once -%}
 {%- assign seo_title  = seo_title  | markdownify | strip_html | strip_newlines | escape_once -%}
 
-{%- assign canonical_url = page.canonical_url | default: page.url | replace: "/index.html", "/" | absolute_url %}
+{%- comment -%} Canonical absoluto; normaliza index.html sem alterar URLs customizadas. {%- endcomment -%}
+{%- assign canonical_path = page.canonical_url | default: page.url | replace: "/index.html", "/" -%}
+{%- assign canonical_url = canonical_path | absolute_url -%}
 
 {%- comment -%} DESCRICAO: ~155 caracteres {%- endcomment -%}
 {%- assign seo_description = page.seo_description | default: page.description | default: page.excerpt | default: site.description -%}
@@ -28,8 +30,14 @@
   {%- assign author_twitter = author.twitter | replace: "@", "" -%}
 {%- endif -%}
 
-{%- assign page_large_image = page.header.og_image | default: page.header.overlay_image | default: page.header.image | absolute_url | escape -%}
-{%- assign page_teaser_image = page.header.teaser | default: site.og_image | absolute_url | escape -%}
+{%- assign page_large_image_source = page.header.og_image | default: page.header.overlay_image | default: page.header.image -%}
+{%- assign page_teaser_image_source = page.header.teaser | default: site.og_image -%}
+{%- if page_large_image_source -%}
+  {%- assign page_large_image = page_large_image_source | relative_url | absolute_url | escape -%}
+{%- endif -%}
+{%- if page_teaser_image_source -%}
+  {%- assign page_teaser_image = page_teaser_image_source | relative_url | absolute_url | escape -%}
+{%- endif -%}
 {%- assign og_image_alt = page.header.og_image_alt | default: site.og_image_alt | escape -%}
 
 {%- if page.date -%}
@@ -39,7 +47,9 @@
 {%- endif -%}
 
 <title>{{ seo_title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
+{% if seo_description %}
 <meta name="description" content="{{ seo_description }}">
+{% endif %}
 <link rel="canonical" href="{{ canonical_url }}">
 
 {% if page.noindex %}
@@ -81,7 +91,9 @@
 
 <!-- Twitter / X (sempre ativo, mesmo sem username) -->
 <meta name="twitter:title" content="{{ seo_title }}">
+{% if seo_description %}
 <meta name="twitter:description" content="{{ seo_description }}">
+{% endif %}
 <meta name="twitter:url" content="{{ canonical_url }}">
 {% if site.twitter.username %}
   <meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
