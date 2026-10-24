@@ -72,4 +72,55 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 </script>
 
 <!-- Embedded Nerd theme refresh: enabled only on design/embedded-nerd-theme -->
+<!-- Apply saved theme before rendering to reduce flashes -->
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('en-theme');
+    if (saved === 'dark') document.documentElement.setAttribute('data-en-theme', 'dark');
+  } catch (e) {}
+})();
+</script>
+
 <link rel="stylesheet" href="{{ '/assets/css/embedded-nerd-theme.css' | relative_url }}">
+
+<!-- Embedded Nerd Aqua / Dark switch -->
+<script>
+(function () {
+  function initThemeToggle() {
+    var searchToggle = document.querySelector('.masthead .search__toggle');
+    var nav = document.querySelector('.masthead .greedy-nav');
+    var parent = searchToggle ? searchToggle.parentNode : nav;
+    if (!parent || document.querySelector('.en-theme-toggle')) return;
+
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'en-theme-toggle';
+    button.setAttribute('aria-label', 'Mudar para tema escuro');
+    button.setAttribute('title', 'Mudar para tema escuro');
+    button.innerHTML = '<span aria-hidden="true">☾</span>';
+
+    function updateButton() {
+      var dark = document.documentElement.getAttribute('data-en-theme') === 'dark';
+      button.innerHTML = dark
+        ? '<span aria-hidden="true">☀</span>'
+        : '<span aria-hidden="true">☾</span>';
+      button.setAttribute('aria-label', dark ? 'Mudar para tema Aqua' : 'Mudar para tema escuro');
+      button.setAttribute('title', dark ? 'Mudar para tema Aqua' : 'Mudar para tema escuro');
+    }
+    button.addEventListener('click', function () {
+      var dark = document.documentElement.getAttribute('data-en-theme') !== 'dark';
+      if (dark) document.documentElement.setAttribute('data-en-theme', 'dark');
+      else document.documentElement.removeAttribute('data-en-theme');
+      try { localStorage.setItem('en-theme', dark ? 'dark' : 'aqua'); } catch (e) {}
+      updateButton();
+    });
+    if (searchToggle && searchToggle.nextSibling) parent.insertBefore(button, searchToggle.nextSibling);
+    else parent.appendChild(button);
+    updateButton();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initThemeToggle);
+  else initThemeToggle();
+})();
+</script>
+
