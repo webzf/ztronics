@@ -10,6 +10,10 @@ category: Development Boards
 manufacturer: "Arduino"
 alt: "Arduino Nano ESP32 development board with ESP32-S3, Wi-Fi, Bluetooth and USB-C"
 image: /assets/images/products/arduino-nano-esp32-board.webp
+header:
+  teaser: "/assets/images/products/arduino-nano-esp32-board.webp"
+  og_image: "/assets/images/products/arduino-nano-esp32-board.webp"
+  og_image_alt: "Arduino Nano ESP32 development board with ESP32-S3, Wi-Fi, Bluetooth and USB-C"
 excerpt: "Arduino Nano ESP32 with ESP32-S3, Wi-Fi, Bluetooth, USB-C and Nano-format pin headers. Check the pin mapping, 3.3 V limits and buying options."
 description: "The Arduino Nano ESP32 combines the familiar Nano form factor with an ESP32-S3-based NORA-W106 module, Wi-Fi, Bluetooth and USB-C. Its Arduino pin names map to ESP32-S3 GPIO numbers, so check the mapping before wiring existing projects."
 categories:
