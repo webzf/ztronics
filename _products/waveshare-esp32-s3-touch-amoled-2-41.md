@@ -11,6 +11,8 @@ manufacturer: "Waveshare"
 image: "https://www.waveshare.com/img/devkit/ESP32-S3-Touch-AMOLED-2.41/ESP32-S3-Touch-AMOLED-2.41-details-1.jpg"
 alt: "Waveshare ESP32-S3-Touch-AMOLED-2.41 2.41 inch AMOLED touchscreen board"
 header:
+  og_image: "https://www.waveshare.com/img/devkit/ESP32-S3-Touch-AMOLED-2.41/ESP32-S3-Touch-AMOLED-2.41-details-1.jpg"
+  og_image_alt: "Waveshare ESP32-S3-Touch-AMOLED-2.41 2.41 inch AMOLED touchscreen board"
   teaser: "https://www.waveshare.com/img/devkit/ESP32-S3-Touch-AMOLED-2.41/ESP32-S3-Touch-AMOLED-2.41-details-1.jpg"
 excerpt: "Waveshare ESP32-S3-Touch-AMOLED-2.41 with a 2.41-inch 600×450 AMOLED touchscreen, ESP32-S3R8, 8MB PSRAM, IMU, RTC, TF card and battery support."
 description: "The Waveshare ESP32-S3-Touch-AMOLED-2.41 combines an ESP32-S3R8 with 16MB Flash, 8MB PSRAM, a 2.41-inch 600×450 AMOLED touchscreen, QMI8658 IMU, PCF85063 RTC, TF card storage and lithium-battery support."
