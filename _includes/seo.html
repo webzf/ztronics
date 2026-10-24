@@ -30,15 +30,16 @@
   {%- assign author_twitter = author.twitter | replace: "@", "" -%}
 {%- endif -%}
 
-{%- assign page_large_image_source = page.header.og_image | default: page.header.overlay_image | default: page.header.image -%}
-{%- assign page_teaser_image_source = page.header.teaser | default: site.og_image -%}
+{%- comment -%} Imagem social explícita da página tem prioridade sobre a imagem visual do header. {%- endcomment -%}
+{%- assign page_large_image_source = page.og_image | default: page.header.og_image | default: page.header.image | default: page.header.overlay_image -%}
+{%- assign page_teaser_image_source = page.header.teaser | default: page.og_image | default: site.og_image -%}
 {%- if page_large_image_source -%}
   {%- assign page_large_image = page_large_image_source | relative_url | absolute_url | escape -%}
 {%- endif -%}
 {%- if page_teaser_image_source -%}
   {%- assign page_teaser_image = page_teaser_image_source | relative_url | absolute_url | escape -%}
 {%- endif -%}
-{%- assign og_image_alt = page.header.og_image_alt | default: site.og_image_alt | escape -%}
+{%- assign og_image_alt = page.og_image_alt | default: page.header.og_image_alt | default: site.og_image_alt | escape -%}
 
 {%- if page.date -%}
   {%- assign og_type = "article" -%}
