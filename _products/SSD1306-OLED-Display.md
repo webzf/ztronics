@@ -14,6 +14,7 @@ manufacturer: Generic
 image: /assets/images/products/ssd1306-oled.webp
 
 header:
+  og_image: "/assets/images/products/ssd1306-oled.webp"
   teaser: /assets/images/products/ssd1306-oled.webp
 
 og_image: /assets/images/products/ssd1306-oled.webp
