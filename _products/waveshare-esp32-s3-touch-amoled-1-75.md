@@ -10,6 +10,10 @@ category: Displays
 manufacturer: "Waveshare"
 
 image: "https://www.waveshare.com/img/devkit/ESP32-S3-Touch-AMOLED-1.75/ESP32-S3-Touch-AMOLED-1.75-details-1.jpg"
+header:
+  teaser: "https://www.waveshare.com/img/devkit/ESP32-S3-Touch-AMOLED-1.75/ESP32-S3-Touch-AMOLED-1.75-details-1.jpg"
+  og_image: "https://www.waveshare.com/img/devkit/ESP32-S3-Touch-AMOLED-1.75/ESP32-S3-Touch-AMOLED-1.75-details-1.jpg"
+  og_image_alt: "Waveshare ESP32-S3-Touch-AMOLED-1.75 1.75 inch round AMOLED touchscreen board"
 alt: "Waveshare ESP32-S3-Touch-AMOLED-1.75 1.75 inch round AMOLED touchscreen board"
 
 excerpt: "Waveshare ESP32-S3-Touch-AMOLED-1.75 with a 1.75-inch 466×466 round AMOLED touchscreen, ESP32-S3, 16MB Flash, 8MB PSRAM, IMU, RTC, audio, microSD, battery charging and native USB."
