@@ -107,6 +107,9 @@
       "price": {{ variant_price | jsonify }},
       "priceCurrency": {{ variant_currency | jsonify }},
       "name": {{ variant.label | default: variant_pair[0] | jsonify }}
+      {% if variant.availability %}
+      ,"availability": {{ variant.availability | jsonify }}
+      {% endif %}
     }{% unless emitted_variant_count == valid_variant_count %},{% endunless %}
           {% endif %}
         {% endif %}
