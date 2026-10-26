@@ -188,7 +188,11 @@ The selector treats **Required** filters as compatibility constraints and other 
 
 **ESP32-P4 + round touchscreen** — for circular dashboards, thermostat dials and other graphical interfaces, see our [ESP32-P4 round touchscreen projects with LVGL](https://embeddednerd.com/esp32-p4-round-touchscreen-display-projects/), which includes three UI examples and setup guidance for Waveshare's 3.4-inch and 4-inch boards.
 
-## Which ESP32 displays are compatible?\n\nAn ESP32 display is compatible when the board, display interface, touch controller and memory work together. The selector checks these against 14 catalog entries, from 2.8″ SPI modules to 7″ RGB and MIPI-DSI boards.\n\n## How to choose ESP32 hardware for a touchscreen project
+## Which ESP32 displays are compatible?
+
+An ESP32 display is compatible when the board, display interface, touch controller and memory work together. The selector checks these against 14 catalog entries, from 2.8″ SPI modules to 7″ RGB and MIPI-DSI boards.
+
+## How to choose ESP32 hardware for a touchscreen project
 
 Choosing an ESP32 touchscreen is not only about screen size. Compatibility can depend on the **ESP32 variant, display resolution, interface, touch controller, touch interface, PSRAM, GPIO availability and graphics requirements**.
 
@@ -221,7 +225,8 @@ These focused pages help you start with a common hardware requirement before ope
 - [ESP32 4.3-inch Touchscreen Selector](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/)
 - [ESP32 7-inch Touchscreen Selector](/tools/esp32-touchscreen-selector/esp32-7-inch-touchscreen/)
 - [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/)
-- [ESP32 Touchscreen SPI Selector](/tools/esp32-touchscreen-selector/spi-touchscreen/)\n- [ESP32 Touchscreen Boards Selector](/tools/esp32-touchscreen-selector/esp32-touchscreen/)
+- [ESP32 Touchscreen SPI Selector](/tools/esp32-touchscreen-selector/spi-touchscreen/)
+- [ESP32 Touchscreen Boards Selector](/tools/esp32-touchscreen-selector/esp32-touchscreen/)
 
 ## Related Embedded Nerd resources
 
@@ -232,7 +237,12 @@ These focused pages help you start with a common hardware requirement before ope
 ## Frequently asked questions
 
 <details>
-<summary>What is the best ESP32 display?</summary>\n<p>It depends on the project. For small SPI interfaces, a 2.8″ module is often enough; for dashboards, an 800×480 RGB board such as the Sunton ESP32-8048S043C is a common choice. Use the filters above to compare your requirements.</p>\n</details>\n\n<details>\n<summary>How do I choose an ESP32 display?</summary>
+<summary>What is the best ESP32 display?</summary>
+<p>It depends on the project. For small SPI interfaces, a 2.8″ module is often enough; for dashboards, an 800×480 RGB board such as the Sunton ESP32-8048S043C is a common choice. Use the filters above to compare your requirements.</p>
+</details>
+
+<details>
+<summary>How do I choose an ESP32 display?</summary>
 <p>Start with the required resolution, display interface, touch technology and ESP32 family. Then check memory, PSRAM, GPIO availability and the software or driver requirements of the project.</p>
 </details>
 
