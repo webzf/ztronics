@@ -72,9 +72,7 @@
     "url": {{ preferred.affiliate_url | jsonify }},
     "price": {{ preferred.price | jsonify }},
     "priceCurrency": {{ preferred.currency | jsonify }}
-    {% if preferred.availability %}
-    ,"availability": {{ preferred.availability | jsonify }}
-    {% endif %}
+    ,"availability": {{ preferred.availability | default: "https://schema.org/InStock" | jsonify }}
   }
   {% elsif commerce.variants %}
     {% assign valid_variant_count = 0 %}
