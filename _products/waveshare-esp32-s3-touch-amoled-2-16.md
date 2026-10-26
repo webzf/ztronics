@@ -3,6 +3,22 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-S3-Touch-AMOLED-2.16"
 product_verdict: "A good fit for a compact square 480×480 AMOLED UI; choose the 2.41-inch model for a larger physical panel, or a larger LCD board for a conventional HMI."
+editorial_review:
+  rating: 9.2
+  best_rating: 10
+  worst_rating: 1
+  author: "Embedded Nerd"
+  summary: "The Waveshare ESP32-S3-Touch-AMOLED-2.16 packs a vivid 480×480 AMOLED touchscreen into a compact ESP32-S3 board, alongside 16MB Flash, 8MB PSRAM, an IMU, RTC, TF card slot and audio hardware. It is a versatile platform for compact LVGL interfaces and portable instruments; the small 2.16-inch panel and the learning curve around its multiple peripherals are the main trade-offs."
+  methodology: "This editorial assessment is based on published specifications and available manufacturer documentation. Embedded Nerd has not physically tested the specific board or seller listing covered by this page."
+  pros:
+    - "480×480 AMOLED touchscreen with capacitive touch in a compact form factor"
+    - "ESP32-S3 with 16MB Flash and 8MB PSRAM for graphical interfaces"
+    - "Integrated IMU, RTC, TF card storage, battery support and audio components expand project possibilities"
+    - "Manufacturer documentation and Arduino IDE/ESP-IDF support provide a starting point for development"
+  cons:
+    - "The 2.16-inch physical display area may be too small for interfaces with large controls or dense information"
+    - "Using the display, touch, sensors and audio together may require additional configuration and debugging"
+    - "The board's many integrated features may be unnecessary for simpler display-only projects"
 seo_title: "Waveshare ESP32-S3-Touch-AMOLED-2.16: Specs"
 seo_description: "Explore the Waveshare ESP32-S3-Touch-AMOLED-2.16: 480×480 AMOLED touchscreen, ESP32-S3, PSRAM, IMU, RTC, audio and alternatives."
 product_id: waveshare-esp32-s3-touch-amoled-2-16
