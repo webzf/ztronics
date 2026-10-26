@@ -294,7 +294,7 @@ defaults:
       author_profile: false
       read_time: false
       show_date: false
-      comments: false
+      comments: true
       share: true
       related: true
       last_modified_at: false
