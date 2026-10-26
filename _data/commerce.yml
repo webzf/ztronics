@@ -34,7 +34,7 @@ guition-esp32-s3-4848s040:
   disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
 
   badges:
-    recommended: false
+    recommended: true
     editor_choice: false
     best_value: false
     fast_shipping: false
@@ -42,7 +42,7 @@ guition-esp32-s3-4848s040:
   stores:
 
     amazon:
-      enabled: false
+      enabled: true
       affiliate_url: "https://www.amazon.com/dp/B0GCMXHQ8M?tag=embeddednerd2-20"
 
     aliexpress:
