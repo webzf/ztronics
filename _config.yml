@@ -37,7 +37,7 @@ copyright                : "Embedded Nerd"
 copyright_url            : "https://embeddednerd.com/"
 
 comments:
-  provider               : true
+  provider               : Disqus
 
 feed:
   excerpt_only: true
