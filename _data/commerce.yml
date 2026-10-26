@@ -53,6 +53,7 @@ guition-esp32-s3-4848s040:
     with_relays:
       label: "With Relay Module"
       price: "€43.81"
+      availability: "https://schema.org/InStock"
       affiliate_url: "https://s.click.aliexpress.com/e/_c3pQWEv3"
       redirect_url: "/go/hardware/guition-esp32-s3-4848s040-relay/"
       last_verified: "2026-10-18"
@@ -60,6 +61,7 @@ guition-esp32-s3-4848s040:
     lower_cost:
       label: "Lower-Cost Option — verify selected variant"
       price: "€33.57"
+      availability: "https://schema.org/InStock"
       affiliate_url: "https://s.click.aliexpress.com/e/_c3Z73SPr"
       redirect_url: "/go/hardware/guition-esp32-s3-4848s040-standard/"
       last_verified: "2026-10-18"
