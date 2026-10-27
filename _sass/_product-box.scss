@@ -333,23 +333,35 @@
 
 .en-buy-button:not(.preferred){
 
-    background:rgba(255,255,255,.03);
+    background:#e0f2fe;
 
-    color:$text-color;
+    color:#164e75;
 
-    border:1px solid $border-color;
+    border:2px solid #7dd3fc;
+
+    box-shadow:0 2px 6px rgba(2,132,199,.10);
 
 }
 
 .en-buy-button:not(.preferred):hover{
 
-    background:rgba(255,255,255,.06);
+    background:#bae6fd;
 
-    border-color:$link-color;
+    border-color:#0284c7;
 
-    color:$link-color;
+    color:#0c4a6e;
 
     transform:translateY(-2px);
+
+    box-shadow:0 5px 14px rgba(2,132,199,.18);
+
+}
+
+.en-buy-button:focus-visible{
+
+    outline:3px solid #0284c7;
+
+    outline-offset:3px;
 
 }
 
