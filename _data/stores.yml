@@ -147,11 +147,4 @@ dfrobot:
 
   button_color: "#009688"
 
-official:
-  name: "ESP-Mosaico Official Store"
-  enabled: true
-  affiliate: false
-  website: "https://store.mosaico.ai"
-  brand_color: "#1F2937"
-  button_color: "#1F2937"
 
