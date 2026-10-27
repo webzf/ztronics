@@ -76,10 +76,6 @@ links:
     icon: "fas fa-book"
     description: "Use this guide if the CoreBoard silkscreen identifies hardware V1.0."
     url: "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide_v1.0.html"
-  - title: "Official ESP-Mosaico Store"
-    icon: "fas fa-shopping-cart"
-    description: "Check the current kit options, price, dispatch estimate and final checkout conditions."
-    url: "https://store.mosaico.ai/products/esp-mosaico"
   - title: "ESP-Mosaico Camera Module Guide"
     icon: "fas fa-camera"
     description: "Official installation and hardware notes for the optional camera module."
@@ -176,7 +172,6 @@ You can check the current ESP-Mosaico listing on AliExpress using the link below
 
 *Disclosure: This page contains an AliExpress affiliate link. Embedded Nerd may earn a commission if you make a qualifying purchase through it, at no additional cost to you.*
 
-The official [ESP-Mosaico store](https://store.mosaico.ai/products/esp-mosaico) is also available if you prefer to compare the manufacturer's listing and kit options directly.
 
 ## Revision notes: V1.0 vs V1.2
 
@@ -216,7 +211,6 @@ It has an onboard 3.7 V, 65 mAh Li-ion battery, but that small capacity should n
 - [ESP-Mosaico V1.2 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide.html)
 - [ESP-Mosaico V1.0 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide_v1.0.html)
 - [Camera Module User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide_camera.html)
-- [ESP-Mosaico official store](https://store.mosaico.ai/products/esp-mosaico)
 - [ESP-Mosaico on AliExpress](https://s.click.aliexpress.com/e/_c4Dnkhan) (affiliate link)
 
 ## Related ESP32 display hardware
