@@ -88,7 +88,7 @@ related:
 
 The **ESP-Mosaico** is a modular development kit from Espressif built around the **ESP32-S31**. Unlike a conventional microcontroller board, it combines a small touch display, motion and magnetic sensing, audio, local storage and expansion headers in a package intended for interactive hardware projects and AI-assisted development.
 
-This page focuses on the hardware, purchase considerations and whether the kit suits your project. For setup commands, revision-specific details and development workflow, see the [ESP-Mosaico setup and development guide](/esp-mosaico-setup-guide/).
+This page focuses on the hardware, purchase considerations and whether the kit suits your project.
 
 ## Is the ESP-Mosaico worth buying?
 
@@ -141,7 +141,7 @@ The official getting-started documentation identifies `esp32s31` as the ESP-IDF 
 
 Espressif also recommends ESP-Claw as an application framework for the kit. The store describes a Chat Coding workflow and a Vibe Coding workflow involving AI coding agents. Treat these as supported product workflows rather than a guarantee that arbitrary prompts, models or generated code will work without debugging. The AI toolchain, account requirements and model availability should be checked in the current official documentation.
 
-For actual commands, USB/serial setup and revision-specific caveats, use the [ESP-Mosaico setup guide](/esp-mosaico-setup-guide/) and the [official V1.2 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide.html).
+For actual commands, USB/serial setup and revision-specific caveats, consult the [official V1.2 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide.html).
 
 ## Advantages and limitations
 
@@ -208,14 +208,6 @@ It has an onboard 3.7 V, 65 mAh Li-ion battery, but that small capacity should n
 
 No. Embedded Nerd has not confirmed an affiliate relationship for the official store, so this page uses a normal official purchase link and does not claim affiliate commission.
 
-## Technical guide and getting started
-
-For ESP-IDF setup, firmware flashing, the ESP-Mosaico BSP, AI-assisted coding and revision-specific hardware considerations, continue to the [ESP-Mosaico Setup Guide: ESP32-S31, Display and AI Coding](/esp-mosaico-setup-guide/).
-
-
-## Product and setup guide
-
-For ESP-IDF setup, firmware flashing, the ESP-Mosaico BSP, AI-assisted coding and revision-specific hardware considerations, read the [ESP-Mosaico Setup Guide: ESP32-S31, Display and AI Coding](/esp-mosaico-setup-guide/).
 
 ## Official resources
 
