@@ -212,6 +212,11 @@ No. Embedded Nerd has not confirmed an affiliate relationship for the official s
 
 For ESP-IDF setup, firmware flashing, the ESP-Mosaico BSP, AI-assisted coding and revision-specific hardware considerations, continue to the [ESP-Mosaico Setup Guide: ESP32-S31, Display and AI Coding](/esp-mosaico-setup-guide/).
 
+
+## Product and setup guide
+
+For ESP-IDF setup, firmware flashing, the ESP-Mosaico BSP, AI-assisted coding and revision-specific hardware considerations, read the [ESP-Mosaico Setup Guide: ESP32-S31, Display and AI Coding](/esp-mosaico-setup-guide/).
+
 ## Official resources
 
 - [ESP-Mosaico V1.2 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide.html)
