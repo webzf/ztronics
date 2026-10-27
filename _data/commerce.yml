@@ -229,7 +229,7 @@ raspberry-pi-pico-w:
 
     amazon:
       enabled: true
-      affiliate_url: "https://www.amazon.com/dp/B0DP54FWX1?tag=embeddednerd2-20"
+      affiliate_url: "https://www.amazon.es/dp/B0D7MKH2Q6?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: false
