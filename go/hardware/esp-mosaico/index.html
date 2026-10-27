@@ -21,11 +21,11 @@ sitemap: false
   <main>
     <h1>Where to Buy {{ product.title }}</h1>
     {% if preferred.enabled and preferred.affiliate_url %}
-    <p>Redirecting you to the official ESP-Mosaico store…</p>
-    <p><a href="{{ preferred.affiliate_url }}" rel="noopener">Continue to the official store</a></p>
+    <p>Redirecting you to the ESP-Mosaico listing on AliExpress…</p>
+    <p><a href="{{ preferred.affiliate_url }}" rel="noopener">Continue to AliExpress</a></p>
     <script>window.location.replace({{ preferred.affiliate_url | jsonify }});</script>
     {% else %}
-    <p>The official store link is not currently available.</p>
+    <p>The AliExpress affiliate link is not currently available.</p>
     <p><a href="{{ product.url | relative_url }}">View product details</a></p>
     {% endif %}
   </main>
