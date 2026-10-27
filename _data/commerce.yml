@@ -841,27 +841,8 @@ esp-mosaico:
       enabled: true
       affiliate_url: "https://store.mosaico.ai/products/esp-mosaico"
 
-waveshare-esp32-p4-wifi6-touch-lcd-3-4c:
+  display:
+    name: "ESP-Mosaico Official Store"
 
-  preferred_store: aliexpress
+#----------------
 
-  notes: "AliExpress affiliate offer supplied by the site owner for the Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C round display."
-
-  disclaimer: false
-
-  badges:
-    recommended: false
-    editor_choice: true
-    best_value: false
-    fast_shipping: false
-
-  stores:
-
-    amazon:
-      enabled: false
-      affiliate_url: ""
-
-    aliexpress:
-      enabled: true
-      affiliate_url: "https://s.click.aliexpress.com/e/_c3Y2Mvwp"
-      last_verified: "2026-10-12"
