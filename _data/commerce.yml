@@ -850,9 +850,9 @@ tca9548a-i2c-multiplexer:
 
 esp-mosaico:
 
-  preferred_store: official
+  preferred_store: aliexpress
 
-  notes: "Official ESP-Mosaico store link. No affiliate relationship has been confirmed."
+  notes: "AliExpress affiliate short link supplied by the site owner. Confirm the exact listing and kit variant before ordering."
 
   disclaimer: false
 
@@ -864,12 +864,16 @@ esp-mosaico:
 
   stores:
 
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c4Dnkhan"
+
     official:
       enabled: true
       affiliate_url: "https://store.mosaico.ai/products/esp-mosaico"
 
   display:
-    name: "ESP-Mosaico Official Store"
+    name: "ESP-Mosaico"
 
 #----------------
 
