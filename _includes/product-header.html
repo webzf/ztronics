@@ -45,7 +45,17 @@
       {% assign preferred = commerce.preferred_store %}
       {% assign store = commerce.stores[preferred] %}
 
-      {% if product.product_id == "guition-esp32-s3-4848s040" %}
+      {% if product.product_id == "esp-mosaico" %}
+        <a
+          class="en-buy-button"
+          href="{{ store.affiliate_url }}"
+          target="_blank"
+          rel="noopener">
+          <span class="en-buy-icon"><i class="fas fa-store"></i></span>
+          <span class="en-buy-text"><strong>Check Price on Official Store</strong><small>ESP-Mosaico product listing</small></span>
+          <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+      {% elsif product.product_id == "guition-esp32-s3-4848s040" %}
         {% assign amazon_offer = commerce.stores.amazon %}
         <div class="en-product-cta__buttons">
           {% if amazon_offer.enabled and amazon_offer.affiliate_url %}
