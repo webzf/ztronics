@@ -3,8 +3,8 @@ layout: product
 internal_links: true
 title: "ESP-Mosaico (ESP32-S31)"
 product_verdict: "A distinctive development kit for experimenting with display-based interaction, sensors, audio, modular hardware and AI-assisted coding. Its appeal depends on whether you want the integrated hardware and modular workflow; confirm the exact kit contents, revision and delivered cost before ordering."
-seo_title: "ESP-Mosaico ESP32-S31: Specs, Price & Buying Guide"
-seo_description: "Review the Espressif ESP-Mosaico ESP32-S31 development kit: 2.16-inch 480×480 AMOLED touch display, memory, sensors, audio, expansion, software and buying notes."
+seo_title: "ESP-Mosaico ESP32-S31: Specs & Buying Guide"
+seo_description: "Review the Espressif ESP-Mosaico ESP32-S31 kit: 2.16-inch 480×480 AMOLED touchscreen, memory, sensors, audio, expansion and software."
 product_id: esp-mosaico
 category: Displays
 manufacturer: "Espressif"
@@ -64,6 +64,10 @@ specifications:
   - name: Development
     value: "ESP-IDF target esp32s31; Espressif BSP and ESP-Claw resources"
 links:
+  - title: "Check ESP-Mosaico on AliExpress"
+    icon: "fas fa-shopping-cart"
+    description: "Check the current listing, kit contents, price and shipping. Offers and availability may change."
+    url: "https://s.click.aliexpress.com/e/_c4Dnkhan"
   - title: "Official ESP-Mosaico V1.2 User Guide"
     icon: "fas fa-book"
     description: "Hardware reference, setup guidance, pin assignments and V1.2 revision details."
@@ -162,15 +166,17 @@ For actual commands, USB/serial setup and revision-specific caveats, consult the
 - CoreBoard V1.0 and V1.2 are not identical. The V1.2 guide documents pin and power-related changes, so old pinouts should not be applied blindly.
 - The official store currently lists a pre-order/dispatch estimate, and checkout totals may include shipping, import duties or taxes not shown in the product price.
 
-## Price, availability and buying options
+## Where to buy the ESP-Mosaico
 
-The official store lists the **Vision Combo Kit (Core Unit V1.2 + Camera Module + Interaction Module)** in black at **US$59** when checked for this page. This is the displayed listing price, not a guaranteed delivered price. The listing indicates pre-order status and an estimated dispatch window; verify the live product page before paying.
+You can check the current ESP-Mosaico listing on AliExpress using the link below. Confirm the exact kit variant, included modules, shipping cost, delivery estimate and any taxes at checkout before ordering, as listings and offers can change.
 
-The store's shipping policy describes international UPS shipping with an estimated 4–8 business days from dispatch, not guaranteed, and says import duties, taxes and customs fees are not included. Contact the seller to confirm shipping eligibility and the final delivered cost to Portugal before ordering.
+<p><a href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="sponsored noopener noreferrer">Check ESP-Mosaico on AliExpress</a></p>
 
-The official page offers the kit directly. Embedded Nerd has not confirmed an affiliate programme for this offer, so the purchase link is a **normal official-store link**, not an affiliate link. No commission is claimed.
+<a href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="sponsored noopener noreferrer"><img src="https://ae-pic-a1.aliexpress-media.com/kf/S82d0511ebd144f4abd45417a1eb4a2f97.jpg_80x80.jpg" alt="View the ESP-Mosaico listing on AliExpress" width="80" height="80" loading="lazy"></a>
 
-[Check the current price and kit options at the official ESP-Mosaico Store](https://store.mosaico.ai/products/esp-mosaico).
+*Disclosure: This page contains an AliExpress affiliate link. Embedded Nerd may earn a commission if you make a qualifying purchase through it, at no additional cost to you.*
+
+The official [ESP-Mosaico store](https://store.mosaico.ai/products/esp-mosaico) is also available if you prefer to compare the manufacturer's listing and kit options directly.
 
 ## Revision notes: V1.0 vs V1.2
 
@@ -204,10 +210,6 @@ No. Espressif's camera module guide specifies the left expansion slot (H2). Do n
 
 It has an onboard 3.7 V, 65 mAh Li-ion battery, but that small capacity should not be treated as evidence of long runtime. Measure power consumption for the display brightness, wireless use, audio and attached modules in your intended application.
 
-### Is the official store link an affiliate link?
-
-No. Embedded Nerd has not confirmed an affiliate relationship for the official store, so this page uses a normal official purchase link and does not claim affiliate commission.
-
 
 ## Official resources
 
@@ -215,6 +217,7 @@ No. Embedded Nerd has not confirmed an affiliate relationship for the official s
 - [ESP-Mosaico V1.0 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide_v1.0.html)
 - [Camera Module User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide_camera.html)
 - [ESP-Mosaico official store](https://store.mosaico.ai/products/esp-mosaico)
+- [ESP-Mosaico on AliExpress](https://s.click.aliexpress.com/e/_c4Dnkhan) (affiliate link)
 
 ## Related ESP32 display hardware
 
