@@ -63,7 +63,6 @@ Espressif publishes separate CoreBoard guides for **V1.0** and **V1.2**. Check t
 | [ESP-Mosaico V1.2 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide.html) | Use for CoreBoard V1.2 |
 | [ESP-Mosaico V1.0 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide_v1.0.html) | Use for CoreBoard V1.0 |
 | [Camera Module User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide_camera.html) | Use when installing or developing for the camera module |
-| [Official store](https://store.mosaico.ai/products/esp-mosaico) | Check the current kit variant and included modules |
 
 The V1.2 guide documents several differences from V1.0, including changes to LCD reset/clock GPIO assignments, removal of two status LEDs, changes to codec power control and separate internal and external I²C buses. Do not assume a pin assignment from one revision applies to the other.
 
@@ -178,7 +177,7 @@ For camera integration, use the [Camera Module User Guide](https://docs.espressi
 
 ## 10. AI-assisted coding with ESP-Claw
 
-The official ESP-Mosaico store promotes two workflows: **Chat Coding**, where a user describes an idea in natural language and ESP-Claw is presented as helping generate and run an application, and **Vibe Coding**, described as integrating a desktop AI coding agent into a broader code, deploy, test and observe cycle.
+Espressif's ESP-Mosaico documentation describes two workflows: **Chat Coding**, where a user describes an idea in natural language and ESP-Claw is presented as helping generate and run an application, and **Vibe Coding**, described as integrating a desktop AI coding agent into a broader code, deploy, test and observe cycle.
 
 Espressif's board guide names **ESP-Claw** as a recommended application framework. For practical setup, follow the current ESP-Claw project instructions and review prerequisites, supported host environment, model-provider configuration, credentials and supported board revision before connecting the workflow to hardware.
 
@@ -225,7 +224,7 @@ No. The commands and workflow are drawn from Espressif's documentation and are c
 
 ## Related resources
 
-- [ESP-Mosaico product page](/products/esp-mosaico/) — specifications, buying considerations and current official-store link.
+- [ESP-Mosaico product page](/products/esp-mosaico/) — specifications, buying considerations and AliExpress listing.
 - [Official ESP-Mosaico V1.2 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide.html)
 - [Official ESP-Mosaico V1.0 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide_v1.0.html)
 - [ESP-Mosaico Camera Module User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide_camera.html)
