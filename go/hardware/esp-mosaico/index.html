@@ -1,0 +1,33 @@
+---
+layout: null
+product_id: esp-mosaico
+permalink: /go/hardware/esp-mosaico/
+sitemap: false
+---
+{% assign commerce = site.data.commerce[page.product_id] %}
+{% assign preferred = commerce.stores[commerce.preferred_store] %}
+{% assign product = site.products | where: "product_id", page.product_id | first %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,follow">
+  <title>Where to Buy {{ product.title }} | Embedded Nerd</title>
+  {% if preferred.enabled and preferred.affiliate_url %}
+  <meta http-equiv="refresh" content="0;url={{ preferred.affiliate_url }}">
+  {% endif %}
+</head>
+<body>
+  <main>
+    <h1>Where to Buy {{ product.title }}</h1>
+    {% if preferred.enabled and preferred.affiliate_url %}
+    <p>Redirecting you to the official ESP-Mosaico store…</p>
+    <p><a href="{{ preferred.affiliate_url }}" rel="noopener">Continue to the official store</a></p>
+    <script>window.location.replace({{ preferred.affiliate_url | jsonify }});</script>
+    {% else %}
+    <p>The official store link is not currently available.</p>
+    <p><a href="{{ product.url | relative_url }}">View product details</a></p>
+    {% endif %}
+  </main>
+</body>
+</html>
