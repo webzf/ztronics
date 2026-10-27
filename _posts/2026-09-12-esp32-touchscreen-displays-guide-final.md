@@ -1030,6 +1030,8 @@ However, it is not necessary for every touchscreen project. A small SPI touchscr
 
 ## Related Embedded Nerd Tutorials
 
+- [Guition ESP32-S3-4848S040 pinout and ESPHome setup guide](/guition-esp32-s3-4848s040-pinout-esphome/) — board-specific GPIO tables, display initialization, GT911 touch and ESPHome setup checks.
+- [Guition ESP32-S3-4848S040 product page](/products/guition-esp32-s3-4848s040/) — specifications, variants and buying considerations.
 - [ESP32-P4 Round Touchscreen Display Projects: three LVGL examples](/esp32-p4-round-touchscreen-display-projects/)
 
 - [ESP32 OLED Tutorial: Wiring, Code & Display Guide](/esp32-oled-tutorial-wiring-code-display-guide/)
