@@ -839,7 +839,7 @@ esp-mosaico:
 
     official:
       enabled: true
-      affiliate_url: "https://store.mosaico.ai/products/esp-mosaico"
+      affiliate_url: "https://embeddednerd.com/go/hardware/esp-mosaico/"
 
   display:
     name: "ESP-Mosaico Official Store"
