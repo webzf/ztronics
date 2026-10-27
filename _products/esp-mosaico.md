@@ -160,7 +160,6 @@ For actual commands, USB/serial setup and revision-specific caveats, consult the
 - The 65 mAh onboard battery is small. Do not assume long standalone runtime without measuring consumption and considering the attached modules.
 - Expansion modules have placement and compatibility rules; the camera module is limited to the left slot.
 - CoreBoard V1.0 and V1.2 are not identical. The V1.2 guide documents pin and power-related changes, so old pinouts should not be applied blindly.
-- The official store currently lists a pre-order/dispatch estimate, and checkout totals may include shipping, import duties or taxes not shown in the product price.
 
 ## Where to buy the ESP-Mosaico
 
