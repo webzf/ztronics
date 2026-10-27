@@ -14,6 +14,28 @@
 
 <meta name="msapplication-config" content="/browserconfig.xml">
 <meta name="theme-color" content="#10b981">
+<!-- High-contrast secondary purchase buttons; versioned URL avoids stale CSS cache. -->
+<style>
+  .en-product-box .en-buy-button:not(.preferred),
+  .en-product-box .en-product-cta__buttons .en-buy-button:not(.preferred) {
+    background: #e0f2fe !important;
+    color: #164e75 !important;
+    border: 2px solid #0284c7 !important;
+    box-shadow: 0 2px 8px rgba(2,132,199,.16) !important;
+  }
+  .en-product-box .en-buy-button:not(.preferred):hover,
+  .en-product-box .en-product-cta__buttons .en-buy-button:not(.preferred):hover {
+    background: #bae6fd !important;
+    color: #0c4a6e !important;
+    border-color: #0369a1 !important;
+    box-shadow: 0 5px 14px rgba(2,132,199,.24) !important;
+  }
+  .en-product-box .en-buy-button:focus-visible {
+    outline: 3px solid #0284c7 !important;
+    outline-offset: 3px !important;
+  }
+</style>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
