@@ -37,7 +37,7 @@
     {% endfor %}
   {% endif %}
 
-  {% if has_valid_offer or page.editorial_review.rating %}
+  {% if has_valid_offer or page.editorial_review.rating or product.product_id == "esp-mosaico" %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
