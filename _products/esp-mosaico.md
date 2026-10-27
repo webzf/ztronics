@@ -4,7 +4,7 @@ internal_links: true
 title: "ESP-Mosaico (ESP32-S31)"
 product_verdict: "A distinctive development kit for experimenting with display-based interaction, sensors, audio, modular hardware and AI-assisted coding. Its appeal depends on whether you want the integrated hardware and modular workflow; confirm the exact kit contents, revision and delivered cost before ordering."
 seo_title: "ESP-Mosaico ESP32-S31: Specs & Buying Guide"
-seo_description: "Review the Espressif ESP-Mosaico ESP32-S31 kit: 2.16-inch 480×480 AMOLED touchscreen, memory, sensors, audio, expansion and software."
+seo_description: "ESP-Mosaico ESP32-S31 kit: 2.16-inch 480×480 AMOLED touchscreen, memory, sensors, audio, expansion and software."
 product_id: esp-mosaico
 category: Displays
 manufacturer: "Espressif"
@@ -96,7 +96,30 @@ The ESP-Mosaico is worth considering if you want to explore a complete interacti
 
 It is less compelling if you only need inexpensive Wi-Fi control, a bare MCU module or a simple display. The integrated hardware and modular ecosystem are central to the proposition; a simpler ESP32 board may be easier to adapt when you already know the exact peripherals and form factor your project needs.
 
-This is a documentation-based editorial assessment, not a physical review. Embedded Nerd has not claimed to test this board.
+This is a documentation-based editorial assessment, not a physical review. We have not hands-on tested this board.
+
+## Quick facts
+
+| Question | Answer |
+|---|---|
+| What is it? | A modular ESP32-S31 development kit with an integrated AMOLED touchscreen, sensors, audio and expansion headers. |
+| Display | 2.16-inch, 480 × 480 AMOLED touchscreen |
+| Processor | Dual-core 32-bit RISC-V ESP32-S31NRV16, up to 320 MHz |
+| Memory and storage | 16 MB in-package PSRAM, 16 MB SPI NOR and 1 Gbit (128 MB) SPI NAND |
+| Development | ESP-IDF target `esp32s31`, Espressif BSP and ESP-Claw resources |
+| Physical testing | Not hands-on tested by Embedded Nerd; assessment is based on published documentation. |
+
+## Who should choose it?
+
+### It may suit you if
+- You want a compact, square AMOLED touchscreen and several onboard peripherals in one platform.
+- Your project benefits from motion sensing, magnetometers, audio and additional local storage.
+- You want to explore the ESP32-S31, its ESP-IDF support and the modular ESP-Mosaico ecosystem.
+
+### It may not suit you if
+- You only need a low-cost Wi-Fi microcontroller or a simple display controller.
+- You need a larger screen for dense dashboards, accessibility-sized controls or a conventional HMI.
+- You need proven battery runtime or a hands-on reliability assessment before buying; this page does not provide physical test results.
 
 ## Specifications at a glance
 
@@ -161,13 +184,17 @@ For actual commands, USB/serial setup and revision-specific caveats, consult the
 - Expansion modules have placement and compatibility rules; the camera module is limited to the left slot.
 - CoreBoard V1.0 and V1.2 are not identical. The V1.2 guide documents pin and power-related changes, so old pinouts should not be applied blindly.
 
+## ESP32-S31 price and availability
+
+We do not publish a fixed price here because marketplace prices, selected kit variants, shipping and delivery estimates can change. Use the AliExpress listing to check the current price and confirm exactly which modules are included in the selected option before checkout.
+
+<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="nofollow sponsored noopener noreferrer">Check ESP-Mosaico price on AliExpress</a></p>
+
 ## Where to buy the ESP-Mosaico
 
 You can check the current ESP-Mosaico listing on AliExpress using the link below. Confirm the exact kit variant, included modules, shipping cost, delivery estimate and any taxes at checkout before ordering, as listings and offers can change.
 
-<p><a href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="sponsored noopener noreferrer">Check ESP-Mosaico on AliExpress</a></p>
-
-<a href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="sponsored noopener noreferrer"><img src="https://ae-pic-a1.aliexpress-media.com/kf/S82d0511ebd144f4abd45417a1eb4a2f97.jpg_80x80.jpg" alt="View the ESP-Mosaico listing on AliExpress" width="80" height="80" loading="lazy"></a>
+<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="nofollow sponsored noopener noreferrer">Check ESP-Mosaico on AliExpress</a></p>
 
 *Disclosure: This page contains an AliExpress affiliate link. Embedded Nerd may earn a commission if you make a qualifying purchase through it, at no additional cost to you.*
 
@@ -180,9 +207,9 @@ These differences can affect pin assignments and integrations. Always follow the
 
 ## Frequently asked questions
 
-### Is ESP-Mosaico based on ESP32-S3?
+### What is the ESP32-S31?
 
-No. ESP-Mosaico is based on the **ESP32-S31**, a different Espressif SoC family with a dual-core 32-bit RISC-V processor running up to 320 MHz.
+The ESP32-S31 is the SoC used by ESP-Mosaico. It has a dual-core 32-bit RISC-V processor running at up to 320 MHz. It is not the ESP32-S3, which uses a different processor architecture.
 
 ### What is the display resolution?
 
@@ -204,6 +231,24 @@ No. Espressif's camera module guide specifies the left expansion slot (H2). Do n
 
 It has an onboard 3.7 V, 65 mAh Li-ion battery, but that small capacity should not be treated as evidence of long runtime. Measure power consumption for the display brightness, wireless use, audio and attached modules in your intended application.
 
+
+## ESP-Mosaico vs Waveshare ESP32-S3-Touch-AMOLED-2.16
+
+Both boards have a 2.16-inch 480 × 480 AMOLED touchscreen with a CO5300 display controller and CST9220-series capacitive touch. The main distinction is the platform and the surrounding hardware, not the panel resolution.
+
+| Feature | ESP-Mosaico | Waveshare ESP32-S3-Touch-AMOLED-2.16 |
+|---|---|---|
+| SoC | ESP32-S31, dual-core RISC-V up to 320 MHz | ESP32-S3R8, dual-core Xtensa LX7 up to 240 MHz |
+| Display | 2.16-inch 480 × 480 AMOLED | 2.16-inch 480 × 480 AMOLED |
+| Memory | 16 MB in-package PSRAM | 8 MB PSRAM |
+| Storage | 16 MB SPI NOR + 128 MB SPI NAND | 16 MB Flash and TF card slot |
+| Sensors | BMI270 IMU and two BMM150 magnetometers | QMI8658 IMU and PCF85063 RTC |
+| Expansion approach | Two 2 × 10-pin module headers and ESP-Mosaico modules | Board-level peripherals and TF card slot |
+| Software starting point | ESP-IDF target `esp32s31`, Espressif BSP and ESP-Claw resources | ESP-IDF / Arduino IDE support and Waveshare documentation |
+
+Choose ESP-Mosaico if you specifically want the ESP32-S31 platform, its onboard storage and modular expansion approach. Choose the Waveshare board if your project is already built around the ESP32-S3 ecosystem or its documented peripheral set. Check the current documentation and kit contents for either board before ordering.
+
+See the [Waveshare ESP32-S3-Touch-AMOLED-2.16 product page](/products/waveshare-esp32-s3-touch-amoled-2-16/) for its specifications and buying considerations.
 
 ## Official resources
 
