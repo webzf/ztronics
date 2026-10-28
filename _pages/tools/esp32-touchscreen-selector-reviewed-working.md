@@ -6,6 +6,8 @@ sidebar:
   nav: "embedded"
 internal_links: true
 permalink: /tools/esp32-touchscreen-selector/
+redirect_from:
+  - /esp32-touchscreen-selector
 canonical_url: https://embeddednerd.com/tools/esp32-touchscreen-selector/
 excerpt: "Filter ESP32 displays by size, touch, PSRAM, LVGL, interface and battery. Compare 14 touchscreen boards and find the right one for your project."
 show_date: false
