@@ -4559,7 +4559,7 @@ Below are the parts we recommend for this project.
 | [TB6612FNG Motor Driver](/products/tb6612fng-motor-driver/) | More efficient alternative to the L298N | — |
 | [Solderless Breadboard](/products/solderless-breadboard/) | Reusable prototyping platform | — |
 | [Jumper Wires](/products/jumper-wires/) | Reliable electrical connections | — |
-| [USB Power Supply (5V 2A)](/products/usb-5v-2a-power-supply/) | Stable power for ESP32 projects | — |
+| [MB102 Breadboard Power Supply Module](/products/mb102-breadboard-power-supply/) | Stable power for ESP32 projects | — |
 
 ---
 
