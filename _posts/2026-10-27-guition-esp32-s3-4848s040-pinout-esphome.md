@@ -36,42 +36,48 @@ seo_description: "4848S040 pinout and GPIO reference, RGB display signals, GT911
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": {{ page.title | jsonify }},
-  "description": {{ page.seo_description | default: page.excerpt | strip_html | strip_newlines | jsonify }},
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": {{ page.url | absolute_url | jsonify }}
-  },
-  "image": {{ page.header.og_image | default: page.header.image | absolute_url | jsonify }},
-  "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
-  "author": {
-    "@type": "Organization",
-    "name": "Embedded Nerd",
-    "url": "https://embeddednerd.com/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Embedded Nerd",
-    "url": "https://embeddednerd.com/"
-  },
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://embeddednerd.com/"
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": {{ page.url | absolute_url | append: "#article" | jsonify }},
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page.seo_description | default: page.excerpt | strip_html | strip_newlines | jsonify }},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ page.url | absolute_url | jsonify }}
       },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": {{ page.title | jsonify }},
-        "item": {{ page.url | absolute_url | jsonify }}
+      "image": {{ page.header.og_image | default: page.header.image | absolute_url | jsonify }},
+      "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+      "author": {
+        "@type": "Organization",
+        "name": "Embedded Nerd",
+        "url": "https://embeddednerd.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Embedded Nerd",
+        "url": "https://embeddednerd.com/"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": {{ page.url | absolute_url | append: "#breadcrumb" | jsonify }},
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://embeddednerd.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ page.title | jsonify }},
+          "item": {{ page.url | absolute_url | jsonify }}
+        }
+      ]
+    }
+  ]
 }
 </script>
 
