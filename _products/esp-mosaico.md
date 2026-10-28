@@ -200,7 +200,7 @@ See the [Waveshare ESP32-S3-Touch-AMOLED-2.16 product page](/products/waveshare-
 
 ## ESP32-S31 price and availability
 
-The official store listed the Vision Combo Kit at **US$59 on 27 October 2026**. This is a dated reference, not a guaranteed current price; AliExpress prices, selected kit variants, shipping and taxes may differ and can change.
+Prices can vary by seller, selected kit variant, shipping and taxes, and may change without notice. Check the current AliExpress listing for the latest price and confirm the exact kit contents before checkout.
 
 *Disclosure: This page contains an AliExpress affiliate link. Embedded Nerd may earn a commission if you make a qualifying purchase through it, at no additional cost to you.*
 
