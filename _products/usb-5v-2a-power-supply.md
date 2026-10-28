@@ -35,6 +35,8 @@ tags:
   - Arduino
 
 permalink: /products/mb102-breadboard-power-supply/
+redirect_from:
+  - /products/usb-5v-2a-power-supply/
 
 specifications:
   - name: Output Voltage
