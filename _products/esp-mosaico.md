@@ -86,6 +86,8 @@ The **ESP-Mosaico** is a modular development kit from Espressif built around the
 
 This page focuses on the hardware, purchase considerations and whether the kit suits your project.
 
+*Editorial note: This is a documentation-based assessment, not a physical review. Embedded Nerd has not hands-on tested this board.*
+
 ## Is the ESP-Mosaico worth buying?
 
 The ESP-Mosaico is worth considering if you want a compact interactive platform with an AMOLED touchscreen, sensors, audio, local storage and modular expansion. If you only need inexpensive Wi-Fi control or a simple display, a more basic ESP32 board may be better value and easier to adapt.
