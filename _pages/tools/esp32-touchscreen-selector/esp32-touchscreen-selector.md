@@ -254,6 +254,8 @@ No. It is a filtering tool based on catalog data. Always verify the exact contro
 
 The [Guition ESP32-S3-4848S040 4-inch 480×480 touchscreen](/products/guition-esp32-s3-4848s040/) is an ESP32-S3 option with GT911 capacitive touch, 16MB Flash, 8MB PSRAM and optional relay assemblies.
 
+For a smaller, modular AMOLED alternative, see the [ESP-Mosaico ESP32-S31 product page](/products/esp-mosaico/), covering its 2.16-inch 480×480 touchscreen, onboard sensors and audio, expansion modules and buying considerations. It uses the ESP32-S31, so check its own specifications rather than assuming ESP32-S3 compatibility.
+
 ## Related ESP32 display selectors
 
 - [ESP32-S3 LVGL Display Selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
