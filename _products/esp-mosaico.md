@@ -64,10 +64,6 @@ specifications:
   - name: Development
     value: "ESP-IDF target esp32s31; Espressif BSP and ESP-Claw resources"
 links:
-  - title: "Check ESP-Mosaico on AliExpress"
-    icon: "fas fa-shopping-cart"
-    description: "Check the current listing, kit contents, price and shipping. Offers and availability may change."
-    url: "https://s.click.aliexpress.com/e/_c4Dnkhan"
   - title: "Official ESP-Mosaico V1.2 User Guide"
     icon: "fas fa-book"
     description: "Hardware reference, setup guidance, pin assignments and V1.2 revision details."
@@ -92,7 +88,7 @@ This page focuses on the hardware, purchase considerations and whether the kit s
 
 ## Is the ESP-Mosaico worth buying?
 
-The ESP-Mosaico is worth considering if you want to explore a complete interactive embedded platform rather than wire a display, sensors and audio components separately. The 2.16-inch 480 × 480 AMOLED touchscreen, onboard IMU and magnetometers, audio hardware, NAND storage and magnetic expansion approach create a useful base for compact interfaces, interactive devices and prototypes.
+The ESP-Mosaico is worth considering if you want to explore a complete interactive embedded platform rather than wire a display, sensors and audio components separately. The 2.16-inch 480 × 480 AMOLED touchscreen, onboard IMU and magnetometers, audio hardware, NAND storage and modular expansion headers create a useful base for compact interfaces, interactive devices and prototypes.
 
 It is less compelling if you only need inexpensive Wi-Fi control, a bare MCU module or a simple display. The integrated hardware and modular ecosystem are central to the proposition; a simpler ESP32 board may be easier to adapt when you already know the exact peripherals and form factor your project needs.
 
@@ -162,7 +158,7 @@ The official camera module guide states that the camera module is supported in t
 
 The official getting-started documentation identifies `esp32s31` as the ESP-IDF target and provides a board support package (BSP) intended to simplify initialization of the display, touch, audio, sensors, battery, NAND flash, expansion resources and USB console. The documented first-flash procedure may require entering ROM download mode manually.
 
-Espressif also recommends ESP-Claw as an application framework for the kit. The store describes a Chat Coding workflow and a Vibe Coding workflow involving AI coding agents. Treat these as supported product workflows rather than a guarantee that arbitrary prompts, models or generated code will work without debugging. The AI toolchain, account requirements and model availability should be checked in the current official documentation.
+Espressif also recommends ESP-Claw as an application framework for the kit. Espressif describes Chat Coding and Vibe Coding workflows involving AI coding agents in its product documentation. Treat these as supported product workflows rather than a guarantee that arbitrary prompts, models or generated code will work without debugging. The AI toolchain, account requirements and model availability should be checked in the current official documentation.
 
 For actual commands, USB/serial setup and revision-specific caveats, consult the [official V1.2 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide.html).
 
@@ -184,20 +180,33 @@ For actual commands, USB/serial setup and revision-specific caveats, consult the
 - Expansion modules have placement and compatibility rules; the camera module is limited to the left slot.
 - CoreBoard V1.0 and V1.2 are not identical. The V1.2 guide documents pin and power-related changes, so old pinouts should not be applied blindly.
 
+## ESP-Mosaico vs Waveshare ESP32-S3-Touch-AMOLED-2.16
+
+Both boards have a 2.16-inch 480 × 480 AMOLED touchscreen with a CO5300 display controller and CST9220-series capacitive touch. The main distinction is the platform and the surrounding hardware, not the panel resolution.
+
+| Feature | ESP-Mosaico | Waveshare ESP32-S3-Touch-AMOLED-2.16 |
+|---|---|---|
+| SoC | ESP32-S31, dual-core RISC-V up to 320 MHz | ESP32-S3R8, dual-core Xtensa LX7 up to 240 MHz |
+| Display | 2.16-inch 480 × 480 AMOLED | 2.16-inch 480 × 480 AMOLED |
+| Memory | 16 MB in-package PSRAM | 8 MB PSRAM |
+| Storage | 16 MB SPI NOR + 128 MB SPI NAND | 16 MB Flash and TF card slot |
+| Sensors | BMI270 IMU and two BMM150 magnetometers | QMI8658 IMU and PCF85063 RTC |
+| Expansion approach | Two 2 × 10-pin module headers and ESP-Mosaico modules | Board-level peripherals and TF card slot |
+| Software starting point | ESP-IDF target `esp32s31`, Espressif BSP and ESP-Claw resources | ESP-IDF / Arduino IDE support and Waveshare documentation |
+
+Choose ESP-Mosaico if you specifically want the ESP32-S31 platform, its onboard storage and modular expansion approach. Choose the Waveshare board if your project is already built around the ESP32-S3 ecosystem or its documented peripheral set. Check the current documentation and kit contents for either board before ordering.
+
+See the [Waveshare ESP32-S3-Touch-AMOLED-2.16 product page](/products/waveshare-esp32-s3-touch-amoled-2-16/) for its specifications and buying considerations.
+
 ## ESP32-S31 price and availability
 
-We do not publish a fixed price here because marketplace prices, selected kit variants, shipping and delivery estimates can change. Use the AliExpress listing to check the current price and confirm exactly which modules are included in the selected option before checkout.
-
-<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="nofollow sponsored noopener noreferrer">Check ESP-Mosaico price on AliExpress</a></p>
-
-## Where to buy the ESP-Mosaico
-
-You can check the current ESP-Mosaico listing on AliExpress using the link below. Confirm the exact kit variant, included modules, shipping cost, delivery estimate and any taxes at checkout before ordering, as listings and offers can change.
-
-<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="nofollow sponsored noopener noreferrer">Check ESP-Mosaico on AliExpress</a></p>
+The official store listed the Vision Combo Kit at **US$59 on 27 October 2026**. This is a dated reference, not a guaranteed current price; AliExpress prices, selected kit variants, shipping and taxes may differ and can change.
 
 *Disclosure: This page contains an AliExpress affiliate link. Embedded Nerd may earn a commission if you make a qualifying purchase through it, at no additional cost to you.*
 
+<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="nofollow sponsored noopener noreferrer">Check ESP-Mosaico price on AliExpress</a></p>
+
+Before checkout, confirm that the listing is for the **ESP-Mosaico Vision Combo Kit V1.2** and check the included modules, shipping, delivery estimate and any applicable taxes.
 
 ## Revision notes: V1.0 vs V1.2
 
@@ -219,9 +228,9 @@ The integrated 2.16-inch AMOLED touchscreen is 480 × 480 pixels and uses a QSPI
 
 Yes. Espressif's getting-started documentation uses the `esp32s31` target and provides a board support package for the onboard peripherals. Follow the instructions for your CoreBoard revision.
 
-### Does it include a camera?
+### Does the Vision Combo Kit include a camera?
 
-The official Vision Combo Kit listing names the Core Unit V1.2, Camera Module and Interaction Module. Verify the current selected variant and its contents at checkout; product options can change.
+Espressif’s ESP-Mosaico documentation describes the Core Unit, Camera Module and Interaction Module. Kit contents can vary by bundle, so confirm the exact components included in the seller’s selected option before ordering.
 
 ### Can I use the camera module on either side?
 
@@ -231,31 +240,11 @@ No. Espressif's camera module guide specifies the left expansion slot (H2). Do n
 
 It has an onboard 3.7 V, 65 mAh Li-ion battery, but that small capacity should not be treated as evidence of long runtime. Measure power consumption for the display brightness, wireless use, audio and attached modules in your intended application.
 
-
-## ESP-Mosaico vs Waveshare ESP32-S3-Touch-AMOLED-2.16
-
-Both boards have a 2.16-inch 480 × 480 AMOLED touchscreen with a CO5300 display controller and CST9220-series capacitive touch. The main distinction is the platform and the surrounding hardware, not the panel resolution.
-
-| Feature | ESP-Mosaico | Waveshare ESP32-S3-Touch-AMOLED-2.16 |
-|---|---|---|
-| SoC | ESP32-S31, dual-core RISC-V up to 320 MHz | ESP32-S3R8, dual-core Xtensa LX7 up to 240 MHz |
-| Display | 2.16-inch 480 × 480 AMOLED | 2.16-inch 480 × 480 AMOLED |
-| Memory | 16 MB in-package PSRAM | 8 MB PSRAM |
-| Storage | 16 MB SPI NOR + 128 MB SPI NAND | 16 MB Flash and TF card slot |
-| Sensors | BMI270 IMU and two BMM150 magnetometers | QMI8658 IMU and PCF85063 RTC |
-| Expansion approach | Two 2 × 10-pin module headers and ESP-Mosaico modules | Board-level peripherals and TF card slot |
-| Software starting point | ESP-IDF target `esp32s31`, Espressif BSP and ESP-Claw resources | ESP-IDF / Arduino IDE support and Waveshare documentation |
-
-Choose ESP-Mosaico if you specifically want the ESP32-S31 platform, its onboard storage and modular expansion approach. Choose the Waveshare board if your project is already built around the ESP32-S3 ecosystem or its documented peripheral set. Check the current documentation and kit contents for either board before ordering.
-
-See the [Waveshare ESP32-S3-Touch-AMOLED-2.16 product page](/products/waveshare-esp32-s3-touch-amoled-2-16/) for its specifications and buying considerations.
-
 ## Official resources
 
 - [ESP-Mosaico V1.2 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide.html)
 - [ESP-Mosaico V1.0 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide_v1.0.html)
 - [Camera Module User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide_camera.html)
-- [ESP-Mosaico on AliExpress](https://s.click.aliexpress.com/e/_c4Dnkhan) (affiliate link)
 
 ## Related ESP32 display hardware
 
