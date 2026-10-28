@@ -1,6 +1,6 @@
 ---
-title: "Guition ESP32-S3-4848S040 Pinout, Setup & Getting Started with ESPHome"
-title_tag: "Guition ESP32-S3-4848S040 Pinout & ESPHome Setup Guide"
+title: "4848S040 Pinout, GPIOs & ESPHome Setup Guide"
+title_tag: "4848S040 Pinout & ESPHome Setup Guide"
 layout: single
 permalink: /guition-esp32-s3-4848s040-pinout-esphome/
 excerpt: "Guition ESP32-S3-4848S040 pinout, RGB display signals, ST7701S initialization, GT911 touch, backlight GPIO and ESPHome setup notes."
@@ -30,34 +30,69 @@ related_posts:
   - /products/guition-esp32-s3-4848s040/
   - /esp32-touchscreen-displays-guide/
 share: true
-seo_title: "Guition ESP32-S3-4848S040 Pinout & ESPHome Setup Guide"
-seo_description: "ESP32-S3-4848S040 pinout: RGB display, ST7701S init, GT911 touch I²C and backlight GPIOs, relay vs non-relay notes, and an ESPHome starting point."
+seo_title: "4848S040 Pinout, GPIOs & ESPHome Setup Guide"
+seo_description: "4848S040 pinout and GPIO reference, RGB display signals, GT911 touch, backlight control and ESPHome setup guidance for this ESP32-S3 touchscreen."
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": {{ page.url | absolute_url | append: "#article" | jsonify }},
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page.seo_description | default: page.excerpt | strip_html | strip_newlines | jsonify }},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ page.url | absolute_url | jsonify }}
+      },
+      "image": {{ page.header.og_image | default: page.header.image | absolute_url | jsonify }},
+      "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+      "author": {
+        "@type": "Organization",
+        "name": "Embedded Nerd",
+        "url": "https://embeddednerd.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Embedded Nerd",
+        "url": "https://embeddednerd.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": {{ page.url | absolute_url | append: "#breadcrumb" | jsonify }},
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://embeddednerd.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ page.title | jsonify }},
+          "item": {{ page.url | absolute_url | jsonify }}
+        }
+      ]
+    }
+  ]
+}
+</script>
 
-The **Guition ESP32-S3-4848S040** is a 4-inch ESP32-S3 touchscreen display board with a 480 × 480 pixel IPS panel. It is also commonly referred to as the **ESP32-4848S040** or **4848S040**.
 
-This guide covers the board’s main pin assignments, display and touch interfaces, relay and non-relay variants, and how to use an existing ESPHome configuration as a starting point.
+For the board’s full specifications, editorial review, available variants and buying options, visit the [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) product page.
 
-For product details, see the [Guition ESP32-S3-4848S040 product page](/products/guition-esp32-s3-4848s040/).
+This guide focuses on the 4848S040 pinout, display and touch interfaces, relay-related hardware considerations, and how to use an existing ESPHome configuration as a starting point.
 
 ![Rear view of the Guition ESP32-S3-4848S040 board](/assets/images/guition-esp32-s3-4848s040-back.webp)
 
 > **Important:** Pin assignments and available GPIOs can vary by board revision. Use the tables below as a reference, then confirm them against your exact board and its documentation before wiring external hardware.
 
-## Specifications
+## Key hardware at a glance
 
-| Feature | Specification |
-|---|---|
-| Microcontroller | ESP32-S3 |
-| Flash | 16 MB |
-| PSRAM | 8 MB |
-| Display size | 4.0 inches |
-| Resolution | 480 × 480 pixels |
-| Display interface/controller | RGB interface, ST7701S |
-| Touch controller | GT911 capacitive touch |
-| Variants | Available with or without a relay module; wall-mount options may also be offered |
-
-These specifications are based on the board profile and related documentation linked in the [ESPHome Devices profile](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/). Confirm the specifications for your particular revision.
+This board family combines an ESP32-S3, a 480 × 480 RGB display using the ST7701S, and GT911 capacitive touch. Memory, relay hardware and enclosure options should be checked against the exact revision and seller listing. See the [product page for full specifications and buying options](/products/guition-esp32-s3-4848s040/).
 
 ## Guition ESP32-S3-4848S040 pinout
 
@@ -120,7 +155,7 @@ The board profile is a useful starting point, but it is not a substitute for the
 
 ## Relay and non-relay versions
 
-The Guition ESP32-S3-4848S040 is sold in variants that may include a relay module and different mounting arrangements.
+The 4848S040 is sold in variants that may include a relay module and different mounting arrangements. If you are deciding between versions, check the [product page for variant details and guidance on which version to buy](/products/guition-esp32-s3-4848s040/).
 
 - **Non-relay version:** Check the exact board documentation to identify the exposed connections and supported peripherals.
 - **Relay version:** Do not assume the relay’s GPIO assignment or electrical ratings. Verify them in the schematic or documentation for that version before connecting a load.
@@ -150,23 +185,15 @@ This guide does not claim that the community configuration has been tested on ev
 
 *Example dashboard shown on the touchscreen.*
 
-## Frequently asked questions
-
-### What are the specifications of the Guition ESP32-S3-4848S040?
-
-The referenced board profile lists an ESP32-S3, 16 MB of flash, 8 MB of PSRAM, a 4-inch 480 × 480 IPS display using the ST7701S, and a GT911 capacitive touch controller. Confirm these details for your exact revision.
-
-### Where can I find the ESP32-S3-4848S040 pinout?
-
-The tables in this guide summarize the assignments listed in the [ESPHome Devices profile](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/). Check the board schematic before connecting external hardware.
+## Frequently asked question
 
 ### Can I use ESPHome with this display?
 
 The linked ESPHome Devices profile and community configuration provide starting points. Review the YAML, verify the GPIO assignments for your board revision, and validate the configuration before flashing.
 
-### Which pins control touch and backlight?
+## Next steps
 
-The referenced profile lists GPIO 19 for touch SDA, GPIO 45 for touch SCL, and GPIO 38 for backlight PWM. Verify these assignments against your board documentation.
+Ready to choose a board? Visit the [Guition ESP32-S3-4848S040 product page](/products/guition-esp32-s3-4848s040/) for the full specifications, editorial review, variant details and current buying options.
 
 ## Related resources
 
