@@ -19,8 +19,8 @@ editorial_review:
     - "The 2.16-inch physical display area may be too small for interfaces with large controls or dense information"
     - "Using the display, touch, sensors and audio together may require additional configuration and debugging"
     - "The board's many integrated features may be unnecessary for simpler display-only projects"
-seo_title: "Waveshare ESP32-S3-Touch-AMOLED-2.16: Specs"
-seo_description: "Explore the Waveshare ESP32-S3-Touch-AMOLED-2.16: 480×480 AMOLED touchscreen, ESP32-S3, PSRAM, IMU, RTC, audio and alternatives."
+seo_title: "Waveshare ESP32-S3-Touch-AMOLED-2.16: Specs & Versions"
+seo_description: "Waveshare ESP32-S3-Touch-AMOLED-2.16 specs: 2.16inch 480×480 AMOLED, ESP32-S3R8, 8MB PSRAM. Compare the -EN and battery versions and where to buy."
 product_id: waveshare-esp32-s3-touch-amoled-2-16
 category: Displays
 manufacturer: "Waveshare"
@@ -115,6 +115,8 @@ Choose this board if you want a **square 480×480 AMOLED touchscreen** in a comp
 | Option | Choose it when | Main trade-off |
 |---|---|---|
 | **ESP32-S3-Touch-AMOLED-2.16** | You want a square 480×480 AMOLED screen | Smaller physical area than larger HMI panels |
+| [**ESP-Mosaico**](/products/esp-mosaico/) | You want a compact 2.16-inch 480×480 AMOLED kit based on ESP32-S31 | Different platform and development ecosystem |
+| [**ESP32-C6-Touch-AMOLED-2.16**](https://www.waveshare.com/esp32-c6-touch-amoled-2.16.htm) | You want the same 2.16-inch 480×480 AMOLED format with ESP32-C6, Wi-Fi 6 and BLE 5 | ESP32-C6 platform rather than ESP32-S3 |
 | [**ESP32-S3-Touch-AMOLED-1.75**](/products/waveshare-esp32-s3-touch-amoled-1-75/) | You need a round display for a circular UI | Different shape and 466×466 resolution |
 | [**ESP32-S3-Touch-AMOLED-2.41**](/products/waveshare-esp32-s3-touch-amoled-2-41/) | You want a larger 600×450 AMOLED panel | Rectangular rather than square layout |
 | [**ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | You need a larger 800×480 HMI interface | Larger board and enclosure |
@@ -123,7 +125,7 @@ Before buying, confirm the board revision and included accessories in the produc
 
 ## Overview
 
-The **Waveshare ESP32-S3-Touch-AMOLED-2.16** combines an ESP32-S3R8 with a **2.16-inch 480×480 AMOLED touchscreen**, 16MB Flash and 8MB PSRAM.
+The **Waveshare ESP32-S3-Touch-AMOLED-2.16** combines an ESP32-S3R8 with a **2.16inch AMOLED** touchscreen at 480×480 resolution, 16MB Flash and 8MB PSRAM.
 
 It is designed for compact graphical interfaces, portable HMI projects, LVGL applications and projects that benefit from onboard sensing and audio.
 
@@ -166,7 +168,23 @@ The board supports development with **Arduino IDE and ESP-IDF**. Waveshare provi
 
 ## Hardware Variants
 
-Waveshare lists SKU **33969** for the standard product and **33970** for the EN variant. Check the seller's exact SKU when ordering.
+Waveshare distinguishes the versions by whether a lithium battery is included. The **-EN version (SKU 33970)** is the standard board without a lithium battery; **SKU 33969** is the battery-included version. The AliExpress offer linked from this page is recorded against **SKU 33969**, so it corresponds to the battery-included version. Still verify the selected option and included accessories on the seller's checkout page before paying.
+
+| Version | Waveshare SKU | Lithium battery included? |
+|---|---:|---|
+| Battery version | 33969 | Yes |
+| -EN (standard) | 33970 | No |
+
+## Frequently Asked Questions
+
+### Does it come with a battery?
+It depends on the version. SKU 33969 is the battery-included version, while the -EN version (SKU 33970) is supplied without a lithium battery. Confirm the selected SKU and listing contents before ordering.
+
+### Does it support Arduino and ESP-IDF?
+Yes. Waveshare provides development resources for both Arduino IDE and ESP-IDF.
+
+### Which display and touch controllers does it use?
+The AMOLED display uses the **CO5300** controller over QSPI. The capacitive touch controller is the **CST9220**, connected over I2C.
 
 ## Official Resources
 
