@@ -81,6 +81,12 @@ For a square 4-inch alternative with capacitive touch, see the [Guition ESP32-S3
 
 Not sure which board suits your project? Compare the available options in our [ESP32 touch screen display boards selector](/tools/esp32-touchscreen-selector/).
 
+## AMOLED ESP32 Touchscreen Boards
+
+For a compact square AMOLED screen, compare the [ESP32-S3-Touch-AMOLED-2.16](/products/waveshare-esp32-s3-touch-amoled-2-16/) from Waveshare with other boards using a similar panel. It uses a 2.16-inch 480×480 AMOLED display, an ESP32-S3R8, 16MB Flash and 8MB PSRAM.
+
+The [ESP-Mosaico](/products/esp-mosaico/) is another 2.16-inch 480×480 AMOLED kit, based on the ESP32-S31 platform. Do not confuse the S3 board with the [ESP32-C6-Touch-AMOLED-2.16](https://www.waveshare.com/esp32-c6-touch-amoled-2.16.htm), which uses an ESP32-C6 and offers Wi-Fi 6 and Bluetooth LE 5. Check each board's documentation for its exact hardware and software support.
+
 ### Use the ESP32 touchscreen selector by project requirement
 
 If you already know the type of hardware you need, you can jump directly to a focused selector:
