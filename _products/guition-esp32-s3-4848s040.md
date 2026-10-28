@@ -175,7 +175,7 @@ For EU installations, check the complete dimensions and enclosure photos careful
 
 A community configuration is available for ESPHome, including the ST7701S display and GT911 touch controller. It can be a useful starting point for a Home Assistant control panel. Arduino and LVGL workflows are also used by the community, but check the software configuration for the exact board revision.
 
-For a dedicated walkthrough with the main GPIO tables, display signals, touch wiring and setup checks, read the [Guition ESP32-S3-4848S040 pinout and ESPHome setup guide](/guition-esp32-s3-4848s040-pinout-esphome/).
+For the complete [pinout and GPIO reference](/guition-esp32-s3-4848s040-pinout-esphome/), including display signals and touch wiring, see the technical guide. For configuration steps, follow the [ESPHome setup guide](/guition-esp32-s3-4848s040-pinout-esphome/).
 
 - [ESPHome device page](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/)
 - [Community ESPHome/LVGL example and YAML template](https://github.com/jtenniswood/esphome-lvgl/tree/main/guition-esp32-s3-4848s040)
