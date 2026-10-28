@@ -88,11 +88,7 @@ This page focuses on the hardware, purchase considerations and whether the kit s
 
 ## Is the ESP-Mosaico worth buying?
 
-The ESP-Mosaico is worth considering if you want to explore a complete interactive embedded platform rather than wire a display, sensors and audio components separately. The 2.16-inch 480 × 480 AMOLED touchscreen, onboard IMU and magnetometers, audio hardware, NAND storage and modular expansion headers create a useful base for compact interfaces, interactive devices and prototypes.
-
-It is less compelling if you only need inexpensive Wi-Fi control, a bare MCU module or a simple display. The integrated hardware and modular ecosystem are central to the proposition; a simpler ESP32 board may be easier to adapt when you already know the exact peripherals and form factor your project needs.
-
-This is a documentation-based editorial assessment, not a physical review. We have not hands-on tested this board.
+The ESP-Mosaico is worth considering if you want a compact interactive platform with an AMOLED touchscreen, sensors, audio, local storage and modular expansion. If you only need inexpensive Wi-Fi control or a simple display, a more basic ESP32 board may be better value and easier to adapt.
 
 ## Quick facts
 
@@ -103,7 +99,7 @@ This is a documentation-based editorial assessment, not a physical review. We ha
 | Processor | Dual-core 32-bit RISC-V ESP32-S31NRV16, up to 320 MHz |
 | Memory and storage | 16 MB in-package PSRAM, 16 MB SPI NOR and 1 Gbit (128 MB) SPI NAND |
 | Development | ESP-IDF target `esp32s31`, Espressif BSP and ESP-Claw resources |
-| Physical testing | Not hands-on tested by Embedded Nerd; assessment is based on published documentation. |
+| Physical testing | Not hands-on tested by Embedded Nerd; this assessment is based on published documentation. |
 
 ## Who should choose it?
 
@@ -115,7 +111,7 @@ This is a documentation-based editorial assessment, not a physical review. We ha
 ### It may not suit you if
 - You only need a low-cost Wi-Fi microcontroller or a simple display controller.
 - You need a larger screen for dense dashboards, accessibility-sized controls or a conventional HMI.
-- You need proven battery runtime or a hands-on reliability assessment before buying; this page does not provide physical test results.
+- You need proven battery runtime or independently measured reliability data before buying.
 
 ## Specifications at a glance
 
@@ -158,7 +154,7 @@ The official camera module guide states that the camera module is supported in t
 
 The official getting-started documentation identifies `esp32s31` as the ESP-IDF target and provides a board support package (BSP) intended to simplify initialization of the display, touch, audio, sensors, battery, NAND flash, expansion resources and USB console. The documented first-flash procedure may require entering ROM download mode manually.
 
-Espressif also recommends ESP-Claw as an application framework for the kit. Espressif describes Chat Coding and Vibe Coding workflows involving AI coding agents in its product documentation. Treat these as supported product workflows rather than a guarantee that arbitrary prompts, models or generated code will work without debugging. The AI toolchain, account requirements and model availability should be checked in the current official documentation.
+Espressif also recommends ESP-Claw as an application framework for the kit. Espressif promotes Chat Coding and Vibe Coding workflows involving AI coding agents for the ESP-Mosaico ecosystem. Treat these as supported product workflows rather than a guarantee that arbitrary prompts, models or generated code will work without debugging. The AI toolchain, account requirements and model availability should be checked in the current official documentation.
 
 For actual commands, USB/serial setup and revision-specific caveats, consult the [official V1.2 User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp-mosaico/user_guide.html).
 
