@@ -4,15 +4,15 @@ internal_links: true
 title: "ESP-Mosaico (ESP32-S31)"
 product_verdict: "A distinctive development kit for experimenting with display-based interaction, sensors, audio, modular hardware and AI-assisted coding. Its appeal depends on whether you want the integrated hardware and modular workflow; confirm the exact kit contents, revision and delivered cost before ordering."
 seo_title: "ESP-Mosaico ESP32-S31: Specs & Buying Guide"
-seo_description: "ESP-Mosaico ESP32-S31 kit: 2.16-inch 480×480 AMOLED touchscreen, memory, sensors, audio, expansion and software."
+seo_description: "Explore ESP-Mosaico specs, AMOLED display, sensors, storage, ESP-IDF support and V1.0 vs V1.2 differences before buying."
 product_id: esp-mosaico
 category: Displays
 manufacturer: "Espressif"
-image: "https://store.mosaico.ai/cdn/shop/files/Vision_Combo_Kit.jpg?v=1792487968&width=3840"
+image: "/assets/images/esp-mosaico-vision-combo.webp"
 alt: "Official ESP-Mosaico Vision Combo Kit showing the ESP-Mosaico core unit, camera module and interaction module"
 header:
-  teaser: "https://store.mosaico.ai/cdn/shop/files/Vision_Combo_Kit.jpg?v=1792487968&width=3840"
-  og_image: "https://store.mosaico.ai/cdn/shop/files/Vision_Combo_Kit.jpg?v=1792487968&width=3840"
+  teaser: "/assets/images/esp-mosaico-vision-combo.webp"
+  og_image: "/assets/images/esp-mosaico-vision-combo.webp"
   og_image_alt: "ESP-Mosaico Vision Combo Kit with core unit, camera module and interaction module"
 excerpt: "ESP-Mosaico is an ESP32-S31 modular development kit with a 2.16-inch 480×480 AMOLED touchscreen, sensors, audio, flash storage and expansion headers."
 description: "ESP-Mosaico is a modular development kit built around the ESP32-S31, combining a 2.16-inch 480×480 QSPI AMOLED touchscreen, Wi-Fi 6, Bluetooth 5.4, 802.15.4, onboard sensors, audio hardware and expansion modules."
