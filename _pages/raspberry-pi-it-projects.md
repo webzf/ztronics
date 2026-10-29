@@ -4,7 +4,7 @@ layout: single
 permalink: /raspberry-pi-it-projects/
 internal_links: true
 excerpt: "Explore practical Raspberry Pi IT projects, from home servers and Pi-hole to NAS storage, backups, VPNs, Docker and network monitoring."
-description: "Build useful Raspberry Pi IT projects with practical guidance for home servers, Pi-hole DNS filtering, NAS storage, rsync backups, WireGuard VPNs, Docker and network monitoring."
+description: "Build Raspberry Pi IT projects including a home server, Pi-hole DNS filtering, NAS storage, rsync backups, WireGuard VPN, Docker and network monitoring."
 sidebar:
   nav: "embedded"
 show_date: false
