@@ -423,7 +423,7 @@ You can extend this tutorial by adding:
 
 ## Related Tutorials
 
-- [ESP32 Joystick Tutorial](/esp32-joystick-tutorial/)
+- [ESP32 Joystick Tutorial](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/)
 - [MPU6050 Arduino Guide](/mpu6050-arduino-guide/)
 - [MPU6050 Calibration Guide](/mpu6050-calibration-guide/)
 - [I2C Scanner Tutorial](/i2c-scanner-tutorial/)
