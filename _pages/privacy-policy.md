@@ -25,26 +25,28 @@ When you contact us by email or through the live chat, we may collect the inform
 
 ## Live Chat (Tawk.to)
 
-Embedded Nerd uses the Tawk.to live chat service to allow visitors to contact us and ask questions.
+Embedded Nerd uses Tawk.to to allow visitors to contact us and ask questions through a live chat widget.
 
-When you open or use the chat, Tawk.to and its service providers may process information needed to operate the chat, which can include your IP address, browser and device information, chat activity, messages, and any contact details or files you choose to submit. The chat service may also use cookies or similar technologies to maintain the chat session, remember preferences, help prevent abuse, and provide the service.
+When you use the chat, information processed may include your IP address, browser and device information, chat activity, messages, and any contact details or files you choose to submit. Tawk.to also uses cookies or similar technologies to operate the widget and maintain chat functionality. The exact information processed may depend on how you use the widget and your consent choices.
 
-We use information submitted through the chat to read and respond to enquiries, provide support, and maintain a record of conversations where necessary. Chat information is processed by Tawk.to on our behalf in accordance with the service's terms and privacy documentation. Tawk.to may process information on servers located outside your country; where personal data is transferred internationally, the relevant provider is responsible for applying the transfer safeguards required by applicable data protection law.
+We use information submitted through the chat to read and respond to enquiries, provide support, and maintain conversation records. Tawk.to acts as a service provider and data processor for chat information handled on our behalf. Tawk.to states that its data is stored at rest on Google Cloud in the United States, and that it may use a global content delivery network and other subprocessors to provide its services. Transfers of personal data must be supported by the safeguards required under applicable data protection law.
 
-For more information, please review [Tawk.to's Privacy Policy](https://www.tawk.to/privacy-policy/) and [Tawk.to's Data Processing Agreement](https://www.tawk.to/data-protection/).
+Tawk.to states that chats and tickets remain on its servers until they are deleted. This means chat records may remain available indefinitely unless they are deleted, subject to any mandatory retention requirements described by the provider. We will review and delete chat records when they are no longer needed for our purposes, where appropriate and subject to legal obligations. If you want to request access to or deletion of information you submitted through the chat, contact us at [contact@embeddednerd.com](mailto:contact@embeddednerd.com).
 
-Visitors covered by the European consent form are asked to provide consent before starting a chat. You can decline and contact us by email instead. Do not include personal information in a chat unless you are comfortable sharing it for the purpose of receiving a response.
+For further details, please review [Tawk.to's Privacy Policy](https://www.tawk.to/privacy-policy/), [information about where and how Tawk.to stores data](https://help.tawk.to/article/where-and-how-do-we-host-our-data), [its data retention information](https://www.tawk.to/data-protection/how-we-store-your-data/), and its [Data Processing Addendum](https://www.tawk.to/data-protection/dpa-data-processing-addendum/).
+
+The chat widget includes a consent form for visitors in the European Union and European Economic Area. Where enabled, visitors are asked to consent before starting a chat. You may decline and contact us by email instead. A consent form is one part of our privacy approach and does not replace any other consent or information obligations that may apply. Please do not include personal information in a chat unless it is necessary for your enquiry.
 
 ## Cookies and Similar Technologies
 
 Embedded Nerd and services used on the website may use cookies and similar technologies to:
 
-- Support essential website functionality
+- Support website functionality
 - Analyze website traffic and content performance
 - Support affiliate marketing programs
 - Operate and maintain the live chat service
 
-Where consent is required by applicable law, non-essential cookies or similar technologies should only be used after the relevant consent has been obtained. You can also manage or delete cookies through your browser settings. Blocking certain cookies may affect the functionality of the live chat or other website features.
+The Tawk.to widget uses cookies and related browser storage to provide its service. Tawk.to states that its widget's storage technologies are not set until a visitor accepts the widget's consent form when that form is enabled. We have not independently verified the widget's behaviour in every browser or configuration. Where consent is required by applicable law, non-essential cookies or similar technologies should only be used after valid consent has been obtained. You can also manage or delete cookies through your browser settings; blocking certain cookies may affect website features.
 
 ## Analytics
 
@@ -66,13 +68,13 @@ If you contact us by email, the information you provide will be used to respond 
 
 ## Data Retention and Your Rights
 
-We keep messages and contact information only for as long as reasonably necessary to respond to enquiries, maintain relevant records, resolve disputes, and meet legal obligations. Retention periods may also depend on the settings and retention practices of the service providers we use.
+We retain email enquiries and other contact information for as long as reasonably necessary to respond, manage follow-up, maintain relevant records, resolve disputes, and meet legal obligations. Chat records are held by Tawk.to until deleted, according to the provider's published retention information. We will review records and delete them when they are no longer needed for our purposes, where appropriate and subject to legal obligations. Backups or legally required records may be retained by service providers for a limited or legally mandated period.
 
-Depending on your location and applicable law, you may have the right to request access to, correction or deletion of your personal data, to restrict or object to certain processing, or to withdraw consent where processing is based on consent. To make a request, contact us at [contact@embeddednerd.com](mailto:contact@embeddednerd.com). You may also have the right to lodge a complaint with your local data protection authority. In Portugal, this is the Comissão Nacional de Proteção de Dados (CNPD).
+Depending on your location and applicable law, you may have the right to request access to, correction or deletion of your personal data, to restrict or object to certain processing, or to withdraw consent where processing is based on consent. To make a request, contact us at [contact@embeddednerd.com](mailto:contact@embeddednerd.com). You may also have the right to lodge a complaint with your data protection authority. In Portugal, this is the Comissão Nacional de Proteção de Dados (CNPD).
 
 ## Data Security
 
-We take reasonable measures to protect information collected through the website. However, no method of transmission or storage over the Internet is completely secure.
+We take reasonable measures to protect information collected through the website. Tawk.to states that chat data is encrypted in transit and at rest. However, no method of transmission or storage over the Internet is completely secure.
 
 ## Children's Privacy
 
