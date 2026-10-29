@@ -111,6 +111,8 @@ Unlike Raspberry Pi single-board computers, the Pico is designed to run firmware
 
 The original Raspberry Pi Pico provides **26 multifunction GPIO pins**, USB connectivity, analog inputs, PWM, SPI, I2C, UART and programmable I/O. It does not include wireless connectivity; the wireless version is the **Raspberry Pi Pico W**.
 
+If you are looking for a Linux-capable Raspberry Pi computer for home servers, network storage, VPNs or monitoring, see our [Raspberry Pi IT Projects guide](/raspberry-pi-it-projects/). The Pico is a microcontroller and cannot run those Linux server workloads on its own.
+
 The Pico is suitable for beginners learning embedded programming as well as more advanced applications requiring precise hardware control.
 
 ## Key Features
