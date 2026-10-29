@@ -37,9 +37,7 @@ If you are looking for **Raspberry Pi IT projects**, this guide focuses on pract
 
 A Raspberry Pi single-board computer can work as a small Linux server and home-lab platform, providing DNS filtering, network storage, automated backups, VPN access, monitoring, containers, and self-hosted applications. These projects build transferable skills in Linux administration, networking, storage, and security.
 
-**Scope note:** this guide focuses on Raspberry Pi computers that run Linux, such as the Raspberry Pi 4 and Raspberry Pi 5. The Raspberry Pi Pico and Pico W are microcontroller boards for embedded projects, not Linux single-board computers; see the [Raspberry Pi Pico product guide](/products/raspberry-pi-pico/) for that separate platform. It can provide DNS filtering, network storage, automated backups, VPN access, monitoring, containers, and self-hosted applications.
-
-This guide focuses on **Raspberry Pi projects that perform real IT tasks**. The goal is to help you build useful infrastructure while learning practical Linux, networking, storage, security, and system administration skills.
+**Scope note:** this guide focuses on Raspberry Pi computers that run Linux, such as the Raspberry Pi 4 and Raspberry Pi 5. The Raspberry Pi Pico and Pico W are microcontroller boards for embedded projects, not Linux single-board computers; see the [Raspberry Pi Pico product guide](/products/raspberry-pi-pico/) for that separate platform. This guide focuses on **Raspberry Pi projects that perform real IT tasks**. The goal is to help you build useful infrastructure while learning practical Linux, networking, storage, security, and system administration skills.
 
 Think of it as a small IT laboratory you can build at home.
 
