@@ -76,4 +76,4 @@ The TB6612FNG is typically more efficient and is a better choice when motor effi
 
 ## Related Project
 
-The TB6612FNG can be used with the [ESP32 Joystick Tutorial](/esp32-joystick-tutorial/) for proportional DC motor control.
+The TB6612FNG can be used with the [ESP32 Joystick Tutorial](/esp32-Joystick-Tutorial-Read-an-Analog-Joystick-(KY-023)-with-Arduino-IDE/) for proportional DC motor control.
