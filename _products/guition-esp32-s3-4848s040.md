@@ -119,7 +119,8 @@ Before ordering, check whether the listing is for the bare display board or a ve
 | MCU | ESP32-S3, dual-core up to 240 MHz |
 | Flash | 16 MB |
 | PSRAM | 8 MB |
-| Display size | 4.0-inch (4″) IPS panel |\n| Resolution | 480×480 pixels |
+| Display size | 4.0-inch (4″) IPS panel |
+| Resolution | 480×480 pixels |
 | Display driver | ST7701S |
 | Touch | Capacitive, GT911 |
 | Wireless | Wi-Fi and Bluetooth LE |
@@ -196,7 +197,11 @@ As an affiliate, Embedded Nerd may earn a commission from qualifying purchases a
 
 ## FAQ
 
-### Is the Guition 4848S040 a 4-inch display?\n\nYes. The Guition ESP32-S3-4848S040 uses a 4.0-inch (4″) square IPS display with a resolution of 480 × 480 pixels. Check the selected listing to confirm the exact board variant.\n\n### Does the Guition ESP32-S3-4848S040 have capacitive touch?
+### Is the Guition 4848S040 a 4-inch display?
+
+Yes. The Guition ESP32-S3-4848S040 uses a 4.0-inch (4″) square IPS display with a resolution of 480 × 480 pixels. Check the selected listing to confirm the exact board variant.
+
+### Does the Guition ESP32-S3-4848S040 have capacitive touch?
 
 Yes. The documented 4848S040 configuration uses a GT911 capacitive touch controller. Confirm the model and revision in the listing before ordering.
 
