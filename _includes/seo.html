@@ -70,10 +70,10 @@
 {% endif %}
 {% for lang in available_languages %}
   {% if lang == 'en' %}{% assign lang_path = english_path %}{% elsif lang == 'de' %}{% assign lang_path = german_path %}{% else %}{% assign lang_path = page.url %}{% endif %}
-  <link rel="alternate" href="{{ lang_path | replace: '/index.html', '/' | absolute_url }}" hreflang="{{ lang }}">
+  <link rel="alternate" href="{{ site.url }}{{ site.baseurl }}{{ lang_path | replace: '/index.html', '/' }}" hreflang="{{ lang }}">
 {% endfor %}
 {% if site.default_lang == 'en' %}{% assign default_path = english_path %}{% elsif site.default_lang == 'de' %}{% assign default_path = german_path %}{% else %}{% assign default_path = page.url %}{% endif %}
-<link rel="alternate" href="{{ default_path | replace: '/index.html', '/' | absolute_url }}" hreflang="x-default">
+<link rel="alternate" href="{{ site.url }}{{ site.baseurl }}{{ default_path | replace: '/index.html', '/' }}" hreflang="x-default">
 
 {% if page.noindex or site.baseurl contains '/preview/' %}
   <meta name="robots" content="noindex, follow, noarchive">
