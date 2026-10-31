@@ -1,6 +1,6 @@
 {% comment %}
   Show language choices only when this exact page has real translations.
-  permalink_lang maps each language to its complete localized path.
+  Localized paths are derived from the current page URL.
 {% endcomment %}
 {% if page.available_languages and page.available_languages.size > 1 %}
   <nav class="language-switcher" aria-label="Language">
