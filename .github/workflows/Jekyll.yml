@@ -85,8 +85,15 @@ jobs:
 
             sed -i 's#<meta name="robots" content="index,follow,max-image-preview:large">#<meta name="robots" content="noindex,nofollow,noarchive">#' "pr-site-${pr_number}/_includes/head/custom.html"
 
-            bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb \
-              $(bundle show jekyll)/exe/jekyll build \
+            # A PR may introduce Jekyll plugins that are not present in master.
+            # Install and run against that PR's Gemfile rather than the master bundle.
+            pr_gemfile="$PWD/pr-site-${pr_number}/Gemfile"
+            BUNDLE_GEMFILE="$pr_gemfile" bundle install --jobs 4 --retry 3
+
+            BUNDLE_GEMFILE="$pr_gemfile" bundle exec ruby \
+              -r jekyll \
+              -r "$PWD/pr-site-${pr_number}/_plugins/internal_linker.rb" \
+              "$(BUNDLE_GEMFILE="$pr_gemfile" bundle show jekyll)/exe/jekyll" build \
               --source "pr-site-${pr_number}" \
               --drafts \
               --baseurl "/preview/pr-${pr_number}" \
