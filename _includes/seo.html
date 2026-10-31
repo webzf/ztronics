@@ -25,7 +25,11 @@
   Detect the URL prefix directly: site.active_lang is not reliably available
   inside this SEO include in all build contexts.
 {%- endcomment -%}
-{%- assign canonical_path = canonical_path | replace_first: "/de/", "/" -%}
+{%- comment -%}Only fallback copies should canonicalize to the default-language URL. Real German translations keep their /de/ canonical path.{%- endcomment -%}
+{%- if site.active_lang != site.default_lang and page.rendered_lang == site.default_lang -%}
+  {%- assign active_prefix = site.active_lang | prepend: "/" | append: "/" -%}
+  {%- assign canonical_path = canonical_path | replace_first: active_prefix, "/" -%}
+{%- endif -%}
 {%- assign canonical_url = canonical_path | absolute_url -%}
 
 {%- comment -%} DESCRICAO: ~155 caracteres {%- endcomment -%}
