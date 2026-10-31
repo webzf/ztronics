@@ -61,21 +61,28 @@
 <meta name="description" content="{{ seo_description }}">
 {% endif %}
 <link rel="canonical" href="{{ canonical_url }}">
-{% assign available_languages = page.available_languages | default: site.languages %}
+{% assign available_languages = page.available_languages | default: site.default_lang | split: "," %}
 {% for lang in available_languages %}
+  {% assign lang_path = page.permalink_lang[lang] | default: page.url %}
   {% if lang == site.default_lang %}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ page.url | replace: '/index.html', '/' | absolute_url }}">
+    {% assign lang_prefix = site.active_lang | prepend: '/' | append: '/' %}
+    {% if site.active_lang != site.default_lang %}
+      {% assign lang_path = lang_path | replace_first: lang_prefix, '/' %}
+    {% endif %}
   {% else %}
-    {% assign lang_path = page.permalink_lang[lang] | default: page.url %}
     {% assign lang_prefix = lang | prepend: '/' | append: '/' %}
     {% unless lang_path contains lang_prefix %}
-      {% assign lang_path = lang_prefix | append: lang_path | remove_first: '/' %}
-      {% assign lang_path = lang_path | prepend: '/' %}
+      {% assign lang_path = lang_path | prepend: lang_prefix %}
     {% endunless %}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ lang_path | replace: '/index.html', '/' | absolute_url }}">
   {% endif %}
+  <link rel="alternate" hreflang="{{ lang }}" href="{{ lang_path | replace: '/index.html', '/' | absolute_url }}">
 {% endfor %}
-<link rel="alternate" hreflang="x-default" href="{{ page.url | replace: '/index.html', '/' | absolute_url }}">
+{% assign default_path = page.permalink_lang[site.default_lang] | default: page.url %}
+{% assign active_prefix = site.active_lang | prepend: '/' | append: '/' %}
+{% if site.active_lang != site.default_lang %}
+  {% assign default_path = default_path | replace_first: active_prefix, '/' %}
+{% endif %}
+<link rel="alternate" hreflang="x-default" href="{{ default_path | replace: '/index.html', '/' | absolute_url }}">
 
 {% if page.noindex %}
   <meta name="robots" content="noindex, follow">
