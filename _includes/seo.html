@@ -13,17 +13,15 @@
 {%- assign page_title = page_title | markdownify | strip_html | strip_newlines | escape_once -%}
 {%- assign seo_title  = seo_title  | markdownify | strip_html | strip_newlines | escape_once -%}
 
-{%- comment -%}
-  Use explicit translation URLs from front matter. page.url is not reliable
-  for translated Polyglot pages because it can retain the source URL.
-{%- endcomment -%}
 {%- assign current_lang = page.lang | default: site.default_lang -%}
-{%- assign english_path = '/products/guition-esp32-s3-4848s040/' -%}
-{%- assign german_path = '/de/products/guition-esp32-s3-4848s040/' -%}
-{%- if current_lang == 'de' -%}
-  {%- assign canonical_path = german_path -%}
-{%- else -%}
-  {%- assign canonical_path = english_path -%}
+{%- assign translation_paths = site.data.language_urls[page.product_id] -%}
+{%- assign canonical_path = page.canonical_url | default: page.url -%}
+{%- if translation_paths -%}
+  {%- if current_lang == 'de' -%}
+    {%- assign canonical_path = translation_paths.de -%}
+  {%- else -%}
+    {%- assign canonical_path = translation_paths.en -%}
+  {%- endif -%}
 {%- endif -%}
 {%- assign canonical_path = canonical_path | replace: "/index.html", "/" -%}
 {%- assign canonical_url = canonical_path | absolute_url -%}
@@ -63,17 +61,15 @@
 <meta name="description" content="{{ seo_description }}">
 {% endif %}
 <link rel="canonical" {% static_href %}href="{{ canonical_url }}"{% endstatic_href %}>
-{% if page.available_languages %}
-  {% assign available_languages = page.available_languages %}
-{% else %}
-  {% assign available_languages = site.default_lang | split: "," %}
+{% if translation_paths and page.available_languages %}
+  {% for lang in page.available_languages %}
+    {% assign lang_path = translation_paths[lang] %}
+    {% if lang_path %}
+      <link rel="alternate" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="{{ lang }}">
+    {% endif %}
+  {% endfor %}
+  <link rel="alternate" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ translation_paths.en }}"{% endstatic_href %} hreflang="x-default">
 {% endif %}
-{% for lang in available_languages %}
-  {% if lang == 'en' %}{% assign lang_path = english_path %}{% elsif lang == 'de' %}{% assign lang_path = german_path %}{% else %}{% assign lang_path = page.url %}{% endif %}
-  <link rel="alternate" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path | replace: '/index.html', '/' }}"{% endstatic_href %} hreflang="{{ lang }}">
-{% endfor %}
-{% if site.default_lang == 'en' %}{% assign default_path = english_path %}{% elsif site.default_lang == 'de' %}{% assign default_path = german_path %}{% else %}{% assign default_path = page.url %}{% endif %}
-<link rel="alternate" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ default_path | replace: '/index.html', '/' }}"{% endstatic_href %} hreflang="x-default">
 
 {% if page.noindex or site.baseurl contains '/preview/' %}
   <meta name="robots" content="noindex, follow, noarchive">
