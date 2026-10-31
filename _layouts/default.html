@@ -1,7 +1,8 @@
 ---
 ---
 {%- assign locale = page.locale | default: layout.locale | default: site.locale -%}
-{%- assign html_lang = page.rendered_lang | default: site.active_lang | default: locale | replace: '_', '-' -%}
+{%- comment -%}Use the language of the rendered content, not the URL prefix. Fallback copies remain English.{%- endcomment -%}
+{%- assign html_lang = page.rendered_lang | default: page.lang | default: site.default_lang | replace: '_', '-' -%}
 
 <!doctype html>
 {% include copyright.html %}
