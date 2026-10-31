@@ -1,0 +1,25 @@
+{% comment %}
+  Show language choices only when this exact page has real translations.
+  Polyglot supplies available_languages and permalink_lang for translated documents.
+{% endcomment %}
+{% if page.available_languages and page.available_languages.size > 1 %}
+  <nav class="language-switcher" aria-label="Language">
+    <span class="language-switcher__label">Language:</span>
+    {% for lang in site.languages %}
+      {% if page.available_languages contains lang %}
+        {% capture lang_href %}{{ site.baseurl }}/{% if lang != site.default_lang %}{{ lang }}/{% endif %}{% if page.permalink_lang[lang] != '/' %}{{ page.permalink_lang[lang] }}{% endif %}{% endcapture %}
+        <a href="{% static_href %}{{ lang_href }}{% endstatic_href %}" hreflang="{{ lang }}" lang="{{ lang }}"{% if lang == site.active_lang %} aria-current="page"{% endif %}>
+          {% case lang %}
+            {% when "en" %}English
+            {% when "de" %}Deutsch
+            {% when "fr" %}Français
+            {% when "es" %}Español
+            {% when "it" %}Italiano
+            {% when "nl" %}Nederlands
+            {% else %}{{ lang | upcase }}
+          {% endcase %}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+{% endif %}
