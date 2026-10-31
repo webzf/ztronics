@@ -24,9 +24,8 @@ page_id: product-guition-esp32-s3-4848s040
 available_languages:
   - en
   - de
-permalink_lang:
-  en: /products/guition-esp32-s3-4848s040/
-  de: /de/products/guition-esp32-s3-4848s040/
+english_url: /products/guition-esp32-s3-4848s040/
+german_url: /de/products/guition-esp32-s3-4848s040/
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
