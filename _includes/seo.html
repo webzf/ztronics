@@ -18,13 +18,10 @@
   for translated Polyglot pages because it can retain the source URL.
 {%- endcomment -%}
 {%- assign current_lang = page.lang | default: site.default_lang -%}
-{%- assign german_path = page.german_url -%}
-{%- if german_path -%}
-  {%- assign english_path = german_path | remove_first: '/de' -%}
-{%- else -%}
-  {%- assign english_path = page.english_url | default: page.url | default: page.canonical_url -%}
-  {%- assign german_path = '/de' | append: english_path -%}
-{%- endif -%}
+{%- assign translation_urls = site.data.language_urls[page.page_id] -%}
+{%- assign english_path = translation_urls.en | default: page.url -%}
+{%- assign german_path = translation_urls.de | default: page.german_url -%}
+{%- unless german_path -%}{%- assign german_path = '/de' | append: english_path -%}{%- endunless -%}
 {%- if current_lang == 'de' -%}
   {%- assign canonical_path = german_path -%}
 {%- else -%}
