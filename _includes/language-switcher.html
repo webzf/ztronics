@@ -6,7 +6,8 @@
 {% if page.available_languages and page.available_languages.size > 1 %}
   {% assign current_lang = page.lang | default: site.default_lang %}
   {% assign english_path = page.english_url | default: page.url %}
-  {% assign german_path = page.german_url | default: '/de' | append: english_path %}
+  {% assign german_path = page.german_url %}
+  {% unless german_path %}{% assign german_path = '/de' | append: english_path %}{% endunless %}
   <nav class="language-switcher" aria-label="Language">
     <span class="language-switcher__label">{% if current_lang == 'de' %}Sprache:{% else %}Language:{% endif %}</span>
     {% for lang in site.languages %}
