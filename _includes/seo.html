@@ -19,7 +19,8 @@
 {%- endcomment -%}
 {%- assign current_lang = page.lang | default: site.default_lang -%}
 {%- assign english_path = page.english_url | default: page.url | default: page.canonical_url -%}
-{%- assign german_path = page.german_url | default: '/de' | append: english_path -%}
+{%- assign german_path = page.german_url -%}
+{%- unless german_path -%}{%- assign german_path = '/de' | append: english_path -%}{%- endunless -%}
 {%- if current_lang == 'de' -%}
   {%- assign canonical_path = german_path -%}
 {%- else -%}
