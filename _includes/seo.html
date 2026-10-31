@@ -20,10 +20,12 @@
   - Only languages listed in page.available_languages are advertised.
 {%- endcomment -%}
 {%- assign canonical_path = page.canonical_url | default: page.url | replace: "/index.html", "/" -%}
-{%- if page.rendered_lang and site.active_lang and page.rendered_lang != site.active_lang -%}
-  {%- assign language_prefix = site.active_lang | prepend: "/" | append: "/" -%}
-  {%- assign canonical_path = canonical_path | replace_first: language_prefix, "/" -%}
-{%- endif -%}
+{%- comment -%}
+  Polyglot fallback pages are rendered under /de/ but still contain English.
+  Detect the URL prefix directly: site.active_lang is not reliably available
+  inside this SEO include in all build contexts.
+{%- endcomment -%}
+{%- assign canonical_path = canonical_path | replace_first: "/de/", "/" -%}
 {%- assign canonical_url = canonical_path | absolute_url -%}
 
 {%- comment -%} DESCRICAO: ~155 caracteres {%- endcomment -%}
