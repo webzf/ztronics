@@ -20,15 +20,15 @@
   - Only languages listed in page.available_languages are advertised.
 {%- endcomment -%}
 {%- assign current_lang = page.lang | default: site.default_lang -%}
-{%- assign canonical_path = page.url | default: page.canonical_url | replace: "/index.html", "/" -%}
-{%- assign canonical_url = canonical_path | absolute_url -%}
+{%- assign english_path = page.url | default: page.canonical_url -%}
+{%- assign german_path = '/de' | append: english_path -%}
 {%- if current_lang == 'de' -%}
-  {%- assign english_path = page.url | remove_first: '/de' -%}
-  {%- assign german_path = page.url -%}
+  {%- assign canonical_path = german_path -%}
 {%- else -%}
-  {%- assign english_path = page.url -%}
-  {%- assign german_path = '/de' | append: page.url -%}
+  {%- assign canonical_path = english_path -%}
 {%- endif -%}
+{%- assign canonical_path = canonical_path | replace: "/index.html", "/" -%}
+{%- assign canonical_url = canonical_path | absolute_url -%}
 
 {%- comment -%} DESCRICAO: ~155 caracteres {%- endcomment -%}
 {%- assign seo_description = page.seo_description | default: page.description | default: page.excerpt | default: site.description -%}
