@@ -4,11 +4,11 @@
 {% endcomment %}
 {% if page.available_languages and page.available_languages.size > 1 %}
   <nav class="language-switcher" aria-label="Language">
-    <span class="language-switcher__label">{% if page.rendered_lang == 'de' %}Sprache:{% else %}Language:{% endif %}</span>
+    <span class="language-switcher__label">{% if page.lang == 'de' %}Sprache:{% else %}Language:{% endif %}</span>
     {% for lang in site.languages %}
       {% if page.available_languages contains lang %}
-        {% assign lang_href = page.permalink_lang[lang] | default: page.url | absolute_url %}
-        <a {% static_href %}href="{{ lang_href }}"{% endstatic_href %} hreflang="{{ lang }}" lang="{{ lang }}"{% if lang == page.rendered_lang %} aria-current="page"{% endif %}>
+        {% assign lang_path = page.permalink_lang[lang] | default: page.url %}
+        <a href="{{ lang_path | absolute_url }}" hreflang="{{ lang }}" lang="{{ lang }}"{% if lang == page.lang %} aria-current="page"{% endif %}>
           {% case lang %}
             {% when "en" %}English
             {% when "de" %}Deutsch
