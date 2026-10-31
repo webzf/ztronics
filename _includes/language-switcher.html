@@ -1,14 +1,14 @@
 {% comment %}
   Show language choices only when this exact page has real translations.
-  Polyglot supplies available_languages and permalink_lang for translated documents.
+  permalink_lang maps each language to its complete localized path.
 {% endcomment %}
 {% if page.available_languages and page.available_languages.size > 1 %}
   <nav class="language-switcher" aria-label="Language">
-    <span class="language-switcher__label">Language:</span>
+    <span class="language-switcher__label">{% if page.rendered_lang == 'de' %}Sprache:{% else %}Language:{% endif %}</span>
     {% for lang in site.languages %}
       {% if page.available_languages contains lang %}
-        {% capture lang_href %}{{ site.baseurl }}/{% if lang != site.default_lang %}{{ lang }}/{% endif %}{% if page.permalink_lang[lang] != '/' %}{{ page.permalink_lang[lang] }}{% endif %}{% endcapture %}
-        <a href="{% static_href %}{{ lang_href }}{% endstatic_href %}" hreflang="{{ lang }}" lang="{{ lang }}"{% if lang == site.active_lang %} aria-current="page"{% endif %}>
+        {% assign lang_href = page.permalink_lang[lang] | default: page.url | relative_url %}
+        <a {% static_href %}href="{{ lang_href }}"{% endstatic_href %} hreflang="{{ lang }}" lang="{{ lang }}"{% if lang == page.rendered_lang %} aria-current="page"{% endif %}>
           {% case lang %}
             {% when "en" %}English
             {% when "de" %}Deutsch
