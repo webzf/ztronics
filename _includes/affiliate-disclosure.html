@@ -2,13 +2,13 @@
 
 <div class="en-product-disclosure">
 
-    <strong>Transparency Notice</strong>
+    <strong>{% if site.active_lang == 'de' %}Hinweis zur Transparenz{% else %}Transparency Notice{% endif %}</strong>
 
     <p>
-        Some links on this page are affiliate links. If you purchase through them,
+        {% if site.active_lang == 'de' %}Einige Links auf dieser Seite sind Affiliate-Links. Wenn Sie darüber einkaufen, erhält Embedded Nerd möglicherweise eine kleine Provision, ohne dass Ihnen zusätzliche Kosten entstehen. Damit unterstützen Sie diese Website und helfen uns, weiterhin kostenlose Tutorials und Anleitungen bereitzustellen. Vielen Dank für Ihre Unterstützung!{% else %}Some links on this page are affiliate links. If you purchase through them,
         Embedded Nerd may earn a small commission at no additional cost to you.
         This helps support the website and allows us to continue creating free
-        tutorials and guides. Thank you for your support!
+        tutorials and guides. Thank you for your support!{% endif %}
     </p>
 
 </div>

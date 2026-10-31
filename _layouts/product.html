@@ -9,7 +9,7 @@ classes: wide
 
   {% if page.product_verdict %}
     <p class="product-verdict">
-      <strong>Verdict{% if page.editorial_review and page.editorial_review.rating %} · {{ page.editorial_review.rating }}/{{ page.editorial_review.best_rating | default: 10 }}{% endif %}:</strong>
+      <strong>{% if site.active_lang == 'de' %}Fazit{% else %}Verdict{% endif %}{% if page.editorial_review and page.editorial_review.rating %} · {{ page.editorial_review.rating }}/{{ page.editorial_review.best_rating | default: 10 }}{% endif %}:</strong>
       {{ page.product_verdict | markdownify | remove: '<p>' | remove: '</p>' }}
     </p>
   {% endif %}
@@ -30,10 +30,10 @@ classes: wide
   {% if page.editorial_review and page.editorial_review.rating %}
     {% assign editorial_review = page.editorial_review %}
     <section class="product-editorial-review notice notice--info" aria-labelledby="embedded-nerd-verdict-title">
-      <h2 id="embedded-nerd-verdict-title">Embedded Nerd Editorial Review</h2>
+      <h2 id="embedded-nerd-verdict-title">{% if site.active_lang == 'de' %}Redaktionelle Bewertung von Embedded Nerd{% else %}Embedded Nerd Editorial Review{% endif %}</h2>
       <p class="product-editorial-score">
         <strong>{{ editorial_review.rating }}/{{ editorial_review.best_rating | default: 10 }}</strong>
-        <span> — Assessment based on specifications and documentation</span>
+        <span> — {% if site.active_lang == 'de' %}Bewertung auf Grundlage von technischen Daten und Dokumentation{% else %}Assessment based on specifications and documentation{% endif %}</span>
       </p>
       {% if editorial_review.summary %}
         <p>{{ editorial_review.summary | escape }}</p>
@@ -41,7 +41,7 @@ classes: wide
       <div class="product-review-columns">
         {% if editorial_review.pros %}
           <div>
-            <h3>What we like</h3>
+            <h3>{% if site.active_lang == 'de' %}Was uns gefällt{% else %}What we like{% endif %}</h3>
             <ul>
               {% for item in editorial_review.pros %}
                 <li>{{ item | escape }}</li>
@@ -51,7 +51,7 @@ classes: wide
         {% endif %}
         {% if editorial_review.cons %}
           <div>
-            <h3>What to consider</h3>
+            <h3>{% if site.active_lang == 'de' %}Was zu beachten ist{% else %}What to consider{% endif %}</h3>
             <ul>
               {% for item in editorial_review.cons %}
                 <li>{{ item | escape }}</li>
@@ -61,7 +61,7 @@ classes: wide
         {% endif %}
       </div>
       {% if editorial_review.methodology %}
-        <p class="product-review-methodology"><strong>Methodology:</strong> {{ editorial_review.methodology | escape }}</p>
+        <p class="product-review-methodology"><strong>{% if site.active_lang == 'de' %}Methodik:{% else %}Methodology:{% endif %}</strong> {{ editorial_review.methodology | escape }}</p>
       {% endif %}
     </section>
   {% endif %}
@@ -105,7 +105,7 @@ classes: wide
   {% if tutorial_count > 0 %}
     <section class="product-tutorials">
 
-      <h2>Used in These Tutorials</h2>
+      <h2>{% if site.active_lang == 'de' %}In diesen Tutorials verwendet{% else %}Used in These Tutorials{% endif %}</h2>
 
       <ul>
         {% for tutorial in all_tutorials %}

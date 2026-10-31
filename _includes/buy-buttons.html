@@ -21,7 +21,7 @@
 
   {% if commerce.preferred_store == store_key %}
     <span class="en-buy-badge">
-      ★ Recommended
+      ★ {% if site.active_lang == 'de' %}Empfohlen{% else %}Recommended{% endif %}
     </span>
   {% endif %}
 
@@ -67,14 +67,14 @@
 
     {% case store_key %}
       {% when "amazon" %}
-        <strong>Check Price</strong>
+        <strong>{% if site.active_lang == 'de' %}Preis prüfen{% else %}Check Price{% endif %}</strong>
       {% when "aliexpress" %}
-        <strong>View Offer</strong>
+        <strong>{% if site.active_lang == 'de' %}Angebot ansehen{% else %}View Offer{% endif %}</strong>
       {% else %}
-        <strong>View Product</strong>
+        <strong>{% if site.active_lang == 'de' %}Produkt ansehen{% else %}View Product{% endif %}</strong>
     {% endcase %}
 
-    <small>on {{ store_info.name }}</small>
+    <small>{% if site.active_lang == 'de' %}bei{% else %}on{% endif %} {{ store_info.name }}</small>
 
   </span>
 
