@@ -3,9 +3,9 @@
   Use explicit translation URLs from front matter; page.url can remain the
   source URL on a Polyglot-translated page.
 {% endcomment %}
-{% if page.available_languages and page.available_languages.size > 1 and page.product_id and site.data.language_urls[page.product_id] %}
+{% if page.available_languages and page.available_languages.size > 1 and (page.translation_id or page.product_id) and site.data.language_urls[page.translation_id | default: page.product_id] %}
   {% assign current_lang = page.lang | default: site.default_lang %}
-  {% assign translation_paths = site.data.language_urls[page.product_id] %}
+  {% assign translation_paths = site.data.language_urls[page.translation_id | default: page.product_id] %}
   <nav class="language-switcher" aria-label="Language">
     <span class="language-switcher__label">{% if current_lang == 'de' %}Sprache:{% else %}Language:{% endif %}</span>
     {% for lang in site.languages %}
