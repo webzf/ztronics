@@ -18,10 +18,8 @@
   for translated Polyglot pages because it can retain the source URL.
 {%- endcomment -%}
 {%- assign current_lang = page.lang | default: site.default_lang -%}
-{%- assign translation_urls = site.data.language_urls['guition-esp32-s3-4848s040'] -%}
-{%- assign english_path = translation_urls.en | default: page.english_url | default: page.url -%}
-{%- assign german_path = translation_urls.de | default: page.german_url -%}
-{%- unless german_path -%}{%- assign german_path = '/de' | append: english_path -%}{%- endunless -%}
+{%- assign english_path = '/products/guition-esp32-s3-4848s040/' -%}
+{%- assign german_path = '/de/products/guition-esp32-s3-4848s040/' -%}
 {%- if current_lang == 'de' -%}
   {%- assign canonical_path = german_path -%}
 {%- else -%}
