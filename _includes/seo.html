@@ -64,10 +64,10 @@
   {% assign available_languages = site.default_lang | split: "," %}
 {% endif %}
 {% for lang in available_languages %}
-  {% assign lang_path = page.permalink_lang[lang] | default: page.url %}
+  {% if lang == 'en' %}{% assign lang_path = page.english_url | default: page.url %}{% elsif lang == 'de' %}{% assign lang_path = page.german_url | default: page.url %}{% else %}{% assign lang_path = page.url %}{% endif %}
   <link rel="alternate" href="{{ lang_path | replace: '/index.html', '/' | absolute_url }}" hreflang="{{ lang }}">
 {% endfor %}
-{% assign default_path = page.permalink_lang[site.default_lang] | default: page.url %}
+{% if site.default_lang == 'en' %}{% assign default_path = page.english_url | default: page.url %}{% elsif site.default_lang == 'de' %}{% assign default_path = page.german_url | default: page.url %}{% else %}{% assign default_path = page.url %}{% endif %}
 <link rel="alternate" href="{{ default_path | replace: '/index.html', '/' | absolute_url }}" hreflang="x-default">
 
 {% if page.noindex or site.baseurl contains '/preview/' %}
