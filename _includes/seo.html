@@ -20,10 +20,13 @@
   - Only languages listed in page.available_languages are advertised.
 {%- endcomment -%}
 {%- assign canonical_path = page.canonical_url | default: page.url | replace: "/index.html", "/" -%}
-{%- if site.active_lang != site.default_lang and page.rendered_lang == site.default_lang -%}
-  {%- assign language_prefix = site.active_lang | prepend: "/" | append: "/" -%}
-  {%- assign canonical_path = canonical_path | replace_first: language_prefix, "/" -%}
-{%- endif -%}
+{%- assign available_languages = page.available_languages | default: site.default_lang | split: "," -%}
+{%- unless available_languages contains site.active_lang -%}
+  {%- if site.active_lang != site.default_lang -%}
+    {%- assign language_prefix = site.active_lang | prepend: "/" | append: "/" -%}
+    {%- assign canonical_path = canonical_path | replace_first: language_prefix, "/" -%}
+  {%- endif -%}
+{%- endunless -%}
 {%- assign canonical_url = canonical_path | absolute_url -%}
 
 {%- comment -%} DESCRICAO: ~155 caracteres {%- endcomment -%}
@@ -82,7 +85,7 @@
 {% if site.active_lang != site.default_lang %}
   {% assign default_path = default_path | replace_first: active_prefix, '/' %}
 {% endif %}
-<link rel="alternate" hreflang="x-default" href="{{ default_path | replace: '/index.html', '/' | absolute_url }}">
+<link rel="alternate" hreflang="x-default" href="{{ canonical_url }}">
 
 {% if page.noindex %}
   <meta name="robots" content="noindex, follow">
