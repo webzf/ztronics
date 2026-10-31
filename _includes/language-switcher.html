@@ -7,7 +7,7 @@
     <span class="language-switcher__label">{% if page.lang == 'de' %}Sprache:{% else %}Language:{% endif %}</span>
     {% for lang in site.languages %}
       {% if page.available_languages contains lang %}
-        {% assign lang_path = page.permalink_lang[lang] | default: page.url %}
+        {% if lang == 'en' %}{% assign lang_path = page.english_url | default: page.url %}{% elsif lang == 'de' %}{% assign lang_path = page.german_url | default: page.url %}{% else %}{% assign lang_path = page.url %}{% endif %}
         <a href="{{ lang_path | absolute_url }}" hreflang="{{ lang }}" lang="{{ lang }}"{% if lang == page.lang %} aria-current="page"{% endif %}>
           {% case lang %}
             {% when "en" %}English
