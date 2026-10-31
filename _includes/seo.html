@@ -51,7 +51,7 @@
 {% if seo_description %}
 <meta name="description" content="{{ seo_description }}">
 {% endif %}
-<link rel="canonical" href="{{ canonical_url }}">
+{% I18n_Headers %}
 
 {% if page.noindex %}
   <meta name="robots" content="noindex, follow">
