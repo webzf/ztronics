@@ -7,7 +7,15 @@
     <span class="language-switcher__label">{% if page.lang == 'de' %}Sprache:{% else %}Language:{% endif %}</span>
     {% for lang in site.languages %}
       {% if page.available_languages contains lang %}
-        {% if lang == 'en' %}{% assign lang_path = page.english_url | default: page.url %}{% elsif lang == 'de' %}{% assign lang_path = page.german_url | default: page.url %}{% else %}{% assign lang_path = page.url %}{% endif %}
+        {% assign current_lang = page.lang | default: site.default_lang %}
+        {% if current_lang == 'de' %}
+          {% assign english_path = page.url | remove_first: '/de' %}
+          {% assign german_path = page.url %}
+        {% else %}
+          {% assign english_path = page.url %}
+          {% assign german_path = '/de' | append: page.url %}
+        {% endif %}
+        {% if lang == 'en' %}{% assign lang_path = english_path %}{% elsif lang == 'de' %}{% assign lang_path = german_path %}{% else %}{% assign lang_path = page.url %}{% endif %}
         <a href="{{ lang_path | absolute_url }}" hreflang="{{ lang }}" lang="{{ lang }}"{% if lang == page.lang %} aria-current="page"{% endif %}>
           {% case lang %}
             {% when "en" %}English
