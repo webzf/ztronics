@@ -19,17 +19,7 @@
   - Polyglot fallback copies canonicalize to the default-language URL.
   - Only languages listed in page.available_languages are advertised.
 {%- endcomment -%}
-{%- assign canonical_path = page.canonical_url | default: page.url | replace: "/index.html", "/" -%}
-{%- comment -%}
-  Polyglot fallback pages are rendered under /de/ but still contain English.
-  Detect the URL prefix directly: site.active_lang is not reliably available
-  inside this SEO include in all build contexts.
-{%- endcomment -%}
-{%- comment -%}Only fallback copies should canonicalize to the default-language URL. Real German translations keep their /de/ canonical path.{%- endcomment -%}
-{%- if site.active_lang != site.default_lang and page.rendered_lang == site.default_lang -%}
-  {%- assign active_prefix = site.active_lang | prepend: "/" | append: "/" -%}
-  {%- assign canonical_path = canonical_path | replace_first: active_prefix, "/" -%}
-{%- endif -%}
+{%- assign canonical_path = page.permalink_lang[page.rendered_lang] | default: page.canonical_url | default: page.url | replace: "/index.html", "/" -%}
 {%- assign canonical_url = canonical_path | absolute_url -%}
 
 {%- comment -%} DESCRICAO: ~155 caracteres {%- endcomment -%}
@@ -70,25 +60,10 @@
 {% assign available_languages = page.available_languages | default: site.default_lang | split: "," %}
 {% for lang in available_languages %}
   {% assign lang_path = page.permalink_lang[lang] | default: page.url %}
-  {% if lang == site.default_lang %}
-    {% assign lang_prefix = site.active_lang | prepend: '/' | append: '/' %}
-    {% if site.active_lang != site.default_lang %}
-      {% assign lang_path = lang_path | replace_first: lang_prefix, '/' %}
-    {% endif %}
-  {% else %}
-    {% assign lang_prefix = lang | prepend: '/' | append: '/' %}
-    {% unless lang_path contains lang_prefix %}
-      {% assign lang_path = lang_path | prepend: lang_prefix %}
-    {% endunless %}
-  {% endif %}
-  <link rel="alternate" {% static_href %}href="{{ lang_path | replace: '/index.html', '/' | absolute_url }}"{% endstatic_href %} hreflang="{{ lang }}">
+  <link rel="alternate" {% static_href %}href="{{ lang_path | replace: '/index.html', '/' | relative_url | absolute_url }}"{% endstatic_href %} hreflang="{{ lang }}">
 {% endfor %}
 {% assign default_path = page.permalink_lang[site.default_lang] | default: page.url %}
-{% assign active_prefix = site.active_lang | prepend: '/' | append: '/' %}
-{% if site.active_lang != site.default_lang %}
-  {% assign default_path = default_path | replace_first: active_prefix, '/' %}
-{% endif %}
-<link rel="alternate" {% static_href %}href="{{ canonical_url }}"{% endstatic_href %} hreflang="x-default">
+<link rel="alternate" {% static_href %}href="{{ default_path | replace: '/index.html', '/' | relative_url | absolute_url }}"{% endstatic_href %} hreflang="x-default">
 
 {% if page.noindex or site.baseurl contains '/preview/' %}
   <meta name="robots" content="noindex, follow, noarchive">
