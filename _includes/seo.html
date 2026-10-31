@@ -19,7 +19,8 @@
   - Polyglot fallback copies canonicalize to the default-language URL.
   - Only languages listed in page.available_languages are advertised.
 {%- endcomment -%}
-{%- assign canonical_path = page.url | default: page.canonical_url | replace: "/index.html", "/" -%}
+{%- assign current_lang = page.lang | default: site.default_lang -%}
+{%- assign canonical_path = page.permalink_lang[current_lang] | default: page.url | default: page.canonical_url | replace: "/index.html", "/" -%}
 {%- assign canonical_url = canonical_path | absolute_url -%}
 
 {%- comment -%} DESCRICAO: ~155 caracteres {%- endcomment -%}
@@ -64,10 +65,10 @@
 {% endif %}
 {% for lang in available_languages %}
   {% assign lang_path = page.permalink_lang[lang] | default: page.url %}
-  <link rel="alternate" {% static_href %}href="{{ lang_path | replace: '/index.html', '/' | absolute_url }}"{% endstatic_href %} hreflang="{{ lang }}">
+  <link rel="alternate" href="{{ lang_path | replace: '/index.html', '/' | absolute_url }}" hreflang="{{ lang }}">
 {% endfor %}
 {% assign default_path = page.permalink_lang[site.default_lang] | default: page.url %}
-<link rel="alternate" {% static_href %}href="{{ default_path | replace: '/index.html', '/' | absolute_url }}"{% endstatic_href %} hreflang="x-default">
+<link rel="alternate" href="{{ default_path | replace: '/index.html', '/' | absolute_url }}" hreflang="x-default">
 
 {% if page.noindex or site.baseurl contains '/preview/' %}
   <meta name="robots" content="noindex, follow, noarchive">
