@@ -21,6 +21,12 @@ editorial_review:
 seo_title: "Guition ESP32-S3-4848S040: 4-Inch 480×480 Specs"
 seo_description: "Guition ESP32-S3-4848S040 4-inch touchscreen: 480×480 specs, GPIO pinout, GT911 touch and ESPHome setup guidance."
 page_id: product-guition-esp32-s3-4848s040
+available_languages:
+  - en
+  - de
+permalink_lang:
+  en: /products/guition-esp32-s3-4848s040/
+  de: /de/products/guition-esp32-s3-4848s040/
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
