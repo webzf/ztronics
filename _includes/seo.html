@@ -20,8 +20,15 @@
   - Only languages listed in page.available_languages are advertised.
 {%- endcomment -%}
 {%- assign current_lang = page.lang | default: site.default_lang -%}
-{%- assign canonical_path = page.permalink_lang[current_lang] | default: page.url | default: page.canonical_url | replace: "/index.html", "/" -%}
+{%- assign canonical_path = page.url | default: page.canonical_url | replace: "/index.html", "/" -%}
 {%- assign canonical_url = canonical_path | absolute_url -%}
+{%- if current_lang == 'de' -%}
+  {%- assign english_path = page.url | remove_first: '/de' -%}
+  {%- assign german_path = page.url -%}
+{%- else -%}
+  {%- assign english_path = page.url -%}
+  {%- assign german_path = '/de' | append: page.url -%}
+{%- endif -%}
 
 {%- comment -%} DESCRICAO: ~155 caracteres {%- endcomment -%}
 {%- assign seo_description = page.seo_description | default: page.description | default: page.excerpt | default: site.description -%}
@@ -64,10 +71,10 @@
   {% assign available_languages = site.default_lang | split: "," %}
 {% endif %}
 {% for lang in available_languages %}
-  {% if lang == 'en' %}{% assign lang_path = page.english_url | default: page.url %}{% elsif lang == 'de' %}{% assign lang_path = page.german_url | default: page.url %}{% else %}{% assign lang_path = page.url %}{% endif %}
+  {% if lang == 'en' %}{% assign lang_path = english_path %}{% elsif lang == 'de' %}{% assign lang_path = german_path %}{% else %}{% assign lang_path = page.url %}{% endif %}
   <link rel="alternate" href="{{ lang_path | replace: '/index.html', '/' | absolute_url }}" hreflang="{{ lang }}">
 {% endfor %}
-{% if site.default_lang == 'en' %}{% assign default_path = page.english_url | default: page.url %}{% elsif site.default_lang == 'de' %}{% assign default_path = page.german_url | default: page.url %}{% else %}{% assign default_path = page.url %}{% endif %}
+{% if site.default_lang == 'en' %}{% assign default_path = english_path %}{% elsif site.default_lang == 'de' %}{% assign default_path = german_path %}{% else %}{% assign default_path = page.url %}{% endif %}
 <link rel="alternate" href="{{ default_path | replace: '/index.html', '/' | absolute_url }}" hreflang="x-default">
 
 {% if page.noindex or site.baseurl contains '/preview/' %}
