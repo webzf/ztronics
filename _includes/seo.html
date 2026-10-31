@@ -146,7 +146,7 @@
   {% endif %}
 {% endif %}
 
-{% if page.url == '/' %}
+{% if page.url == '/' or translation_key == 'homepage' %}
   {% include schema.html %}
 {% endif %}
 
