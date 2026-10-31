@@ -18,7 +18,7 @@
         {% else %}
           {% assign lang_path = page.url %}
         {% endif %}
-        <a href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}" hreflang="{{ lang }}" lang="{{ lang }}"{% if lang == current_lang %} aria-current="page"{% endif %}>
+        <a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="{{ lang }}" lang="{{ lang }}"{% if lang == current_lang %} aria-current="page"{% endif %}>
           {% case lang %}
             {% when "en" %}English
             {% when "de" %}Deutsch
