@@ -6,6 +6,22 @@ minimal_mistakes_skin: "aqua" #"default" # "air", "aqua", "contrast", "dark", "d
 
 locale                   : "en-US"
 
+# Multilingual publishing: English remains the canonical source language.
+languages                : ["en", "de"]
+default_lang             : "en"
+parallel_localization   : false
+serial_default_lang      : true
+fallback_canonical_to_default_lang: true
+exclude_from_localization:
+  - "assets"
+  - "sitemap"
+  - "CNAME"
+  - "robots.txt"
+  - ".well-known"
+  - "scripts"
+  - "google"
+  - "BingSiteAuth.xml"
+
 title                    : "Embedded Nerd"
 title_separator          : "|"
 subtitle                 : "Arduino, ESP32 & Raspberry Pi Tutorials and Electronics Projects"
