@@ -71,20 +71,20 @@
           {% if amazon_offer.enabled and amazon_offer.affiliate_url %}
           <a class="en-buy-button preferred" href="{{ amazon_offer.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener">
             <span class="en-buy-icon"><i class="fab fa-amazon"></i></span>
-            <span class="en-buy-text"><strong>Check Price on Amazon</strong><small>Guition ESP32-S3-4848S040</small></span>
+            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Preis bei Amazon prüfen{% else %}Check Price on Amazon{% endif %}</strong><small>Guition ESP32-S3-4848S040</small></span>
             <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
           </a>
           {% endif %}
           {% assign relay_offer = commerce.variants.with_relays %}
           <a class="en-buy-button" href="{{ relay_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
             <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-            <span class="en-buy-text"><strong>With Relay Module — {{ relay_offer.price }}</strong><small>Buy on AliExpress</small></span>
+            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Mit Relaismodul{% else %}With Relay Module{% endif %} — {{ relay_offer.price }}</strong><small>{% if site.active_lang == 'de' %}Bei AliExpress kaufen{% else %}Buy on AliExpress{% endif %}</small></span>
             <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
           </a>
           {% assign lower_offer = commerce.variants.lower_cost %}
           <a class="en-buy-button" href="{{ lower_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
             <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-            <span class="en-buy-text"><strong>Lower-Cost Option — {{ lower_offer.price }}</strong><small>Check variant on AliExpress</small></span>
+            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Preisgünstigere Variante{% else %}Lower-Cost Option{% endif %} — {{ lower_offer.price }}</strong><small>{% if site.active_lang == 'de' %}Variante bei AliExpress prüfen{% else %}Check variant on AliExpress{% endif %}</small></span>
             <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
           </a>
         </div>
