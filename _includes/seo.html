@@ -13,8 +13,17 @@
 {%- assign page_title = page_title | markdownify | strip_html | strip_newlines | escape_once -%}
 {%- assign seo_title  = seo_title  | markdownify | strip_html | strip_newlines | escape_once -%}
 
-{%- comment -%} Canonical absoluto; normaliza index.html sem alterar URLs customizadas. {%- endcomment -%}
+{%- comment -%}
+  Canonical and language alternates:
+  - Real translations use their own URLs.
+  - Polyglot fallback copies canonicalize to the default-language URL.
+  - Only languages listed in page.available_languages are advertised.
+{%- endcomment -%}
 {%- assign canonical_path = page.canonical_url | default: page.url | replace: "/index.html", "/" -%}
+{%- if site.active_lang != site.default_lang and page.rendered_lang == site.default_lang -%}
+  {%- assign language_prefix = site.active_lang | prepend: "/" | append: "/" -%}
+  {%- assign canonical_path = canonical_path | replace_first: language_prefix, "/" -%}
+{%- endif -%}
 {%- assign canonical_url = canonical_path | absolute_url -%}
 
 {%- comment -%} DESCRICAO: ~155 caracteres {%- endcomment -%}
@@ -51,7 +60,22 @@
 {% if seo_description %}
 <meta name="description" content="{{ seo_description }}">
 {% endif %}
-{% I18n_Headers %}
+<link rel="canonical" href="{{ canonical_url }}">
+{% assign available_languages = page.available_languages | default: site.languages %}
+{% for lang in available_languages %}
+  {% if lang == site.default_lang %}
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ page.url | replace: '/index.html', '/' | absolute_url }}">
+  {% else %}
+    {% assign lang_path = page.permalink_lang[lang] | default: page.url %}
+    {% assign lang_prefix = lang | prepend: '/' | append: '/' %}
+    {% unless lang_path contains lang_prefix %}
+      {% assign lang_path = lang_prefix | append: lang_path | remove_first: '/' %}
+      {% assign lang_path = lang_path | prepend: '/' %}
+    {% endunless %}
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ lang_path | replace: '/index.html', '/' | absolute_url }}">
+  {% endif %}
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ page.url | replace: '/index.html', '/' | absolute_url }}">
 
 {% if page.noindex %}
   <meta name="robots" content="noindex, follow">
