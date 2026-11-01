@@ -14,11 +14,11 @@
           {% case lang %}
             {% when "en" %}
               <a class="language-switcher__link" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="en" lang="en" title="English" aria-label="English"{% if lang == current_lang %} aria-current="page"{% endif %}>
-                <span aria-hidden="true">🇬🇧</span><span class="language-switcher__sr-only">English</span>
+                <span aria-hidden="true">🇬🇧</span>
               </a>
             {% when "de" %}
               <a class="language-switcher__link" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="de" lang="de" title="Deutsch" aria-label="Deutsch"{% if lang == current_lang %} aria-current="page"{% endif %}>
-                <span aria-hidden="true">🇩🇪</span><span class="language-switcher__sr-only">Deutsch</span>
+                <span aria-hidden="true">🇩🇪</span>
               </a>
           {% endcase %}
         {% endif %}
