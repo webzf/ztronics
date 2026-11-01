@@ -26,13 +26,13 @@
             </li>
           {%- endfor -%}
         </ul>
-        {% include language-switcher.html %}
         {% if site.search == true %}
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{% if locale == 'de-DE' %}Suche öffnen{% else %}{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}{% endif %}</span>
           <i class="fas fa-search"></i>
         </button>
         {% endif %}
+        {% include language-switcher.html %}
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{% if locale == 'de-DE' %}Menü öffnen{% else %}{{ site.data.ui-text[locale].menu_label | default: "Toggle menu" }}{% endif %}</span>
           <div class="navicon"></div>
