@@ -1,0 +1,34 @@
+{% assign locale = include.locale | default: site.locale %}
+{% assign navigation_data = site.data.navigation %}
+{% if page.lang == 'de' and site.data.de.navigation %}
+  {% assign navigation_data = site.data.de.navigation %}
+{% endif %}
+
+<nav class="nav__list" aria-label="{% if page.lang == 'de' %}Seitennavigation{% else %}Sidebar navigation{% endif %}">
+  {% if page.sidebar.title %}<h3 class="nav__title" style="padding-inline-start: 0;">{{ page.sidebar.title }}</h3>{% endif %}
+
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{% if page.lang == 'de' %}Menü umschalten{% else %}{{ site.data.ui-text[locale].menu_label | default: "Toggle Menu" }}{% endif %}</label>
+
+  <ul class="nav__items">
+    {% for navname in include.nav %}
+      {% assign navigation = navigation_data[navname] %}
+      {% for nav in navigation %}
+        <li>
+          {% if nav.url %}
+            <a {% static_href %}href="{{ nav.url | relative_url }}"{% endstatic_href %}><span class="nav__sub-title">{{ nav.title }}</span></a>
+          {% else %}
+            <span class="nav__sub-title">{{ nav.title }}</span>
+          {% endif %}
+          {% if nav.children != null %}
+            <ul>
+              {% for child in nav.children %}
+                <li><a {% static_href %}href="{{ child.url | relative_url }}"{% endstatic_href %}{% if child.url == page.url %} class="active"{% endif %}>{{ child.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</nav>
