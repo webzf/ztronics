@@ -7,57 +7,14 @@
 (function () {
   "use strict";
 
-  var REGION_KEY = "en_currency_region";
-  var RATE_KEY = "en_eur_usd_rate";
-  var RATE_DATE_KEY = "en_eur_usd_rate_date";
   var GEO_URL = "https://free.freeipapi.com/api/v1/json/";
   var RATE_URL = "https://api.frankfurter.dev/v2/rate/EUR/USD";
 
-  function readSessionRegion() {
-    try {
-      var value = window.sessionStorage.getItem(REGION_KEY);
-      return value === "EU" || value === "OTHER" ? value : null;
-    } catch (error) {
-      return null;
-    }
-  }
-
-  function saveSessionRegion(value) {
-    try {
-      window.sessionStorage.setItem(REGION_KEY, value);
-    } catch (error) {
-      // Storage can be unavailable in private browsing; continue without it.
-    }
-  }
-
-  function readCachedRate() {
-    try {
-      var rate = Number(window.localStorage.getItem(RATE_KEY));
-      var date = window.localStorage.getItem(RATE_DATE_KEY);
-      var today = new Date().toISOString().slice(0, 10);
-      return date === today && Number.isFinite(rate) && rate > 0 ? rate : null;
-    } catch (error) {
-      return null;
-    }
-  }
-
-  function saveCachedRate(rate, date) {
-    try {
-      window.localStorage.setItem(RATE_KEY, String(rate));
-      window.localStorage.setItem(RATE_DATE_KEY, date || new Date().toISOString().slice(0, 10));
-    } catch (error) {
-      // A failed cache write must not prevent currency display.
-    }
-  }
-
   async function getRegion() {
-    var cached = readSessionRegion();
-    if (cached) return cached;
-
     var response = await fetch(GEO_URL, {
       method: "GET",
       headers: { "Accept": "application/json" },
-      cache: "no-store"
+      cache: "default"
     });
     if (!response.ok) throw new Error("Country lookup failed: " + response.status);
 
@@ -65,20 +22,14 @@
     if (!location || typeof location.continentCode !== "string") {
       throw new Error("Country lookup returned no continent code");
     }
-
-    var region = location.continentCode.toUpperCase() === "EU" ? "EU" : "OTHER";
-    saveSessionRegion(region);
-    return region;
+    return location.continentCode.toUpperCase() === "EU" ? "EU" : "OTHER";
   }
 
   async function getEurUsdRate() {
-    var cached = readCachedRate();
-    if (cached) return cached;
-
     var response = await fetch(RATE_URL, {
       method: "GET",
       headers: { "Accept": "application/json" },
-      cache: "no-cache"
+      cache: "default"
     });
     if (!response.ok) throw new Error("Exchange-rate lookup failed: " + response.status);
 
@@ -87,8 +38,6 @@
     if (!Number.isFinite(rate) || rate <= 0) {
       throw new Error("Exchange-rate response was invalid");
     }
-
-    saveCachedRate(rate);
     return rate;
   }
 
@@ -158,6 +107,34 @@
     });
   }
 
+  function hasConvertibleOffer(data) {
+    if (Array.isArray(data)) {
+      return data.some(hasConvertibleOffer);
+    }
+    if (!data || typeof data !== "object") return false;
+
+    var currency = String(data.priceCurrency || "").toUpperCase();
+    if ((currency === "EUR" || currency === "USD") && data.price !== undefined) return true;
+
+    return Object.keys(data).some(function (key) {
+      return hasConvertibleOffer(data[key]);
+    });
+  }
+
+  function shouldRun() {
+    if (document.querySelector("[data-en-price][data-en-currency]")) return true;
+    return Array.prototype.some.call(
+      document.querySelectorAll('script[type="application/ld+json"]'),
+      function (script) {
+        try {
+          return hasConvertibleOffer(JSON.parse(script.textContent));
+        } catch (error) {
+          return false;
+        }
+      }
+    );
+  }
+
   async function applyVisitorCurrency() {
     try {
       var region = await getRegion();
@@ -175,6 +152,8 @@
       }
     }
   }
+
+  if (!shouldRun()) return;
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", applyVisitorCurrency, { once: true });
