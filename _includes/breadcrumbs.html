@@ -1,0 +1,36 @@
+{% assign locale = include.locale | default: site.locale %}
+{% if page.lang == 'de' or site.active_lang == 'de' %}
+  {% assign locale = 'de-DE' %}
+{% endif %}
+{% assign crumbs = page.url | split: '/' %}
+{% assign crumb_path = '/' %}
+<nav class="breadcrumbs" aria-label="{% if locale == 'de-DE' %}Brotkrumennavigation{% else %}Breadcrumb{% endif %}">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="{{ '/' | relative_url }}" itemprop="item"><span itemprop="name">{% if locale == 'de-DE' %}Startseite{% else %}Home{% endif %}</span></a>
+      <meta itemprop="position" content="1">
+    </li>
+    {% assign position = 1 %}
+    {% for crumb in crumbs %}
+      {% unless crumb == '' or crumb == 'de' %}
+        {% assign position = position | plus: 1 %}
+        <span class="sep">/</span>
+        {% if crumb == 'products' %}
+          {% assign crumb_label = 'Products' %}
+          {% if locale == 'de-DE' %}{% assign crumb_label = 'Produkte' %}{% endif %}
+          {% assign crumb_url = '/products/' %}
+        {% elsif forloop.last %}
+          <li class="current" lang="{% if locale == 'de-DE' %}de{% else %}en{% endif %}">{{ page.title }}</li>
+          {% continue %}
+        {% else %}
+          {% assign crumb_label = crumb | url_decode | replace: '-', ' ' | capitalize %}
+          {% assign crumb_url = crumb | downcase | append: '/' | prepend: crumb_path %}
+        {% endif %}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ crumb_url | relative_url }}" itemprop="item"><span itemprop="name">{{ crumb_label }}</span></a>
+          <meta itemprop="position" content="{{ position }}">
+        </li>
+      {% endunless %}
+    {% endfor %}
+  </ol>
+</nav>
