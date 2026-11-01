@@ -9,6 +9,12 @@ product_id: guition-jc8048w550
 category: Displays
 manufacturer: "Guition"
 
+image: "/assets/images/products/guition-jc8048w550-kit.webp"
+header:
+  og_image: "/assets/images/products/guition-jc8048w550-kit.webp"
+  og_image_alt: "Guition JC8048W550 ESP32-S3 5-inch 800×480 display module kit"
+  teaser: "/assets/images/products/guition-jc8048w550-kit.webp"
+
 alt: "Guition JC8048W550 ESP32-S3 5-inch 800×480 display module and controller board"
 
 excerpt: "Guition JC8048W550 with ESP32-S3, 5-inch 800×480 IPS display, 8MB PSRAM, 16MB Flash, Wi-Fi and Bluetooth."
@@ -84,6 +90,29 @@ The **Guition JC8048W550** is a 5-inch ESP32-S3 HMI display module with an 800×
 The AliExpress listing supplied for this page describes the capacitive-touch version. The JC8048W550 family can be offered with different touch configurations, so check the selected option and seller photos before ordering.
 
 ## Is the Guition JC8048W550 worth considering?
+
+
+## Product photos
+
+<div class="product-image-gallery" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.5rem 0;">
+  <figure>
+    <img src="/assets/images/products/guition-jc8048w550-kit.webp" alt="Guition JC8048W550 5-inch display module and accessories" loading="lazy" style="width:100%;height:auto;">
+    <figcaption>Display module and supplied accessories</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/products/guition-jc8048w550-display-in-use.webp" alt="Guition 5-inch display showing an energy-monitoring dashboard" loading="lazy" style="width:100%;height:auto;">
+    <figcaption>Example of a 800×480 energy-monitoring interface</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/products/guition-jc8048w550-pcb.webp" alt="Rear side of the Guition JC8048W550 ESP32-S3 controller board showing connectors" loading="lazy" style="width:100%;height:auto;">
+    <figcaption>Rear PCB and connection points</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/products/guition-jc8048w550-installed.webp" alt="Guition 5-inch touchscreen installed in a control panel" loading="lazy" style="width:100%;height:auto;">
+    <figcaption>Installed control-panel example</figcaption>
+  </figure>
+</div>
+
 
 The 5-inch 800×480 format offers substantially more screen area than compact ESP32 displays. It is suitable for interfaces that need several controls, status cards, charts or energy-monitoring data on one screen.
 
