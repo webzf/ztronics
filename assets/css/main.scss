@@ -282,11 +282,15 @@
 
 /* Compact flag-based language switcher in the masthead */
 .greedy-nav .language-switcher {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
   margin-left: 0.65rem;
   flex: 0 0 auto;
+  white-space: nowrap;
 }
 .greedy-nav .language-switcher__link {
   display: inline-flex;
