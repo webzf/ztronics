@@ -281,6 +281,19 @@
 }
 
 /* Compact flag-based language switcher in the masthead */
+.masthead__menu {
+  display: flex;
+  align-items: center;
+}
+.masthead__menu > .greedy-nav {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.masthead__menu > .language-switcher {
+  flex: 0 0 auto;
+  margin-left: 0.65rem;
+}
+
 .greedy-nav .language-switcher {
   display: flex !important;
   flex-direction: row !important;
