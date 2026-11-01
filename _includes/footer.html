@@ -1,0 +1,28 @@
+{% assign locale = page.lang | default: site.default_lang | default: "en" %}
+{% unless site.atom_feed.hide %}{% assign show_atom = true %}{% endunless %}
+{% if site.footer.links or show_atom %}
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    {% if locale == "de" %}<li><strong>Folgen:</strong></li>{% else %}<li><strong>Follow:</strong></li>{% endif %}
+    {% if site.footer.links %}
+      {% for link in site.footer.links %}
+        {% if link.label and link.url %}
+          {% assign footer_label = link.label %}
+          {% if locale == "de" %}
+            {% case link.label %}
+              {% when "Contact" %}{% assign footer_label = "Kontakt" %}
+              {% when "Privacy Policy" %}{% assign footer_label = "Datenschutzerklärung" %}
+              {% when "Affiliate Disclosure" %}{% assign footer_label = "Affiliate-Hinweis" %}
+              {% when "Terms of Service" %}{% assign footer_label = "Nutzungsbedingungen" %}
+              {% when "About" %}{% assign footer_label = "Über uns" %}
+            {% endcase %}
+          {% endif %}
+          <li><a href="{{ link.url | relative_url }}" rel="nofollow noopener noreferrer{% if link.rel %} {{ link.rel }}{% endif %}"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ footer_label | escape_once | strip }}</a></li>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% unless site.atom_feed.hide %}<li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> {% if locale == "de" %}Feed{% else %}Feed{% endif %}</a></li>{% endunless %}
+  </ul>
+</div>
+{% endif %}
+<div class="page__footer-copyright">&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a>. {% if locale == "de" %}Erstellt mit{% else %}Powered by{% endif %} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
