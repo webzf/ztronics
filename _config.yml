@@ -130,6 +130,26 @@ author:
       url: "https://www.pinterest.com/EmbeddedNerd/"
 # Site Footer
 footer:
+  links_de:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/webzf"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://youtube.com/@embedded_nerd"
+    - label: "Pinterest"
+      icon: "fab fa-fw fa-pinterest"
+      url: "https://www.pinterest.com/EmbeddedNerd/"
+    - label: "Kontakt"
+      url: "/contact/"
+    - label: "Datenschutzerklärung"
+      url: "/privacy-policy/"
+    - label: "Affiliate-Hinweis"
+      url: "/affiliate-disclosure/"
+    - label: "Nutzungsbedingungen"
+      url: "/terms/"
+    - label: "Über uns"
+      url: "/about/"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
