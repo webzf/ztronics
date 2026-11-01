@@ -1,0 +1,22 @@
+{% assign locale = page.lang | default: site.default_lang | default: "en" %}
+<nav class="nav__list">
+  {% if page.sidebar.title %}<h3 class="nav__title" style="padding-inline-start: 0;">{{ page.sidebar.title }}</h3>{% endif %}
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{% if locale == "de" %}Menü umschalten{% else %}{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}{% endif %}</label>
+  <ul class="nav__items">
+    {% for navname in include.nav %}
+      {% assign navigation_key = navname %}
+      {% if locale == "de" %}{% assign navigation_key = navname | append: "_de" %}{% endif %}
+      {% assign navigation = site.data.navigation[navigation_key] %}
+      {% for nav in navigation %}
+        <li>
+          {% if nav.url %}<a href="{{ nav.url | relative_url }}"><span class="nav__sub-title">{{ nav.title }}</span></a>
+          {% else %}<span class="nav__sub-title">{{ nav.title }}</span>{% endif %}
+          {% if nav.children != null %}
+          <ul>{% for child in nav.children %}<li><a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %}>{{ child.title }}</a></li>{% endfor %}</ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</nav>

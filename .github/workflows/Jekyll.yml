@@ -4,21 +4,14 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch:
-    inputs:
-      pr_number:
-        description: "Pull request number for preview"
-        required: false
-        type: string
-      pr_sha:
-        description: "Pull request head SHA for preview"
-        required: false
-        type: string
-      pr_action:
-        description: "Pull request action for immediate preview rebuild"
-        required: false
-        default: "synchronize"
-        type: string
+  pull_request:
+    branches:
+      - master
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
 
 permissions:
   contents: read

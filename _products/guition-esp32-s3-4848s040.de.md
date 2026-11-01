@@ -1,6 +1,7 @@
 ---
 layout: product
 lang: de
+toc_label: "Inhaltsverzeichnis"
 page_id: product-guition-esp32-s3-4848s040
 available_languages:
   - en
