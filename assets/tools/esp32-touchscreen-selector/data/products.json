@@ -2168,6 +2168,163 @@
       "manufacturer_sku": null,
       "image": "https://embeddednerd.com/assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp",
       "image_alt": "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C 3.4-inch round IPS touchscreen board"
+    },
+    {
+      "id": "guition-jc8048w550",
+      "name": "Guition JC8048W550 5-inch ESP32-S3 Display",
+      "manufacturer": "Guition",
+      "product_type": "board_with_display",
+      "category": "board_with_display",
+      "description": "5-inch 800×480 IPS ESP32-S3 HMI module with 8MB PSRAM, 16MB Flash, Wi-Fi, Bluetooth and capacitive-touch listing variant.",
+      "product_url": "/products/guition-jc8048w550/",
+      "documentation_url": "https://www.guition.com/esp32-display-module/5-inch-esp32s3-display-module",
+      "tags": [
+        "Guition",
+        "ESP32-S3",
+        "JC8048W550",
+        "5-inch",
+        "800x480",
+        "RGB",
+        "ST7262",
+        "capacitive-touch",
+        "GT911",
+        "PSRAM",
+        "LVGL",
+        "ESPHome"
+      ],
+      "esp32": {
+        "family": [
+          "ESP32-S3"
+        ],
+        "exact_mcu": "ESP32-S3-WROOM-1",
+        "cores": 2,
+        "cpu_frequency_mhz": 240,
+        "flash_mb": 16,
+        "ram_mb": null,
+        "psram_mb": 8
+      },
+      "wireless": {
+        "wifi": true,
+        "bluetooth": true,
+        "ble": true
+      },
+      "usb": {
+        "usb_available": true,
+        "usb_type": "USB Type-C",
+        "native_usb": null,
+        "uart_bridge": null,
+        "native_usb_functionality": [],
+        "usb_notes": "USB Type-C connector is visible on the board; USB data implementation should be confirmed against the exact revision."
+      },
+      "display": {
+        "display_present": true,
+        "technology": "TFT",
+        "monochrome": false,
+        "color": true,
+        "transparent": null,
+        "shape": "rectangular",
+        "size_inches": 5,
+        "resolution": {
+          "width": 800,
+          "height": 480
+        },
+        "aspect_ratio": "5:3",
+        "controller": "ST7262",
+        "interface": "RGB"
+      },
+      "touch": {
+        "touch": true,
+        "touch_type": "capacitive",
+        "touch_controller": "GT911",
+        "touch_interface": "I2C"
+      },
+      "interfaces": {
+        "i2c": true,
+        "spi": true,
+        "uart": true,
+        "rgb": true,
+        "other": [
+          "USB Type-C"
+        ]
+      },
+      "display_touch_bus": {
+        "display_bus": "RGB",
+        "touch_bus": "I2C",
+        "shared_bus": false,
+        "separate_bus": true,
+        "chip_select": null,
+        "dc": null,
+        "irq": null,
+        "reset": null,
+        "relevant_gpio": []
+      },
+      "hardware": {
+        "total_gpio": null,
+        "free_gpio": null,
+        "reserved_gpio": [],
+        "display_gpio": [],
+        "touch_gpio": [],
+        "microsd": true,
+        "battery": null,
+        "battery_charging": null,
+        "power_input": "5V DC (confirm exact assembly requirements)",
+        "connectors": [
+          "USB Type-C",
+          "TF / microSD",
+          "speaker",
+          "battery",
+          "GPIO headers"
+        ],
+        "buttons": null,
+        "led": null,
+        "camera": null,
+        "audio": true,
+        "sensors": [],
+        "other_peripherals": [
+          "speaker connector",
+          "battery connector"
+        ]
+      },
+      "certification": {
+        "ce": null,
+        "fcc": null,
+        "other": []
+      },
+      "physical": {
+        "dimensions": null,
+        "mounting_holes": true,
+        "form_factor": "5-inch landscape HMI module"
+      },
+      "sources": [
+        {
+          "type": "manufacturer-documentation",
+          "url": "https://www.guition.com/esp32-display-module/5-inch-esp32s3-display-module"
+        },
+        {
+          "type": "community-configuration",
+          "url": "https://github.com/agillis/esphome-modular-lvgl-buttons/blob/main/hardware/guition-esp32-jc8048w550.yaml"
+        },
+        {
+          "type": "embedded-nerd-product",
+          "url": "/products/guition-jc8048w550/"
+        }
+      ],
+      "data_quality": "community_documented",
+      "software": {
+        "lvgl": {
+          "support": true,
+          "level": "community",
+          "framework": "ESPHome / LVGL"
+        }
+      },
+      "features": {
+        "battery": null,
+        "imu": null,
+        "rtc": null,
+        "audio": true
+      },
+      "image": "/assets/images/products/guition-jc8048w550-kit.webp",
+      "image_alt": "Guition JC8048W550 5-inch 800×480 ESP32-S3 touchscreen module"
     }
   ]
 }
