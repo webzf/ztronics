@@ -279,3 +279,43 @@
     overflow: visible !important;
   }
 }
+
+/* Compact flag-based language switcher in the masthead */
+.greedy-nav .language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.65rem;
+  flex: 0 0 auto;
+}
+.greedy-nav .language-switcher__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid transparent;
+  border-radius: 0.35rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  text-decoration: none;
+  opacity: 0.72;
+  transition: opacity 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.greedy-nav .language-switcher__link:hover,
+.greedy-nav .language-switcher__link[aria-current="page"] {
+  opacity: 1;
+  border-color: rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.08);
+}
+.language-switcher__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
