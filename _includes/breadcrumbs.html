@@ -2,7 +2,8 @@
 {% if page.lang == 'de' or site.active_lang == 'de' %}
   {% assign locale = 'de-DE' %}
 {% endif %}
-{% assign crumbs = page.url | split: '/' %}
+{% assign breadcrumb_path = page.url | remove_first: '/de/' | remove_first: '/' | remove_last: '/' %}
+{% assign crumbs = breadcrumb_path | split: '/' %}
 {% assign crumb_path = '/' %}
 <nav class="breadcrumbs" aria-label="{% if locale == 'de-DE' %}Brotkrumennavigation{% else %}Breadcrumb{% endif %}">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -12,7 +13,7 @@
     </li>
     {% assign position = 1 %}
     {% for crumb in crumbs %}
-      {% unless crumb == '' or crumb == 'de' %}
+      {% unless crumb == '' %}
         {% assign position = position | plus: 1 %}
         <span class="sep">/</span>
         {% if crumb == 'products' %}
