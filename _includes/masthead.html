@@ -14,7 +14,7 @@
         {% endunless %}
         <a class="site-title" {% static_href %}href="{{ '/' | relative_url }}"{% endstatic_href %}>
           {{ site.masthead_title | default: site.title | escape_once | strip }}
-          {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
+          {% if site.subtitle %}<span class="site-subtitle">{% if locale == 'de-DE' %}Tutorials zu Arduino, ESP32 und Raspberry Pi sowie Elektronikprojekte{% else %}{{ site.subtitle | escape_once | strip }}{% endif %}</span>{% endif %}
         </a>
         <ul class="visible-links">
           {%- for link in navigation.main -%}
