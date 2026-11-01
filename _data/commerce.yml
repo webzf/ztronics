@@ -879,3 +879,29 @@ esp-mosaico:
 
 #----------------
 
+#----------------
+
+guition-jc8048w550:
+
+  preferred_store: aliexpress
+
+  notes: "AliExpress listing 1005007822411881 and affiliate short link supplied by the site owner. Confirm the capacitive-touch variant before ordering."
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    aliexpress:
+      enabled: true
+      product_id: "1005007822411881"
+      product_url: "https://pt.aliexpress.com/item/1005007822411881.html"
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3bdArP9"
+      last_verified: "2026-11-01"
+
+#----------------
