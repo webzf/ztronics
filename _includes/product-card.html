@@ -1,90 +1,30 @@
-{% comment %}
-==============================================================================
-Embedded Nerd Product Card v1
-------------------------------------------------------------------------------
-
-Usage:
-
-{% include product-card.html product=product %}
-
-==============================================================================
-{% endcomment %}
-
 {% assign commerce = site.data.commerce[include.product.product_id] %}
 {% assign product_image = include.product.image %}
 {% unless product_image contains "://" %}
-    {% assign product_image = product_image | relative_url %}
+  {% assign product_image = product_image | relative_url %}
 {% endunless %}
-
-<div class="en-product-card"
-     data-title="{{ include.product.title | downcase }}"
-     data-platforms="{{ include.product.categories | join: ',' | downcase }}"
-     data-manufacturer="{{ include.product.manufacturer | downcase }}"
-     data-description="{{ include.product.excerpt | downcase }}">
-
-    <a class="en-product-card__image"
-       href="{{ include.product.url | relative_url }}">
-
-        <img
-            src="{{ product_image }}"
-            alt="{{ include.product.title }}"
-            loading="lazy">
-
-        {% if commerce.badges.recommended %}
-            <span class="en-badge en-badge--recommended">
-                Recommended
-            </span>
-        {% endif %}
-
-    </a>
-
-    <div class="en-product-card__body">
-
-        {% if include.product.manufacturer %}
-        <div class="en-product-card__manufacturer">
-
-            {{ include.product.manufacturer }}
-
-        </div>
-        {% endif %}
-
-        <h3>
-
-            <a href="{{ include.product.url | relative_url }}">
-
-                {{ include.product.title }}
-
-            </a>
-
-        </h3>
-
-        <p>
-
-            {{ include.product.excerpt }}
-
-        </p>
-
-        <div class="en-product-card__footer">
-
-            {% for category in include.product.categories %}
-
-                <span class="en-tag">
-
-                    {{ category }}
-
-                </span>
-
-            {% endfor %}
-
-            <a class="en-view-product"
-               href="{{ include.product.url | relative_url }}">
-
-                View Product →
-
-            </a>
-
-        </div>
-
+<div class="en-product-card" data-title="{{ include.product.title | downcase }}" data-platforms="{{ include.product.categories | join: ',' | downcase }}" data-manufacturer="{{ include.product.manufacturer | downcase }}" data-description="{{ include.product.excerpt | downcase }}">
+  <a class="en-product-card__image" href="{{ include.product.url | relative_url }}">
+    <img src="{{ product_image }}" alt="{{ include.product.title }}" loading="lazy">
+    {% if commerce.badges.recommended %}
+      <span class="en-badge en-badge--recommended">{% if site.active_lang == 'de' %}Empfohlen{% else %}Recommended{% endif %}</span>
+    {% endif %}
+  </a>
+  <div class="en-product-card__body">
+    {% if include.product.manufacturer %}<div class="en-product-card__manufacturer">{{ include.product.manufacturer }}</div>{% endif %}
+    <h3><a href="{{ include.product.url | relative_url }}">{{ include.product.title }}</a></h3>
+    <p>
+      {% if site.active_lang == 'de' and include.product.product_id == 'sunton-esp32-8048s043c' %}
+        ESP32-S3-Touchscreen-Platine mit 4,3-Zoll-Display und 800 × 480 Pixeln.
+      {% elsif site.active_lang == 'de' and include.product.product_id == 'esp32-2432s028-2-8-cyd' %}
+        Kompaktes und preisgünstiges ESP32-Touchdisplay mit 2,8-Zoll-Bildschirm.
+      {% else %}
+        {{ include.product.excerpt }}
+      {% endif %}
+    </p>
+    <div class="en-product-card__footer">
+      {% for category in include.product.categories %}<span class="en-tag">{% if site.active_lang == 'de' and category == 'Displays' %}Displays{% elsif site.active_lang == 'de' and category == 'Smart Home' %}Smart Home{% else %}{{ category }}{% endif %}</span>{% endfor %}
+      <a class="en-view-product" href="{{ include.product.url | relative_url }}">{% if site.active_lang == 'de' %}Produkt ansehen{% else %}View Product{% endif %} →</a>
     </div>
-
+  </div>
 </div>
