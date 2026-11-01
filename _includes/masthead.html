@@ -26,6 +26,7 @@
             </li>
           {%- endfor -%}
         </ul>
+        {% include language-switcher.html %}
         {% if site.search == true %}
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{% if locale == 'de-DE' %}Suche öffnen{% else %}{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}{% endif %}</span>
