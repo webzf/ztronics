@@ -306,6 +306,13 @@
   opacity: 0.72;
   transition: opacity 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
+.greedy-nav .language-switcher__flag {
+  display: block;
+  width: 1.5rem;
+  height: 1rem;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
 .greedy-nav .language-switcher__link:hover,
 .greedy-nav .language-switcher__link[aria-current="page"] {
   opacity: 1;
