@@ -1,4 +1,7 @@
 {% assign locale = include.locale | default: site.locale %}
+{% if page.lang == 'de' %}
+  {% assign locale = 'de-DE' %}
+{% endif %}
 {% assign previous_label = site.data.ui-text[locale].pagination_previous | default: "Previous" %}
 {% assign next_label = site.data.ui-text[locale].pagination_next | default: "Next" %}
 {% if locale == 'de-DE' %}
