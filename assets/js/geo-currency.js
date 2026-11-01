@@ -88,7 +88,7 @@
       throw new Error("Exchange-rate response was invalid");
     }
 
-    saveCachedRate(rate, data.date);
+    saveCachedRate(rate);
     return rate;
   }
 
