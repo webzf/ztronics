@@ -1,4 +1,4 @@
-{% assign locale = include.locale | default: page.lang | default: site.default_lang | default: "en" %}
+{% assign locale = page.lang | default: include.locale | default: site.default_lang | default: "en" %}
 {% capture logo_path %}{{ site.logo }}{% endcapture %}
 {% assign main_navigation = "main" %}
 {% if locale == "de" %}{% assign main_navigation = "main_de" %}{% endif %}
