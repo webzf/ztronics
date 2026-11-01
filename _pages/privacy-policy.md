@@ -5,7 +5,7 @@ layout: single
 author_profile: false
 ---
 
-_Last updated: October 29, 2026_
+_Last updated: November 1, 2026_
 
 At Embedded Nerd, accessible from embeddednerd.com, we take the privacy of our visitors seriously. This Privacy Policy explains what information may be collected when you use this website, including when you contact us through the live chat.
 
@@ -22,6 +22,12 @@ When you browse Embedded Nerd, certain technical and usage information may be co
 This information may be used to understand how the website is used, maintain its security, and improve its performance and content.
 
 When you contact us by email or through the live chat, we may collect the information you choose to provide, such as your name, email address, message, and any files you send. Please do not send passwords, payment details, or other sensitive information through the chat.
+
+## IP-Based Country Detection and Currency Display
+
+To display indicative product prices in euros (EUR) for visitors in Europe and US dollars (USD) elsewhere, this website may make a request to FreeIPAPI from your browser. The request allows the service to identify the country/continent associated with your public IP address; Embedded Nerd uses the continent result only to select the display currency. The lookup is handled by FreeIPAPI, which may process your IP address to provide this response. See [FreeIPAPI](https://freeipapi.com/) for information about the service.
+
+The website also requests the latest EUR/USD reference exchange rate from [Frankfurter](https://frankfurter.dev/) so that displayed estimates and corresponding Product structured data can use the same currency. Exchange rates are updated daily, and the rate may be cached in your browser. These converted amounts are estimates only; the seller's listing and checkout determine the actual price and currency. If either service is unavailable, the website keeps the original price rather than showing an unreliable conversion.
 
 ## Live Chat (Tawk.to)
 
