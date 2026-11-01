@@ -1,0 +1,21 @@
+{% assign locale = include.locale | default: site.locale %}
+{% assign previous_label = site.data.ui-text[locale].pagination_previous | default: "Previous" %}
+{% assign next_label = site.data.ui-text[locale].pagination_next | default: "Next" %}
+{% if locale == 'de-DE' %}
+  {% assign previous_label = "Zurück" %}
+  {% assign next_label = "Weiter" %}
+{% endif %}
+{% if page.previous or page.next %}
+  <nav class="pagination" aria-label="{% if locale == 'de-DE' %}Seitennavigation{% else %}Post pagination{% endif %}">
+    {% if page.previous %}
+      <a {% static_href %}href="{{ page.previous.url | relative_url }}"{% endstatic_href %} class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html | strip }}">{{ previous_label }}</a>
+    {% else %}
+      <a href="#" class="pagination--pager disabled" aria-disabled="true">{{ previous_label }}</a>
+    {% endif %}
+    {% if page.next %}
+      <a {% static_href %}href="{{ page.next.url | relative_url }}"{% endstatic_href %} class="pagination--pager" title="{{ page.next.title | markdownify | strip_html | strip }}">{{ next_label }}</a>
+    {% else %}
+      <a href="#" class="pagination--pager disabled" aria-disabled="true">{{ next_label }}</a>
+    {% endif %}
+  </nav>
+{% endif %}
