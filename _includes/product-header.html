@@ -62,7 +62,7 @@
           target="_blank"
           rel="nofollow sponsored noopener">
           <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-          <span class="en-buy-text"><strong>Buy on AliExpress — {{ store.price }}</strong><small>Sunton ESP32-8048S043C</small></span>
+          <span class="en-buy-text"><strong>Buy on AliExpress{% if store.price %} — <span class="en-price" data-en-price="{{ store.price }}" data-en-currency="{{ store.currency | default: 'EUR' }}">{{ store.price }} {{ store.currency | default: 'EUR' }}</span>{% endif %}</strong><small>Sunton ESP32-8048S043C</small></span>
           <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
         </a>
       {% elsif product.product_id == "guition-esp32-s3-4848s040" %}
@@ -78,13 +78,13 @@
           {% assign relay_offer = commerce.variants.with_relays %}
           <a class="en-buy-button" href="{{ relay_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
             <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Mit Relaismodul{% else %}With Relay Module{% endif %} — {{ relay_offer.price }}</strong><small>{% if site.active_lang == 'de' %}Bei AliExpress kaufen{% else %}Buy on AliExpress{% endif %}</small></span>
+            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Mit Relaismodul{% else %}With Relay Module{% endif %} — <span class="en-price" data-en-price="{{ relay_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ relay_offer.price }}</span></strong><small>{% if site.active_lang == 'de' %}Bei AliExpress kaufen{% else %}Buy on AliExpress{% endif %}</small></span>
             <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
           </a>
           {% assign lower_offer = commerce.variants.lower_cost %}
           <a class="en-buy-button" href="{{ lower_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
             <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Preisgünstigere Variante{% else %}Lower-Cost Option{% endif %} — {{ lower_offer.price }}</strong><small>{% if site.active_lang == 'de' %}Variante bei AliExpress prüfen{% else %}Check variant on AliExpress{% endif %}</small></span>
+            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Preisgünstigere Variante{% else %}Lower-Cost Option{% endif %} — <span class="en-price" data-en-price="{{ lower_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ lower_offer.price }}</span></strong><small>{% if site.active_lang == 'de' %}Variante bei AliExpress prüfen{% else %}Check variant on AliExpress{% endif %}</small></span>
             <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
           </a>
         </div>
@@ -99,6 +99,10 @@
       {% endif %}
 
     </div>
+
+    {% if product.product_id == "sunton-esp32-8048s043c" or product.product_id == "guition-esp32-s3-4848s040" %}
+      <small class="en-price-note">{% if site.active_lang == 'de' %}Umgerechneter Richtpreis; der endgültige Preis wird vom Händler festgelegt.{% else %}Converted estimate; the seller sets the final checkout price.{% endif %}</small>
+    {% endif %}
 
   </div>
 
