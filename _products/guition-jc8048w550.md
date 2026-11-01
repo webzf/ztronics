@@ -218,4 +218,4 @@ The 5-inch landscape display, ESP32-S3 and touch interface make it a suitable ha
 | [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) | 4.3-inch, 800×480 | Smaller 800×480 ESP32-S3 projects |
 | [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) | 4.3-inch, 800×480 | Alternative 4.3-inch touchscreen platform |
 
-Not sure which display fits your project? Use the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) to compare integrated ESP32 display boards.
+Comparing other 800×480 boards? See the [800×480 ESP32 touchscreen selector](/tools/esp32-touchscreen-selector/800x480/) to compare this Guition module with other displays at the same resolution, or use the [full ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/) to explore different sizes and interfaces.
