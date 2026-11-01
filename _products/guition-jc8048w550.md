@@ -19,7 +19,7 @@ alt: "Guition JC8048W550 ESP32-S3 5-inch 800×480 display module and controller 
 
 excerpt: "Guition JC8048W550 with ESP32-S3, 5-inch 800×480 IPS display, 8MB PSRAM, 16MB Flash, Wi-Fi and Bluetooth."
 
-description: "The Guition JC8048W550 is a 5-inch 800×480 ESP32-S3 HMI display module with 8MB PSRAM, 16MB Flash, Wi-Fi, Bluetooth and optional touch configurations. Check the seller's selected capacitive-touch variant before ordering."
+description: "The Guition JC8048W550 is a 5-inch 800×480 ESP32-S3 HMI display module with 8MB PSRAM, 16MB Flash, Wi-Fi, Bluetooth and no-touch, resistive or capacitive touch variants."
 
 categories:
   - Displays
@@ -58,7 +58,7 @@ specifications:
   - name: Display Controller
     value: "ST7262"
   - name: Touch
-    value: "Capacitive touch variant listed; other touch configurations may exist"
+    value: "NTP (no touch), RTP (resistive) or CTP (capacitive), depending on model suffix"
   - name: Wireless
     value: "2.4 GHz Wi-Fi and Bluetooth"
   - name: Storage Expansion
