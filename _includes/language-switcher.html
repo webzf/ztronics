@@ -1,29 +1,26 @@
 {% comment %}
-  Show language choices only when this exact page has real translations.
-  Use explicit translation URLs from front matter; page.url can remain the
-  source URL on a Polyglot-translated page.
+  Show flag links only when this exact page has real translations.
+  Translation URLs are explicit because Polyglot may retain the source page.url.
 {% endcomment %}
 {% assign translation_key = page.translation_id | default: page.product_id %}
 {% assign translation_paths = site.data.language_urls[translation_key] %}
 {% if page.available_languages and page.available_languages.size > 1 and translation_paths %}
   {% assign current_lang = page.lang | default: site.default_lang %}
-  <nav class="language-switcher" aria-label="Language">
-    <span class="language-switcher__label">{% if current_lang == 'de' %}Sprache:{% else %}Language:{% endif %}</span>
+  <nav class="language-switcher" aria-label="{% if current_lang == 'de' %}Sprache wählen{% else %}Choose language{% endif %}">
     {% for lang in site.languages %}
       {% if page.available_languages contains lang %}
         {% assign lang_path = translation_paths[lang] %}
         {% if lang_path %}
-        <a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="{{ lang }}" lang="{{ lang }}"{% if lang == current_lang %} aria-current="page"{% endif %}>
           {% case lang %}
-            {% when "en" %}English
-            {% when "de" %}Deutsch
-            {% when "fr" %}Français
-            {% when "es" %}Español
-            {% when "it" %}Italiano
-            {% when "nl" %}Nederlands
-            {% else %}{{ lang | upcase }}
+            {% when "en" %}
+              <a class="language-switcher__link" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="en" lang="en" title="English" aria-label="English"{% if lang == current_lang %} aria-current="page"{% endif %}>
+                <span aria-hidden="true">🇬🇧</span><span class="language-switcher__sr-only">English</span>
+              </a>
+            {% when "de" %}
+              <a class="language-switcher__link" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="de" lang="de" title="Deutsch" aria-label="Deutsch"{% if lang == current_lang %} aria-current="page"{% endif %}>
+                <span aria-hidden="true">🇩🇪</span><span class="language-switcher__sr-only">Deutsch</span>
+              </a>
           {% endcase %}
-        </a>
         {% endif %}
       {% endif %}
     {% endfor %}
