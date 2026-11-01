@@ -1,6 +1,6 @@
 ---
 ---
-{%- assign locale = page.locale | default: layout.locale | default: site.locale -%}
+{%- assign locale = page.lang | default: page.locale | default: layout.locale | default: site.locale -%}
 {%- comment -%}Use the language of the rendered content, not the URL prefix. Fallback copies remain English.{%- endcomment -%}
 {%- assign html_lang = page.rendered_lang | default: page.lang | default: site.default_lang | replace: '_', '-' -%}
 
