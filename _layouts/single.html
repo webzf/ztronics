@@ -99,7 +99,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       {% if page.share %}{% include social-share.html locale=locale %}{% endif %}
 
-      {% unless page.hide_post_pagination %}
+      {% unless page.hide_post_pagination or page.layout == 'product' %}
       {% include post_pagination.html locale=locale %}
       {% endunless %}
 
