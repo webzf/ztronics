@@ -27,7 +27,7 @@ When you contact us by email or through the live chat, we may collect the inform
 
 To display indicative product prices in euros (EUR) for visitors in Europe and US dollars (USD) elsewhere, this website may make a request to FreeIPAPI from your browser. The request allows the service to identify the country/continent associated with your public IP address; Embedded Nerd uses the continent result only to select the display currency. The lookup is handled by FreeIPAPI, which may process your IP address to provide this response. See [FreeIPAPI](https://freeipapi.com/) for information about the service.
 
-The website also requests the latest EUR/USD reference exchange rate from [Frankfurter](https://frankfurter.dev/) so that displayed estimates and corresponding Product structured data can use the same currency. Exchange rates are updated daily, and the rate may be cached in your browser. These converted amounts are estimates only; the seller's listing and checkout determine the actual price and currency. If either service is unavailable, the website keeps the original price rather than showing an unreliable conversion.
+The website also requests the latest EUR/USD reference exchange rate from [Frankfurter](https://frankfurter.dev/) so that displayed estimates and corresponding Product structured data can use the same currency. Exchange rates are updated daily. The browser uses the services' normal HTTP caching behaviour where available. These converted amounts are estimates only; the seller's listing and checkout determine the actual price and currency. If either service is unavailable, the website keeps the original price rather than showing an unreliable conversion.
 
 ## Live Chat (Tawk.to)
 
