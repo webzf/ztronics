@@ -1,45 +1,15 @@
 {% assign commerce = include.commerce %}
-
+{% assign german = false %}
+{% if page.lang == 'de' or site.active_lang == 'de' %}
+  {% assign german = true %}
+{% endif %}
 {% if commerce.badges %}
-
 <div class="en-product-badges">
-
-  {% if commerce.badges.recommended %}
-    <span class="en-badge recommended">
-      ⭐ Recommended
-    </span>
-  {% endif %}
-
-  {% if commerce.badges.editor_choice %}
-    <span class="en-badge editor-choice">
-      🏆 Editor's Choice
-    </span>
-  {% endif %}
-
-  {% if commerce.badges.best_value %}
-    <span class="en-badge best-value">
-      💰 Best Value
-    </span>
-  {% endif %}
-
-  {% if commerce.badges.beginner %}
-    <span class="en-badge beginner">
-      🎓 Beginner Friendly
-    </span>
-  {% endif %}
-
-  {% if commerce.badges.open_source %}
-    <span class="en-badge open-source">
-      🔓 Open Source
-    </span>
-  {% endif %}
-
-  {% if commerce.badges.low_power %}
-    <span class="en-badge low-power">
-      🔋 Low Power
-    </span>
-  {% endif %}
-
+  {% if commerce.badges.recommended %}<span class="en-badge recommended">⭐ {% if german %}Empfohlen{% else %}Recommended{% endif %}</span>{% endif %}
+  {% if commerce.badges.editor_choice %}<span class="en-badge editor-choice">🏆 {% if german %}Redaktionstipp{% else %}Editor's Choice{% endif %}</span>{% endif %}
+  {% if commerce.badges.best_value %}<span class="en-badge best-value">💰 {% if german %}Bestes Preis-Leistungs-Verhältnis{% else %}Best Value{% endif %}</span>{% endif %}
+  {% if commerce.badges.beginner %}<span class="en-badge beginner">🎓 {% if german %}Einsteigerfreundlich{% else %}Beginner Friendly{% endif %}</span>{% endif %}
+  {% if commerce.badges.open_source %}<span class="en-badge open-source">🔓 {% if german %}Open Source{% else %}Open Source{% endif %}</span>{% endif %}
+  {% if commerce.badges.low_power %}<span class="en-badge low-power">🔋 {% if german %}Niedriger Stromverbrauch{% else %}Low Power{% endif %}</span>{% endif %}
 </div>
-
 {% endif %}

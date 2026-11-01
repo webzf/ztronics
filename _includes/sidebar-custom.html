@@ -3,26 +3,19 @@
 {% assign sidebar_categories = page.categories | join: ' ' | downcase %}
 {% assign sidebar_product_id = page.product_id | default: '' | downcase %}
 {% assign sidebar_context = sidebar_title | append: ' ' | append: sidebar_tags | append: ' ' | append: sidebar_categories | append: ' ' | append: sidebar_product_id %}
-
 {% assign show_display_selector = false %}
 {% if page.layout != 'product' %}
   {% assign show_display_selector = true %}
 {% elsif sidebar_context contains 'display' or sidebar_context contains 'touchscreen' or sidebar_context contains 'esp32-s3' or sidebar_context contains 'lvgl' %}
   {% assign show_display_selector = true %}
 {% endif %}
-
 {% if page.url != '/tools/esp32-touchscreen-selector/' and show_display_selector %}
-  <section class="sidebar-display-banner" aria-label="ESP32 Display Selector">
-    <div class="sidebar-display-banner__icon" aria-hidden="true">
-      <i class="fas fa-display"></i>
-    </div>
-    <span class="sidebar-display-banner__eyebrow">Embedded Nerd Tool</span>
-    <h3>Choosing an ESP32 display?</h3>
-    <p>Compare touchscreen boards by size, interface, touch, PSRAM and LVGL support.</p>
-    <a href="{{ '/tools/esp32-touchscreen-selector/' | relative_url }}" class="btn btn--primary">
-      Try the Selector <span aria-hidden="true">→</span>
-    </a>
+  <section class="sidebar-display-banner" aria-label="{% if site.active_lang == 'de' %}ESP32-Display-Auswahl{% else %}ESP32 Display Selector{% endif %}">
+    <div class="sidebar-display-banner__icon" aria-hidden="true"><i class="fas fa-display"></i></div>
+    <span class="sidebar-display-banner__eyebrow">Embedded Nerd {% if site.active_lang == 'de' %}Werkzeug{% else %}Tool{% endif %}</span>
+    <h3>{% if site.active_lang == 'de' %}Sie suchen ein ESP32-Display?{% else %}Choosing an ESP32 display?{% endif %}</h3>
+    <p>{% if site.active_lang == 'de' %}Vergleichen Sie Touchscreen-Platinen nach Größe, Schnittstelle, Touch-Technologie, PSRAM und LVGL-Unterstützung.{% else %}Compare touchscreen boards by size, interface, touch, PSRAM and LVGL support.{% endif %}</p>
+    <a href="{{ '/tools/esp32-touchscreen-selector/' | relative_url }}" class="btn btn--primary">{% if site.active_lang == 'de' %}Auswahlassistent öffnen{% else %}Try the Selector{% endif %} <span aria-hidden="true">→</span></a>
   </section>
 {% endif %}
-
 <script src="{{ '/assets/js/sidebar-scroll.js' | relative_url }}" defer></script>

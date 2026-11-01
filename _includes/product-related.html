@@ -1,73 +1,30 @@
 {% assign product = include.product %}
-
 {% if product.related and product.related.size > 0 %}
-
 <section class="en-product-related">
-
-    <h3 class="en-section-title">
-
-        {% if site.active_lang == 'de' %}Das könnte Sie auch interessieren{% else %}You May Also Like{% endif %}
-
-    </h3>
-
-    <div class="en-related-grid">
-
-        {% for related_id in product.related %}
-
-            {% assign related = site.products | where: "product_id", related_id | first %}
-
-            {% if related %}
-
-            <a class="en-related-card"
-               href="{{ related.url | relative_url }}">
-
-                {% if related.image %}
-
-                <img
-                    src="{{ related.image | relative_url }}"
-                    alt="{{ related.title }}"
-                    loading="lazy"
-                    width="160"
-                    height="160">
-
-                {% endif %}
-
-                <div class="en-related-content">
-
-                    <strong>
-
-                        {{ related.title }}
-
-                    </strong><br>
-
-                    {% if related.excerpt %}
-
-                    <small>
-
-                        {{ related.excerpt | strip_html | truncate: 80 }}
-
-                    </small>
-
-                    {% elsif related.description %}
-
-                    <small>
-
-                        {{ related.description | truncate: 80 }}
-
-                    </small>
-
-                    {% endif %}
-
-                </div>
-
-            </a>
-
-            {% endif %}
-
-        {% endfor %}
-
-    </div>
-
+  <h3 class="en-section-title">{% if site.active_lang == 'de' %}Das könnte Sie auch interessieren{% else %}You May Also Like{% endif %}</h3>
+  <div class="en-related-grid">
+    {% for related_id in product.related %}
+      {% assign related = site.products | where: "product_id", related_id | first %}
+      {% if related %}
+      <a class="en-related-card" href="{{ related.url | relative_url }}">
+        {% if related.image %}<img src="{{ related.image | relative_url }}" alt="{{ related.title }}" loading="lazy" width="160" height="160">{% endif %}
+        <div class="en-related-content">
+          <strong>{{ related.title }}</strong><br>
+          {% if site.active_lang == 'de' and related_id == 'sunton-esp32-8048s043c' %}
+            <small>Breites 4,3-Zoll-ESP32-S3-Touchdisplay mit 800 × 480 Pixeln.</small>
+          {% elsif site.active_lang == 'de' and related_id == 'esp32-2432s028-2-8-cyd' %}
+            <small>Kompaktes und preisgünstiges 2,8-Zoll-ESP32-Touchdisplay.</small>
+          {% elsif site.active_lang == 'de' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}
+            <small>4,3-Zoll-IPS-Touchdisplay mit ESP32-S3 für HMI- und LVGL-Projekte.</small>
+          {% elsif related.excerpt %}
+            <small>{{ related.excerpt | strip_html | truncate: 80 }}</small>
+          {% elsif related.description %}
+            <small>{{ related.description | truncate: 80 }}</small>
+          {% endif %}
+        </div>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
 </section>
-
 {% endif %}

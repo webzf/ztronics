@@ -14,7 +14,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% include schema-howto.html %}
 {% endif %}
 
-{%- assign locale = page.locale | default: layout.locale | default: site.locale %}
+{%- assign locale = page.locale | default: layout.locale | default: site.locale -%}
+{% if page.lang == 'de' or site.active_lang == 'de' %}
+  {% assign locale = 'de-DE' %}
+{% endif %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html locale=locale %}
@@ -34,14 +37,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div id="main" role="main">
   {% include sidebar.html locale=locale %}
-  
-
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork" lang="{{ page.rendered_lang | default: page.lang | default: site.default_lang }}">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
-
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
@@ -54,13 +54,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </header>
       {% endunless %}
       {% include language-switcher.html %}
-
       <section class="page__content e-content" itemprop="text">
         {% if page.toc %}
           <div class="toc-mobile">
             <details>
               <summary>{{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: "Contents" }}</summary>
-              <nav class="toc" aria-label="Table of contents">
+              <nav class="toc" aria-label="{% if locale == 'de-DE' %}Inhaltsverzeichnis{% else %}Table of contents{% endif %}">
                 {% include toc.html sanitize=true html=content h_min=2 h_max=6 class="toc__menu" %}
               </nav>
             </details>
@@ -69,12 +68,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             {% if page.layout == 'product' %}
               <details class="toc-product-details">
                 <summary>{{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: "Contents" }}</summary>
-                <nav class="toc" aria-label="Table of contents">
+                <nav class="toc" aria-label="{% if locale == 'de-DE' %}Inhaltsverzeichnis{% else %}Table of contents{% endif %}">
                   {% include toc.html sanitize=true html=content h_min=2 h_max=6 class="toc__menu" %}
                 </nav>
               </details>
             {% else %}
-              <nav class="toc" aria-label="Table of contents">
+              <nav class="toc" aria-label="{% if locale == 'de-DE' %}Inhaltsverzeichnis{% else %}Table of contents{% endif %}">
                 <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: "On this page" }}</h4></header>
                 {% include toc.html sanitize=true html=content h_min=2 h_max=6 class="toc__menu" %}
               </nav>
@@ -83,12 +82,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {% endif %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
-
       </section>
-
-      
-
-      
       <footer class="page__meta">
         {% if site.data.ui-text[locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[locale].meta_label }}</h4>
@@ -96,34 +90,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {% include page__taxonomy.html locale=locale %}
         {% include page__date.html locale=locale %}
       </footer>
-
       {% if page.share %}{% include social-share.html locale=locale %}{% endif %}
-
       {% unless page.hide_post_pagination or page.layout == 'product' %}
       {% include post_pagination.html locale=locale %}
       {% endunless %}
-
-      
     </div>
-
     {% if site.comments.provider and page.comments %}
       {% if jekyll.environment == 'production' %}
         {% include comments.html locale=locale %}
       {% else %}
-        <p>
-          Comments are configured with provider: <strong>{{ site.comments.provider }}</strong>,
-          but are disabled in non-production environments.
-        </p>
+        <p>Comments are configured with provider: <strong>{{ site.comments.provider }}</strong>, but are disabled in non-production environments.</p>
       {% endif %}
     {% endif %}
     {% include post-related-products.html %}
   </article>
-
-  {% comment %}
-    Only show manually curated related posts. Automatic site.related_posts can include
-    articles that share broad topics but are not genuinely useful to the reader.
-    Add relative post URLs to the page's related_posts front matter array.
-  {% endcomment %}
   {% assign curated_related_posts = "" | split: "" %}
   {% if page.related_posts and page.related_posts.size > 0 %}
     {% assign curated_related_posts = site.posts | where_exp: "post", "page.related_posts contains post.url" %}
@@ -132,4 +112,3 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% include page__related.html locale=locale posts=curated_related_posts %}
   {% endif %}
 </div>
-
