@@ -62,7 +62,7 @@
           target="_blank"
           rel="nofollow sponsored noopener">
           <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-          <span class="en-buy-text"><strong>Buy on AliExpress{% if store.price %} — <span class="en-price" data-en-price="{{ store.price | remove: '€' | remove: '
+          <span class="en-buy-text"><strong>Buy on AliExpress{% if store.price %} — <span class="en-price" data-en-price="{{ store.price }}" data-en-currency="{{ store.currency | default: 'EUR' }}">{{ store.price }}</span>{% endif %}</strong><small>Sunton ESP32-8048S043C</small></span>
           <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
         </a>
       {% elsif product.product_id == "guition-esp32-s3-4848s040" %}
@@ -103,47 +103,6 @@
     {% if product.product_id == "sunton-esp32-8048s043c" or product.product_id == "guition-esp32-s3-4848s040" %}
       <small class="en-price-note">{% if site.active_lang == 'de' %}Umgerechneter Richtpreis; der endgültige Preis wird vom Händler festgelegt.{% else %}Converted estimate; the seller sets the final checkout price.{% endif %}</small>
     {% endif %}
-
-  </div>
-
-</div>
- | strip }}" data-en-currency="{{ store.currency | default: 'EUR' }}">{{ store.price }}</span>{% endif %}</strong><small>Sunton ESP32-8048S043C</small></span>
-          <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-        </a>
-      {% elsif product.product_id == "guition-esp32-s3-4848s040" %}
-        {% assign amazon_offer = commerce.stores.amazon %}
-        <div class="en-product-cta__buttons">
-          {% if amazon_offer.enabled and amazon_offer.affiliate_url %}
-          <a class="en-buy-button preferred" href="{{ amazon_offer.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener">
-            <span class="en-buy-icon"><i class="fab fa-amazon"></i></span>
-            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Preis bei Amazon prüfen{% else %}Check Price on Amazon{% endif %}</strong><small>Guition ESP32-S3-4848S040</small></span>
-            <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-          </a>
-          {% endif %}
-          {% assign relay_offer = commerce.variants.with_relays %}
-          <a class="en-buy-button" href="{{ relay_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
-            <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Mit Relaismodul{% else %}With Relay Module{% endif %} — {{ relay_offer.price }}</strong><small>{% if site.active_lang == 'de' %}Bei AliExpress kaufen{% else %}Buy on AliExpress{% endif %}</small></span>
-            <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-          </a>
-          {% assign lower_offer = commerce.variants.lower_cost %}
-          <a class="en-buy-button" href="{{ lower_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
-            <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Preisgünstigere Variante{% else %}Lower-Cost Option{% endif %} — {{ lower_offer.price }}</strong><small>{% if site.active_lang == 'de' %}Variante bei AliExpress prüfen{% else %}Check variant on AliExpress{% endif %}</small></span>
-            <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-          </a>
-        </div>
-      {% elsif store.enabled %}
-      <a
-        class="en-buy-button"
-        href="{{ store.affiliate_url }}"
-        target="_blank"
-        rel="nofollow sponsored noopener">
-        🛒 Check Price on {{ preferred | capitalize }}
-      </a>
-      {% endif %}
-
-    </div>
 
   </div>
 
