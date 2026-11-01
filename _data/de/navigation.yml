@@ -1,0 +1,61 @@
+main:
+  - title: "★ Display-Auswahl"
+    url: /tools/esp32-touchscreen-selector/
+  - title: "ESP32-Displays"
+    url: /esp32-touchscreen-displays-guide/
+  - title: "Sensoren"
+    url: /sensors/
+  - title: "Tutorials"
+    url: /tutorials/
+  - title: "Empfohlene Hardware"
+    url: /products/
+  - title: "Über uns"
+    url: /about/
+
+embedded:
+  - title: "Displays"
+    children:
+      - title: "ESP32-Touchscreen-Leitfaden"
+        url: /esp32-touchscreen-displays-guide/
+      - title: "★ ESP32-Touchscreen-Auswahl"
+        url: /tools/esp32-touchscreen-selector/
+      - title: "Sunton ESP32-8048S043C"
+        url: /products/sunton-esp32-8048s043c/
+      - title: "Guition ESP32-S3-4848S040"
+        url: /de/products/guition-esp32-s3-4848s040/
+      - title: "ESP32-2432S028 (CYD, 2,8 Zoll)"
+        url: /products/esp32-2432s028-2-8-cyd/
+      - title: "Projekte mit runden Displays"
+        url: /esp32-p4-round-touchscreen-display-projects/
+  - title: "Sensoren & I2C"
+    children:
+      - title: "Alle Sensoren"
+        url: /sensors/
+      - title: "I2C-Scanner-Anleitung"
+        url: /i2c-scanner-tutorial/
+      - title: "I2C-Adressen-Suche"
+        url: /tools/i2c-address-lookup/
+      - title: "I2C-Pull-up-Widerstandsrechner"
+        url: /tools/i2c-pullup-resistor-calculator/
+      - title: "MPU6050 kalibrieren"
+        url: /mpu6050-calibration-guide/
+      - title: "Alternativen zum MPU6050"
+        url: /mpu6050-discontinued-alternatives/
+      - title: "BMA400-Anleitung"
+        url: /bma400-esp32-tutorial-wiring-code-arduino-guide/
+  - title: "Erste Schritte"
+    children:
+      - title: "ESP32 OLED"
+        url: /esp32-oled-tutorial-wiring-code-display-guide/
+      - title: "MPU6050 Arduino-Anleitung"
+        url: /mpu6050-arduino-guide/
+      - title: "Raspberry-Pi-IT-Projekte"
+        url: /raspberry-pi-it-projects/
+  - title: "Entdecken"
+    children:
+      - title: "Alle Tutorials"
+        url: /tutorials/
+      - title: "Alle Produkte"
+        url: /products/
+      - title: "Alle Tools"
+        url: /tools/
