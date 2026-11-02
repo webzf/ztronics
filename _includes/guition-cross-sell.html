@@ -1,0 +1,26 @@
+{% assign product_id = include.product.product_id %}
+
+{% if product_id == "guition-jc8048w550" %}
+  <div class="notice--info" style="display:flex;align-items:center;gap:1rem;margin:1.5rem 0;padding:1rem;border:1px solid var(--border-color,#ddd);border-radius:8px;">
+    <img src="{{ '/assets/images/products/guition-4848s040-home-assistant-review.webp' | relative_url }}" alt="Guition ESP32-S3-4848S040 4-inch square touchscreen" loading="lazy" style="width:112px;max-width:32%;height:auto;object-fit:contain;">
+    <div>
+      <strong>Prefer a more compact square display?</strong>
+      <p style="margin:.35rem 0;">The <a href="{{ '/products/guition-esp32-s3-4848s040/' | relative_url }}">Guition ESP32-S3-4848S040</a> has a 4-inch 480×480 panel with capacitive touch, 8MB PSRAM and 16MB Flash.</p>
+      <a href="{{ '/products/guition-esp32-s3-4848s040/' | relative_url }}">View the 4-inch Guition display →</a>
+    </div>
+  </div>
+{% elsif product_id == "guition-esp32-s3-4848s040" %}
+  <div class="notice--info" style="display:flex;align-items:center;gap:1rem;margin:1.5rem 0;padding:1rem;border:1px solid var(--border-color,#ddd);border-radius:8px;">
+    <img src="{{ '/assets/images/products/guition-jc8048w550-kit.webp' | relative_url }}" alt="{% if site.active_lang == 'de' %}Guition JC8048W550 ESP32-S3-Display mit 5 Zoll{% else %}Guition JC8048W550 5-inch ESP32-S3 display{% endif %}" loading="lazy" style="width:112px;max-width:32%;height:auto;object-fit:contain;">
+    <div>
+      <strong>{% if site.active_lang == 'de' %}Sie bevorzugen ein größeres 5-Zoll-Display?{% else %}Prefer a larger 5-inch display?{% endif %}</strong>
+      {% if site.active_lang == 'de' %}
+        <p style="margin:.35rem 0;">Das <a href="{{ '/products/guition-jc8048w550/' | relative_url }}">Guition JC8048W550</a> bietet ein 800 × 480 Pixel großes IPS-Display im Querformat, ESP32-S3, 8 MB PSRAM und 16 MB Flash.</p>
+        <a href="{{ '/products/guition-jc8048w550/' | relative_url }}">Zum 5-Zoll-Guition-Display →</a>
+      {% else %}
+        <p style="margin:.35rem 0;">The <a href="{{ '/products/guition-jc8048w550/' | relative_url }}">Guition JC8048W550</a> offers an 800×480 landscape panel with the ESP32-S3, 8MB PSRAM and 16MB Flash.</p>
+        <a href="{{ '/products/guition-jc8048w550/' | relative_url }}">View the 5-inch Guition display →</a>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
