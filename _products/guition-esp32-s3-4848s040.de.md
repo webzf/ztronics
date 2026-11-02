@@ -9,7 +9,7 @@ available_languages:
 english_url: /products/guition-esp32-s3-4848s040/
 german_url: /de/products/guition-esp32-s3-4848s040/
 internal_links: true
-title: "Guition ESP32-S3-4848S040"
+title: "Guition ESP32-S3-4848S040: 4-Zoll-Touchscreen für Home Assistant"
 product_verdict: "Eine interessante Wahl für ein quadratisches 4-Zoll-Touchscreen-Dashboard mit 480 × 480 Pixeln auf ESP32-S3-Basis. Prüfen Sie vor dem Kauf die Relaisvariante und die Abmessungen für die Montage."
 editorial_review:
   rating: 9.5
@@ -26,8 +26,8 @@ editorial_review:
     - "Das RGB-Display belegt zahlreiche GPIOs; freie Pins müssen vor dem Anschluss weiterer Peripherie geprüft werden"
     - "Community-Konfigurationen sollten mit der genauen Hardware-Revision abgeglichen werden"
     - "Relaismodule und Gehäuse unterscheiden sich je nach Angebot; Kompatibilität und Abmessungen vor dem Kauf prüfen"
-seo_title: "Guition ESP32-S3-4848S040: 4-Zoll-Display mit 480 × 480 Pixeln"
-seo_description: "Guition ESP32-S3-4848S040 im Überblick: 4-Zoll-Touchdisplay, 480 × 480 Pixel, GPIO-Belegung, GT911 und Hinweise zur ESPHome-Einrichtung."
+seo_title: "Guition ESP32-S3-4848S040 kaufen: 4-Zoll-Display, Specs & Relais-Variante"
+seo_description: "Guition ESP32-S3-4848S040 (ESP32-4848S040): 4-Zoll-Touchdisplay mit 480×480, mit oder ohne Relais und wo kaufen."
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
@@ -105,14 +105,28 @@ related:
   - esp32-2432s028-2-8-cyd
   - waveshare-esp32-s3-touch-lcd-4-3
 ---
-Das **Guition ESP32-S3-4848S040** ist eine 4,0 Zoll große ESP32-S3-Touchscreen-Platine mit quadratischem IPS-Display (480 × 480 Pixel), kapazitivem GT911-Touch, 16 MB Flash und 8 MB PSRAM. Sie eignet sich für kompakte Home-Assistant-Dashboards, Wandpanels und eigene LVGL-Oberflächen.
+Das **Guition ESP32-S3-4848S040** ist ein 4-Zoll-ESP32-S3-Touchscreen mit 480 × 480 Pixeln für kompakte Home-Assistant-Dashboards und Wandpanels. Das Modell wird auch unter der Bezeichnung **ESP32-4848S040** gesucht; in manchen Platinen- und Händlerreferenzen erscheint **4848S040C_I**. Prüfen Sie vor dem Kauf die genaue Revision und den Lieferumfang.
+
+Den ausführlichen [4848S040-Pinout- und ESPHome-Einrichtungsleitfaden](/guition-esp32-s3-4848s040-pinout-esphome/) finden Sie in unserem separaten Technikartikel.
 
 
 ## Lohnt sich das Guition ESP32-S3-4848S040?
 
-Diese Platine ist eine interessante Wahl, wenn Sie ein quadratisches 4-Zoll-Touchdisplay für ein Home-Assistant-Dashboard, ein Wandpanel oder eine eigene LVGL-Oberfläche suchen. Die Auflösung von 480 × 480 Pixeln bietet ein quadratisches Layout. Mit 16 MB Flash und 8 MB PSRAM steht außerdem Speicher für umfangreichere Benutzeroberflächen zur Verfügung.
+Die Platine eignet sich, wenn Sie ein kompaktes quadratisches Touchdisplay für ein Home-Assistant-Dashboard, ein Wandpanel oder eine eigene LVGL-Oberfläche benötigen. Die wichtigste Kaufentscheidung ist die Relaisausführung: Die Variante ohne Relais ist einfacher, während das Relaispaket zusätzliche Schalttechnik bietet, aber nicht in eine standardmäßige runde EU-Unterputzdose mit 60 mm Durchmesser passt.
 
-Prüfen Sie vor der Bestellung, ob das Angebot nur die Displayplatine oder zusätzlich Relais und ein Gehäuse umfasst. Die Relaisausführung passt möglicherweise nicht in eine standardisierte runde EU-Unterputzdose mit 60 mm Durchmesser.
+## Relais und Installation: Welche Variante ist sinnvoll?
+
+| Variante | Preis | Lieferumfang | Passt in eine runde EU-Unterputzdose mit 60 mm? |
+|---|---|---|---|
+| **Mit Relais** | Aktuellen AliExpress-Preis prüfen | Display-/ESP32-S3-Platine plus Relaisbaugruppe; Gehäuse und Netzteil im Angebot prüfen | **Nein** — laut ESPHome-Devices-Hardwarehinweisen passt die Relaisbaugruppe nicht in eine standardmäßige runde 60-mm-Dose |
+| **Ohne Relais** | Aktuellen AliExpress-Preis prüfen | Display-/ESP32-S3-Platine; genauen Lieferumfang des Angebots prüfen | **Nicht bestätigt** — die Platine allein garantiert keine Kompatibilität mit einem bestimmten Gehäuse |
+
+Die Preise können sich je nach Händler, Lieferland, Versand und gewählter Variante ändern. Prüfen Sie den aktuellen AliExpress-Preis vor dem Kauf.
+
+<div class="en-product-cta__buttons">
+  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-relay/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Preis prüfen — Mit Relais</strong><small>AliExpress · Lieferumfang prüfen</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-standard/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Preis prüfen — Ohne Relais</strong><small>AliExpress · Variante prüfen</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+</div>
 
 ## Technische Daten im Überblick
 
@@ -136,7 +150,7 @@ Die Angaben beruhen auf Hersteller- und Community-Dokumentationen. Händlerangeb
 
 Das 4-Zoll-IPS-Panel besitzt eine quadratische Auflösung von 480 × 480 Pixeln und verwendet den Displaycontroller ST7701/ST7701S. Die kapazitive Touch-Funktion wird vom GT911 gesteuert. Die für dieses Modell häufig angebotene ESP32-S3-Konfiguration umfasst 16 MB Flash und 8 MB PSRAM.
 
-Die RGB-Display-Schnittstelle benötigt eine beträchtliche Anzahl an GPIOs. Wenn Ihr Projekt zusätzliche Sensoren, SPI-Peripherie oder andere externe Hardware benötigt, sollten Sie vor der Entscheidung die Pinbelegung und die tatsächlich verfügbaren GPIOs prüfen.
+Die RGB-Display-Schnittstelle benötigt zahlreiche GPIOs. Prüfen Sie vor dem Anschluss weiterer Peripherie die genaue Pinbelegung Ihrer Platinenrevision; die vollständigen Details stehen im separaten Pinout-Leitfaden.
 
 ## Pinbelegung und GPIO-Nutzung des Guition ESP32-S3-4848S040
 
@@ -170,9 +184,7 @@ Referenz: [ESPHome Devices – Guition ESP32-S3-4848S040](https://devices.esphom
 
 ## Mit oder ohne Relais
 
-Das 4848S040 wird in mehreren Ausführungen verkauft. Einige Angebote enthalten ein Relaismodul und ein Wandgehäuse, andere nur die Display-/ESP32-S3-Platine. Gehen Sie nicht davon aus, dass Relais, Netzteil oder Gehäuse enthalten sind, sofern dies in der ausgewählten Variante nicht ausdrücklich angegeben ist.
-
-Prüfen Sie bei Installationen in der EU sorgfältig die vollständigen Abmessungen und die Gehäusebilder. Die Relaisversion passt möglicherweise nicht in eine runde EU-Unterputzdose mit 60 mm Durchmesser. Arbeiten an Netzspannung dürfen nur von entsprechend qualifizierten Personen durchgeführt werden.
+Das 4848S040 ist mit und ohne Relaisbaugruppe erhältlich. Laut ESPHome Devices passt die Relaisausführung nicht in eine standardmäßige runde EU-Unterputzdose mit 60 mm Durchmesser. Bei der Variante ohne Relais müssen die Abmessungen des vorgesehenen Gehäuses separat geprüft werden. Netzteil und Gehäuse sind nur enthalten, wenn sie im gewählten Angebot ausdrücklich aufgeführt sind. Arbeiten an Netzspannung dürfen nur von entsprechend qualifizierten Personen durchgeführt werden.
 
 ## ESPHome, Home Assistant und LVGL
 
@@ -193,7 +205,7 @@ Verwenden Sie die aktuelle [ESPHome-YAML-Vorlage des Projekts](https://github.co
 
 Wählen Sie die Ausführung, die zu Ihrem Projekt passt. Preise sind Richtwerte und können sich ändern. Prüfen Sie vor der Bestellung die ausgewählte Variante, die Versandkosten und den endgültigen Gesamtpreis auf der Händlerseite.
 
-Die Kaufschaltflächen oben führen zu Amazon und zwei AliExpress-Varianten. Die Version mit Relais wird getrennt von der günstigeren Option angeboten. Prüfen Sie vor dem Kauf die gewählte Ausführung und das enthaltene Zubehör. Ein Relaismodul oder Gehäuse ist nicht bei jedem Angebot enthalten.
+Die Kaufschaltflächen oben und die Vergleichstabelle führen zu den beiden AliExpress-Ausführungen. Auf feste Preisangaben verzichten wir, da der Händler Preise abhängig von Lieferland, Versand und ausgewählter Variante ändern kann. Prüfen Sie vor dem Kauf den aktuellen Preis und den genauen Lieferumfang.
 
 Als Affiliate-Website kann Embedded Nerd bei qualifizierten Käufen eine Provision erhalten, ohne dass Ihnen dadurch zusätzliche Kosten entstehen.
 
@@ -209,7 +221,11 @@ Ja. Die dokumentierte 4848S040-Konfiguration verwendet einen kapazitiven Touchco
 
 ### Wird das Guition ESP32-S3-4848S040 mit Relais geliefert?
 
-Nicht immer. Es gibt Versionen mit und ohne Relaismodul; manche Angebote enthalten zusätzlich ein Gehäuse. Prüfen Sie die ausgewählte Variante und das angegebene Zubehör.
+Nicht immer. Es gibt Versionen mit und ohne Relaisbaugruppe. Prüfen Sie die gewählte Variante und den Lieferumfang; ein Gehäuse oder Netzteil ist nicht automatisch enthalten.
+
+### Welche Variante sollte ich kaufen: mit oder ohne Relais?
+
+Wählen Sie die **Variante ohne Relais**, wenn Sie nur das 4-Zoll-Touchdisplay für ein Home-Assistant-Dashboard oder ein LVGL-Projekt benötigen. Die **Relaisversion** ist nur sinnvoll, wenn Sie die Schalttechnik benötigen und ein passendes Gehäuse haben: Sie passt nicht in eine standardmäßige runde EU-Unterputzdose mit 60 mm Durchmesser.
 
 ### Funktioniert das Guition ESP32-S3-4848S040 mit ESPHome?
 
