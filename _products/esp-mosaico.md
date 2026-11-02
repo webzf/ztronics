@@ -178,33 +178,51 @@ For actual commands, USB/serial setup and revision-specific caveats, consult the
 - Expansion modules have placement and compatibility rules; the camera module is limited to the left slot.
 - CoreBoard V1.0 and V1.2 are not identical. The V1.2 guide documents pin and power-related changes, so old pinouts should not be applied blindly.
 
-## ESP-Mosaico vs Waveshare ESP32-S3-Touch-AMOLED-2.16
+## ESP-Mosaico vs Waveshare ESP32-S3 and ESP32-C6 alternatives
 
-Both boards have a 2.16-inch 480 × 480 AMOLED touchscreen with a CO5300 display controller and CST9220-series capacitive touch. The main distinction is the platform and the surrounding hardware, not the panel resolution.
+All three boards use a 2.16-inch 480 × 480 AMOLED touchscreen with a CO5300 display driver and CST9220 capacitive touch controller. The important differences are the processor, memory, onboard hardware and expansion approach.
 
-| Feature | ESP-Mosaico | Waveshare ESP32-S3-Touch-AMOLED-2.16 |
-|---|---|---|
-| SoC | ESP32-S31, dual-core RISC-V up to 320 MHz | ESP32-S3R8, dual-core Xtensa LX7 up to 240 MHz |
-| Display | 2.16-inch 480 × 480 AMOLED | 2.16-inch 480 × 480 AMOLED |
-| Memory | 16 MB in-package PSRAM | 8 MB PSRAM |
-| Storage | 16 MB SPI NOR + 128 MB SPI NAND | 16 MB Flash and TF card slot |
-| Sensors | BMI270 IMU and two BMM150 magnetometers | QMI8658 IMU and PCF85063 RTC |
-| Expansion approach | Two 2 × 10-pin module headers and ESP-Mosaico modules | Board-level peripherals and TF card slot |
-| Software starting point | ESP-IDF target `esp32s31`, Espressif BSP and ESP-Claw resources | ESP-IDF / Arduino IDE support and Waveshare documentation |
+| Feature | ESP-Mosaico | Waveshare ESP32-S3-Touch-AMOLED-2.16 | Waveshare ESP32-C6-Touch-AMOLED-2.16 |
+|---|---|---|---|
+| SoC | ESP32-S31, dual-core RISC-V up to 320 MHz | ESP32-S3R8, dual-core Xtensa LX7 up to 240 MHz | ESP32-C6, single-core RISC-V up to 160 MHz |
+| Display | 2.16-inch 480 × 480 AMOLED | 2.16-inch 480 × 480 AMOLED | 2.16-inch 480 × 480 AMOLED |
+| RAM | 16 MB in-package PSRAM | 8 MB PSRAM | 512 KB HP SRAM + 16 KB LP SRAM; no PSRAM listed |
+| Flash / storage | 16 MB SPI NOR + 128 MB SPI NAND | 16 MB Flash + TF card slot | 16 MB Flash + TF card slot |
+| Sensors | BMI270 IMU and two BMM150 magnetometers | QMI8658 IMU and PCF85063 RTC | QMI8658 IMU and PCF85063 RTC |
+| Wireless | Wi-Fi 6, Bluetooth 5.4, 802.15.4 | 2.4 GHz Wi-Fi, Bluetooth 5 LE | Wi-Fi 6, Bluetooth 5 LE, 802.15.4 |
+| Expansion | Two 2 × 10-pin module headers and ESP-Mosaico modules | Board-level peripherals and exposed pads | Board-level peripherals and exposed pads |
+| Development | ESP-IDF target `esp32s31`, Espressif BSP and ESP-Claw resources | ESP-IDF and Arduino IDE | ESP-IDF and Arduino IDE |
 
-Choose ESP-Mosaico if you specifically want the ESP32-S31 platform, its onboard storage and modular expansion approach. Choose the Waveshare board if your project is already built around the ESP32-S3 ecosystem or its documented peripheral set. Check the current documentation and kit contents for either board before ordering.
+**Choose ESP-Mosaico** if you want its modular ecosystem, dual magnetometers, larger memory resources and dedicated ESP32-S31 platform. **Choose the Waveshare ESP32-S3 version** if you want a dual-core ESP32-S3 with 8 MB PSRAM at a much lower price. **Choose the ESP32-C6 version** if lower cost, Wi-Fi 6 and 802.15.4 matter more than multicore processing or external PSRAM.
 
-See the [Waveshare ESP32-S3-Touch-AMOLED-2.16 product page](/products/waveshare-esp32-s3-touch-amoled-2-16/) for its specifications and buying considerations.
+These are alternatives for different project requirements, not exact replacements for one another. In particular, the ESP32-C6 is single-core and does not list external PSRAM, so do not assume it will handle the same workloads as the S3 or ESP-Mosaico.
 
-## ESP32-S31 price and availability
+See the individual product pages for more details:
+- [Waveshare ESP32-S3-Touch-AMOLED-2.16](/products/waveshare-esp32-s3-touch-amoled-2-16/)
+- [Waveshare ESP32-C6-Touch-AMOLED-2.16 official product page](https://www.waveshare.com/esp32-c6-touch-amoled-2.16.htm)
 
-Prices can vary by seller, selected kit variant, shipping and taxes, and may change without notice. Check the current AliExpress listing for the latest price and confirm the exact kit contents before checkout.
+## Where to buy: official ESP-Mosaico vs lower-cost alternatives
 
-*Disclosure: This page contains an AliExpress affiliate link. Embedded Nerd may earn a commission if you make a qualifying purchase through it, at no additional cost to you.*
+If you specifically want the ESP-Mosaico Vision Combo Kit and its modular accessories, the official store is the clearest place to start. The official listing shows the Vision Combo Kit at **US$59**; check the live listing for the current pre-order status, dispatch estimate, shipping and taxes before ordering.
 
-<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="nofollow sponsored noopener noreferrer">Check ESP-Mosaico price on AliExpress</a></p>
+<p><a class="btn btn--primary" href="https://store.mosaico.ai/products/esp-mosaico" target="_blank" rel="noopener noreferrer">Buy ESP-Mosaico from the official store</a></p>
 
-Before checkout, confirm that the listing is for the **ESP-Mosaico Vision Combo Kit V1.2** and check the included modules, shipping, delivery estimate and any applicable taxes.
+There is also an AliExpress listing linked below. This is a third-party marketplace offer, not the official Espressif store. Compare its final checkout price with the official US$59 listing and verify that the selected option includes the Core Unit, Camera Module and Multi-function Interaction Module before purchasing.
+
+<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="nofollow sponsored noopener noreferrer">Check ESP-Mosaico on AliExpress</a></p>
+
+### Lower-cost 2.16-inch AMOLED alternatives
+
+| Board | Current manufacturer price | Where to buy | Main trade-off |
+|---|---:|---|---|
+| **Waveshare ESP32-S3-Touch-AMOLED-2.16** | US$29.99–31.99 | [Check AliExpress offer](/go/hardware/waveshare-esp32-s3-touch-amoled-2-16/) · [Waveshare product page](https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm) | Dual-core ESP32-S3 and 8 MB PSRAM, but no ESP-Mosaico modular ecosystem |
+| **Waveshare ESP32-C6-Touch-AMOLED-2.16** | US$29.99–31.99 | [Waveshare product page](https://www.waveshare.com/esp32-c6-touch-amoled-2.16.htm) | Lower-cost single-core C6 with Wi-Fi 6 and 802.15.4; no external PSRAM listed |
+
+The Waveshare prices are manufacturer-listed ranges and can vary with the battery option. The ESP32-S3 AliExpress link is an affiliate link; the ESP32-C6 link currently goes directly to Waveshare because Embedded Nerd does not yet have a verified affiliate offer for that exact model.
+
+*Affiliate disclosure: Embedded Nerd may earn a commission from qualifying purchases made through the AliExpress links above, at no additional cost to you. The official Espressif store and Waveshare direct product links are not affiliate links.*
+
+Before ordering any of these boards, confirm the selected version, battery inclusion, shipping, delivery estimate and applicable taxes.
 
 ## Revision notes: V1.0 vs V1.2
 
