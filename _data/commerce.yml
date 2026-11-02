@@ -871,9 +871,9 @@ esp-mosaico:
       affiliate_url: "https://s.click.aliexpress.com/e/_c4Dnkhan"
 
     official:
-      enabled: false
+      enabled: true
       product_url: "https://store.mosaico.ai/products/esp-mosaico"
-      affiliate_url: ""
+      affiliate_url: "https://store.mosaico.ai/products/esp-mosaico"
 
   display:
     name: "ESP-Mosaico"
