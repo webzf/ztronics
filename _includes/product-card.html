@@ -3,16 +3,16 @@
 {% unless product_image contains "://" %}
   {% assign product_image = product_image | relative_url %}
 {% endunless %}
-<div class="en-product-card" data-title="{{ include.product.title | downcase }}" data-platforms="{{ include.product.categories | join: ',' | downcase }}" data-manufacturer="{{ include.product.manufacturer | downcase }}" data-description="{{ include.product.excerpt | downcase }}">
-  <a class="en-product-card__image" href="{{ include.product.url | relative_url }}">
-    <img src="{{ product_image }}" alt="{{ include.product.title }}" loading="lazy">
+<div class="en-product-card" data-title="{{ include.product.title | downcase | escape }}" data-platforms="{{ include.product.categories | join: ',' | downcase | escape }}" data-manufacturer="{{ include.product.manufacturer | downcase | escape }}" data-description="{{ include.product.excerpt | downcase | escape }}">
+  <a class="en-product-card__image" href="{{ include.product.url | relative_url | escape }}">
+    <img src="{{ product_image | escape }}" alt="{{ include.product.title | escape }}" loading="lazy">
     {% if commerce.badges.recommended %}
       <span class="en-badge en-badge--recommended">{% if site.active_lang == 'de' %}Empfohlen{% else %}Recommended{% endif %}</span>
     {% endif %}
   </a>
   <div class="en-product-card__body">
     {% if include.product.manufacturer %}<div class="en-product-card__manufacturer">{{ include.product.manufacturer }}</div>{% endif %}
-    <h3><a href="{{ include.product.url | relative_url }}">{{ include.product.title }}</a></h3>
+    <h3><a href="{{ include.product.url | relative_url | escape }}">{{ include.product.title | escape }}</a></h3>
     <p>
       {% if site.active_lang == 'de' and include.product.product_id == 'sunton-esp32-8048s043c' %}
         ESP32-S3-Touchscreen-Platine mit 4,3-Zoll-Display und 800 × 480 Pixeln.
@@ -24,7 +24,7 @@
     </p>
     <div class="en-product-card__footer">
       {% for category in include.product.categories %}<span class="en-tag">{% if site.active_lang == 'de' and category == 'Displays' %}Displays{% elsif site.active_lang == 'de' and category == 'Smart Home' %}Smart Home{% else %}{{ category }}{% endif %}</span>{% endfor %}
-      <a class="en-view-product" href="{{ include.product.url | relative_url }}">{% if site.active_lang == 'de' %}Produkt ansehen{% else %}View Product{% endif %} →</a>
+      <a class="en-view-product" href="{{ include.product.url | relative_url | escape }}">{% if site.active_lang == 'de' %}Produkt ansehen{% else %}View Product{% endif %} →</a>
     </div>
   </div>
 </div>
