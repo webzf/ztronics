@@ -113,14 +113,6 @@ related:
 ---
 The Guition ESP32-S3-4848S040 is a 4.0-inch (4″) ESP32-S3 touchscreen board with a square 480×480 IPS display, GT911 capacitive touch, 16MB Flash and 8MB PSRAM. It is designed for compact Home Assistant dashboards, wall panels and custom LVGL interfaces.
 
-<div class="notice--info" style="display:flex;align-items:center;gap:1rem;margin:1.5rem 0;padding:1rem;border:1px solid var(--border-color,#ddd);border-radius:8px;">
-  <img src="/assets/images/products/guition-jc8048w550-kit.webp" alt="Guition JC8048W550 5-inch ESP32-S3 display" loading="lazy" style="width:112px;max-width:32%;height:auto;object-fit:contain;">
-  <div>
-    <strong>Prefer a larger 5-inch display?</strong>
-    <p style="margin:.35rem 0;">The <a href="/products/guition-jc8048w550/">Guition JC8048W550</a> offers an 800×480 landscape panel with the ESP32-S3, 8MB PSRAM and 16MB Flash.</p>
-    <a href="/products/guition-jc8048w550/">View the 5-inch Guition display →</a>
-  </div>
-</div>
 
 ## Is the Guition ESP32-S3-4848S040 Worth Buying?
 

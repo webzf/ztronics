@@ -107,14 +107,6 @@ related:
 ---
 Das **Guition ESP32-S3-4848S040** ist eine 4,0 Zoll große ESP32-S3-Touchscreen-Platine mit quadratischem IPS-Display (480 × 480 Pixel), kapazitivem GT911-Touch, 16 MB Flash und 8 MB PSRAM. Sie eignet sich für kompakte Home-Assistant-Dashboards, Wandpanels und eigene LVGL-Oberflächen.
 
-<div class="notice--info" style="display:flex;align-items:center;gap:1rem;margin:1.5rem 0;padding:1rem;border:1px solid var(--border-color,#ddd);border-radius:8px;">
-  <img src="/assets/images/products/guition-jc8048w550-kit.webp" alt="Guition JC8048W550 ESP32-S3-Display mit 5 Zoll" loading="lazy" style="width:112px;max-width:32%;height:auto;object-fit:contain;">
-  <div>
-    <strong>Sie bevorzugen ein größeres 5-Zoll-Display?</strong>
-    <p style="margin:.35rem 0;">Das <a href="/products/guition-jc8048w550/">Guition JC8048W550</a> bietet ein 800 × 480 Pixel großes IPS-Display im Querformat, ESP32-S3, 8 MB PSRAM und 16 MB Flash.</p>
-    <a href="/products/guition-jc8048w550/">Zum 5-Zoll-Guition-Display →</a>
-  </div>
-</div>
 
 ## Lohnt sich das Guition ESP32-S3-4848S040?
 

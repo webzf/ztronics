@@ -24,14 +24,16 @@ Embedded Nerd Product Box v6 Final
       product=product
       commerce=commerce %}
 
-  {% include product-specifications.html
-      product=product %}
-
-  {% include buy-buttons.html
-      product=product.product_id %}
-  
-  {% include affiliate-disclosure.html
-    commerce=commerce %}
+  {% if product.product_id == "guition-jc8048w550" or product.product_id == "guition-esp32-s3-4848s040" %}
+    {% include buy-buttons.html product=product.product_id %}
+    {% include affiliate-disclosure.html commerce=commerce %}
+    {% include guition-cross-sell.html product=product %}
+    {% include product-specifications.html product=product %}
+  {% else %}
+    {% include product-specifications.html product=product %}
+    {% include buy-buttons.html product=product.product_id %}
+    {% include affiliate-disclosure.html commerce=commerce %}
+  {% endif %}
 
   {% include product-links.html
       product=product %}
