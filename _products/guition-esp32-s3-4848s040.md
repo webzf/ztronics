@@ -124,8 +124,8 @@ Choose this board if you need a compact square touchscreen for a Home Assistant 
 
 | Option | Price | What is included | Fits a standard EU 60 mm round box? |
 |---|---|---|---|
-| **With relay** | Check current AliExpress price | Display/ESP32-S3 board plus relay assembly; verify whether the enclosure and power supply are included | **No** — the relay assembly is documented as not fitting a standard 60 mm round box |
-| **Without relay** | Check current AliExpress price | Display/ESP32-S3 board only; check the seller's exact bundle | **Not confirmed** — the bare board does not establish enclosure compatibility; check the dimensions of the case you plan to use |
+| **With relay** | **€43.81** | Display/ESP32-S3 board plus relay assembly; verify whether the enclosure and power supply are included | **No** — the relay assembly is documented as not fitting a standard 60 mm round box |
+| **Without relay** | **€33.57** | Display/ESP32-S3 board only; check the seller's exact bundle | **Not confirmed** — the bare board does not establish enclosure compatibility; check the dimensions of the case you plan to use |
 
 Prices can change by seller, destination, shipping and selected variant. Check the live AliExpress listing before checkout.
 
