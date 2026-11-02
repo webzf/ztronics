@@ -197,6 +197,7 @@ Ready to choose a board? Visit the [Guition ESP32-S3-4848S040 product page](/pro
 
 ## Related resources
 
+- [Guition JC8048W550 5-inch ESP32-S3 display](/products/guition-jc8048w550/) — a larger 800×480 landscape alternative.
 - [Guition ESP32-S3-4848S040 product page](/products/guition-esp32-s3-4848s040/)
 - [ESP32 touchscreen selector](/tools/esp32-touchscreen-selector/)
 - [ESP32 touchscreen displays guide](/esp32-touchscreen-displays-guide/)

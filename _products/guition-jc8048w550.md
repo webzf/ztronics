@@ -89,6 +89,15 @@ The **Guition JC8048W550** is a 5-inch ESP32-S3 HMI display module with an 800×
 
 The AliExpress listing we link to advertises a capacitive-touch version. GUITION's documentation identifies three model suffixes — JC8048W550N_I (no touch), JC8048W550R_I (resistive touch) and JC8048W550C_I (capacitive touch) — so make sure the selected option matches the touch hardware you need.
 
+<div class="notice--info" style="display:flex;align-items:center;gap:1rem;margin:1.5rem 0;padding:1rem;border:1px solid var(--border-color,#ddd);border-radius:8px;">
+  <img src="/assets/images/products/guition-4848s040-home-assistant-review.webp" alt="Guition ESP32-S3-4848S040 4-inch square touchscreen" loading="lazy" style="width:112px;max-width:32%;height:auto;object-fit:contain;">
+  <div>
+    <strong>Prefer a more compact square display?</strong>
+    <p style="margin:.35rem 0;">The <a href="/products/guition-esp32-s3-4848s040/">Guition ESP32-S3-4848S040</a> has a 4-inch 480×480 panel with capacitive touch, 8MB PSRAM and 16MB Flash.</p>
+    <a href="/products/guition-esp32-s3-4848s040/">View the 4-inch Guition display →</a>
+  </div>
+</div>
+
 ## Is the Guition JC8048W550 worth considering?
 
 Yes. The JC8048W550 combines a 5-inch 800×480 IPS display with an ESP32-S3, 8MB PSRAM and 16MB Flash, making it a capable base for larger LVGL dashboards and embedded control panels. Its main buying consideration is choosing the correct touch suffix: N for no touch, R for resistive touch or C for capacitive touch.
