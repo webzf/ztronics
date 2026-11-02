@@ -199,7 +199,7 @@ These are alternatives for different project requirements, not exact replacement
 
 See the individual product pages for more details:
 - [Waveshare ESP32-S3-Touch-AMOLED-2.16](/products/waveshare-esp32-s3-touch-amoled-2-16/)
-- [Waveshare ESP32-C6-Touch-AMOLED-2.16 official product page](https://www.waveshare.com/esp32-c6-touch-amoled-2.16.htm)
+- [Waveshare ESP32-C6-Touch-AMOLED-2.16 product page](/products/waveshare-esp32-c6-touch-amoled-2-16/)
 
 ## Where to buy: official ESP-Mosaico vs lower-cost alternatives
 
@@ -216,11 +216,11 @@ There is also an AliExpress listing linked below. This is a third-party marketpl
 | Board | Current manufacturer price | Where to buy | Main trade-off |
 |---|---:|---|---|
 | **Waveshare ESP32-S3-Touch-AMOLED-2.16** | US$29.99–31.99 | [Check AliExpress offer](/go/hardware/waveshare-esp32-s3-touch-amoled-2-16/) · [Waveshare product page](https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm) | Dual-core ESP32-S3 and 8 MB PSRAM, but no ESP-Mosaico modular ecosystem |
-| **Waveshare ESP32-C6-Touch-AMOLED-2.16** | US$29.99–31.99 | [Waveshare product page](https://www.waveshare.com/esp32-c6-touch-amoled-2.16.htm) | Lower-cost single-core C6 with Wi-Fi 6 and 802.15.4; no external PSRAM listed |
+| **Waveshare ESP32-C6-Touch-AMOLED-2.16** | US$29.99–31.99 | [Check AliExpress offer](/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/) · [Product details](/products/waveshare-esp32-c6-touch-amoled-2-16/) | Single-core C6 with Wi-Fi 6 and 802.15.4; no external PSRAM listed |
 
-The Waveshare prices are manufacturer-listed ranges and can vary with the battery option. The ESP32-S3 AliExpress link is an affiliate link; the ESP32-C6 link currently goes directly to Waveshare because Embedded Nerd does not yet have a verified affiliate offer for that exact model.
+The Waveshare prices are manufacturer-listed ranges and can vary with the battery option. Both AliExpress links are affiliate links supplied for the respective listings. The AliExpress C6 seller listing may show a different price from Waveshare's official store; compare the final checkout price and selected battery option before ordering.
 
-*Affiliate disclosure: Embedded Nerd may earn a commission from qualifying purchases made through the AliExpress links above, at no additional cost to you. The official Espressif store and Waveshare direct product links are not affiliate links.*
+*Affiliate disclosure: Embedded Nerd may earn a commission from qualifying purchases made through the AliExpress links above, at no additional cost to you. The official ESP-Mosaico store and Waveshare manufacturer pages are not affiliate links.*
 
 Before ordering any of these boards, confirm the selected version, battery inclusion, shipping, delivery estimate and applicable taxes.
 
