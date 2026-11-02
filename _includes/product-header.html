@@ -48,11 +48,11 @@
       {% if product.product_id == "esp-mosaico" %}
         <a
           class="en-buy-button"
-          href="{{ store.affiliate_url }}"
+          href="{{ store.product_url | default: 'https://store.mosaico.ai/products/esp-mosaico' }}"
           target="_blank"
-          rel="nofollow sponsored noopener noreferrer">
-          <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-          <span class="en-buy-text"><strong>Check Price on AliExpress</strong><small>ESP-Mosaico product listing</small></span
+          rel="noopener noreferrer">
+          <span class="en-buy-icon"><i class="fas fa-store"></i></span>
+          <span class="en-buy-text"><strong>Official Store — US$59</strong><small>Vision Combo Kit · Pre-order</small></span>
           <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
         </a>
       {% elsif product.product_id == "sunton-esp32-8048s043c" %}
