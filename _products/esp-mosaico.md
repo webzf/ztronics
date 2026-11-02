@@ -190,12 +190,12 @@ There is also an AliExpress listing linked below. This is a third-party marketpl
 
 <p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="nofollow sponsored noopener noreferrer">Check ESP-Mosaico on AliExpress</a></p>
 
-### Lower-cost 2.16-inch AMOLED alternatives
+### Lower-cost 2.16-inch AMOLED alternatives {#lower-cost-amoled-alternatives}
 
 | Board | Current manufacturer price | Where to buy | Main trade-off |
 |---|---:|---|---|
-| **Waveshare ESP32-S3-Touch-AMOLED-2.16** | US$29.99–31.99 (as of Nov 2026) | [Check AliExpress offer](/go/hardware/waveshare-esp32-s3-touch-amoled-2-16/) · [Waveshare product page](https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm) | Dual-core ESP32-S3 and 8 MB PSRAM, but no ESP-Mosaico modular ecosystem |
-| **Waveshare ESP32-C6-Touch-AMOLED-2.16** | US$29.99–31.99 (as of Nov 2026) | [Check AliExpress offer](/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/) · [Product details](/products/waveshare-esp32-c6-touch-amoled-2-16/) | Single-core C6 with Wi-Fi 6 and 802.15.4; no external PSRAM listed |
+| **Waveshare ESP32-S3-Touch-AMOLED-2.16** | US$29.99–31.99 (as of Nov 2026) | [Check AliExpress offer](/go/hardware/waveshare-esp32-s3-touch-amoled-2-16/){: rel="sponsored nofollow"} · [Waveshare product page](https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm) | Dual-core ESP32-S3 and 8 MB PSRAM, but no ESP-Mosaico modular ecosystem |
+| **Waveshare ESP32-C6-Touch-AMOLED-2.16** | US$29.99–31.99 (as of Nov 2026) | [Check AliExpress offer](/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/){: rel="sponsored nofollow"} · [Product details](/products/waveshare-esp32-c6-touch-amoled-2-16/) | Single-core C6 with Wi-Fi 6 and 802.15.4; no external PSRAM listed |
 
 The Waveshare prices are manufacturer-listed ranges and can vary with the battery option. Both AliExpress links are affiliate links supplied for the respective listings. The price ranges above are manufacturer-listed reference prices checked in November 2026, not guaranteed marketplace prices. The AliExpress C6 seller listing may show a different price from Waveshare's official store; compare the final checkout price and selected battery option before ordering.
 
