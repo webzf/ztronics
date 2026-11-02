@@ -1,7 +1,7 @@
 ---
 layout: product
 internal_links: true
-title: "Guition ESP32-S3-4848S040: 4-inch 480×480 Touchscreen for Home Assistant"
+title: "Guition ESP32-S3-4848S040: 4\" 480×480 Touchscreen for Home Assistant"
 product_verdict: "A good fit for a square 4-inch 480×480 ESP32-S3 touchscreen dashboard; verify the relay version and mounting dimensions before ordering."
 editorial_review:
   rating: 9.5
