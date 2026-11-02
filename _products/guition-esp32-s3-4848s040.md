@@ -1,7 +1,7 @@
 ---
 layout: product
 internal_links: true
-title: "Guition ESP32-S3-4848S040"
+title: "Guition ESP32-S3-4848S040: 4-inch 480×480 Touchscreen for Home Assistant"
 product_verdict: "A good fit for a square 4-inch 480×480 ESP32-S3 touchscreen dashboard; verify the relay version and mounting dimensions before ordering."
 editorial_review:
   rating: 9.5
@@ -18,8 +18,8 @@ editorial_review:
     - "The RGB display consumes many GPIOs, so available pins must be checked before adding peripherals"
     - "Community software configurations should be verified against the exact board revision"
     - "Relay modules and enclosures vary by listing; check compatibility and dimensions before ordering"
-seo_title: "Guition ESP32-S3-4848S040: 4-Inch 480×480 Specs"
-seo_description: "Guition ESP32-S3-4848S040 4-inch touchscreen: 480×480 specs, GPIO pinout, GT911 touch and ESPHome setup guidance."
+seo_title: "Guition ESP32-S3-4848S040: Specs, Relay vs No-Relay & Where to Buy"
+seo_description: "Guition ESP32-S3-4848S040 (ESP32-4848S040): 4-inch 480×480 touchscreen, relay vs no-relay options and where to buy."
 page_id: product-guition-esp32-s3-4848s040
 available_languages:
   - en
@@ -111,14 +111,28 @@ related:
   - esp32-2432s028-2-8-cyd
   - waveshare-esp32-s3-touch-lcd-4-3
 ---
-The Guition ESP32-S3-4848S040 is a 4.0-inch (4″) ESP32-S3 touchscreen board with a square 480×480 IPS display, GT911 capacitive touch, 16MB Flash and 8MB PSRAM. It is designed for compact Home Assistant dashboards, wall panels and custom LVGL interfaces.
+The Guition ESP32-S3-4848S040 is a 4-inch 480×480 ESP32-S3 touchscreen for compact Home Assistant dashboards and wall panels. It is also searched for as **ESP32-4848S040**; some board and listing references use **4848S040C_I**. Check the exact revision and bundle before ordering.
+
+For the detailed [4848S040 pinout and ESPHome setup guide](/guition-esp32-s3-4848s040-pinout-esphome/), see the separate technical walkthrough.
 
 
 ## Is the Guition ESP32-S3-4848S040 Worth Buying?
 
-Choose this board if you want a square 4-inch touchscreen for a Home Assistant dashboard, wall panel or custom LVGL interface. The 480×480 resolution gives you a square layout, while 16MB Flash and 8MB PSRAM provide room for more involved interfaces.
+Choose this board if you need a compact square touchscreen for a Home Assistant dashboard, wall panel or custom LVGL interface. The key buying decision is whether you need the relay assembly: the bare-board option is simpler, while the relay bundle adds switching hardware but does not fit a standard round EU 60 mm wall box.
 
-Before ordering, check whether the listing is for the bare display board or a version with relays and an enclosure. The relay assembly may not fit a standard 60 mm EU round wall box.
+## Relay vs no-relay: which version should you buy?
+
+| Option | Price | What is included | Fits a standard EU 60 mm round box? |
+|---|---|---|---|
+| **With relay** | Check current AliExpress price | Display/ESP32-S3 board plus relay assembly; verify whether the enclosure and power supply are included | **No** — the relay assembly is documented as not fitting a standard 60 mm round box |
+| **Without relay** | Check current AliExpress price | Display/ESP32-S3 board only; check the seller's exact bundle | **Not confirmed** — the bare board does not establish enclosure compatibility; check the dimensions of the case you plan to use |
+
+Prices can change by seller, destination, shipping and selected variant. Check the live AliExpress listing before checkout.
+
+<div class="en-product-cta__buttons">
+  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-relay/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Check price — With Relay Module</strong><small>AliExpress · verify included accessories</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-standard/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Check price — Without Relay</strong><small>AliExpress · verify selected variant</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+</div>
 
 ## Specifications at a glance
 
@@ -144,41 +158,15 @@ The 4-inch IPS panel has a square 480×480 resolution and uses the ST7701/ST7701
 
 The RGB display interface uses a substantial number of GPIOs. If your project needs extra sensors, SPI peripherals or other external hardware, check the pinout and available GPIOs before choosing this board.
 
-## Guition ESP32-S3-4848S040 pinout and GPIO usage
+## Pinout and GPIO availability
 
-The board's 480×480 RGB display and capacitive touch controller use multiple ESP32-S3 GPIOs. A community ESPHome hardware profile documents the assignments below; use it as a reference, then confirm them against your exact board revision and schematic before wiring external devices.
+The RGB display and GT911 touchscreen use many ESP32-S3 pins, leaving limited room for additional peripherals. GPIO assignments can vary by board revision, so do not assume an unlisted pin is available.
 
-### Display and touchscreen signals
+For the complete signal tables, connector details, GPIO cautions and ESPHome configuration, use the [4848S040 pinout and ESPHome setup guide](/guition-esp32-s3-4848s040-pinout-esphome/).
 
-| Function | GPIO assignment in community ESPHome profile |
-|---|---|
-| Red display data | GPIO 11, 12, 13, 14, 0 |
-| Green display data | GPIO 8, 20, 3, 46, 9, 10 |
-| Blue display data | GPIO 4, 5, 6, 7, 15 |
-| Display data enable (DE) | GPIO 18 |
-| Display horizontal sync (HSYNC) | GPIO 16 |
-| Display vertical sync (VSYNC) | GPIO 17 |
-| Display pixel clock (PCLK) | GPIO 21 |
-| Display initialization chip select | GPIO 39 |
-| Display initialization clock | GPIO 48 |
-| Display initialization data | GPIO 47 |
-| Touch I²C SDA | GPIO 19 |
-| Touch I²C SCL | GPIO 45 |
-| Backlight PWM | GPIO 38 |
+## Relay hardware and installation
 
-The documented configuration uses the ST7701S display controller and GT911 capacitive touch controller. GPIO assignments can depend on board revisions, so treat this table as a documented reference rather than a guarantee for every seller variant.
-
-### Which GPIOs are free for external hardware?
-
-Do not assume that any ESP32-S3 GPIO not listed above is available on an accessible connector. Some pins may be reserved for onboard hardware, unavailable on the board's headers, or subject to ESP32-S3 boot and peripheral constraints. Check the schematic and connector pinout for your exact assembly before connecting sensors, SPI devices or other peripherals.
-
-Reference: [ESPHome Devices — Guition ESP32-S3-4848S040](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/).
-
-## With or without relays
-
-The 4848S040 is sold in multiple configurations. Some offers include a relay module and wall-mount housing; others are the display/ESP32-S3 board only. Do not assume relays, a power supply or an enclosure are included unless the selected variant explicitly lists them.
-
-For EU installations, check the complete dimensions and enclosure photos carefully. The relay version may not fit a standard 60 mm round EU wall box. Do not work with mains voltage unless you are qualified to do so.
+The 4848S040 is sold with and without a relay assembly. The relay-equipped version does not fit a standard round EU 60 mm wall box, according to the ESPHome Devices hardware notes. The no-relay board is a separate configuration; confirm the dimensions of any enclosure before ordering. Do not assume a power supply or enclosure is included unless the selected variant explicitly lists it. Do not work with mains voltage unless you are qualified to do so.
 
 ## ESPHome, Home Assistant and LVGL
 
@@ -199,7 +187,7 @@ Use the project's current [ESPHome YAML template](https://github.com/jtenniswood
 
 Choose the configuration that fits your project. Prices are indicative and may change; check the selected option, shipping and final delivered price on the seller's page before ordering.
 
-The purchase buttons above link to Amazon and two AliExpress variants. The relay option is listed separately from the lower-cost option. Verify the selected variant, included accessories and final delivered price before purchase; do not assume a relay module or enclosure is included with every listing.
+The purchase options above and the comparison table link to the two AliExpress configurations. Prices are not fixed on this page because the seller can change them by destination, shipping and selected variant. Check the live price and the exact contents of the selected bundle before checkout.
 
 As an affiliate, Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you.
 
@@ -215,7 +203,11 @@ Yes. The documented 4848S040 configuration uses a GT911 capacitive touch control
 
 ### Does the Guition ESP32-S3-4848S040 come with relays?
 
-Not always. It is sold in versions with and without a relay module, and some listings bundle an enclosure. Check the selected variant and included accessories.
+Not always. It is sold in versions with and without a relay assembly. Check the selected variant and included accessories; an enclosure or power supply is not guaranteed.
+
+### Which version should I buy, with or without relay?
+
+Choose the **version without relay** if you only need the 4-inch touchscreen for a Home Assistant dashboard or LVGL project. Choose the **relay version** only if you need its switching hardware and have a suitable enclosure: it does not fit a standard round EU 60 mm wall box.
 
 ### Does the Guition ESP32-S3-4848S040 work with ESPHome?
 
