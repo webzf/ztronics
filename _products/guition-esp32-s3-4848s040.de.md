@@ -114,7 +114,7 @@ Den ausführlichen [4848S040-Pinout- und ESPHome-Einrichtungsleitfaden](/guition
 
 Die Platine eignet sich, wenn Sie ein kompaktes quadratisches Touchdisplay für ein Home-Assistant-Dashboard, ein Wandpanel oder eine eigene LVGL-Oberfläche benötigen. Die wichtigste Kaufentscheidung ist die Relaisausführung: Die Variante ohne Relais ist einfacher, während das Relaispaket zusätzliche Schalttechnik bietet, aber nicht in eine standardmäßige runde EU-Unterputzdose mit 60 mm Durchmesser passt.
 
-## Relais und Installation: Welche Variante ist sinnvoll?
+## Mit oder ohne Relais: Welche Variante ist sinnvoll?
 
 | Variante | Preis | Lieferumfang | Passt in eine runde EU-Unterputzdose mit 60 mm? |
 |---|---|---|---|
@@ -152,37 +152,13 @@ Das 4-Zoll-IPS-Panel besitzt eine quadratische Auflösung von 480 × 480 Pixeln 
 
 Die RGB-Display-Schnittstelle benötigt zahlreiche GPIOs. Prüfen Sie vor dem Anschluss weiterer Peripherie die genaue Pinbelegung Ihrer Platinenrevision; die vollständigen Details stehen im separaten Pinout-Leitfaden.
 
-## Pinbelegung und GPIO-Nutzung des Guition ESP32-S3-4848S040
+## Pinout und verfügbare GPIOs
 
-Das RGB-Display mit 480 × 480 Pixeln und der kapazitive Touchcontroller belegen mehrere GPIOs des ESP32-S3. Ein ESPHome-Hardwareprofil aus der Community dokumentiert die folgenden Zuordnungen. Verwenden Sie diese als Referenz und gleichen Sie sie vor dem Anschluss externer Geräte mit der Schaltung und der genauen Hardware-Revision ab.
+Das RGB-Display und der GT911-Touchcontroller belegen zahlreiche ESP32-S3-Pins. Dadurch bleiben nur begrenzte Möglichkeiten für zusätzliche Peripherie. Die GPIO-Zuordnung kann je nach Platinenrevision variieren.
 
-### Signale für Display und Touchscreen
+Die vollständigen Signaltabellen, Anschlussdetails, GPIO-Hinweise und ESPHome-Konfiguration finden Sie im separaten [4848S040-Pinout- und ESPHome-Einrichtungsleitfaden](/guition-esp32-s3-4848s040-pinout-esphome/).
 
-| Funktion | GPIO-Zuordnung im ESPHome-Community-Profil |
-|---|---|
-| Rote Displaydaten | GPIO 11, 12, 13, 14, 0 |
-| Grüne Displaydaten | GPIO 8, 20, 3, 46, 9, 10 |
-| Blaue Displaydaten | GPIO 4, 5, 6, 7, 15 |
-| Display Data Enable (DE) | GPIO 18 |
-| Horizontale Synchronisation (HSYNC) | GPIO 16 |
-| Vertikale Synchronisation (VSYNC) | GPIO 17 |
-| Display-Pixeltakt (PCLK) | GPIO 21 |
-| Chip Select für Displayinitialisierung | GPIO 39 |
-| Takt für Displayinitialisierung | GPIO 48 |
-| Daten für Displayinitialisierung | GPIO 47 |
-| Touch-I²C-SDA | GPIO 19 |
-| Touch-I²C-SCL | GPIO 45 |
-| PWM für Hintergrundbeleuchtung | GPIO 38 |
-
-Die dokumentierte Konfiguration verwendet den Displaycontroller ST7701S und den kapazitiven Touchcontroller GT911. Die GPIO-Zuordnung kann sich je nach Platinenrevision unterscheiden. Betrachten Sie diese Tabelle daher als dokumentierte Referenz und nicht als Garantie für jede Händlerausführung.
-
-### Welche GPIOs sind für externe Hardware frei?
-
-Gehen Sie nicht davon aus, dass jeder oben nicht aufgeführte ESP32-S3-GPIO an einem zugänglichen Anschluss verfügbar ist. Einige Pins können für integrierte Hardware reserviert, an den Stiftleisten nicht herausgeführt oder durch Boot- und Peripheriefunktionen des ESP32-S3 eingeschränkt sein. Prüfen Sie vor dem Anschluss von Sensoren, SPI-Geräten oder anderer Peripherie den Schaltplan und die Anschlussbelegung Ihrer konkreten Ausführung.
-
-Referenz: [ESPHome Devices – Guition ESP32-S3-4848S040](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/).
-
-## Mit oder ohne Relais
+## Relais und Installation
 
 Das 4848S040 ist mit und ohne Relaisbaugruppe erhältlich. Laut ESPHome Devices passt die Relaisausführung nicht in eine standardmäßige runde EU-Unterputzdose mit 60 mm Durchmesser. Bei der Variante ohne Relais müssen die Abmessungen des vorgesehenen Gehäuses separat geprüft werden. Netzteil und Gehäuse sind nur enthalten, wenn sie im gewählten Angebot ausdrücklich aufgeführt sind. Arbeiten an Netzspannung dürfen nur von entsprechend qualifizierten Personen durchgeführt werden.
 
