@@ -103,6 +103,7 @@ links:
     description: "Official product page and specifications."
     url: "https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm"
 related:
+  - waveshare-esp32-c6-touch-amoled-2-16
   - waveshare-esp32-s3-touch-amoled-2-41
   - waveshare-esp32-s3-touch-amoled-1-75
   - waveshare-esp32-c6-touch-amoled-1-8
@@ -116,7 +117,7 @@ Choose this board if you want a **square 480×480 AMOLED touchscreen** in a comp
 |---|---|---|
 | **ESP32-S3-Touch-AMOLED-2.16** | You want a square 480×480 AMOLED screen | Smaller physical area than larger HMI panels |
 | [**ESP-Mosaico**](/products/esp-mosaico/) | You want a compact 2.16-inch 480×480 AMOLED kit based on ESP32-S31 | Different platform and development ecosystem |
-| [**ESP32-C6-Touch-AMOLED-2.16**](https://www.waveshare.com/esp32-c6-touch-amoled-2.16.htm) | You want the same 2.16-inch 480×480 AMOLED format with ESP32-C6, Wi-Fi 6 and BLE 5 | ESP32-C6 platform rather than ESP32-S3 |
+| [**ESP32-C6-Touch-AMOLED-2.16**](/products/waveshare-esp32-c6-touch-amoled-2-16/) | You want the same 2.16-inch 480×480 AMOLED format with ESP32-C6, Wi-Fi 6 and BLE 5 | ESP32-C6 platform rather than ESP32-S3 |
 | [**ESP32-S3-Touch-AMOLED-1.75**](/products/waveshare-esp32-s3-touch-amoled-1-75/) | You need a round display for a circular UI | Different shape and 466×466 resolution |
 | [**ESP32-S3-Touch-AMOLED-2.41**](/products/waveshare-esp32-s3-touch-amoled-2-41/) | You want a larger 600×450 AMOLED panel | Rectangular rather than square layout |
 | [**ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | You need a larger 800×480 HMI interface | Larger board and enclosure |
@@ -199,4 +200,5 @@ The AMOLED display uses the **CO5300** controller over QSPI. The capacitive touc
 - [ESP32-S3 + LVGL selector](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/) — focus on ESP32-S3 LVGL boards.
 - [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — compare display technologies and interfaces.
 - [Waveshare ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) — related AMOLED option.
+- [Waveshare ESP32-C6-Touch-AMOLED-2.16](/products/waveshare-esp32-c6-touch-amoled-2-16/) — Wi-Fi 6 and 802.15.4 alternative without external PSRAM.
 - [Waveshare ESP32-S3-Touch-AMOLED-2.41](/products/waveshare-esp32-s3-touch-amoled-2-41/) — related AMOLED option.
