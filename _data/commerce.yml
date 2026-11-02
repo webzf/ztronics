@@ -905,3 +905,34 @@ guition-jc8048w550:
       last_verified: "2026-11-01"
 
 #----------------
+
+#----------------
+
+waveshare-esp32-c6-touch-amoled-2-16:
+
+  preferred_store: aliexpress
+
+  notes: "AliExpress listing 1005012749717246 and affiliate short link supplied by the site owner. Confirm the battery option and exact package contents before ordering."
+
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you."
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    amazon:
+      enabled: false
+      affiliate_url: ""
+
+    aliexpress:
+      enabled: true
+      product_id: "1005012749717246"
+      product_url: "https://pt.aliexpress.com/item/1005012749717246.html"
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3Aqa4vD"
+      last_verified: "2026-11-02"
+
+#----------------
