@@ -9,11 +9,11 @@ page_id: product-waveshare-esp32-p4-wifi6-touch-lcd-x
 product_id: waveshare-esp32-p4-wifi6-touch-lcd-x
 category: Displays
 manufacturer: "Waveshare"
-image: "https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7/ESP32-P4-WIFI6-Touch-LCD-7-details-1.jpg"
+image: "/assets/images/waveshare-p4-product-family.webp"
 alt: "Waveshare ESP32-P4-WIFI6-Touch-LCD-X family with 7-inch, 8-inch and 10.1-inch touchscreen displays"
 header:
-  teaser: "https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7/ESP32-P4-WIFI6-Touch-LCD-7-details-1.jpg"
-  og_image: "https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7/ESP32-P4-WIFI6-Touch-LCD-7-details-1.jpg"
+  teaser: "/assets/images/waveshare-p4-product-family.webp"
+  og_image: "/assets/images/waveshare-p4-product-family.webp"
 excerpt: "Compare the Waveshare ESP32-P4-WIFI6-Touch-LCD-X family: 7-inch, 8-inch and 10.1-inch HMI displays with ESP32-P4, ESP32-C6, MIPI-DSI and 10-point capacitive touch."
 description: "The Waveshare ESP32-P4-WIFI6-Touch-LCD-X family combines an ESP32-P4, ESP32-C6 wireless coprocessor and a 7, 8 or 10.1-inch MIPI-DSI touchscreen with camera and audio features."
 categories:
@@ -87,17 +87,33 @@ The **Waveshare ESP32-P4-WIFI6-Touch-LCD-X** is a family of large-format HMI dev
 
 ## Product photos and HMI examples
 
-The official Waveshare images below show the display family, its hardware features and a sample interface. The three screen sizes are sold as separate variants; check the selected size before ordering.
+The official images below show the three display sizes, board layout and hardware connections. Dimensions are in millimetres.
 
-![Waveshare ESP32-P4-WIFI6-Touch-LCD-X display family, showing the 7-inch and 10.1-inch orientations](https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7/ESP32-P4-WIFI6-Touch-LCD-7-details-10.jpg)
+![Waveshare ESP32-P4-WIFI6-Touch-LCD-X family with 7-inch, 8-inch and 10.1-inch displays](/assets/images/waveshare-p4-product-family.webp)
 
-![Waveshare ESP32-P4-WIFI6-Touch-LCD-X hardware features, including ESP32-P4, memory, Wi-Fi 6, audio and 10-point touch](https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7/ESP32-P4-WIFI6-Touch-LCD-7-details-3.jpg)
+### Display dimensions
 
-![Official Waveshare ESP32-P4-WIFI6-Touch-LCD-10.1 sample interface running on the touchscreen](https://docs.waveshare.com/assets/images/ESP32-P4-WIFI6-Touch-LCD-10.1-1-bd57a5942304d92d5954048cd676f20d.webp)
+<figure>
+  <img src="/assets/images/waveshare-p4-lcd-7-dimensions.webp" alt="Waveshare ESP32-P4 Touch LCD 7-inch front, side and rear dimensions" loading="lazy">
+  <figcaption>7-inch model — mechanical dimensions.</figcaption>
+</figure>
 
-*The interface image is an official Waveshare software demonstration, not a bundled application or a promise of plug-and-play compatibility.*
+<figure>
+  <img src="/assets/images/waveshare-p4-lcd-8-dimensions.webp" alt="Waveshare ESP32-P4 Touch LCD 8-inch front, side and rear dimensions" loading="lazy">
+  <figcaption>8-inch model — mechanical dimensions.</figcaption>
+</figure>
 
-This is not the same product as the separate [ESP32-P4-WIFI6-Touch-LCD-7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/). The 7B uses a 7-inch 1024 × 600 display and a different touch configuration. Check the model suffix before ordering.
+<figure>
+  <img src="/assets/images/waveshare-p4-lcd-10-1-dimensions.webp" alt="Waveshare ESP32-P4 Touch LCD 10.1-inch front, side and rear dimensions" loading="lazy">
+  <figcaption>10.1-inch model — mechanical dimensions.</figcaption>
+</figure>
+
+### Board layout and connections
+
+![Waveshare ESP32-P4-WIFI6-Touch-LCD-X board features and component locations](/assets/images/waveshare-p4-board-features.webp)
+
+![Waveshare ESP32-P4-WIFI6-Touch-LCD-X 40-pin expansion header pinout](/assets/images/waveshare-p4-pinout.webp)
+
 
 ## Which size should you choose?
 
