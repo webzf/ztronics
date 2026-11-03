@@ -117,16 +117,16 @@ waveshare-esp32-s3-touch-lcd-7:
 
   stores:
 
-    amazon:
-      enabled: true
-      affiliate_url: "https://www.amazon.com/dp/B0DRJH2X91?tag=embeddednerd2-20"
-
     aliexpress:
       enabled: true
       product_id: "1005009051165419"
       product_url: "https://pt.aliexpress.com/item/1005009051165419.html"
       affiliate_url: "https://s.click.aliexpress.com/e/_c3fsXlAh"
       last_verified: "2026-09-24"
+
+    amazon:
+      enabled: true
+      affiliate_url: "https://www.amazon.com/dp/B0DRJH2X91?tag=embeddednerd2-20"
 
 #----------------
 
