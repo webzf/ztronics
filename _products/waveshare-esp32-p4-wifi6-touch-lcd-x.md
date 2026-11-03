@@ -9,6 +9,11 @@ page_id: product-waveshare-esp32-p4-wifi6-touch-lcd-x
 product_id: waveshare-esp32-p4-wifi6-touch-lcd-x
 category: Displays
 manufacturer: "Waveshare"
+image: "https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7/ESP32-P4-WIFI6-Touch-LCD-7-details-1.jpg"
+alt: "Waveshare ESP32-P4-WIFI6-Touch-LCD-X family with 7-inch, 8-inch and 10.1-inch touchscreen displays"
+header:
+  teaser: "https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7/ESP32-P4-WIFI6-Touch-LCD-7-details-1.jpg"
+  og_image: "https://www.waveshare.com/img/devkit/ESP32-P4-WIFI6-Touch-LCD-7/ESP32-P4-WIFI6-Touch-LCD-7-details-1.jpg"
 excerpt: "Compare the Waveshare ESP32-P4-WIFI6-Touch-LCD-X family: 7-inch, 8-inch and 10.1-inch HMI displays with ESP32-P4, ESP32-C6, MIPI-DSI and 10-point capacitive touch."
 description: "The Waveshare ESP32-P4-WIFI6-Touch-LCD-X family combines an ESP32-P4, ESP32-C6 wireless coprocessor and a 7, 8 or 10.1-inch MIPI-DSI touchscreen with camera and audio features."
 categories:
