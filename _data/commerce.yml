@@ -105,9 +105,9 @@ waveshare-esp32-s3-touch-lcd-7:
 
   preferred_store: aliexpress
 
-  notes: "AliExpress affiliate offer verified from the supplied product listing (1005009051165419)."
+  notes: "Amazon listing ASIN B0DRJH2X91 supplied by the site owner; AliExpress affiliate offer verified from listing 1005009051165419."
 
-  disclaimer: false
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
 
   badges:
     recommended: false
@@ -118,8 +118,8 @@ waveshare-esp32-s3-touch-lcd-7:
   stores:
 
     amazon:
-      enabled: false
-      affiliate_url: ""
+      enabled: true
+      affiliate_url: "https://www.amazon.com/dp/B0DRJH2X91?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: true
