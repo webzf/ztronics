@@ -63,10 +63,6 @@ specifications:
   - name: Operating Temperature
     value: "0 °C to 60 °C"
 links:
-  - title: "Waveshare official product page"
-    icon: "fas fa-external-link-alt"
-    description: "Select the 7-inch, 8-inch or 10.1-inch model and check current price and availability."
-    url: "https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-7-8-10.1.htm"
   - title: "Waveshare documentation"
     icon: "fas fa-book"
     description: "Official hardware documentation, SKU references and development guidance."
