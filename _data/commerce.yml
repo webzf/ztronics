@@ -937,3 +937,27 @@ waveshare-esp32-c6-touch-amoled-2-16:
       last_verified: "2026-11-02"
 
 #----------------
+
+
+#----------------
+
+waveshare-esp32-p4-wifi6-touch-lcd-x:
+
+  preferred_store: aliexpress
+
+  notes: "AliExpress affiliate listing supplied by the site owner. The owner confirmed that the listing offers 7-inch, 8-inch and 10.1-inch models, with or without the optional battery."
+
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3Bms5Dz"
+      last_verified: "2026-11-03"
