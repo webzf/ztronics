@@ -9,12 +9,12 @@ product_id: waveshare-esp32-c6-touch-amoled-2-16
 date: 2026-11-02
 category: Displays
 manufacturer: "Waveshare"
-image: "https://www.waveshare.net/photo/development-board/ESP32-C6-Touch-AMOLED-2.16/ESP32-C6-Touch-AMOLED-2.16-4.jpg"
+image: "/assets/images/waveshare-esp32-c6-touch-amoled-2-16-front.webp"
 alt: "Waveshare ESP32-C6-Touch-AMOLED-2.16 square AMOLED touchscreen development board"
 header:
-  og_image: "https://www.waveshare.net/photo/development-board/ESP32-C6-Touch-AMOLED-2.16/ESP32-C6-Touch-AMOLED-2.16-4.jpg"
+  og_image: "/assets/images/waveshare-esp32-c6-touch-amoled-2-16-front.webp"
   og_image_alt: "Waveshare ESP32-C6-Touch-AMOLED-2.16 AMOLED touchscreen board"
-  teaser: "https://www.waveshare.net/photo/development-board/ESP32-C6-Touch-AMOLED-2.16/ESP32-C6-Touch-AMOLED-2.16-4.jpg"
+  teaser: "/assets/images/waveshare-esp32-c6-touch-amoled-2-16-front.webp"
 excerpt: "Waveshare ESP32-C6-Touch-AMOLED-2.16 with a 2.16-inch 480×480 capacitive AMOLED display, ESP32-C6, 16MB Flash, Wi-Fi 6, Bluetooth 5, 802.15.4, IMU and RTC."
 description: "The Waveshare ESP32-C6-Touch-AMOLED-2.16 combines a single-core ESP32-C6 RISC-V processor with a 2.16-inch 480×480 capacitive AMOLED touchscreen, 16MB NOR Flash, Wi-Fi 6, Bluetooth 5 LE, IEEE 802.15.4, QMI8658 IMU, PCF85063 RTC and audio hardware."
 categories:
@@ -158,6 +158,14 @@ The board includes:
 - USB Type-C for programming and log output
 
 Exposed pads provide I2C, UART and USB connections for external devices and debugging.
+
+## Board Enclosure and Connections
+
+The product images below show the display side and the enclosure/connection side of the board.
+
+![Waveshare ESP32-C6-Touch-AMOLED-2.16 front view with its AMOLED touchscreen](/assets/images/waveshare-esp32-c6-touch-amoled-2-16-front.webp)
+
+![Waveshare ESP32-C6-Touch-AMOLED-2.16 enclosure and side connections](/assets/images/waveshare-esp32-c6-touch-amoled-2-16-back.webp)
 
 ## Battery and Hardware Versions
 
