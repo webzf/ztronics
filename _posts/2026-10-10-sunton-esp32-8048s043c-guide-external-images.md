@@ -362,6 +362,7 @@ The main trade-off is not only screen size: resolution, touch technology, displa
 | **Sunton ESP32-8048S043C** | 4.3", 800×480 RGB | ESP32-S3, capacitive GT911, 16 MB Flash / 8 MB PSRAM (common N16R8 version) | Integrated 4.3-inch touchscreen with high resolution |
 | [Waveshare ESP32-S3-Touch-LCD-4.3](https://www.waveshare.com/esp32-s3-touch-lcd-4.3.htm) | 4.3", 800×480 | ESP32-S3; capacitive touch on the product variant | Alternative 4.3-inch platform with vendor documentation |
 | **Sunton ESP32-8048S070C** | 7", 800×480 RGB | ESP32-S3, capacitive touch on the C version | Larger physical screen with the same pixel resolution |
+| [**Waveshare ESP32-S3-Touch-LCD-7**](/products/waveshare-esp32-s3-touch-lcd-7/) | 7", 800×480 IPS | ESP32-S3, 5-point capacitive touch | 7-inch alternative with documented CAN and RS485 interfaces |
 
 Check each vendor's current documentation for memory, connector and touch-controller details; similar model names do not guarantee interchangeable pinouts or software configurations.
 
@@ -476,6 +477,7 @@ If those characteristics match your project, the 8048S043C is worth considering.
 - [ESP32 touchscreen displays guide]({{ site.url }}/esp32-touchscreen-displays-guide/) — compare display sizes, touch technologies, interfaces and memory requirements.
 - [ESP32 Touchscreen Selector]({{ site.url }}/tools/esp32-touchscreen-selector/) — filter boards by resolution, PSRAM, touch type and interface.
 - [Waveshare ESP32-S3-Touch-LCD-4.3 product page]({{ site.url }}/products/waveshare-esp32-s3-touch-lcd-4-3/) — compare another integrated 4.3-inch ESP32-S3 display.
+- [Waveshare ESP32-S3-Touch-LCD-7 product page]({{ site.url }}/products/waveshare-esp32-s3-touch-lcd-7/) — compare a 7-inch 800×480 alternative when you need more physical screen area.
 - [I2C Scanner for Arduino, ESP32 and ESP8266]({{ site.url }}/i2c-scanner-tutorial/) — check which I2C devices respond on the bus when debugging touch or sensor connections.
 - [I2C Address Lookup & Compatibility Checker]({{ site.url }}/tools/i2c-address-lookup/) — check I2C addresses and investigate possible conflicts with the GT911 touch controller.
 - [Sunton ESP32-8048S043C product page]({{ site.url }}/products/sunton-esp32-8048s043c/) — review the product specifications and current purchase options.
