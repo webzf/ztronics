@@ -148,11 +148,12 @@ If you specifically need a landscape 1024 × 600 7-inch display, see the separat
 
 Waveshare's official product page currently lists the family at **US$79.99–89.99**, depending on the selected options. The 3.7 V lithium battery is an optional extra. Treat this as the manufacturer's displayed price range, not a guaranteed checkout price: confirm the selected size, battery option, shipping, taxes and stock before ordering.
 
-- **[Buy from Waveshare — official store](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-7-8-10.1.htm)** — select the 7-inch, 8-inch or 10.1-inch version.
+- **[View the AliExpress offer](https://s.click.aliexpress.com/e/_c3Bms5Dz)** — select 7-inch, 8-inch or 10.1-inch, with or without battery.
+- **[Buy from Waveshare — official store](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-7-8-10.1.htm)** — compare the manufacturer's options and pricing.
 - **[Read the official documentation](https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-X)** — confirm the exact SKU and setup requirements.
 - **[Browse the manufacturer's example code](https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-X)** — review the current development examples.
 
-Marketplace listings and affiliate purchase buttons will be added after the exact 7-inch, 8-inch and 10.1-inch offers and tracking links have been verified. Do not use a listing for the separate 7B model as a substitute.
+An AliExpress listing supplied by Embedded Nerd offers the 7-inch, 8-inch and 10.1-inch versions, with the option to select the model with or without the 3.7 V battery. Check the selected screen size, battery option, final price, shipping, taxes and stock on the listing before ordering. This listing is for the Touch-LCD-X family, not the separate 7B model.
 
 ## Frequently asked questions
 
