@@ -115,6 +115,13 @@ The official images below show the three display sizes, board layout and hardwar
 ![Waveshare ESP32-P4-WIFI6-Touch-LCD-X 40-pin expansion header pinout](/assets/images/waveshare-p4-pinout.webp)
 
 
+## HMI interface example
+
+The image below is an illustrative HMI concept showing the kind of dashboard that could be developed for a touchscreen of this class. It is **not** a photograph of the Waveshare board, official Waveshare software, or an application included with the product.
+
+![Illustrative HMI dashboard concept for an ESP32-P4 touchscreen project](/assets/images/a_clean_product_style_mockup_of_a_touchscreen_tabl.webp)
+
+
 ## Which size should you choose?
 
 | Model | Display | Resolution | Display driver | Best fit |
