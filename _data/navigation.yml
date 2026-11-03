@@ -20,6 +20,10 @@ embedded:
         url: /esp32-touchscreen-displays-guide/
       - title: "★ ESP32 Touchscreen Selector"
         url: /tools/esp32-touchscreen-selector/
+      - title: "Waveshare ESP32-S3-Touch-LCD-7"
+        url: /products/waveshare-esp32-s3-touch-lcd-7/
+      - title: "Waveshare ESP32-S3-Touch-LCD-4.3"
+        url: /products/waveshare-esp32-s3-touch-lcd-4-3/
       - title: "Sunton ESP32-8048S043C"
         url: /products/sunton-esp32-8048s043c/
       - title: "Guition ESP32-S3-4848S040"
