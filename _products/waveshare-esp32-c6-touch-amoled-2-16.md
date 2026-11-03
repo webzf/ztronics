@@ -3,9 +3,10 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-C6-Touch-AMOLED-2.16"
 product_verdict: "A compact 480×480 AMOLED touchscreen board for ESP32-C6 projects that benefit from Wi-Fi 6, Bluetooth LE and 802.15.4. Choose an ESP32-S3 or ESP-Mosaico board when multicore processing or external PSRAM is important."
-seo_title: "Waveshare ESP32-C6-Touch-AMOLED-2.16: Specs & Where to Buy"
-seo_description: "Waveshare ESP32-C6-Touch-AMOLED-2.16 specs: 2.16-inch 480×480 AMOLED, ESP32-C6, 16MB Flash, Wi-Fi 6, BLE 5, 802.15.4, IMU and RTC. Compare versions and buy."
+seo_title: "Waveshare ESP32-C6-Touch-AMOLED-2.16: Price, Specs & Where to Buy"
+seo_description: "Waveshare ESP32-C6 AMOLED 2.16: US$29.99–31.99, specs, battery options and where to buy. Prices checked Nov 2026."
 product_id: waveshare-esp32-c6-touch-amoled-2-16
+date: 2026-11-02
 category: Displays
 manufacturer: "Waveshare"
 image: "https://ae-pic-a1.aliexpress-media.com/kf/Se210f74121464eafa84a38c7fda95f89z.jpg_350x350.jpg"
@@ -113,11 +114,11 @@ Choose this board if you want a compact **2.16-inch square AMOLED touchscreen** 
 
 The ESP32-C6 is a **single-core RISC-V processor running at up to 160 MHz**. It is a different class of platform from the dual-core ESP32-S3 boards with external PSRAM, so compare memory and processing requirements before choosing it for a demanding graphical interface.
 
-| Board | Choose it when | Main trade-off |
-|---|---|---|
-| **ESP32-C6-Touch-AMOLED-2.16** | You want Wi-Fi 6, BLE 5 and 802.15.4 in a compact AMOLED board | Single-core C6 and no external PSRAM listed |
-| [**ESP32-S3-Touch-AMOLED-2.16**](/products/waveshare-esp32-s3-touch-amoled-2-16/) | You want a dual-core S3 with 8 MB PSRAM | No Wi-Fi 6 / 802.15.4 |
-| [**ESP-Mosaico**](/products/esp-mosaico/) | You want the ESP32-S31 platform and modular expansion | Different processor and ecosystem |
+| Board | Price (as of Nov 2026) | Choose it when | Main trade-off |
+|---|---:|---|---|
+| **ESP32-C6-Touch-AMOLED-2.16** | **US$29.99–31.99** | You want Wi-Fi 6, BLE 5 and 802.15.4 in a compact AMOLED board | Single-core C6 and no external PSRAM listed |
+| [**ESP32-S3-Touch-AMOLED-2.16**](/products/waveshare-esp32-s3-touch-amoled-2-16/) | **US$29.99–31.99** | You want a dual-core S3 with 8 MB PSRAM | No Wi-Fi 6 / 802.15.4 |
+| [**ESP-Mosaico**](/products/esp-mosaico/) | **US$59** (official store) | You want the ESP32-S31 platform and modular expansion | Different processor and ecosystem |
 
 ## Overview
 
@@ -174,13 +175,28 @@ Waveshare documents support for both **Arduino IDE and ESP-IDF**. Its documentat
 
 For projects involving a complex LVGL interface, compare the ESP32-C6's internal SRAM resources with the 8 MB external PSRAM available on the ESP32-S3-Touch-AMOLED-2.16.
 
+*Editorial note: This is a documentation-based assessment, not a physical review. Embedded Nerd has not hands-on tested this board.*
+
 ## Where to Buy
 
-The AliExpress offer below is an affiliate link supplied for the Waveshare ESP32-C6-Touch-AMOLED-2.16 listing. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you.
+<p class="en-product-cta">
+  <a class="en-buy-button" href="/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/" target="_blank" rel="sponsored nofollow noopener">
+    <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
+    <span class="en-buy-text"><strong>Buy on AliExpress — approx. US$30</strong><small>Battery options affect the final price · checked Nov 2026</small></span>
+    <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
+  </a>
+  <a href="https://www.waveshare.com/esp32-c6-touch-amoled-2.16.htm" target="_blank" rel="noopener noreferrer">View the official Waveshare store listing</a>
+</p>
+
+The AliExpress offer is an affiliate link. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you. Waveshare's official store lists the board at US$29.99–31.99, depending on the selected battery option (checked Nov 2026).
 
 Before ordering, verify the selected version (with or without the 3.7V battery), the exact board and enclosure/accessories, shipping, delivery estimate and taxes.
 
 ## Frequently Asked Questions
+
+### How much does the ESP32-C6-Touch-AMOLED-2.16 cost?
+
+Waveshare lists the board at **US$29.99–31.99** (as of Nov 2026). The final price depends on the selected version and whether the 3.7V 1000mAh battery is included. Shipping, taxes and marketplace prices may differ.
 
 ### Does the ESP32-C6-Touch-AMOLED-2.16 include a battery?
 
