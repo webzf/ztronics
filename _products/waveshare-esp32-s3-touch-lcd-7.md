@@ -3,8 +3,8 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-S3-Touch-LCD-7"
 product_verdict: "Best suited to projects that need a large 7-inch 800×480 interface with ESP32-S3; consider the 4.3-inch model for a smaller enclosure or the ESP32-P4 7B for 1024×600."
-seo_title: "Waveshare ESP32-S3-Touch-LCD-7: Specs"
-seo_description: "Explore the Waveshare ESP32-S3-Touch-LCD-7: 7-inch 800×480 IPS display, capacitive touch, ESP32-S3, PSRAM, interfaces and alternatives."
+seo_title: "Waveshare ESP32-S3-Touch-LCD-7: Specs & Where to Buy"
+seo_description: "Waveshare ESP32-S3-Touch-LCD-7: 7-inch 800×480 IPS touchscreen, ESP32-S3, 8MB PSRAM, CAN/RS485. Specs, versions and where to buy."
 product_id: waveshare-esp32-s3-touch-lcd-7
 category: Displays
 manufacturer: "Waveshare"
@@ -14,7 +14,7 @@ header:
   teaser: /assets/images/products/waveshare-esp32-s3-touch-lcd-7.webp
 og_image: /assets/images/products/waveshare-esp32-s3-touch-lcd-7.webp
 excerpt: "Waveshare ESP32-S3-Touch-LCD-7 with a 7-inch 800×480 IPS display, capacitive touch, ESP32-S3, 8MB PSRAM, and extensive interfaces for HMI and LVGL projects."
-description: "The Waveshare ESP32-S3-Touch-LCD-7 is an ESP32-S3 development board with a 7-inch 800×480 IPS RGB display and optional 5-point capacitive touch. It combines Wi-Fi, Bluetooth, 8MB PSRAM, and interfaces including CAN, RS485, I2C, USB, UART, and TF card support for larger embedded GUI and HMI projects."
+description: "The Waveshare ESP32-S3-Touch-LCD-7 is the 7-inch 800×480 ESP32-S3 development board with 5-point capacitive touch. It combines Wi-Fi, Bluetooth, 16MB Flash, 8MB PSRAM, and interfaces including CAN, RS485, I2C, USB, UART, and TF card support for larger embedded GUI and HMI projects."
 categories:
   - Displays
   - ESP32
@@ -95,9 +95,10 @@ links:
     description: "Hardware details, interfaces, schematics, and usage information."
     url: "https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-7"
 related:
-  - esp32-devkit
-  - ili9341-xpt2046-2-8-touchscreen
   - waveshare-esp32-s3-touch-lcd-4-3
+  - waveshare-esp32-p4-wifi6-touch-lcd-7b
+  - guition-jc8048w550
+  - sunton-esp32-8048s043c
 ---
 
 ## Should You Choose the 7-Inch Waveshare ESP32-S3 Display?
@@ -113,6 +114,17 @@ Choose this board when your project benefits from a **large 7-inch 800×480 inte
 Do not choose by screen size alone: compare resolution, display interface, touch support, enclosure dimensions and available GPIO. Use the [ESP32 display selector](/tools/esp32-touchscreen-selector/) to narrow the options, and verify the exact model and included accessories before ordering.
 
 
+
+## Which Version to Buy
+
+Waveshare sells this 7-inch board in two versions: **ESP32-S3-Touch-LCD-7 (with capacitive touch)** and **ESP32-S3-LCD-7 (without touch)**. The touch panel is optional across the product family, but it is included in the specific Touch-LCD-7 model covered on this page.
+
+Before ordering:
+
+- Choose **ESP32-S3-Touch-LCD-7 / With Touch Function** if you need 5-point capacitive finger input. The **ESP32-S3-LCD-7** version has no touch panel.
+- Confirm the selected SKU and included cables/accessories in the seller listing and compare it with the [official Waveshare documentation](https://docs.waveshare.com/ESP32-S3-Touch-LCD-7).
+- The listed **192.96 × 110.76 mm** dimensions apply to the touch version. Check the mechanical drawing for the exact version before designing an enclosure or panel cut-out.
+- The documented board configuration has **16 MB Flash and 8 MB PSRAM**; check that the listing matches these specifications.
 
 ## Overview
 
@@ -217,6 +229,19 @@ This can be useful for portable interfaces and battery-powered ESP32-S3 projects
 
 The 2.8-inch ILI9341 + XPT2046 is still a better choice when cost, size, and simplicity are the priority. The 4.3-inch board provides a useful middle ground, while the 7-inch version is aimed at projects where screen size and a more complete HMI platform are important.
 
+## 7-Inch vs Other 800×480 Boards
+
+These boards share the same 800×480 resolution, but differ in physical screen size, hardware layout and touch implementation:
+
+| Board | Display size | Resolution |
+|---|---:|---:|
+| **Waveshare ESP32-S3-Touch-LCD-7** | 7" | 800 × 480 |
+| [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) | 4.3" | 800 × 480 |
+| [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) | 4.3" | 800 × 480 |
+| [Guition JC8048W550](/products/guition-jc8048w550/) | 5" | 800 × 480 |
+
+The [Waveshare ESP32-P4-WIFI6-Touch-LCD-7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/) is another 7-inch alternative, but it uses a higher **1024×600** resolution and the ESP32-P4 platform, so it is not a like-for-like 800×480 comparison. Check each product page for touch variants, memory, interfaces and board dimensions before choosing.
+
 ## Who Is It For?
 
 The Waveshare ESP32-S3-Touch-LCD-7 is a good choice for:
@@ -240,9 +265,10 @@ Before programming the board, check the current documentation for the exact hard
 
 ## Related Products
 
-- **ILI9341 + XPT2046 2.8-inch Touchscreen** — compact resistive touchscreen option.
-- **Waveshare ESP32-S3-Touch-LCD-4.3** — smaller ESP32-S3 capacitive touchscreen option.
-- **ESP32 DevKit** — general-purpose ESP32 development board for projects using separate displays.
+- **Waveshare ESP32-S3-Touch-LCD-4.3** — [smaller ESP32-S3 capacitive touchscreen option](/products/waveshare-esp32-s3-touch-lcd-4-3/).
+- **Waveshare ESP32-P4-WIFI6-Touch-LCD-7B** — [7-inch 1024×600 option on the ESP32-P4 platform](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/).
+- **Guition JC8048W550** — [5-inch 800×480 ESP32-S3 option](/products/guition-jc8048w550/).
+- **Sunton ESP32-8048S043C** — [4.3-inch 800×480 ESP32-S3 option](/products/sunton-esp32-8048s043c/).
 
 ## Embedded Nerd Guides & Selector
 - [ESP32 Display with PSRAM Selector](/tools/esp32-touchscreen-selector/esp32-display-psram/) — filter boards with documented PSRAM for larger GUIs.
