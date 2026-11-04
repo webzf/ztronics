@@ -81,6 +81,8 @@ related:
 
 The **Waveshare ESP32-P4-WIFI6-Touch-LCD-X** is a family of large-format HMI development boards available with 7-inch, 8-inch and 10.1-inch displays. Each version combines an ESP32-P4 application processor with an ESP32-C6 wireless coprocessor, a MIPI-DSI touchscreen, camera support and onboard audio hardware.
 
+If you're comparing display technologies or choosing between different ESP32 touchscreen sizes, start with our [ESP32 touchscreen displays guide](/esp32-touchscreen-displays-guide/). For a real-world example of a larger ESP32-P4 touchscreen system, see our [ESP32-P4 Weather Station architecture deep dive](/esp32-p4-weather-station/); that project uses a different 10.1-inch display, not this Touch-LCD-X board.
+
 ## Product photos and HMI examples
 
 The official images below show the three display sizes, board layout and hardware connections. Dimensions are in millimetres.
