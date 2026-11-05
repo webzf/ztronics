@@ -62,6 +62,8 @@ These projects are useful because the skills transfer directly to larger Linux s
 
 ## Raspberry Pi Hardware for IT Projects
 
+If you are also considering a hybrid board that combines Debian Linux with a dedicated real-time microcontroller, compare it with the [Arduino UNO Q](/products/arduino-uno-q/). The UNO Q is not a direct replacement for a Raspberry Pi home server, but it is an interesting alternative for embedded projects that need both Linux applications and MCU-level I/O.
+
 The Raspberry Pi model you choose depends on the workload.
 
 | Raspberry Pi | Best suited for |
