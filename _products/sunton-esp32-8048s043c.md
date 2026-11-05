@@ -9,12 +9,12 @@ product_id: sunton-esp32-8048s043c
 category: Displays
 manufacturer: "Sunton"
 
-image: "/assets/images/sunton-esp32-8048s043c-board.webp"
+image: "/assets/images/products/sunton-esp32-8048s043c-main.webp"
 header:
-  og_image: "/assets/images/sunton-esp32-8048s043c-board.webp"
-  og_image_alt: "Sunton ESP32-8048S043C-I 4.3-inch capacitive touchscreen board, with connectors and ESP32-S3 module annotated"
-  teaser: "/assets/images/sunton-esp32-8048s043c-board.webp"
-alt: "Sunton ESP32-8048S043C-I 4.3-inch capacitive touchscreen board, with connectors and ESP32-S3 module annotated"
+  og_image: "/assets/images/products/sunton-esp32-8048s043c-main.webp"
+  og_image_alt: "Sunton ESP32-8048S043C-I 4.3-inch capacitive touchscreen display board, front view"
+  teaser: "/assets/images/products/sunton-esp32-8048s043c-main.webp"
+alt: "Sunton ESP32-8048S043C-I 4.3-inch capacitive touchscreen display board, front view"
 
 excerpt: "Sunton ESP32-8048S043C CYD with ESP32-S3, 4.3-inch 800×480 IPS display, capacitive GT911 touch, 16MB Flash, 8MB PSRAM and microSD."
 
