@@ -64,58 +64,46 @@
   position: sticky;
   top: 0;
   z-index: 30;
-  margin: 1rem 0 2.5rem;
+  margin: 1rem 0 2.25rem;
   padding: .55rem 0;
-  border-top: 1px solid rgba(148, 163, 184, .12);
-  border-bottom: 1px solid rgba(148, 163, 184, .18);
-  background: rgba(18, 27, 40, .94);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
+  background: rgba(248, 250, 252, .94);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 .en-category-nav-inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: .55rem;
+  gap: .5rem;
   width: 100%;
 }
 
-.en-category-nav-label {
-  flex: 0 0 auto;
-  padding: 0 .35rem 0 0;
-  color: #94a3b8;
-  font-size: .7rem;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
+.en-category-nav-label { display: none; }
 
 .en-category-chip {
   display: inline-flex;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  min-height: 2.65rem;
-  padding: .5rem 1rem;
-  border: 1px solid rgba(56, 189, 248, .38);
-  border-radius: .65rem;
-  background: linear-gradient(180deg, rgba(30, 64, 91, .72), rgba(23, 43, 62, .88));
-  color: #f1f5f9;
-  font-size: .82rem;
-  font-weight: 750;
+  gap: .45rem;
+  min-height: 2.2rem;
+  padding: .35rem .75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: .45rem;
+  background: #fff;
+  color: #24445f;
+  font-size: .78rem;
+  font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .16), inset 0 1px 0 rgba(255, 255, 255, .06);
-  transition: border-color .18s ease, background .18s ease, transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, .06);
+  transition: border-color .18s ease, background .18s ease, color .18s ease;
 }
 
 .en-category-chip:hover,
 .en-category-chip:focus-visible {
-  border-color: #7dd3fc;
-  background: linear-gradient(180deg, rgba(14, 116, 144, .72), rgba(30, 64, 91, .95));
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, .22);
+  border-color: #0ea5e9;
+  background: #eff8ff;
+  color: #075985;
 }
 
 .en-category-icon {
@@ -150,20 +138,21 @@
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  gap: .3rem;
-  min-height: 2.55rem;
+  gap: .25rem;
+  min-height: 2.2rem;
   margin-left: auto;
-  padding: .4rem .7rem;
-  border: 1px solid rgba(125, 211, 252, .28);
-  border-radius: .7rem;
-  color: #7dd3fc;
-  font-size: .82rem;
-  font-weight: 800;
+  padding: .35rem .65rem;
+  border: 1px solid #cbd5e1;
+  border-radius: .45rem;
+  background: #fff;
+  color: #47627a;
+  font-size: .78rem;
+  font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.en-category-top:hover { background: rgba(56, 189, 248, .12); color: #bae6fd; }
+.en-category-top:hover { border-color: #0ea5e9; background: #eff8ff; color: #075985; }
 
 .en-featured-section { margin: 0 0 3rem; }
 
@@ -435,13 +424,11 @@
 @media (max-width: 600px) {
   .en-products-page { padding-bottom: 2rem; }
   .en-products-hero { border-radius: .8rem; }
-  .en-category-nav { margin: .7rem -1rem 2rem; padding: .5rem 1rem; }
-  .en-category-nav-inner { overflow-x: auto; scrollbar-width: none; }
-  .en-category-nav-inner::-webkit-scrollbar { display: none; }
-  .en-category-nav-label { display: none; }
-  .en-category-chip { min-height: 2.35rem; padding: .4rem .6rem; font-size: .75rem; }
-  .en-category-icon { width: 1.2rem; height: 1.2rem; font-size: .85rem; }
-  .en-category-top { min-height: 2.35rem; padding: .35rem .55rem; }
+  .en-category-nav { margin: .7rem 0 1.75rem; padding: .45rem 0; }
+  .en-category-nav-inner { gap: .4rem; }
+  .en-category-chip { min-height: 2rem; padding: .3rem .55rem; font-size: .72rem; }
+  .en-category-icon { display: none; }
+  .en-category-top { min-height: 2rem; padding: .3rem .5rem; }
   .en-category-top-label { display: none; }
   .en-products-page .en-featured-grid .en-product-card__image { height: 105px; min-height: 105px; }
   .en-products-page .en-featured-grid .en-product-card__image img { max-height: 95px; }
