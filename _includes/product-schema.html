@@ -18,7 +18,9 @@
   {% endcomment %}
 
   {% assign has_valid_offer = false %}
-  {% if preferred
+  {% unless product.product_id == "sunton-esp32-8048s043c" %}
+  {% if product.product_id != "sunton-esp32-8048s043c"
+        and preferred
         and preferred.enabled
         and preferred.affiliate_url
         and preferred.price != nil
@@ -36,6 +38,7 @@
       {% endif %}
     {% endfor %}
   {% endif %}
+  {% endunless %}
 
   {% if has_valid_offer or page.editorial_review.rating %}
 <script type="application/ld+json">
