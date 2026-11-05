@@ -3,7 +3,7 @@
 {% unless product_image contains "://" %}
   {% assign product_image = product_image | relative_url %}
 {% endunless %}
-<div class="en-product-card" data-title="{{ include.product.title | downcase | escape }}" data-platforms="{{ include.product.categories | join: ',' | downcase | escape }}" data-manufacturer="{{ include.product.manufacturer | downcase | escape }}" data-description="{{ include.product.excerpt | downcase | escape }}">
+<div class="en-product-card" data-title="{{ include.product.title | downcase | escape }}" data-platforms="{{ include.product.categories | join: ',' | downcase | escape }}" data-manufacturer="{{ include.product.manufacturer | downcase | escape }}" data-description="{{ include.product.excerpt | downcase | escape }}" data-search="{{ include.product.title }} {{ include.product.manufacturer }} {{ include.product.categories | join: ' ' }} {{ include.product.excerpt }} {{ include.product.tags | join: ' ' | escape | downcase }}">
   <a class="en-product-card__image" href="{{ include.product.url | relative_url | escape }}">
     <img src="{{ product_image | escape }}" alt="{{ include.product.title | escape }}" loading="lazy">
     {% if commerce.badges.recommended %}
