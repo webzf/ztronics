@@ -107,7 +107,7 @@ related:
 ---
 Das **Guition ESP32-S3-4848S040** ist ein 4-Zoll-ESP32-S3-Touchscreen mit 480 × 480 Pixeln für kompakte Home-Assistant-Dashboards und Wandpanels. Das Modell wird auch unter der Bezeichnung **ESP32-4848S040** gesucht; in manchen Platinen- und Händlerreferenzen erscheint **4848S040C_I**. Prüfen Sie vor dem Kauf die genaue Revision und den Lieferumfang.
 
-Den ausführlichen [4848S040-Pinout- und ESPHome-Einrichtungsleitfaden](/guition-esp32-s3-4848s040-pinout-esphome/) finden Sie in unserem separaten Technikartikel.
+Den ausführlichen [4848S040-Pinout- und ESPHome-Einrichtungsleitfaden](/de/guition-esp32-s3-4848s040-pinout-esphome/) finden Sie in unserem separaten Technikartikel.
 
 
 ## Lohnt sich das Guition ESP32-S3-4848S040?
@@ -156,7 +156,7 @@ Die RGB-Display-Schnittstelle benötigt zahlreiche GPIOs. Prüfen Sie vor dem An
 
 Das RGB-Display und der GT911-Touchcontroller belegen zahlreiche ESP32-S3-Pins. Dadurch bleiben nur begrenzte Möglichkeiten für zusätzliche Peripherie. Die GPIO-Zuordnung kann je nach Platinenrevision variieren.
 
-Die vollständigen Signaltabellen, Anschlussdetails, GPIO-Hinweise und ESPHome-Konfiguration finden Sie im separaten [4848S040-Pinout- und ESPHome-Einrichtungsleitfaden](/guition-esp32-s3-4848s040-pinout-esphome/).
+Die vollständigen Signaltabellen, Anschlussdetails, GPIO-Hinweise und ESPHome-Konfiguration finden Sie im separaten [4848S040-Pinout- und ESPHome-Einrichtungsleitfaden](/de/guition-esp32-s3-4848s040-pinout-esphome/).
 
 ## Relais und Installation
 
@@ -166,7 +166,7 @@ Das 4848S040 ist mit und ohne Relaisbaugruppe erhältlich. Laut ESPHome Devices 
 
 Für ESPHome ist eine Community-Konfiguration verfügbar, die unter anderem das ST7701S-Display und den GT911-Touchcontroller berücksichtigt. Sie kann als Ausgangspunkt für ein Home-Assistant-Bedienpanel dienen. Auch Arduino- und LVGL-Workflows werden in der Community verwendet. Prüfen Sie die Softwarekonfiguration jedoch immer für die genaue Platinenrevision.
 
-Die ausführliche [Pinbelegung und GPIO-Referenz](/guition-esp32-s3-4848s040-pinout-esphome/) enthält die Display-Signale und die Touch-Verdrahtung. Eine Anleitung zur Konfiguration finden Sie ebenfalls im [ESPHome-Einrichtungsleitfaden](/guition-esp32-s3-4848s040-pinout-esphome/).
+Die ausführliche [Pinbelegung und GPIO-Referenz](/de/guition-esp32-s3-4848s040-pinout-esphome/) enthält die Display-Signale und die Touch-Verdrahtung. Eine Anleitung zur Konfiguration finden Sie ebenfalls im [ESPHome-Einrichtungsleitfaden](/de/guition-esp32-s3-4848s040-pinout-esphome/).
 
 - [ESPHome-Geräteseite](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/)
 - [ESPHome-/LVGL-Beispiel und YAML-Vorlage aus der Community](https://github.com/jtenniswood/esphome-lvgl/tree/main/guition-esp32-s3-4848s040)
