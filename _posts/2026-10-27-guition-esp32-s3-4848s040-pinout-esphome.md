@@ -3,6 +3,15 @@ title: "4848S040 Pinout, GPIOs & ESPHome Setup Guide"
 title_tag: "4848S040 Pinout & ESPHome Setup Guide"
 layout: single
 permalink: /guition-esp32-s3-4848s040-pinout-esphome/
+lang: en
+page_id: article-guition-esp32-s3-4848s040-pinout-esphome
+translation_id: guition-esp32-s3-4848s040-pinout-esphome
+available_languages:
+  - en
+  - de
+english_url: /guition-esp32-s3-4848s040-pinout-esphome/
+german_url: /de/guition-esp32-s3-4848s040-pinout-esphome/
+internal_links: true
 excerpt: "Guition ESP32-S3-4848S040 pinout, RGB display signals, ST7701S initialization, GT911 touch, backlight GPIO and ESPHome setup notes."
 show_date: false
 read_time: false
