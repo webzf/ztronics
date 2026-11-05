@@ -8,12 +8,12 @@ seo_description: "Arduino UNO Q specs, Qualcomm QRB2210, STM32U585, Debian Linux
 product_id: arduino-uno-q
 category: Development Boards
 manufacturer: "Arduino"
-alt: "Arduino UNO Q hybrid development board with Qualcomm Dragonwing QRB2210, STM32U585 and LED matrix"
-image: "https://store.arduino.cc/cdn/shop/files/ABX00162_00.default_934x700.jpg?v=1759218128"
+alt: "Arduino UNO Q development board held in a hand, showing its compact size and onboard components"
+image: "/assets/images/products/arduino-uno-q-handheld.webp"
 header:
-  teaser: "https://store.arduino.cc/cdn/shop/files/ABX00162_00.default_934x700.jpg?v=1759218128"
-  og_image: "https://store.arduino.cc/cdn/shop/files/ABX00162_00.default_934x700.jpg?v=1759218128"
-  og_image_alt: "Arduino UNO Q development board showing the Qualcomm Dragonwing processor and onboard LED matrix"
+  teaser: "/assets/images/products/arduino-uno-q-handheld.webp"
+  og_image: "/assets/images/products/arduino-uno-q-handheld.webp"
+  og_image_alt: "Arduino UNO Q development board held in a hand, showing its compact size"
 excerpt: "Arduino UNO Q combines a Qualcomm Dragonwing QRB2210 Linux processor with an STM32U585 real-time microcontroller, Wi-Fi 5, Bluetooth 5.1 and onboard eMMC storage."
 description: "The Arduino UNO Q is a hybrid single-board computer and microcontroller platform. Its Qualcomm Dragonwing QRB2210 runs Debian Linux and high-level workloads, while the STM32U585 handles real-time I/O. Available with 2GB RAM and 16GB eMMC or 4GB RAM and 32GB eMMC."
 categories:
@@ -92,13 +92,17 @@ related:
   - esp32-devkit
   - raspberry-pi-pico
 ---
-![Arduino UNO Q hybrid development board with Qualcomm Dragonwing QRB2210 and onboard LED matrix](https://store.arduino.cc/cdn/shop/files/ABX00162_00.default_934x700.jpg?v=1759218128)
+![Arduino UNO Q development board held in a hand, showing its compact size](/assets/images/products/arduino-uno-q-handheld.webp)
 
 The **Arduino UNO Q** is not a conventional Arduino board with a faster microcontroller. It combines a Linux-capable application processor with a separate real-time microcontroller on one UNO-form-factor board. The Qualcomm Dragonwing QRB2210 runs Debian Linux and higher-level applications, while the STM32U585 handles deterministic control of sensors, actuators and other hardware.
 
 That dual-processor design makes the UNO Q particularly interesting for **edge AI, computer vision, robotics and connected devices** that need both Linux software and low-latency hardware control.
 
 There are two memory configurations: **2GB RAM with 16GB eMMC** and **4GB RAM with 32GB eMMC**. The processor and core board architecture are shared; memory and storage are the main differences when choosing a version.
+
+![Arduino UNO Q board partly inside its retail packaging](/assets/images/products/arduino-uno-q-box.webp)
+
+*Arduino UNO Q retail packaging and board.*
 
 ## Is the Arduino UNO Q worth buying?
 
@@ -148,6 +152,14 @@ The variants do not have different processor models: both use the QRB2210 and ST
 | Dimensions | 68.85 × 53.34mm |
 
 Specifications are based on Arduino's official product documentation and datasheet. Connector functions and signal voltage domains are not interchangeable: consult the datasheet before connecting external hardware.
+
+## Arduino UNO Q board views
+
+The component side and the reverse side show the board layout, connectors and expansion headers.
+
+![Arduino UNO Q component side with Qualcomm Dragonwing QRB2210 and STM32U585](/assets/images/products/arduino-uno-q-front.webp)
+
+![Arduino UNO Q reverse side showing its headers and board layout](/assets/images/products/arduino-uno-q-back.webp)
 
 ## How the Arduino UNO Q dual-brain architecture works
 
