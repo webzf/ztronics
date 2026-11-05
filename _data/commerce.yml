@@ -1,5 +1,31 @@
 #----------------
 
+arduino-uno-q:
+
+  preferred_store: aliexpress
+
+  notes: "Affiliate links supplied by the site owner. Check the selected 2GB or 4GB version, seller and shipping before purchase."
+
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
+
+  badges:
+    recommended: true
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3w4434P"
+
+    amazon:
+      enabled: true
+      affiliate_url: "https://link.amazon/B05l32CeC"
+
+#----------------
+
 arduino-nano-esp32:
 
   preferred_store: amazon
