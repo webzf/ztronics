@@ -182,13 +182,9 @@ See the individual product pages for more details:
 
 ## Where to buy: official ESP-Mosaico vs lower-cost alternatives
 
-If you specifically want the ESP-Mosaico Vision Combo Kit and its modular accessories, the official store is the clearest place to start. Check the official store for the current Vision Combo Kit contents, availability and dispatch estimate. The product may be offered as a pre-order; confirm the latest shipping information, taxes and delivery estimate before ordering.
+If you want the ESP-Mosaico Vision Combo Kit and its modular accessories, check the AliExpress listing below. This is a third-party marketplace offer, not the official Espressif store. Compare the kit contents, selected option, seller, shipping terms and delivery estimate. Verify that the listing includes the Core Unit, Camera Module and Multi-function Interaction Module before purchasing.
 
-<p><a class="btn btn--primary" href="https://store.mosaico.ai/products/esp-mosaico" target="_blank" rel="noopener noreferrer">Visit Official ESP-Mosaico Store</a></p>
-
-There is also an AliExpress listing linked below. This is a third-party marketplace offer, not the official Espressif store. Compare the kit contents, shipping terms and selected option. Verify that the listing includes the Core Unit, Camera Module and Multi-function Interaction Module before purchasing.
-
-<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="nofollow sponsored noopener noreferrer">Check ESP-Mosaico on AliExpress</a></p>
+<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4d21l4n" target="_blank" rel="nofollow sponsored noopener noreferrer">Check Price on AliExpress</a></p>
 
 ### Lower-cost 2.16-inch AMOLED alternatives {#lower-cost-amoled-alternatives}
 
