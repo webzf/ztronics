@@ -28,16 +28,29 @@ description: "Browse the Embedded Nerd hardware directory: development boards, E
   {% assign category_order = "Development Boards|Displays|Sensors|Modules|Accessories" | split: "|" %}
 
   <nav class="en-category-nav" aria-label="Browse product categories">
-    {% for category in category_order %}
-      {% assign category_products = site.products | where: "category", category %}
-      {% if category_products.size > 0 %}
-        {% assign category_slug = category | slugify %}
-        <a class="en-category-chip" href="#{{ category_slug }}">
-          <span>{{ category }}</span>
-          <span class="en-category-count">{{ category_products.size }}</span>
-        </a>
-      {% endif %}
-    {% endfor %}
+    <div class="en-category-nav-inner">
+      <span class="en-category-nav-label">Browse</span>
+      {% for category in category_order %}
+        {% assign category_products = site.products | where: "category", category %}
+        {% if category_products.size > 0 %}
+          {% assign category_slug = category | slugify %}
+          <a class="en-category-chip" href="#{{ category_slug }}">
+            <span class="en-category-icon" aria-hidden="true">
+              {% case category %}
+                {% when "Development Boards" %}⌘
+                {% when "Displays" %}▣
+                {% when "Sensors" %}◉
+                {% when "Modules" %}▦
+                {% when "Accessories" %}⌁
+              {% endcase %}
+            </span>
+            <span class="en-category-name">{{ category }}</span>
+            <span class="en-category-count">{{ category_products.size }}</span>
+          </a>
+        {% endif %}
+      {% endfor %}
+      <a class="en-category-top" href="#en-products-catalog" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span><span class="en-category-top-label">Top</span></a>
+    </div>
   </nav>
 
   {% assign featured_ids = "arduino-uno-q|guition-esp32-s3-4848s040|waveshare-esp32-p4-wifi6-touch-lcd-7b|esp32-devkit" | split: "|" %}
