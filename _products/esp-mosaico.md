@@ -3,8 +3,8 @@ layout: product
 internal_links: true
 title: "ESP-Mosaico (ESP32-S31)"
 product_verdict: "A distinctive development kit for experimenting with display-based interaction, sensors, audio, modular hardware and AI-assisted coding. Its appeal depends on whether you want the integrated hardware and modular workflow; confirm the exact kit contents, revision and delivered cost before ordering."
-seo_title: "ESP-Mosaico ESP32-S31: Price, Specs & Where to Buy"
-seo_description: "ESP-Mosaico costs US$59 from the official store (pre-order). Compare ESP32-S31 specs, Waveshare alternatives and where to buy."
+seo_title: "ESP-Mosaico ESP32-S31: Specs & Where to Buy"
+seo_description: "Explore ESP-Mosaico ESP32-S31 specs, modular hardware, Waveshare alternatives and where to buy. Check the official store for current availability and pricing."
 product_id: esp-mosaico
 category: Displays
 manufacturer: "Espressif"
@@ -96,7 +96,7 @@ The ESP-Mosaico is worth considering if you want a compact interactive platform 
 
 | Question | Answer |
 |---|---|
-| What is it? | A modular ESP32-S31 development kit with an integrated AMOLED touchscreen, sensors, audio and expansion headers. |\n| Official price | US$59 for the Vision Combo Kit; pre-order, with an estimated 15-day dispatch window (checked 2 Nov 2026). |
+| What is it? | A modular ESP32-S31 development kit with an integrated AMOLED touchscreen, sensors, audio and expansion headers. |
 | Display | 2.16-inch, 480 × 480 AMOLED touchscreen |
 | Processor | Dual-core 32-bit RISC-V ESP32-S31NRV16, up to 320 MHz |
 | Memory and storage | 16 MB in-package PSRAM, 16 MB SPI NOR and 1 Gbit (128 MB) SPI NAND |
@@ -182,22 +182,22 @@ See the individual product pages for more details:
 
 ## Where to buy: official ESP-Mosaico vs lower-cost alternatives
 
-If you specifically want the ESP-Mosaico Vision Combo Kit and its modular accessories, the official store is the clearest place to start. The official store currently lists the Vision Combo Kit (Core Unit v1.2 + Camera Module + Interaction Module) at **US$59**. The product is marked **PRE-ORDER**, with an estimated dispatch in 15 days; this is an estimate, not a guaranteed delivery date. Check shipping, taxes and the live dispatch estimate before ordering.
+If you specifically want the ESP-Mosaico Vision Combo Kit and its modular accessories, the official store is the clearest place to start. Check the official store for the current Vision Combo Kit contents, availability and dispatch estimate. The product may be offered as a pre-order; confirm the latest shipping information, taxes and delivery estimate before ordering.
 
-<p><a class="btn btn--primary" href="https://store.mosaico.ai/products/esp-mosaico" target="_blank" rel="noopener noreferrer">Buy ESP-Mosaico — official store (US$59, pre-order)</a></p>
+<p><a class="btn btn--primary" href="https://store.mosaico.ai/products/esp-mosaico" target="_blank" rel="noopener noreferrer">Visit Official ESP-Mosaico Store</a></p>
 
-There is also an AliExpress listing linked below. This is a third-party marketplace offer, not the official Espressif store. Compare its final checkout price with the official US$59 listing and verify that the selected option includes the Core Unit, Camera Module and Multi-function Interaction Module before purchasing.
+There is also an AliExpress listing linked below. This is a third-party marketplace offer, not the official Espressif store. Compare the kit contents, shipping terms and selected option. Verify that the listing includes the Core Unit, Camera Module and Multi-function Interaction Module before purchasing.
 
 <p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4Dnkhan" target="_blank" rel="nofollow sponsored noopener noreferrer">Check ESP-Mosaico on AliExpress</a></p>
 
 ### Lower-cost 2.16-inch AMOLED alternatives {#lower-cost-amoled-alternatives}
 
-| Board | Current manufacturer price | Where to buy | Main trade-off |
+| Board | Where to buy | Main trade-off |
 |---|---:|---|---|
-| **Waveshare ESP32-S3-Touch-AMOLED-2.16** | US$29.99–31.99 (as of Nov 2026) | [Check AliExpress offer](/go/hardware/waveshare-esp32-s3-touch-amoled-2-16/){: rel="sponsored nofollow"} · [Waveshare product page](https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm) | Dual-core ESP32-S3 and 8 MB PSRAM, but no ESP-Mosaico modular ecosystem |
-| **Waveshare ESP32-C6-Touch-AMOLED-2.16** | US$29.99–31.99 (as of Nov 2026) | [Check AliExpress offer](/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/){: rel="sponsored nofollow"} · [Product details](/products/waveshare-esp32-c6-touch-amoled-2-16/) | Single-core C6 with Wi-Fi 6 and 802.15.4; no external PSRAM listed |
+| **Waveshare ESP32-S3-Touch-AMOLED-2.16** | [Check AliExpress offer](/go/hardware/waveshare-esp32-s3-touch-amoled-2-16/){: rel="sponsored nofollow"} · [Waveshare product page](https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm) | Dual-core ESP32-S3 and 8 MB PSRAM, but no ESP-Mosaico modular ecosystem |
+| **Waveshare ESP32-C6-Touch-AMOLED-2.16** | [Check AliExpress offer](/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/){: rel="sponsored nofollow"} · [Product details](/products/waveshare-esp32-c6-touch-amoled-2-16/) | Single-core C6 with Wi-Fi 6 and 802.15.4; no external PSRAM listed |
 
-The Waveshare prices are manufacturer-listed ranges and can vary with the battery option. Both AliExpress links are affiliate links supplied for the respective listings. The price ranges above are manufacturer-listed reference prices checked in November 2026, not guaranteed marketplace prices. The AliExpress C6 seller listing may show a different price from Waveshare's official store; compare the final checkout price and selected battery option before ordering.
+Both AliExpress links are affiliate links supplied for the respective listings. Check the seller’s current listing, selected battery option, shipping and final checkout details before ordering.
 
 *Affiliate disclosure: Embedded Nerd may earn a commission from qualifying purchases made through the AliExpress links above, at no additional cost to you. The official ESP-Mosaico store and Waveshare manufacturer pages are not affiliate links.*
 
