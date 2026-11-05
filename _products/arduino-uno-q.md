@@ -161,6 +161,25 @@ The component side and the reverse side show the board layout, connectors and ex
 
 ![Arduino UNO Q reverse side showing its headers and board layout](/assets/images/products/arduino-uno-q-back.webp)
 
+## Arduino UNO Q pinout
+
+The UNO Q exposes separate MCU and MPU connections. The main maker I/O is on the MCU-side headers; dedicated headers also carry processor-control, camera and display signals.
+
+| Header / connection | What it exposes | Important detail |
+|---|---|---|
+| JDIGITAL | Digital pins D0–D21 and their alternate functions, including serial, I²C, SPI, PWM and CAN signals | MCU I/O, 3.3V logic |
+| JANALOG | Analog inputs A0–A5, including alternate functions | A0 and A1 are **not 5V tolerant** |
+| Qwiic | GND, 3.3V, SDA and SCL | I²C4 on the STM32U585 |
+| JSPI | MISO, SCK, MOSI, RESET, 5V and GND | SPI2 signals are 3.3V |
+| JCTL | Boot, reset, wake and console-related signals | 1.8V MPU domain; not general-purpose 3.3V I/O |
+| JMEDIA | MIPI camera/display lanes and related signals | 1.8V high-speed signals; not general-purpose GPIO |
+| JMISC | Mixed MCU and MPU functions, including PSSI, I²C, audio and power signals | Mixed 3.3V MCU and 1.8V MPU domains |
+
+The pinout diagram maps individual Arduino pin numbers to STM32U585 pins and peripheral functions. Check it before wiring a module: **do not apply 5V to A0/A1 or 3.3V signals to the 1.8V MPU headers.** The JMEDIA MIPI lanes are not GPIO.
+
+- [Download the official Arduino UNO Q full pinout PDF](https://docs.arduino.cc/resources/pinouts/ABX00162-full-pinout.pdf)
+- [Open the official Arduino UNO Q datasheet](https://docs.arduino.cc/resources/datasheets/ABX00162-datasheet.pdf)
+
 ## How the Arduino UNO Q dual-brain architecture works
 
 The UNO Q divides work between two processors.
@@ -232,6 +251,23 @@ You can also compare the configurations on the [official Arduino UNO Q product p
 
 As an affiliate, Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you.
 
+## Arduino UNO Q vs Raspberry Pi
+
+The comparison depends on which Raspberry Pi you mean. Here, Raspberry Pi refers to a Linux single-board computer such as the Raspberry Pi 4 or Raspberry Pi 5—not the Pico, which is a microcontroller board.
+
+| Feature | Arduino UNO Q | Raspberry Pi 4 / 5 |
+|---|---|---|
+| Main role | Hybrid Linux computer and microcontroller platform | General-purpose Linux single-board computer |
+| Operating system | Debian Linux on the QRB2210 | Raspberry Pi OS and other Linux distributions |
+| Real-time hardware control | Dedicated STM32U585 MCU running Zephyr/Arduino Core | Usually handled by GPIO software or an external microcontroller |
+| Board format | Arduino UNO form factor | Raspberry Pi SBC format |
+| Hardware expansion | UNO-style MCU headers, Qwiic and dedicated MPU headers | 40-pin GPIO header and model-specific connectors |
+| Best fit | Projects combining Linux, AI/vision and direct real-time I/O | Linux desktop use, servers, networking and general-purpose computing |
+
+Choose the **Arduino UNO Q** when you want Linux and a dedicated microcontroller on the same board, especially for projects that combine higher-level processing with real-time sensor or actuator control.
+
+Choose a **Raspberry Pi 4 or 5** when the priority is a general-purpose Linux computer, desktop environment, home server or broader Raspberry Pi software ecosystem. For practical Linux server builds, see our [Raspberry Pi IT Projects guide](/raspberry-pi-it-projects/).
+
 ## Arduino UNO Q vs Arduino UNO R4 WiFi
 
 These boards target different types of projects. The UNO R4 WiFi is a conventional microcontroller development board. The UNO Q adds a Linux-capable application processor and much more system memory.
@@ -247,6 +283,10 @@ These boards target different types of projects. The UNO R4 WiFi is a convention
 Choose the UNO R4 WiFi for conventional microcontroller projects. Choose the UNO Q when you need Linux and a real-time microcontroller on the same board.
 
 ## Frequently asked questions
+
+### Is Arduino UNO Q better than Raspberry Pi?
+
+Neither is universally better. Arduino UNO Q combines Debian Linux with a dedicated STM32U585 microcontroller, making it useful when a project needs Linux applications and real-time hardware control on one board. A Raspberry Pi 4 or 5 is a more general-purpose Linux computer and is often the better fit for desktop use, home servers and conventional SBC projects. The Raspberry Pi Pico is a different category: it is a microcontroller board, not a Linux computer.
 
 ### What is the Arduino UNO Q?
 
