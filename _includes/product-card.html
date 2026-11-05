@@ -9,11 +9,11 @@
 <div class="en-product-card" data-title="{{ include.product.title | downcase | escape }}" data-platforms="{{ include.product.categories | join: ',' | downcase | escape }}" data-manufacturer="{{ include.product.manufacturer | downcase | escape }}" data-description="{{ include.product.excerpt | downcase | escape }}" data-search="{{ product_search | downcase | escape }}">
   <a class="en-product-card__image" href="{{ include.product.url | relative_url | escape }}">
     <img src="{{ product_image | escape }}" alt="{{ include.product.title | escape }}" loading="lazy">
+  </a>
+  <div class="en-product-card__body">
     {% if commerce.badges.recommended %}
       <span class="en-badge en-badge--recommended">{% if site.active_lang == 'de' %}Empfohlen{% else %}Recommended{% endif %}</span>
     {% endif %}
-  </a>
-  <div class="en-product-card__body">
     {% if include.product.manufacturer %}<div class="en-product-card__manufacturer">{{ include.product.manufacturer }}</div>{% endif %}
     <h3><a href="{{ include.product.url | relative_url | escape }}">{{ include.product.title | escape }}</a></h3>
     <p>
