@@ -61,12 +61,13 @@ related:
   - esp32-devkit
   - raspberry-pi-pico
   - mpu6050
+  - arduino-uno-q
 ---
 ![Arduino Nano ESP32 development board, top-side components and headers](/assets/images/products/arduino-nano-esp32-board.webp)
 
 The **Arduino Nano ESP32** brings Espressif's ESP32-S3 platform into the familiar Nano footprint. Compared with the classic Arduino Nano, it adds 2.4 GHz Wi-Fi and Bluetooth, uses a USB-C connector, and runs its GPIO at 3.3 V rather than 5 V. It is a good fit for compact IoT devices, wireless sensors, USB-connected projects and anyone who wants ESP32 capabilities without moving to a larger DevKit-style board.
 
-The key detail to understand before wiring it is the **pin mapping**: Arduino names such as D2 or A4 are not the same numbers as the ESP32-S3 GPIOs. Use the mapping table below instead of assuming the labels match GPIO numbers.
+If your project needs a full Linux environment, Python applications or edge-AI processing alongside real-time microcontroller control, compare it with the [Arduino UNO Q](/products/arduino-uno-q/). The UNO Q is a larger and much more powerful hybrid platform, rather than a direct Nano-format replacement.\n\nThe key detail to understand before wiring it is the **pin mapping**: Arduino names such as D2 or A4 are not the same numbers as the ESP32-S3 GPIOs. Use the mapping table below instead of assuming the labels match GPIO numbers.
 
 ## Arduino Nano ESP32 specifications
 
