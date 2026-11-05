@@ -13,7 +13,7 @@ available_languages:
 english_url: /guition-esp32-s3-4848s040-pinout-esphome/
 german_url: /de/guition-esp32-s3-4848s040-pinout-esphome/
 internal_links: true
-permalink: /de/guition-esp32-s3-4848s040-pinout-esphome/
+permalink: /guition-esp32-s3-4848s040-pinout-esphome/
 id: "https://embeddednerd.com/de/guition-esp32-s3-4848s040-pinout-esphome/"
 hide_post_pagination: true
 sidebar:
