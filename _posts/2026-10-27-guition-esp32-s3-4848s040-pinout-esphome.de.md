@@ -47,7 +47,7 @@ tags:
 related: true
 related_posts:
   - /de/products/guition-esp32-s3-4848s040/
-  - /de/esp32-touchscreen-displays-guide/
+  - /esp32-touchscreen-displays-guide/
 ---
 <script type="application/ld+json">
 {
@@ -179,10 +179,10 @@ Möchten Sie ein Board auswählen? Besuchen Sie die [Produktseite des Guition ES
 
 ## Weiterführende Ressourcen
 
-- [Guition JC8048W550: 5-Zoll-ESP32-S3-Display](/de/products/guition-jc8048w550/) — eine größere Alternative im Querformat mit 800 × 480 Pixeln.
+- [Guition JC8048W550: 5-Zoll-ESP32-S3-Display](/products/guition-jc8048w550/) — eine größere Alternative im Querformat mit 800 × 480 Pixeln.
 - [Guition ESP32-S3-4848S040 – Produktseite](/de/products/guition-esp32-s3-4848s040/)
-- [ESP32-Touchscreen-Auswahlassistent](/de/tools/esp32-touchscreen-selector/)
-- [Leitfaden zu ESP32-Touchscreen-Displays](/de/esp32-touchscreen-displays-guide/)
+- [ESP32-Touchscreen-Auswahlassistent](/tools/esp32-touchscreen-selector/)
+- [Leitfaden zu ESP32-Touchscreen-Displays](/esp32-touchscreen-displays-guide/)
 - [ESPHome-Devices-Profil](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/)
 - [ESPHome-Konfiguration aus der Community](https://github.com/jtenniswood/esphome-lvgl/tree/main/guition-esp32-s3-4848s040)
 
