@@ -412,7 +412,7 @@ The Pico offers several practical advantages:
 
 ## Limitations
 
-The Raspberry Pi Pico is a microcontroller board rather than a Linux computer.
+The Raspberry Pi Pico is a microcontroller board rather than a Linux computer. It is therefore a different category from the [Arduino UNO Q](/products/arduino-uno-q/), which combines a Debian-capable application processor with a separate real-time microcontroller.
 
 It does not provide:
 
