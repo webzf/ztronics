@@ -3,7 +3,8 @@ layout: single
 title: "Products"
 permalink: /products/
 author_profile: false
-classes: wide
+sidebar:
+  nav: embedded
 toc: false
 internal_links: true
 excerpt: "Explore development boards, ESP32 displays, sensors, modules and electronics accessories for embedded projects."
