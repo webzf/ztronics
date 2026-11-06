@@ -1,5 +1,6 @@
 ---
 layout: single
+classes: wide
 title: "Products"
 permalink: /products/
 author_profile: false
