@@ -290,6 +290,8 @@ If you're connecting multiple I2C devices such as an OLED display and an MPU6050
 
 Prefer a smaller board with Wi-Fi and Bluetooth? See the [Arduino Nano ESP32](/products/arduino-nano-esp32/) for a compact Nano-format alternative.
 
+For an even smaller ESP32-S3 board with an integrated camera, digital microphone and microSD expansion, see the [Seeed Studio XIAO ESP32S3 Sense](/products/seeed-xiao-esp32s3-sense/). It is better suited to compact vision and audio projects, while the DevKit V1 offers a larger prototyping layout and a different ESP32 generation.
+
 ## Project Ideas
 
 The ESP32 DevKit V1 can be used for projects ranging from simple experiments to complete connected systems.

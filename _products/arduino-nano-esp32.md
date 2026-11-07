@@ -67,6 +67,8 @@ related:
 
 The **Arduino Nano ESP32** brings Espressif's ESP32-S3 platform into the familiar Nano footprint. Compared with the classic Arduino Nano, it adds 2.4 GHz Wi-Fi and Bluetooth, uses a USB-C connector, and runs its GPIO at 3.3 V rather than 5 V. It is a good fit for compact IoT devices, wireless sensors, USB-connected projects and anyone who wants ESP32 capabilities without moving to a larger DevKit-style board.
 
+If your project needs a camera, digital microphone and microSD storage in an even smaller package, compare it with the [Seeed Studio XIAO ESP32S3 Sense](/products/seeed-xiao-esp32s3-sense/). Both use the ESP32-S3, but the XIAO Sense adds a camera expansion board and has a different GPIO layout, so their pinouts are not interchangeable.
+
 If your project needs a full Linux environment, Python applications or edge-AI processing alongside real-time microcontroller control, compare it with the [Arduino UNO Q](/products/arduino-uno-q/). The UNO Q is a larger and much more powerful hybrid platform, rather than a direct Nano-format replacement.\n\nThe key detail to understand before wiring it is the **pin mapping**: Arduino names such as D2 or A4 are not the same numbers as the ESP32-S3 GPIOs. Use the mapping table below instead of assuming the labels match GPIO numbers.
 
 ## Arduino Nano ESP32 specifications
