@@ -122,7 +122,8 @@ Choose this board if you want a camera, microphone or SD logging on a board the 
 Prices change by seller, destination, shipping and selected variant. Check the live listing, the included accessories and the camera model before checkout.
 
 <div class="en-product-cta__buttons">
-  <a class="en-buy-button" href="/go/hardware/seeed-xiao-esp32s3-sense/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Check price — XIAO ESP32S3 Sense</strong><small>Amazon · verify the Sense version and headers</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+  <a class="en-buy-button" href="/go/hardware/seeed-xiao-esp32s3-sense/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Check price — XIAO ESP32S3 Sense</strong><small>AliExpress · verify camera version and headers</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+  <a class="en-buy-button" href="https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fab fa-amazon"></i></span><span class="en-buy-text"><strong>Check price — Amazon</strong><small>Verify the Sense version and included accessories</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
 </div>
 
 ## Specifications at a glance
