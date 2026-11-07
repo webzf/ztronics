@@ -985,3 +985,29 @@ waveshare-esp32-p4-wifi6-touch-lcd-x:
       enabled: true
       affiliate_url: "https://s.click.aliexpress.com/e/_c3Bms5Dz"
       last_verified: "2026-11-03"
+
+#----------------
+
+seeed-xiao-esp32s3-sense:
+
+  preferred_store: aliexpress
+
+  notes: "Amazon and AliExpress affiliate links supplied by the site owner. Confirm the Sense expansion board, camera model and whether pin headers are included."
+
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3AsyxGB"
+
+    amazon:
+      enabled: true
+      affiliate_url: "https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20"
