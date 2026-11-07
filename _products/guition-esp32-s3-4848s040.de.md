@@ -118,8 +118,8 @@ Die Platine eignet sich, wenn Sie ein kompaktes quadratisches Touchdisplay für 
 
 | Variante | Preis | Lieferumfang | Passt in eine runde EU-Unterputzdose mit 60 mm? |
 |---|---|---|---|
-| **Mit Relais** | **43,81 €** | Display-/ESP32-S3-Platine plus Relaisbaugruppe; Gehäuse und Netzteil im Angebot prüfen | **Nein** — laut ESPHome-Devices-Hardwarehinweisen passt die Relaisbaugruppe nicht in eine standardmäßige runde 60-mm-Dose |
-| **Ohne Relais** | **33,57 €** | Display-/ESP32-S3-Platine; genauen Lieferumfang des Angebots prüfen | **Nicht bestätigt** — die Platine allein garantiert keine Kompatibilität mit einem bestimmten Gehäuse |
+| **Mit Relais** | **40,63 €** | Display-/ESP32-S3-Platine plus Relaisbaugruppe; Gehäuse und Netzteil im Angebot prüfen | **Nein** — laut ESPHome-Devices-Hardwarehinweisen passt die Relaisbaugruppe nicht in eine standardmäßige runde 60-mm-Dose |
+| **Ohne Relais** | **31,02 €** | Display-/ESP32-S3-Platine; genauen Lieferumfang des Angebots prüfen | **Nicht bestätigt** — die Platine allein garantiert keine Kompatibilität mit einem bestimmten Gehäuse |
 
 Die Preise können sich je nach Händler, Lieferland, Versand und gewählter Variante ändern. Prüfen Sie den aktuellen AliExpress-Preis vor dem Kauf.
 
