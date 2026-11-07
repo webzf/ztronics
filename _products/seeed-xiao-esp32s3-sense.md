@@ -26,12 +26,12 @@ product_id: seeed-xiao-esp32s3-sense
 category: Development Boards
 manufacturer: "Seeed Studio"
 
-image: "/assets/images/products/seeed-xiao-esp32s3-sense-board.webp"
+image: "/assets/images/products/seeed-xiao-esp32s3-sense-front.webp"
 header:
-  teaser: "/assets/images/products/seeed-xiao-esp32s3-sense-board.webp"
-  og_image: "/assets/images/products/seeed-xiao-esp32s3-sense-board.webp"
-  og_image_alt: "Seeed Studio XIAO ESP32S3 Sense board with camera expansion board, Wi-Fi antenna and USB-C"
-alt: "Seeed Studio XIAO ESP32S3 Sense board with camera expansion board, Wi-Fi antenna and USB-C"
+  teaser: "/assets/images/products/seeed-xiao-esp32s3-sense-front.webp"
+  og_image: "/assets/images/products/seeed-xiao-esp32s3-sense-front.webp"
+  og_image_alt: "Front view of the Seeed Studio XIAO ESP32S3 Sense with camera module"
+alt: "Seeed Studio XIAO ESP32S3 Sense board, front view with camera module"
 
 excerpt: "Seeed Studio XIAO ESP32S3 Sense with ESP32-S3, OV5640 camera, digital microphone, microSD slot, 8MB PSRAM and 8MB Flash in a 21 × 17.8 mm board."
 
@@ -103,6 +103,23 @@ related:
 The Seeed Studio XIAO ESP32S3 Sense is a thumb-sized ESP32-S3 board with a detachable expansion board carrying a camera, a digital microphone and a microSD slot. It is also searched for as **XIAO ESP32-S3 Sense** or **Seeed XIAO ESP32S3 Sense**. Check that the listing is the **Sense** version before ordering, because the plain XIAO ESP32S3 looks almost identical but has no camera, microphone or SD slot.
 
 The detail to understand before wiring anything is the **shared pins**: the microphone, SD card and user LED reuse GPIOs that are also available on the header. The pin tables below show exactly which ones.
+
+## Product photos
+
+<div class="product-image-gallery" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.5rem 0;">
+  <figure>
+    <img src="/assets/images/products/seeed-xiao-esp32s3-sense-front.webp" alt="Front view of the Seeed Studio XIAO ESP32S3 Sense camera board" loading="lazy" style="width:100%;height:auto;">
+    <figcaption>Front view: XIAO ESP32S3 Sense with camera module</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/products/seeed-xiao-esp32s3-sense-camera-assembly.webp" alt="Seeed Studio XIAO ESP32S3 Sense with its camera expansion board assembled" loading="lazy" style="width:100%;height:auto;">
+    <figcaption>Camera and expansion board assembly</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/products/seeed-xiao-esp32s3-sense-back.webp" alt="Back of the Seeed Studio XIAO ESP32S3 Sense showing its pin labels and pads" loading="lazy" style="width:100%;height:auto;">
+    <figcaption>Back view: pin labels and solder pads</figcaption>
+  </figure>
+</div>
 
 ## Is the XIAO ESP32S3 Sense Worth Buying?
 
