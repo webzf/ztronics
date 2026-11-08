@@ -1,0 +1,17 @@
+{% assign locale = include.locale | default: site.locale %}
+{% if site.tag_archive.type and page.tags[0] %}
+  <p class="page__taxonomy">
+    <strong>{% if locale == 'es-ES' or locale == 'es' %}Etiquetas:{% elsif locale == 'de-DE' %}Schlagwörter:{% else %}Tags:{% endif %}</strong>
+    {% for tag in page.tags %}
+      <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="page__taxonomy-item" rel="tag">{{ tag }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+    {% endfor %}
+  </p>
+{% endif %}
+{% if site.category_archive.type and page.categories[0] %}
+  <p class="page__taxonomy">
+    <strong>{% if locale == 'es-ES' or locale == 'es' %}Categorías:{% elsif locale == 'de-DE' %}Kategorien:{% else %}Categories:{% endif %}</strong>
+    {% for category in page.categories %}
+      <a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}" class="page__taxonomy-item" rel="tag">{{ category }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+    {% endfor %}
+  </p>
+{% endif %}
