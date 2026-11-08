@@ -3,7 +3,7 @@
   <p class="page__taxonomy">
     <strong>{% if locale == 'es-ES' or locale == 'es' %}Etiquetas:{% elsif locale == 'de-DE' %}Schlagwörter:{% else %}Tags:{% endif %}</strong>
     {% for tag in page.tags %}
-      <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="page__taxonomy-item" rel="tag">{{ tag }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+      <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="page__taxonomy-item" rel="tag">{% if locale == 'es-ES' or locale == 'es' %}{% case tag %}{% when '4-inch' %}4 pulgadas{% when 'Capacitive Touch' %}Táctil capacitivo{% else %}{{ tag }}{% endcase %}{% else %}{{ tag }}{% endif %}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
     {% endfor %}
   </p>
 {% endif %}
@@ -11,7 +11,7 @@
   <p class="page__taxonomy">
     <strong>{% if locale == 'es-ES' or locale == 'es' %}Categorías:{% elsif locale == 'de-DE' %}Kategorien:{% else %}Categories:{% endif %}</strong>
     {% for category in page.categories %}
-      <a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}" class="page__taxonomy-item" rel="tag">{{ category }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+      <a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}" class="page__taxonomy-item" rel="tag">{% if locale == 'es-ES' or locale == 'es' %}{% case category %}{% when 'Displays' %}Pantallas{% when 'Smart Home' %}Hogar inteligente{% else %}{{ category }}{% endcase %}{% else %}{{ category }}{% endif %}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
     {% endfor %}
   </p>
 {% endif %}
