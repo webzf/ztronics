@@ -9,7 +9,7 @@
       <a class="en-related-card" href="{{ related.url | relative_url }}">
         {% if related.image %}<img src="{{ related.image | relative_url }}" alt="{{ related.title }}" loading="lazy" width="160" height="160">{% endif %}
         <div class="en-related-content">
-          <strong>{{ related.title }}</strong><br>
+          <strong>{% if site.active_lang == 'es' and related_id == 'guition-jc8048w550' %}Pantalla Guition JC8048W550 ESP32-S3 de 5 pulgadas{% elsif site.active_lang == 'es' and related_id == 'sunton-esp32-8048s043c' %}Sunton ESP32-8048S043C{% elsif site.active_lang == 'es' and related_id == 'esp32-2432s028-2-8-cyd' %}ESP32-2432S028 CYD táctil de 2,8 pulgadas{% elsif site.active_lang == 'es' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}Waveshare ESP32-S3-Touch-LCD-4.3{% else %}{{ related.title }}{% endif %}</strong><br>
           {% if site.active_lang == 'es' and related_id == 'guition-jc8048w550' %}
             <small>Pantalla IPS de 5 pulgadas y 800 × 480 píxeles con ESP32-S3.</small>
           {% elsif site.active_lang == 'es' and related_id == 'sunton-esp32-8048s043c' %}
