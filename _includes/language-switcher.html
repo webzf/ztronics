@@ -1,37 +1,30 @@
 {% comment %}
-  Show a language flag only when an explicit destination exists for that language.
-  The language_urls data file is the single source of truth; this avoids hiding
-  valid translations when page.available_languages is missing or altered by plugins.
+  Render the language dropdown only when this exact page has one or more
+  explicitly registered translations. language_urls.yml is the source of truth.
 {% endcomment %}
 {% assign translation_key = page.translation_id | default: page.product_id %}
 {% assign translation_paths = site.data.language_urls[translation_key] %}
 {% if translation_paths %}
   {% assign current_lang = page.lang | default: site.default_lang %}
-  <div class="language-switcher" role="group" aria-label="{% if current_lang == 'de' %}Sprache wählen{% else %}Choose language{% endif %}" style="display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;gap:6px;margin-left:8px;flex:0 0 auto;">
-    {% for lang in site.languages %}
-      {% assign lang_path = translation_paths[lang] %}
-      {% if lang_path %}
-        {% case lang %}
-          {% when "en" %}
-            <a class="language-switcher__link" style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;flex:0 0 24px;" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="en" lang="en" title="English" aria-label="English"{% if lang == current_lang %} aria-current="page"{% endif %}>
-              <svg class="language-switcher__flag" width="16" height="8" viewBox="0 0 60 30" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                <rect width="60" height="30" fill="#012169"/>
-                <path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"/>
-                <path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="2.5"/>
-                <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
-                <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
-              </svg>
-            </a>
-          {% when "de" %}
-            <a class="language-switcher__link" style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;flex:0 0 24px;" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="de" lang="de" title="Deutsch" aria-label="Deutsch"{% if lang == current_lang %} aria-current="page"{% endif %}>
-              <svg class="language-switcher__flag" width="16" height="10" viewBox="0 0 5 3" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                <rect width="5" height="1" y="0" fill="#000"/>
-                <rect width="5" height="1" y="1" fill="#D00"/>
-                <rect width="5" height="1" y="2" fill="#FFCE00"/>
-              </svg>
-            </a>
-        {% endcase %}
-      {% endif %}
-    {% endfor %}
-  </div>
+  {% assign current_label = "English" %}
+  {% if current_lang == "de" %}{% assign current_label = "Deutsch" %}{% endif %}
+  <details class="language-switcher">
+    <summary class="language-switcher__toggle" aria-label="{% if current_lang == 'de' %}Sprache wählen{% else %}Choose language{% endif %}">
+      <span>{{ current_label }}</span>
+      <span class="language-switcher__chevron" aria-hidden="true">▾</span>
+    </summary>
+    <ul class="language-switcher__menu">
+      {% for lang in site.languages %}
+        {% assign lang_path = translation_paths[lang] %}
+        {% if lang_path %}
+          {% case lang %}
+            {% when "en" %}
+              <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="en" lang="en"{% if lang == current_lang %} aria-current="page"{% endif %}>English</a></li>
+            {% when "de" %}
+              <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="de" lang="de"{% if lang == current_lang %} aria-current="page"{% endif %}>Deutsch</a></li>
+          {% endcase %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </details>
 {% endif %}
