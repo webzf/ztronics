@@ -1,16 +1,20 @@
 {% comment %}
-  Render the language dropdown only when this exact page has one or more
-  explicitly registered translations. language_urls.yml is the source of truth.
+  Render a compact language switcher only when this exact page has
+  one or more explicitly registered translations.
 {% endcomment %}
 {% assign translation_key = page.translation_id | default: page.product_id %}
 {% assign translation_paths = site.data.language_urls[translation_key] %}
 {% if translation_paths %}
   {% assign current_lang = page.lang | default: site.default_lang %}
-  {% assign current_label = "English" %}
-  {% if current_lang == "de" %}{% assign current_label = "Deutsch" %}{% endif %}
   <details class="language-switcher">
     <summary class="language-switcher__toggle" aria-label="{% if current_lang == 'de' %}Sprache wählen{% else %}Choose language{% endif %}">
-      <span>{{ current_label }}</span>
+      {% if current_lang == "de" %}
+        <span class="language-switcher__flag" aria-hidden="true">🇩🇪</span>
+        <span class="language-switcher__code">DE</span>
+      {% else %}
+        <span class="language-switcher__flag" aria-hidden="true">🇬🇧</span>
+        <span class="language-switcher__code">EN</span>
+      {% endif %}
       <span class="language-switcher__chevron" aria-hidden="true">▾</span>
     </summary>
     <ul class="language-switcher__menu">
@@ -19,9 +23,9 @@
         {% if lang_path %}
           {% case lang %}
             {% when "en" %}
-              <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="en" lang="en"{% if lang == current_lang %} aria-current="page"{% endif %}>English</a></li>
+              <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="en" lang="en"{% if lang == current_lang %} aria-current="page"{% endif %}><span aria-hidden="true">🇬🇧</span> <span>EN</span></a></li>
             {% when "de" %}
-              <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="de" lang="de"{% if lang == current_lang %} aria-current="page"{% endif %}>Deutsch</a></li>
+              <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="de" lang="de"{% if lang == current_lang %} aria-current="page"{% endif %}><span aria-hidden="true">🇩🇪</span> <span>DE</span></a></li>
           {% endcase %}
         {% endif %}
       {% endfor %}

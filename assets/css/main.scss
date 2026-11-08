@@ -361,3 +361,41 @@
     font-size: 0.76rem;
   }
 }
+
+
+/* Compact flag + two-letter language switcher */
+.language-switcher__toggle {
+  gap: 0.3rem;
+  padding: 0.4rem 0.5rem;
+}
+
+.language-switcher__flag,
+.language-switcher__menu a span[aria-hidden="true"] {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.language-switcher__code {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.language-switcher__menu {
+  min-width: 4.5rem;
+}
+
+.language-switcher__menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.6rem;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .language-switcher__toggle {
+    padding: 0.35rem 0.4rem;
+    font-size: 0.75rem;
+  }
+}
