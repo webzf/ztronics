@@ -13,8 +13,8 @@
   <ul class="social-icons">
     {% if locale == 'de-DE' %}
       <li><strong>Folgen Sie uns</strong></li>
-    {% elsif site.data.es.footer.follow_label and (locale == 'es-ES' or locale == 'es') %}
-      <li><strong>{{ site.data.es.footer.follow_label }}</strong></li>
+    {% elsif locale == 'es-ES' or locale == 'es' %}
+      <li><strong>Síguenos</strong></li>
     {% elsif site.data.ui-text[locale].follow_label %}
       <li><strong>{{ site.data.ui-text[locale].follow_label }}</strong></li>
     {% endif %}
