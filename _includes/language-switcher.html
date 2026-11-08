@@ -9,10 +9,10 @@
   <details class="language-switcher">
     <summary class="language-switcher__toggle" aria-label="{% if current_lang == 'de' %}Sprache wählen{% else %}Choose language{% endif %}">
       {% if current_lang == "de" %}
-        <span class="language-switcher__flag" aria-hidden="true">🇩🇪</span>
+        <svg class="language-switcher__flag language-switcher__flag--de" viewBox="0 0 5 3" role="img" aria-label="Deutsch"><path fill="#000" d="M0 0h5v1H0z"/><path fill="#D00" d="M0 1h5v1H0z"/><path fill="#FFCE00" d="M0 2h5v1H0z"/></svg>
         <span class="language-switcher__code">DE</span>
       {% else %}
-        <span class="language-switcher__flag" aria-hidden="true">🇬🇧</span>
+        <svg class="language-switcher__flag language-switcher__flag--en" viewBox="0 0 60 30" role="img" aria-label="English"><clipPath id="uk-clip"><path d="M0 0h60v30H0z"/></clipPath><g clip-path="url(#uk-clip)"><path fill="#012169" d="M0 0h60v30H0z"/><path stroke="#fff" stroke-width="6" d="M0 0l60 30M60 0L0 30"/><path stroke="#C8102E" stroke-width="2.5" d="M0 0l60 30M60 0L0 30"/><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/><path stroke="#C8102E" stroke-width="6" d="M30 0v30M0 15h60"/></g></svg>
         <span class="language-switcher__code">EN</span>
       {% endif %}
       <span class="language-switcher__chevron" aria-hidden="true">▾</span>
@@ -23,9 +23,9 @@
         {% if lang_path %}
           {% case lang %}
             {% when "en" %}
-              <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="en" lang="en"{% if lang == current_lang %} aria-current="page"{% endif %}><span aria-hidden="true">🇬🇧</span> <span>EN</span></a></li>
+              <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="en" lang="en"{% if lang == current_lang %} aria-current="page"{% endif %}><svg class="language-switcher__flag language-switcher__flag--en" viewBox="0 0 60 30" role="img" aria-label="English"><clipPath id="uk-clip"><path d="M0 0h60v30H0z"/></clipPath><g clip-path="url(#uk-clip)"><path fill="#012169" d="M0 0h60v30H0z"/><path stroke="#fff" stroke-width="6" d="M0 0l60 30M60 0L0 30"/><path stroke="#C8102E" stroke-width="2.5" d="M0 0l60 30M60 0L0 30"/><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/><path stroke="#C8102E" stroke-width="6" d="M30 0v30M0 15h60"/></g></svg> <span>EN</span></a></li>
             {% when "de" %}
-              <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="de" lang="de"{% if lang == current_lang %} aria-current="page"{% endif %}><span aria-hidden="true">🇩🇪</span> <span>DE</span></a></li>
+              <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="de" lang="de"{% if lang == current_lang %} aria-current="page"{% endif %}><svg class="language-switcher__flag language-switcher__flag--de" viewBox="0 0 5 3" role="img" aria-label="Deutsch"><path fill="#000" d="M0 0h5v1H0z"/><path fill="#D00" d="M0 1h5v1H0z"/><path fill="#FFCE00" d="M0 2h5v1H0z"/></svg> <span>DE</span></a></li>
           {% endcase %}
         {% endif %}
       {% endfor %}
