@@ -3,7 +3,7 @@
 <section class="en-product-tags-section">
 
     <h3 class="en-section-title">
-        {% if site.active_lang == 'de' %}Verwandte Themen{% else %}Related Topics{% endif %}
+        {% if site.active_lang == 'de' %}Verwandte Themen{% elsif site.active_lang == 'es' %}Temas relacionados{% else %}Related Topics{% endif %}
     </h3>
 
     <div class="en-product-tags-list">
@@ -13,7 +13,7 @@
         <a
             class="en-product-tag"
             href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}"
-            title="View all content tagged '{{ tag }}'">
+            title="{% if site.active_lang == 'es' %}Ver todo el contenido etiquetado como '{{ tag }}'{% elsif site.active_lang == 'de' %}Alle Inhalte mit dem Schlagwort '{{ tag }}' anzeigen{% else %}View all content tagged '{{ tag }}'{% endif %}">
 
             <span class="en-product-tag-text">
                 {{ tag }}
