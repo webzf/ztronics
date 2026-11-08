@@ -3,6 +3,15 @@ title: "Sunton ESP32-8048S043C Arduino Pinout, Code & Setup"
 title_tag: "Sunton ESP32-8048S043C Arduino Pinout & Setup"
 hide_post_pagination: true
 layout: single
+lang: en
+translation_id: sunton-esp32-8048s043c-guide
+available_languages:
+  - en
+  - de
+  - es
+english_url: /sunton-esp32-8048s043c-guide/
+german_url: /de/sunton-esp32-8048s043c-guide/
+spanish_url: /es/sunton-esp32-8048s043c-guide/
 permalink: /sunton-esp32-8048s043c-guide/
 id: "https://embeddednerd.com/sunton-esp32-8048s043c-guide/"
 sidebar:

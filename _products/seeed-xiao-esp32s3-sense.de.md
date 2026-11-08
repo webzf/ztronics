@@ -6,8 +6,10 @@ page_id: product-seeed-xiao-esp32s3-sense
 available_languages:
   - en
   - de
+  - es
 english_url: /products/seeed-xiao-esp32s3-sense/
 german_url: /de/products/seeed-xiao-esp32s3-sense/
+spanish_url: /es/guition-esp32-s3-4848s040-pinout-esphome/
 internal_links: true
 title: "Seeed Studio XIAO ESP32S3 Sense: Kamera, Mikrofon und microSD auf 21 × 17,8 mm"
 product_verdict: "Eine sehr kompakte ESP32-S3-Platine für Kamera-, Audio- und Datenlogger-Projekte. Beachten Sie die gemeinsam genutzten GPIOs und den höheren Deep-Sleep-Stromverbrauch mit angeschlossener Erweiterungsplatine."
