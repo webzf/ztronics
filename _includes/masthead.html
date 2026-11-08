@@ -8,13 +8,13 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav" aria-label="{% if locale == 'de-DE' %}Hauptnavigation{% else %}Primary navigation{% endif %}">
+      <nav id="site-nav" class="greedy-nav" aria-label="{% if locale == 'de-DE' %}Hauptnavigation{% elsif locale == 'es-ES' or locale == 'es' %}Navegación principal{% else %}Primary navigation{% endif %}">
         {% unless logo_path == empty %}
           <a class="site-logo" {% static_href %}href="{{ '/' | relative_url }}"{% endstatic_href %}><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
         <a class="site-title" {% static_href %}href="{{ '/' | relative_url }}"{% endstatic_href %}>
           {{ site.masthead_title | default: site.title | escape_once | strip }}
-          {% if site.subtitle %}<span class="site-subtitle">{% if locale == 'de-DE' %}Tutorials zu Arduino, ESP32 und Raspberry Pi sowie Elektronikprojekte{% else %}{{ site.subtitle | escape_once | strip }}{% endif %}</span>{% endif %}
+          {% if site.subtitle %}<span class="site-subtitle">{% if locale == 'de-DE' %}Tutorials zu Arduino, ESP32 und Raspberry Pi sowie Elektronikprojekte{% elsif locale == 'es-ES' or locale == 'es' %}Tutoriales de Arduino, ESP32 y Raspberry Pi y proyectos de electrónica{% else %}{{ site.subtitle | escape_once | strip }}{% endif %}</span>{% endif %}
         </a>
         <ul class="visible-links">
           {%- for link in navigation.main -%}
@@ -28,7 +28,7 @@
         </ul>
         {% if site.search == true %}
         <button class="search__toggle" type="button">
-          <span class="visually-hidden">{% if locale == 'de-DE' %}Suche öffnen{% else %}{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}{% endif %}</span>
+          <span class="visually-hidden">{% if locale == 'de-DE' %}Suche öffnen{% elsif locale == 'es-ES' or locale == 'es' %}Abrir búsqueda{% else %}{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}{% endif %}</span>
           <i class="fas fa-search"></i>
         </button>
         {% endif %}

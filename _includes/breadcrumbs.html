@@ -1,14 +1,16 @@
 {% assign locale = include.locale | default: site.locale %}
 {% if page.lang == 'de' or site.active_lang == 'de' %}
   {% assign locale = 'de-DE' %}
+{% elsif page.lang == 'es' or site.active_lang == 'es' %}
+  {% assign locale = 'es-ES' %}
 {% endif %}
 {% assign breadcrumb_path = page.url | remove_first: '/de/' | remove_first: '/' | remove_last: '/' %}
 {% assign crumbs = breadcrumb_path | split: '/' %}
 {% assign crumb_path = '/' %}
-<nav class="breadcrumbs" aria-label="{% if locale == 'de-DE' %}Brotkrumennavigation{% else %}Breadcrumb{% endif %}">
+<nav class="breadcrumbs" aria-label="{% if locale == 'de-DE' %}Brotkrumennavigation{% elsif locale == 'es-ES' %}Ruta de navegación{% else %}Breadcrumb{% endif %}">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="{{ '/' | relative_url }}" itemprop="item"><span itemprop="name">{% if locale == 'de-DE' %}Startseite{% else %}Home{% endif %}</span></a>
+      <a href="{{ '/' | relative_url }}" itemprop="item"><span itemprop="name">{% if locale == 'de-DE' %}Startseite{% elsif locale == 'es-ES' %}Inicio{% else %}Home{% endif %}</span></a>
       <meta itemprop="position" content="1">
     </li>
     {% assign position = 1 %}
@@ -18,10 +20,10 @@
         <span class="sep">/</span>
         {% if crumb == 'products' %}
           {% assign crumb_label = 'Products' %}
-          {% if locale == 'de-DE' %}{% assign crumb_label = 'Produkte' %}{% endif %}
+          {% if locale == 'de-DE' %}{% assign crumb_label = 'Produkte' %}{% elsif locale == 'es-ES' %}{% assign crumb_label = 'Productos' %}{% endif %}
           {% assign crumb_url = '/products/' %}
         {% elsif forloop.last %}
-          <li class="current" lang="{% if locale == 'de-DE' %}de{% else %}en{% endif %}">{{ page.title }}</li>
+          <li class="current" lang="{% if locale == 'de-DE' %}de{% elsif locale == 'es-ES' %}es{% else %}en{% endif %}">{{ page.title }}</li>
           {% continue %}
         {% else %}
           {% assign crumb_label = crumb | url_decode | replace: '-', ' ' | capitalize %}
