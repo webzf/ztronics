@@ -135,7 +135,7 @@ Los precios pueden cambiar según el vendedor, el país de entrega, el envío y 
 | Característica | Detalles |
 |---|---|
 | Microcontrolador | ESP32-S3 de doble núcleo, hasta 240 MHz |
-| Flash | 16 MB |
+| Memoria Flash | 16 MB |
 | PSRAM | 8 MB |
 | Tamaño de pantalla | IPS de 4,0 pulgadas |
 | Resolución | 480 × 480 píxeles |
