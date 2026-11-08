@@ -17,3 +17,14 @@ Loaded globally through Minimal Mistakes' footer/custom.html include.
   })();
 </script>
 <!-- End of Tawk.to Script -->
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[href*="/go/"]');
+  if (!a || typeof gtag !== 'function') return;
+  gtag('event', 'affiliate_click', {
+    link_url: a.href,
+    link_text: a.textContent.trim().slice(0, 80),
+    page_path: location.pathname
+  });
+});
+</script>
