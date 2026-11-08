@@ -282,6 +282,12 @@
 }
 
 /* Accessible language dropdown shown only when a translation exists. */
+.masthead__menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .masthead__language-row {
   display: flex;
   justify-content: flex-end;
