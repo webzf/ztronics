@@ -4,7 +4,7 @@ title_tag: "ESP32-P4 Round Touchscreen Projects: 3 LVGL Examples"
 description: "Build three ESP32-P4 round touchscreen projects with LVGL 9: a thermostat dial, live sensor gauge and focus timer, with setup steps and example UI code."
 excerpt: "Learn the Waveshare ESP32-P4 3.4C and 4C round display hardware, then build three LVGL 9 interfaces: a thermostat dial, sensor gauge and focus timer."
 date: 2026-10-12
-last_modified_at: 2026-10-12
+last_modified_at: 2026-11-08
 hide_post_pagination: true
 layout: single
 permalink: /esp32-p4-round-touchscreen-display-projects/
@@ -46,7 +46,7 @@ Round touchscreens used to mean tiny 1.28" modules with a few hundred pixels. Th
 This guide covers the **ESP32-P4 round touchscreen display boards** that are available now, how a round screen changes the way you design a UI, and **three LVGL projects** you can build on them.
 
 
-If you're still choosing hardware, start with our [ESP32 touch display guide]({{ site.baseurl }}/esp32-touchscreen-displays-guide/) for a broader comparison of screen sizes, touch technologies and display interfaces.
+If you're still choosing hardware, start with our [ESP32 touch display guide]({{ site.baseurl }}/esp32-touchscreen-displays-guide/) for a broader comparison of screen sizes, touch technologies and display interfaces. If you want a smaller round ESP32-S3 alternative rather than the larger ESP32-P4 boards covered here, see the [Waveshare ESP32-S3-Touch-AMOLED-1.75]({{ site.baseurl }}/products/waveshare-esp32-s3-touch-amoled-1-75/) product page; it uses a different MCU platform and display size.
 
 ![Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C round touchscreen, front view](/assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp)
 *The 3.4-inch ESP32-P4 round touchscreen board. [View the product specifications and purchase options](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/).*
