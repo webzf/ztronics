@@ -9,7 +9,7 @@ available_languages:
   - es
 english_url: /products/guition-esp32-s3-4848s040/
 german_url: /de/products/guition-esp32-s3-4848s040/
-spanish_url: /es/guition-esp32-s3-4848s040-pinout-esphome/
+spanish_url: /es/products/guition-esp32-s3-4848s040/
 internal_links: true
 title: "Guition ESP32-S3-4848S040: 4-Zoll-Touchscreen für Home Assistant"
 product_verdict: "Eine interessante Wahl für ein quadratisches 4-Zoll-Touchscreen-Dashboard mit 480 × 480 Pixeln auf ESP32-S3-Basis. Prüfen Sie vor dem Kauf die Relaisvariante und die Abmessungen für die Montage."
