@@ -2,7 +2,7 @@
 <!-- begin _includes/seo.html -->
 {%- assign title_separator = site.title_separator | default: '-' -%}
 
-{%- comment -%} TITULO: sem sufixo da marca. seo_title no front matter tem prioridade. {%- endcomment -%}
+{%- comment -%} Page title and SEO title. {%- endcomment -%}
 {%- assign page_title = page.title | default: site.title | replace: '|', '&#124;' -%}
 {%- if page.seo_title -%}
   {%- assign seo_title = page.seo_title | replace: '|', '&#124;' -%}
@@ -18,16 +18,12 @@
 {%- assign translation_paths = site.data.language_urls[translation_key] -%}
 {%- assign canonical_path = page.canonical_url | default: page.url -%}
 {%- if translation_paths -%}
-  {%- if current_lang == 'de' -%}
-    {%- assign canonical_path = translation_paths.de -%}
-  {%- else -%}
-    {%- assign canonical_path = translation_paths.en -%}
-  {%- endif -%}
+  {%- assign canonical_path = translation_paths[current_lang] | default: translation_paths.en -%}
 {%- endif -%}
 {%- assign canonical_path = canonical_path | replace: "/index.html", "/" -%}
 {%- assign canonical_url = canonical_path | absolute_url -%}
 
-{%- comment -%} DESCRICAO: ~155 caracteres {%- endcomment -%}
+{%- comment -%} Meta description. {%- endcomment -%}
 {%- assign seo_description = page.seo_description | default: page.description | default: page.excerpt | default: site.description -%}
 {%- if seo_description -%}
   {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | strip | truncate: 155 | escape_once -%}
@@ -40,7 +36,6 @@
   {%- assign author_twitter = author.twitter | replace: "@", "" -%}
 {%- endif -%}
 
-{%- comment -%} Imagem social explícita da página tem prioridade sobre a imagem visual do header. {%- endcomment -%}
 {%- assign page_large_image_source = page.og_image | default: page.header.og_image | default: page.header.image | default: page.header.overlay_image -%}
 {%- assign page_teaser_image_source = page.header.teaser | default: page.og_image | default: site.og_image -%}
 {%- if page_large_image_source -%}
@@ -85,9 +80,8 @@
   {% endif %}
 {% endif %}
 
-<!-- Open Graph -->
 <meta property="og:type" content="{{ og_type }}">
-<meta property="og:locale" content="{{ locale | replace: "-", "_" | default: "en_US" }}">
+<meta property="og:locale" content="{{ page.locale | default: locale | replace: "-", "_" | default: "en_US" }}">
 <meta property="og:site_name" content="{{ site.title | escape_once | strip }}">
 <meta property="og:title" content="{{ seo_title }}">
 <meta property="og:url" content="{{ canonical_url }}">
@@ -109,7 +103,6 @@
   <meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">
 {% endif %}
 
-<!-- Twitter / X (sempre ativo, mesmo sem username) -->
 <meta name="twitter:title" content="{{ seo_title }}">
 {% if seo_description %}
 <meta name="twitter:description" content="{{ seo_description }}">
