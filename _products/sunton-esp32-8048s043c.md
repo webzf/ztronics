@@ -4,7 +4,7 @@ internal_links: true
 title: "Sunton ESP32-8048S043C"
 product_verdict: "A strong option for a larger 4.3-inch ESP32-S3 HMI; choose a smaller CYD if price and compact size matter more."
 seo_title: "Sunton ESP32-8048S043C: Specs & Buying Guide"
-seo_description: "Sunton ESP32-S3 board with 4.3-inch 800×480 IPS, GT911 capacitive touch, 16MB Flash and 8MB PSRAM. Compare pros, alternatives and where to buy."
+seo_description: "Sunton ESP32-8048S043C with ESP32-S3, 4.3-inch 800×480 IPS and GT911 capacitive touch. Also compare the ESP32-8048S043 version without the C suffix."
 product_id: sunton-esp32-8048s043c
 category: Displays
 manufacturer: "Sunton"
@@ -16,9 +16,9 @@ header:
   teaser: "/assets/images/products/sunton-esp32-8048s043c-main.webp"
 alt: "Sunton ESP32-8048S043C-I 4.3-inch capacitive touchscreen display board, front view"
 
-excerpt: "Sunton ESP32-8048S043C CYD with ESP32-S3, 4.3-inch 800×480 IPS display, capacitive GT911 touch, 16MB Flash, 8MB PSRAM and microSD."
+excerpt: "Sunton ESP32-8048S043C CYD with ESP32-S3, 4.3-inch 800×480 IPS display, GT911 capacitive touch, 16MB Flash, 8MB PSRAM and microSD. Some listings also offer the ESP32-8048S043 (without C); check the selected variant’s touch configuration before ordering."
 
-description: "The Sunton ESP32-8048S043C is a CYD-style ESP32-S3 development board with a 4.3-inch 800×480 IPS TFT, 16-bit RGB parallel display interface, GT911 capacitive touch over I2C, 16MB Flash, 8MB PSRAM, microSD storage and USB-C through a CH340C USB-to-UART bridge."
+description: "The Sunton ESP32-8048S043C is a CYD-style ESP32-S3 development board with a 4.3-inch 800×480 IPS TFT, 16-bit RGB parallel display interface, GT911 capacitive touch over I2C, 16MB Flash, 8MB PSRAM, microSD storage and USB-C through a CH340C USB-to-UART bridge. Some sellers also list an ESP32-8048S043 version without the C suffix; check the exact touch configuration and specifications of the selected variant before ordering."
 
 categories:
   - Displays
