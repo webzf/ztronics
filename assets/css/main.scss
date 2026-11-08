@@ -50,6 +50,35 @@
 /* Full display-selector banner below the left sidebar navigation */
 .sidebar-display-banner {
   display: none;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+/* Prevent the sidebar tool card or its button from causing horizontal overflow
+   on tablets and other intermediate viewport sizes. */
+#main .sidebar .sidebar-display-banner,
+#main .sidebar__left .sidebar-display-banner {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.sidebar-display-banner *,
+.sidebar-display-banner *::before,
+.sidebar-display-banner *::after {
+  box-sizing: border-box;
+}
+
+.sidebar-display-banner .btn {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .sidebar-display-banner__icon {
