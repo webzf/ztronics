@@ -61,7 +61,7 @@ tags:
   - LVGL
   - ESPHome
   - Home Assistant
-permalink: /es/products/guition-esp32-s3-4848s040/
+permalink: /products/guition-esp32-s3-4848s040/
 specifications:
   - name: Procesador
     value: "ESP32-S3 de doble núcleo, hasta 240 MHz"
