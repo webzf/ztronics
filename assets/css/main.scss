@@ -393,11 +393,18 @@
 
 /* Render language flags consistently without relying on system emoji fonts. */
 .language-switcher__flag {
-  display: inline-block;
-  width: 1.25rem;
-  height: 0.75rem;
-  flex: 0 0 auto;
+  display: inline-block !important;
+  width: 1.25rem !important;
+  min-width: 1.25rem;
+  height: 0.75rem !important;
+  flex: 0 0 1.25rem;
   vertical-align: middle;
   font-size: initial;
   line-height: 1;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.language-switcher__toggle .language-switcher__flag {
+  margin-right: 0.15rem;
 }
