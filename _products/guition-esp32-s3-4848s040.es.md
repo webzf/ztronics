@@ -52,12 +52,12 @@ tags:
   - ESP32-S3
   - Guition
   - 4848S040
-  - 4-inch
+  - 4 pulgadas
   - 480x480
   - IPS
   - ST7701S
   - GT911
-  - Capacitive Touch
+  - Táctil capacitivo
   - LVGL
   - ESPHome
   - Home Assistant
