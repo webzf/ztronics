@@ -36,9 +36,11 @@
           <span class="visually-hidden">{% if locale == 'de-DE' %}Menü öffnen{% else %}{{ site.data.ui-text[locale].menu_label | default: "Toggle menu" }}{% endif %}</span>
           <div class="navicon"></div>
         </button>
-        {% include language-switcher.html %}
         <ul class="hidden-links hidden"></ul>
       </nav>
+      <div class="masthead__language-row">
+        {% include language-switcher.html %}
+      </div>
     </div>
   </div>
 </div>
