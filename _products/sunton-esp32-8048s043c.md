@@ -1,6 +1,12 @@
 ---
 layout: product
 internal_links: true
+page_id: product-sunton-esp32-8048s043c
+available_languages: [en, de, es, fr]
+english_url: /products/sunton-esp32-8048s043c/
+german_url: /de/products/sunton-esp32-8048s043c/
+spanish_url: /es/products/sunton-esp32-8048s043c/
+french_url: /fr/products/sunton-esp32-8048s043c/
 title: "Sunton ESP32-8048S043C"
 product_verdict: "A strong option for a larger 4.3-inch ESP32-S3 HMI; choose a smaller CYD if price and compact size matter more."
 seo_title: "Sunton ESP32-8048S043C: Specs & Buying Guide"
