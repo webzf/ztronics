@@ -85,15 +85,7 @@
           {% endif %}
         </div>
       {% elsif product.product_id == "sunton-esp32-8048s043c" %}
-        <a
-          class="en-buy-button"
-          href="{{ store.affiliate_url }}"
-          target="_blank"
-          rel="nofollow sponsored noopener">
-          <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-          <span class="en-buy-text"><strong>Buy on AliExpress</strong><small>Sunton ESP32-8048S043C · Check current price at seller</small></span>
-          <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-        </a>
+        {% comment %}Purchase CTA is rendered once by buy-buttons.html below the specifications.{% endcomment %}
       {% elsif product.product_id == "guition-esp32-s3-4848s040" %}
         {% assign amazon_offer = commerce.stores.amazon %}
         <div class="en-product-cta__buttons">
