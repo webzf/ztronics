@@ -85,7 +85,20 @@
           {% endif %}
         </div>
       {% elsif product.product_id == "sunton-esp32-8048s043c" %}
-        {% comment %}Purchase CTA is rendered once by buy-buttons.html below the specifications.{% endcomment %}
+        {% if store.enabled and store.affiliate_url %}
+        <a
+          class="en-buy-button preferred"
+          href="{{ store.affiliate_url }}"
+          target="_blank"
+          rel="nofollow sponsored noopener">
+          <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
+          <span class="en-buy-text">
+            <strong>{% if site.active_lang == 'de' %}Angebot auf AliExpress ansehen{% elsif site.active_lang == 'es' %}Ver oferta en AliExpress{% elsif site.active_lang == 'fr' %}Voir l’offre sur AliExpress{% else %}View Offer on AliExpress{% endif %}</strong>
+            <small>Sunton ESP32-8048S043C · {% if site.active_lang == 'de' %}Aktuellen Preis beim Verkäufer prüfen{% elsif site.active_lang == 'es' %}Consultar el precio actual del vendedor{% elsif site.active_lang == 'fr' %}Consulter le prix actuel chez le vendeur{% else %}Check current price at seller{% endif %}</small>
+          </span>
+          <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+        {% endif %}
       {% elsif product.product_id == "guition-esp32-s3-4848s040" %}
         {% assign amazon_offer = commerce.stores.amazon %}
         <div class="en-product-cta__buttons">
