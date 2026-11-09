@@ -25,6 +25,7 @@ available_languages:
   - en
   - de
   - es
+  - fr
 english_url: /products/guition-esp32-s3-4848s040/
 german_url: /de/products/guition-esp32-s3-4848s040/
 spanish_url: /es/guition-esp32-s3-4848s040/
