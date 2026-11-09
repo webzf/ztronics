@@ -3,6 +3,22 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-S3-Touch-AMOLED-1.75"
 product_verdict: "Choose this board for a round 466×466 AMOLED interface in a compact form; it is less suitable for conventional rectangular dashboards or layouts built around square corners."
+editorial_review:
+  rating: 9
+  best_rating: 10
+  worst_rating: 1
+  author: "Embedded Nerd"
+  summary: "The Waveshare ESP32-S3-Touch-AMOLED-1.75 combines a sharp 466×466 round AMOLED touchscreen with an ESP32-S3R8, 8MB PSRAM, 16MB Flash, battery management, motion sensing, RTC and onboard audio. It is a capable platform for compact circular interfaces and portable instruments. The main trade-offs are the specialised round display format, shared peripheral resources and the need to confirm which hardware version and accessories are included."
+  methodology: "This editorial assessment is based on Waveshare's published specifications, hardware documentation and available development resources. Embedded Nerd has not physically tested the specific board or Amazon seller listing covered by this page."
+  pros:
+    - "High-resolution 1.75-inch 466×466 AMOLED touchscreen with capacitive two-point touch"
+    - "ESP32-S3R8 with 8MB PSRAM and 16MB Flash for demanding LVGL interfaces"
+    - "Integrated QMI8658 IMU, RTC, audio codec, dual microphones and microSD storage"
+    - "Battery charging and monitoring circuitry integrated on the board"
+  cons:
+    - "The round display requires a circular UI and is less suitable for conventional rectangular dashboards"
+    - "Peripheral buses and GPIO resources need to be checked before adding external hardware"
+    - "Standard, -B and -G versions have different accessories and GPS capabilities; verify the exact listing"
 seo_title: "Waveshare ESP32-S3-Touch-AMOLED-1.75: Specs & Where to Buy"
 seo_description: "Waveshare ESP32-S3-Touch-AMOLED-1.75 specs: round 466×466 AMOLED, 8MB PSRAM, 16MB Flash, IMU, RTC, audio. Compare alternatives and see where to buy."
 product_id: waveshare-esp32-s3-touch-amoled-1-75
