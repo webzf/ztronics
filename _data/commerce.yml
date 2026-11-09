@@ -600,9 +600,9 @@ waveshare-esp32-s3-touch-amoled-1-75:
 
   preferred_store: aliexpress
 
-  notes: "AliExpress affiliate offer verified on 2026-09-23."
+  notes: "Amazon.com affiliate listing ASIN B0F8868KK8 supplied by the site owner. AliExpress affiliate offer previously verified on 2026-09-23; confirm seller variants and package contents before ordering."
 
-  disclaimer: false
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you."
 
   badges:
     recommended: false
@@ -613,8 +613,8 @@ waveshare-esp32-s3-touch-amoled-1-75:
   stores:
 
     amazon:
-      enabled: false
-      affiliate_url: ""
+      enabled: true
+      affiliate_url: "https://www.amazon.com/dp/B0F8868KK8?tag=embeddednerd2-20"
 
     aliexpress:
       enabled: true
