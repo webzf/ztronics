@@ -28,7 +28,8 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  # Never cancel an in-progress Pages build/deployment when another push arrives.
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -109,6 +110,12 @@ jobs:
 
   deploy:
     needs: build
+    if: ${{ needs.build.result == 'success' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    timeout-minutes: 15
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
