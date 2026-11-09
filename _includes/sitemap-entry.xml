@@ -1,0 +1,50 @@
+{%- assign node = include.node -%}
+{%- assign node_lang = node.lang | default: site.default_lang -%}
+{%- if node_lang == site.default_lang and node.url and node.sitemap != false and node.noindex != true and node.redirect.to == nil -%}
+  {%- if node.available_languages and node.available_languages.size > 0 -%}
+    {%- for lang in node.available_languages -%}
+      {%- assign localized_path = nil -%}
+      {%- case lang -%}
+        {%- when 'en' -%}{%- assign localized_path = node.english_url | default: node.url -%}
+        {%- when 'de' -%}{%- assign localized_path = node.german_url -%}
+        {%- when 'es' -%}{%- assign localized_path = node.spanish_url -%}
+        {%- when 'fr' -%}{%- assign localized_path = node.french_url -%}
+      {%- endcase -%}
+      {%- if localized_path -%}
+<url>
+  <loc>{{ localized_path | absolute_url | xml_escape }}</loc>
+  {%- for alternate_lang in node.available_languages -%}
+    {%- assign alternate_path = nil -%}
+    {%- case alternate_lang -%}
+      {%- when 'en' -%}{%- assign alternate_path = node.english_url | default: node.url -%}
+      {%- when 'de' -%}{%- assign alternate_path = node.german_url -%}
+      {%- when 'es' -%}{%- assign alternate_path = node.spanish_url -%}
+      {%- when 'fr' -%}{%- assign alternate_path = node.french_url -%}
+    {%- endcase -%}
+    {%- if alternate_path %}
+  <xhtml:link rel="alternate" hreflang="{{ alternate_lang }}" href="{{ alternate_path | absolute_url | xml_escape }}" />
+    {%- endif -%}
+  {%- endfor -%}
+  {%- assign default_path = node.english_url | default: node.url -%}
+  {%- if default_path %}
+  <xhtml:link rel="alternate" hreflang="x-default" href="{{ default_path | absolute_url | xml_escape }}" />
+  {%- endif -%}
+  {%- if node.last_modified_at and node.last_modified_at != node.date %}
+  <lastmod>{{ node.last_modified_at | date_to_xmlschema }}</lastmod>
+  {%- elsif node.date %}
+  <lastmod>{{ node.date | date_to_xmlschema }}</lastmod>
+  {%- endif %}
+</url>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- else -%}
+<url>
+  <loc>{{ node.url | absolute_url | xml_escape }}</loc>
+  {%- if node.last_modified_at and node.last_modified_at != node.date %}
+  <lastmod>{{ node.last_modified_at | date_to_xmlschema }}</lastmod>
+  {%- elsif node.date %}
+  <lastmod>{{ node.date | date_to_xmlschema }}</lastmod>
+  {%- endif %}
+</url>
+  {%- endif -%}
+{%- endif -%}
