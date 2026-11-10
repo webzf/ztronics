@@ -57,6 +57,8 @@ related_posts:
 }
 </script>
 
+{% include guition-purchase-box.html %}
+
 Pour les caractéristiques complètes, l’évaluation éditoriale, les variantes et les options d’achat, consultez la [page produit du Guition ESP32-S3-4848S040](/fr/products/guition-esp32-s3-4848s040/).
 
 Ce guide présente le brochage du 4848S040, les interfaces de l’écran et du tactile, les GPIO importants et l’utilisation d’une configuration ESPHome existante comme point de départ.
