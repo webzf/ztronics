@@ -182,6 +182,8 @@ Utilisez le [modèle YAML ESPHome actuel du projet](https://github.com/jtenniswo
 
 ## Où acheter
 
+{% include guition-variant-buttons.html %}
+
 Choisissez la version adaptée à votre projet. Les prix sont indicatifs et peuvent évoluer. Avant de commander, vérifiez la variante sélectionnée, les frais d’expédition et le prix total livré sur la page du vendeur.
 
 Les boutons d’achat ci-dessus et le tableau comparatif renvoient vers les deux variantes AliExpress. Nous n’indiquons pas de prix fixes, car le vendeur peut les modifier selon le pays de livraison, les frais d’expédition et la variante choisie. Vérifiez le prix actuel et le contenu exact du colis avant l’achat.
