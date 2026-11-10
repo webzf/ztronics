@@ -235,4 +235,4 @@ Not for dashboards that need frequent visual updates. Its full-color panel takes
 
 The E1004 is only one of four devices in the reTerminal E Series. The E1001 and E1003 use monochrome panels with partial refresh, while the E1002 and E1004 use full-color Spectra 6 panels with slower full-screen updates.
 
-See the [official reTerminal E Series comparison](https://wiki.seeedstudio.com/reterminal_e10xx_main_page/) for the current model matrix. A detailed Embedded Nerd comparison of all four models is planned separately.
+See the [official reTerminal E Series comparison](https://wiki.seeedstudio.com/reterminal_e10xx_main_page/) for the current model matrix. Read the [Embedded Nerd comparison of all four reTerminal E Series models](/seeed-reterminal-e-series-comparison/) to compare display size, color, touch, refresh speed, battery life and software compatibility.
