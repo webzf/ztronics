@@ -18,7 +18,7 @@ Embedded Nerd Product Box v6 Final
 
 {% if product %}
 
-<div class="en-product-box en-product-box--{{ style }}">
+<div class="en-product-box en-product-box--{{ style }}{% if product.product_id == "guition-esp32-s3-4848s040" %} en-product-box--guition{% endif %}">
 
   {% include product-header.html
       product=product
