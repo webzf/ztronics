@@ -188,6 +188,8 @@ Use the project's current [ESPHome YAML template](https://github.com/jtenniswood
 
 ## Where to buy
 
+{% include guition-variant-buttons.html %}
+
 Choose the configuration that fits your project. Prices are indicative and may change; check the selected option, shipping and final delivered price on the seller's page before ordering.
 
 The purchase options above and the comparison table link to the two AliExpress configurations. Prices are not fixed on this page because the seller can change them by destination, shipping and selected variant. Check the live price and the exact contents of the selected bundle before checkout.
