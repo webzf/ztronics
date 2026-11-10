@@ -1,10 +1,9 @@
 ---
 layout: product
 internal_links: true
-title: "Guition ESP32-S3-4848S040: 4\" 480×480 Touchscreen for Home Assistant"
+title: "Guition ESP32-S3-4848S040: 4\" 480×480 Touchscreen"
 product_verdict: "A good fit for a square 4-inch 480×480 ESP32-S3 touchscreen dashboard; verify the relay version and mounting dimensions before ordering."
 editorial_review:
-  rating: 9.5
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
@@ -18,8 +17,8 @@ editorial_review:
     - "The RGB display consumes many GPIOs, so available pins must be checked before adding peripherals"
     - "Community software configurations should be verified against the exact board revision"
     - "Relay modules and enclosures vary by listing; check compatibility and dimensions before ordering"
-seo_title: "Guition ESP32-S3-4848S040: Specs, Relay vs No-Relay & Where to Buy"
-seo_description: "Guition ESP32-S3-4848S040 (ESP32-4848S040): 4-inch 480×480 touchscreen, relay vs no-relay options and where to buy."
+seo_title: "Guition ESP32-S3-4848S040: Buy, Price & Specs (4\" 480×480)"
+seo_description: "Compare prices for the Guition ESP32-S3-4848S040 (ESP32-4848S040): 4-inch 480×480 touchscreen with GT911 touch and ESPHome support. Buy on AliExpress."
 page_id: product-guition-esp32-s3-4848s040
 available_languages:
   - en
@@ -43,7 +42,7 @@ alt: "Guition ESP32-S3-4848S040 4-inch square touchscreen development board"
 
 excerpt: "Guition ESP32-S3-4848S040 with ESP32-S3, 4-inch 480×480 IPS display, GT911 capacitive touch, 16MB Flash and 8MB PSRAM."
 
-description: "The Guition ESP32-S3-4848S040 is a square touchscreen development board with an ESP32-S3, 4-inch 480×480 IPS display, ST7701S display driver, GT911 capacitive touch, 16MB Flash and 8MB PSRAM. Some listings bundle the board with a relay module or wall-mount enclosure; verify the exact variant."
+description: "4\" 480×480 ESP32-S3 touchscreen with GT911 touch, 16MB Flash and 8MB PSRAM."
 
 categories:
   - Displays
@@ -117,6 +116,8 @@ related:
 ---
 The Guition ESP32-S3-4848S040 is a 4-inch 480×480 ESP32-S3 touchscreen for compact Home Assistant dashboards and wall panels. It is also searched for as **ESP32-4848S040**; some board and listing references use **4848S040C_I**. Check the exact revision and bundle before ordering.
 
+{% include guition-variant-buttons.html %}
+
 For the detailed [4848S040 pinout and ESPHome setup guide](/guition-esp32-s3-4848s040-pinout-esphome/), see the separate technical walkthrough.
 
 
@@ -133,10 +134,7 @@ Choose this board if you need a compact square touchscreen for a Home Assistant 
 
 Prices can change by seller, destination, shipping and selected variant. Check the live AliExpress listing before checkout.
 
-<div class="en-product-cta__buttons">
-  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-relay/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Check price — With Relay Module</strong><small>AliExpress · verify included accessories</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-standard/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Check price — Without Relay</strong><small>AliExpress · verify selected variant</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-</div>
+{% include guition-variant-buttons.html %}
 
 ## Specifications at a glance
 
