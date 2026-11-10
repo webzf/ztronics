@@ -31,14 +31,16 @@ classes: wide
      product=page.product_id
      style=product_style %}
 
-  {% if page.editorial_review and page.editorial_review.rating %}
+  {% if page.editorial_review %}
     {% assign editorial_review = page.editorial_review %}
     <section class="product-editorial-review notice notice--info" aria-labelledby="embedded-nerd-verdict-title">
       <h2 id="embedded-nerd-verdict-title">{% if site.active_lang == 'de' %}Redaktionelle Bewertung von Embedded Nerd{% elsif site.active_lang == 'fr' %}Avis éditorial d’Embedded Nerd{% elsif site.active_lang == 'es' %}Análisis editorial de Embedded Nerd{% else %}Embedded Nerd Editorial Review{% endif %}</h2>
+      {% if editorial_review.rating %}
       <p class="product-editorial-score">
         <strong>{{ editorial_review.rating }}/{{ editorial_review.best_rating | default: 10 }}</strong>
         <span> — {% if site.active_lang == 'de' %}Bewertung auf Grundlage von technischen Daten und Dokumentation{% elsif site.active_lang == 'fr' %}Évaluation fondée sur les caractéristiques et la documentation{% elsif site.active_lang == 'es' %}Evaluación basada en las especificaciones y la documentación{% else %}Assessment based on specifications and documentation{% endif %}</span>
       </p>
+      {% endif %}
       {% if editorial_review.summary %}
         <p>{{ editorial_review.summary | escape }}</p>
       {% endif %}
@@ -144,5 +146,9 @@ classes: wide
   Share this product page using the site's existing social-share component.
   {% endcomment %}
   {% include social-share.html locale=locale %}
+
+  {% if page.product_id == "guition-esp32-s3-4848s040" %}
+    {% include guition-cross-sell.html product=page %}
+  {% endif %}
 
 </div>
