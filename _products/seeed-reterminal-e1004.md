@@ -2,7 +2,7 @@
 layout: product
 internal_links: true
 title: "Seeed Studio reTerminal E1004 13.3-inch Full-Color ePaper Display"
-product_verdict: "A large, low-power ESP32-S3 ePaper terminal for photo frames, information boards and dashboards that do not need frequent screen updates. Its 13.3-inch Spectra 6 panel is impressive, but full refreshes take around 20 seconds and it has no touchscreen."
+product_verdict: "A large, low-power ESP32-S3 ePaper terminal for photo frames, information boards and dashboards that do not need frequent screen updates. Its 13.3-inch Spectra 6 panel is impressive, but full refreshes take roughly 20–40 seconds, depending on the published source and refresh mode and it has no touchscreen."
 seo_title: "Seeed reTerminal E1004: Specs, ESPHome & Where to Buy"
 seo_description: "Seeed Studio reTerminal E1004 specs: 13.3-inch Spectra 6 color ePaper, 1200×1600 resolution, ESP32-S3, 5000mAh battery, ESPHome and Home Assistant support."
 product_id: seeed-reterminal-e1004
@@ -51,7 +51,7 @@ specifications:
   - name: Resolution
     value: "1200 × 1600 pixels"
   - name: Refresh
-    value: "Around 20 seconds; full refresh only"
+    value: "Approximately 20–40 seconds in published guidance; full refresh only"
   - name: Touch
     value: "No capacitive touchscreen; physical touch buttons"
   - name: Flash
@@ -103,7 +103,7 @@ Unlike an LCD or AMOLED panel, ePaper only needs power when the displayed conten
 
 The E1004 is worth considering when screen size and full-color ePaper matter more than interaction speed. Its 13.3-inch panel, 1200 × 1600 resolution and 5000mAh battery make it the largest and most capable color model in Seeed's reTerminal E Series.
 
-The main limitations are just as important as the headline specifications: the E1004 does not have a capacitive touchscreen, does not support partial refresh, and takes around 20 seconds for a full screen update. It is best suited to photo frames, calendars, notices and dashboards that update occasionally rather than continuously.
+The main limitations are just as important as the headline specifications: the E1004 does not have a capacitive touchscreen, does not support partial refresh, and takes roughly 20–40 seconds for a full screen update, depending on the published guidance and refresh mode. It is best suited to photo frames, calendars, notices and dashboards that update occasionally rather than continuously.
 
 ## Key specifications
 
@@ -112,7 +112,7 @@ The main limitations are just as important as the headline specifications: the E
 | Processor | ESP32-S3 with 8MB PSRAM |
 | Display | 13.3-inch E Ink Spectra 6 full-color ePaper |
 | Resolution | 1200 × 1600 |
-| Refresh time | Approximately 20 seconds |
+| Refresh time | Approximately 20–40 seconds (published figures vary) |
 | Partial refresh | Not supported |
 | Touchscreen | No |
 | Controls | Physical touch buttons |
@@ -161,7 +161,7 @@ The E1004 is a specialist display, and its limitations are important when choosi
 
 - **No capacitive touchscreen:** the E1004 uses physical touch buttons. If direct touchscreen interaction is essential, consider the E1003 instead.
 - **No partial refresh:** the color panel requires a full refresh.
-- **Slow screen updates:** a full refresh takes approximately 20 seconds according to Seeed.
+- **Slow screen updates:** published full-refresh guidance ranges from approximately 20 to 40 seconds.
 - **Not suitable for animation:** rapidly changing dashboards and video-like content are a poor fit for this display technology.
 - **Large enclosure:** its 376 × 311mm dimensions need to be considered before planning a wall mount or frame.
 - **Battery life varies:** the advertised six-month figure depends on usage and refresh behavior.
@@ -203,7 +203,7 @@ It has a 13.3-inch E Ink Spectra 6 full-color ePaper display with a resolution o
 
 ### How long does the E1004 take to refresh?
 
-Seeed lists a full refresh time of approximately 20 seconds. The E1004 does not support partial refresh.
+Seeed's comparison lists approximately 20 seconds, while its Arduino cookbook gives a 25–40-second range for six-color panels. The E1004 does not support partial refresh.
 
 ### Can the reTerminal E1004 work with Home Assistant?
 
@@ -219,7 +219,7 @@ Seeed advertises up to six months from the built-in 5000mAh battery. Actual runt
 
 ### Is the reTerminal E1004 suitable for a real-time dashboard?
 
-Not for dashboards that need frequent visual updates. Its full-color panel takes around 20 seconds to refresh and does not support partial refresh. It is better suited to static or slowly changing information.
+Not for dashboards that need frequent visual updates. Its full-color panel takes roughly 20–40 seconds to refresh in published guidance and does not support partial refresh. It is better suited to static or slowly changing information.
 
 ## Compare the Seeed reTerminal E Series
 
