@@ -126,7 +126,31 @@ abort "Sitemap validation failed; expected URLs missing: #{missing_paths.join(',
   abort "Sitemap validation failed: no #{lang} URLs were generated" unless translations.values.any? { |group| group.key?(lang) }
 end
 
-File.write(sitemap_path, doc.to_s)
+# Serialize the complete XML document, not Document#to_s (which can emit only
+# concatenated text in some REXML versions). Keep an XML declaration and readable
+# formatting so browsers, validators and crawlers all receive an actual XML document.
+output = +"<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+"
+formatter = REXML::Formatters::Pretty.new(2)
+formatter.compact = true
+formatter.write(doc, output)
+output << "\n"
+
+# Validate the exact bytes that will be deployed.
+validated_doc = REXML::Document.new(output)
+validated_root = validated_doc.root
+abort "Sitemap validation failed: root element is not urlset" unless validated_root&.name == "urlset"
+abort "Sitemap validation failed: no URL entries" if REXML::XPath.match(validated_doc, "//*[local-name()='url']").empty?
+abort "Sitemap validation failed: missing xhtml namespace" unless validated_root.namespaces["xhtml"] == "http://www.w3.org/1999/xhtml"
+
+%w[de es fr].each do |lang|
+  count = REXML::XPath.match(validated_doc, "//*[local-name()='link' and @hreflang='#{lang}']").length
+  abort "Sitemap validation failed: no #{lang} hreflang links in XML output" if count.zero?
+end
+
+File.write(sitemap_path, output)
+url_count = REXML::XPath.match(validated_doc, "//*[local-name()='url']").length
+puts "Sitemap XML validated and serialized: #{url_count} URL entries"
 puts "Sitemap cleanup: removed #{removed.length} URLs"
 puts "Multilingual sitemap: generated #{translated_urls.length} localized URLs across #{translations.length} translation groups"
 puts removed
