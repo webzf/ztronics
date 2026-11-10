@@ -17,6 +17,7 @@ internal_links: true
 title: "Guition ESP32-S3-4848S040 : écran tactile 4\" 480×480"
 product_verdict: "Une option intéressante pour un tableau de bord tactile carré de 4 pouces et 480 × 480 pixels basé sur l’ESP32-S3. Avant l’achat, vérifiez la version avec relais et les dimensions de montage."
 editorial_review:
+  rating: 9.5
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
