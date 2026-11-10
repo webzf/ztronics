@@ -14,10 +14,9 @@ german_url: /de/products/guition-esp32-s3-4848s040/
 spanish_url: /es/products/guition-esp32-s3-4848s040/
 french_url: /fr/products/guition-esp32-s3-4848s040/
 internal_links: true
-title: "Guition ESP32-S3-4848S040: pantalla táctil de 4 pulgadas para Home Assistant"
+title: "Guition ESP32-S3-4848S040: pantalla táctil 4\" 480×480"
 product_verdict: "Una opción interesante para un panel táctil cuadrado de 4 pulgadas y 480 × 480 píxeles basado en ESP32-S3. Antes de comprar, compruebe la variante con relé y las dimensiones para el montaje."
 editorial_review:
-  rating: 9.5
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
@@ -31,8 +30,8 @@ editorial_review:
     - "La pantalla RGB utiliza numerosos GPIO; compruebe los pines libres antes de conectar más periféricos"
     - "Las configuraciones de la comunidad deben compararse con la revisión exacta del hardware"
     - "Los módulos de relé y las carcasas varían según el anuncio; compruebe la compatibilidad y las dimensiones antes de comprar"
-seo_title: "Guition ESP32-S3-4848S040: pantalla de 4 pulgadas, especificaciones y versión con relé"
-seo_description: "Guition ESP32-S3-4848S040 (ESP32-4848S040): pantalla táctil de 4 pulgadas y 480×480, con o sin relé, especificaciones y dónde comprar."
+seo_title: "Guition ESP32-S3-4848S040: Comprar, precio y características"
+seo_description: "Compara precios de la Guition ESP32-S3-4848S040 (ESP32-4848S040): pantalla táctil de 4 pulgadas 480×480 con GT911 y soporte ESPHome. Comprar en AliExpress."
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
@@ -43,7 +42,7 @@ header:
   og_image_alt: "Guition ESP32-S3-4848S040: placa de desarrollo táctil cuadrada de 4 pulgadas y 480 × 480 píxeles"
 alt: "Guition ESP32-S3-4848S040, placa táctil cuadrada con pantalla de 4 pulgadas"
 excerpt: "Guition ESP32-S3-4848S040 con ESP32-S3, pantalla IPS de 4 pulgadas y 480 × 480 píxeles, táctil capacitivo GT911, 16 MB de Flash y 8 MB de PSRAM."
-description: "El Guition ESP32-S3-4848S040 es una placa de desarrollo táctil cuadrada con ESP32-S3, pantalla IPS de 4 pulgadas y 480 × 480 píxeles, controlador ST7701S, táctil capacitivo GT911, 16 MB de Flash y 8 MB de PSRAM. Algunos anuncios incluyen también un módulo de relé o una carcasa para montaje en pared. Compruebe la variante exacta."
+description: "Pantalla táctil ESP32-S3 de 4 pulgadas y 480×480 con GT911, 16 MB de Flash y 8 MB de PSRAM."
 categories:
   - Displays
   - ESP32
@@ -112,6 +111,8 @@ related:
 ---
 El **Guition ESP32-S3-4848S040** es una pantalla táctil ESP32-S3 de 4 pulgadas y 480 × 480 píxeles, pensada para paneles compactos de Home Assistant y paneles de pared. También se busca como **ESP32-4848S040**; en algunas referencias de placas y vendedores aparece como **4848S040C_I**. Antes de comprar, compruebe la revisión exacta y el contenido del paquete.
 
+{% include guition-variant-buttons.html %}
+
 Consulte nuestra guía técnica independiente sobre el [pinout del 4848S040 y la configuración de ESPHome](/es/guition-esp32-s3-4848s040-pinout-esphome/).
 
 ## ¿Merece la pena el Guition ESP32-S3-4848S040?
@@ -122,15 +123,12 @@ La placa es adecuada si necesita una pantalla táctil cuadrada y compacta para u
 
 | Variante | Precio | Contenido | ¿Cabe en una caja redonda europea de empotrar de 60 mm? |
 |---|---|---|---|
-| **Con relé** | Consultar precio actual | Placa de pantalla/ESP32-S3 y conjunto de relé; compruebe si el anuncio incluye carcasa y fuente de alimentación | **No**: según las notas de hardware de ESPHome Devices, el conjunto de relé no cabe en una caja redonda estándar de 60 mm |
-| **Sin relé** | Consultar precio actual | Placa de pantalla/ESP32-S3; compruebe el contenido exacto del anuncio | **No confirmado**: la placa por sí sola no garantiza la compatibilidad con una carcasa concreta |
+| **Con relé** | **€40.63** | Placa de pantalla/ESP32-S3 y conjunto de relé; compruebe si el anuncio incluye carcasa y fuente de alimentación | **No**: según las notas de hardware de ESPHome Devices, el conjunto de relé no cabe en una caja redonda estándar de 60 mm |
+| **Sin relé** | **€31.02** | Placa de pantalla/ESP32-S3; compruebe el contenido exacto del anuncio | **No confirmado**: la placa por sí sola no garantiza la compatibilidad con una carcasa concreta |
 
 Los precios pueden cambiar según el vendedor, el país de entrega, el envío y la variante seleccionada. Compruebe el precio actual de AliExpress antes de comprar.
 
-<div class="en-product-cta__buttons">
-  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-relay/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Consultar precio — Con relé</strong><small>AliExpress · Compruebe el contenido del paquete</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-standard/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Consultar precio — Sin relé</strong><small>AliExpress · Compruebe la variante</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-</div>
+{% include guition-variant-buttons.html %}
 
 ## Especificaciones técnicas
 
