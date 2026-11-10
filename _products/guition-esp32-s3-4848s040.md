@@ -4,6 +4,7 @@ internal_links: true
 title: "Guition ESP32-S3-4848S040: 4\" 480×480 Touchscreen"
 product_verdict: "A good fit for a square 4-inch 480×480 ESP32-S3 touchscreen dashboard; verify the relay version and mounting dimensions before ordering."
 editorial_review:
+  rating: 9.5
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
@@ -27,7 +28,7 @@ available_languages:
   - fr
 english_url: /products/guition-esp32-s3-4848s040/
 german_url: /de/products/guition-esp32-s3-4848s040/
-spanish_url: /es/guition-esp32-s3-4848s040/
+spanish_url: /es/products/guition-esp32-s3-4848s040/
 french_url: /fr/products/guition-esp32-s3-4848s040/
 product_id: guition-esp32-s3-4848s040
 category: Displays
