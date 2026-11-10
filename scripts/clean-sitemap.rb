@@ -152,6 +152,17 @@ abort "Sitemap validation failed: missing xhtml namespace" unless validated_root
   abort "Sitemap validation failed: no #{lang} hreflang links in XML output" if count.zero?
 end
 
+# Keep one canonical sitemap only. Polyglot localizes generated static files by
+# default; remove its language-prefixed sitemap copies so crawlers and users have
+# one source of truth at /sitemap.xml (the URL declared in robots.txt).
+%w[de es fr].each do |lang|
+  localized_sitemap = File.join(Dir.pwd, "_site", lang, "sitemap.xml")
+  if File.file?(localized_sitemap)
+    File.delete(localized_sitemap)
+    puts "Removed localized sitemap copy: /#{lang}/sitemap.xml"
+  end
+end
+
 File.write(sitemap_path, output)
 url_count = REXML::XPath.match(validated_doc, "//*[local-name()='url']").length
 puts "Sitemap XML validated and serialized: #{url_count} URL entries"
