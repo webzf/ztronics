@@ -69,6 +69,8 @@ related_posts:
 }
 </script>
 
+{% include guition-purchase-box.html %}
+
 Para consultar las especificaciones completas, la valoración editorial, las variantes disponibles y las opciones de compra, visite la [página de producto del Guition ESP32-S3-4848S040](/es/products/guition-esp32-s3-4848s040/).
 
 Esta guía se centra en el pinout del 4848S040, las interfaces de pantalla y táctil, las consideraciones importantes sobre GPIO y el uso de una configuración ESPHome existente como punto de partida.
