@@ -99,6 +99,11 @@ The **Seeed Studio reTerminal E1004** is a 13.3-inch full-color ePaper terminal 
 
 Unlike an LCD or AMOLED panel, ePaper only needs power when the displayed content changes. That makes the E1004 interesting for always-on information displays, especially when it runs from its built-in battery. The trade-off is refresh speed: Seeed lists a full refresh time of around 20 seconds, so this is not a conventional real-time touchscreen.
 
+<figure>
+  <img src="https://files.seeedstudio.com/wiki/reterminal_e10xx/img/e1004/mainpic2.jpeg" alt="Seeed Studio reTerminal E1004 13.3-inch full-color ePaper display shown as a finished digital frame" loading="lazy" decoding="async" style="width: 100%; max-width: 800px; height: auto;">
+  <figcaption>reTerminal E1004 product photograph. Image: <a href="https://wiki.seeedstudio.com/getting_started_with_reterminal_e1004/" rel="nofollow">Seeed Studio documentation</a>.</figcaption>
+</figure>
+
 ## Is the reTerminal E1004 worth considering?
 
 The E1004 is worth considering when screen size and full-color ePaper matter more than interaction speed. Its 13.3-inch panel, 1200 × 1600 resolution and 5000mAh battery make it the largest and most capable color model in Seeed's reTerminal E Series.
@@ -136,6 +141,11 @@ The large portrait-oriented panel is particularly useful for artwork, menus, cal
 This refresh behavior should influence the project design. Use the E1004 for information that changes every few minutes or hours, not for rapidly animated widgets, scrolling charts or controls that need immediate visual feedback.
 
 ## ESP32-S3 hardware and connectivity
+
+<figure>
+  <img src="https://files.seeedstudio.com/wiki/reterminal_e10xx/img/209.png" alt="Annotated hardware overview of the Seeed reTerminal E1004 showing the display, buttons, USB-C port, status LEDs, expansion connector and mounting points" loading="lazy" decoding="async" style="width: 100%; max-width: 900px; height: auto;">
+  <figcaption>Hardware layout and physical controls. Image: <a href="https://wiki.seeedstudio.com/getting_started_with_reterminal_e1004/" rel="nofollow">Seeed Studio documentation</a>.</figcaption>
+</figure>
 
 The terminal is based on an ESP32-S3 with 8MB PSRAM and 32MB Flash. It includes 2.4GHz Wi-Fi, Bluetooth 5.0, temperature and humidity sensing, a buzzer and a microSD card slot.
 
