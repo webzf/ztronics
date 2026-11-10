@@ -44,6 +44,7 @@
 
       {% assign preferred = commerce.preferred_store %}
       {% assign store = commerce.stores[preferred] %}
+      {% assign store_url = store.affiliate_url | default: store.product_url %}
 
       {% if product.product_id == "esp-mosaico" %}
         <a
@@ -139,13 +140,13 @@
           </a>
           {% endif %}
         </div>
-      {% elsif store.enabled %}
+      {% elsif store.enabled and store_url %}
       <a
         class="en-buy-button"
-        href="{{ store.affiliate_url }}"
+        href="{{ store_url }}"
         target="_blank"
-        rel="nofollow sponsored noopener">
-        🛒 Check Price on {{ preferred | capitalize }}
+        rel="{% if store.affiliate == false %}noopener noreferrer{% else %}nofollow sponsored noopener{% endif %}">
+        🛒 {% if preferred == 'seeed' %}View at Seeed Studio{% else %}Check Price on {{ preferred | capitalize }}{% endif %}
       </a>
       {% endif %}
 
