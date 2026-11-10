@@ -34,6 +34,39 @@
     outline: 3px solid #0284c7 !important;
     outline-offset: 3px !important;
   }
+
+  /* Keep the Guition purchase options visible near the top on mobile. */
+  @media (max-width: 768px) {
+    .en-product-box--guition .en-product-header {
+      gap: .65rem !important;
+      padding: .9rem !important;
+    }
+    .en-product-box--guition .en-product-image {
+      flex: none !important;
+    }
+    .en-product-box--guition .en-product-image img {
+      max-width: 104px !important;
+    }
+    .en-product-box--guition .en-product-title {
+      font-size: 1.3rem !important;
+      line-height: 1.2 !important;
+      margin-bottom: .25rem !important;
+    }
+    .en-product-box--guition .en-product-manufacturer {
+      margin-bottom: .35rem !important;
+    }
+    .en-product-box--guition .en-product-description {
+      line-height: 1.4 !important;
+      font-size: .92rem !important;
+    }
+    .en-product-box--guition .en-product-cta {
+      margin-top: .65rem !important;
+    }
+    .en-product-box--guition .en-product-cta__buttons .en-buy-button {
+      padding: .55rem .65rem !important;
+    }
+  }
+
 </style>
 
 <!-- Google Tag Manager -->
