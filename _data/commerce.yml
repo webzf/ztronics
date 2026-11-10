@@ -197,7 +197,6 @@ ili9341-xpt2046-2-8-touchscreen:
     fast_shipping: false
 
   stores:
-
     amazon:
       enabled: false
       affiliate_url: ""
@@ -398,7 +397,6 @@ dht22:
       enabled: true
       affiliate_url: "https://s.click.aliexpress.com/e/_c3BzxWD5"
 
-
 #----------------
 
 bma400:
@@ -597,7 +595,6 @@ waveshare-esp32-c6-touch-amoled-1-8:
 #----------------
 
 waveshare-esp32-s3-touch-amoled-1-75:
-
   preferred_store: aliexpress
 
   notes: "Amazon.com affiliate listing ASIN B0F8868KK8 supplied by the site owner. AliExpress affiliate offer previously verified on 2026-09-23; confirm seller variants and package contents before ordering."
@@ -797,7 +794,6 @@ l298n-motor-driver:
 usb-5v-2a-power-supply:
 
   preferred_store: amazon
-
   notes: "Amazon and AliExpress affiliate links for the MB102 Breadboard Power Supply Module supplied by the site owner."
 
   disclaimer: false
@@ -997,8 +993,7 @@ seeed-xiao-esp32s3-sense:
 
   disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
 
-  badges:
-    recommended: false
+  badges:    recommended: false
     editor_choice: false
     best_value: false
     fast_shipping: false
@@ -1012,3 +1007,27 @@ seeed-xiao-esp32s3-sense:
     amazon:
       enabled: true
       affiliate_url: "https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20"
+
+#----------------
+
+seeed-reterminal-e1004:
+
+  preferred_store: seeed
+
+  notes: "Official Seeed Studio product page. Direct non-affiliate link until a product-specific affiliate link is confirmed."
+
+  disclaimer: false
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    seeed:
+      enabled: true
+      affiliate: false
+      product_url: "https://www.seeedstudio.com/reTerminal-E1004-p-6692.html"
+      affiliate_url: ""
