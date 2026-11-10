@@ -17,6 +17,7 @@ internal_links: true
 title: "Guition ESP32-S3-4848S040: pantalla táctil 4\" 480×480"
 product_verdict: "Una opción interesante para un panel táctil cuadrado de 4 pulgadas y 480 × 480 píxeles basado en ESP32-S3. Antes de comprar, compruebe la variante con relé y las dimensiones para el montaje."
 editorial_review:
+  rating: 9.5
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
