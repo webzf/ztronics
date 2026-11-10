@@ -14,10 +14,9 @@ german_url: /de/products/guition-esp32-s3-4848s040/
 spanish_url: /es/products/guition-esp32-s3-4848s040/
 french_url: /fr/products/guition-esp32-s3-4848s040/
 internal_links: true
-title: "Guition ESP32-S3-4848S040 : écran tactile 4 pouces pour Home Assistant"
+title: "Guition ESP32-S3-4848S040 : écran tactile 4\" 480×480"
 product_verdict: "Une option intéressante pour un tableau de bord tactile carré de 4 pouces et 480 × 480 pixels basé sur l’ESP32-S3. Avant l’achat, vérifiez la version avec relais et les dimensions de montage."
 editorial_review:
-  rating: 9.5
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
@@ -31,8 +30,8 @@ editorial_review:
     - "L’écran RGB utilise de nombreuses broches GPIO ; vérifiez les broches encore disponibles avant d’ajouter des périphériques"
     - "Les configurations logicielles communautaires doivent être vérifiées avec la révision exacte de la carte"
     - "Les modules relais et les boîtiers varient selon les offres ; vérifiez leur compatibilité et leurs dimensions avant l’achat"
-seo_title: "Guition ESP32-S3-4848S040 : écran 4 pouces, caractéristiques et version avec relais"
-seo_description: "Guition ESP32-S3-4848S040 (ESP32-4848S040) : écran tactile 4 pouces 480 × 480, versions avec ou sans relais, caractéristiques et achat."
+seo_title: "Guition ESP32-S3-4848S040 : Acheter, prix et specs (4\")"
+seo_description: "Comparez les prix de la Guition ESP32-S3-4848S040 (ESP32-4848S040) : écran tactile 4 pouces 480×480 avec GT911 et support ESPHome. Acheter sur AliExpress."
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
@@ -43,7 +42,7 @@ header:
   og_image_alt: "Guition ESP32-S3-4848S040 : carte de développement tactile carrée de 4 pouces et 480 × 480 pixels"
 alt: "Guition ESP32-S3-4848S040, carte tactile carrée avec écran de 4 pouces"
 excerpt: "Guition ESP32-S3-4848S040 avec ESP32-S3, écran IPS de 4 pouces et 480 × 480 pixels, tactile capacitif GT911, 16 Mo de Flash et 8 Mo de PSRAM."
-description: "Le Guition ESP32-S3-4848S040 est une carte de développement tactile carrée équipée d’un ESP32-S3, d’un écran IPS de 4 pouces et 480 × 480 pixels, du contrôleur d’écran ST7701S, du tactile capacitif GT911, de 16 Mo de Flash et de 8 Mo de PSRAM. Certaines offres comprennent également un module relais ou un boîtier mural. Vérifiez la variante exacte."
+description: "Écran tactile ESP32-S3 de 4 pouces et 480×480 avec GT911, 16 Mo de Flash et 8 Mo de PSRAM."
 categories:
   - Displays
   - ESP32
@@ -112,6 +111,8 @@ related:
 ---
 Le **Guition ESP32-S3-4848S040** est un écran tactile ESP32-S3 de 4 pouces et 480 × 480 pixels, conçu pour les tableaux de bord Home Assistant compacts et les panneaux muraux. Il est également recherché sous le nom **ESP32-4848S040** ; certaines références de cartes et de vendeurs utilisent **4848S040C_I**. Avant l’achat, vérifiez la révision exacte et le contenu du colis.
 
+{% include guition-variant-buttons.html %}
+
 Consultez notre guide technique consacré au [brochage du 4848S040 et à la configuration ESPHome](/fr/guition-esp32-s3-4848s040-pinout-esphome/).
 
 ## Le Guition ESP32-S3-4848S040 vaut-il le coup ?
@@ -122,15 +123,12 @@ Cette carte convient si vous avez besoin d’un écran tactile carré et compact
 
 | Version | Prix | Contenu | Compatible avec une boîte d’encastrement ronde européenne de 60 mm ? |
 |---|---|---|---|
-| **Avec relais** | Consulter le prix actuel | Carte écran/ESP32-S3 et ensemble relais ; vérifiez si le boîtier et l’alimentation sont inclus dans l’offre | **Non** : selon les notes matérielles d’ESPHome Devices, l’ensemble relais ne rentre pas dans une boîte ronde standard de 60 mm |
-| **Sans relais** | Consulter le prix actuel | Carte écran/ESP32-S3 ; vérifiez le contenu exact de l’offre | **Non confirmé** : la carte seule ne garantit pas la compatibilité avec un boîtier donné |
+| **Avec relais** | **€40.63** | Carte écran/ESP32-S3 et ensemble relais ; vérifiez si le boîtier et l’alimentation sont inclus dans l’offre | **Non** : selon les notes matérielles d’ESPHome Devices, l’ensemble relais ne rentre pas dans une boîte ronde standard de 60 mm |
+| **Sans relais** | **€31.02** | Carte écran/ESP32-S3 ; vérifiez le contenu exact de l’offre | **Non confirmé** : la carte seule ne garantit pas la compatibilité avec un boîtier donné |
 
 Les prix peuvent varier selon le vendeur, le pays de livraison, les frais d’expédition et la variante choisie. Vérifiez le prix actuel sur AliExpress avant l’achat.
 
-<div class="en-product-cta__buttons">
-  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-relay/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Consulter le prix — Avec relais</strong><small>AliExpress · Vérifiez le contenu du colis</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-standard/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Consulter le prix — Sans relais</strong><small>AliExpress · Vérifiez la variante</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-</div>
+{% include guition-variant-buttons.html %}
 
 ## Caractéristiques techniques
 
