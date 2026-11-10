@@ -68,6 +68,8 @@ related_posts:
 }
 </script>
 
+{% include guition-purchase-box.html %}
+
 Für die vollständigen technischen Daten, die redaktionelle Bewertung, die verfügbaren Varianten und die Kaufoptionen besuchen Sie die [Produktseite des Guition ESP32-S3-4848S040](/de/products/guition-esp32-s3-4848s040/).
 
 Dieser Leitfaden konzentriert sich auf die Pinbelegung des 4848S040, die Display- und Touch-Schnittstellen, wichtige GPIO-Hinweise sowie die Verwendung einer vorhandenen ESPHome-Konfiguration als Ausgangspunkt.
