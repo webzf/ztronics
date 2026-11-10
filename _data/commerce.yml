@@ -1019,9 +1019,9 @@ seeed-reterminal-e1004:
 
   preferred_store: seeed
 
-  notes: "Official Seeed Studio product page. Direct non-affiliate link until a product-specific affiliate link is confirmed."
+  notes: "Official Seeed Studio affiliate link supplied for the reTerminal E1004."
 
-  disclaimer: false
+  disclaimer: true
 
   badges:
     recommended: false
@@ -1033,6 +1033,6 @@ seeed-reterminal-e1004:
 
     seeed:
       enabled: true
-      affiliate: false
+      affiliate: true
       product_url: "https://www.seeedstudio.com/reTerminal-E1004-p-6692.html"
-      affiliate_url: ""
+      affiliate_url: "https://www.seeedstudio.com/reTerminal-E1004-p-6692.html?sensecap_affiliate=3jSyuVk&referring_service=link"
