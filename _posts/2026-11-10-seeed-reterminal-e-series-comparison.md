@@ -101,7 +101,7 @@ This guide compares the **reTerminal E1001, E1002, E1003 and E1004** using Seeed
 | Grayscale / color | 4-level grayscale | 6 colors | 16-level grayscale | 6 colors |
 | Resolution | 800 × 480 | 800 × 480 | 1404 × 1872 | 1200 × 1600 |
 | Partial refresh | Yes | No | Yes | No |
-| Published refresh time | 2–5 s | 15–20 s | 2–3 s | Around 20 s |
+| Published refresh time | 2–5 s | 15–20 s | 2–3 s | Approximately 20–40 s* |
 | Capacitive touchscreen | No | No | Yes | No |
 | Battery capacity | 2000 mAh | 2000 mAh | 3000 mAh | 5000 mAh |
 | Published battery estimate | Up to 3 months | Up to 3 months | Up to 6 months | Up to 6 months |
@@ -109,7 +109,7 @@ This guide compares the **reTerminal E1001, E1002, E1003 and E1004** using Seeed
 | PSRAM / Flash | 8 MB / 32 MB | 8 MB / 32 MB | 8 MB / 32 MB | 8 MB / 32 MB |
 | Wireless | Wi-Fi 2.4 GHz + Bluetooth 5.0 | Wi-Fi 2.4 GHz + Bluetooth 5.0 | Wi-Fi 2.4 GHz + Bluetooth 5.0 | Wi-Fi 2.4 GHz + Bluetooth 5.0 |
 
-**Important:** Refresh times and battery runtimes are manufacturer-published figures, not independent measurements. Actual results depend on firmware, screen content, refresh frequency, wireless activity and operating conditions. Color models require full-screen refreshes; the monochrome E1001 and E1003 support partial refresh.
+**Important:** Refresh times and battery runtimes are manufacturer-published figures, not independent measurements. Actual results depend on firmware, screen content, refresh frequency, wireless activity and operating conditions. Color models require full-screen refreshes; the monochrome E1001 and E1003 support partial refresh. *For the E1004, Seeed's family overview lists around 20 seconds, while its Arduino cookbook gives a 25–40-second range for six-color panels. The range above reflects this difference between official references.*
 
 ## What is shared across the reTerminal E Series?
 
@@ -167,7 +167,7 @@ Seeed's comparison notes that capacitive touch support in SenseCraft HMI require
 
 The **E1004** is the largest model in the family. Its 13.3-inch E Ink Spectra 6 panel has a resolution of 1200 × 1600 and is designed for large visual dashboards, digital photo frames, artwork, schedules and information boards.
 
-It has the largest battery in the range at 5000 mAh, with Seeed publishing an estimate of up to six months. The main trade-off is refresh speed: the E1004 does not support partial refresh, and its color panel needs a full-screen update. Seeed's family overview lists approximately 20 seconds; refresh times can vary with the content and software.
+It has the largest battery in the range at 5000 mAh, with Seeed publishing an estimate of up to six months. The main trade-off is refresh speed: the E1004 does not support partial refresh, and its color panel needs a full-screen update. Seeed's family overview lists approximately 20 seconds, while its Arduino cookbook gives a 25–40-second range for six-color panels. Treat roughly 20–40 seconds as practical published guidance, not a guaranteed update time.
 
 The E1004 **does not have a capacitive touchscreen**. It has physical touch buttons for basic interaction, which should not be confused with the E1003's touch-sensitive display.
 
@@ -194,9 +194,9 @@ The E1002 and E1004 use E Ink Spectra 6 full-color panels. They do not support p
 | E1001 | Monochrome | Yes | 2–5 seconds |
 | E1002 | Spectra 6 color | No | 15–20 seconds |
 | E1003 | Monochrome | Yes | 2–3 seconds |
-| E1004 | Spectra 6 color | No | Around 20 seconds |
+| E1004 | Spectra 6 color | No | Approximately 20–40 seconds* |
 
-These values are useful for comparing the models, but should not be treated as guaranteed end-to-end update latency for every firmware or display operation.
+*Seeed's overview lists around 20 seconds for the E1004, while the Arduino cookbook gives 25–40 seconds for six-color panels.* These values are useful for comparing the models, but should not be treated as guaranteed end-to-end update latency for every firmware or display operation.
 
 ## Battery life: which model lasts longer?
 
