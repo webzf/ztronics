@@ -1,0 +1,34 @@
+---
+layout: null
+product_id: seeed-reterminal-e1001
+permalink: /go/hardware/seeed-reterminal-e1001/
+sitemap: false
+---
+{% assign commerce = site.data.commerce[page.product_id] %}
+{% assign preferred = commerce.stores[commerce.preferred_store] %}
+{% assign destination = preferred.affiliate_url | default: preferred.product_url %}
+{% assign product = site.products | where: "product_id", page.product_id | first %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,follow">
+  <title>Where to Buy {{ product.title }} | Embedded Nerd</title>
+  {% if preferred.enabled and destination %}
+  <meta http-equiv="refresh" content="0;url={{ destination }}">
+  {% endif %}
+</head>
+<body>
+  <main>
+    <h1>Where to Buy {{ product.title }}</h1>
+    {% if preferred.enabled and destination %}
+    <p>Redirecting you to the official Seeed Studio product page…</p>
+    <p><a href="{{ destination }}" rel="noopener noreferrer">Continue to Seeed Studio</a></p>
+    <script>window.location.replace({{ destination | jsonify }});</script>
+    {% else %}
+    <p>The official product link is not currently available.</p>
+    <p><a href="{{ product.url | relative_url }}">View product details</a></p>
+    {% endif %}
+  </main>
+</body>
+</html>
