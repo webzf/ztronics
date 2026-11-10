@@ -35,6 +35,14 @@
     outline-offset: 3px !important;
   }
 
+  .en-guition-variant-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  @media (max-width: 900px) {
+    .en-guition-variant-buttons {
+      grid-template-columns: 1fr !important;
+    }
+  }
   /* Keep the Guition purchase options visible near the top on mobile. */
   @media (max-width: 768px) {
     .en-product-box--guition .en-product-header {
