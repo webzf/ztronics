@@ -129,11 +129,15 @@ end
 # Serialize the complete XML document, not Document#to_s (which can emit only
 # concatenated text in some REXML versions). Keep an XML declaration and readable
 # formatting so browsers, validators and crawlers all receive an actual XML document.
-output = +"<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-"
+output = +""
 formatter = REXML::Formatters::Pretty.new(2)
 formatter.compact = true
 formatter.write(doc, output)
+# REXML preserves the declaration parsed from the original jekyll-sitemap file.
+# Add one only if the source document did not contain it.
+unless output.lstrip.start_with?("<?xml")
+  output.prepend(%(<?xml version="1.0" encoding="UTF-8"?>\n))
+end
 output << "\n"
 
 # Validate the exact bytes that will be deployed.
