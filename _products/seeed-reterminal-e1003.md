@@ -52,7 +52,7 @@ links:
   - title: "Seeed Studio RETERMINAL E1003 product page"
     icon: "fas fa-store"
     description: "Official product listing, current price, availability and package details."
-    url: "https://www.seeedstudio.com/"
+    url: "https://www.seeedstudio.com/reTerminal-E1003-p-6731.html"
   - title: "reTerminal E Series documentation"
     icon: "fas fa-book"
     description: "Official hardware and software documentation for the E Series."
