@@ -181,6 +181,51 @@ For the complete product review, hardware details and purchase information, see 
 
 **Choose the E1004 if:** screen size and full-color ePaper matter more than touch input or frequent screen updates.
 
+## Where to buy the Seeed reTerminal E Series
+
+The four models are available from the official Seeed Studio store. Use the links below to check current pricing, stock, shipping options and package contents.
+
+<div class="seeed-series-products">
+  <div class="seeed-series-product">
+    <figure>
+      <img src="https://files.seeedstudio.com/wiki/reterminal_e10xx/img/24.jpg" alt="Seeed Studio reTerminal E1001 7.5-inch monochrome ePaper terminal" loading="lazy" decoding="async" style="width: 100%; max-width: 420px; height: auto;">
+      <figcaption>Image: Seeed Studio documentation.</figcaption>
+    </figure>
+    <h3>reTerminal E1001</h3>
+    <p>7.5-inch monochrome ePaper with partial refresh.</p>
+    <a class="btn btn--primary" href="{{ site.data.commerce['seeed-reterminal-e1001'].stores.seeed.affiliate_url }}" rel="sponsored nofollow noopener" target="_blank">Buy E1001 from Seeed</a>
+  </div>
+  <div class="seeed-series-product">
+    <figure>
+      <img src="https://files.seeedstudio.com/wiki/reterminal_e10xx/img/25.jpg" alt="Seeed Studio reTerminal E1002 7.3-inch full-color ePaper terminal" loading="lazy" decoding="async" style="width: 100%; max-width: 420px; height: auto;">
+      <figcaption>Image: Seeed Studio documentation.</figcaption>
+    </figure>
+    <h3>reTerminal E1002</h3>
+    <p>7.3-inch Spectra 6 full-color ePaper display.</p>
+    <a class="btn btn--primary" href="{{ site.data.commerce['seeed-reterminal-e1002'].stores.seeed.affiliate_url }}" rel="sponsored nofollow noopener" target="_blank">Buy E1002 from Seeed</a>
+  </div>
+  <div class="seeed-series-product">
+    <figure>
+      <img src="https://files.seeedstudio.com/wiki/reterminal_e10xx/img/e1003/2-reTerminal-E1003-Epaper-Display.jpg" alt="Seeed Studio reTerminal E1003 10.3-inch monochrome ePaper touchscreen terminal" loading="lazy" decoding="async" style="width: 100%; max-width: 420px; height: auto;">
+      <figcaption>Image: Seeed Studio documentation.</figcaption>
+    </figure>
+    <h3>reTerminal E1003</h3>
+    <p>10.3-inch monochrome ePaper with capacitive touchscreen.</p>
+    <a class="btn btn--primary" href="{{ site.data.commerce['seeed-reterminal-e1003'].stores.seeed.affiliate_url }}" rel="sponsored nofollow noopener" target="_blank">Buy E1003 from Seeed</a>
+  </div>
+  <div class="seeed-series-product">
+    <figure>
+      <img src="https://files.seeedstudio.com/wiki/reterminal_e10xx/img/e1004/mainpic2.jpeg" alt="Seeed Studio reTerminal E1004 13.3-inch full-color ePaper terminal" loading="lazy" decoding="async" style="width: 100%; max-width: 420px; height: auto;">
+      <figcaption>Image: Seeed Studio documentation.</figcaption>
+    </figure>
+    <h3>reTerminal E1004</h3>
+    <p>13.3-inch Spectra 6 full-color ePaper display.</p>
+    <a class="btn btn--primary" href="{{ site.data.commerce['seeed-reterminal-e1004'].stores.seeed.affiliate_url }}" rel="sponsored nofollow noopener" target="_blank">Buy E1004 from Seeed</a>
+  </div>
+</div>
+
+*Affiliate disclosure: These are affiliate links to the official Seeed Studio store. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you.*
+
 ## Refresh speed: why monochrome and color behave differently
 
 Refresh behavior is one of the most important differences between these four devices.
