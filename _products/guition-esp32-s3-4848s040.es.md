@@ -182,6 +182,8 @@ Utilice la [plantilla YAML ESPHome actual del proyecto](https://github.com/jtenn
 
 ## Dónde comprar
 
+{% include guition-variant-buttons.html %}
+
 Elija la versión que se adapte a su proyecto. Los precios son orientativos y pueden cambiar. Antes de realizar el pedido, compruebe la variante seleccionada, los gastos de envío y el precio total final en la página del vendedor.
 
 Los botones de compra anteriores y la tabla comparativa llevan a las dos variantes de AliExpress. No indicamos precios fijos porque el vendedor puede modificarlos según el país de entrega, el envío y la variante elegida. Compruebe el precio actual y el contenido exacto del paquete antes de comprar.
