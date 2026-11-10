@@ -182,6 +182,8 @@ Verwenden Sie die aktuelle [ESPHome-YAML-Vorlage des Projekts](https://github.co
 
 ## Bezugsquellen
 
+{% include guition-variant-buttons.html %}
+
 Wählen Sie die Ausführung, die zu Ihrem Projekt passt. Preise sind Richtwerte und können sich ändern. Prüfen Sie vor der Bestellung die ausgewählte Variante, die Versandkosten und den endgültigen Gesamtpreis auf der Händlerseite.
 
 Die Kaufschaltflächen oben und die Vergleichstabelle führen zu den beiden AliExpress-Ausführungen. Auf feste Preisangaben verzichten wir, da der Händler Preise abhängig von Lieferland, Versand und ausgewählter Variante ändern kann. Prüfen Sie vor dem Kauf den aktuellen Preis und den genauen Lieferumfang.
