@@ -11,13 +11,15 @@
     {% assign store = item[1] %}
     {% assign store_info = stores[store_key] %}
 
-    {% if store.enabled and store.affiliate_url %}
+    {% assign store_url = store.affiliate_url | default: store.product_url %}
+
+    {% if store.enabled and store_url %}
 
       <a
-  href="{% if include.product == 'waveshare-esp32-c6-touch-amoled-2-16' and store_key == 'aliexpress' %}/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/{% else %}{{ store.affiliate_url }}{% endif %}"
+  href="{% if include.product == 'waveshare-esp32-c6-touch-amoled-2-16' and store_key == 'aliexpress' %}/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/{% else %}{{ store_url }}{% endif %}"
   class="en-buy-button{% if commerce.preferred_store == store_key %} preferred{% endif %}"
   target="_blank"
-  rel="nofollow sponsored noopener">
+  rel="{% if store.affiliate == false %}noopener noreferrer{% else %}nofollow sponsored noopener{% endif %}">
 
   {% if commerce.preferred_store == store_key %}
     <span class="en-buy-badge">
