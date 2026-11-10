@@ -195,11 +195,11 @@ The E1004 is a specialist display, and its limitations are important when choosi
 
 ## Where to buy the Seeed reTerminal E1004
 
-The official Seeed Studio product page is the purchase source currently listed for this product. Check the live price, stock status, shipping destination and package contents directly with Seeed before ordering.
+The official Seeed Studio store is the purchase source for this product. Check the live price, stock status, shipping destination and package contents directly with Seeed before ordering.
 
-[Buy the reTerminal E1004 from Seeed Studio](https://www.seeedstudio.com/reTerminal-E1004-p-6692.html)
+[Buy the reTerminal E1004 from Seeed Studio](/go/hardware/seeed-reterminal-e1004/)
 
-Embedded Nerd does not currently have a confirmed affiliate link for this product. The button therefore links directly to the official Seeed Studio store and is not an affiliate link.
+This is an affiliate link. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to the buyer.
 
 ## FAQ
 
