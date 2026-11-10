@@ -131,7 +131,7 @@ Specifications and battery-life figures are based on Seeed Studio's published do
 
 The E1004 uses a 13.3-inch E Ink Spectra 6 panel with a resolution of 1200 × 1600 pixels. It can display color images and dashboards while retaining the paper-like appearance and low power consumption associated with ePaper.
 
-The large portrait-oriented panel is particularly useful for artwork, menus, calendars, room information and visual dashboards. It is not designed to replace a fast LCD interface: the manufacturer lists a full refresh time of approximately 20 seconds and no partial-refresh support.
+The large portrait-oriented panel is particularly useful for artwork, menus, calendars, room information and visual dashboards. It is not designed to replace a fast LCD interface: Seeed's E Series comparison lists a full refresh time of approximately 20 seconds and no partial-refresh support. Its Arduino cookbook gives a broader 25–40-second range for full refreshes on six-color panels. Treat these figures as approximate operating guidance rather than a guaranteed update time.
 
 This refresh behavior should influence the project design. Use the E1004 for information that changes every few minutes or hours, not for rapidly animated widgets, scrolling charts or controls that need immediate visual feedback.
 
