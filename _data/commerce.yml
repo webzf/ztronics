@@ -1012,3 +1012,27 @@ seeed-xiao-esp32s3-sense:
     amazon:
       enabled: true
       affiliate_url: "https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20"
+
+#----------------
+
+seeed-reterminal-e1004:
+
+  preferred_store: seeed
+
+  notes: "Official Seeed Studio affiliate link supplied for the reTerminal E1004."
+
+  disclaimer: true
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    seeed:
+      enabled: true
+      affiliate: true
+      product_url: "https://www.seeedstudio.com/reTerminal-E1004-p-6692.html"
+      affiliate_url: "https://www.seeedstudio.com/reTerminal-E1004-p-6692.html?sensecap_affiliate=3jSyuVk&referring_service=link"
