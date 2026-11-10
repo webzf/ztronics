@@ -182,9 +182,9 @@ See the individual product pages for more details:
 
 ## Where to buy: official ESP-Mosaico vs lower-cost alternatives
 
-If you want the ESP-Mosaico Vision Combo Kit and its modular accessories, check the AliExpress listing below. This is a third-party marketplace offer, not the official Espressif store. Compare the kit contents, selected option, seller, shipping terms and delivery estimate. Verify that the listing includes the Core Unit, Camera Module and Multi-function Interaction Module before purchasing.
+For the ESP-Mosaico Vision Combo Kit and its modular accessories, use the official Espressif store. Check the current availability, kit contents, shipping terms and delivery estimate before ordering. Verify that the selected bundle includes the Core Unit, Camera Module and Multi-function Interaction Module if those are the components you need.
 
-<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c4d21l4n" target="_blank" rel="nofollow sponsored noopener noreferrer">Check Price on AliExpress</a></p>
+<p><a class="btn btn--primary" href="https://store.mosaico.ai/" target="_blank" rel="noopener noreferrer">Buy from the Official ESP-Mosaico Store</a></p>
 
 ### Lower-cost 2.16-inch AMOLED alternatives {#lower-cost-amoled-alternatives}
 
@@ -195,7 +195,7 @@ If you want the ESP-Mosaico Vision Combo Kit and its modular accessories, check 
 
 Both AliExpress links are affiliate links supplied for the respective listings. Check the seller’s current listing, selected battery option, shipping and final checkout details before ordering.
 
-*Affiliate disclosure: Embedded Nerd may earn a commission from qualifying purchases made through the AliExpress links above, at no additional cost to you. The official ESP-Mosaico store and Waveshare manufacturer pages are not affiliate links.*
+*Affiliate disclosure: The lower-cost Waveshare AliExpress links above are affiliate links. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you. The official ESP-Mosaico store link is not an affiliate link.*
 
 Before ordering any of these boards, confirm the selected version, battery inclusion, shipping, delivery estimate and applicable taxes.
 
