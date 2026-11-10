@@ -57,6 +57,7 @@ commerce.each do |product_id, entry|
     end
 
     url = offer["affiliate_url"].to_s
+    affiliate = offer["affiliate"] != false
 
     if offer["enabled"] == true
       if offer.key?("product_id")
@@ -65,8 +66,14 @@ commerce.each do |product_id, entry|
         unstructured_enabled_offers += 1
       end
 
-      errors << "#{product_id}/#{merchant}: enabled offer needs affiliate_url" if url.empty?
-      errors << "#{product_id}/#{merchant}: affiliate_url must be http(s)" unless url.match?(/\Ahttps?:\/\//)
+      if affiliate
+        errors << "#{product_id}/#{merchant}: enabled affiliate offer needs affiliate_url" if url.empty?
+        errors << "#{product_id}/#{merchant}: affiliate_url must be http(s)" unless url.match?(/\Ahttps?:\/\//)
+      else
+        destination = offer["product_url"].to_s
+        errors << "#{product_id}/#{merchant}: enabled non-affiliate offer needs product_url" if destination.empty?
+        errors << "#{product_id}/#{merchant}: product_url must be http(s)" unless destination.match?(/\Ahttps?:\/\//)
+      end
     end
 
     if offer.key?("product_id")
@@ -89,6 +96,7 @@ commerce.each do |product_id, entry|
 
   entry["stores"].each do |merchant, offer|
     next unless offer.is_a?(Hash)
+    next if offer["affiliate"] == false
     url = offer["affiliate_url"].to_s.strip
     next if url.empty?
 
