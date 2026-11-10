@@ -896,6 +896,7 @@ esp-mosaico:
 
     official:
       enabled: true
+      affiliate: false
       product_url: "https://store.mosaico.ai/"
       affiliate_url: ""
 
