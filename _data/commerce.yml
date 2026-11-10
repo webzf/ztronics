@@ -1015,6 +1015,80 @@ seeed-xiao-esp32s3-sense:
 
 #----------------
 
+#----------------
+
+seeed-reterminal-e1001:
+
+  preferred_store: seeed
+
+  notes: "Official Seeed Studio affiliate link supplied by the site owner for the reTerminal E1001."
+
+  disclaimer: true
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    seeed:
+      enabled: true
+      affiliate: true
+      product_url: "https://www.seeedstudio.com/reTerminal-E1001-p-6534.html"
+      affiliate_url: "https://www.seeedstudio.com/reTerminal-E1001-p-6534.html?sensecap_affiliate=3jSyuVk&referring_service=link"
+
+#----------------
+
+seeed-reterminal-e1002:
+
+  preferred_store: seeed
+
+  notes: "Official Seeed Studio affiliate link supplied by the site owner for the reTerminal E1002."
+
+  disclaimer: true
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    seeed:
+      enabled: true
+      affiliate: true
+      product_url: "https://www.seeedstudio.com/reTerminal-E1002-p-6533.html"
+      affiliate_url: "https://www.seeedstudio.com/reTerminal-E1002-p-6533.html?sensecap_affiliate=3jSyuVk&referring_service=link"
+
+#----------------
+
+seeed-reterminal-e1003:
+
+  preferred_store: seeed
+
+  notes: "Official Seeed Studio affiliate link supplied by the site owner for the reTerminal E1003."
+
+  disclaimer: true
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    seeed:
+      enabled: true
+      affiliate: true
+      product_url: "https://www.seeedstudio.com/reTerminal-E1003-p-6731.html"
+      affiliate_url: "https://www.seeedstudio.com/reTerminal-E1003-p-6731.html?sensecap_affiliate=3jSyuVk&referring_service=link"
+
+#----------------
+
 seeed-reterminal-e1004:
 
   preferred_store: seeed
