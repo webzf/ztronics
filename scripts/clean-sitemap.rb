@@ -129,11 +129,12 @@ end
 # Serialize the complete XML document, not Document#to_s (which can emit only
 # concatenated text in some REXML versions). Keep an XML declaration and readable
 # formatting so browsers, validators and crawlers all receive an actual XML document.
-output = +"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\n"
+output = +"<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+"
 formatter = REXML::Formatters::Pretty.new(2)
 formatter.compact = true
 formatter.write(doc, output)
-output << "\\n"
+output << "\n"
 
 # Validate the exact bytes that will be deployed.
 validated_doc = REXML::Document.new(output)
@@ -148,7 +149,8 @@ abort "Sitemap validation failed: missing xhtml namespace" unless validated_root
 end
 
 File.write(sitemap_path, output)
-puts "Sitemap XML validated and serialized: #{REXML::XPath.match(validated_doc, \"//*[local-name()='url']\").length} URL entries"
+url_count = REXML::XPath.match(validated_doc, "//*[local-name()='url']").length
+puts "Sitemap XML validated and serialized: #{url_count} URL entries"
 puts "Sitemap cleanup: removed #{removed.length} URLs"
 puts "Multilingual sitemap: generated #{translated_urls.length} localized URLs across #{translations.length} translation groups"
 puts removed
