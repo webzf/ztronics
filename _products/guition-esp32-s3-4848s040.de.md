@@ -13,10 +13,9 @@ german_url: /de/products/guition-esp32-s3-4848s040/
 spanish_url: /es/products/guition-esp32-s3-4848s040/
 french_url: /fr/products/guition-esp32-s3-4848s040/
 internal_links: true
-title: "Guition ESP32-S3-4848S040: 4-Zoll-Touchscreen für Home Assistant"
+title: "Guition ESP32-S3-4848S040: 4 Zoll 480×480 Touchscreen"
 product_verdict: "Eine interessante Wahl für ein quadratisches 4-Zoll-Touchscreen-Dashboard mit 480 × 480 Pixeln auf ESP32-S3-Basis. Prüfen Sie vor dem Kauf die Relaisvariante und die Abmessungen für die Montage."
 editorial_review:
-  rating: 9.5
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
@@ -30,8 +29,8 @@ editorial_review:
     - "Das RGB-Display belegt zahlreiche GPIOs; freie Pins müssen vor dem Anschluss weiterer Peripherie geprüft werden"
     - "Community-Konfigurationen sollten mit der genauen Hardware-Revision abgeglichen werden"
     - "Relaismodule und Gehäuse unterscheiden sich je nach Angebot; Kompatibilität und Abmessungen vor dem Kauf prüfen"
-seo_title: "Guition ESP32-S3-4848S040 kaufen: 4-Zoll-Display, Specs & Relais-Variante"
-seo_description: "Guition ESP32-S3-4848S040 (ESP32-4848S040): 4-Zoll-Touchdisplay mit 480×480, mit oder ohne Relais und wo kaufen."
+seo_title: "Guition ESP32-S3-4848S040 kaufen: Preis & Specs (4 Zoll)"
+seo_description: "Guition ESP32-S3-4848S040 (ESP32-4848S040) kaufen: 4-Zoll-Touchscreen 480×480 mit GT911 und ESPHome. Preise bei AliExpress vergleichen."
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
@@ -42,7 +41,7 @@ header:
   og_image_alt: "Guition ESP32-S3-4848S040 – quadratische 4-Zoll-Touchscreen-Entwicklungsplatine mit 480 × 480 Pixeln"
 alt: "Guition ESP32-S3-4848S040 – quadratische Touchscreen-Entwicklungsplatine mit 4-Zoll-Display"
 excerpt: "Guition ESP32-S3-4848S040 mit ESP32-S3, 4-Zoll-IPS-Display mit 480 × 480 Pixeln, kapazitivem GT911-Touch, 16 MB Flash und 8 MB PSRAM."
-description: "Das Guition ESP32-S3-4848S040 ist eine quadratische Touchscreen-Entwicklungsplatine mit ESP32-S3, 4-Zoll-IPS-Display mit 480 × 480 Pixeln, ST7701S-Displaycontroller, kapazitivem GT911-Touch, 16 MB Flash und 8 MB PSRAM. Einige Angebote enthalten zusätzlich ein Relaismodul oder ein Wandgehäuse. Prüfen Sie die genaue Variante."
+description: "4-Zoll-ESP32-S3-Touchscreen mit 480 × 480 Pixeln, GT911-Touch, 16 MB Flash und 8 MB PSRAM."
 categories:
   - Displays
   - ESP32
@@ -111,6 +110,8 @@ related:
 ---
 Das **Guition ESP32-S3-4848S040** ist ein 4-Zoll-ESP32-S3-Touchscreen mit 480 × 480 Pixeln für kompakte Home-Assistant-Dashboards und Wandpanels. Das Modell wird auch unter der Bezeichnung **ESP32-4848S040** gesucht; in manchen Platinen- und Händlerreferenzen erscheint **4848S040C_I**. Prüfen Sie vor dem Kauf die genaue Revision und den Lieferumfang.
 
+{% include guition-variant-buttons.html %}
+
 Den ausführlichen [4848S040-Pinout- und ESPHome-Einrichtungsleitfaden](/de/guition-esp32-s3-4848s040-pinout-esphome/) finden Sie in unserem separaten Technikartikel.
 
 
@@ -127,10 +128,7 @@ Die Platine eignet sich, wenn Sie ein kompaktes quadratisches Touchdisplay für 
 
 Die Preise können sich je nach Händler, Lieferland, Versand und gewählter Variante ändern. Prüfen Sie den aktuellen AliExpress-Preis vor dem Kauf.
 
-<div class="en-product-cta__buttons">
-  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-relay/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Preis prüfen — Mit Relais</strong><small>AliExpress · Lieferumfang prüfen</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-  <a class="en-buy-button" href="/go/hardware/guition-esp32-s3-4848s040-standard/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Preis prüfen — Ohne Relais</strong><small>AliExpress · Variante prüfen</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-</div>
+{% include guition-variant-buttons.html %}
 
 ## Technische Daten im Überblick
 
