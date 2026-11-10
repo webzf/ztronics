@@ -119,28 +119,7 @@
         </a>
         {% endif %}
       {% elsif product.product_id == "guition-esp32-s3-4848s040" %}
-        {% assign amazon_offer = commerce.stores.amazon %}
-        <div class="en-product-cta__buttons">
-          {% if amazon_offer.enabled and amazon_offer.affiliate_url %}
-          <a class="en-buy-button preferred" href="{{ amazon_offer.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener">
-            <span class="en-buy-icon"><i class="fab fa-amazon"></i></span>
-            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Preis bei Amazon prüfen{% else %}Check Price on Amazon{% endif %}</strong><small>Guition ESP32-S3-4848S040</small></span>
-            <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-          </a>
-          {% endif %}
-          {% assign relay_offer = commerce.variants.with_relays %}
-          <a class="en-buy-button" href="{{ relay_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
-            <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Mit Relaismodul — <span class="en-price" data-en-price="{{ relay_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ relay_offer.price }}</span>{% elsif site.active_lang == 'fr' %}Avec module relais —{% elsif site.active_lang == 'es' %}Con módulo de relé — <span class="en-price" data-en-price="{{ relay_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ relay_offer.price }}</span>{% else %}With Relay Module — <span class="en-price" data-en-price="{{ relay_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ relay_offer.price }}</span>{% endif %}</strong><small>{% if site.active_lang == 'de' %}Bei AliExpress kaufen{% elsif site.active_lang == 'fr' %}Acheter sur AliExpress{% elsif site.active_lang == 'es' %}Comprar en AliExpress{% else %}Buy on AliExpress{% endif %}</small></span>
-            <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-          </a>
-          {% assign lower_offer = commerce.variants.lower_cost %}
-          <a class="en-buy-button" href="{{ lower_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
-            <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Ohne Relais — <span class="en-price" data-en-price="{{ lower_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ lower_offer.price }}</span>{% elsif site.active_lang == 'fr' %}Sans relais —{% elsif site.active_lang == 'es' %}Sin relé — <span class="en-price" data-en-price="{{ lower_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ lower_offer.price }}</span>{% else %}Without Relay — <span class="en-price" data-en-price="{{ lower_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ lower_offer.price }}</span>{% endif %}</strong><small>{% if site.active_lang == 'de' %}Variante bei AliExpress prüfen{% elsif site.active_lang == 'fr' %}Vérifier la variante sur AliExpress{% elsif site.active_lang == 'es' %}Consultar variante en AliExpress{% else %}Check variant on AliExpress{% endif %}</small></span>
-            <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-          </a>
-        </div>
+        {% include guition-variant-buttons.html %}
       {% elsif product.product_id == "arduino-uno-q" %}
         {% assign amazon_offer = commerce.stores.amazon %}
         {% assign aliexpress_offer = commerce.stores.aliexpress %}
