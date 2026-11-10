@@ -94,6 +94,8 @@ seo_description: "4848S040 pinout and GPIO reference, RGB display signals, GT911
 }
 </script>
 
+{% include guition-purchase-box.html %}
+
 
 For the board’s full specifications, editorial review, available variants and buying options, visit the [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) product page.
 
