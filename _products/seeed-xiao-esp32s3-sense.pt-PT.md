@@ -23,16 +23,16 @@ editorial_review:
   worst_rating: 1
   author: "Embedded Nerd"
   summary: "O Seeed Studio XIAO ESP32S3 Sense combina um ESP32-S3 com 8 MB de PSRAM e 8 MB de Flash, uma placa de câmara amovível, um microfone digital e uma ranhura microSD num módulo de 21 × 17,8 mm com carregamento de bateria. Os principais pontos a considerar são os GPIO partilhados, o maior consumo em deep sleep com a placa de expansão ligada e as diferenças entre câmaras de vários lotes."
-  methodology: "Deze redactionele beoordeling is gebaseerd op gepubliceerde specificaties en documentatie van de fabrikant. Embedded Nerd heeft de specifieke print en verkopersaanbieding op deze pagina niet fysiek getest."
+  methodology: "Esta avaliação editorial baseia-se nas especificações publicadas e na documentação do fabricante. A Embedded Nerd não testou fisicamente a placa específica nem a oferta do vendedor apresentada nesta página."
   pros:
-    - "Camera, digitale microfoon en microSD-slot op een bord ter grootte van een duim"
-    - "ESP32-S3 met 8 MB PSRAM en 8 MB Flash voor camerastreaming en kleine ML-demo's"
-    - "Ingebouwde Li-ion-batterijlader en U.FL-antenneaansluiting"
-    - "Uitgebreide officiële Seeed Studio-documentatie, pinmaps en voorbeelden"
+    - "Câmara, microfone digital e ranhura microSD numa placa do tamanho de um polegar"
+    - "ESP32-S3 com 8 MB de PSRAM e 8 MB de Flash para transmissão de vídeo e pequenas demonstrações de ML"
+    - "Carregamento integrado de bateria Li-ion e conector de antena U.FL"
+    - "Documentação oficial detalhada da Seeed Studio, mapas de pinos e exemplos"
   cons:
-    - "Microfoon, SD-kaart en gebruikers-led delen GPIO's met headerpinnen; controleer de beschikbare pinnen vóór het aansluiten"
-    - "Deep-sleepverbruik is circa 3 mA met het uitbreidingsbord aangesloten, veel hoger dan bij de gewone XIAO ESP32S3"
-    - "Borden worden meestal zonder pinheaders geleverd en het cameramodel (OV5640 of OV3660) kan per batch verschillen"
+    - "O microfone, o cartão SD e o LED de utilizador partilham GPIO com os pinos de ligação; confirme os pinos disponíveis antes de os ligar"
+    - "O consumo em deep sleep é de cerca de 3 mA com a placa de expansão ligada, muito superior ao da XIAO ESP32S3 normal"
+    - "As placas são normalmente fornecidas sem pinos soldados e o modelo da câmara (OV5640 ou OV3660) pode variar entre lotes"
 seo_title: "XIAO ESP32S3 Sense: especificações, pinout e onde comprar"
 seo_description: "Especificações e pinout do Seeed Studio XIAO ESP32S3 Sense: mapeamento D0–D12 para GPIO, câmara OV5640, microfone, microSD, consumo e compra."
 product_id: seeed-xiao-esp32s3-sense
@@ -48,26 +48,26 @@ excerpt: "Especificações e pinout do Seeed Studio XIAO ESP32S3 Sense: mapeamen
 description: "O Seeed Studio XIAO ESP32S3 Sense combina um ESP32-S3 com 8 MB de PSRAM e 8 MB de Flash, uma placa de câmara amovível, um microfone digital e uma ranhura microSD num módulo de 21 × 17,8 mm com carregamento de bateria. Os principais pontos a considerar são os GPIO partilhados, o maior consumo em deep sleep com a placa de expansão ligada e as diferenças entre câmaras de vários lotes."
 categories: [ESP32, ESP32-S3, Development Boards, Camera Boards]
 tags: [XIAO ESP32S3 Sense, Seeed Studio XIAO, ESP32, ESP32-S3, ESP32 Camera, OV5640, PDM Microphone, microSD, Wi-Fi, Bluetooth LE, MicroPython]
-permalink: /pt-PT/products/seeed-xiao-esp32s3-sense/
+permalink: /pt-pt/products/seeed-xiao-esp32s3-sense/
 specifications:
-  - name: Processor
-    value: "ESP32-S3R8, dual-core Xtensa LX7, tot 240 MHz"
+  - name: Processador
+    value: "ESP32-S3R8, dual-core Xtensa LX7, até 240 MHz"
   - name: Flash
     value: "8 MB"
   - name: PSRAM
     value: "8 MB"
-  - name: Camera
-    value: "Afneembare OV5640 met autofocus (OV3660 op sommige borden)"
-  - name: Microfoon
-    value: "Digitale PDM-microfoon"
-  - name: Opslag
-    value: "microSD-slot op uitbreidingsbord, FAT tot 32 GB"
-  - name: Draadloos
-    value: "2,4 GHz wifi en Bluetooth LE 5.0 / Bluetooth Mesh"
+  - name: Câmara
+    value: "OV5640 amovível com focagem automática (OV3660 em algumas placas)"
+  - name: Microfone
+    value: "Microfone digital PDM"
+  - name: Armazenamento
+    value: "Ranhura microSD na placa de expansão, FAT até 32 GB"
+  - name: Ligação sem fios
+    value: "Wi-Fi de 2,4 GHz e Bluetooth LE 5.0 / Bluetooth Mesh"
   - name: USB
     value: "USB Type-C"
-  - name: Batterij
-    value: "3,7 V Li-ion met ingebouwd laadbeheer"
+  - name: Bateria
+    value: "Li-ion de 3,7 V com gestão de carregamento integrada"
   - name: Afmetingen
     value: "21 × 17,8 mm; 21 × 17,8 × 15 mm met uitbreidingsbord"
   - name: Bedrijfstemperatuur
