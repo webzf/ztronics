@@ -14,7 +14,7 @@
     <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
     <span class="en-buy-text">
       <strong>{% if site.active_lang == 'de' %}Ohne Relais{% elsif site.active_lang == 'es' %}Sin relé{% elsif site.active_lang == 'fr' %}Sans relais{% elsif site.active_lang == 'it' %}Senza relè{% else %}Without relay{% endif %} — <span class="en-price" data-en-price="{{ lower_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ lower_offer.price }}</span></strong>
-      <small>{% if site.active_lang == 'de' %}Bei AliExpress kaufen{% elsif site.active_lang == 'es' %}Comprar en AliExpress{% elsif site.active_lang == 'fr' %}Acheter sur AliExpress{% else %}Buy on AliExpress{% endif %}</small>
+      <small>{% if site.active_lang == 'de' %}Bei AliExpress kaufen{% elsif site.active_lang == 'es' %}Comprar en AliExpress{% elsif site.active_lang == 'fr' %}Acheter sur AliExpress{% elsif site.active_lang == 'it' %}Acquista su AliExpress{% else %}Buy on AliExpress{% endif %}</small>
     </span>
     <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
   </a>
