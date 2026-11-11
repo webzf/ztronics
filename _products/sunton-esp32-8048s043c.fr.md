@@ -5,11 +5,12 @@ locale: fr-FR
 toc_label: Sommaire
 page_id: product-sunton-esp32-8048s043c
 translation_id: sunton-esp32-8048s043c
-available_languages: [en, de, es, fr]
+available_languages: [en, de, es, fr, it]
 english_url: /products/sunton-esp32-8048s043c/
 german_url: /de/products/sunton-esp32-8048s043c/
 spanish_url: /es/products/sunton-esp32-8048s043c/
 french_url: /fr/products/sunton-esp32-8048s043c/
+italian_url: /it/products/sunton-esp32-8048s043c/
 internal_links: true
 title: "Sunton ESP32-8048S043C : écran tactile ESP32-S3 de 4,3 pouces"
 product_verdict: "Une option intéressante pour une interface HMI ESP32-S3 de 4,3 pouces. Si le prix et le format compact sont prioritaires, un CYD plus petit peut être préférable."
