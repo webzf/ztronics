@@ -22,11 +22,11 @@ editorial_review:
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
-  summary: "O Seeed Studio XIAO ESP32S3 Sense combina um ESP32-S3 com 8 MB de PSRAM e 8 MB de Flash, uma placa de câmara amovível, um microfone digital e uma ranhura microSD num módulo de 21 × 17,8 mm com carregamento de bateria. Os principais pontos a considerar são os GPIO partilhados, o maior consumo em suspensão profunda com a placa de expansão ligada e as diferenças entre câmaras de vários lotes."
+  summary: "O Seeed Studio XIAO ESP32S3 Sense combina um ESP32-S3 com 8 MB de PSRAM e 8 MB de memória Flash, uma placa de câmara amovível, um microfone digital e uma ranhura microSD num módulo de 21 × 17,8 mm com carregamento de bateria. Os principais pontos a considerar são os GPIO partilhados, o maior consumo em suspensão profunda com a placa de expansão ligada e as diferenças entre câmaras de vários lotes."
   methodology: "Esta avaliação editorial baseia-se nas especificações publicadas e na documentação do fabricante. A Embedded Nerd não testou fisicamente a placa específica nem a oferta do vendedor apresentada nesta página."
   pros:
     - "Câmara, microfone digital e ranhura microSD numa placa do tamanho de um polegar"
-    - "ESP32-S3 com 8 MB de PSRAM e 8 MB de Flash para transmissão de vídeo e pequenas demonstrações de ML"
+    - "ESP32-S3 com 8 MB de PSRAM e 8 MB de memória Flash para transmissão de vídeo e pequenas demonstrações de ML"
     - "Carregamento integrado de bateria Li-ion e conector de antena U.FL"
     - "Documentação oficial detalhada da Seeed Studio, mapas de pinos e exemplos"
   cons:
@@ -45,13 +45,13 @@ header:
   og_image_alt: "Seeed Studio XIAO ESP32S3 Sense: câmara, microfone e microSD numa placa de 21 × 17,8 mm"
 alt: "Seeed Studio XIAO ESP32S3 Sense: câmara, microfone e microSD numa placa de 21 × 17,8 mm"
 excerpt: "Especificações e pinout do Seeed Studio XIAO ESP32S3 Sense: mapeamento D0–D12 para GPIO, câmara OV5640, microfone, microSD, consumo e compra."
-description: "O Seeed Studio XIAO ESP32S3 Sense combina um ESP32-S3 com 8 MB de PSRAM e 8 MB de Flash, uma placa de câmara amovível, um microfone digital e uma ranhura microSD num módulo de 21 × 17,8 mm com carregamento de bateria. Os principais pontos a considerar são os GPIO partilhados, o maior consumo em suspensão profunda com a placa de expansão ligada e as diferenças entre câmaras de vários lotes."
-categories: [ESP32, ESP32-S3, Development Boards, Camera Boards]
+description: "O Seeed Studio XIAO ESP32S3 Sense combina um ESP32-S3 com 8 MB de PSRAM e 8 MB de memória Flash, uma placa de câmara amovível, um microfone digital e uma ranhura microSD num módulo de 21 × 17,8 mm com carregamento de bateria. Os principais pontos a considerar são os GPIO partilhados, o maior consumo em suspensão profunda com a placa de expansão ligada e as diferenças entre câmaras de vários lotes."
+categories: [ESP32, ESP32-S3, Placas de desenvolvimento, Placas com câmara]
 tags: [XIAO ESP32S3 Sense, Seeed Studio XIAO, ESP32, ESP32-S3, Câmara ESP32, OV5640, Microfone PDM, microSD, Wi-Fi, Bluetooth LE, MicroPython]
 permalink: /products/seeed-xiao-esp32s3-sense/
 specifications:
   - name: Processador
-    value: "ESP32-S3R8, dual-core Xtensa LX7, até 240 MHz"
+    value: "ESP32-S3R8, de núcleo duplo Xtensa LX7, até 240 MHz"
   - name: Memória Flash
     value: "8 MB"
   - name: PSRAM
@@ -101,7 +101,7 @@ Antes de ligar qualquer componente, é importante perceber quais são os **pinos
 
 ## Vale a pena comprar o XIAO ESP32S3 Sense?
 
-Escolha esta placa se precisar de câmara, microfone ou gravação em cartão SD num formato muito pequeno: por exemplo, uma câmara Wi-Fi, um projeto de áudio ou voz, um dispositivo vestível ou um registador alimentado por bateria. Se apenas precisar de um ESP32-S3 pequeno, a XIAO ESP32S3 normal tem a mesma disposição dos pinos e um consumo em suspensão profunda muito inferior. Se precisar de mais GPIO e 16 MB de Flash, considere a XIAO ESP32-S3 Plus.
+Escolha esta placa se precisar de câmara, microfone ou gravação em cartão SD num formato muito pequeno: por exemplo, uma câmara Wi-Fi, um projeto de áudio ou voz, um dispositivo vestível ou um registador alimentado por bateria. Se apenas precisar de um ESP32-S3 pequeno, a XIAO ESP32S3 normal tem a mesma disposição dos pinos e um consumo em suspensão profunda muito inferior. Se precisar de mais GPIO e 16 MB de memória Flash, considere a XIAO ESP32-S3 Plus.
 
 ## XIAO ESP32S3, Sense ou Plus: que versão deve escolher?
 
@@ -109,10 +109,10 @@ Escolha esta placa se precisar de câmara, microfone ou gravação em cartão SD
 |---|---|---|---|
 | Câmara e microfone | Não | Sim, placa de expansão | Não |
 | Ranhura microSD | Não | Sim, placa de expansão | Não |
-| Flash / PSRAM | 8 MB / 8 MB | 8 MB / 8 MB | 16 MB / 8 MB |
+| Memória Flash / PSRAM | 8 MB / 8 MB | 8 MB / 8 MB | 16 MB / 8 MB |
 | GPIO com PWM | 11 | 11 | 18 |
 | Corrente em suspensão profunda (valor Seeed) | 14 µA | 3 mA com expansão | 33,5 µA |
-| Mais indicado para | Projetos pequenos e de baixo consumo | Imagem, áudio e registo de dados | Mais pinos e Flash |
+| Mais indicado para | Projetos pequenos e de baixo consumo | Imagem, áudio e registo de dados | Mais pinos e memória Flash |
 
 Os preços variam consoante o vendedor, destino, portes e variante selecionada. Antes de pagar, confirme o anúncio atual, os acessórios incluídos e o modelo da câmara.
 
@@ -126,8 +126,8 @@ Os preços variam consoante o vendedor, destino, portes e variante selecionada. 
 
 | Especificação | Detalhes |
 |---|---|
-| Microcontrolador | ESP32-S3R8, dual-core Xtensa LX7, até 240 MHz |
-| Flash | 8 MB |
+| Microcontrolador | ESP32-S3R8, de núcleo duplo Xtensa LX7, até 240 MHz |
+| Memória Flash | 8 MB |
 | PSRAM | 8 MB |
 | Câmara | OV5640 amovível com focagem automática (OV3660 em algumas placas) |
 | Microfone | Microfone digital PDM |
@@ -181,7 +181,7 @@ Segundo o mapa de pinos da Seeed, a câmara, o microfone e o cartão SD não se 
 | Dados / clock I²C da câmara | GPIO40 / GPIO39 | Pinos JTAG MTDO / MTCK |
 | Dados, clock e sincronização da câmara | GPIO10–18, 38, 47, 48 | Apenas conector entre placas |
 
-Se utilizar o cartão SD, o LED de utilizador no GPIO21 partilha a linha seleção do cartão (CS) do cartão. Qualquer dispositivo SPI adicional em D8–D10 partilha o barramento com o cartão e precisa do seu próprio pino seleção do cartão (CS). Se utilizar o microfone, considere D11 e D12 ocupados.
+Se utilizar o cartão SD, o LED de utilizador no GPIO21 partilha a linha CS (seleção do cartão). Qualquer dispositivo SPI adicional em D8–D10 partilha o barramento com o cartão e precisa do seu próprio pino CS (seleção do dispositivo). Se utilizar o microfone, considere D11 e D12 ocupados.
 
 ## Consumo de energia e utilização com bateria
 
@@ -223,7 +223,7 @@ void loop() {
 }
 ```
 
-Abra o Monitor Série a **115200 baud**. Como o GPIO21 também é o seleção do cartão (CS) do cartão SD, não alterne o LED enquanto o cartão estiver a ser utilizado. Se a porta desaparecer ou o carregamento falhar, mantenha o botão **Boot** premido enquanto liga o USB para entrar no modo de carregamento (bootloader).
+Abra o Monitor Série a **115200 baud**. Como o GPIO21 também é o sinal CS do cartão SD, não alterne o LED enquanto o cartão estiver a ser utilizado. Se a porta desaparecer ou o carregamento falhar, mantenha o botão **Boot** premido enquanto liga o USB para entrar no modo de carregamento (bootloader).
 
 - [Guia de primeiros passos Seeed Studio](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/)
 - [Guia Seeed Studio de multiplexagem de pinos](https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/)
@@ -252,7 +252,7 @@ Não. Os pinos GPIO utilizam lógica de 3,3 V e não devem receber 5 V. Utilize 
 
 ### Posso utilizar a câmara, o microfone e o cartão SD ao mesmo tempo?
 
-Segundo o mapa de pinos da Seeed, não se sobrepõem entre si e podem ser utilizados em simultâneo. O microfone utiliza D11 e D12, o cartão SD partilha os pinos SPI D8–D10 e o respetivo seleção do cartão (CS) é o mesmo GPIO do LED de utilizador.
+Segundo o mapa de pinos da Seeed, não se sobrepõem entre si e podem ser utilizados em simultâneo. O microfone utiliza D11 e D12, o cartão SD partilha os pinos SPI D8–D10 e o respetivo sinal CS é o mesmo GPIO do LED de utilizador.
 
 ### O XIAO ESP32S3 Sense carrega uma bateria?
 
