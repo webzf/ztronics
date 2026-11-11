@@ -17,6 +17,21 @@ portuguese_url: /pt-pt/products/guition-esp32-s3-4848s040/
 internal_links: true
 title: "Guition ESP32-S3-4848S040: 4-calowy ekran dotykowy 480×480"
 product_verdict: "Dobry wybór do kompaktowego, kwadratowego panelu dotykowego ESP32-S3 o przekątnej 4 cali i rozdzielczości 480×480. Przed zakupem sprawdź wersję z przekaźnikami i wymiary montażowe."
+editorial_review:
+  rating: 9.5
+  best_rating: 10
+  worst_rating: 1
+  author: "Embedded Nerd"
+  summary: "Guition ESP32-S3-4848S040 łączy ostry, kwadratowy ekran dotykowy IPS 4 cale 480×480, pojemnościowy dotyk GT911, ESP32-S3, 16 MB Flash i 8 MB PSRAM w kompaktowej platformie rozwojowej. To interesująca baza dla paneli Home Assistant i własnych interfejsów LVGL. Najważniejsze kwestie to dostępność GPIO, konfiguracja oprogramowania i różnice między wariantami."
+  methodology: "Ta ocena redakcyjna opiera się na opublikowanych specyfikacjach oraz dostępnej dokumentacji producenta i społeczności. Embedded Nerd nie testował fizycznie konkretnej płytki ani oferty sprzedawcy opisanej na tej stronie."
+  pros:
+    - "Ostry ekran IPS 4 cale 480×480 z pojemnościowym dotykiem GT911"
+    - "ESP32-S3 z 16 MB Flash i 8 MB PSRAM do bardziej rozbudowanych interfejsów"
+    - "Materiały społeczności ESPHome i LVGL stanowią dobry punkt wyjścia do paneli Home Assistant"
+  cons:
+    - "Ekran RGB wykorzystuje wiele GPIO; przed dodaniem urządzeń peryferyjnych sprawdź dostępne piny"
+    - "Konfiguracje społeczności należy zweryfikować pod kątem dokładnej rewizji płytki"
+    - "Moduły przekaźników i obudowy różnią się w zależności od oferty; przed zakupem sprawdź zgodność i wymiary"
 seo_title: "Guition ESP32-S3-4848S040: cena, specyfikacja i zakup"
 seo_description: "Porównaj Guition ESP32-S3-4848S040 (ESP32-4848S040): 4-calowy ekran dotykowy 480×480 z GT911 i obsługą ESPHome. Kup na AliExpress."
 product_id: guition-esp32-s3-4848s040
@@ -49,23 +64,23 @@ specifications:
   - name: "Sterownik ekranu"
     value: "ST7701S"
   - name: "Rodzaj dotyku"
-    value: "Capacitief / pojemnościowy"
+    value: "Pojemnościowy"
   - name: "Kontroler dotyku"
     value: "GT911"
   - name: "Łączność bezprzewodowa"
-    value: "Wi-Fi en Bluetooth LE"
+    value: "Wi-Fi i Bluetooth LE"
   - name: USB
     value: "USB Type-C (controleer aanbod en revisie)"
   - name: "Moduł przekaźników"
-    value: "Optioneel; afhankelijk van de aanbieding"
+    value: "Opcjonalny; zależnie od oferty"
 links:
-  - title: "GUITION manufacturer product page"
+  - title: "Strona produktu producenta GUITION"
     icon: "fas fa-book"
-    description: "Manufacturer overview for the 4-inch ESP32-S3 display family."
+    description: "Przegląd producenta rodziny wyświetlaczy ESP32-S3 o przekątnej 4 cali."
     url: "https://www.guition.com/esp32-display-module/4-inch-esp32s3-display-module"
-  - title: "ESPHome device configuration"
+  - title: "Konfiguracja urządzenia ESPHome"
     icon: "fas fa-microchip"
-    description: "Community hardware profile and configuration for the 4848S040."
+    description: "Społecznościowy profil sprzętowy i konfiguracja modelu 4848S040."
     url: "https://devices.esphome.io/devices/guition-esp32-s3-4848s040/"
 related: [guition-jc8048w550, sunton-esp32-8048s043c, esp32-2432s028-2-8-cyd, waveshare-esp32-s3-touch-lcd-4-3]
 ---
