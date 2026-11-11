@@ -83,6 +83,8 @@ However, the sensor can report small offsets even when it is completely stationa
 
 This MPU6050 calibration guide explains how to measure these offsets and compensate for them using Arduino.
 
+If you are still choosing the hardware for an Arduino project, our [Best Arduino Starter Kits guide](/best-arduino-starter-kits/) compares beginner-friendly boards and component bundles that can help you get started.
+
 ![MPU6050 calibration guide showing the sensor module](/assets/images/mpu6050-calibration-guide.webp)
 
 This tutorial includes:
