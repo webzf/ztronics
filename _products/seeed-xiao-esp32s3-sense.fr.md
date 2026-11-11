@@ -4,11 +4,12 @@ lang: fr
 locale: fr-FR
 toc_label: Sommaire
 page_id: product-seeed-xiao-esp32s3-sense
-available_languages: [en, de, es, fr]
+available_languages: [en, de, es, fr, it]
 english_url: /products/seeed-xiao-esp32s3-sense/
 german_url: /de/products/seeed-xiao-esp32s3-sense/
 spanish_url: /es/products/seeed-xiao-esp32s3-sense/
 french_url: /fr/products/seeed-xiao-esp32s3-sense/
+italian_url: /it/products/seeed-xiao-esp32s3-sense/
 internal_links: true
 title: "Seeed Studio XIAO ESP32S3 Sense : caméra, microphone et microSD sur 21 × 17,8 mm"
 product_verdict: "Une carte ESP32-S3 très compacte pour les projets de caméra, d’audio et d’enregistrement de données. Tenez compte des GPIO partagés et de la consommation plus élevée en veille profonde lorsque la carte d’extension est connectée."
