@@ -91,6 +91,10 @@ jobs:
             pr_gemfile="$PWD/pr-site-${pr_number}/Gemfile"
             BUNDLE_GEMFILE="$pr_gemfile" bundle install --jobs 4 --retry 3
 
+            # Validate the exact PR checkout, not only the master deployment.
+            ruby "pr-site-${pr_number}/scripts/validate-commerce.rb"
+            ruby "pr-site-${pr_number}/scripts/validate-translations.rb"
+
             BUNDLE_GEMFILE="$pr_gemfile" bundle exec ruby \
               -r jekyll \
               -r "$PWD/pr-site-${pr_number}/_plugins/internal_linker.rb" \

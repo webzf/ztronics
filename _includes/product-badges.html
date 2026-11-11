@@ -2,6 +2,10 @@
 {% assign german = false %}
 {% assign spanish = false %}
 {% assign french = false %}
+{% assign italian = false %}
+{% if page.lang == 'it' or site.active_lang == 'it' %}
+  {% assign italian = true %}
+{% endif %}
 {% if page.lang == 'de' or site.active_lang == 'de' %}
   {% assign german = true %}
 {% endif %}
@@ -13,11 +17,11 @@
 {% endif %}
 {% if commerce.badges %}
 <div class="en-product-badges">
-  {% if commerce.badges.recommended %}<span class="en-badge recommended">⭐ {% if german %}Empfohlen{% elsif french %}Recommandé{% elsif spanish %}Recomendado{% else %}Recommended{% endif %}</span>{% endif %}
-  {% if commerce.badges.editor_choice %}<span class="en-badge editor-choice">🏆 {% if german %}Redaktionstipp{% elsif french %}Choix de la rédaction{% elsif spanish %}Elección del editor{% else %}Editor's Choice{% endif %}</span>{% endif %}
-  {% if commerce.badges.best_value %}<span class="en-badge best-value">💰 {% if german %}Bestes Preis-Leistungs-Verhältnis{% elsif french %}Meilleur rapport qualité-prix{% elsif spanish %}Mejor relación calidad-precio{% else %}Best Value{% endif %}</span>{% endif %}
-  {% if commerce.badges.beginner %}<span class="en-badge beginner">🎓 {% if german %}Einsteigerfreundlich{% elsif french %}Adapté aux débutants{% elsif spanish %}Ideal para principiantes{% else %}Beginner Friendly{% endif %}</span>{% endif %}
+  {% if commerce.badges.recommended %}<span class="en-badge recommended">⭐ {% if german %}Empfohlen{% elsif french %}Recommandé{% elsif spanish %}Recomendado{% elsif italian %}Consigliato{% else %}Recommended{% endif %}</span>{% endif %}
+  {% if commerce.badges.editor_choice %}<span class="en-badge editor-choice">🏆 {% if german %}Redaktionstipp{% elsif french %}Choix de la rédaction{% elsif spanish %}Elección del editor{% elsif italian %}Scelta della redazione{% else %}Editor's Choice{% endif %}</span>{% endif %}
+  {% if commerce.badges.best_value %}<span class="en-badge best-value">💰 {% if german %}Bestes Preis-Leistungs-Verhältnis{% elsif french %}Meilleur rapport qualité-prix{% elsif spanish %}Mejor relación calidad-precio{% elsif italian %}Miglior rapporto qualità-prezzo{% else %}Best Value{% endif %}</span>{% endif %}
+  {% if commerce.badges.beginner %}<span class="en-badge beginner">🎓 {% if german %}Einsteigerfreundlich{% elsif french %}Adapté aux débutants{% elsif spanish %}Ideal para principiantes{% elsif italian %}Adatto ai principianti{% else %}Beginner Friendly{% endif %}</span>{% endif %}
   {% if commerce.badges.open_source %}<span class="en-badge open-source">🔓 {% if german %}Open Source{% else %}Open Source{% endif %}</span>{% endif %}
-  {% if commerce.badges.low_power %}<span class="en-badge low-power">🔋 {% if german %}Niedriger Stromverbrauch{% elsif french %}Faible consommation{% elsif spanish %}Bajo consumo{% else %}Low Power{% endif %}</span>{% endif %}
+  {% if commerce.badges.low_power %}<span class="en-badge low-power">🔋 {% if german %}Niedriger Stromverbrauch{% elsif french %}Faible consommation{% elsif spanish %}Bajo consumo{% elsif italian %}Basso consumo{% else %}Low Power{% endif %}</span>{% endif %}
 </div>
 {% endif %}
