@@ -203,7 +203,7 @@ Płytka może pracować z akumulatorem Li-ion 3,7 V i ładować go przez USB-C. 
 Seeed dokumentuje Arduino i MicroPython dla serii XIAO ESP32-S3, a także instrukcje ESP-IDF i Zephyr. W Arduino IDE wybierz płytkę **XIAO_ESP32S3** i pakiet płytek ESP32 w wersji 2.0.8 lub nowszej.
 
 ```cpp
-const int ledPin = LED_BUILTIN; // GPIO21 on the XIAO ESP32S3
+const int ledPin = LED_BUILTIN; // GPIO21 na płytce XIAO ESP32S3
 const int analogPin = A0;       // D0 = GPIO1 (ADC)
 
 void setup() {
