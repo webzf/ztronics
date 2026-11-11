@@ -64,7 +64,7 @@ tags:
   - Wi-Fi
   - Bluetooth LE
   - MicroPython
-permalink: /it/products/seeed-xiao-esp32s3-sense/
+permalink: /products/seeed-xiao-esp32s3-sense/
 specifications:
   - name: Processore
     value: "ESP32-S3R8, dual-core Xtensa LX7, fino a 240 MHz"

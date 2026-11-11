@@ -74,14 +74,15 @@ italian_files.each do |it_path|
   product_id = it_data["product_id"].to_s
   errors << "#{it_path}: lang must be it" unless it_data["lang"] == "it"
   errors << "#{it_path}: locale must be it-IT" unless it_data["locale"] == "it-IT"
-  errors << "#{it_path}: permalink must begin with /it/" unless it_data["permalink"].to_s.start_with?("/it/")
+  errors << "#{it_path}: permalink must be collection-relative (start with /products/), without the language prefix" unless it_data["permalink"].to_s.start_with?("/products/")
   errors << "#{it_path}: product_id does not match source" unless product_id == en_data["product_id"].to_s
   errors << "#{it_path}: available_languages must include it" unless Array(it_data["available_languages"]).include?("it")
   errors << "#{source_path}: available_languages must include it" unless Array(en_data["available_languages"]).include?("it")
 
   translation_key = it_data["translation_id"] || product_id
   mapped_url = language_urls.dig(translation_key, "it")
-  errors << "#{slug}: _data/language_urls.yml is missing the Italian URL" unless mapped_url == it_data["permalink"]
+  expected_italian_url = "/it#{it_data['permalink']}"
+  errors << "#{slug}: _data/language_urls.yml is missing the Italian URL" unless mapped_url == expected_italian_url
 
   siblings = product_files.select do |path|
     parse_product(path)["product_id"].to_s == product_id
