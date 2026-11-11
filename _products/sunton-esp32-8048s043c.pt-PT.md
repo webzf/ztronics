@@ -16,7 +16,7 @@ polish_url: /pl/products/sunton-esp32-8048s043c/
 portuguese_url: /pt-PT/products/sunton-esp32-8048s043c/
 internal_links: true
 title: "Sunton ESP32-8048S043C: ecrã tátil ESP32-S3 de 4,3 polegadas"
-product_verdict: "Uma boa opção para uma interface HMI ESP32-S3 de maiores dimensões, com 4,3 polegadas. Se o preço e o formato compacto forem mais importantes, considere um CYD mais pequeno."
+product_verdict: "Uma boa opção para uma interface homem-máquina (HMI) baseada em ESP32-S3 de maiores dimensões, com 4,3 polegadas. Se o preço e o formato compacto forem mais importantes, considere um CYD mais pequeno."
 seo_title: "Sunton ESP32-8048S043C: características e guia de compra"
 seo_description: "Sunton ESP32-8048S043C com ESP32-S3, ecrã IPS de 4,3 polegadas 800×480 e toque capacitivo GT911. Compare também a versão ESP32-8048S043 sem o sufixo C."
 product_id: sunton-esp32-8048s043c
@@ -52,7 +52,7 @@ tags:
 permalink: /products/sunton-esp32-8048s043c/
 specifications:
   - name: "Processador"
-    value: "ESP32-S3-WROOM-1-MCN16R8, dual-core, até 240 MHz"
+    value: "ESP32-S3-WROOM-1-MCN16R8, de núcleo duplo, até 240 MHz"
   - name: "Memória Flash"
     value: "16 MB"
   - name: "PSRAM"
@@ -118,7 +118,7 @@ O ecrã IPS TFT de 4,3 polegadas e 800×480 utiliza uma interface RGB paralela d
 
 ## ESP32-S3 e memória
 
-A placa utiliza um **ESP32-S3-WROOM-1-MCN16R8**, com frequência até 240 MHz, **16 MB de Flash** e **8 MB de PSRAM OPI**. A PSRAM é importante em projetos RGB de 800×480, porque os framebuffers exigem bastante mais memória do que os pequenos ecrãs SPI.
+A placa utiliza um **ESP32-S3-WROOM-1-MCN16R8**, com frequência até 240 MHz, **16 MB de Flash** e **8 MB de PSRAM OPI**. A PSRAM é importante em projetos RGB de 800×480, porque os memórias intermédias de imagem exigem bastante mais memória do que os pequenos ecrãs SPI.
 
 ## Armazenamento e conectividade
 
@@ -126,7 +126,7 @@ A placa inclui uma ranhura microSD/TF através de SPI. Os conectores de expansã
 
 ## LVGL
 
-A documentação deste hardware inclui suporte ao desenvolvimento com LVGL, incluindo uma demonstração na documentação Sunton alojada pela Makerfabs. A configuração exata das bibliotecas depende da stack gráfica e da revisão da placa.
+A documentação deste hardware inclui suporte ao desenvolvimento com LVGL, incluindo uma demonstração na documentação Sunton alojada pela Makerfabs. A configuração exata das bibliotecas depende da pilha gráfica e da revisão da placa.
 
 ## Variantes da placa
 
