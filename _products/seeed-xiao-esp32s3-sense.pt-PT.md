@@ -51,7 +51,7 @@ tags: [XIAO ESP32S3 Sense, Seeed Studio XIAO, ESP32, ESP32-S3, Câmara ESP32, OV
 permalink: /products/seeed-xiao-esp32s3-sense/
 specifications:
   - name: Processador
-    value: "ESP32-S3R8, de núcleo duplo Xtensa LX7, até 240 MHz"
+    value: "ESP32-S3R8 com dois núcleos Xtensa LX7, até 240 MHz"
   - name: Memória Flash
     value: "8 MB"
   - name: PSRAM
