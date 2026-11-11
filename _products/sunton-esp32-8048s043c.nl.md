@@ -13,7 +13,7 @@ french_url: /fr/products/sunton-esp32-8048s043c/
 italian_url: /it/products/sunton-esp32-8048s043c/
 dutch_url: /nl/products/sunton-esp32-8048s043c/
 polish_url: /pl/products/sunton-esp32-8048s043c/
-portuguese_url: /pt-pt/products/sunton-esp32-8048s043c/
+portuguese_url: /pt-PT/products/sunton-esp32-8048s043c/
 internal_links: true
 title: "Sunton ESP32-8048S043C: 4,3-inch ESP32-S3-touchdisplay"
 product_verdict: "Een sterke keuze voor een grotere ESP32-S3-HMI met een scherm van 4,3 inch. Als prijs en compact formaat belangrijker zijn, is een kleinere CYD mogelijk geschikter."
@@ -49,7 +49,7 @@ tags:
   - Capacitieve touch
   - LVGL
   - microSD
-permalink: /nl/products/sunton-esp32-8048s043c/
+permalink: /products/sunton-esp32-8048s043c/
 specifications:
   - name: "Processor"
     value: "ESP32-S3-WROOM-1-MCN16R8, dual-core, tot 240 MHz"

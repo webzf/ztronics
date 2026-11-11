@@ -26,7 +26,7 @@
       {% endif %}
     </p>
     <div class="en-product-card__footer">
-      {% for category in include.product.categories %}<span class="en-tag">{% if site.active_lang == 'de' and category == 'Displays' %}Displays{% elsif site.active_lang == 'de' and category == 'Smart Home' %}Smart Home{% else %}{{ category }}{% endif %}</span>{% endfor %}
+      {% for category in include.product.categories %}<span class="en-tag">{% if site.active_lang == 'de' and category == 'Displays' %}Displays{% elsif site.active_lang == 'de' and category == 'Smart Home' %}Smart Home{% elsif site.active_lang == 'pt-PT' and category == 'Displays' %}Ecrãs{% elsif site.active_lang == 'pt-PT' and category == 'Smart Home' %}Casa inteligente{% elsif site.active_lang == 'pt-PT' and category == 'Development Boards' %}Placas de desenvolvimento{% elsif site.active_lang == 'pt-PT' and category == 'Camera Boards' %}Placas com câmara{% else %}{{ category }}{% endif %}</span>{% endfor %}
       <a class="en-view-product" href="{{ include.product.url | relative_url | escape }}">{% if site.active_lang == 'de' %}Produkt ansehen{% elsif site.active_lang == 'es' %}Ver producto{% elsif site.active_lang == 'fr' %}Voir le produit{% elsif site.active_lang == 'it' %}Vedi prodotto{% elsif site.active_lang == 'nl' %}Bekijk product{% elsif site.active_lang == 'pl' %}Zobacz produkt{% elsif site.active_lang == 'pt-PT' %}Ver produto{% else %}View Product{% endif %} →</a>
     </div>
   </div>

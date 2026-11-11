@@ -13,7 +13,7 @@ french_url: /fr/products/guition-esp32-s3-4848s040/
 italian_url: /it/products/guition-esp32-s3-4848s040/
 dutch_url: /nl/products/guition-esp32-s3-4848s040/
 polish_url: /pl/products/guition-esp32-s3-4848s040/
-portuguese_url: /pt-pt/products/guition-esp32-s3-4848s040/
+portuguese_url: /pt-PT/products/guition-esp32-s3-4848s040/
 internal_links: true
 title: "Guition ESP32-S3-4848S040: ecrã tátil de 4” 480×480"
 product_verdict: "Uma boa opção para um painel tátil quadrado ESP32-S3 de 4 polegadas e 480×480. Antes de comprar, confirme a versão com relé e as dimensões de montagem."
@@ -22,11 +22,11 @@ editorial_review:
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
-  summary: "O Guition ESP32-S3-4848S040 combina um ecrã tátil IPS quadrado de 4 polegadas e 480×480, toque capacitivo GT911, processamento ESP32-S3, 16 MB de Flash e 8 MB de PSRAM numa plataforma de desenvolvimento compacta. As características tornam-no uma base interessante para painéis Home Assistant e interfaces LVGL personalizadas; os principais aspetos a considerar são a disponibilidade de GPIO, a configuração do software e as diferenças entre variantes."
+  summary: "O Guition ESP32-S3-4848S040 combina um ecrã tátil IPS quadrado de 4 polegadas e 480×480, toque capacitivo GT911, processamento ESP32-S3, 16 MB de memória Flash e 8 MB de PSRAM numa plataforma de desenvolvimento compacta. As características tornam-no uma base interessante para painéis Home Assistant e interfaces LVGL personalizadas; os principais aspetos a considerar são a disponibilidade de GPIO, a configuração do software e as diferenças entre variantes."
   methodology: "Esta avaliação editorial baseia-se nas especificações publicadas e na documentação disponível do fabricante e da comunidade. A Embedded Nerd não testou fisicamente a placa específica nem a oferta do vendedor apresentada nesta página."
   pros:
     - "Ecrã IPS de 4 polegadas e 480×480 com toque capacitivo GT911"
-    - "ESP32-S3 com 16 MB de Flash e 8 MB de PSRAM para interfaces mais exigentes"
+    - "ESP32-S3 com 16 MB de memória Flash e 8 MB de PSRAM para interfaces mais exigentes"
     - "Os recursos comunitários ESPHome e LVGL são um ponto de partida útil para painéis Home Assistant"
   cons:
     - "O ecrã RGB utiliza muitos GPIO; confirme os pinos disponíveis antes de adicionar periféricos"
@@ -35,7 +35,7 @@ editorial_review:
 seo_title: "Guition ESP32-S3-4848S040: preço, especificações e compra"
 seo_description: "Compare preços do Guition ESP32-S3-4848S040 (ESP32-4848S040): ecrã tátil de 4 polegadas 480×480 com GT911 e suporte ESPHome. Comprar no AliExpress."
 product_id: guition-esp32-s3-4848s040
-category: Displays
+category: Ecrãs
 manufacturer: "Guition"
 image: "/assets/images/products/guition-4848s040-home-assistant-review.webp"
 header:
@@ -43,13 +43,13 @@ header:
   og_image: "/assets/images/products/guition-4848s040-home-assistant-review.webp"
   og_image_alt: "Placa de desenvolvimento tátil Guition ESP32-S3-4848S040 de 4 polegadas e 480×480"
 alt: "Placa de desenvolvimento tátil quadrada Guition ESP32-S3-4848S040 de 4 polegadas"
-excerpt: "Guition ESP32-S3-4848S040 com ESP32-S3, ecrã IPS de 4 polegadas 480×480, toque capacitivo GT911, 16 MB de Flash e 8 MB de PSRAM."
-description: "Ecrã tátil ESP32-S3 de 4 polegadas e 480×480 com GT911, 16 MB de Flash e 8 MB de PSRAM."
+excerpt: "Guition ESP32-S3-4848S040 com ESP32-S3, ecrã IPS de 4 polegadas 480×480, toque capacitivo GT911, 16 MB de memória Flash e 8 MB de PSRAM."
+description: "Ecrã tátil ESP32-S3 de 4 polegadas e 480×480 com GT911, 16 MB de memória Flash e 8 MB de PSRAM."
 categories:
-  - Displays
+  - Ecrãs
   - ESP32
   - ESP32-S3
-  - Smart Home
+  - Casa inteligente
 tags:
   - ESP32
   - ESP32-S3
@@ -64,11 +64,11 @@ tags:
   - LVGL
   - ESPHome
   - Home Assistant
-permalink: /pt-pt/products/guition-esp32-s3-4848s040/
+permalink: /products/guition-esp32-s3-4848s040/
 specifications:
   - name: Processador
-    value: "ESP32-S3 dual-core, até 240 MHz"
-  - name: Flash
+    value: "ESP32-S3 de núcleo duplo, até 240 MHz"
+  - name: Memória Flash
     value: "16 MB"
   - name: PSRAM
     value: "8 MB"
@@ -136,8 +136,8 @@ Os preços podem variar consoante o vendedor, o destino, os portes e a variante 
 
 | Especificação | Detalhes |
 |---|---|
-| MCU | ESP32-S3 dual-core, até 240 MHz |
-| Flash | 16 MB |
+| Microcontrolador | ESP32-S3 de núcleo duplo, até 240 MHz |
+| Memória Flash | 16 MB |
 | PSRAM | 8 MB |
 | Dimensão do ecrã | Painel IPS de 4,0 polegadas (4″) |
 | Resolução | 480×480 píxeis |
@@ -152,7 +152,7 @@ As especificações baseiam-se na documentação do fabricante e da comunidade; 
 
 ## Ecrã, toque e memória
 
-O painel IPS de 4 polegadas tem uma resolução quadrada de 480×480 e utiliza o controlador de ecrã ST7701/ST7701S. O toque capacitivo é gerido pelo GT911. A configuração ESP32-S3 normalmente anunciada para este modelo inclui 16 MB de Flash e 8 MB de PSRAM.
+O painel IPS de 4 polegadas tem uma resolução quadrada de 480×480 e utiliza o controlador de ecrã ST7701/ST7701S. O toque capacitivo é gerido pelo GT911. A configuração ESP32-S3 normalmente anunciada para este modelo inclui 16 MB de memória Flash e 8 MB de PSRAM.
 
 A interface RGB do ecrã utiliza um número significativo de GPIO. Se o projeto precisar de sensores adicionais, periféricos SPI ou outro hardware externo, verifique o pinout e os GPIO disponíveis antes de escolher esta placa.
 
@@ -222,7 +222,7 @@ Pode servir de base a um painel tátil Home Assistant com uma configuração ESP
 | Placa | Mais indicada para |
 |---|---|
 | Guition ESP32-S3-4848S040 | Interface quadrada de 4 polegadas e 480×480 |
-| [Sunton ESP32-8048S043C](/pt-pt/products/sunton-esp32-8048s043c/) | Interface mais larga de 4,3 polegadas e 800×480 |
+| [Sunton ESP32-8048S043C](/pt-PT/products/sunton-esp32-8048s043c/) | Interface mais larga de 4,3 polegadas e 800×480 |
 | [ESP32-2432S028 CYD](/products/esp32-2432s028-2-8-cyd/) | Ecrã tátil compacto e mais económico de 2,8 polegadas |
 
 Não sabe qual a placa mais adequada ao seu projeto? Utilize o [Seletor de ecrãs táteis ESP32](/tools/esp32-touchscreen-selector/) e consulte o [Guia de ecrãs táteis ESP32](/esp32-touchscreen-displays-guide/).

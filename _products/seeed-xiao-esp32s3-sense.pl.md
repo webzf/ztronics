@@ -48,7 +48,7 @@ excerpt: "Specyfikacja i pinout Seeed Studio XIAO ESP32S3 Sense: mapowanie D0–
 description: "Seeed Studio XIAO ESP32S3 Sense łączy ESP32-S3 z 8 MB PSRAM i 8 MB Flash, odłączaną płytkę kamery, mikrofon cyfrowy i gniazdo microSD w module 21 × 17,8 mm z układem ładowania akumulatora. Najważniejsze ograniczenia to współdzielone GPIO, większy pobór prądu w deep sleep z podłączoną płytką rozszerzeń oraz różnice w kamerach między partiami."
 categories: [ESP32, ESP32-S3, Development Boards, Camera Boards]
 tags: [XIAO ESP32S3 Sense, Seeed Studio XIAO, ESP32, ESP32-S3, ESP32 Camera, OV5640, PDM Microphone, microSD, Wi-Fi, Bluetooth LE, MicroPython]
-permalink: /pl/products/seeed-xiao-esp32s3-sense/
+permalink: /products/seeed-xiao-esp32s3-sense/
 specifications:
   - name: Procesor
     value: "ESP32-S3R8, dwurdzeniowy Xtensa LX7, do 240 MHz"

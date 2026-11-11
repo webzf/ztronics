@@ -13,7 +13,7 @@ french_url: /fr/products/guition-esp32-s3-4848s040/
 italian_url: /it/products/guition-esp32-s3-4848s040/
 dutch_url: /nl/products/guition-esp32-s3-4848s040/
 polish_url: /pl/products/guition-esp32-s3-4848s040/
-portuguese_url: /pt-pt/products/guition-esp32-s3-4848s040/
+portuguese_url: /pt-PT/products/guition-esp32-s3-4848s040/
 internal_links: true
 title: "Guition ESP32-S3-4848S040: 4-calowy ekran dotykowy 480×480"
 product_verdict: "Dobry wybór do kompaktowego, kwadratowego panelu dotykowego ESP32-S3 o przekątnej 4 cali i rozdzielczości 480×480. Przed zakupem sprawdź wersję z przekaźnikami i wymiary montażowe."
@@ -47,7 +47,7 @@ excerpt: "Porównaj Guition ESP32-S3-4848S040 (ESP32-4848S040): 4-calowy ekran d
 description: "Porównaj Guition ESP32-S3-4848S040 (ESP32-4848S040): 4-calowy ekran dotykowy 480×480 z GT911 i obsługą ESPHome. Kup na AliExpress."
 categories: [Displays, ESP32, ESP32-S3, Smart Home]
 tags: [ESP32, ESP32-S3, Guition, 4848S040, 4-inch, 480x480, IPS, ST7701S, GT911, LVGL, ESPHome, Home Assistant]
-permalink: /pl/products/guition-esp32-s3-4848s040/
+permalink: /products/guition-esp32-s3-4848s040/
 specifications:
   - name: "Procesor"
     value: "ESP32-S3 dual-core, tot 240 MHz"
