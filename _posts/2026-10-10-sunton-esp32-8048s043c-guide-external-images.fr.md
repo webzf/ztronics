@@ -7,11 +7,12 @@ layout: single
 lang: fr
 page_id: article-sunton-esp32-8048s043c-guide
 translation_id: sunton-esp32-8048s043c-guide
-available_languages: [en, de, es, fr]
+available_languages: [en, de, es, fr, it]
 english_url: /sunton-esp32-8048s043c-guide/
 german_url: /de/sunton-esp32-8048s043c-guide/
 spanish_url: /es/sunton-esp32-8048s043c-guide/
 french_url: /fr/sunton-esp32-8048s043c-guide/
+italian_url: /it/sunton-esp32-8048s043c-guide/
 internal_links: true
 permalink: /sunton-esp32-8048s043c-guide/
 id: "https://embeddednerd.com/fr/sunton-esp32-8048s043c-guide/"
