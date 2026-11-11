@@ -1,11 +1,50 @@
 ---
 title: "Best Arduino Starter Kits in 2026"
-permalink: /best-arduino-starter-kits/
-layout: single
 excerpt: "Compare the best Arduino starter kits in 2026, from official Arduino learning kits to budget-friendly ELEGOO, SunFounder and Freenove options."
+layout: single
+permalink: /best-arduino-starter-kits/
+show_date: false
+read_time: false
+last_modified_at: false
 toc: true
 toc_label: "Contents"
 toc_sticky: true
+toc_levels: 2
+header:
+  teaser: /assets/images/ENtutorials.webp
+  overlay_image: /assets/images/header3.webp
+  overlay_filter: 0.5
+  image: /assets/images/header3.webp
+  og_image: /assets/images/ENtutorials.webp
+categories:
+  - Arduino
+  - Education
+  - Projects
+internal_link_keywords:
+  - "Arduino starter kits"
+  - "best Arduino starter kit"
+  - "Arduino UNO R3"
+  - "Arduino UNO R4 WiFi"
+  - "Arduino Plug and Make Kit"
+  - "ELEGOO UNO R3 Super Starter Kit"
+  - "SunFounder Elite Explorer Kit"
+  - "Freenove Ultimate Starter Kit"
+  - "Arduino UNO Q"
+tags:
+  - Arduino
+  - Arduino UNO R3
+  - Arduino UNO R4 WiFi
+  - Arduino UNO Q
+  - Starter Kits
+  - Electronics
+  - Beginners
+  - ELEGOO
+  - SunFounder
+  - Freenove
+sidebar:
+  nav: "embedded"
+related: true
+share: true
 ---
 
 Updated November 2026. Prices are indicative and change often, so check the store before ordering.
