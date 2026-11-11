@@ -28,8 +28,8 @@ header:
   og_image_alt: "Placa Sunton ESP32-8048S043C-I com ecrã tátil capacitivo de 4,3 polegadas, vista frontal"
   teaser: "/assets/images/products/sunton-esp32-8048s043c-main.webp"
 alt: "Placa Sunton ESP32-8048S043C-I com ecrã tátil capacitivo de 4,3 polegadas, vista frontal"
-excerpt: "Sunton ESP32-8048S043C CYD com ESP32-S3, ecrã IPS de 4,3 polegadas 800×480, toque capacitivo GT911, 16 MB de Flash, 8 MB de PSRAM e microSD. Algumas ofertas também incluem a versão ESP32-8048S043 (sem C); confirme a configuração tátil da variante selecionada antes de comprar."
-description: "A Sunton ESP32-8048S043C é uma placa de desenvolvimento do tipo CYD com ESP32-S3, ecrã IPS TFT de 4,3 polegadas 800×480, interface RGB paralela de 16 bits, toque capacitivo GT911 por I2C, 16 MB de Flash, 8 MB de PSRAM, armazenamento microSD e USB-C através de uma ponte USB-UART CH340C. Alguns vendedores também anunciam uma versão ESP32-8048S043 sem o sufixo C; confirme a configuração tátil e as características exatas da variante escolhida."
+excerpt: "Sunton ESP32-8048S043C CYD com ESP32-S3, ecrã IPS de 4,3 polegadas 800×480, toque capacitivo GT911, 16 MB de memória Flash, 8 MB de PSRAM e microSD. Algumas ofertas também incluem a versão ESP32-8048S043 (sem C); confirme a configuração tátil da variante selecionada antes de comprar."
+description: "A Sunton ESP32-8048S043C é uma placa de desenvolvimento do tipo CYD com ESP32-S3, ecrã IPS TFT de 4,3 polegadas 800×480, interface RGB paralela de 16 bits, toque capacitivo GT911 por I2C, 16 MB de memória Flash, 8 MB de PSRAM, armazenamento microSD e USB-C através de uma ponte USB-UART CH340C. Alguns vendedores também anunciam uma versão ESP32-8048S043 sem o sufixo C; confirme a configuração tátil e as características exatas da variante escolhida."
 categories:
   - Ecrãs
   - ESP32
@@ -102,7 +102,7 @@ Escolha esta placa se o seu projeto beneficiar de um ecrã de 4,3 polegadas e 80
 
 | Opção | Mais indicada para | Principal compromisso |
 |---|---|---|
-| **Sunton ESP32-8048S043C** | Placa ESP32-S3 de 4,3 polegadas e 800×480, com toque capacitivo GT911, 16 MB de Flash e 8 MB de PSRAM | Confirme a referência exata do modelo e a interface antes de comprar |
+| **Sunton ESP32-8048S043C** | Placa ESP32-S3 de 4,3 polegadas e 800×480, com toque capacitivo GT911, 16 MB de memória Flash e 8 MB de PSRAM | Confirme a referência exata do modelo e a interface antes de comprar |
 | [**ESP32 CYD de 2,8 polegadas**](/products/esp32-2432s028-2-8-cyd/) | Um ecrã tátil ESP32 integrado e mais compacto | Ecrã mais pequeno, de 240×320, e toque resistivo |
 | [**Waveshare ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | Outra opção integrada ESP32-S3 de 4,3 polegadas e 800×480 | Confirme a disposição dos conectores, a interface e os acessórios |
 
@@ -118,7 +118,7 @@ O ecrã IPS TFT de 4,3 polegadas e 800×480 utiliza uma interface RGB paralela d
 
 ## ESP32-S3 e memória
 
-A placa utiliza um **ESP32-S3-WROOM-1-MCN16R8**, com frequência até 240 MHz, **16 MB de Flash** e **8 MB de PSRAM OPI**. A PSRAM é importante em projetos RGB de 800×480, porque os memórias intermédias de imagem exigem bastante mais memória do que os pequenos ecrãs SPI.
+A placa utiliza um **ESP32-S3-WROOM-1-MCN16R8**, com frequência até 240 MHz, **16 MB de memória Flash** e **8 MB de PSRAM OPI**. A PSRAM é importante em projetos RGB de 800×480, porque os memórias intermédias de imagem exigem bastante mais memória do que os pequenos ecrãs SPI.
 
 ## Armazenamento e conectividade
 
