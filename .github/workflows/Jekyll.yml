@@ -93,7 +93,11 @@ jobs:
 
             # Validate the exact PR checkout, not only the master deployment.
             ruby "pr-site-${pr_number}/scripts/validate-commerce.rb"
-            ruby "pr-site-${pr_number}/scripts/validate-translations.rb"
+            if [ -f "pr-site-${pr_number}/scripts/validate-translations.rb" ]; then
+              ruby "pr-site-${pr_number}/scripts/validate-translations.rb"
+            else
+              echo "Skipping translation validation: script is not present in this older PR branch."
+            fi
 
             BUNDLE_GEMFILE="$pr_gemfile" bundle exec ruby \
               -r jekyll \
