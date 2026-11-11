@@ -128,6 +128,10 @@ end
 required_ui = {
   "_includes/language-switcher.html" => ["Scegli la lingua", "Italiano"],
   "_includes/masthead.html" => ["Navigazione principale", "Apri la ricerca", "Apri il menu"],
+  "_includes/breadcrumbs.html" => ["Percorso di navigazione", "Prodotti"],
+  "_includes/sidebar-custom.html" => ["Stai scegliendo un display ESP32?", "Apri il selettore"],
+  "_includes/guition-cross-sell.html" => ["Scopri il display Guition da 5 pollici"],
+  "_includes/product-card.html" => ["Visualizza prodotto"],
   "_includes/footer.html" => ["Seguici", "Feed RSS", "Realizzato con"],
   "_includes/product-header.html" => ["Verifica il prezzo su AliExpress", "Acquista su Seeed Studio"],
   "_includes/guition-variant-buttons.html" => ["Con relè", "Senza relè", "Acquista su AliExpress"],
