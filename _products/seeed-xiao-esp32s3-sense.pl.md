@@ -23,16 +23,16 @@ editorial_review:
   worst_rating: 1
   author: "Embedded Nerd"
   summary: "Seeed Studio XIAO ESP32S3 Sense łączy ESP32-S3 z 8 MB PSRAM i 8 MB Flash, odłączaną płytkę kamery, mikrofon cyfrowy i gniazdo microSD w module 21 × 17,8 mm z układem ładowania akumulatora. Najważniejsze ograniczenia to współdzielone GPIO, większy pobór prądu w deep sleep z podłączoną płytką rozszerzeń oraz różnice w kamerach między partiami."
-  methodology: "Deze redactionele beoordeling is gebaseerd op gepubliceerde specificaties en documentatie van de fabrikant. Embedded Nerd heeft de specifieke print en verkopersaanbieding op deze pagina niet fysiek getest."
+  methodology: "Ta ocena redakcyjna opiera się na opublikowanych specyfikacjach i dokumentacji producenta. Embedded Nerd nie testował fizycznie konkretnej płytki ani oferty sprzedawcy opisanej na tej stronie."
   pros:
-    - "Camera, digitale microfoon en microSD-slot op een bord ter grootte van een duim"
-    - "ESP32-S3 met 8 MB PSRAM en 8 MB Flash voor camerastreaming en kleine ML-demo's"
-    - "Ingebouwde Li-ion-batterijlader en U.FL-antenneaansluiting"
-    - "Uitgebreide officiële Seeed Studio-documentatie, pinmaps en voorbeelden"
+    - "Kamera, mikrofon cyfrowy i gniazdo microSD na płytce wielkości kciuka"
+    - "ESP32-S3 z 8 MB PSRAM i 8 MB Flash do strumieniowania obrazu i małych demonstracji ML"
+    - "Wbudowany układ ładowania akumulatora Li-ion i złącze antenowe U.FL"
+    - "Szczegółowa oficjalna dokumentacja Seeed Studio, mapy pinów i przykłady"
   cons:
-    - "Microfoon, SD-kaart en gebruikers-led delen GPIO's met headerpinnen; controleer de beschikbare pinnen vóór het aansluiten"
-    - "Deep-sleepverbruik is circa 3 mA met het uitbreidingsbord aangesloten, veel hoger dan bij de gewone XIAO ESP32S3"
-    - "Borden worden meestal zonder pinheaders geleverd en het cameramodel (OV5640 of OV3660) kan per batch verschillen"
+    - "Mikrofon, karta SD i dioda użytkownika współdzielą GPIO ze złączem pinów; przed podłączeniem sprawdź dostępne piny"
+    - "Pobór prądu w deep sleep wynosi około 3 mA z podłączoną płytką rozszerzeń, znacznie więcej niż w zwykłej XIAO ESP32S3"
+    - "Płytki są zwykle dostarczane bez goldpinów, a model kamery (OV5640 lub OV3660) może różnić się między partiami"
 seo_title: "XIAO ESP32S3 Sense: specyfikacja, pinout i gdzie kupić"
 seo_description: "Specyfikacja i pinout Seeed Studio XIAO ESP32S3 Sense: mapowanie D0–D12 na GPIO, kamera OV5640, mikrofon, microSD, pobór prądu i zakup."
 product_id: seeed-xiao-esp32s3-sense
@@ -50,24 +50,24 @@ categories: [ESP32, ESP32-S3, Development Boards, Camera Boards]
 tags: [XIAO ESP32S3 Sense, Seeed Studio XIAO, ESP32, ESP32-S3, ESP32 Camera, OV5640, PDM Microphone, microSD, Wi-Fi, Bluetooth LE, MicroPython]
 permalink: /pl/products/seeed-xiao-esp32s3-sense/
 specifications:
-  - name: Processor
-    value: "ESP32-S3R8, dual-core Xtensa LX7, tot 240 MHz"
+  - name: Procesor
+    value: "ESP32-S3R8, dwurdzeniowy Xtensa LX7, do 240 MHz"
   - name: Flash
     value: "8 MB"
   - name: PSRAM
     value: "8 MB"
-  - name: Camera
-    value: "Afneembare OV5640 met autofocus (OV3660 op sommige borden)"
-  - name: Microfoon
-    value: "Digitale PDM-microfoon"
-  - name: Opslag
-    value: "microSD-slot op uitbreidingsbord, FAT tot 32 GB"
-  - name: Draadloos
-    value: "2,4 GHz wifi en Bluetooth LE 5.0 / Bluetooth Mesh"
+  - name: Kamera
+    value: "Odłączana OV5640 z autofokusem (OV3660 w niektórych płytkach)"
+  - name: Mikrofon
+    value: "Cyfrowy mikrofon PDM"
+  - name: Pamięć
+    value: "Gniazdo microSD na płytce rozszerzeń, FAT do 32 GB"
+  - name: Łączność bezprzewodowa
+    value: "Wi-Fi 2,4 GHz i Bluetooth LE 5.0 / Bluetooth Mesh"
   - name: USB
     value: "USB Type-C"
-  - name: Batterij
-    value: "3,7 V Li-ion met ingebouwd laadbeheer"
+  - name: Akumulator
+    value: "Li-ion 3,7 V z wbudowanym układem ładowania"
   - name: Afmetingen
     value: "21 × 17,8 mm; 21 × 17,8 × 15 mm met uitbreidingsbord"
   - name: Bedrijfstemperatuur
