@@ -13,7 +13,7 @@ french_url: /fr/products/guition-esp32-s3-4848s040/
 italian_url: /it/products/guition-esp32-s3-4848s040/
 dutch_url: /nl/products/guition-esp32-s3-4848s040/
 polish_url: /pl/products/guition-esp32-s3-4848s040/
-portuguese_url: /pt-pt/products/guition-esp32-s3-4848s040/
+portuguese_url: /pt-PT/products/guition-esp32-s3-4848s040/
 internal_links: true
 title: "Guition ESP32-S3-4848S040: touchscreen 4” 480×480"
 product_verdict: "Una buona scelta per un pannello touchscreen quadrato ESP32-S3 da 4 pollici e 480×480. Prima dell'acquisto, verifica la versione con relè e le dimensioni di montaggio."
@@ -64,7 +64,7 @@ tags:
   - LVGL
   - ESPHome
   - Home Assistant
-permalink: /it/products/guition-esp32-s3-4848s040/
+permalink: /products/guition-esp32-s3-4848s040/
 specifications:
   - name: Processore
     value: "ESP32-S3 dual-core, fino a 240 MHz"
