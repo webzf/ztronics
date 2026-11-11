@@ -12,7 +12,8 @@
     {% endif %}
   {% endfor %}
 
-  {% if score > 0 %}
+  {% assign post_lang = post.lang | default: site.default_lang %}
+  {% if score > 0 and (site.active_lang != 'pt-PT' or post_lang == 'pt-PT') %}
     {% capture item %}
 {{ score }}|||{{ post.url }}|||{{ post.title }}|||{{ post.excerpt }}|||{{ post.header.teaser }}
     {% endcapture %}
@@ -30,7 +31,7 @@
 <section class="en-related-tutorials">
 
 <h3 class="en-section-title">
-Related Tutorials
+{% if site.active_lang == 'pt-PT' %}Tutoriais relacionados{% elsif site.active_lang == 'it' %}Tutorial correlati{% elsif site.active_lang == 'nl' %}Gerelateerde tutorials{% elsif site.active_lang == 'pl' %}Powiązane poradniki{% else %}Related Tutorials{% endif %}
 </h3>
 
 <div class="en-related-grid">
@@ -74,7 +75,7 @@ loading="lazy">
 class="en-read-more"
 href="{{ p[1] }}">
 
-Read Tutorial →
+{% if site.active_lang == 'pt-PT' %}Ler tutorial →{% elsif site.active_lang == 'it' %}Leggi il tutorial →{% elsif site.active_lang == 'nl' %}Tutorial lezen →{% elsif site.active_lang == 'pl' %}Przeczytaj poradnik →{% else %}Read Tutorial →{% endif %}
 
 </a>
 
