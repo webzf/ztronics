@@ -70,7 +70,9 @@ specifications:
   - name: "Draadloos"
     value: "Wi-Fi en Bluetooth LE"
   - name: USB
-    value: "USB Type-C (controleer aanbod en revisie)"
+    value: "USB Type-C (controleer de aanbieding en revisie)"
+  - name: "Afmetingen"
+    value: "Afmetingen verschillen per assemblage; controleer de exacte bord- en behuizingsuitvoering"
   - name: "Relaismodule"
     value: "Optioneel; afhankelijk van de aanbieding"
 links:
@@ -82,6 +84,10 @@ links:
     icon: "fas fa-microchip"
     description: "Hardwareprofiel en communityconfiguratie voor de 4848S040."
     url: "https://devices.esphome.io/devices/guition-esp32-s3-4848s040/"
+  - title: "Communityproject ESPHome/LVGL"
+    icon: "fab fa-github"
+    description: "Communitydocumentatie en voorbeeldconfiguratie voor dit display."
+    url: "https://github.com/jtenniswood/esphome-lvgl/tree/main/guition-esp32-s3-4848s040"
 related: [guition-jc8048w550, sunton-esp32-8048s043c, esp32-2432s028-2-8-cyd, waveshare-esp32-s3-touch-lcd-4-3]
 ---
 De **Guition ESP32-S3-4848S040** is een 4-inch 480×480 ESP32-S3-touchscreen voor compacte Home Assistant-dashboards en wandpanelen. Het model wordt ook gezocht als **ESP32-4848S040**; sommige bord- en verkopersvermeldingen gebruiken **4848S040C_I**. Controleer vóór aankoop de exacte revisie en de inhoud van de bundel.
