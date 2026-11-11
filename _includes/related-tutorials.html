@@ -13,13 +13,14 @@
   {% endfor %}
 
   {% assign post_lang = post.lang | default: site.default_lang %}
-  {% if score > 0 and (site.active_lang != 'pt-PT' or post_lang == 'pt-PT') %}
+  {% if score > 0 %}
+    {% if site.active_lang != 'pt-PT' or post_lang == 'pt-PT' %}
     {% capture item %}
 {{ score }}|||{{ post.url }}|||{{ post.title }}|||{{ post.excerpt }}|||{{ post.header.teaser }}
     {% endcapture %}
 
     {% assign matches = matches | push: item %}
-
+    {% endif %}
   {% endif %}
 
 {% endfor %}
