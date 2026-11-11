@@ -9,7 +9,45 @@
       <a class="en-related-card" href="{{ related.url | relative_url }}">
         {% if related.image %}<img src="{{ related.image | relative_url }}" alt="{{ related.title }}" loading="lazy" width="160" height="160">{% endif %}
         <div class="en-related-content">
-          <strong>{% if site.active_lang == 'es' and related_id == 'guition-jc8048w550' %}Pantalla Guition JC8048W550 ESP32-S3 de 5 pulgadas{% elsif site.active_lang == 'es' and related_id == 'sunton-esp32-8048s043c' %}Sunton ESP32-8048S043C{% elsif site.active_lang == 'es' and related_id == 'esp32-2432s028-2-8-cyd' %}ESP32-2432S028 CYD táctil de 2,8 pulgadas{% elsif site.active_lang == 'es' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}Waveshare ESP32-S3-Touch-LCD-4.3{% else %}{{ related.title }}{% endif %}</strong><br>
+          <strong>
+            {% if site.active_lang == 'es' and related_id == 'guition-jc8048w550' %}Pantalla Guition JC8048W550 ESP32-S3 de 5 pulgadas
+            {% elsif site.active_lang == 'es' and related_id == 'sunton-esp32-8048s043c' %}Sunton ESP32-8048S043C
+            {% elsif site.active_lang == 'es' and related_id == 'esp32-2432s028-2-8-cyd' %}ESP32-2432S028 CYD táctil de 2,8 pulgadas
+            {% elsif site.active_lang == 'es' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}Waveshare ESP32-S3-Touch-LCD-4.3
+            {% elsif site.active_lang == 'fr' and related_id == 'guition-jc8048w550' %}Écran Guition JC8048W550 ESP32-S3 de 5 pouces
+            {% elsif site.active_lang == 'fr' and related_id == 'sunton-esp32-8048s043c' %}Sunton ESP32-8048S043C
+            {% elsif site.active_lang == 'fr' and related_id == 'esp32-2432s028-2-8-cyd' %}ESP32-2432S028 CYD tactile de 2,8 pouces
+            {% elsif site.active_lang == 'fr' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}Waveshare ESP32-S3-Touch-LCD-4.3
+            {% elsif site.active_lang == 'it' and related_id == 'guition-jc8048w550' %}Display Guition JC8048W550 ESP32-S3 da 5 pollici
+            {% elsif site.active_lang == 'it' and related_id == 'sunton-esp32-8048s043c' %}Sunton ESP32-8048S043C
+            {% elsif site.active_lang == 'it' and related_id == 'esp32-2432s028-2-8-cyd' %}ESP32-2432S028 CYD touchscreen da 2,8 pollici
+            {% elsif site.active_lang == 'it' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}Waveshare ESP32-S3-Touch-LCD-4.3
+            {% elsif site.active_lang == 'nl' and related_id == 'guition-jc8048w550' %}Guition JC8048W550 ESP32-S3-display van 5 inch
+            {% elsif site.active_lang == 'nl' and related_id == 'sunton-esp32-8048s043c' %}Sunton ESP32-8048S043C
+            {% elsif site.active_lang == 'nl' and related_id == 'esp32-2432s028-2-8-cyd' %}ESP32-2432S028 CYD-touchscreen van 2,8 inch
+            {% elsif site.active_lang == 'nl' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}Waveshare ESP32-S3-Touch-LCD-4.3
+            {% elsif site.active_lang == 'pl' and related_id == 'guition-jc8048w550' %}Wyświetlacz Guition JC8048W550 ESP32-S3 5 cali
+            {% elsif site.active_lang == 'pl' and related_id == 'sunton-esp32-8048s043c' %}Sunton ESP32-8048S043C
+            {% elsif site.active_lang == 'pl' and related_id == 'esp32-2432s028-2-8-cyd' %}Ekran dotykowy ESP32-2432S028 CYD 2,8 cala
+            {% elsif site.active_lang == 'pl' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}Waveshare ESP32-S3-Touch-LCD-4.3
+            {% elsif site.active_lang == 'pt-PT' and related_id == 'guition-jc8048w550' %}Ecrã Guition JC8048W550 ESP32-S3 de 5 polegadas
+            {% elsif site.active_lang == 'pt-PT' and related_id == 'sunton-esp32-8048s043c' %}Sunton ESP32-8048S043C
+            {% elsif site.active_lang == 'pt-PT' and related_id == 'esp32-2432s028-2-8-cyd' %}Ecrã tátil ESP32-2432S028 CYD de 2,8 polegadas
+            {% elsif site.active_lang == 'pt-PT' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}Waveshare ESP32-S3-Touch-LCD-4.3
+            {% elsif site.active_lang == 'it' and related_id == 'arduino-nano-esp32' %}Arduino Nano ESP32
+            {% elsif site.active_lang == 'nl' and related_id == 'arduino-nano-esp32' %}Arduino Nano ESP32
+            {% elsif site.active_lang == 'pl' and related_id == 'arduino-nano-esp32' %}Arduino Nano ESP32
+            {% elsif site.active_lang == 'pt-PT' and related_id == 'arduino-nano-esp32' %}Arduino Nano ESP32
+            {% elsif site.active_lang == 'it' and related_id == 'esp32-devkit' %}ESP32 DevKit V1
+            {% elsif site.active_lang == 'nl' and related_id == 'esp32-devkit' %}ESP32 DevKit V1
+            {% elsif site.active_lang == 'pl' and related_id == 'esp32-devkit' %}ESP32 DevKit V1
+            {% elsif site.active_lang == 'pt-PT' and related_id == 'esp32-devkit' %}ESP32 DevKit V1
+            {% elsif site.active_lang == 'it' and related_id == 'raspberry-pi-pico-w' %}Raspberry Pi Pico W
+            {% elsif site.active_lang == 'nl' and related_id == 'raspberry-pi-pico-w' %}Raspberry Pi Pico W
+            {% elsif site.active_lang == 'pl' and related_id == 'raspberry-pi-pico-w' %}Raspberry Pi Pico W
+            {% elsif site.active_lang == 'pt-PT' and related_id == 'raspberry-pi-pico-w' %}Raspberry Pi Pico W
+            {% else %}{{ related.title }}{% endif %}
+          </strong><br>
           {% if site.active_lang == 'es' and related_id == 'guition-jc8048w550' %}
             <small>Pantalla IPS de 5 pulgadas y 800 × 480 píxeles con ESP32-S3.</small>
           {% elsif site.active_lang == 'es' and related_id == 'sunton-esp32-8048s043c' %}
@@ -24,6 +62,38 @@
             <small>Kompaktes und preisgünstiges 2,8-Zoll-ESP32-Touchdisplay.</small>
           {% elsif site.active_lang == 'de' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}
             <small>4,3-Zoll-IPS-Touchdisplay mit ESP32-S3 für HMI- und LVGL-Projekte.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'guition-jc8048w550' %}
+            <small>Display IPS touchscreen da 5 pollici basato su ESP32-S3.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'sunton-esp32-8048s043c' %}
+            <small>Display IPS 4,3 pollici 800×480 con ESP32-S3 e touch capacitivo.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'esp32-2432s028-2-8-cyd' %}
+            <small>Display touchscreen ESP32 compatto da 2,8 pollici.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}
+            <small>Display IPS touchscreen da 4,3 pollici per progetti HMI e LVGL.</small>
+          {% elsif site.active_lang == 'nl' and related_id == 'guition-jc8048w550' %}
+            <small>IPS-touchdisplay van 5 inch op basis van ESP32-S3.</small>
+          {% elsif site.active_lang == 'nl' and related_id == 'sunton-esp32-8048s043c' %}
+            <small>IPS-display van 4,3 inch en 800×480 met ESP32-S3 en capacitieve touch.</small>
+          {% elsif site.active_lang == 'nl' and related_id == 'esp32-2432s028-2-8-cyd' %}
+            <small>Compact ESP32-touchscreen van 2,8 inch.</small>
+          {% elsif site.active_lang == 'nl' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}
+            <small>IPS-touchdisplay van 4,3 inch voor HMI- en LVGL-projecten.</small>
+          {% elsif site.active_lang == 'pl' and related_id == 'guition-jc8048w550' %}
+            <small>5-calowy dotykowy wyświetlacz IPS oparty na ESP32-S3.</small>
+          {% elsif site.active_lang == 'pl' and related_id == 'sunton-esp32-8048s043c' %}
+            <small>Wyświetlacz IPS 4,3 cala 800×480 z ESP32-S3 i dotykiem pojemnościowym.</small>
+          {% elsif site.active_lang == 'pl' and related_id == 'esp32-2432s028-2-8-cyd' %}
+            <small>Kompaktowy ekran dotykowy ESP32 o przekątnej 2,8 cala.</small>
+          {% elsif site.active_lang == 'pl' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}
+            <small>Dotykowy ekran IPS 4,3 cala do projektów HMI i LVGL.</small>
+          {% elsif site.active_lang == 'pt-PT' and related_id == 'guition-jc8048w550' %}
+            <small>Ecrã tátil IPS de 5 polegadas baseado em ESP32-S3.</small>
+          {% elsif site.active_lang == 'pt-PT' and related_id == 'sunton-esp32-8048s043c' %}
+            <small>Ecrã IPS de 4,3 polegadas 800×480 com ESP32-S3 e toque capacitivo.</small>
+          {% elsif site.active_lang == 'pt-PT' and related_id == 'esp32-2432s028-2-8-cyd' %}
+            <small>Ecrã tátil ESP32 compacto de 2,8 polegadas.</small>
+          {% elsif site.active_lang == 'pt-PT' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}
+            <small>Ecrã tátil IPS de 4,3 polegadas para projetos HMI e LVGL.</small>
           {% elsif related.excerpt %}
             <small>{{ related.excerpt | strip_html | truncate: 80 }}</small>
           {% elsif related.description %}
