@@ -13,6 +13,9 @@
 {% elsif locale == 'es-ES' or locale == 'es' %}
   {% assign share_label = "Compartir en" %}
   {% assign copy_label = "Copiar enlace" %}
+{% elsif locale == 'pt-PT' %}
+  {% assign share_label = "Partilhar em" %}
+  {% assign copy_label = "Copiar ligação" %}
 {% endif %}
 <section class="page__share">
   <h4 class="page__share-title">{{ share_label }}</h4>
@@ -33,11 +36,12 @@
       var german = document.documentElement.lang.toLowerCase().indexOf('de') === 0;
       var spanish = document.documentElement.lang.toLowerCase().indexOf('es') === 0;
       var french = document.documentElement.lang.toLowerCase().indexOf('fr') === 0;
+    var portuguese = document.documentElement.lang.toLowerCase().indexOf('pt') === 0;
       button.addEventListener('click', function () {
         var url = button.getAttribute('data-copy-link');
         function showResult(success) {
-          label.textContent = success ? (german ? ' Kopiert!' : (spanish ? ' ¡Copiado!' : (french ? ' Copié !' : ' Copied!'))) : (german ? ' Kopieren fehlgeschlagen' : (spanish ? ' Error al copiar' : (french ? ' Échec de la copie' : ' Copy failed')));
-          if (status) status.textContent = success ? (german ? 'Link in die Zwischenablage kopiert.' : (spanish ? 'Enlace copiado al portapapeles.' : (french ? 'Lien copié dans le presse-papiers.' : 'Link copied to clipboard.'))) : (german ? 'Der Link konnte nicht kopiert werden. Bitte kopieren Sie die Seitenadresse aus der Adressleiste.' : (spanish ? 'No se pudo copiar el enlace. Copie la dirección de la página desde la barra de direcciones.' : (french ? 'Impossible de copier le lien. Copiez l’adresse de la page depuis la barre d’adresse.' : 'Could not copy the link. Please copy the page URL from the address bar.')));
+          label.textContent = success ? (german ? ' Kopiert!' : (spanish ? ' ¡Copiado!' : (french ? ' Copié !' : (portuguese ? ' Copiado!' : ' Copied!')))) : (german ? ' Kopieren fehlgeschlagen' : (spanish ? ' Error al copiar' : (french ? ' Échec de la copie' : (portuguese ? ' Falha ao copiar' : ' Copy failed'))));
+          if (status) status.textContent = success ? (german ? 'Link in die Zwischenablage kopiert.' : (spanish ? 'Enlace copiado al portapapeles.' : (french ? 'Lien copié dans le presse-papiers.' : (portuguese ? 'Ligação copiada para a área de transferência.' : 'Link copied to clipboard.')))) : (german ? 'Der Link konnte nicht kopiert werden. Bitte kopieren Sie die Seitenadresse aus der Adressleiste.' : (spanish ? 'No se pudo copiar el enlace. Copie la dirección de la página desde la barra de direcciones.' : (french ? 'Impossible de copier le lien. Copiez l’adresse de la page depuis la barre d’adresse.' : (portuguese ? 'Não foi possível copiar a ligação. Copie o endereço da página a partir da barra de endereços.' : 'Could not copy the link. Please copy the page URL from the address bar.'))));
           window.setTimeout(function () { label.textContent = originalLabel; if (status) status.textContent = ''; }, 2500);
         }
         if (navigator.clipboard && window.isSecureContext) {
