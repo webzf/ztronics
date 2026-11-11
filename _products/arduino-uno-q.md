@@ -129,29 +129,7 @@ The variants do not have different processor models: both use the QRB2210 and ST
 
 ## Arduino UNO Q specifications
 
-| Specification | Details |
-|---|---|
-| Main processor (MPU) | Qualcomm Dragonwing QRB2210 |
-| MPU CPU | Quad-core Arm Cortex-A53, up to 2.0GHz |
-| GPU | Adreno 3D graphics accelerator |
-| Microcontroller (MCU) | STM32U585, Arm Cortex-M33 up to 160MHz |
-| MCU memory | 2MB Flash and 786KB SRAM |
-| RAM | 2GB or 4GB LPDDR4 |
-| Storage | 16GB or 32GB eMMC |
-| Wireless | Wi-Fi 5 dual-band 2.4/5GHz and Bluetooth 5.1 |
-| USB | USB-C with host/device role switching and DisplayPort video output |
-| Power via USB-C | 5V, up to 3A |
-| VIN | 7–24V |
-| Interfaces | I²C/I3C, SPI, PWM, CAN, UART, PSSI, GPIO, JTAG and ADC |
-| Display connections | DisplayPort over USB-C; MIPI DSI signals on JMEDIA |
-| LEDs | Four user-controllable RGB LEDs and an 8×13 blue LED matrix |
-| Expansion | 3.3V Qwiic I²C connector |
-| Audio | Microphone input, headphone output and line output on JMISC |
-| Operating systems | Debian Linux on MPU; Arduino Core on Zephyr OS on MCU |
-| Containers | Docker and Docker Compose |
-| Dimensions | 68.85 × 53.34mm |
-
-Specifications are based on Arduino's official product documentation and datasheet. Connector functions and signal voltage domains are not interchangeable: consult the datasheet before connecting external hardware.
+The full technical specifications are already summarised in the product specifications panel above. To avoid repeating the same table in the article, use the [official Arduino UNO Q datasheet](https://docs.arduino.cc/resources/datasheets/ABX00162-datasheet.pdf) for connector-level details and revision-specific electrical information. Connector functions and signal voltage domains are not interchangeable: consult the datasheet before connecting external hardware.
 
 ## Arduino UNO Q board views
 
@@ -222,6 +200,16 @@ For standalone use with a monitor, keyboard and mouse, use a USB-C hub or dongle
 
 The board also exposes MIPI DSI signals through the JMEDIA header. This is not the same connection as the DisplayPort output over USB-C.
 
+## Accessories for the Arduino UNO Q
+
+The UNO Q has a single USB-C port, so a few accessories make standalone use and hardware expansion much more comfortable.
+
+- **USB-C hub with video output and Power Delivery:** needed for standalone use with a monitor, keyboard and mouse. Choose a hub that explicitly supports both video output and PD pass-through. [Check USB-C hubs on Amazon](https://www.amazon.com/s?k=USB-C+hub+HDMI+Power+Delivery&tag=embeddednerd2-20){:target="_blank" rel="nofollow sponsored noopener"}
+- **5V / 3A USB-C power supply:** the board is specified for up to 5V / 3A over USB-C. Check that the supply and cable can provide the required power. [Check USB-C power supplies on Amazon](https://www.amazon.com/s?k=USB-C+power+supply+5V+3A&tag=embeddednerd2-20){:target="_blank" rel="nofollow sponsored noopener"}
+- **Qwiic cables and sensors:** the 3.3V Qwiic connector provides solderless I²C expansion for compatible modules. [Check Qwiic sensors on Amazon](https://www.amazon.com/s?k=Qwiic+sensors+cables&tag=embeddednerd2-20){:target="_blank" rel="nofollow sponsored noopener"}
+
+As an affiliate, Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you.
+
 ## Arduino UNO Q compatibility and expansion
 
 The UNO Q keeps the familiar UNO board outline, measuring 68.85 × 53.34mm. However, the presence of a familiar form factor should not be treated as a guarantee that every older shield is electrically or mechanically compatible.
@@ -235,19 +223,19 @@ The Qwiic connector provides a convenient 3.3V I²C expansion option for compati
 The UNO Q is sold in 2GB and 4GB configurations. The live price can vary by country, seller, shipping and stock. Use the retailer links below to check the current price and confirm which memory version is included.
 
 <div class="en-product-cta__buttons">
-  <a class="en-buy-button preferred" href="https://s.click.aliexpress.com/e/_c3w4434P" target="_blank" rel="nofollow sponsored noopener">
-    <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-    <span class="en-buy-text"><strong>Check Arduino UNO Q on AliExpress</strong><small>Check 2GB / 4GB option, seller and delivery</small></span>
+  <a class="en-buy-button preferred" href="https://link.amazon/B05l32CeC" target="_blank" rel="nofollow sponsored noopener">
+    <span class="en-buy-icon"><i class="fab fa-amazon"></i></span>
+    <span class="en-buy-text"><strong>Check Arduino UNO Q on Amazon</strong><small>Check 2GB / 4GB option and delivery</small></span>
     <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
   </a>
-  <a class="en-buy-button" href="https://link.amazon/B05l32CeC" target="_blank" rel="nofollow sponsored noopener">
-    <span class="en-buy-icon"><i class="fab fa-amazon"></i></span>
-    <span class="en-buy-text"><strong>Check Arduino UNO Q on Amazon</strong><small>Confirm memory version and seller</small></span>
+  <a class="en-buy-button" href="https://s.click.aliexpress.com/e/_c3w4434P" target="_blank" rel="nofollow sponsored noopener">
+    <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
+    <span class="en-buy-text"><strong>Check Arduino UNO Q on AliExpress</strong><small>Check seller, memory option and delivery</small></span>
     <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
   </a>
 </div>
 
-You can also compare the configurations on the [official Arduino UNO Q product page](https://store.arduino.cc/products/uno-q). Check the final delivered price, selected RAM/storage option and included accessories before ordering.
+The official Arduino Store currently lists the UNO Q 2GB at **€59.90** and the 4GB version at **€82.90** (prices checked on **11 November 2026**). [Compare both configurations on the official Arduino UNO Q store page](https://store.arduino.cc/pages/uno-q). Retailer prices, shipping and availability may differ.
 
 As an affiliate, Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you.
 
@@ -268,7 +256,7 @@ Choose the **Arduino UNO Q** when you want Linux and a dedicated microcontroller
 
 Choose a **Raspberry Pi 4 or 5** when the priority is a general-purpose Linux computer, desktop environment, home server or broader Raspberry Pi software ecosystem. For practical Linux server builds, see our [Raspberry Pi IT Projects guide](/raspberry-pi-it-projects/).
 
-## Arduino UNO Q vs Arduino UNO R4 WiFi
+## Arduino UNO Q vs [Arduino UNO R4 WiFi](https://store.arduino.cc/products/uno-r4-wifi)
 
 These boards target different types of projects. The UNO R4 WiFi is a conventional microcontroller development board. The UNO Q adds a Linux-capable application processor and much more system memory.
 
@@ -298,7 +286,11 @@ The 2GB version has 2GB LPDDR4 RAM and 16GB eMMC storage. The 4GB version double
 
 ### How much does the Arduino UNO Q cost?
 
-The price depends on the 2GB or 4GB version, retailer, country, shipping and stock. Check the current AliExpress and Amazon offers above, and compare them with the official Arduino store before buying.
+On the official Arduino Store, the UNO Q 2GB is listed at **€59.90** and the 4GB version at **€82.90** (prices checked on **11 November 2026**). Prices can vary by country, taxes, shipping and availability, so confirm the final amount on the [official Arduino UNO Q store page](https://store.arduino.cc/pages/uno-q).
+
+### Where to buy the Arduino UNO Q?
+
+You can compare retailer offers in the [price and where to buy section](#arduino-uno-q-price-and-where-to-buy), or check both memory configurations directly at the [official Arduino Store](https://store.arduino.cc/pages/uno-q).
 
 ### Does Arduino UNO Q run Linux?
 
@@ -331,6 +323,7 @@ It retains the UNO form factor, but physical fit does not guarantee electrical c
 ## Explore more development boards
 
 - [Arduino Nano ESP32](/products/arduino-nano-esp32/) — a compact wireless microcontroller board.
+- [Arduino UNO Q](/products/arduino-uno-q/) — Linux, edge AI and real-time control on one board.
 - [ESP32 DevKit](/products/esp32-devkit/) — a simpler and lower-cost platform for many Wi-Fi and Bluetooth projects.
 - [Raspberry Pi Pico](/products/raspberry-pi-pico/) — a microcontroller alternative for embedded projects.
 - [Development Boards](/products/development-boards/) — browse more boards for embedded development.
