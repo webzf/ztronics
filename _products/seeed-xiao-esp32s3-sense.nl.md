@@ -203,7 +203,7 @@ Het bord kan werken op een 3,7V-Li-ionbatterij en deze via USB-C opladen. Volgen
 Seeed documenteert Arduino en MicroPython voor de XIAO ESP32-S3-serie, naast ESP-IDF- en Zephyr-handleidingen. Selecteer in de Arduino IDE **XIAO_ESP32S3** als bord en gebruik ESP32-boardpakket 2.0.8 of nieuwer.
 
 ```cpp
-const int ledPin = LED_BUILTIN; // GPIO21 on the XIAO ESP32S3
+const int ledPin = LED_BUILTIN; // GPIO21 op de XIAO ESP32S3
 const int analogPin = A0;       // D0 = GPIO1 (ADC)
 
 void setup() {
