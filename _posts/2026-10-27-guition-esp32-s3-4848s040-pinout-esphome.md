@@ -11,10 +11,12 @@ available_languages:
   - de
   - es
   - fr
+  - it
 english_url: /guition-esp32-s3-4848s040-pinout-esphome/
 german_url: /de/guition-esp32-s3-4848s040-pinout-esphome/
 spanish_url: /es/guition-esp32-s3-4848s040-pinout-esphome/
 french_url: /fr/guition-esp32-s3-4848s040-pinout-esphome/
+italian_url: /it/guition-esp32-s3-4848s040-pinout-esphome/
 internal_links: true
 excerpt: "Guition ESP32-S3-4848S040 pinout, RGB display signals, ST7701S initialization, GT911 touch, backlight GPIO and ESPHome setup notes."
 show_date: false
