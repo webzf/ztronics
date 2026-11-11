@@ -203,7 +203,7 @@ La scheda può funzionare con una batteria Li-ion da 3,7 V e ricaricarla tramite
 Seeed documenta Arduino e MicroPython per la serie XIAO ESP32-S3, oltre a guide ESP-IDF e Zephyr. Nell'IDE Arduino seleziona **XIAO_ESP32S3** come scheda e usa il pacchetto ESP32 versione 2.0.8 o successiva.
 
 ```cpp
-const int ledPin = LED_BUILTIN; // GPIO21 on the XIAO ESP32S3
+const int ledPin = LED_BUILTIN; // GPIO21 sulla XIAO ESP32S3
 const int analogPin = A0;       // D0 = GPIO1 (ADC)
 
 void setup() {
