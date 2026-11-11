@@ -57,5 +57,7 @@ embedded:
         url: /tutorials/
       - title: "Alle Produkte"
         url: /products/
+      - title: "Beste Arduino Starter Kits"
+        url: /best-arduino-starter-kits/
       - title: "Alle Tools"
         url: /tools/
