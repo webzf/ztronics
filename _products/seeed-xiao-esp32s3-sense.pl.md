@@ -68,22 +68,22 @@ specifications:
     value: "USB Type-C"
   - name: Akumulator
     value: "Li-ion 3,7 V z wbudowanym układem ładowania"
-  - name: Afmetingen
-    value: "21 × 17,8 mm; 21 × 17,8 × 15 mm met uitbreidingsbord"
-  - name: Bedrijfstemperatuur
-    value: "−20 °C tot 65 °C"
+  - name: Wymiary
+    value: "21 × 17,8 mm; 21 × 17,8 × 15 mm z płytką rozszerzeń"
+  - name: Temperatura pracy
+    value: "−20 °C do 65 °C"
 links:
-  - title: "Seeed Studio XIAO ESP32-S3-startgids"
+  - title: "Poradnik pierwszego uruchomienia Seeed Studio XIAO ESP32-S3"
     icon: "fas fa-book"
-    description: "Officiële specificaties, pinmap, installatiehandleiding en probleemoplossing."
+    description: "Oficjalna specyfikacja, mapa pinów, instrukcja konfiguracji i rozwiązywanie problemów."
     url: "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/"
-  - title: "Pinmultiplexing voor XIAO ESP32-S3 (Sense)"
+  - title: "Multipleksowanie pinów XIAO ESP32-S3 (Sense)"
     icon: "fas fa-microchip"
-    description: "Officiële gids voor GPIO, ADC, I²C, SPI, UART en touchpinnen."
+    description: "Oficjalny przewodnik po GPIO, ADC, I²C, SPI, UART i pinach dotykowych."
     url: "https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/"
-  - title: "Seeed Studio-productpagina"
+  - title: "Strona produktu Seeed Studio"
     icon: "fas fa-store"
-    description: "Officiële winkelpagina voor de XIAO ESP32S3 Sense."
+    description: "Oficjalna strona sklepu z modelem XIAO ESP32S3 Sense."
     url: "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link"
 related: [arduino-nano-esp32, esp32-devkit, raspberry-pi-pico-w]
 ---
@@ -212,7 +212,7 @@ void setup() {
 }
 
 void loop() {
-  // Il LED utente è active-low: LOW lo accende.
+  // Dioda użytkownika działa w logice active-low: LOW ją włącza.
   digitalWrite(ledPin, LOW);
   delay(500);
   digitalWrite(ledPin, HIGH);
