@@ -9,8 +9,28 @@
       <a class="en-related-card" href="{{ related.url | relative_url }}">
         {% if related.image %}<img src="{{ related.image | relative_url }}" alt="{{ related.title }}" loading="lazy" width="160" height="160">{% endif %}
         <div class="en-related-content">
-          <strong>{% if site.active_lang == 'es' and related_id == 'guition-jc8048w550' %}Pantalla Guition JC8048W550 ESP32-S3 de 5 pulgadas{% elsif site.active_lang == 'es' and related_id == 'sunton-esp32-8048s043c' %}Sunton ESP32-8048S043C{% elsif site.active_lang == 'es' and related_id == 'esp32-2432s028-2-8-cyd' %}ESP32-2432S028 CYD táctil de 2,8 pulgadas{% elsif site.active_lang == 'es' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}Waveshare ESP32-S3-Touch-LCD-4.3{% else %}{{ related.title }}{% endif %}</strong><br>
-          {% if site.active_lang == 'es' and related_id == 'guition-jc8048w550' %}
+          <strong>{% if site.active_lang == 'it' and related_id == 'guition-jc8048w550' %}Display Guition JC8048W550 ESP32-S3 da 5 pollici{% elsif site.active_lang == 'it' and related_id == 'sunton-esp32-8048s043c' %}Sunton ESP32-8048S043C{% elsif site.active_lang == 'it' and related_id == 'esp32-2432s028-2-8-cyd' %}Touchscreen ESP32-2432S028 CYD da 2,8 pollici{% elsif site.active_lang == 'it' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}Waveshare ESP32-S3-Touch-LCD-4.3{% elsif site.active_lang == 'it' and related_id == 'waveshare-esp32-s3-touch-lcd-7' %}Display touchscreen Waveshare ESP32-S3 da 7 pollici{% elsif site.active_lang == 'it' and related_id == 'waveshare-esp32-s3-touch-lcd-1-85b' %}Waveshare ESP32-S3-Touch-LCD-1.85B{% elsif site.active_lang == 'it' and related_id == 'ili9341-xpt2046-2-8-touchscreen' %}Touchscreen ILI9341 con controller touch XPT2046 da 2,8 pollici{% elsif site.active_lang == 'it' and related_id == 'arduino-nano-esp32' %}Arduino Nano ESP32{% elsif site.active_lang == 'it' and related_id == 'esp32-devkit' %}ESP32 DevKit V1{% elsif site.active_lang == 'it' and related_id == 'raspberry-pi-pico-w' %}Raspberry Pi Pico W{% elsif site.active_lang == 'es' and related_id == 'guition-jc8048w550' %}Pantalla Guition JC8048W550 ESP32-S3 de 5 pulgadas{% elsif site.active_lang == 'es' and related_id == 'sunton-esp32-8048s043c' %}Sunton ESP32-8048S043C{% elsif site.active_lang == 'es' and related_id == 'esp32-2432s028-2-8-cyd' %}ESP32-2432S028 CYD táctil de 2,8 pulgadas{% elsif site.active_lang == 'es' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}Waveshare ESP32-S3-Touch-LCD-4.3{% else %}{{ related.title }}{% endif %}</strong><br>
+          {% if site.active_lang == 'it' and related_id == 'guition-jc8048w550' %}
+            <small>Display IPS da 5 pollici e 800 × 480 pixel con ESP32-S3.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'sunton-esp32-8048s043c' %}
+            <small>Touchscreen ESP32-S3 da 4,3 pollici e 800 × 480 pixel.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'esp32-2432s028-2-8-cyd' %}
+            <small>Scheda ESP32 economica con touchscreen da 2,8 pollici.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'waveshare-esp32-s3-touch-lcd-4-3' %}
+            <small>Display IPS touchscreen da 4,3 pollici con ESP32-S3 per progetti HMI e LVGL.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'waveshare-esp32-s3-touch-lcd-7' %}
+            <small>Display touchscreen da 7 pollici per interfacce HMI e progetti LVGL.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'waveshare-esp32-s3-touch-lcd-1-85b' %}
+            <small>Display touchscreen compatto da 1,85 pollici basato su ESP32-S3.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'ili9341-xpt2046-2-8-touchscreen' %}
+            <small>Modulo touchscreen SPI da 2,8 pollici con ILI9341 e XPT2046.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'arduino-nano-esp32' %}
+            <small>Scheda in formato Nano con ESP32-S3 e disposizione dei pin Arduino.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'esp32-devkit' %}
+            <small>Scheda ESP32 versatile per prototipazione generica a basso costo.</small>
+          {% elsif site.active_lang == 'it' and related_id == 'raspberry-pi-pico-w' %}
+            <small>RP2040 con Wi-Fi e supporto a MicroPython.</small>
+          {% elsif site.active_lang == 'es' and related_id == 'guition-jc8048w550' %}
             <small>Pantalla IPS de 5 pulgadas y 800 × 480 píxeles con ESP32-S3.</small>
           {% elsif site.active_lang == 'es' and related_id == 'sunton-esp32-8048s043c' %}
             <small>Pantalla táctil ESP32-S3 de 4,3 pulgadas y 800 × 480 píxeles.</small>
