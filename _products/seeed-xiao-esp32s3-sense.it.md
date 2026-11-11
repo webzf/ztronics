@@ -13,7 +13,7 @@ french_url: /fr/products/seeed-xiao-esp32s3-sense/
 italian_url: /it/products/seeed-xiao-esp32s3-sense/
 dutch_url: /nl/products/seeed-xiao-esp32s3-sense/
 polish_url: /pl/products/seeed-xiao-esp32s3-sense/
-portuguese_url: /pt-pt/products/seeed-xiao-esp32s3-sense/
+portuguese_url: /pt-PT/products/seeed-xiao-esp32s3-sense/
 internal_links: true
 title: "Seeed Studio XIAO ESP32S3 Sense: fotocamera, microfono e microSD in 21 × 17,8 mm"
 product_verdict: "Ideale per piccoli progetti con fotocamera, audio e registrazione dati basati su ESP32-S3; considera i GPIO condivisi e il maggiore consumo in deep sleep con la scheda di espansione collegata."
@@ -48,7 +48,7 @@ excerpt: "Specifiche e pinout Seeed Studio XIAO ESP32S3 Sense: mappatura D0–D1
 description: "Seeed Studio XIAO ESP32S3 Sense integra ESP32-S3 con 8 MB PSRAM e 8 MB Flash, una scheda fotocamera rimovibile, un microfono digitale e uno slot microSD in un modulo da 21 × 17,8 mm con ricarica della batteria. È adatto a progetti compatti di visione e audio; i limiti principali sono i GPIO condivisi, il maggiore consumo in deep sleep con la scheda di espansione collegata e le differenze tra le fotocamere dei vari lotti."
 categories: [ESP32, ESP32-S3, Development Boards, Camera Boards]
 tags: [XIAO ESP32S3 Sense, Seeed Studio XIAO, ESP32, ESP32-S3, ESP32 Camera, OV5640, PDM Microphone, microSD, Wi-Fi, Bluetooth LE, MicroPython]
-permalink: /it/products/seeed-xiao-esp32s3-sense/
+permalink: /products/seeed-xiao-esp32s3-sense/
 specifications:
   - name: Processore
     value: "ESP32-S3R8, dual-core Xtensa LX7, fino a 240 MHz"
