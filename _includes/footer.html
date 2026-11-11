@@ -13,7 +13,7 @@
 {% elsif locale == 'pl-PL' %}
   {% assign footer_links = site.data.pl.footer.links %}
 {% elsif locale == 'pt-PT' %}
-  {% assign footer_links = site.data.pt-PT.footer.links %}
+  {% assign footer_links = site.data['pt-PT'].footer.links %}
 {% endif %}
 {% unless site.atom_feed.hide %}
   {% assign show_atom = true %}
