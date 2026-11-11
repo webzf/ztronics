@@ -16,11 +16,11 @@ Four ways to start with Arduino, from a classic book-led kit to a wire-free kit 
 
 ## Quick picks
 
-### Best for learning: Arduino Starter Kit
+### Best for learning: Arduino Starter Kit (UNO R3)
 
-The current official kit is built around the UNO R4 WiFi and includes a printed project book. Important: the Amazon link supplied for this pick (ASIN B009UKZV0A) appears to be the older K000007 / UNO R3 edition, so check the exact SKU before ordering.
+The Amazon link supplied for this pick (ASIN B009UKZV0A) is for the original K000007 kit with an Arduino UNO R3 and a 170-page Projects Book covering 15 projects. It is not the newer Starter Kit R4. Check that the Amazon listing still shows the K000007 / UNO R3 edition before ordering.
 
-<a class="en-buy-button" href="https://www.amazon.com/Arduino-Starter-Kit-English-Official/dp/B009UKZV0A?crid=2W66Q4QLINHNJ&dib=eyJ2IjoiMSJ9.au0-H3utX9-R14YUNnRn1IL19b24GJYD0QIIwnKk2vhzCR5_hoklj1nln3Ka6swhG8qTt6QKnRtCx914YxJUhpC_vU67avB20AR13c3km7qDrjf-HigBxsMyhO9YQeD83bz-xw2t2ORKgiCKv7fO8yz2of8ZcvhsUNUG3ByLhcEnGRNpjW0rSDLFTojgDS8ErnwX8sfB67l5tuqsPlDrSX0L8V1uVLUaEKx9UYqOTFQ.CW1BFp3Rhu4uq71rAqkWzcpZA2gnFRsRbTALtBfVXNc&dib_tag=se&keywords=Arduino+Starter+Kit+R4&qid=1794407515&sprefix=arduino+starter+kit+r4%2Caps%2C834&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=embeddedner0e-20&linkId=42d3b1ef73dd5b429bdc225f1d6544b8&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">🛒 Check Amazon listing (verify R3/R4 version)</a>
+<a class="en-buy-button" href="https://www.amazon.com/Arduino-Starter-Kit-English-Official/dp/B009UKZV0A?crid=2W66Q4QLINHNJ&dib=eyJ2IjoiMSJ9.au0-H3utX9-R14YUNnRn1IL19b24GJYD0QIIwnKk2vhzCR5_hoklj1nln3Ka6swhG8qTt6QKnRtCx914YxJUhpC_vU67avB20AR13c3km7qDrjf-HigBxsMyhO9YQeD83bz-xw2t2ORKgiCKv7fO8yz2of8ZcvhsUNUG3ByLhcEnGRNpjW0rSDLFTojgDS8ErnwX8sfB67l5tuqsPlDrSX0L8V1uVLUaEKx9UYqOTFQ.CW1BFp3Rhu4uq71rAqkWzcpZA2gnFRsRbTALtBfVXNc&dib_tag=se&keywords=Arduino+Starter+Kit+R4&qid=1794407515&sprefix=arduino+starter+kit+r4%2Caps%2C834&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=embeddedner0e-20&linkId=42d3b1ef73dd5b429bdc225f1d6544b8&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">🛒 Check Amazon listing (UNO R3 / K000007)</a>
 
 ### Best value: ELEGOO UNO R3 Super Starter Kit
 
@@ -42,13 +42,13 @@ A board rather than a kit: Linux plus a real-time microcontroller.
 
 ### Best video course: SunFounder Elite Explorer Kit
 
-A genuine UNO R4 WiFi, 300+ parts and 60+ video lessons.
+A genuine UNO R4 WiFi, 300+ components and 50+ projects. The current SunFounder product page advertises 100+ free video lessons; the Amazon listing linked here may describe an earlier revision, so verify the course count and box contents on the listing before ordering.
 
 <a class="en-buy-button" href="https://www.amazon.com/SunFounder-Bluetooth-Tutorials-Beginners-Engineers/dp/B0CR6K5WKK?crid=32UVZY61NYRVQ&dib=eyJ2IjoiMSJ9.oJ3aB9R_VRG_uJrpEBOu_xrlQWE4wSbh_yszpRxwoypxrgcuP7t7KvgeSWfNKPpfomkwVuN1zj_z-l7SgcDW2E8MeQnLodAdMrNctQFvnNU9SfWL9Ri0EyFayvSE7GXh1ZosDa4phyXtMEiWcVQFgsuFiigCgN3xWDAjWP8XjENEx9iRJrg1OVH3DHOaOBPQTcyocQk9DByvdPLqrfDsTaWP33xS4XnQerdyOC394Uw.e1VV4lUwABWfbA_z9BBbqaPQ9jitYf_i2gFp0wXxsmE&dib_tag=se&keywords=SunFounder+Elite+Explorer+Kit&qid=1794407991&sprefix=sunfounder+elite+explorer+kit%2Caps%2C704&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=embeddedner0e-20&linkId=e23dda21f15c049e718f32d8118af1c3&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">🛒 Check price on Amazon</a>
 
-### Most projects: Freenove UNO R4 WiFi Starter Kit
+### Most projects: Freenove Ultimate Starter Kit
 
-286 pieces and 78 guided projects.
+The linked product corresponds to the FNK0093A version: 220 items, 78 guided projects and a 399-page tutorial. Its V5 (Rev4) WiFi board is Freenove-branded and compatible with the Arduino UNO R4 WiFi Mini; it is not an official Arduino UNO R4 board.
 
 <a class="en-buy-button" href="https://www.amazon.com/Freenove-Ultimate-Compatible-Cortex-M4-Microcontroller/dp/B0DGBPDSTQ?crid=3KQXF6L87WURP&dib=eyJ2IjoiMSJ9.3cLSwohhlqCFMlJovHGLxtK9qLKxdnkySvtj4ENhX78jcY7BMAaOCsnj7qNvEeCy8gH5Dt9X5uXhys32272UxjPP52haoyuyy3f9WZN_LBItBtpLwhvipg46Spj9KsNYCAWVfgMRpGBs5Jr4eabJkVSUgoLS_hy9Ci0jumTxbZgYm3PlrVtu1LrdRrnDtxHqVYu9sRW6ePnpSFvFdXGGXhmZ0AgQpMY92dg27Q-Kl7A.BR_YWYO7jIlddHkGhKzRUjEJS5B1cIt0SbIfuehFwnA&dib_tag=se&keywords=Freenove%2BUNO%2BR4%2BWiFi%2BStarter%2BKit&qid=1794408123&sprefix=freenove%2Buno%2Br4%2Bwifi%2Bstarter%2Bkit%2Caps%2C881&sr=8-2&th=1&linkCode=ll2&tag=embeddedner0e-20&linkId=727e4914386670c093e55e83da0f7814&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">🛒 Check price on Amazon</a>
 
@@ -56,32 +56,40 @@ A genuine UNO R4 WiFi, 300+ parts and 60+ video lessons.
 
 | Option | Board | Best for | Wiring | Learning material | Price |
 | --- | --- | --- | --- | --- | --- |
-| Arduino Starter Kit | UNO R4 WiFi (older edition: UNO R3) | Learning electronics from the ground up | Breadboard and jumper wires | Printed project book and certification voucher (R4); 170-page book with 15 projects (older edition) | Higher than clone kits |
+| Arduino Starter Kit (Amazon link) | Official Arduino UNO R3 (K000007) | Learning electronics from the ground up | Breadboard and jumper wires | 170-page printed Projects Book, 15 projects | Higher than clone kits |
 | ELEGOO Super Starter Kit | UNO R3-compatible board | Budget buyers who want many components | Breadboard and jumper wires | PDF tutorials (22+ lessons) | About $43 |
 | Plug and Make Kit | UNO R4 WiFi + 7 Modulino nodes | Absolute beginners, kids with an adult, quick IoT projects | None (Qwiic cables) | Free online guide, 7 projects (Arduino account needed) | About €90 list, often discounted |
-| SunFounder Elite Explorer Kit | Original Arduino UNO R4 WiFi | Video-led learners who want 300+ parts | Breadboard and jumper wires | 60+ video lessons, 50+ projects | About $96 |
-| Freenove UNO R4 WiFi Starter Kit | Freenove-branded UNO R4 WiFi-type board | Learners who want the most projects | Breadboard and jumper wires | PDF tutorial, 78 projects | Check the store |
+| SunFounder Elite Explorer Kit | Original Arduino UNO R4 WiFi | Video-led learners who want 300+ parts | Breadboard and jumper wires | 50+ projects; current official page advertises 100+ video lessons (Amazon listing may be an earlier revision) | About $96 |
+| Freenove Ultimate Starter Kit (FNK0093A) | Freenove V5 (Rev4) WiFi board, compatible with UNO R4 WiFi Mini | Learners who want many projects | Breadboard and jumper wires | 399-page tutorial, 78 projects, 220 items | Check the store |
 | UNO Q (2 GB / 4 GB) | Qualcomm Dragonwing QRB2210 + STM32U585 | Learners moving on to Linux, vision, audio and edge AI | UNO form factor, shield-compatible | Arduino App Lab and online docs | From about $59 (2 GB); 4 GB costs more |
 
 ## The kits in detail
 
-### 1. Arduino Starter Kit: best for learning
+### 1. Arduino Starter Kit (UNO R3): best for learning
 
-This is the kit Arduino itself teaches with. The current Starter Kit R4 is built around the UNO R4 WiFi and comes with a printed project book (13 projects) and a voucher for the Arduino Fundamentals certification. The supplied Amazon link (ASIN B009UKZV0A) appears to point to the older K000007 / UNO R3 edition, which has a 170-page book with 15 projects, from blinking an LED to sensors and motors. Check the SKU carefully: K000007_R4 identifies the R4 version. You can also check the [official Arduino Starter Kit R4 listing](https://store.arduino.cc/products/starter-kit-r4).
+![Original Arduino Starter Kit K000007 with UNO R3, components and Projects Book](https://store.arduino.cc/cdn/shop/files/starterkit_02.unbox_934x700.jpg?v=1773148487)
+
+*Official product photo of the original K000007 UNO R3 kit.*
+
+The Amazon link used in this guide (ASIN B009UKZV0A) is associated with the original K000007 kit, built around the official Arduino UNO R3. It includes a 170-page Projects Book with 15 guided projects, from basic LED circuits to sensors and motors. This is a different product from the newer Starter Kit R4 (SKU K000007_R4). If the Amazon listing title or photos have changed, verify the exact model before ordering. See the [official Arduino Starter Kit Multi-Language page](https://store.arduino.cc/products/arduino-starter-kit-multi-language) for the K000007 version.
 
 **Pros**
 - Clear, project-based book
 - Genuine Arduino hardware
-- Includes a voucher for the Arduino Fundamentals certification
+- Includes the official Arduino UNO R3 and a substantial printed project book
 
 **Cons**
 - Costs more than clone kits
 - Fewer parts than the Elegoo kit
-- Some shops still sell the older UNO R3 edition, so check the SKU (K000007_R4 is the R4 version)
+- This Amazon link is for the older UNO R3 kit, not the newer Starter Kit R4
 
-<a class="en-buy-button" href="https://www.amazon.com/Arduino-Starter-Kit-English-Official/dp/B009UKZV0A?crid=2W66Q4QLINHNJ&dib=eyJ2IjoiMSJ9.au0-H3utX9-R14YUNnRn1IL19b24GJYD0QIIwnKk2vhzCR5_hoklj1nln3Ka6swhG8qTt6QKnRtCx914YxJUhpC_vU67avB20AR13c3km7qDrjf-HigBxsMyhO9YQeD83bz-xw2t2ORKgiCKv7fO8yz2of8ZcvhsUNUG3ByLhcEnGRNpjW0rSDLFTojgDS8ErnwX8sfB67l5tuqsPlDrSX0L8V1uVLUaEKx9UYqOTFQ.CW1BFp3Rhu4uq71rAqkWzcpZA2gnFRsRbTALtBfVXNc&dib_tag=se&keywords=Arduino+Starter+Kit+R4&qid=1794407515&sprefix=arduino+starter+kit+r4%2Caps%2C834&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=embeddedner0e-20&linkId=42d3b1ef73dd5b429bdc225f1d6544b8&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">🛒 Check Amazon listing (appears to be UNO R3)</a>
+<a class="en-buy-button" href="https://www.amazon.com/Arduino-Starter-Kit-English-Official/dp/B009UKZV0A?crid=2W66Q4QLINHNJ&dib=eyJ2IjoiMSJ9.au0-H3utX9-R14YUNnRn1IL19b24GJYD0QIIwnKk2vhzCR5_hoklj1nln3Ka6swhG8qTt6QKnRtCx914YxJUhpC_vU67avB20AR13c3km7qDrjf-HigBxsMyhO9YQeD83bz-xw2t2ORKgiCKv7fO8yz2of8ZcvhsUNUG3ByLhcEnGRNpjW0rSDLFTojgDS8ErnwX8sfB67l5tuqsPlDrSX0L8V1uVLUaEKx9UYqOTFQ.CW1BFp3Rhu4uq71rAqkWzcpZA2gnFRsRbTALtBfVXNc&dib_tag=se&keywords=Arduino+Starter+Kit+R4&qid=1794407515&sprefix=arduino+starter+kit+r4%2Caps%2C834&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=embeddedner0e-20&linkId=42d3b1ef73dd5b429bdc225f1d6544b8&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">🛒 Check Amazon listing (UNO R3 / K000007)</a>
 
 ### 2. ELEGOO UNO R3 Super Starter Kit: best value
+
+![ELEGOO UNO R3 Super Starter Kit with components](https://us.elegoo.com/cdn/shop/files/elegoo-uno-r3-super-starter-kit-compatible-with-arduino-ide-arduino-stem-kits-elegoo-shop-427270.jpg?v=1787632171&width=345)
+
+*Official ELEGOO product photo.*
 
 A popular budget option with an UNO R3-compatible board, an LCD1602 display, a servo, a stepper motor, a joystick, an IR receiver and a power supply module, in a latching case. It works with the Arduino IDE.
 
@@ -98,6 +106,10 @@ A popular budget option with an UNO R3-compatible board, an LCD1602 display, a s
 
 ### 3. Arduino Plug and Make Kit: easiest start
 
+![Arduino Plug and Make Kit with UNO R4 WiFi and seven Modulino nodes](https://store.arduino.cc/cdn/shop/files/AKX00069_03.front_3e0deaf7-9eb9-487e-9339-f0b7d1fdcd02_934x700.jpg?v=1727101806)
+
+*Official Arduino product photo showing the baseboard, UNO R4 WiFi and Modulino nodes.*
+
 Instead of a breadboard, you snap together seven Modulino sensors and actuators (Knob, Pixels, Buttons, Thermo and more) around an UNO R4 WiFi. Projects include an hourglass, an eco watch and a game controller. It teaches coding and the Arduino ecosystem fast, but less about raw circuits.
 
 **Pros**
@@ -113,7 +125,11 @@ Instead of a breadboard, you snap together seven Modulino sensors and actuators 
 
 ### 4. SunFounder Elite Explorer Kit: best for video lessons
 
-This kit pairs a genuine Arduino UNO R4 WiFi with 300+ components and 60+ free video lessons co-created with educator Paul McWhorter. It covers 50 projects (30 basic, 13 fun and 8 IoT), including Arduino IoT Cloud integration, so it takes you well past blinking LEDs.
+![SunFounder Elite Explorer Kit with original Arduino UNO R4 WiFi](https://www.sunfounder.com/cdn/shop/files/Elite-Explorer-Kit_-20_800x.jpg?v=1791535831)
+
+*SunFounder product photo; check the Amazon listing for the exact revision and course contents.*
+
+This kit pairs a genuine Arduino UNO R4 WiFi with 300+ components and 50+ projects (30 basic, 13 fun and 8 IoT), including Arduino IoT Cloud integration. The current SunFounder product page advertises 100+ free video lessons co-created with educator Paul McWhorter. The Amazon listing linked here may refer to an earlier revision and describes 60+ lessons, so check the listing photos and included course material before purchase.
 
 **Pros**
 - Genuine Arduino board
@@ -128,9 +144,13 @@ This kit pairs a genuine Arduino UNO R4 WiFi with 300+ components and 60+ free v
 
 [Open the SunFounder kit guide](https://docs.sunfounder.com/projects/elite-explorer-kit/en/latest/index.html).
 
-### 5. Freenove UNO R4 WiFi Starter Kit: most projects
+### 5. Freenove Ultimate Starter Kit (FNK0093A): most projects
 
-A 286-piece kit with 78 guided projects, built around Freenove’s own UNO R4 WiFi-type control board with Wi-Fi and an LED matrix. It suits learners who want a long list of experiments, from basic circuits to sensors, motors and displays.
+![Freenove Ultimate Starter Kit FNK0093A with 220 items](https://store.freenove.com/cdn/shop/files/FNK0093A.MAIN.jpg?v=1725516268&width=416)
+
+*Official Freenove product photo for the FNK0093A version.*
+
+The linked FNK0093A version includes 220 items, 78 guided projects and a 399-page tutorial. It uses Freenove’s V5 (Rev4) WiFi board, with an onboard ESP32-S3 and LED matrix, which is compatible with the Arduino UNO R4 WiFi Mini but is not an official Arduino board. It suits learners who want a long list of experiments, from basic circuits to sensors, motors and displays.
 
 **Pros**
 - Very large project list
