@@ -9,10 +9,12 @@ available_languages:
   - de
   - es
   - fr
+  - it
 english_url: /products/guition-esp32-s3-4848s040/
 german_url: /de/products/guition-esp32-s3-4848s040/
 spanish_url: /es/products/guition-esp32-s3-4848s040/
 french_url: /fr/products/guition-esp32-s3-4848s040/
+italian_url: /it/products/guition-esp32-s3-4848s040/
 internal_links: true
 title: "Guition ESP32-S3-4848S040: pantalla táctil 4\" 480×480"
 product_verdict: "Una opción interesante para un panel táctil cuadrado de 4 pulgadas y 480 × 480 píxeles basado en ESP32-S3. Antes de comprar, compruebe la variante con relé y las dimensiones para el montaje."
