@@ -3,19 +3,11 @@ guition-esp32-s3-4848s040:
   de: /de/products/guition-esp32-s3-4848s040/
   es: /es/products/guition-esp32-s3-4848s040/
   fr: /fr/products/guition-esp32-s3-4848s040/
-  it: /it/products/guition-esp32-s3-4848s040/
-  nl: /nl/products/guition-esp32-s3-4848s040/
-  pl: /pl/products/guition-esp32-s3-4848s040/
-  pt-PT: /pt-pt/products/guition-esp32-s3-4848s040/
 sunton-esp32-8048s043c:
   en: /products/sunton-esp32-8048s043c/
   de: /de/products/sunton-esp32-8048s043c/
   es: /es/products/sunton-esp32-8048s043c/
   fr: /fr/products/sunton-esp32-8048s043c/
-  it: /it/products/sunton-esp32-8048s043c/
-  nl: /nl/products/sunton-esp32-8048s043c/
-  pl: /pl/products/sunton-esp32-8048s043c/
-  pt-PT: /pt-pt/products/sunton-esp32-8048s043c/
 sunton-esp32-8048s043c-guide:
   en: /sunton-esp32-8048s043c-guide/
   de: /de/sunton-esp32-8048s043c-guide/
@@ -31,7 +23,3 @@ seeed-xiao-esp32s3-sense:
   de: /de/products/seeed-xiao-esp32s3-sense/
   es: /es/products/seeed-xiao-esp32s3-sense/
   fr: /fr/products/seeed-xiao-esp32s3-sense/
-  it: /it/products/seeed-xiao-esp32s3-sense/
-  nl: /nl/products/seeed-xiao-esp32s3-sense/
-  pl: /pl/products/seeed-xiao-esp32s3-sense/
-  pt-PT: /pt-pt/products/seeed-xiao-esp32s3-sense/

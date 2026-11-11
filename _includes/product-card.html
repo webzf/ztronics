@@ -12,7 +12,7 @@
   </a>
   <div class="en-product-card__body">
     {% if commerce.badges.recommended %}
-      <span class="en-badge en-badge--recommended">{% if site.active_lang == 'de' %}Empfohlen{% elsif site.active_lang == 'es' %}Recomendado{% elsif site.active_lang == 'fr' %}Recommandé{% elsif site.active_lang == 'it' %}Consigliato{% elsif site.active_lang == 'nl' %}Aanbevolen{% elsif site.active_lang == 'pl' %}Polecane{% elsif site.active_lang == 'pt-PT' %}Recomendado{% else %}Recommended{% endif %}</span>
+      <span class="en-badge en-badge--recommended">{% if site.active_lang == 'de' %}Empfohlen{% elsif site.active_lang == 'es' %}Recomendado{% else %}Recommended{% endif %}</span>
     {% endif %}
     {% if include.product.manufacturer %}<div class="en-product-card__manufacturer">{{ include.product.manufacturer }}</div>{% endif %}
     <h3><a href="{{ include.product.url | relative_url | escape }}">{{ include.product.title | escape }}</a></h3>
@@ -27,7 +27,7 @@
     </p>
     <div class="en-product-card__footer">
       {% for category in include.product.categories %}<span class="en-tag">{% if site.active_lang == 'de' and category == 'Displays' %}Displays{% elsif site.active_lang == 'de' and category == 'Smart Home' %}Smart Home{% else %}{{ category }}{% endif %}</span>{% endfor %}
-      <a class="en-view-product" href="{{ include.product.url | relative_url | escape }}">{% if site.active_lang == 'de' %}Produkt ansehen{% elsif site.active_lang == 'es' %}Ver producto{% elsif site.active_lang == 'fr' %}Voir le produit{% elsif site.active_lang == 'it' %}Vedi prodotto{% elsif site.active_lang == 'nl' %}Bekijk product{% elsif site.active_lang == 'pl' %}Zobacz produkt{% elsif site.active_lang == 'pt-PT' %}Ver produto{% else %}View Product{% endif %} →</a>
+      <a class="en-view-product" href="{{ include.product.url | relative_url | escape }}">{% if site.active_lang == 'de' %}Produkt ansehen{% elsif site.active_lang == 'es' %}Ver producto{% else %}View Product{% endif %} →</a>
     </div>
   </div>
 </div>

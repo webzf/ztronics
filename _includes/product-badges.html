@@ -2,10 +2,6 @@
 {% assign german = false %}
 {% assign spanish = false %}
 {% assign french = false %}
-{% assign italian = false %}
-{% assign dutch = false %}
-{% assign polish = false %}
-{% assign portuguese = false %}
 {% if page.lang == 'de' or site.active_lang == 'de' %}
   {% assign german = true %}
 {% endif %}
@@ -15,17 +11,13 @@
 {% if page.lang == 'fr' or site.active_lang == 'fr' %}
   {% assign french = true %}
 {% endif %}
-{% if page.lang == 'it' or site.active_lang == 'it' %}{% assign italian = true %}{% endif %}
-{% if page.lang == 'nl' or site.active_lang == 'nl' %}{% assign dutch = true %}{% endif %}
-{% if page.lang == 'pl' or site.active_lang == 'pl' %}{% assign polish = true %}{% endif %}
-{% if page.lang == 'pt-PT' or site.active_lang == 'pt-PT' %}{% assign portuguese = true %}{% endif %}
 {% if commerce.badges %}
 <div class="en-product-badges">
-  {% if commerce.badges.recommended %}<span class="en-badge recommended">⭐ {% if german %}Empfohlen{% elsif french %}Recommandé{% elsif spanish %}Recomendado{% elsif italian %}Consigliato{% elsif dutch %}Aanbevolen{% elsif polish %}Polecany{% elsif portuguese %}Recomendado{% else %}Recommended{% endif %}</span>{% endif %}
-  {% if commerce.badges.editor_choice %}<span class="en-badge editor-choice">🏆 {% if german %}Redaktionstipp{% elsif french %}Choix de la rédaction{% elsif spanish %}Elección del editor{% elsif italian %}Scelta della redazione{% elsif dutch %}Keuze van de redactie{% elsif polish %}Wybór redakcji{% elsif portuguese %}Escolha da redação{% else %}Editor's Choice{% endif %}</span>{% endif %}
-  {% if commerce.badges.best_value %}<span class="en-badge best-value">💰 {% if german %}Bestes Preis-Leistungs-Verhältnis{% elsif french %}Meilleur rapport qualité-prix{% elsif spanish %}Mejor relación calidad-precio{% elsif italian %}Miglior rapporto qualità-prezzo{% elsif dutch %}Beste prijs-kwaliteitverhouding{% elsif polish %}Najlepszy stosunek jakości do ceny{% elsif portuguese %}Melhor relação qualidade-preço{% else %}Best Value{% endif %}</span>{% endif %}
-  {% if commerce.badges.beginner %}<span class="en-badge beginner">🎓 {% if german %}Einsteigerfreundlich{% elsif french %}Adapté aux débutants{% elsif spanish %}Ideal para principiantes{% elsif italian %}Adatto ai principianti{% elsif dutch %}Geschikt voor beginners{% elsif polish %}Przyjazny dla początkujących{% elsif portuguese %}Ideal para principiantes{% else %}Beginner Friendly{% endif %}</span>{% endif %}
+  {% if commerce.badges.recommended %}<span class="en-badge recommended">⭐ {% if german %}Empfohlen{% elsif french %}Recommandé{% elsif spanish %}Recomendado{% else %}Recommended{% endif %}</span>{% endif %}
+  {% if commerce.badges.editor_choice %}<span class="en-badge editor-choice">🏆 {% if german %}Redaktionstipp{% elsif french %}Choix de la rédaction{% elsif spanish %}Elección del editor{% else %}Editor's Choice{% endif %}</span>{% endif %}
+  {% if commerce.badges.best_value %}<span class="en-badge best-value">💰 {% if german %}Bestes Preis-Leistungs-Verhältnis{% elsif french %}Meilleur rapport qualité-prix{% elsif spanish %}Mejor relación calidad-precio{% else %}Best Value{% endif %}</span>{% endif %}
+  {% if commerce.badges.beginner %}<span class="en-badge beginner">🎓 {% if german %}Einsteigerfreundlich{% elsif french %}Adapté aux débutants{% elsif spanish %}Ideal para principiantes{% else %}Beginner Friendly{% endif %}</span>{% endif %}
   {% if commerce.badges.open_source %}<span class="en-badge open-source">🔓 {% if german %}Open Source{% else %}Open Source{% endif %}</span>{% endif %}
-  {% if commerce.badges.low_power %}<span class="en-badge low-power">🔋 {% if german %}Niedriger Stromverbrauch{% elsif french %}Faible consommation{% elsif spanish %}Bajo consumo{% elsif italian %}Basso consumo{% elsif dutch %}Laag energieverbruik{% elsif polish %}Niskie zużycie energii{% elsif portuguese %}Baixo consumo{% else %}Low Power{% endif %}</span>{% endif %}
+  {% if commerce.badges.low_power %}<span class="en-badge low-power">🔋 {% if german %}Niedriger Stromverbrauch{% elsif french %}Faible consommation{% elsif spanish %}Bajo consumo{% else %}Low Power{% endif %}</span>{% endif %}
 </div>
 {% endif %}

@@ -17,14 +17,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {%- assign locale = page.locale | default: layout.locale | default: site.locale -%}
 {% if page.lang == 'de' or site.active_lang == 'de' %}
   {% assign locale = 'de-DE' %}
-{% elsif page.lang == 'it' or site.active_lang == 'it' %}
-  {% assign locale = 'it-IT' %}
-{% elsif page.lang == 'nl' or site.active_lang == 'nl' %}
-  {% assign locale = 'nl-NL' %}
-{% elsif page.lang == 'pl' or site.active_lang == 'pl' %}
-  {% assign locale = 'pl-PL' %}
-{% elsif page.lang == 'pt-PT' or site.active_lang == 'pt-PT' %}
-  {% assign locale = 'pt-PT' %}
 {% endif %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
@@ -64,14 +56,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <section class="page__content e-content" itemprop="text">
         {% if locale == 'de-DE' %}
   {% assign toc_default_label = "Inhalt" %}
-{% elsif locale == 'it-IT' %}
-  {% assign toc_default_label = "Indice" %}
-{% elsif locale == 'nl-NL' %}
-  {% assign toc_default_label = "Inhoud" %}
-{% elsif locale == 'pl-PL' %}
-  {% assign toc_default_label = "Spis treści" %}
-{% elsif locale == 'pt-PT' %}
-  {% assign toc_default_label = "Índice" %}
 {% else %}
   {% assign toc_default_label = "Contents" %}
 {% endif %}
@@ -80,7 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="toc-mobile">
             <details>
               <summary>{{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: toc_default_label }}</summary>
-              <nav class="toc" aria-label="{% if locale == 'de-DE' %}Inhaltsverzeichnis{% elsif locale == 'it-IT' %}Indice dei contenuti{% elsif locale == 'nl-NL' %}Inhoudsopgave{% elsif locale == 'pl-PL' %}Spis treści{% elsif locale == 'pt-PT' %}Índice de conteúdos{% else %}Table of contents{% endif %}">
+              <nav class="toc" aria-label="{% if locale == 'de-DE' %}Inhaltsverzeichnis{% else %}Table of contents{% endif %}">
                 {% include toc.html sanitize=true html=content h_min=2 h_max=6 class="toc__menu" %}
               </nav>
             </details>

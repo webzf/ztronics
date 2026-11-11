@@ -27,11 +27,11 @@ english_url: /products/seeed-xiao-esp32s3-sense/
 german_url: /de/products/seeed-xiao-esp32s3-sense/
 spanish_url: /es/products/seeed-xiao-esp32s3-sense/
 french_url: /fr/products/seeed-xiao-esp32s3-sense/
-italian_url: /it/products/seeed-xiao-esp32s3-sense/
-dutch_url: /nl/products/seeed-xiao-esp32s3-sense/
-polish_url: /pl/products/seeed-xiao-esp32s3-sense/
-portuguese_url: /pt-pt/products/seeed-xiao-esp32s3-sense/
-available_languages: [en, de, es, fr, it, nl, pl, pt-PT]
+available_languages:
+  - en
+  - de
+  - es
+  - fr
 category: Development Boards
 manufacturer: "Seeed Studio"
 

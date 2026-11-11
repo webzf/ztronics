@@ -7,7 +7,7 @@ minimal_mistakes_skin: "aqua" #"default" # "air", "aqua", "contrast", "dark", "d
 locale                   : "en-US"
 
 # Multilingual publishing: English remains the canonical source language.
-languages                : ["en", "de", "es", "fr", "it", "nl", "pl", "pt-PT"]
+languages                : ["en", "de", "es", "fr"]
 default_lang             : "en"
 parallel_localization   : false
 serial_default_lang      : true

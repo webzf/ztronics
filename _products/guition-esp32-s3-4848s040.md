@@ -21,15 +21,15 @@ editorial_review:
 seo_title: "Guition ESP32-S3-4848S040: Buy, Price & Specs (4\" 480×480)"
 seo_description: "Compare prices for the Guition ESP32-S3-4848S040 (ESP32-4848S040): 4-inch 480×480 touchscreen with GT911 touch and ESPHome support. Buy on AliExpress."
 page_id: product-guition-esp32-s3-4848s040
-available_languages: [en, de, es, fr, it, nl, pl, pt-PT]
+available_languages:
+  - en
+  - de
+  - es
+  - fr
 english_url: /products/guition-esp32-s3-4848s040/
 german_url: /de/products/guition-esp32-s3-4848s040/
 spanish_url: /es/products/guition-esp32-s3-4848s040/
 french_url: /fr/products/guition-esp32-s3-4848s040/
-italian_url: /it/products/guition-esp32-s3-4848s040/
-dutch_url: /nl/products/guition-esp32-s3-4848s040/
-polish_url: /pl/products/guition-esp32-s3-4848s040/
-portuguese_url: /pt-pt/products/guition-esp32-s3-4848s040/
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
