@@ -13,7 +13,7 @@ french_url: /fr/products/sunton-esp32-8048s043c/
 italian_url: /it/products/sunton-esp32-8048s043c/
 dutch_url: /nl/products/sunton-esp32-8048s043c/
 polish_url: /pl/products/sunton-esp32-8048s043c/
-portuguese_url: /pt-pt/products/sunton-esp32-8048s043c/
+portuguese_url: /pt-PT/products/sunton-esp32-8048s043c/
 internal_links: true
 title: "Sunton ESP32-8048S043C: 4,3-calowy ekran dotykowy ESP32-S3"
 product_verdict: "Dobry wybór do większego interfejsu HMI opartego na ESP32-S3 z ekranem 4,3 cala. Jeśli ważniejsze są cena i kompaktowe wymiary, lepszy może być mniejszy model CYD."
@@ -49,7 +49,7 @@ tags:
   - Dotyk pojemnościowy
   - LVGL
   - microSD
-permalink: /pl/products/sunton-esp32-8048s043c/
+permalink: /products/sunton-esp32-8048s043c/
 specifications:
   - name: "Procesor"
     value: "ESP32-S3-WROOM-1-MCN16R8, dwa rdzenie, do 240 MHz"
