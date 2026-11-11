@@ -102,7 +102,7 @@ links:
   - title: "Seeed Studio product page"
     icon: "fas fa-store"
     description: "Manufacturer store page for the XIAO ESP32S3 Sense."
-    url: "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html"
+    url: "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link"
 
 related:
   - arduino-nano-esp32
@@ -150,6 +150,7 @@ Prices change by seller, destination, shipping and selected variant. Check the l
 <div class="en-product-cta__buttons">
   <a class="en-buy-button" href="/go/hardware/seeed-xiao-esp32s3-sense/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Check price — XIAO ESP32S3 Sense</strong><small>AliExpress · verify camera version and headers</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
   <a class="en-buy-button" href="https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fab fa-amazon"></i></span><span class="en-buy-text"><strong>Check price — Amazon</strong><small>Verify the Sense version and included accessories</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+  <a class="en-buy-button" href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-store"></i></span><span class="en-buy-text"><strong>Buy — Seeed Studio (Pre-Soldered)</strong><small>Official store · pre-soldered version</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
 </div>
 
 ## Specifications at a glance
@@ -266,7 +267,7 @@ Check that the listing is the **Sense** version, which camera is included, the s
 
 As an affiliate, Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you.
 
-- [Seeed Studio XIAO ESP32S3 Sense on the Seeed Studio store](https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html)
+- [Seeed Studio XIAO ESP32S3 Sense (Pre-Soldered) — official store](https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link)
 
 ## FAQ
 
