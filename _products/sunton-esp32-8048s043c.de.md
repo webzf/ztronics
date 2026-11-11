@@ -5,11 +5,15 @@ locale: de-DE
 toc_label: Inhalt
 page_id: product-sunton-esp32-8048s043c
 translation_id: sunton-esp32-8048s043c
-available_languages: [en, de, es, fr]
+available_languages: [en, de, es, fr, it, nl, pl, pt-PT]
 english_url: /products/sunton-esp32-8048s043c/
 german_url: /de/products/sunton-esp32-8048s043c/
 spanish_url: /es/products/sunton-esp32-8048s043c/
 french_url: /fr/products/sunton-esp32-8048s043c/
+italian_url: /it/products/sunton-esp32-8048s043c/
+dutch_url: /nl/products/sunton-esp32-8048s043c/
+polish_url: /pl/products/sunton-esp32-8048s043c/
+portuguese_url: /pt-pt/products/sunton-esp32-8048s043c/
 internal_links: true
 title: "Sunton ESP32-8048S043C: 4,3-Zoll-ESP32-S3-Touchdisplay"
 product_verdict: "Eine interessante Option für ein größeres 4,3-Zoll-ESP32-S3-HMI. Wenn Preis und kompakte Abmessungen wichtiger sind, ist ein kleineres CYD möglicherweise besser geeignet."

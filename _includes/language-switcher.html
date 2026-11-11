@@ -7,7 +7,7 @@
 {% if translation_paths %}
   {% assign current_lang = page.lang | default: site.default_lang %}
   <details class="language-switcher">
-    <summary class="language-switcher__toggle" aria-label="{% case current_lang %}{% when 'de' %}Sprache wählen{% when 'es' %}Elegir idioma{% when 'fr' %}Choisir la langue{% else %}Choose language{% endcase %}">
+    <summary class="language-switcher__toggle" aria-label="{% case current_lang %}{% when 'de' %}Sprache wählen{% when 'es' %}Elegir idioma{% when 'fr' %}Choisir la langue{% when 'it' %}Scegli la lingua{% when 'nl' %}Kies een taal{% when 'pl' %}Wybierz język{% when 'pt-PT' %}Escolher idioma{% else %}Choose language{% endcase %}">
       {% case current_lang %}
         {% when "de" %}
           <svg class="language-switcher__flag language-switcher__flag--de" viewBox="0 0 5 3" role="img" aria-label="Deutsch"><path fill="#000" d="M0 0h5v1H0z"/><path fill="#D00" d="M0 1h5v1H0z"/><path fill="#FFCE00" d="M0 2h5v1H0z"/></svg>
@@ -18,6 +18,14 @@
         {% when "fr" %}
           <svg class="language-switcher__flag language-switcher__flag--fr" viewBox="0 0 3 2" role="img" aria-label="Français"><path fill="#002395" d="M0 0h1v2H0z"/><path fill="#fff" d="M1 0h1v2H1z"/><path fill="#ED2939" d="M2 0h1v2H2z"/></svg>
           <span class="language-switcher__code">FR</span>
+      {% when "it" %}
+          <span class="language-switcher__code">IT</span>
+        {% when "nl" %}
+          <span class="language-switcher__code">NL</span>
+        {% when "pl" %}
+          <span class="language-switcher__code">PL</span>
+        {% when "pt-PT" %}
+          <span class="language-switcher__code">PT</span>
       {% else %}
           <svg class="language-switcher__flag language-switcher__flag--en" viewBox="0 0 60 30" role="img" aria-label="English"><g><path fill="#012169" d="M0 0h60v30H0z"/><path stroke="#fff" stroke-width="6" d="M0 0l60 30M60 0L0 30"/><path stroke="#C8102E" stroke-width="2.5" d="M0 0l60 30M60 0L0 30"/><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/><path stroke="#C8102E" stroke-width="6" d="M30 0v30M0 15h60"/></g></svg>
           <span class="language-switcher__code">EN</span>
@@ -37,6 +45,14 @@
               <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="es" lang="es"{% if lang == current_lang %} aria-current="page"{% endif %}><svg class="language-switcher__flag language-switcher__flag--es" viewBox="0 0 5 3" role="img" aria-label="Español"><path fill="#AA151B" d="M0 0h5v3H0z"/><path fill="#F1BF00" d="M0 0.75h5v1.5H0z"/></svg> <span>ES</span></a></li>
             {% when "fr" %}
               <li><a {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}"{% endstatic_href %} hreflang="fr" lang="fr"{% if lang == current_lang %} aria-current="page"{% endif %}><svg class="language-switcher__flag language-switcher__flag--fr" viewBox="0 0 3 2" role="img" aria-label="Français"><path fill="#002395" d="M0 0h1v2H0z"/><path fill="#fff" d="M1 0h1v2H1z"/><path fill="#ED2939" d="M2 0h1v2H2z"/></svg> <span>FR</span></a></li>
+            {% when "it" %}
+              <li><a href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}" hreflang="it" lang="it"{% if lang == current_lang %} aria-current="page"{% endif %}><span aria-hidden="true">🇮🇹</span> <span>IT</span></a></li>
+            {% when "nl" %}
+              <li><a href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}" hreflang="nl" lang="nl"{% if lang == current_lang %} aria-current="page"{% endif %}><span aria-hidden="true">🇳🇱</span> <span>NL</span></a></li>
+            {% when "pl" %}
+              <li><a href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}" hreflang="pl" lang="pl"{% if lang == current_lang %} aria-current="page"{% endif %}><span aria-hidden="true">🇵🇱</span> <span>PL</span></a></li>
+            {% when "pt-PT" %}
+              <li><a href="{{ site.url }}{{ site.baseurl }}{{ lang_path }}" hreflang="pt-PT" lang="pt-PT"{% if lang == current_lang %} aria-current="page"{% endif %}><span aria-hidden="true">🇵🇹</span> <span>PT</span></a></li>
           {% endcase %}
         {% endif %}
       {% endfor %}

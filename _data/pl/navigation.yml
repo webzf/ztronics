@@ -1,0 +1,48 @@
+main:
+  - title: "★ Wybór wyświetlacza"
+    url: /tools/esp32-touchscreen-selector/
+  - title: "Wyświetlacze ESP32"
+    url: /esp32-touchscreen-displays-guide/
+  - title: "Czujniki"
+    url: /sensors/
+  - title: "Poradniki"
+    url: /tutorials/
+  - title: "Polecany sprzęt"
+    url: /products/
+  - title: "O nas"
+    url: /about/
+embedded:
+  - title: "Wyświetlacze"
+    children:
+      - title: "Przewodnik po ekranach dotykowych ESP32"
+        url: /esp32-touchscreen-displays-guide/
+      - title: "★ Wybór ekranu dotykowego ESP32"
+        url: /tools/esp32-touchscreen-selector/
+      - title: "Sunton ESP32-8048S043C"
+        url: /pl/products/sunton-esp32-8048s043c/
+      - title: "Guition ESP32-S3-4848S040"
+        url: /pl/products/guition-esp32-s3-4848s040/
+  - title: "Czujniki i I2C"
+    children:
+      - title: "Wszystkie czujniki"
+        url: /sensors/
+      - title: "Poradnik I2C Scanner"
+        url: /i2c-scanner-tutorial/
+      - title: "Kalibracja MPU6050"
+        url: /mpu6050-calibration-guide/
+  - title: "Pierwsze kroki"
+    children:
+      - title: "Poradnik Arduino MPU6050"
+        url: /mpu6050-arduino-guide/
+      - title: "Seeed Studio XIAO ESP32S3 Sense"
+        url: /pl/products/seeed-xiao-esp32s3-sense/
+  - title: "Odkrywaj"
+    children:
+      - title: "Wszystkie poradniki"
+        url: /tutorials/
+      - title: "Wszystkie produkty"
+        url: /products/
+      - title: "Najlepsze zestawy startowe Arduino"
+        url: /best-arduino-starter-kits/
+      - title: "Wszystkie narzędzia"
+        url: /tools/
