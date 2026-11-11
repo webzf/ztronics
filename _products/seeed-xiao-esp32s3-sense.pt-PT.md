@@ -212,7 +212,7 @@ void setup() {
 }
 
 void loop() {
-  // The user LED is active-low: LOW turns it on.
+  // Il LED utente è active-low: LOW lo accende.
   digitalWrite(ledPin, LOW);
   delay(500);
   digitalWrite(ledPin, HIGH);
