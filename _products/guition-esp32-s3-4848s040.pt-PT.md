@@ -22,11 +22,11 @@ editorial_review:
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
-  summary: "O Guition ESP32-S3-4848S040 combina um ecrã tátil IPS quadrado de 4 polegadas e 480×480, toque capacitivo GT911, processamento ESP32-S3, 16 MB de Flash e 8 MB de PSRAM numa plataforma de desenvolvimento compacta. As características tornam-no uma base interessante para painéis Home Assistant e interfaces LVGL personalizadas; os principais aspetos a considerar são a disponibilidade de GPIO, a configuração do software e as diferenças entre variantes."
+  summary: "O Guition ESP32-S3-4848S040 combina um ecrã tátil IPS quadrado de 4 polegadas e 480×480, toque capacitivo GT911, processamento ESP32-S3, 16 MB de memória Flash e 8 MB de PSRAM numa plataforma de desenvolvimento compacta. As características tornam-no uma base interessante para painéis Home Assistant e interfaces LVGL personalizadas; os principais aspetos a considerar são a disponibilidade de GPIO, a configuração do software e as diferenças entre variantes."
   methodology: "Esta avaliação editorial baseia-se nas especificações publicadas e na documentação disponível do fabricante e da comunidade. A Embedded Nerd não testou fisicamente a placa específica nem a oferta do vendedor apresentada nesta página."
   pros:
     - "Ecrã IPS de 4 polegadas e 480×480 com toque capacitivo GT911"
-    - "ESP32-S3 com 16 MB de Flash e 8 MB de PSRAM para interfaces mais exigentes"
+    - "ESP32-S3 com 16 MB de memória Flash e 8 MB de PSRAM para interfaces mais exigentes"
     - "Os recursos comunitários ESPHome e LVGL são um ponto de partida útil para painéis Home Assistant"
   cons:
     - "O ecrã RGB utiliza muitos GPIO; confirme os pinos disponíveis antes de adicionar periféricos"
@@ -43,8 +43,8 @@ header:
   og_image: "/assets/images/products/guition-4848s040-home-assistant-review.webp"
   og_image_alt: "Placa de desenvolvimento tátil Guition ESP32-S3-4848S040 de 4 polegadas e 480×480"
 alt: "Placa de desenvolvimento tátil quadrada Guition ESP32-S3-4848S040 de 4 polegadas"
-excerpt: "Guition ESP32-S3-4848S040 com ESP32-S3, ecrã IPS de 4 polegadas 480×480, toque capacitivo GT911, 16 MB de Flash e 8 MB de PSRAM."
-description: "Ecrã tátil ESP32-S3 de 4 polegadas e 480×480 com GT911, 16 MB de Flash e 8 MB de PSRAM."
+excerpt: "Guition ESP32-S3-4848S040 com ESP32-S3, ecrã IPS de 4 polegadas 480×480, toque capacitivo GT911, 16 MB de memória Flash e 8 MB de PSRAM."
+description: "Ecrã tátil ESP32-S3 de 4 polegadas e 480×480 com GT911, 16 MB de memória Flash e 8 MB de PSRAM."
 categories:
   - Ecrãs
   - ESP32
@@ -152,7 +152,7 @@ As especificações baseiam-se na documentação do fabricante e da comunidade; 
 
 ## Ecrã, toque e memória
 
-O painel IPS de 4 polegadas tem uma resolução quadrada de 480×480 e utiliza o controlador de ecrã ST7701/ST7701S. O toque capacitivo é gerido pelo GT911. A configuração ESP32-S3 normalmente anunciada para este modelo inclui 16 MB de Flash e 8 MB de PSRAM.
+O painel IPS de 4 polegadas tem uma resolução quadrada de 480×480 e utiliza o controlador de ecrã ST7701/ST7701S. O toque capacitivo é gerido pelo GT911. A configuração ESP32-S3 normalmente anunciada para este modelo inclui 16 MB de memória Flash e 8 MB de PSRAM.
 
 A interface RGB do ecrã utiliza um número significativo de GPIO. Se o projeto precisar de sensores adicionais, periféricos SPI ou outro hardware externo, verifique o pinout e os GPIO disponíveis antes de escolher esta placa.
 
