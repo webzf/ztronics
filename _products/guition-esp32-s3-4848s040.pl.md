@@ -56,7 +56,7 @@ specifications:
   - name: PSRAM
     value: "8 MB"
   - name: "Przekątna ekranu"
-    value: "4,0 inch"
+    value: "4,0 cala"
   - name: "Typ ekranu"
     value: "IPS TFT"
   - name: "Rozdzielczość"
@@ -70,7 +70,9 @@ specifications:
   - name: "Łączność bezprzewodowa"
     value: "Wi-Fi i Bluetooth LE"
   - name: USB
-    value: "USB Type-C (controleer aanbod en revisie)"
+    value: "USB Type-C (sprawdź ofertę i rewizję)"
+  - name: "Wymiary"
+    value: "Wymiary zależą od wykonania; sprawdź dokładną wersję płytki i obudowy"
   - name: "Moduł przekaźników"
     value: "Opcjonalny; zależnie od oferty"
 links:
@@ -82,6 +84,10 @@ links:
     icon: "fas fa-microchip"
     description: "Społecznościowy profil sprzętowy i konfiguracja modelu 4848S040."
     url: "https://devices.esphome.io/devices/guition-esp32-s3-4848s040/"
+  - title: "Społecznościowy projekt ESPHome/LVGL"
+    icon: "fab fa-github"
+    description: "Materiały społeczności i przykładowa konfiguracja tego wyświetlacza."
+    url: "https://github.com/jtenniswood/esphome-lvgl/tree/main/guition-esp32-s3-4848s040"
 related: [guition-jc8048w550, sunton-esp32-8048s043c, esp32-2432s028-2-8-cyd, waveshare-esp32-s3-touch-lcd-4-3]
 ---
 **Guition ESP32-S3-4848S040** to 4-calowy ekran dotykowy ESP32-S3 o rozdzielczości 480×480, przeznaczony do kompaktowych paneli Home Assistant i ekranów ściennych. Jest wyszukiwany również jako **ESP32-4848S040**; w niektórych oznaczeniach płytek i ofertach pojawia się symbol **4848S040C_I**. Przed zakupem sprawdź dokładną rewizję i zawartość zestawu.
