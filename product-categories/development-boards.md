@@ -48,6 +48,7 @@ Arduino boards are widely used for learning electronics, prototyping and buildin
 Popular boards include:
 
 * Arduino Uno
+* Arduino UNO Q — a Linux-capable hybrid board for edge AI and real-time control
 * Arduino Nano
 * Arduino Mega
 * Arduino-compatible boards
@@ -69,7 +70,7 @@ Common ESP32 boards include:
 
 ## Raspberry Pi Development Boards
 
-Raspberry Pi boards provide compact computing platforms suitable for projects that require more processing power, networking or a full operating system.
+Raspberry Pi boards provide compact computing platforms suitable for projects that require more processing power, networking or a full operating system. The [Arduino UNO Q](/products/arduino-uno-q/) is another option when you need Debian Linux alongside a dedicated real-time microcontroller.
 
 Popular Raspberry Pi platforms include:
 
