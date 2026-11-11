@@ -103,8 +103,8 @@ Escolha esta placa se o seu projeto beneficiar de um ecrã de 4,3 polegadas e 80
 | Opção | Mais indicada para | Principal compromisso |
 |---|---|---|
 | **Sunton ESP32-8048S043C** | Placa ESP32-S3 de 4,3 polegadas e 800×480, com toque capacitivo GT911, 16 MB de Flash e 8 MB de PSRAM | Confirme a referência exata do modelo e a interface antes de comprar |
-| [**ESP32 CYD de 2,8 polegadas**](/pt-pt/products/esp32-2432s028-2-8-cyd/) | Um ecrã tátil ESP32 integrado e mais compacto | Ecrã mais pequeno, de 240×320, e toque resistivo |
-| [**Waveshare ESP32-S3-Touch-LCD-4.3**](/pt-pt/products/waveshare-esp32-s3-touch-lcd-4-3/) | Outra opção integrada ESP32-S3 de 4,3 polegadas e 800×480 | Confirme a disposição dos conectores, a interface e os acessórios |
+| [**ESP32 CYD de 2,8 polegadas**](/products/esp32-2432s028-2-8-cyd/) | Um ecrã tátil ESP32 integrado e mais compacto | Ecrã mais pequeno, de 240×320, e toque resistivo |
+| [**Waveshare ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | Outra opção integrada ESP32-S3 de 4,3 polegadas e 800×480 | Confirme a disposição dos conectores, a interface e os acessórios |
 
 Utilize o [seletor de ecrãs ESP32](/tools/esp32-touchscreen-selector/) para comparar opções integradas. Antes de comprar, confirme o sufixo do modelo, a interface do ecrã, o controlador tátil e os acessórios incluídos. Placas Sunton visualmente semelhantes podem ter hardware diferente.
 
@@ -142,16 +142,16 @@ Esta página descreve a **ESP32-8048S043C**, a variante com toque capacitivo e c
 
 Utilize a opção de compra acima para consultar a oferta atual. O ID exato do produto associado ao link de afiliado curto não é disponibilizado à Embedded Nerd; por isso, confirme o anúncio, as fotografias do vendedor e a variante **8048S043C com toque capacitivo GT911** antes de comprar. Compare o custo total com portes e confirme o sufixo do modelo, a interface do ecrã, o controlador tátil e os acessórios.
 
-Para ligações, código, configuração do toque e limitações conhecidas, consulte o [guia de pinout e configuração Arduino da Sunton ESP32-8048S043C](/pt-pt/sunton-esp32-8048s043c-guide/).
+Para ligações, código, configuração do toque e limitações conhecidas, consulte o [guia de pinout e configuração Arduino da Sunton ESP32-8048S043C](/sunton-esp32-8048s043c-guide/).
 
 ## Guias e seletor da Embedded Nerd
 
-- [Guia de pinout e configuração Arduino da Sunton ESP32-8048S043C](/pt-pt/sunton-esp32-8048s043c-guide/) — tabelas GPIO, um exemplo de código mínimo e resolução de problemas.
+- [Guia de pinout e configuração Arduino da Sunton ESP32-8048S043C](/sunton-esp32-8048s043c-guide/) — tabelas GPIO, um exemplo de código mínimo e resolução de problemas.
 - [Seletor de ecrãs táteis ESP32](/tools/esp32-touchscreen-selector/)
 - [Seletor de ecrãs 800×480](/tools/esp32-touchscreen-selector/800x480/)
 - [Seletor de ecrãs táteis de 4,3 polegadas](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/)
 - [Seletor ESP32-S3 + LVGL](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
 - [Placas ESP32 com ecrã e PSRAM](/tools/esp32-touchscreen-selector/esp32-display-psram/)
 - [Guia de ecrãs táteis ESP32](/esp32-touchscreen-displays-guide/)
-- [Waveshare ESP32-S3-Touch-LCD-4.3](/pt-pt/products/waveshare-esp32-s3-touch-lcd-4-3/)
+- [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/)
 - [Guition ESP32-S3-4848S040](/pt-pt/products/guition-esp32-s3-4848s040/) — alternativa quadrada mais pequena, com 4 polegadas e 480×480.
