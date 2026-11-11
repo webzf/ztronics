@@ -46,7 +46,7 @@ tags:
   - Touch capacitivo
   - LVGL
   - Micro SD
-permalink: /it/products/sunton-esp32-8048s043c/
+permalink: /products/sunton-esp32-8048s043c/
 specifications:
   - name: "Processore"
     value: "ESP32-S3-WROOM-1-MCN16R8, dual-core, fino a 240 MHz"
