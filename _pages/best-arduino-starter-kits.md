@@ -18,9 +18,9 @@ Four ways to start with Arduino, from a classic book-led kit to a wire-free kit 
 
 ### Best for learning: Arduino Starter Kit
 
-The official kit, now built around the UNO R4 WiFi, with a printed project book.
+The current official kit is built around the UNO R4 WiFi and includes a printed project book. Important: the Amazon link supplied for this pick (ASIN B009UKZV0A) appears to be the older K000007 / UNO R3 edition, so check the exact SKU before ordering.
 
-<a class="en-buy-button" href="https://www.amazon.com/Arduino-Starter-Kit-English-Official/dp/B009UKZV0A?crid=2W66Q4QLINHNJ&dib=eyJ2IjoiMSJ9.au0-H3utX9-R14YUNnRn1IL19b24GJYD0QIIwnKk2vhzCR5_hoklj1nln3Ka6swhG8qTt6QKnRtCx914YxJUhpC_vU67avB20AR13c3km7qDrjf-HigBxsMyhO9YQeD83bz-xw2t2ORKgiCKv7fO8yz2of8ZcvhsUNUG3ByLhcEnGRNpjW0rSDLFTojgDS8ErnwX8sfB67l5tuqsPlDrSX0L8V1uVLUaEKx9UYqOTFQ.CW1BFp3Rhu4uq71rAqkWzcpZA2gnFRsRbTALtBfVXNc&dib_tag=se&keywords=Arduino+Starter+Kit+R4&qid=1794407515&sprefix=arduino+starter+kit+r4%2Caps%2C834&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=embeddedner0e-20&linkId=42d3b1ef73dd5b429bdc225f1d6544b8&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">🛒 Check price on Amazon</a>
+<a class="en-buy-button" href="https://www.amazon.com/Arduino-Starter-Kit-English-Official/dp/B009UKZV0A?crid=2W66Q4QLINHNJ&dib=eyJ2IjoiMSJ9.au0-H3utX9-R14YUNnRn1IL19b24GJYD0QIIwnKk2vhzCR5_hoklj1nln3Ka6swhG8qTt6QKnRtCx914YxJUhpC_vU67avB20AR13c3km7qDrjf-HigBxsMyhO9YQeD83bz-xw2t2ORKgiCKv7fO8yz2of8ZcvhsUNUG3ByLhcEnGRNpjW0rSDLFTojgDS8ErnwX8sfB67l5tuqsPlDrSX0L8V1uVLUaEKx9UYqOTFQ.CW1BFp3Rhu4uq71rAqkWzcpZA2gnFRsRbTALtBfVXNc&dib_tag=se&keywords=Arduino+Starter+Kit+R4&qid=1794407515&sprefix=arduino+starter+kit+r4%2Caps%2C834&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=embeddedner0e-20&linkId=42d3b1ef73dd5b429bdc225f1d6544b8&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">🛒 Check Amazon listing (verify R3/R4 version)</a>
 
 ### Best value: ELEGOO UNO R3 Super Starter Kit
 
@@ -67,7 +67,7 @@ A genuine UNO R4 WiFi, 300+ parts and 60+ video lessons.
 
 ### 1. Arduino Starter Kit: best for learning
 
-This is the kit Arduino itself teaches with. The current Starter Kit R4 is built around the UNO R4 WiFi and comes with a printed project book (13 projects) and a voucher for the Arduino Fundamentals certification. The older UNO R3 edition, still sold in some shops, has a 170-page book with 15 projects, from blinking an LED to sensors and motors.
+This is the kit Arduino itself teaches with. The current Starter Kit R4 is built around the UNO R4 WiFi and comes with a printed project book (13 projects) and a voucher for the Arduino Fundamentals certification. The supplied Amazon link (ASIN B009UKZV0A) appears to point to the older K000007 / UNO R3 edition, which has a 170-page book with 15 projects, from blinking an LED to sensors and motors. Check the SKU carefully: K000007_R4 identifies the R4 version. You can also check the [official Arduino Starter Kit R4 listing](https://store.arduino.cc/products/starter-kit-r4).
 
 **Pros**
 - Clear, project-based book
@@ -79,7 +79,7 @@ This is the kit Arduino itself teaches with. The current Starter Kit R4 is built
 - Fewer parts than the Elegoo kit
 - Some shops still sell the older UNO R3 edition, so check the SKU (K000007_R4 is the R4 version)
 
-<a class="en-buy-button" href="https://www.amazon.com/Arduino-Starter-Kit-English-Official/dp/B009UKZV0A?crid=2W66Q4QLINHNJ&dib=eyJ2IjoiMSJ9.au0-H3utX9-R14YUNnRn1IL19b24GJYD0QIIwnKk2vhzCR5_hoklj1nln3Ka6swhG8qTt6QKnRtCx914YxJUhpC_vU67avB20AR13c3km7qDrjf-HigBxsMyhO9YQeD83bz-xw2t2ORKgiCKv7fO8yz2of8ZcvhsUNUG3ByLhcEnGRNpjW0rSDLFTojgDS8ErnwX8sfB67l5tuqsPlDrSX0L8V1uVLUaEKx9UYqOTFQ.CW1BFp3Rhu4uq71rAqkWzcpZA2gnFRsRbTALtBfVXNc&dib_tag=se&keywords=Arduino+Starter+Kit+R4&qid=1794407515&sprefix=arduino+starter+kit+r4%2Caps%2C834&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=embeddedner0e-20&linkId=42d3b1ef73dd5b429bdc225f1d6544b8&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">🛒 Check Arduino Starter Kit price on Amazon</a>
+<a class="en-buy-button" href="https://www.amazon.com/Arduino-Starter-Kit-English-Official/dp/B009UKZV0A?crid=2W66Q4QLINHNJ&dib=eyJ2IjoiMSJ9.au0-H3utX9-R14YUNnRn1IL19b24GJYD0QIIwnKk2vhzCR5_hoklj1nln3Ka6swhG8qTt6QKnRtCx914YxJUhpC_vU67avB20AR13c3km7qDrjf-HigBxsMyhO9YQeD83bz-xw2t2ORKgiCKv7fO8yz2of8ZcvhsUNUG3ByLhcEnGRNpjW0rSDLFTojgDS8ErnwX8sfB67l5tuqsPlDrSX0L8V1uVLUaEKx9UYqOTFQ.CW1BFp3Rhu4uq71rAqkWzcpZA2gnFRsRbTALtBfVXNc&dib_tag=se&keywords=Arduino+Starter+Kit+R4&qid=1794407515&sprefix=arduino+starter+kit+r4%2Caps%2C834&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=embeddedner0e-20&linkId=42d3b1ef73dd5b429bdc225f1d6544b8&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">🛒 Check Amazon listing (appears to be UNO R3)</a>
 
 ### 2. ELEGOO UNO R3 Super Starter Kit: best value
 
