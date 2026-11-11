@@ -39,8 +39,6 @@ header:
   og_image_alt: "Vista posteriore della scheda touchscreen Guition ESP32-S3-4848S040"
 categories: [Displays, ESP32]
 tags: [esp32-s3, guition, touchscreen, esphome, pinout]
-sidebar:
-  nav: "embedded"
 related: true
 related_posts:
   - /it/products/guition-esp32-s3-4848s040/
