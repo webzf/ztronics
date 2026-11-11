@@ -6,6 +6,14 @@
   {% assign footer_links = site.data.fr.footer.links %}
 {% elsif locale == 'es-ES' or locale == 'es' %}
   {% assign footer_links = site.data.es.footer.links %}
+{% elsif locale == 'it-IT' %}
+  {% assign footer_links = site.data.it.footer.links %}
+{% elsif locale == 'nl-NL' %}
+  {% assign footer_links = site.data.nl.footer.links %}
+{% elsif locale == 'pl-PL' %}
+  {% assign footer_links = site.data.pl.footer.links %}
+{% elsif locale == 'pt-PT' %}
+  {% assign footer_links = site.data.pt-PT.footer.links %}
 {% endif %}
 {% unless site.atom_feed.hide %}
   {% assign show_atom = true %}
@@ -19,6 +27,14 @@
       <li><strong>Suivez-nous</strong></li>
     {% elsif locale == 'es-ES' or locale == 'es' %}
       <li><strong>Síguenos</strong></li>
+    {% elsif locale == 'it-IT' %}
+      <li><strong>Seguici</strong></li>
+    {% elsif locale == 'nl-NL' %}
+      <li><strong>Volg ons</strong></li>
+    {% elsif locale == 'pl-PL' %}
+      <li><strong>Obserwuj nas</strong></li>
+    {% elsif locale == 'pt-PT' %}
+      <li><strong>Siga-nos</strong></li>
     {% elsif site.data.ui-text[locale].follow_label %}
       <li><strong>{{ site.data.ui-text[locale].follow_label }}</strong></li>
     {% endif %}
@@ -30,9 +46,9 @@
       {% endfor %}
     {% endif %}
     {% unless site.atom_feed.hide %}
-      <li><a {% static_href %}href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"{% endstatic_href %}><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> {% if locale == 'de-DE' %}RSS-Feed{% elsif locale == 'fr-FR' or locale == 'fr' %}Flux RSS{% elsif locale == 'es-ES' or locale == 'es' %}Fuente RSS{% else %}{{ site.data.ui-text[locale].feed_label | default: "Feed" }}{% endif %}</a></li>
+      <li><a {% static_href %}href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"{% endstatic_href %}><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> {% if locale == 'de-DE' %}RSS-Feed{% elsif locale == 'fr-FR' or locale == 'fr' %}Flux RSS{% elsif locale == 'es-ES' or locale == 'es' %}Fuente RSS{% elsif locale == 'it-IT' %}Feed RSS{% elsif locale == 'nl-NL' %}RSS-feed{% elsif locale == 'pl-PL' %}Kanał RSS{% elsif locale == 'pt-PT' %}Feed RSS{% else %}{{ site.data.ui-text[locale].feed_label | default: "Feed" }}{% endif %}</a></li>
     {% endunless %}
   </ul>
 </div>
 {% endif %}
-<div class="page__footer-copyright">&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a {% static_href %}href="{{ site.copyright_url | default: site.url }}"{% endstatic_href %}>{{ site.copyright | default: site.title | escape_once | strip }}</a>. {% if locale == 'de-DE' %}Erstellt mit{% elsif locale == 'fr-FR' or locale == 'fr' %}Propulsé par{% elsif locale == 'es-ES' or locale == 'es' %}Creado con{% else %}{{ site.data.ui-text[locale].powered_by | default: "Powered by" }}{% endif %} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a {% static_href %}href="{{ site.copyright_url | default: site.url }}"{% endstatic_href %}>{{ site.copyright | default: site.title | escape_once | strip }}</a>. {% if locale == 'de-DE' %}Erstellt mit{% elsif locale == 'fr-FR' or locale == 'fr' %}Propulsé par{% elsif locale == 'es-ES' or locale == 'es' %}Creado con{% elsif locale == 'it-IT' %}Realizzato con{% elsif locale == 'nl-NL' %}Gebouwd met{% elsif locale == 'pl-PL' %}Oparte na{% elsif locale == 'pt-PT' %}Desenvolvido com{% else %}{{ site.data.ui-text[locale].powered_by | default: "Powered by" }}{% endif %} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
