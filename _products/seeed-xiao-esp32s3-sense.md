@@ -34,6 +34,7 @@ available_languages:
   - es
   - fr
   - it
+  - it
 category: Development Boards
 manufacturer: "Seeed Studio"
 
