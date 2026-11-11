@@ -42,10 +42,6 @@ end
 
 def parse_product(path)
   read_page(path).first
-rescue StandardError => e
-  errors = e.message
-  warn errors
-  {}
 end
 
 config = YAML.safe_load_file(File.join(ROOT, "_config.yml"), permitted_classes: [Date, Time], aliases: true) || {}
