@@ -67,7 +67,7 @@ tags:
 permalink: /products/guition-esp32-s3-4848s040/
 specifications:
   - name: Processador
-    value: "ESP32-S3 dual-core, até 240 MHz"
+    value: "ESP32-S3 de núcleo duplo, até 240 MHz"
   - name: Memória Flash
     value: "16 MB"
   - name: PSRAM
@@ -136,7 +136,7 @@ Os preços podem variar consoante o vendedor, o destino, os portes e a variante 
 
 | Especificação | Detalhes |
 |---|---|
-| Microcontrolador | ESP32-S3 dual-core, até 240 MHz |
+| Microcontrolador | ESP32-S3 de núcleo duplo, até 240 MHz |
 | Memória Flash | 16 MB |
 | PSRAM | 8 MB |
 | Dimensão do ecrã | Painel IPS de 4,0 polegadas (4″) |
