@@ -76,6 +76,8 @@ In this guide, you'll learn how to connect the MPU6050 to an **Arduino Uno or Na
 
 You'll also learn how to find the MPU6050 I2C address and troubleshoot the most common connection problems.
 
+If you are putting together your first Arduino setup, our [Best Arduino Starter Kits guide](/best-arduino-starter-kits/) compares kits with the boards, sensors and components you need to get started.
+
 ![MPU6050 accelerometer and gyroscope sensor connected to Arduino for an Arduino MPU6050 tutorial.]({{ '/assets/images/MPU6050-Arduino-Guide.png' | relative_url }})
 
 This tutorial covers:
