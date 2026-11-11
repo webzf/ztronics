@@ -30,7 +30,6 @@ These are the boards, displays and sensors used throughout Embedded Nerd tutoria
 
 ## Starter Kits
 
+* [Best Arduino Starter Kits in 2026](/best-arduino-starter-kits/)
 * ESP32 Starter Kit
 * Arduino Starter Kit
-
-
