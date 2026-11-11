@@ -8,10 +8,12 @@ available_languages:
   - de
   - es
   - fr
+  - it
 english_url: /products/guition-esp32-s3-4848s040/
 german_url: /de/products/guition-esp32-s3-4848s040/
 spanish_url: /es/products/guition-esp32-s3-4848s040/
 french_url: /fr/products/guition-esp32-s3-4848s040/
+italian_url: /it/products/guition-esp32-s3-4848s040/
 internal_links: true
 title: "Guition ESP32-S3-4848S040: 4 Zoll 480×480 Touchscreen"
 product_verdict: "Eine interessante Wahl für ein quadratisches 4-Zoll-Touchscreen-Dashboard mit 480 × 480 Pixeln auf ESP32-S3-Basis. Prüfen Sie vor dem Kauf die Relaisvariante und die Abmessungen für die Montage."
