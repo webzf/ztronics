@@ -51,6 +51,8 @@ Updated November 2026. Prices are indicative and change often, so check the stor
 
 Five kits, plus the UNO Q as a next step. Compare the options, see what each one offers, and choose the right starting point for your projects.
 
+Once you have chosen your board, put it to work with practical projects. Learn to detect connected sensors with our [I2C Scanner Tutorial](/i2c-scanner-tutorial/) or follow the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/) to connect a motion sensor and read accelerometer and gyroscope data.
+
 **Affiliate disclosure:** Embedded Nerd may earn a commission from qualifying purchases made through links on this page, at no extra cost to you.
 
 ## Quick picks
