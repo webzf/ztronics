@@ -173,7 +173,7 @@ touchscreen:
 - [Informations du fabricant GUITION](https://www.guition.com/esp32-display-module/5-inch-esp32s3-display-module)
 - [Cartes Guition dans l’ESP Component Registry](https://components.espressif.com/components/guition/guition_boards/versions/0.2.0/readme?language=en)
 
-Utilisez ce YAML communautaire comme point de départ, et non comme une configuration garantie prête à flasher. Le dépôt indique actuellement ESPHome 2026.7.0 ou une version ultérieure. Vérifiez le brochage, le timing de l’écran et le contrôleur tactile de votre carte avant le flashage. Pour aller plus loin, consultez notre [guide des écrans tactiles ESP32](/fr/esp32-touchscreen-displays-guide/).
+Utilisez ce YAML communautaire comme point de départ, et non comme une configuration garantie prête à flasher. Le dépôt indique actuellement ESPHome 2026.7.0 ou une version ultérieure. Vérifiez le brochage, le timing de l’écran et le contrôleur tactile de votre carte avant le flashage. Pour aller plus loin, consultez notre [guide des écrans tactiles ESP32](/esp32-touchscreen-displays-guide/).
 
 ## À qui s’adresse cet écran ?
 
@@ -236,7 +236,7 @@ L’écran paysage de 5 pouces, l’ESP32-S3 et l’option tactile en font une b
 | **Guition JC8048W550** | 5 pouces, 800 × 480 | Options NTP / RTP / CTP | 8 Mo / 16 Mo | Grands tableaux de bord IHM et de supervision au format paysage |
 | [Guition ESP32-S3-4848S040](/fr/products/guition-esp32-s3-4848s040/) | 4 pouces, 480 × 480 | Capacitif | Vérifier l’offre | Tableaux de bord carrés compacts |
 | [Sunton ESP32-8048S043C](/fr/products/sunton-esp32-8048s043c/) | 4,3 pouces, 800 × 480 | Capacitif GT911 | 8 Mo / 16 Mo | Projets ESP32-S3 plus compacts en 800 × 480 |
-| [Waveshare ESP32-S3-Touch-LCD-4.3](/fr/products/waveshare-esp32-s3-touch-lcd-4-3/) | 4,3 pouces, 800 × 480 | Capacitif GT911 | 8 Mo / 16 Mo | Autre plateforme tactile de 4,3 pouces |
+| [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) | 4,3 pouces, 800 × 480 | Capacitif GT911 | 8 Mo / 16 Mo | Autre plateforme tactile de 4,3 pouces |
 | [Waveshare ESP32-S3-Touch-LCD-7](/fr/products/waveshare-esp32-s3-touch-lcd-7/) | 7 pouces, 800 × 480 | Capacitif 5 points | 8 Mo / 16 Mo | Grand écran de 7 pouces avec interfaces CAN et RS485 |
 
-Pour comparer d’autres cartes 800 × 480, consultez le [sélecteur d’écrans tactiles ESP32 en 800 × 480](/fr/tools/esp32-touchscreen-selector/800x480/) ou le [sélecteur complet d’écrans tactiles ESP32](/fr/tools/esp32-touchscreen-selector/).
+Pour comparer d’autres cartes 800 × 480, consultez le [sélecteur d’écrans tactiles ESP32 en 800 × 480](/tools/esp32-touchscreen-selector/800x480/) ou le [sélecteur complet d’écrans tactiles ESP32](/tools/esp32-touchscreen-selector/).
