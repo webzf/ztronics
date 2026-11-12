@@ -71,7 +71,7 @@ tags:
   - Bluetooth LE
   - MicroPython
 
-permalink: /nl/products/seeed-xiao-esp32s3-sense/
+permalink: /products/seeed-xiao-esp32s3-sense/
 
 specifications:
   - name: Processor
