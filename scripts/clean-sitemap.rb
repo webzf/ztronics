@@ -110,6 +110,70 @@ languages.each do |language|
   end
 end
 
+# Add hreflang alternates to sitemap entries using the same published HTML
+# metadata that powers the page-level language switcher and SEO tags.
+# An alternate is emitted only when its URL is also present in the sitemap.
+alternates_by_url = {}
+
+Dir.glob(File.join(site_root, "**", "*.html")).sort.each do |html_path|
+  html = File.read(html_path, encoding: "UTF-8")
+  link_tags = html.scan(/<link\b[^>]*>/i)
+
+  canonical_tag = link_tags.find do |tag|
+    tag.match?(/\brel=["'][^"']*canonical[^"']*["']/i)
+  end
+  next unless canonical_tag
+
+  canonical_href = canonical_tag[/\bhref=["']([^"']+)["']/i, 1]
+  next unless canonical_href
+
+  canonical_uri = URI.parse(canonical_href) rescue nil
+  next unless canonical_uri
+  next unless canonical_uri.scheme == "https" && canonical_uri.host == "embeddednerd.com"
+  next unless canonical_uri.query.nil? && canonical_uri.fragment.nil?
+
+  alternates = link_tags.filter_map do |tag|
+    rel = tag[/\brel=["']([^"']+)["']/i, 1]
+    next unless rel && rel.split(/\s+/).include?("alternate")
+
+    hreflang = tag[/\bhreflang=["']([^"']+)["']/i, 1]
+    href = tag[/\bhref=["']([^"']+)["']/i, 1]
+    next unless hreflang && href
+
+    alternate_uri = URI.parse(href) rescue nil
+    next unless alternate_uri
+    next unless alternate_uri.scheme == "https" && alternate_uri.host == "embeddednerd.com"
+    next unless alternate_uri.query.nil? && alternate_uri.fragment.nil?
+    next unless existing_urls.include?(alternate_uri.to_s)
+
+    { "hreflang" => hreflang, "href" => alternate_uri.to_s }
+  end
+
+  alternates_by_url[canonical_uri.to_s] = alternates.uniq { |item| [item["hreflang"], item["href"]] } unless alternates.empty?
+end
+
+unless alternates_by_url.empty?
+  doc.root.add_namespace("xhtml", "http://www.w3.org/1999/xhtml")
+
+  REXML::XPath.each(doc, "//*[local-name()='url']") do |url_node|
+    loc = REXML::XPath.first(url_node, "./*[local-name()='loc']")
+    next unless loc
+
+    alternates = alternates_by_url[loc.text.to_s]
+    next unless alternates
+
+    alternates.each do |alternate|
+      link_node = REXML::Element.new("xhtml:link")
+      link_node.add_attribute("rel", "alternate")
+      link_node.add_attribute("hreflang", alternate["hreflang"])
+      link_node.add_attribute("href", alternate["href"])
+      url_node.add_element(link_node)
+    end
+  end
+end
+
+puts "Sitemap hreflang groups added: #{alternates_by_url.length}"
+
 puts "Sitemap localized URLs added: #{localized_added.length}"
 
 File.write(path, doc.to_s)
