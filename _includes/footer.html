@@ -27,6 +27,8 @@
       <li><strong>Seguici</strong></li>
     {% elsif locale == 'nl-NL' or locale == 'nl' %}
       <li><strong>Volg ons</strong></li>
+    {% elsif locale == 'pl-PL' or locale == 'pl' %}
+      <li><strong>Obserwuj nas</strong></li>
     {% elsif site.data.ui-text[locale].follow_label %}
       <li><strong>{{ site.data.ui-text[locale].follow_label }}</strong></li>
     {% endif %}
@@ -38,9 +40,9 @@
       {% endfor %}
     {% endif %}
     {% unless site.atom_feed.hide %}
-      <li><a {% static_href %}href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"{% endstatic_href %}><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> {% if locale == 'de-DE' %}RSS-Feed{% elsif locale == 'fr-FR' or locale == 'fr' %}Flux RSS{% elsif locale == 'es-ES' or locale == 'es' %}Fuente RSS{% elsif locale == 'it-IT' or locale == 'it' %}Feed RSS{% elsif locale == 'nl-NL' or locale == 'nl' %}RSS-feed{% else %}{{ site.data.ui-text[locale].feed_label | default: "Feed" }}{% endif %}</a></li>
+      <li><a {% static_href %}href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"{% endstatic_href %}><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> {% if locale == 'de-DE' %}RSS-Feed{% elsif locale == 'fr-FR' or locale == 'fr' %}Flux RSS{% elsif locale == 'es-ES' or locale == 'es' %}Fuente RSS{% elsif locale == 'it-IT' or locale == 'it' %}Feed RSS{% elsif locale == 'nl-NL' or locale == 'nl' %}RSS-feed{% elsif locale == 'pl-PL' or locale == 'pl' %}Kanał RSS{% else %}{{ site.data.ui-text[locale].feed_label | default: "Feed" }}{% endif %}</a></li>
     {% endunless %}
   </ul>
 </div>
 {% endif %}
-<div class="page__footer-copyright">&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a {% static_href %}href="{{ site.copyright_url | default: site.url }}"{% endstatic_href %}>{{ site.copyright | default: site.title | escape_once | strip }}</a>. {% if locale == 'de-DE' %}Erstellt mit{% elsif locale == 'fr-FR' or locale == 'fr' %}Propulsé par{% elsif locale == 'es-ES' or locale == 'es' %}Creado con{% elsif locale == 'it-IT' or locale == 'it' %}Realizzato con{% elsif locale == 'nl-NL' or locale == 'nl' %}Gemaakt met{% else %}{{ site.data.ui-text[locale].powered_by | default: "Powered by" }}{% endif %} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a {% static_href %}href="{{ site.copyright_url | default: site.url }}"{% endstatic_href %}>{{ site.copyright | default: site.title | escape_once | strip }}</a>. {% if locale == 'de-DE' %}Erstellt mit{% elsif locale == 'fr-FR' or locale == 'fr' %}Propulsé par{% elsif locale == 'es-ES' or locale == 'es' %}Creado con{% elsif locale == 'it-IT' or locale == 'it' %}Realizzato con{% elsif locale == 'nl-NL' or locale == 'nl' %}Gemaakt met{% elsif locale == 'pl-PL' or locale == 'pl' %}Stworzone przy użyciu{% else %}{{ site.data.ui-text[locale].powered_by | default: "Powered by" }}{% endif %} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
