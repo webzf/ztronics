@@ -1,7 +1,7 @@
 {% assign locale = include.locale | default: page.locale | default: site.locale %}
 {% assign logo_path = site.logo %}
 {% assign navigation = site.data.navigation %}
-{% if locale == 'pt-PT' and site.data.pt.navigation %}
+{% if locale == 'pt' or locale == 'pt-PT' %}
   {% assign navigation = site.data.pt.navigation %}
 {% elsif locale == 'pl-PL' and site.data.pl.navigation %}
   {% assign navigation = site.data.pl.navigation %}
