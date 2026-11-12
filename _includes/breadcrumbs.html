@@ -5,14 +5,16 @@
   {% assign locale = 'es-ES' %}
 {% elsif page.lang == 'it' or site.active_lang == 'it' %}
   {% assign locale = 'it-IT' %}
+{% elsif page.lang == 'pl' or site.active_lang == 'pl' %}
+  {% assign locale = 'pl-PL' %}
 {% endif %}
 {% assign breadcrumb_path = page.url | remove_first: '/de/' | remove_first: '/it/' | remove_first: '/' | remove_last: '/' %}
 {% assign crumbs = breadcrumb_path | split: '/' %}
 {% assign crumb_path = '/' %}
-<nav class="breadcrumbs" aria-label="{% if locale == 'de-DE' %}Brotkrumennavigation{% elsif locale == 'es-ES' %}Ruta de navegación{% elsif locale == 'it-IT' %}Percorso di navigazione{% else %}Breadcrumb{% endif %}">
+<nav class="breadcrumbs" aria-label="{% if locale == 'de-DE' %}Brotkrumennavigation{% elsif locale == 'es-ES' %}Ruta de navegación{% elsif locale == 'it-IT' %}Percorso di navigazione{% elsif locale == 'pl-PL' %}Okruszki nawigacyjne{% else %}Breadcrumb{% endif %}">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="{{ '/' | relative_url }}" itemprop="item"><span itemprop="name">{% if locale == 'de-DE' %}Startseite{% elsif locale == 'es-ES' %}Inicio{% elsif locale == 'it-IT' %}Home{% else %}Home{% endif %}</span></a>
+      <a href="{{ '/' | relative_url }}" itemprop="item"><span itemprop="name">{% if locale == 'de-DE' %}Startseite{% elsif locale == 'es-ES' %}Inicio{% elsif locale == 'it-IT' %}Home{% elsif locale == 'pl-PL' %}Strona główna{% else %}Home{% endif %}</span></a>
       <meta itemprop="position" content="1">
     </li>
     {% assign position = 1 %}
@@ -22,7 +24,7 @@
         <span class="sep">/</span>
         {% if crumb == 'products' %}
           {% assign crumb_label = 'Products' %}
-          {% if locale == 'de-DE' %}{% assign crumb_label = 'Produkte' %}{% elsif locale == 'es-ES' %}{% assign crumb_label = 'Productos' %}{% elsif locale == 'it-IT' %}{% assign crumb_label = 'Prodotti' %}{% endif %}
+          {% if locale == 'de-DE' %}{% assign crumb_label = 'Produkte' %}{% elsif locale == 'es-ES' %}{% assign crumb_label = 'Productos' %}{% elsif locale == 'it-IT' %}{% assign crumb_label = 'Prodotti' %}{% elsif locale == 'pl-PL' %}{% assign crumb_label = 'Produkty' %}{% endif %}
           {% if locale == 'it-IT' %}{% assign crumb_url = '/it/products/' %}{% else %}{% assign crumb_url = '/products/' %}{% endif %}
         {% elsif forloop.last %}
           <li class="current" lang="{% if locale == 'de-DE' %}de{% elsif locale == 'es-ES' %}es{% elsif locale == 'it-IT' %}it{% else %}en{% endif %}">{{ page.title }}</li>
