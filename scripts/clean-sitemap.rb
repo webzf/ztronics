@@ -51,9 +51,6 @@ end
 missing_paths = expected_paths - present_paths
 abort "Sitemap validation failed; expected URLs missing: #{missing_paths.join(', ')}" unless missing_paths.empty?
 
-File.write(path, doc.to_s)
-puts "Sitemap cleanup: removed #{removed.length} URLs"
-puts removed
 
 # Add published translated pages that the sitemap plugin may not discover.
 # Only include files whose canonical tag points to their own public URL and
@@ -114,3 +111,7 @@ languages.each do |language|
 end
 
 puts "Sitemap localized URLs added: #{localized_added.length}"
+
+File.write(path, doc.to_s)
+puts "Sitemap cleanup: removed #{removed.length} URLs"
+puts removed
