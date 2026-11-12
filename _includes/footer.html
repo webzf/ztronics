@@ -1,6 +1,6 @@
 {% assign locale = include.locale | default: page.locale | default: site.locale %}
 {% assign footer_links = site.footer.links %}
-{% if locale == 'pt-PT' and site.data.pt.footer.links %}
+{% if locale == 'pt' or locale == 'pt-PT' %}
   {% assign footer_links = site.data.pt.footer.links %}
 {% elsif locale == 'pl-PL' and site.data.pl.footer.links %}
   {% assign footer_links = site.data.pl.footer.links %}
