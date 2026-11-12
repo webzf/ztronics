@@ -234,6 +234,6 @@ Het bord kan met een compatibele ESPHome-configuratie als basis dienen voor een 
 |---|---|
 | Guition ESP32-S3-4848S040 | Vierkante interface van 4 inch en 480×480 pixels |
 | [Sunton ESP32-8048S043C](/nl/products/sunton-esp32-8048s043c/) | Breder scherm van 4,3 inch en 800×480 pixels |
-| [ESP32-2432S028 CYD](/nl/products/esp32-2432s028-2-8-cyd/) | Goedkoper, compact touchscreen van 2,8 inch |
+| [ESP32-2432S028 CYD](/products/esp32-2432s028-2-8-cyd/) | Goedkoper, compact touchscreen van 2,8 inch |
 
-Weet je niet zeker welk bord bij je project past? Gebruik de [ESP32-touchscreenkiezer](/nl/tools/esp32-touchscreen-selector/) en lees de [handleiding voor ESP32-touchscreens](/nl/esp32-touchscreen-displays-guide/).
+Weet je niet zeker welk bord bij je project past? Gebruik de [ESP32-touchscreenkiezer](/tools/esp32-touchscreen-selector/) en lees de [handleiding voor ESP32-touchscreens](/esp32-touchscreen-displays-guide/).
