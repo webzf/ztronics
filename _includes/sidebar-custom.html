@@ -10,12 +10,12 @@
   {% assign show_display_selector = true %}
 {% endif %}
 {% if page.url != '/tools/esp32-touchscreen-selector/' and show_display_selector %}
-  <section class="sidebar-display-banner" aria-label="{% if site.active_lang == 'de' %}ESP32-Display-Auswahl{% elsif site.active_lang == 'it' %}Selettore display ESP32{% else %}ESP32 Display Selector{% endif %}">
+  <section class="sidebar-display-banner" aria-label="{% if site.active_lang == 'de' %}ESP32-Display-Auswahl{% elsif site.active_lang == 'it' %}Selettore display ESP32{% elsif site.active_lang == 'pl' %}Selektor ekranów ESP32{% else %}ESP32 Display Selector{% endif %}">
     <div class="sidebar-display-banner__icon" aria-hidden="true"><i class="fas fa-display"></i></div>
-    <span class="sidebar-display-banner__eyebrow">Embedded Nerd {% if site.active_lang == 'de' %}Werkzeug{% elsif site.active_lang == 'it' %}Strumento{% else %}Tool{% endif %}</span>
-    <h3>{% if site.active_lang == 'de' %}Sie suchen ein ESP32-Display?{% elsif site.active_lang == 'it' %}Stai scegliendo un display ESP32?{% else %}Choosing an ESP32 display?{% endif %}</h3>
-    <p>{% if site.active_lang == 'de' %}Vergleichen Sie Touchscreen-Platinen nach Größe, Schnittstelle, Touch-Technologie, PSRAM und LVGL-Unterstützung.{% elsif site.active_lang == 'it' %}Confronta le schede touchscreen in base a dimensioni, interfaccia, tecnologia touch, PSRAM e supporto LVGL.{% else %}Compare touchscreen boards by size, interface, touch, PSRAM and LVGL support.{% endif %}</p>
-    <a href="{{ '/tools/esp32-touchscreen-selector/' | relative_url }}" class="btn btn--primary">{% if site.active_lang == 'de' %}Auswahlassistent öffnen{% elsif site.active_lang == 'it' %}Apri il selettore{% else %}Try the Selector{% endif %} <span aria-hidden="true">→</span></a>
+    <span class="sidebar-display-banner__eyebrow">Embedded Nerd {% if site.active_lang == 'de' %}Werkzeug{% elsif site.active_lang == 'it' %}Strumento{% elsif site.active_lang == 'pl' %}Narzędzie{% else %}Tool{% endif %}</span>
+    <h3>{% if site.active_lang == 'de' %}Sie suchen ein ESP32-Display?{% elsif site.active_lang == 'it' %}Stai scegliendo un display ESP32?{% elsif site.active_lang == 'pl' %}Szukasz ekranu do ESP32?{% else %}Choosing an ESP32 display?{% endif %}</h3>
+    <p>{% if site.active_lang == 'de' %}Vergleichen Sie Touchscreen-Platinen nach Größe, Schnittstelle, Touch-Technologie, PSRAM und LVGL-Unterstützung.{% elsif site.active_lang == 'it' %}Confronta le schede touchscreen in base a dimensioni, interfaccia, tecnologia touch, PSRAM e supporto LVGL.{% elsif site.active_lang == 'pl' %}Porównaj płytki z ekranem dotykowym według rozmiaru, interfejsu, technologii dotyku, PSRAM i obsługi LVGL.{% else %}Compare touchscreen boards by size, interface, touch, PSRAM and LVGL support.{% endif %}</p>
+    <a href="{{ '/tools/esp32-touchscreen-selector/' | relative_url }}" class="btn btn--primary">{% if site.active_lang == 'de' %}Auswahlassistent öffnen{% elsif site.active_lang == 'it' %}Apri il selettore{% elsif site.active_lang == 'pl' %}Otwórz selektor{% else %}Try the Selector{% endif %} <span aria-hidden="true">→</span></a>
   </section>
 {% endif %}
 <script src="{{ '/assets/js/sidebar-scroll.js' | relative_url }}" defer></script>

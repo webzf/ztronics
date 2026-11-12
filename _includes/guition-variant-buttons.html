@@ -5,15 +5,15 @@
   <a class="en-buy-button preferred" href="{{ relay_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
     <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
     <span class="en-buy-text">
-      <strong>{% if site.active_lang == 'de' %}Mit Relais{% elsif site.active_lang == 'es' %}Con relé{% elsif site.active_lang == 'fr' %}Avec relais{% elsif site.active_lang == 'it' %}Con relè{% elsif site.active_lang == 'nl' %}Met relais{% else %}With relay{% endif %} — <span class="en-price" data-en-price="{{ relay_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ relay_offer.price }}</span></strong>
-      <small>{% if site.active_lang == 'de' %}Bei AliExpress kaufen{% elsif site.active_lang == 'es' %}Comprar en AliExpress{% elsif site.active_lang == 'fr' %}Acheter sur AliExpress{% elsif site.active_lang == 'it' %}Acquista su AliExpress{% elsif site.active_lang == 'nl' %}Kopen via AliExpress{% else %}Buy on AliExpress{% endif %}</small>
+      <strong>{% if site.active_lang == 'de' %}Mit Relais{% elsif site.active_lang == 'es' %}Con relé{% elsif site.active_lang == 'fr' %}Avec relais{% elsif site.active_lang == 'it' %}Con relè{% elsif site.active_lang == 'nl' %}Met relais{% elsif site.active_lang == 'pl' %}Z przekaźnikiem{% else %}With relay{% endif %} — <span class="en-price" data-en-price="{{ relay_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ relay_offer.price }}</span></strong>
+      <small>{% if site.active_lang == 'de' %}Bei AliExpress kaufen{% elsif site.active_lang == 'es' %}Comprar en AliExpress{% elsif site.active_lang == 'fr' %}Acheter sur AliExpress{% elsif site.active_lang == 'it' %}Acquista su AliExpress{% elsif site.active_lang == 'nl' %}Kopen via AliExpress{% elsif site.active_lang == 'pl' %}Kup w AliExpress{% else %}Buy on AliExpress{% endif %}</small>
     </span>
     <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
   </a>
   <a class="en-buy-button" href="{{ lower_offer.redirect_url }}" target="_blank" rel="nofollow sponsored noopener">
     <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
     <span class="en-buy-text">
-      <strong>{% if site.active_lang == 'de' %}Ohne Relais{% elsif site.active_lang == 'es' %}Sin relé{% elsif site.active_lang == 'fr' %}Sans relais{% elsif site.active_lang == 'it' %}Senza relè{% elsif site.active_lang == 'nl' %}Zonder relais{% else %}Without relay{% endif %} — <span class="en-price" data-en-price="{{ lower_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ lower_offer.price }}</span></strong>
+      <strong>{% if site.active_lang == 'de' %}Ohne Relais{% elsif site.active_lang == 'es' %}Sin relé{% elsif site.active_lang == 'fr' %}Sans relais{% elsif site.active_lang == 'it' %}Senza relè{% elsif site.active_lang == 'nl' %}Zonder relais{% elsif site.active_lang == 'pl' %}Bez przekaźnika{% else %}Without relay{% endif %} — <span class="en-price" data-en-price="{{ lower_offer.price | remove: '€' | strip }}" data-en-currency="EUR">{{ lower_offer.price }}</span></strong>
       <small>{% if site.active_lang == 'de' %}Bei AliExpress kaufen{% elsif site.active_lang == 'es' %}Comprar en AliExpress{% elsif site.active_lang == 'fr' %}Acheter sur AliExpress{% elsif site.active_lang == 'it' %}Acquista su AliExpress{% elsif site.active_lang == 'nl' %}Kopen via AliExpress{% else %}Buy on AliExpress{% endif %}</small>
     </span>
     <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
