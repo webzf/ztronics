@@ -79,8 +79,8 @@ languages.each do |language|
     # Keep the same exclusions applied to the generated sitemap.
     next if route.start_with?("/go/") ||
             route == "/google2ce7494526b53621.html" ||
-            route.match?(%r{^/(?:de|es|fr|it|nl|pl|pt/)?page\d+/?$}) ||
-            ["/tags/", "/categories/"].include?(route)
+            route.match?(%r{^/(?:(?:de|es|fr|it|nl|pl|pt)/)?page\d+/?$}) ||
+            ["/tags/", "/categories/"].include?(route) || route.match?(%r{^/(?:(?:de|es|fr|it|nl|pl|pt)/)?(?:tags|categories)/})
 
     canonical_tag = html.scan(/<link\b[^>]*>/i).find do |tag|
       tag.match?(/\brel=["'][^"']*canonical[^"']*["']/i)
