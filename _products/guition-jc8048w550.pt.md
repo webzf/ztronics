@@ -173,7 +173,7 @@ touchscreen:
 - [Informação do fabricante GUITION](https://www.guition.com/esp32-display-module/5-inch-esp32s3-display-module)
 - [Placas Guition no ESP Component Registry](https://components.espressif.com/components/guition/guition_boards/versions/0.2.0/readme?language=en)
 
-Utiliza este YAML da comunidade como ponto de partida, não como uma configuração garantidamente pronta a gravar. O repositório indica atualmente ESPHome 2026.7.0 ou posterior. Confirma o pinout, os tempos do ecrã e o controlador de toque da tua placa antes de gravares o firmware. Para contexto geral, consulta o [guia de ecrãs táteis ESP32](/pt/esp32-touchscreen-displays-guide/).
+Utiliza este YAML da comunidade como ponto de partida, não como uma configuração garantidamente pronta a gravar. O repositório indica atualmente ESPHome 2026.7.0 ou posterior. Confirma o pinout, os tempos do ecrã e o controlador de toque da tua placa antes de gravares o firmware. Para contexto geral, consulta o [guia de ecrãs táteis ESP32](/esp32-touchscreen-displays-guide/).
 
 ## Para quem é indicado este ecrã?
 
@@ -234,9 +234,9 @@ O ecrã horizontal de 5 polegadas, o ESP32-S3 e a opção de toque fazem dele um
 | Placa | Ecrã | Toque | PSRAM / Flash | Mais indicada para |
 |---|---|---|---|---|
 | **Guition JC8048W550** | 5 polegadas, 800 × 480 | Opções NTP / RTP / CTP | 8 MB / 16 MB | Dashboards HMI e de monitorização horizontais de maiores dimensões |
-| [Guition ESP32-S3-4848S040](/pt/products/guition-esp32-s3-4848s040/) | 4 polegadas, 480 × 480 | Capacitivo | Confirmar anúncio | Dashboards quadrados compactos |
-| [Sunton ESP32-8048S043C](/pt/products/sunton-esp32-8048s043c/) | 4,3 polegadas, 800 × 480 | Capacitivo GT911 | 8 MB / 16 MB | Projetos ESP32-S3 mais pequenos com 800 × 480 |
-| [Waveshare ESP32-S3-Touch-LCD-4.3](/pt/products/waveshare-esp32-s3-touch-lcd-4-3/) | 4,3 polegadas, 800 × 480 | Capacitivo GT911 | 8 MB / 16 MB | Plataforma tátil alternativa de 4,3 polegadas |
+| [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) | 4 polegadas, 480 × 480 | Capacitivo | Confirmar anúncio | Dashboards quadrados compactos |
+| [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) | 4,3 polegadas, 800 × 480 | Capacitivo GT911 | 8 MB / 16 MB | Projetos ESP32-S3 mais pequenos com 800 × 480 |
+| [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) | 4,3 polegadas, 800 × 480 | Capacitivo GT911 | 8 MB / 16 MB | Plataforma tátil alternativa de 4,3 polegadas |
 | [Waveshare ESP32-S3-Touch-LCD-7](/pt/products/waveshare-esp32-s3-touch-lcd-7/) | 7 polegadas, 800 × 480 | Capacitivo de 5 pontos | 8 MB / 16 MB | Painel de 7 polegadas com interfaces CAN e RS485 |
 
-Compara outras placas 800 × 480 no [seletor de ecrãs táteis ESP32 800 × 480](/pt/tools/esp32-touchscreen-selector/800x480/) ou explora outros tamanhos e interfaces no [seletor completo de ecrãs táteis ESP32](/pt/tools/esp32-touchscreen-selector/).
+Compara outras placas 800 × 480 no [seletor de ecrãs táteis ESP32 800 × 480](/tools/esp32-touchscreen-selector/800x480/) ou explora outros tamanhos e interfaces no [seletor completo de ecrãs táteis ESP32](/tools/esp32-touchscreen-selector/).
