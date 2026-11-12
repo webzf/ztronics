@@ -4,6 +4,7 @@ title_tag: "Sunton ESP32-8048S043C Arduino-pinout en installatie"
 hide_post_pagination: true
 layout: single
 lang: nl
+locale: nl-NL
 translation_id: sunton-esp32-8048s043c-guide
 available_languages:
   - en
