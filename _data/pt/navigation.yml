@@ -21,9 +21,9 @@ embedded:
       - title: "Guition JC8048W550"
         url: /pt/products/guition-jc8048w550/
       - title: "Guition ESP32-S3-4848S040"
-        url: /pt/products/guition-esp32-s3-4848s040/
+        url: /products/guition-esp32-s3-4848s040/
       - title: "Sunton ESP32-8048S043C"
-        url: /pt/products/sunton-esp32-8048s043c/
+        url: /products/sunton-esp32-8048s043c/
       - title: "Projetos com ecrãs redondos"
         url: /esp32-p4-round-touchscreen-display-projects/
   - title: "Sensores e I2C"
