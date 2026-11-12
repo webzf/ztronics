@@ -22,9 +22,9 @@ errors = []
 required.each do |relative_path|
   full_path = File.join(site_root, relative_path)
   if File.file?(full_path)
-    puts "Localized route PASS: /#{relative_path.sub(%r{/index\\.html$}, "/")}"
+    puts "Localized route PASS: /#{relative_path.sub(%r{/index\.html$}, "/")}"
   else
-    errors << "Missing generated Dutch page: #{full_path}"
+    errors << "Missing generated localized page: #{full_path}"
   end
 end
 
@@ -34,7 +34,7 @@ end
 end
 
 if errors.any?
-  warn "Dutch output validation: FAIL"
+  warn "Localized output validation: FAIL"
   errors.each { |error| warn " - #{error}" }
   exit 1
 end
