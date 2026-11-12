@@ -375,7 +375,7 @@ De belangrijkste afweging gaat niet alleen over schermformaat: resolutie, aanraa
 | **Sunton ESP32-8048S043C** | 4,3-inch, 800×480 RGB | ESP32-S3, capacitieve GT911, 16 MB Flash / 8 MB PSRAM (gangbare N16R8-versie) | Geïntegreerd 4,3-inch touchscreen met hoge resolutie |
 | [Waveshare ESP32-S3-Touch-LCD-4.3](https://www.waveshare.com/esp32-s3-touch-lcd-4.3.htm) | 4,3-inch, 800×480 | ESP32-S3; capacitieve aanraking bij de betreffende productvariant | Alternatief 4,3-inch platform met leveranciersdocumentatie |
 | **Sunton ESP32-8048S070C** | 7-inch, 800×480 RGB | ESP32-S3, capacitieve aanraking op de C-versie | Groter fysiek scherm met dezelfde pixelresolutie |
-| [**Waveshare ESP32-S3-Touch-LCD-7**](/nl/products/waveshare-esp32-s3-touch-lcd-7/) | 7-inch, 800×480 IPS | ESP32-S3, 5-punts capacitieve aanraking | 7-inch alternatief met gedocumenteerde CAN- en RS485-interfaces |
+| [**Waveshare ESP32-S3-Touch-LCD-7**](/products/waveshare-esp32-s3-touch-lcd-7/) | 7-inch, 800×480 IPS | ESP32-S3, 5-punts capacitieve aanraking | 7-inch alternatief met gedocumenteerde CAN- en RS485-interfaces |
 
 Controleer de actuele documentatie van elke leverancier voor details over geheugen, connectoren en aanraakcontrollers; vergelijkbare modelnamen garanderen geen uitwisselbare pinouts of softwareconfiguraties.
 
