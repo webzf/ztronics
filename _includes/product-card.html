@@ -1,6 +1,10 @@
 {% assign commerce = site.data.commerce[include.product.product_id] %}
 {% assign product_image = include.product.image %}
 {% assign card_url = include.product.url %}
+{% assign card_title = include.product.title %}
+{% if include.product.product_id == 'guition-jc8048w550' %}
+  {% case site.active_lang %}{% when 'de' %}{% assign card_title = 'Guition JC8048W550 5-Zoll-ESP32-S3-Display' %}{% when 'fr' %}{% assign card_title = 'Écran Guition JC8048W550 ESP32-S3 de 5 pouces' %}{% when 'es' %}{% assign card_title = 'Pantalla Guition JC8048W550 ESP32-S3 de 5 pulgadas' %}{% when 'it' %}{% assign card_title = 'Display Guition JC8048W550 ESP32-S3 da 5 pollici' %}{% when 'nl' %}{% assign card_title = 'Guition JC8048W550 ESP32-S3-scherm van 5 inch' %}{% when 'pl' %}{% assign card_title = '5-calowy wyświetlacz Guition JC8048W550 ESP32-S3' %}{% when 'pt' %}{% assign card_title = 'Ecrã Guition JC8048W550 ESP32-S3 de 5 polegadas' %}{% endcase %}
+{% endif %}
 {% if include.product.product_id == 'guition-jc8048w550' %}
   {% case site.active_lang %}{% when 'de' %}{% assign card_url = '/de/products/guition-jc8048w550/' %}{% when 'fr' %}{% assign card_url = '/fr/products/guition-jc8048w550/' %}{% when 'es' %}{% assign card_url = '/es/products/guition-jc8048w550/' %}{% when 'it' %}{% assign card_url = '/it/products/guition-jc8048w550/' %}{% when 'nl' %}{% assign card_url = '/nl/products/guition-jc8048w550/' %}{% when 'pl' %}{% assign card_url = '/pl/products/guition-jc8048w550/' %}{% when 'pt' %}{% assign card_url = '/pt/products/guition-jc8048w550/' %}{% endcase %}
 {% endif %}
@@ -12,14 +16,14 @@
 {% assign product_search = include.product.title | append: " " | append: include.product.manufacturer | append: " " | append: product_categories_search | append: " " | append: include.product.excerpt | append: " " | append: product_tags_search %}
 <div class="en-product-card" data-title="{{ include.product.title | downcase | escape }}" data-platforms="{{ include.product.categories | join: ',' | downcase | escape }}" data-manufacturer="{{ include.product.manufacturer | downcase | escape }}" data-description="{{ include.product.excerpt | downcase | escape }}" data-search="{{ product_search | downcase | escape }}">
   <a class="en-product-card__image" href="{{ card_url | relative_url | escape }}">
-    <img src="{{ product_image | escape }}" alt="{{ include.product.title | escape }}" loading="lazy" onerror="this.hidden=true;this.closest('.en-product-card__image').classList.add('is-missing')">
+    <img src="{{ product_image | escape }}" alt="{{ card_title | escape }}" loading="lazy" onerror="this.hidden=true;this.closest('.en-product-card__image').classList.add('is-missing')">
   </a>
   <div class="en-product-card__body">
     {% if commerce.badges.recommended %}
       <span class="en-badge en-badge--recommended">{% if site.active_lang == 'de' %}Empfohlen{% elsif site.active_lang == 'es' %}Recomendado{% elsif site.active_lang == 'fr' %}Recommandé{% elsif site.active_lang == 'it' %}Consigliato{% elsif site.active_lang == 'nl' %}Aanbevolen{% elsif site.active_lang == 'pl' %}Polecany{% elsif site.active_lang == 'pt' or site.active_lang == 'pt-PT' %}Recomendado{% else %}Recommended{% endif %}</span>
     {% endif %}
     {% if include.product.manufacturer %}<div class="en-product-card__manufacturer">{{ include.product.manufacturer }}</div>{% endif %}
-    <h3><a href="{{ card_url | relative_url | escape }}">{% if site.active_lang == 'de' and include.product.product_id == 'guition-jc8048w550' %}Guition JC8048W550 5-Zoll-ESP32-S3-Display{% elsif site.active_lang == 'fr' and include.product.product_id == 'guition-jc8048w550' %}Écran Guition JC8048W550 ESP32-S3 de 5 pouces{% elsif site.active_lang == 'es' and include.product.product_id == 'guition-jc8048w550' %}Pantalla Guition JC8048W550 ESP32-S3 de 5 pulgadas{% elsif site.active_lang == 'it' and include.product.product_id == 'guition-jc8048w550' %}Display Guition JC8048W550 ESP32-S3 da 5 pollici{% elsif site.active_lang == 'nl' and include.product.product_id == 'guition-jc8048w550' %}Guition JC8048W550 ESP32-S3-scherm van 5 inch{% elsif site.active_lang == 'pl' and include.product.product_id == 'guition-jc8048w550' %}5-calowy wyświetlacz Guition JC8048W550 ESP32-S3{% elsif site.active_lang == 'pt' and include.product.product_id == 'guition-jc8048w550' %}Ecrã Guition JC8048W550 ESP32-S3 de 5 polegadas{% else %}{{ include.product.title | escape }}{% endif %}</a></h3>
+    <h3><a href="{{ card_url | relative_url | escape }}">{{ card_title | escape }}</a></h3>
     <p>
       {% if site.active_lang == 'de' and include.product.product_id == 'guition-jc8048w550' %}
         5-Zoll-IPS-Display mit 800 × 480 Pixeln, ESP32-S3, 8 MB PSRAM und 16 MB Flash.
