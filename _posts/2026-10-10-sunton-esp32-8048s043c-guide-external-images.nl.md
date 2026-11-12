@@ -19,7 +19,7 @@ spanish_url: /es/sunton-esp32-8048s043c-guide/
 french_url: /fr/sunton-esp32-8048s043c-guide/
 italian_url: /it/sunton-esp32-8048s043c-guide/
 dutch_url: /nl/sunton-esp32-8048s043c-guide/
-permalink: /nl/sunton-esp32-8048s043c-guide/
+permalink: /sunton-esp32-8048s043c-guide/
 id: "https://embeddednerd.com/nl/sunton-esp32-8048s043c-guide/"
 sidebar:
   nav: "embedded"
