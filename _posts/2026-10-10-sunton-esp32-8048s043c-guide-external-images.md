@@ -11,6 +11,7 @@ available_languages:
   - es
   - fr
   - it
+  - nl
 english_url: /sunton-esp32-8048s043c-guide/
 german_url: /de/sunton-esp32-8048s043c-guide/
 spanish_url: /es/sunton-esp32-8048s043c-guide/
