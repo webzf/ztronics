@@ -1,7 +1,9 @@
 {% assign locale = include.locale | default: site.locale %}
 {% assign logo_path = site.logo %}
 {% assign navigation = site.data.navigation %}
-{% if locale == 'it-IT' and site.data.it.navigation %}
+{% if locale == 'nl-NL' and site.data.nl.navigation %}
+  {% assign navigation = site.data.nl.navigation %}
+{% elsif locale == 'it-IT' and site.data.it.navigation %}
   {% assign navigation = site.data.it.navigation %}
 {% elsif locale == 'fr-FR' and site.data.fr.navigation %}
   {% assign navigation = site.data.fr.navigation %}
@@ -18,7 +20,7 @@
         {% endunless %}
         <a class="site-title" {% static_href %}href="{{ '/' | relative_url }}"{% endstatic_href %}>
           {{ site.masthead_title | default: site.title | escape_once | strip }}
-          {% if site.subtitle %}<span class="site-subtitle">{% if locale == 'de-DE' %}Tutorials zu Arduino, ESP32 und Raspberry Pi sowie Elektronikprojekte{% elsif locale == 'fr-FR' or locale == 'fr' %}Tutoriels Arduino, ESP32 et Raspberry Pi, et projets électroniques{% elsif locale == 'es-ES' or locale == 'es' %}Tutoriales de Arduino, ESP32 y Raspberry Pi y proyectos de electrónica{% elsif locale == 'it-IT' or locale == 'it' %}Tutorial Arduino, ESP32 e Raspberry Pi e progetti di elettronica{% else %}{{ site.subtitle | escape_once | strip }}{% endif %}</span>{% endif %}
+          {% if site.subtitle %}<span class="site-subtitle">{% if locale == 'de-DE' %}Tutorials zu Arduino, ESP32 und Raspberry Pi sowie Elektronikprojekte{% elsif locale == 'fr-FR' or locale == 'fr' %}Tutoriels Arduino, ESP32 et Raspberry Pi, et projets électroniques{% elsif locale == 'es-ES' or locale == 'es' %}Tutoriales de Arduino, ESP32 y Raspberry Pi y proyectos de electrónica{% elsif locale == 'it-IT' or locale == 'it' %}Tutorial Arduino, ESP32 e Raspberry Pi e progetti di elettronica{% elsif locale == 'nl-NL' or locale == 'nl' %}Handleidingen voor Arduino, ESP32 en Raspberry Pi en elektronicaprojecten{% else %}{{ site.subtitle | escape_once | strip }}{% endif %}</span>{% endif %}
         </a>
         <ul class="visible-links">
           {%- for link in navigation.main -%}
