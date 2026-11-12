@@ -27,12 +27,18 @@
         Vierkant ESP32-S3-touchscreen van 4 inch met een resolutie van 480 × 480 pixels.
       {% elsif site.active_lang == 'nl' and include.product.product_id == 'seeed-xiao-esp32s3-sense' %}
         Compact ESP32-S3-bord met camera, digitale microfoon en microSD-opslag.
+      {% elsif site.active_lang == 'pl' and include.product.product_id == 'sunton-esp32-8048s043c' %}
+        Płytka ESP32-S3 z ekranem dotykowym 4,3 cala i rozdzielczością 800 × 480 pikseli.
+      {% elsif site.active_lang == 'pl' and include.product.product_id == 'guition-esp32-s3-4848s040' %}
+        Kwadratowy ekran dotykowy ESP32-S3 o przekątnej 4 cali i rozdzielczości 480 × 480 pikseli.
+      {% elsif site.active_lang == 'pl' and include.product.product_id == 'seeed-xiao-esp32s3-sense' %}
+        Kompaktowa płytka ESP32-S3 z kamerą, mikrofonem cyfrowym i pamięcią microSD.
       {% else %}
         {{ include.product.excerpt }}
       {% endif %}
     </p>
     <div class="en-product-card__footer">
-      {% for category in include.product.categories %}<span class="en-tag">{% if site.active_lang == 'de' and category == 'Displays' %}Displays{% elsif site.active_lang == 'de' and category == 'Smart Home' %}Smart Home{% elsif site.active_lang == 'it' and category == 'Displays' %}Display{% elsif site.active_lang == 'it' and category == 'Development Boards' %}Schede di sviluppo{% elsif site.active_lang == 'it' and category == 'Camera Boards' %}Schede con fotocamera{% else %}{{ category }}{% endif %}</span>{% endfor %}
+      {% for category in include.product.categories %}<span class="en-tag">{% if site.active_lang == 'de' and category == 'Displays' %}Displays{% elsif site.active_lang == 'de' and category == 'Smart Home' %}Smart Home{% elsif site.active_lang == 'it' and category == 'Displays' %}Display{% elsif site.active_lang == 'it' and category == 'Development Boards' %}Schede di sviluppo{% elsif site.active_lang == 'it' and category == 'Camera Boards' %}Schede con fotocamera{% elsif site.active_lang == 'pl' and category == 'Displays' %}Wyświetlacze{% elsif site.active_lang == 'pl' and category == 'Development Boards' %}Płytki rozwojowe{% elsif site.active_lang == 'pl' and category == 'Camera Boards' %}Płytki z kamerą{% elsif site.active_lang == 'pl' and category == 'Smart Home' %}Inteligentny dom{% else %}{{ category }}{% endif %}</span>{% endfor %}
       <a class="en-view-product" href="{{ include.product.url | relative_url | escape }}">{% if site.active_lang == 'de' %}Produkt ansehen{% elsif site.active_lang == 'es' %}Ver producto{% elsif site.active_lang == 'fr' %}Voir le produit{% elsif site.active_lang == 'it' %}Visualizza prodotto{% elsif site.active_lang == 'nl' %}Bekijk product{% elsif site.active_lang == 'pl' %}Zobacz produkt{% elsif site.active_lang == 'pt-PT' %}Ver produto{% else %}View Product{% endif %} →</a>
     </div>
   </div>
