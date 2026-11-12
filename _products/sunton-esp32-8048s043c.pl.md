@@ -141,11 +141,11 @@ Ta strona opisuje model **ESP32-8048S043C**, czyli wariant z dotykiem pojemnośc
 
 Użyj opcji zakupu powyżej, aby sprawdzić aktualną ofertę. Dokładny identyfikator produktu kryjący się za krótkim linkiem partnerskim nie jest widoczny dla Embedded Nerd, dlatego sprawdź ofertę, zdjęcia sprzedawcy i to, czy jest to wariant **8048S043C z pojemnościowym dotykiem GT911**. Porównaj całkowity koszt dostawy i potwierdź oznaczenie modelu, interfejs ekranu, kontroler dotyku oraz akcesoria.
 
-Informacje o okablowaniu, kodzie, konfiguracji dotyku i znanych ograniczeniach znajdziesz w [poradniku pinoutu i konfiguracji Arduino dla Sunton ESP32-8048S043C (w języku angielskim)](/sunton-esp32-8048s043c-guide/).
+Informacje o okablowaniu, kodzie, konfiguracji dotyku i znanych ograniczeniach znajdziesz w [poradniku pinoutu i konfiguracji Arduino dla Sunton ESP32-8048S043C](/pl/sunton-esp32-8048s043c-guide/).
 
 ## Poradniki i selektory Embedded Nerd
 
-- [Poradnik pinoutu i konfiguracji Arduino dla Sunton ESP32-8048S043C (w języku angielskim)](/sunton-esp32-8048s043c-guide/) — tabele GPIO, minimalny przykład kodu i rozwiązywanie problemów.
+- [Poradnik pinoutu i konfiguracji Arduino dla Sunton ESP32-8048S043C](/pl/sunton-esp32-8048s043c-guide/) — tabele GPIO, minimalny przykład kodu i rozwiązywanie problemów.
 - [Selektor ekranów dotykowych ESP32](/tools/esp32-touchscreen-selector/)
 - [Selektor ekranów dotykowych 800×480](/tools/esp32-touchscreen-selector/800x480/)
 - [Selektor ekranów dotykowych 4,3″](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/)
