@@ -4,7 +4,7 @@ lang: en
 locale: en-US
 page_id: product-sunton-esp32-8048s043c
 translation_id: sunton-esp32-8048s043c
-available_languages: [en, de, es, fr, it]
+available_languages: [en, de, es, fr, it, nl]
 english_url: /products/sunton-esp32-8048s043c/
 german_url: /de/products/sunton-esp32-8048s043c/
 spanish_url: /es/products/sunton-esp32-8048s043c/
