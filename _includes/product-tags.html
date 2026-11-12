@@ -3,7 +3,7 @@
 <section class="en-product-tags-section">
 
     <h3 class="en-section-title">
-        {% if site.active_lang == 'de' %}Verwandte Themen{% elsif site.active_lang == 'es' %}Temas relacionados{% elsif site.active_lang == 'it' %}Argomenti correlati{% elsif site.active_lang == 'nl' %}Gerelateerde onderwerpen{% else %}Related Topics{% endif %}
+        {% if site.active_lang == 'de' %}Verwandte Themen{% elsif site.active_lang == 'es' %}Temas relacionados{% elsif site.active_lang == 'it' %}Argomenti correlati{% elsif site.active_lang == 'nl' %}Gerelateerde onderwerpen{% elsif site.active_lang == 'pl' %}Powiązane tematy{% else %}Related Topics{% endif %}
     </h3>
 
     <div class="en-product-tags-list">
@@ -13,7 +13,7 @@
         <a
             class="en-product-tag"
             href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}"
-            title="{% if site.active_lang == 'es' %}Ver todo el contenido etiquetado como '{{ tag }}'{% elsif site.active_lang == 'de' %}Alle Inhalte mit dem Schlagwort '{{ tag }}' anzeigen{% elsif site.active_lang == 'it' %}Visualizza tutti i contenuti con il tag '{{ tag }}'{% elsif site.active_lang == 'nl' %}Bekijk alle inhoud met de tag '{{ tag }}'{% else %}View all content tagged '{{ tag }}'{% endif %}">
+            title="{% if site.active_lang == 'es' %}Ver todo el contenido etiquetado como '{{ tag }}'{% elsif site.active_lang == 'de' %}Alle Inhalte mit dem Schlagwort '{{ tag }}' anzeigen{% elsif site.active_lang == 'it' %}Visualizza tutti i contenuti con il tag '{{ tag }}'{% elsif site.active_lang == 'nl' %}Bekijk alle inhoud met de tag '{{ tag }}'{% elsif site.active_lang == 'pl' %}Zobacz wszystkie treści oznaczone tagiem '{{ tag }}'{% else %}View all content tagged '{{ tag }}'{% endif %}">
 
             <span class="en-product-tag-text">
                 {{ tag }}
