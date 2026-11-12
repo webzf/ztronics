@@ -38,7 +38,7 @@ available_languages:
   - fr
   - it
   - nl
-dutch_url: /nl/products/seeed-xiao-esp32s3-sense/
+dutch_url: /products/seeed-xiao-esp32s3-sense/
 category: Development Boards
 manufacturer: "Seeed Studio"
 
@@ -71,7 +71,7 @@ tags:
   - Bluetooth LE
   - MicroPython
 
-permalink: /nl/products/seeed-xiao-esp32s3-sense/
+permalink: /products/seeed-xiao-esp32s3-sense/
 
 specifications:
   - name: Processor
@@ -194,7 +194,7 @@ Seeed vermeldt dat de fabrieksfirmware sinds juni 2025 standaard een Wi-Fi-toega
 | D1 | GPIO2 | ADC, touch | Algemene I/O |
 | D2 | GPIO3 | ADC, touch | Strapping-pin (JTAG-bron) |
 | D3 | GPIO4 | ADC, touch | Algemene I/O |
-| D4 / SDA | GPIO5 | I²C-data, ADC, touch | Standaard-I²C. Zie de [I2C-adreszoeker](/nl/tools/i2c-address-lookup/) en de [I2C-scannerhandleiding](/nl/i2c-scanner-tutorial/). |
+| D4 / SDA | GPIO5 | I²C-data, ADC, touch | Standaard-I²C. Zie de [I2C-adreszoeker](/tools/i2c-address-lookup/) en de [I2C-scannerhandleiding](/i2c-scanner-tutorial/). |
 | D5 / SCL | GPIO6 | I²C-klok, ADC, touch | Standaard-I²C |
 | D6 / TX | GPIO43 | UART TX | Seriële uitvoer |
 | D7 / RX | GPIO44 | UART RX | Seriële invoer |
@@ -311,8 +311,8 @@ Ja. Seeed documenteert Arduino en MicroPython voor de XIAO ESP32-S3-serie. De pr
 | Bord | Meest geschikt voor |
 |---|---|
 | Seeed Studio XIAO ESP32S3 Sense | Compacte camera-, audio- en dataloggingprojecten |
-| [Arduino Nano ESP32](/nl/products/arduino-nano-esp32/) | Nano-formaat met ESP32-S3 en Arduino-pinnamen |
-| [ESP32 DevKit V1](/nl/products/esp32-devkit/) | Goedkope prototyping voor algemeen gebruik |
-| [Raspberry Pi Pico W](/nl/products/raspberry-pi-pico-w/) | RP2040 met Wi-Fi, geschikt voor MicroPython |
+| [Arduino Nano ESP32](/products/arduino-nano-esp32/) | Nano-formaat met ESP32-S3 en Arduino-pinnamen |
+| [ESP32 DevKit V1](/products/esp32-devkit/) | Goedkope prototyping voor algemeen gebruik |
+| [Raspberry Pi Pico W](/products/raspberry-pi-pico-w/) | RP2040 met Wi-Fi, geschikt voor MicroPython |
 
-Weet je niet zeker welk bord bij je project past? Lees onze handleiding [Beste ESP32-borden](/nl/best-esp32-boards/) of bekijk de categorie [Ontwikkelborden](/nl/products/development-boards/).
+Weet je niet zeker welk bord bij je project past? Lees onze handleiding [Beste ESP32-borden](/best-esp32-boards/) of bekijk de categorie [Ontwikkelborden](/products/development-boards/).
