@@ -1,7 +1,7 @@
 ---
 layout: product
 lang: pt
-locale: pt-PT
+locale: pt
 toc_label: Índice
 page_id: product-guition-jc8048w550
 translation_id: guition-jc8048w550
