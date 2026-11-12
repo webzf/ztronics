@@ -38,7 +38,7 @@ available_languages:
   - fr
   - it
   - nl
-dutch_url: /products/seeed-xiao-esp32s3-sense/
+dutch_url: /nl/products/seeed-xiao-esp32s3-sense/
 category: Development Boards
 manufacturer: "Seeed Studio"
 
@@ -71,7 +71,7 @@ tags:
   - Bluetooth LE
   - MicroPython
 
-permalink: /products/seeed-xiao-esp32s3-sense/
+permalink: /nl/products/seeed-xiao-esp32s3-sense/
 
 specifications:
   - name: Processor
