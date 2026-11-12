@@ -117,14 +117,14 @@ alternates_by_url = {}
 
 Dir.glob(File.join(site_root, "**", "*.html")).sort.each do |html_path|
   html = File.read(html_path, encoding: "UTF-8")
-  link_tags = html.scan(/<link\\b[^>]*>/i)
+  link_tags = html.scan(/<link\b[^>]*>/i)
 
   canonical_tag = link_tags.find do |tag|
-    tag.match?(/\\brel=["'][^"']*canonical[^"']*["']/i)
+    tag.match?(/\brel=["'][^"']*canonical[^"']*["']/i)
   end
   next unless canonical_tag
 
-  canonical_href = canonical_tag[/\\bhref=["']([^"']+)["']/i, 1]
+  canonical_href = canonical_tag[/\bhref=["']([^"']+)["']/i, 1]
   next unless canonical_href
 
   canonical_uri = URI.parse(canonical_href) rescue nil
@@ -133,11 +133,11 @@ Dir.glob(File.join(site_root, "**", "*.html")).sort.each do |html_path|
   next unless canonical_uri.query.nil? && canonical_uri.fragment.nil?
 
   alternates = link_tags.filter_map do |tag|
-    rel = tag[/\\brel=["']([^"']+)["']/i, 1]
-    next unless rel && rel.split(/\\s+/).include?("alternate")
+    rel = tag[/\brel=["']([^"']+)["']/i, 1]
+    next unless rel && rel.split(/\s+/).include?("alternate")
 
-    hreflang = tag[/\\bhreflang=["']([^"']+)["']/i, 1]
-    href = tag[/\\bhref=["']([^"']+)["']/i, 1]
+    hreflang = tag[/\bhreflang=["']([^"']+)["']/i, 1]
+    href = tag[/\bhref=["']([^"']+)["']/i, 1]
     next unless hreflang && href
 
     alternate_uri = URI.parse(href) rescue nil
