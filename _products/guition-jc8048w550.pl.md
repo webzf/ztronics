@@ -237,6 +237,6 @@ Poziomy ekran 5-calowy, ESP32-S3 i opcja dotyku sprawiają, że jest to odpowied
 | [Guition ESP32-S3-4848S040](/pl/products/guition-esp32-s3-4848s040/) | 4 cale, 480 × 480 | Pojemnościowy | Sprawdź ofertę | Kompaktowe kwadratowe dashboardy |
 | [Sunton ESP32-8048S043C](/pl/products/sunton-esp32-8048s043c/) | 4,3 cala, 800 × 480 | Pojemnościowy GT911 | 8 MB / 16 MB | Mniejsze projekty ESP32-S3 o rozdzielczości 800 × 480 |
 | [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) | 4,3 cala, 800 × 480 | Pojemnościowy GT911 | 8 MB / 16 MB | Alternatywna platforma dotykowa 4,3 cala |
-| [Waveshare ESP32-S3-Touch-LCD-7](/pl/products/waveshare-esp32-s3-touch-lcd-7/) | 7 cali, 800 × 480 | Pojemnościowy, 5 punktów | 8 MB / 16 MB | Większy panel 7-calowy z interfejsami CAN i RS485 |
+| [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/) | 7 cali, 800 × 480 | Pojemnościowy, 5 punktów | 8 MB / 16 MB | Większy panel 7-calowy z interfejsami CAN i RS485 |
 
 Inne płytki 800 × 480 porównasz w [selektorze ekranów dotykowych ESP32 800 × 480](/tools/esp32-touchscreen-selector/800x480/) lub poznasz inne rozmiary i interfejsy w [pełnym selektorze ekranów dotykowych ESP32](/tools/esp32-touchscreen-selector/).
