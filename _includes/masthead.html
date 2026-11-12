@@ -1,4 +1,4 @@
-{% assign locale = include.locale | default: site.locale %}
+{% assign locale = include.locale | default: page.locale | default: site.locale %}
 {% assign logo_path = site.logo %}
 {% assign navigation = site.data.navigation %}
 {% if locale == 'nl-NL' and site.data.nl.navigation %}
