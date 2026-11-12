@@ -217,7 +217,7 @@ Klaar om een bord te kiezen? Ga naar de productpagina van de [Guition ESP32-S3-4
 
 - [Guition JC8048W550 5-inch ESP32-S3-scherm](/products/guition-jc8048w550/) — een groter liggend alternatief van 800×480 pixels.
 - [Productpagina Guition ESP32-S3-4848S040](/nl/products/guition-esp32-s3-4848s040/)
-- [ESP32-touchscreenkiezer](/nl/tools/esp32-touchscreen-selector/)
-- [Handleiding voor ESP32-touchscreens](/nl/esp32-touchscreen-displays-guide/)
+- [ESP32-touchscreenkiezer](/tools/esp32-touchscreen-selector/)
+- [Handleiding voor ESP32-touchscreens](/esp32-touchscreen-displays-guide/)
 - [ESPHome Devices-profiel](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/)
 - [ESPHome-communityconfiguratie](https://github.com/jtenniswood/esphome-lvgl/tree/main/guition-esp32-s3-4848s040)
