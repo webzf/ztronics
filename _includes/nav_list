@@ -1,16 +1,18 @@
 {% assign locale = include.locale | default: site.locale %}
 {% assign navigation_data = site.data.navigation %}
-{% if page.lang == 'fr' and site.data.fr.navigation %}
+{% if page.lang == 'pl' and site.data.pl.navigation %}
+  {% assign navigation_data = site.data.pl.navigation %}
+{% elsif page.lang == 'fr' and site.data.fr.navigation %}
   {% assign navigation_data = site.data.fr.navigation %}
 {% elsif page.lang == 'de' and site.data.de.navigation %}
   {% assign navigation_data = site.data.de.navigation %}
 {% endif %}
 
-<nav class="nav__list" aria-label="{% if page.lang == 'de' %}Seitennavigation{% elsif page.lang == 'es' %}Navegación lateral{% elsif page.lang == 'fr' %}Navigation latérale{% elsif page.lang == 'it' %}Navigazione laterale{% elsif page.lang == 'nl' %}Navigatie in de zijbalk{% else %}Sidebar navigation{% endif %}">
+<nav class="nav__list" aria-label="{% if page.lang == 'de' %}Seitennavigation{% elsif page.lang == 'es' %}Navegación lateral{% elsif page.lang == 'fr' %}Navigation latérale{% elsif page.lang == 'it' %}Navigazione laterale{% elsif page.lang == 'nl' %}Navigatie in de zijbalk{% elsif page.lang == 'pl' %}Nawigacja boczna{% else %}Sidebar navigation{% endif %}">
   {% if page.sidebar.title %}<h3 class="nav__title" style="padding-inline-start: 0;">{{ page.sidebar.title }}</h3>{% endif %}
 
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">{% if page.lang == 'de' %}Menü umschalten{% elsif page.lang == 'fr' %}Afficher/masquer le menu{% elsif page.lang == 'es' %}Mostrar/ocultar menú{% elsif page.lang == 'it' %}Mostra/nascondi il menu{% elsif page.lang == 'nl' %}Menu tonen/verbergen{% else %}{{ site.data.ui-text[locale].menu_label | default: "Toggle Menu" }}{% endif %}</label>
+  <label for="ac-toc">{% if page.lang == 'de' %}Menü umschalten{% elsif page.lang == 'fr' %}Afficher/masquer le menu{% elsif page.lang == 'es' %}Mostrar/ocultar menú{% elsif page.lang == 'it' %}Mostra/nascondi il menu{% elsif page.lang == 'nl' %}Menu tonen/verbergen{% elsif page.lang == 'pl' %}Pokaż/ukryj menu{% else %}{{ site.data.ui-text[locale].menu_label | default: "Toggle Menu" }}{% endif %}</label>
 
   <ul class="nav__items">
     {% for navname in include.nav %}
