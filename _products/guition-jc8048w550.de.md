@@ -4,6 +4,7 @@ lang: de
 locale: de-DE
 toc_label: Inhalt
 page_id: product-guition-jc8048w550
+translation_id: guition-jc8048w550
 available_languages:
   - en
   - de
