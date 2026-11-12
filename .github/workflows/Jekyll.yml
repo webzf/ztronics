@@ -108,6 +108,11 @@ jobs:
               --baseurl "/preview/pr-${pr_number}" \
               --destination "_site/preview/pr-${pr_number}"
 
+            # Verify translated routes in the generated output, not just a successful build.
+            if [ -f "pr-site-${pr_number}/scripts/validate-localized-output.rb" ]; then
+              ruby "pr-site-${pr_number}/scripts/validate-localized-output.rb" "_site/preview/pr-${pr_number}"
+            fi
+
             git worktree remove --force "pr-site-${pr_number}"
           done < /tmp/open-prs.tsv
 
