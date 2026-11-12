@@ -64,7 +64,7 @@ localized_added = []
 
 languages.each do |language|
   language_root = File.join(site_root, language)
-  next unless Dir.directory?(language_root)
+  next unless File.directory?(language_root)
 
   Dir.glob(File.join(language_root, "**", "*.html")).sort.each do |html_path|
     html = File.read(html_path, encoding: "UTF-8")
