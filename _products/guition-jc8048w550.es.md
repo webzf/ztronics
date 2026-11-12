@@ -58,13 +58,13 @@ tags:
 permalink: /products/guition-jc8048w550/
 specifications:
   - name: Procesador
-    value: "ESP32-S3-WROOM-1, dual-core up to 240 MHz"
+    value: "ESP32-S3-WROOM-1, doble núcleo hasta 240 MHz"
   - name: Flash
     value: "16 MB"
   - name: PSRAM
     value: "8 MB"
   - name: Tamaño de pantalla
-    value: "5.0 inches"
+    value: "5,0 pulgadas"
   - name: Tipo de pantalla
     value: "IPS TFT"
   - name: Resolución
@@ -72,25 +72,25 @@ specifications:
   - name: Controlador de pantalla
     value: "ST7262"
   - name: Táctil
-    value: "NTP (no touch), RTP (resistive) or CTP (capacitive), depending on model suffix"
+    value: "NTP (sin táctil), RTP (resistiva) o CTP (capacitiva), según el sufijo del modelo"
   - name: Conectividad inalámbrica
-    value: "2.4 GHz Wi-Fi and Bluetooth"
+    value: "Wi-Fi de 2,4 GHz y Bluetooth"
   - name: Ampliación de almacenamiento
-    value: "TF / microSD card slot"
+    value: "Ranura para tarjeta TF / microSD"
   - name: Alimentación
-    value: "5V DC (confirm supply requirements for the exact assembly)"
+    value: "5 V CC (confirme los requisitos de alimentación de la unidad exacta)"
 links:
-  - title: "GUITION manufacturer product information"
+  - title: "Información del producto del fabricante GUITION"
     icon: "fas fa-book"
-    description: "Manufacturer information for the JC8048W550 5-inch ESP32-S3 display family."
+    description: "Información del fabricante sobre la familia de pantallas ESP32-S3 de 5 pulgadas."
     url: "https://www.guition.com/esp32-display-module/5-inch-esp32s3-display-module"
-  - title: "ESPHome hardware configuration"
+  - title: "Configuración de hardware ESPHome"
     icon: "fab fa-github"
-    description: "Community ESPHome configuration for the JC8048W550, including display and touch pin assignments."
+    description: "Configuración comunitaria de ESPHome para el JC8048W550, incluidos los pines de pantalla y táctil."
     url: "https://github.com/agillis/esphome-modular-lvgl-buttons/blob/main/hardware/guition-esp32-jc8048w550.yaml"
-  - title: "ESP Component Registry — Guition boards"
+  - title: "ESP Component Registry — placas Guition"
     icon: "fas fa-microchip"
-    description: "Board-family reference listing the JC8048W550 display, controller and touch options."
+    description: "Referencia de la familia de placas JC8048W550, el controlador y las opciones táctiles."
     url: "https://components.espressif.com/components/guition/guition_boards/versions/0.2.0/readme?language=en"
 related:
   - guition-esp32-s3-4848s040
