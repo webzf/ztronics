@@ -68,26 +68,26 @@ languages.each do |language|
 
   Dir.glob(File.join(language_root, "**", "*.html")).sort.each do |html_path|
     html = File.read(html_path, encoding: "UTF-8")
-    next if html.match?(/<meta\\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i)
+    next if html.scan(/<meta\b[^>]*>/i).any? { |tag| tag.match?(/name=["']robots["']/i) && tag.match?(/content=["'][^"']*noindex/i) }
 
     relative = html_path.delete_prefix(site_root + File::SEPARATOR)
-    route = relative.sub(/index\\.html\\z/, "")
+    route = relative.sub(/index\.html\z/, "")
     route = "/#{route}" unless route.start_with?("/")
-    route = route.sub(/\\.html\\z/, "")
-    route += "/" unless route.end_with?("/") || route.match?(/\\.[a-z0-9]+\\z/i)
+    route = route.sub(/\.html\z/, "")
+    route += "/" unless route.end_with?("/") || route.match?(/\.[a-z0-9]+\z/i)
 
     # Keep the same exclusions applied to the generated sitemap.
     next if route.start_with?("/go/") ||
             route == "/google2ce7494526b53621.html" ||
-            route.match?(%r{^/page\\d+/?$}) ||
+            route.match?(%r{^/(?:de|es|fr|it|nl|pl|pt/)?page\d+/?$}) ||
             ["/tags/", "/categories/"].include?(route)
 
-    canonical_tag = html.scan(/<link\\b[^>]*>/i).find do |tag|
-      tag.match?(/\\brel=["'][^"']*canonical[^"']*["']/i)
+    canonical_tag = html.scan(/<link\b[^>]*>/i).find do |tag|
+      tag.match?(/\brel=["'][^"']*canonical[^"']*["']/i)
     end
     next unless canonical_tag
 
-    href = canonical_tag[/\\bhref=["']([^"']+)["']/i, 1]
+    href = canonical_tag[/\bhref=["']([^"']+)["']/i, 1]
     next unless href
 
     canonical_uri = URI.parse(href) rescue nil
