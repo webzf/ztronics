@@ -72,7 +72,7 @@ tags:
   - ESPHome
   - Home Assistant
 
-permalink: /nl/products/guition-esp32-s3-4848s040/
+permalink: /products/guition-esp32-s3-4848s040/
 
 specifications:
   - name: Processor
