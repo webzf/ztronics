@@ -173,7 +173,7 @@ touchscreen:
 - [Informazioni del produttore GUITION](https://www.guition.com/esp32-display-module/5-inch-esp32s3-display-module)
 - [Schede Guition nell’ESP Component Registry](https://components.espressif.com/components/guition/guition_boards/versions/0.2.0/readme?language=en)
 
-Usa questo YAML della community come punto di partenza, non come configurazione garantita pronta da caricare. Il repository indica attualmente ESPHome 2026.7.0 o versioni successive. Prima del flash verifica pinout, timing del display e controller touch sulla tua scheda. Per una panoramica generale, consulta la [guida ai display touchscreen ESP32](/it/esp32-touchscreen-displays-guide/).
+Usa questo YAML della community come punto di partenza, non come configurazione garantita pronta da caricare. Il repository indica attualmente ESPHome 2026.7.0 o versioni successive. Prima del flash verifica pinout, timing del display e controller touch sulla tua scheda. Per una panoramica generale, consulta la [guida ai display touchscreen ESP32](/esp32-touchscreen-displays-guide/).
 
 ## A chi è adatto questo display?
 
@@ -236,7 +236,7 @@ Il display orizzontale da 5 pollici, l’ESP32-S3 e l’opzione touch lo rendono
 | **Guition JC8048W550** | 5 pollici, 800 × 480 | Opzioni NTP / RTP / CTP | 8 MB / 16 MB | Dashboard HMI e di monitoraggio orizzontali più ampie |
 | [Guition ESP32-S3-4848S040](/it/products/guition-esp32-s3-4848s040/) | 4 pollici, 480 × 480 | Capacitivo | Verificare l’inserzione | Dashboard quadrate compatte |
 | [Sunton ESP32-8048S043C](/it/products/sunton-esp32-8048s043c/) | 4,3 pollici, 800 × 480 | Capacitivo GT911 | 8 MB / 16 MB | Progetti ESP32-S3 più piccoli a 800 × 480 |
-| [Waveshare ESP32-S3-Touch-LCD-4.3](/it/products/waveshare-esp32-s3-touch-lcd-4-3/) | 4,3 pollici, 800 × 480 | Capacitivo GT911 | 8 MB / 16 MB | Piattaforma touchscreen alternativa da 4,3 pollici |
+| [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) | 4,3 pollici, 800 × 480 | Capacitivo GT911 | 8 MB / 16 MB | Piattaforma touchscreen alternativa da 4,3 pollici |
 | [Waveshare ESP32-S3-Touch-LCD-7](/it/products/waveshare-esp32-s3-touch-lcd-7/) | 7 pollici, 800 × 480 | Capacitivo a 5 punti | 8 MB / 16 MB | Pannello da 7 pollici con interfacce CAN e RS485 |
 
-Per confrontare altre schede 800 × 480, visita il [selettore di display touchscreen ESP32 800 × 480](/it/tools/esp32-touchscreen-selector/800x480/) oppure usa il [selettore completo di display touchscreen ESP32](/it/tools/esp32-touchscreen-selector/).
+Per confrontare altre schede 800 × 480, visita il [selettore di display touchscreen ESP32 800 × 480](/tools/esp32-touchscreen-selector/800x480/) oppure usa il [selettore completo di display touchscreen ESP32](/tools/esp32-touchscreen-selector/).
