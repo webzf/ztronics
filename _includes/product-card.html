@@ -1,5 +1,13 @@
 {% assign commerce = site.data.commerce[include.product.product_id] %}
 {% assign product_image = include.product.image %}
+{% assign card_url = include.product.url %}
+{% assign card_title = include.product.title %}
+{% if include.product.product_id == 'guition-jc8048w550' %}
+  {% case site.active_lang %}{% when 'de' %}{% assign card_title = 'Guition JC8048W550 5-Zoll-ESP32-S3-Display' %}{% when 'fr' %}{% assign card_title = 'Écran Guition JC8048W550 ESP32-S3 de 5 pouces' %}{% when 'es' %}{% assign card_title = 'Pantalla Guition JC8048W550 ESP32-S3 de 5 pulgadas' %}{% when 'it' %}{% assign card_title = 'Display Guition JC8048W550 ESP32-S3 da 5 pollici' %}{% when 'nl' %}{% assign card_title = 'Guition JC8048W550 ESP32-S3-scherm van 5 inch' %}{% when 'pl' %}{% assign card_title = '5-calowy wyświetlacz Guition JC8048W550 ESP32-S3' %}{% when 'pt' %}{% assign card_title = 'Ecrã Guition JC8048W550 ESP32-S3 de 5 polegadas' %}{% endcase %}
+{% endif %}
+{% if include.product.product_id == 'guition-jc8048w550' %}
+  {% case site.active_lang %}{% when 'de' %}{% assign card_url = '/de/products/guition-jc8048w550/' %}{% when 'fr' %}{% assign card_url = '/fr/products/guition-jc8048w550/' %}{% when 'es' %}{% assign card_url = '/es/products/guition-jc8048w550/' %}{% when 'it' %}{% assign card_url = '/it/products/guition-jc8048w550/' %}{% when 'nl' %}{% assign card_url = '/nl/products/guition-jc8048w550/' %}{% when 'pl' %}{% assign card_url = '/pl/products/guition-jc8048w550/' %}{% when 'pt' %}{% assign card_url = '/pt/products/guition-jc8048w550/' %}{% endcase %}
+{% endif %}
 {% unless product_image contains "://" %}
   {% assign product_image = product_image | relative_url %}
 {% endunless %}
@@ -7,17 +15,31 @@
 {% assign product_tags_search = include.product.tags | join: " " %}
 {% assign product_search = include.product.title | append: " " | append: include.product.manufacturer | append: " " | append: product_categories_search | append: " " | append: include.product.excerpt | append: " " | append: product_tags_search %}
 <div class="en-product-card" data-title="{{ include.product.title | downcase | escape }}" data-platforms="{{ include.product.categories | join: ',' | downcase | escape }}" data-manufacturer="{{ include.product.manufacturer | downcase | escape }}" data-description="{{ include.product.excerpt | downcase | escape }}" data-search="{{ product_search | downcase | escape }}">
-  <a class="en-product-card__image" href="{{ include.product.url | relative_url | escape }}">
-    <img src="{{ product_image | escape }}" alt="{{ include.product.title | escape }}" loading="lazy" onerror="this.hidden=true;this.closest('.en-product-card__image').classList.add('is-missing')">
+  <a class="en-product-card__image" href="{{ card_url | relative_url | escape }}">
+    <img src="{{ product_image | escape }}" alt="{{ card_title | escape }}" loading="lazy" onerror="this.hidden=true;this.closest('.en-product-card__image').classList.add('is-missing')">
   </a>
   <div class="en-product-card__body">
     {% if commerce.badges.recommended %}
-      <span class="en-badge en-badge--recommended">{% if site.active_lang == 'de' %}Empfohlen{% elsif site.active_lang == 'es' %}Recomendado{% elsif site.active_lang == 'fr' %}Recommandé{% elsif site.active_lang == 'it' %}Consigliato{% elsif site.active_lang == 'nl' %}Aanbevolen{% elsif site.active_lang == 'pl' %}Polecany{% elsif site.active_lang == 'pt-PT' %}Recomendado{% else %}Recommended{% endif %}</span>
+      <span class="en-badge en-badge--recommended">{% if site.active_lang == 'de' %}Empfohlen{% elsif site.active_lang == 'es' %}Recomendado{% elsif site.active_lang == 'fr' %}Recommandé{% elsif site.active_lang == 'it' %}Consigliato{% elsif site.active_lang == 'nl' %}Aanbevolen{% elsif site.active_lang == 'pl' %}Polecany{% elsif site.active_lang == 'pt' %}Recomendado{% else %}Recommended{% endif %}</span>
     {% endif %}
     {% if include.product.manufacturer %}<div class="en-product-card__manufacturer">{{ include.product.manufacturer }}</div>{% endif %}
-    <h3><a href="{{ include.product.url | relative_url | escape }}">{{ include.product.title | escape }}</a></h3>
+    <h3><a href="{{ card_url | relative_url | escape }}">{{ card_title | escape }}</a></h3>
     <p>
-      {% if site.active_lang == 'de' and include.product.product_id == 'sunton-esp32-8048s043c' %}
+      {% if site.active_lang == 'de' and include.product.product_id == 'guition-jc8048w550' %}
+        5-Zoll-IPS-Display mit 800 × 480 Pixeln, ESP32-S3, 8 MB PSRAM und 16 MB Flash.
+      {% elsif site.active_lang == 'fr' and include.product.product_id == 'guition-jc8048w550' %}
+        Écran IPS de 5 pouces en 800 × 480 avec ESP32-S3, 8 Mo de PSRAM et 16 Mo de Flash.
+      {% elsif site.active_lang == 'es' and include.product.product_id == 'guition-jc8048w550' %}
+        Pantalla IPS de 5 pulgadas y 800 × 480 con ESP32-S3, 8 MB de PSRAM y 16 MB de Flash.
+      {% elsif site.active_lang == 'it' and include.product.product_id == 'guition-jc8048w550' %}
+        Display IPS da 5 pollici e 800 × 480 con ESP32-S3, 8 MB di PSRAM e 16 MB di Flash.
+      {% elsif site.active_lang == 'nl' and include.product.product_id == 'guition-jc8048w550' %}
+        5-inch IPS-scherm van 800 × 480 met ESP32-S3, 8 MB PSRAM en 16 MB Flash.
+      {% elsif site.active_lang == 'pl' and include.product.product_id == 'guition-jc8048w550' %}
+        5-calowy ekran IPS 800 × 480 z ESP32-S3, 8 MB PSRAM i 16 MB Flash.
+      {% elsif site.active_lang == 'pt' and include.product.product_id == 'guition-jc8048w550' %}
+        Ecrã IPS de 5 polegadas e 800 × 480 com ESP32-S3, 8 MB de PSRAM e 16 MB de Flash.
+      {% elsif site.active_lang == 'de' and include.product.product_id == 'sunton-esp32-8048s043c' %}
         ESP32-S3-Touchscreen-Platine mit 4,3-Zoll-Display und 800 × 480 Pixeln.
       {% elsif site.active_lang == 'de' and include.product.product_id == 'esp32-2432s028-2-8-cyd' %}
         Kompaktes und preisgünstiges ESP32-Touchdisplay mit 2,8-Zoll-Bildschirm.
@@ -38,8 +60,8 @@
       {% endif %}
     </p>
     <div class="en-product-card__footer">
-      {% for category in include.product.categories %}<span class="en-tag">{% if site.active_lang == 'de' and category == 'Displays' %}Displays{% elsif site.active_lang == 'de' and category == 'Smart Home' %}Smart Home{% elsif site.active_lang == 'it' and category == 'Displays' %}Display{% elsif site.active_lang == 'it' and category == 'Development Boards' %}Schede di sviluppo{% elsif site.active_lang == 'it' and category == 'Camera Boards' %}Schede con fotocamera{% elsif site.active_lang == 'pl' and category == 'Displays' %}Wyświetlacze{% elsif site.active_lang == 'pl' and category == 'Development Boards' %}Płytki rozwojowe{% elsif site.active_lang == 'pl' and category == 'Camera Boards' %}Płytki z kamerą{% elsif site.active_lang == 'pl' and category == 'Smart Home' %}Inteligentny dom{% else %}{{ category }}{% endif %}</span>{% endfor %}
-      <a class="en-view-product" href="{{ include.product.url | relative_url | escape }}">{% if site.active_lang == 'de' %}Produkt ansehen{% elsif site.active_lang == 'es' %}Ver producto{% elsif site.active_lang == 'fr' %}Voir le produit{% elsif site.active_lang == 'it' %}Visualizza prodotto{% elsif site.active_lang == 'nl' %}Bekijk product{% elsif site.active_lang == 'pl' %}Zobacz produkt{% elsif site.active_lang == 'pt-PT' %}Ver produto{% else %}View Product{% endif %} →</a>
+      {% for category in include.product.categories %}<span class="en-tag">{% if site.active_lang == 'de' and category == 'Displays' %}Displays{% elsif site.active_lang == 'de' and category == 'Smart Home' %}Smart Home{% elsif site.active_lang == 'it' and category == 'Displays' %}Display{% elsif site.active_lang == 'it' and category == 'Development Boards' %}Schede di sviluppo{% elsif site.active_lang == 'it' and category == 'Camera Boards' %}Schede con fotocamera{% elsif site.active_lang == 'pl' and category == 'Displays' %}Wyświetlacze{% elsif site.active_lang == 'pl' and category == 'Development Boards' %}Płytki rozwojowe{% elsif site.active_lang == 'pl' and category == 'Camera Boards' %}Płytki z kamerą{% elsif site.active_lang == 'pl' and category == 'Smart Home' %}Inteligentny dom{% elsif site.active_lang == 'fr' and category == 'Displays' %}Écrans{% elsif site.active_lang == 'es' and category == 'Displays' %}Pantallas{% elsif site.active_lang == 'nl' and category == 'Displays' %}Schermen{% elsif site.active_lang == 'pt' and category == 'Displays' %}Ecrãs{% elsif site.active_lang == 'fr' and category == 'Smart Home' %}Maison connectée{% elsif site.active_lang == 'es' and category == 'Smart Home' %}Hogar inteligente{% elsif site.active_lang == 'it' and category == 'Smart Home' %}Casa intelligente{% elsif site.active_lang == 'nl' and category == 'Smart Home' %}Smart Home{% elsif site.active_lang == 'pt' and category == 'Smart Home' %}Casa inteligente{% else %}{{ category }}{% endif %}</span>{% endfor %}
+      <a class="en-view-product" href="{{ card_url | relative_url | escape }}">{% if site.active_lang == 'de' %}Produkt ansehen{% elsif site.active_lang == 'es' %}Ver producto{% elsif site.active_lang == 'fr' %}Voir le produit{% elsif site.active_lang == 'it' %}Visualizza prodotto{% elsif site.active_lang == 'nl' %}Bekijk product{% elsif site.active_lang == 'pl' %}Zobacz produkt{% elsif site.active_lang == 'pt' %}Ver produto{% else %}View Product{% endif %} →</a>
     </div>
   </div>
 </div>

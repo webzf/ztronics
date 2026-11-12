@@ -23,7 +23,7 @@
 
   {% if commerce.preferred_store == store_key %}
     <span class="en-buy-badge">
-      ★ {% if site.active_lang == 'de' %}Empfohlen{% elsif site.active_lang == 'es' %}Recomendado{% elsif site.active_lang == 'pl' %}Polecane{% else %}Recommended{% endif %}
+      ★ {% if site.active_lang == 'de' %}Empfohlen{% elsif site.active_lang == 'es' %}Recomendado{% elsif site.active_lang == 'fr' %}Recommandé{% elsif site.active_lang == 'it' %}Consigliato{% elsif site.active_lang == 'nl' %}Aanbevolen{% elsif site.active_lang == 'pl' %}Polecane{% elsif site.active_lang == 'pt' %}Recomendado{% else %}Recommended{% endif %}
     </span>
   {% endif %}
 
@@ -69,14 +69,14 @@
 
     {% case store_key %}
       {% when "amazon" %}
-        <strong>{% if site.active_lang == 'de' %}Preis prüfen{% elsif site.active_lang == 'es' %}Consultar precio{% elsif site.active_lang == 'fr' %}Consulter le prix{% elsif site.active_lang == 'pl' %}Sprawdź cenę{% else %}Check Price{% endif %}</strong>
+        <strong>{% if site.active_lang == 'de' %}Preis prüfen{% elsif site.active_lang == 'es' %}Consultar precio{% elsif site.active_lang == 'fr' %}Consulter le prix{% elsif site.active_lang == 'it' %}Verifica il prezzo{% elsif site.active_lang == 'nl' %}Prijs bekijken{% elsif site.active_lang == 'pl' %}Sprawdź cenę{% elsif site.active_lang == 'pt' %}Consultar preço{% else %}Check Price{% endif %}</strong>
       {% when "aliexpress" %}
-        <strong>{% if site.active_lang == 'de' %}Angebot ansehen{% elsif site.active_lang == 'es' %}Ver oferta{% elsif site.active_lang == 'fr' %}Voir l’offre{% elsif site.active_lang == 'pl' %}Zobacz ofertę{% else %}View Offer{% endif %}</strong>
+        <strong>{% if site.active_lang == 'de' %}Angebot ansehen{% elsif site.active_lang == 'es' %}Ver oferta{% elsif site.active_lang == 'fr' %}Voir l’offre{% elsif site.active_lang == 'it' %}Vedi l’offerta{% elsif site.active_lang == 'nl' %}Bekijk aanbieding{% elsif site.active_lang == 'pl' %}Zobacz ofertę{% elsif site.active_lang == 'pt' %}Ver oferta{% else %}View Offer{% endif %}</strong>
       {% else %}
-        <strong>{% if site.active_lang == 'de' %}Produkt ansehen{% elsif site.active_lang == 'es' %}Ver producto{% elsif site.active_lang == 'pl' %}Zobacz produkt{% else %}View Product{% endif %}</strong>
+        <strong>{% if site.active_lang == 'de' %}Produkt ansehen{% elsif site.active_lang == 'es' %}Ver producto{% elsif site.active_lang == 'fr' %}Voir le produit{% elsif site.active_lang == 'it' %}Vedi il prodotto{% elsif site.active_lang == 'nl' %}Bekijk product{% elsif site.active_lang == 'pl' %}Zobacz produkt{% elsif site.active_lang == 'pt' %}Ver produto{% else %}View Product{% endif %}</strong>
     {% endcase %}
 
-    <small>{% if site.active_lang == 'de' %}bei{% elsif site.active_lang == 'es' %}en{% elsif site.active_lang == 'fr' %}sur{% elsif site.active_lang == 'pl' %}w sklepie{% else %}on{% endif %} {{ store_info.name }}</small>
+    <small>{% if site.active_lang == 'de' %}bei{% elsif site.active_lang == 'es' %}en{% elsif site.active_lang == 'fr' %}sur{% elsif site.active_lang == 'it' %}su{% elsif site.active_lang == 'nl' %}bij{% elsif site.active_lang == 'pl' %}w sklepie{% elsif site.active_lang == 'pt' %}em{% else %}on{% endif %} {{ store_info.name }}</small>
 
   </span>
 

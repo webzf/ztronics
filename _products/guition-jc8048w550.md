@@ -1,5 +1,26 @@
 ---
 layout: product
+lang: en
+locale: en-US
+page_id: product-guition-jc8048w550
+translation_id: guition-jc8048w550
+available_languages:
+  - en
+  - de
+  - es
+  - fr
+  - it
+  - nl
+  - pl
+  - pt
+english_url: /products/guition-jc8048w550/
+german_url: /de/products/guition-jc8048w550/
+spanish_url: /es/products/guition-jc8048w550/
+french_url: /fr/products/guition-jc8048w550/
+italian_url: /it/products/guition-jc8048w550/
+dutch_url: /nl/products/guition-jc8048w550/
+polish_url: /pl/products/guition-jc8048w550/
+portuguese_url: /pt/products/guition-jc8048w550/
 internal_links: true
 title: "Guition JC8048W550 ESP32-S3 5-Inch Display"
 product_verdict: "A well-equipped 5-inch 800×480 ESP32-S3 HMI for dashboards and control panels, with 8MB PSRAM, 16MB Flash and three touch options. Check the exact suffix before ordering."
