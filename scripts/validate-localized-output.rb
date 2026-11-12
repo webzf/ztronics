@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# Verify that Dutch pages are emitted at the public /nl/ routes.
+# Verify that Dutch and Polish pages are emitted at their public language-prefixed routes.
 # Jekyll Polyglot adds the language prefix; localized permalinks must not.
 
 require "fileutils"
@@ -13,20 +13,25 @@ required = %w[
   nl/products/sunton-esp32-8048s043c/index.html
   nl/sunton-esp32-8048s043c-guide/index.html
   nl/guition-esp32-s3-4848s040-pinout-esphome/index.html
+  pl/products/guition-esp32-s3-4848s040/index.html
+  pl/products/seeed-xiao-esp32s3-sense/index.html
+  pl/products/sunton-esp32-8048s043c/index.html
 ]
 
 errors = []
 required.each do |relative_path|
   full_path = File.join(site_root, relative_path)
   if File.file?(full_path)
-    puts "Dutch route PASS: /#{relative_path.sub(%r{^nl/}, "nl/").sub(%r{/index\\.html$}, "/")}"
+    puts "Localized route PASS: /#{relative_path.sub(%r{/index\\.html$}, "/")}"
   else
     errors << "Missing generated Dutch page: #{full_path}"
   end
 end
 
-duplicate_root = File.join(site_root, "nl", "nl")
-errors << "Duplicate language prefix detected: #{duplicate_root}" if File.directory?(duplicate_root)
+%w[nl pl].each do |language|
+  duplicate_root = File.join(site_root, language, language)
+  errors << "Duplicate language prefix detected: #{duplicate_root}" if File.directory?(duplicate_root)
+end
 
 if errors.any?
   warn "Dutch output validation: FAIL"
@@ -34,4 +39,4 @@ if errors.any?
   exit 1
 end
 
-puts "Dutch output validation: PASS (#{required.length} routes)"
+puts "Localized output validation: PASS (#{required.length} routes)"
