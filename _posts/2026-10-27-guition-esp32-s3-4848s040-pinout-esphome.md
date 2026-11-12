@@ -13,6 +13,7 @@ available_languages:
   - fr
   - it
   - nl
+  - pl
 english_url: /guition-esp32-s3-4848s040-pinout-esphome/
 german_url: /de/guition-esp32-s3-4848s040-pinout-esphome/
 spanish_url: /es/guition-esp32-s3-4848s040-pinout-esphome/
