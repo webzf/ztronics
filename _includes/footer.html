@@ -1,4 +1,4 @@
-{% assign locale = include.locale | default: site.locale %}
+{% assign locale = include.locale | default: page.locale | default: site.locale %}
 {% assign footer_links = site.footer.links %}
 {% if locale == 'nl-NL' and site.data.nl.footer.links %}
   {% assign footer_links = site.data.nl.footer.links %}
