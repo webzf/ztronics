@@ -9,7 +9,7 @@ classes: wide
 
   {% if page.product_verdict %}
     <p class="product-verdict">
-      <strong>{% if site.active_lang == 'de' %}Fazit{% elsif site.active_lang == 'fr' %}Verdict{% elsif site.active_lang == 'es' %}Veredicto{% elsif site.active_lang == 'it' %}Verdetto{% elsif site.active_lang == 'nl' %}Oordeel{% else %}Verdict{% endif %}{% if page.editorial_review and page.editorial_review.rating %} · {{ page.editorial_review.rating }}/{{ page.editorial_review.best_rating | default: 10 }}{% endif %}:</strong>
+      <strong>{% if site.active_lang == 'de' %}Fazit{% elsif site.active_lang == 'fr' %}Verdict{% elsif site.active_lang == 'es' %}Veredicto{% elsif site.active_lang == 'it' %}Verdetto{% elsif site.active_lang == 'nl' %}Oordeel{% elsif site.active_lang == 'pl' %}Werdykt{% else %}Verdict{% endif %}{% if page.editorial_review and page.editorial_review.rating %} · {{ page.editorial_review.rating }}/{{ page.editorial_review.best_rating | default: 10 }}{% endif %}:</strong>
       {{ page.product_verdict | markdownify | remove: '<p>' | remove: '</p>' }}
     </p>
   {% endif %}
@@ -34,11 +34,11 @@ classes: wide
   {% if page.editorial_review %}
     {% assign editorial_review = page.editorial_review %}
     <section class="product-editorial-review notice notice--info" aria-labelledby="embedded-nerd-verdict-title">
-      <h2 id="embedded-nerd-verdict-title">{% if site.active_lang == 'de' %}Redaktionelle Bewertung von Embedded Nerd{% elsif site.active_lang == 'fr' %}Avis éditorial d’Embedded Nerd{% elsif site.active_lang == 'es' %}Análisis editorial de Embedded Nerd{% elsif site.active_lang == 'it' %}Recensione editoriale di Embedded Nerd{% elsif site.active_lang == 'nl' %}Redactionele beoordeling door Embedded Nerd{% else %}Embedded Nerd Editorial Review{% endif %}</h2>
+      <h2 id="embedded-nerd-verdict-title">{% if site.active_lang == 'de' %}Redaktionelle Bewertung von Embedded Nerd{% elsif site.active_lang == 'fr' %}Avis éditorial d’Embedded Nerd{% elsif site.active_lang == 'es' %}Análisis editorial de Embedded Nerd{% elsif site.active_lang == 'it' %}Recensione editoriale di Embedded Nerd{% elsif site.active_lang == 'nl' %}Redactionele beoordeling door Embedded Nerd{% elsif site.active_lang == 'pl' %}Recenzja redakcyjna Embedded Nerd{% else %}Embedded Nerd Editorial Review{% endif %}</h2>
       {% if editorial_review.rating %}
       <p class="product-editorial-score">
         <strong>{{ editorial_review.rating }}/{{ editorial_review.best_rating | default: 10 }}</strong>
-        <span> — {% if site.active_lang == 'de' %}Bewertung auf Grundlage von technischen Daten und Dokumentation{% elsif site.active_lang == 'fr' %}Évaluation fondée sur les caractéristiques et la documentation{% elsif site.active_lang == 'es' %}Evaluación basada en las especificaciones y la documentación{% elsif site.active_lang == 'it' %}Valutazione basata sulle specifiche e sulla documentazione{% elsif site.active_lang == 'nl' %}Beoordeling op basis van specificaties en documentatie{% else %}Assessment based on specifications and documentation{% endif %}</span>
+        <span> — {% if site.active_lang == 'de' %}Bewertung auf Grundlage von technischen Daten und Dokumentation{% elsif site.active_lang == 'fr' %}Évaluation fondée sur les caractéristiques et la documentation{% elsif site.active_lang == 'es' %}Evaluación basada en las especificaciones y la documentación{% elsif site.active_lang == 'it' %}Valutazione basata sulle specifiche e sulla documentazione{% elsif site.active_lang == 'nl' %}Beoordeling op basis van specificaties en documentatie{% elsif site.active_lang == 'pl' %}Ocena na podstawie specyfikacji i dokumentacji{% else %}Assessment based on specifications and documentation{% endif %}</span>
       </p>
       {% endif %}
       {% if editorial_review.summary %}
@@ -47,7 +47,7 @@ classes: wide
       <div class="product-review-columns">
         {% if editorial_review.pros %}
           <div>
-            <h3>{% if site.active_lang == 'de' %}Was uns gefällt{% elsif site.active_lang == 'fr' %}Les points forts{% elsif site.active_lang == 'es' %}Lo que nos gusta{% elsif site.active_lang == 'it' %}Punti di forza{% elsif site.active_lang == 'nl' %}Sterke punten{% else %}What we like{% endif %}</h3>
+            <h3>{% if site.active_lang == 'de' %}Was uns gefällt{% elsif site.active_lang == 'fr' %}Les points forts{% elsif site.active_lang == 'es' %}Lo que nos gusta{% elsif site.active_lang == 'it' %}Punti di forza{% elsif site.active_lang == 'nl' %}Sterke punten{% elsif site.active_lang == 'pl' %}Zalety{% else %}What we like{% endif %}</h3>
             <ul>
               {% for item in editorial_review.pros %}
                 <li>{{ item | escape }}</li>
@@ -57,7 +57,7 @@ classes: wide
         {% endif %}
         {% if editorial_review.cons %}
           <div>
-            <h3>{% if site.active_lang == 'de' %}Was zu beachten ist{% elsif site.active_lang == 'fr' %}Points à prendre en compte{% elsif site.active_lang == 'es' %}Qué hay que tener en cuenta{% elsif site.active_lang == 'it' %}Aspetti da considerare{% elsif site.active_lang == 'nl' %}Aandachtspunten{% else %}What to consider{% endif %}</h3>
+            <h3>{% if site.active_lang == 'de' %}Was zu beachten ist{% elsif site.active_lang == 'fr' %}Points à prendre en compte{% elsif site.active_lang == 'es' %}Qué hay que tener en cuenta{% elsif site.active_lang == 'it' %}Aspetti da considerare{% elsif site.active_lang == 'nl' %}Aandachtspunten{% elsif site.active_lang == 'pl' %}Na co zwrócić uwagę{% else %}What to consider{% endif %}</h3>
             <ul>
               {% for item in editorial_review.cons %}
                 <li>{{ item | escape }}</li>
@@ -67,7 +67,7 @@ classes: wide
         {% endif %}
       </div>
       {% if editorial_review.methodology %}
-        <p class="product-review-methodology"><strong>{% if site.active_lang == 'de' %}Methodik:{% elsif site.active_lang == 'fr' %}Méthodologie :{% elsif site.active_lang == 'es' %}Metodología:{% elsif site.active_lang == 'it' %}Metodo:{% elsif site.active_lang == 'nl' %}Methode:{% else %}Methodology:{% endif %}</strong> {{ editorial_review.methodology | escape }}</p>
+        <p class="product-review-methodology"><strong>{% if site.active_lang == 'de' %}Methodik:{% elsif site.active_lang == 'fr' %}Méthodologie :{% elsif site.active_lang == 'es' %}Metodología:{% elsif site.active_lang == 'it' %}Metodo:{% elsif site.active_lang == 'nl' %}Methode:{% elsif site.active_lang == 'pl' %}Metodologia:{% else %}Methodology:{% endif %}</strong> {{ editorial_review.methodology | escape }}</p>
       {% endif %}
     </section>
   {% endif %}
@@ -111,7 +111,7 @@ classes: wide
   {% if tutorial_count > 0 %}
     <section class="product-tutorials">
 
-      <h2>{% if site.active_lang == 'de' %}In diesen Tutorials verwendet{% elsif site.active_lang == 'fr' %}Utilisé dans ces tutoriels{% elsif site.active_lang == 'es' %}Utilizado en estos tutoriales{% elsif site.active_lang == 'it' %}Utilizzato in questi tutorial{% elsif site.active_lang == 'nl' %}Gebruikt in deze handleidingen{% else %}Used in These Tutorials{% endif %}</h2>
+      <h2>{% if site.active_lang == 'de' %}In diesen Tutorials verwendet{% elsif site.active_lang == 'fr' %}Utilisé dans ces tutoriels{% elsif site.active_lang == 'es' %}Utilizado en estos tutoriales{% elsif site.active_lang == 'it' %}Utilizzato in questi tutorial{% elsif site.active_lang == 'nl' %}Gebruikt in deze handleidingen{% elsif site.active_lang == 'pl' %}Wykorzystano w tych poradnikach{% else %}Used in These Tutorials{% endif %}</h2>
 
       <ul>
         {% for tutorial in all_tutorials %}
