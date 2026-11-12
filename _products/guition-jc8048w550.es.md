@@ -173,7 +173,7 @@ touchscreen:
 - [Información del fabricante GUITION](https://www.guition.com/esp32-display-module/5-inch-esp32s3-display-module)
 - [Placas Guition en ESP Component Registry](https://components.espressif.com/components/guition/guition_boards/versions/0.2.0/readme?language=en)
 
-Utilice este YAML comunitario como punto de partida, no como una configuración garantizada lista para cargar. El repositorio especifica actualmente ESPHome 2026.7.0 o posterior. Compruebe el pinout, los tiempos de pantalla y el controlador táctil de su placa antes de cargar el firmware. Para conocer mejor las tecnologías de pantalla, consulte la [guía de pantallas táctiles ESP32](/es/esp32-touchscreen-displays-guide/).
+Utilice este YAML comunitario como punto de partida, no como una configuración garantizada lista para cargar. El repositorio especifica actualmente ESPHome 2026.7.0 o posterior. Compruebe el pinout, los tiempos de pantalla y el controlador táctil de su placa antes de cargar el firmware. Para conocer mejor las tecnologías de pantalla, consulte la [guía de pantallas táctiles ESP32](/esp32-touchscreen-displays-guide/).
 
 ## ¿Para quién es esta pantalla?
 
@@ -236,7 +236,7 @@ La pantalla apaisada de 5 pulgadas, el ESP32-S3 y la opción táctil lo conviert
 | **Guition JC8048W550** | 5 pulgadas, 800 × 480 | Opciones NTP / RTP / CTP | 8 MB / 16 MB | Paneles HMI y de monitorización apaisados de mayor tamaño |
 | [Guition ESP32-S3-4848S040](/es/products/guition-esp32-s3-4848s040/) | 4 pulgadas, 480 × 480 | Capacitiva | Consulte el anuncio | Paneles compactos cuadrados |
 | [Sunton ESP32-8048S043C](/es/products/sunton-esp32-8048s043c/) | 4,3 pulgadas, 800 × 480 | Capacitiva GT911 | 8 MB / 16 MB | Proyectos ESP32-S3 más pequeños con 800 × 480 |
-| [Waveshare ESP32-S3-Touch-LCD-4.3](/es/products/waveshare-esp32-s3-touch-lcd-4-3/) | 4,3 pulgadas, 800 × 480 | Capacitiva GT911 | 8 MB / 16 MB | Plataforma táctil alternativa de 4,3 pulgadas |
+| [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) | 4,3 pulgadas, 800 × 480 | Capacitiva GT911 | 8 MB / 16 MB | Plataforma táctil alternativa de 4,3 pulgadas |
 | [Waveshare ESP32-S3-Touch-LCD-7](/es/products/waveshare-esp32-s3-touch-lcd-7/) | 7 pulgadas, 800 × 480 | Capacitiva de 5 puntos | 8 MB / 16 MB | Panel de 7 pulgadas con interfaces CAN y RS485 |
 
-Compare otras placas 800 × 480 en el [selector de pantallas táctiles ESP32 de 800 × 480](/es/tools/esp32-touchscreen-selector/800x480/) o explore otros tamaños e interfaces en el [selector completo de pantallas táctiles ESP32](/es/tools/esp32-touchscreen-selector/).
+Compare otras placas 800 × 480 en el [selector de pantallas táctiles ESP32 de 800 × 480](/tools/esp32-touchscreen-selector/800x480/) o explore otros tamaños e interfaces en el [selector completo de pantallas táctiles ESP32](/tools/esp32-touchscreen-selector/).
