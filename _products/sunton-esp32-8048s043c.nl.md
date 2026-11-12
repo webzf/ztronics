@@ -109,10 +109,10 @@ Kies dit bord wanneer je project baat heeft bij een 4,3-inch 800×480-scherm, ES
 | Optie | Geschikt voor | Belangrijkste afweging |
 |---|---|---|
 | **Sunton ESP32-8048S043C** | 4,3-inch 800×480 ESP32-S3-bord met GT911-capacitieve aanraking, 16 MB Flash en 8 MB PSRAM | Controleer vóór aankoop het exacte modelachtervoegsel en de interface |
-| [**ESP32 CYD 2.8-inch**](/nl/products/esp32-2432s028-2-8-cyd/) | Een compacter geïntegreerd ESP32-touchscreen | Kleiner 240×320-scherm en resistieve aanraking |
-| [**Waveshare ESP32-S3-Touch-LCD-4.3**](/nl/products/waveshare-esp32-s3-touch-lcd-4-3/) | Een andere geïntegreerde 4,3-inch 800×480 ESP32-S3-optie | Controleer de connectorindeling, interface en accessoires |
+| [**ESP32 CYD 2.8-inch**](/products/esp32-2432s028-2-8-cyd/) | Een compacter geïntegreerd ESP32-touchscreen | Kleiner 240×320-scherm en resistieve aanraking |
+| [**Waveshare ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | Een andere geïntegreerde 4,3-inch 800×480 ESP32-S3-optie | Controleer de connectorindeling, interface en accessoires |
 
-Gebruik de [ESP32-schermkiezer](/nl/tools/esp32-touchscreen-selector/) om geïntegreerde opties te vergelijken. Controleer vóór het bestellen het modelachtervoegsel, de scherminterface, de aanraakcontroller en de meegeleverde accessoires. Sunton-borden die er hetzelfde uitzien, kunnen verschillende hardware gebruiken.
+Gebruik de [ESP32-schermkiezer](/tools/esp32-touchscreen-selector/) om geïntegreerde opties te vergelijken. Controleer vóór het bestellen het modelachtervoegsel, de scherminterface, de aanraakcontroller en de meegeleverde accessoires. Sunton-borden die er hetzelfde uitzien, kunnen verschillende hardware gebruiken.
 
 ## Overzicht
 
@@ -153,11 +153,11 @@ Lees voor bedrading, code, aanraakconfiguratie en bekende beperkingen de [Arduin
 ## Embedded Nerd-handleidingen en kiezer
 
 - [Arduino-pinout- en installatiehandleiding voor de Sunton ESP32-8048S043C](/nl/sunton-esp32-8048s043c-guide/) — GPIO-tabellen, een minimaal codevoorbeeld en probleemoplossing.
-- [ESP32-touchscreenkiezer](/nl/tools/esp32-touchscreen-selector/)
-- [800×480-touchscreenkiezer](/nl/tools/esp32-touchscreen-selector/800x480/)
-- [4,3-inch-touchscreenkiezer](/nl/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/)
-- [ESP32-S3 + LVGL-kiezer](/nl/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
-- [ESP32-schermborden met PSRAM](/nl/tools/esp32-touchscreen-selector/esp32-display-psram/)
-- [Handleiding voor ESP32-touchscreen­schermen](/nl/esp32-touchscreen-displays-guide/)
-- [Waveshare ESP32-S3-Touch-LCD-4.3](/nl/products/waveshare-esp32-s3-touch-lcd-4-3/)
+- [ESP32-touchscreenkiezer](/tools/esp32-touchscreen-selector/)
+- [800×480-touchscreenkiezer](/tools/esp32-touchscreen-selector/800x480/)
+- [4,3-inch-touchscreenkiezer](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/)
+- [ESP32-S3 + LVGL-kiezer](/tools/esp32-touchscreen-selector/esp32-s3-lvgl/)
+- [ESP32-schermborden met PSRAM](/tools/esp32-touchscreen-selector/esp32-display-psram/)
+- [Handleiding voor ESP32-touchscreen­schermen](/esp32-touchscreen-displays-guide/)
+- [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/)
 - [Guition ESP32-S3-4848S040](/nl/products/guition-esp32-s3-4848s040/) — een kleiner vierkant alternatief van 4 inch en 480×480.
