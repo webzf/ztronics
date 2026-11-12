@@ -20,6 +20,7 @@ german_url: /de/sunton-esp32-8048s043c-guide/
 spanish_url: /es/sunton-esp32-8048s043c-guide/
 french_url: /fr/sunton-esp32-8048s043c-guide/
 italian_url: /it/sunton-esp32-8048s043c-guide/
+polish_url: /pl/sunton-esp32-8048s043c-guide/
 internal_links: true
 permalink: /sunton-esp32-8048s043c-guide/
 id: "https://embeddednerd.com/es/sunton-esp32-8048s043c-guide/"
