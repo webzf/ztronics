@@ -1,6 +1,6 @@
 {% assign locale = include.locale | default: page.locale | default: site.locale %}
 {% if page.lang == 'pt' or site.active_lang == 'pt' %}
-  {% assign locale = 'pt-PT' %}
+  {% assign locale = 'pt' %}
 {% elsif page.lang == 'pl' or site.active_lang == 'pl' %}
   {% assign locale = 'pl-PL' %}
 {% elsif page.lang == 'nl' or site.active_lang == 'nl' %}
