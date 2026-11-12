@@ -2,7 +2,7 @@
 title: "4848S040-pinout, GPIO's en ESPHome-installatiehandleiding"
 title_tag: "4848S040-pinout en ESPHome-installatiehandleiding"
 layout: single
-permalink: /nl/guition-esp32-s3-4848s040-pinout-esphome/
+permalink: /guition-esp32-s3-4848s040-pinout-esphome/
 lang: nl
 locale: nl-NL
 page_id: article-guition-esp32-s3-4848s040-pinout-esphome
