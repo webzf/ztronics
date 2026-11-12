@@ -1,7 +1,7 @@
 {% assign locale = include.locale | default: page.locale | default: site.locale %}
 {% assign logo_path = site.logo %}
 {% assign navigation = site.data.navigation %}
-{% if locale == 'pt' or locale == 'pt-PT' %}
+{% if locale == 'pt' %}
   {% assign navigation = site.data.pt.navigation %}
 {% elsif locale == 'pl-PL' and site.data.pl.navigation %}
   {% assign navigation = site.data.pl.navigation %}
@@ -20,13 +20,13 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav" aria-label="{% if locale == 'de-DE' %}Hauptnavigation{% elsif locale == 'fr-FR' or locale == 'fr' %}Navigation principale{% elsif locale == 'es-ES' or locale == 'es' %}Navegación principal{% elsif locale == 'it-IT' or locale == 'it' %}Navigazione principale{% elsif locale == 'nl-NL' or locale == 'nl' %}Hoofdnavigatie{% elsif locale == 'pl-PL' or locale == 'pl' %}Nawigacja główna{% elsif locale == 'pt-PT' or locale == 'pt' %}Navegação principal{% else %}Primary navigation{% endif %}">
+      <nav id="site-nav" class="greedy-nav" aria-label="{% if locale == 'de-DE' %}Hauptnavigation{% elsif locale == 'fr-FR' or locale == 'fr' %}Navigation principale{% elsif locale == 'es-ES' or locale == 'es' %}Navegación principal{% elsif locale == 'it-IT' or locale == 'it' %}Navigazione principale{% elsif locale == 'nl-NL' or locale == 'nl' %}Hoofdnavigatie{% elsif locale == 'pl-PL' or locale == 'pl' %}Nawigacja główna{% elsif locale == 'pt' %}Navegação principal{% else %}Primary navigation{% endif %}">
         {% unless logo_path == empty %}
           <a class="site-logo" {% static_href %}href="{{ '/' | relative_url }}"{% endstatic_href %}><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
         <a class="site-title" {% static_href %}href="{{ '/' | relative_url }}"{% endstatic_href %}>
           {{ site.masthead_title | default: site.title | escape_once | strip }}
-          {% if site.subtitle %}<span class="site-subtitle">{% if locale == 'de-DE' %}Tutorials zu Arduino, ESP32 und Raspberry Pi sowie Elektronikprojekte{% elsif locale == 'fr-FR' or locale == 'fr' %}Tutoriels Arduino, ESP32 et Raspberry Pi, et projets électroniques{% elsif locale == 'es-ES' or locale == 'es' %}Tutoriales de Arduino, ESP32 y Raspberry Pi y proyectos de electrónica{% elsif locale == 'it-IT' or locale == 'it' %}Tutorial Arduino, ESP32 e Raspberry Pi e progetti di elettronica{% elsif locale == 'nl-NL' or locale == 'nl' %}Handleidingen voor Arduino, ESP32 en Raspberry Pi en elektronicaprojecten{% elsif locale == 'pl-PL' or locale == 'pl' %}Poradniki Arduino, ESP32 i Raspberry Pi oraz projekty elektroniczne{% elsif locale == 'pt-PT' or locale == 'pt' %}Tutoriais de Arduino, ESP32 e Raspberry Pi e projetos de eletrónica{% else %}{{ site.subtitle | escape_once | strip }}{% endif %}</span>{% endif %}
+          {% if site.subtitle %}<span class="site-subtitle">{% if locale == 'de-DE' %}Tutorials zu Arduino, ESP32 und Raspberry Pi sowie Elektronikprojekte{% elsif locale == 'fr-FR' or locale == 'fr' %}Tutoriels Arduino, ESP32 et Raspberry Pi, et projets électroniques{% elsif locale == 'es-ES' or locale == 'es' %}Tutoriales de Arduino, ESP32 y Raspberry Pi y proyectos de electrónica{% elsif locale == 'it-IT' or locale == 'it' %}Tutorial Arduino, ESP32 e Raspberry Pi e progetti di elettronica{% elsif locale == 'nl-NL' or locale == 'nl' %}Handleidingen voor Arduino, ESP32 en Raspberry Pi en elektronicaprojecten{% elsif locale == 'pl-PL' or locale == 'pl' %}Poradniki Arduino, ESP32 i Raspberry Pi oraz projekty elektroniczne{% elsif locale == 'pt' %}Tutoriais de Arduino, ESP32 e Raspberry Pi e projetos de eletrónica{% else %}{{ site.subtitle | escape_once | strip }}{% endif %}</span>{% endif %}
         </a>
         <ul class="visible-links">
           {%- for link in navigation.main -%}
@@ -40,12 +40,12 @@
         </ul>
         {% if site.search == true %}
         <button class="search__toggle" type="button">
-          <span class="visually-hidden">{% if locale == 'de-DE' %}Suche öffnen{% elsif locale == 'fr-FR' or locale == 'fr' %}Ouvrir la recherche{% elsif locale == 'es-ES' or locale == 'es' %}Abrir búsqueda{% elsif locale == 'it-IT' or locale == 'it' %}Apri la ricerca{% elsif locale == 'nl-NL' or locale == 'nl' %}Zoeken openen{% elsif locale == 'pl-PL' or locale == 'pl' %}Otwórz wyszukiwarkę{% elsif locale == 'pt-PT' or locale == 'pt' %}Abrir pesquisa{% else %}{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}{% endif %}</span>
+          <span class="visually-hidden">{% if locale == 'de-DE' %}Suche öffnen{% elsif locale == 'fr-FR' or locale == 'fr' %}Ouvrir la recherche{% elsif locale == 'es-ES' or locale == 'es' %}Abrir búsqueda{% elsif locale == 'it-IT' or locale == 'it' %}Apri la ricerca{% elsif locale == 'nl-NL' or locale == 'nl' %}Zoeken openen{% elsif locale == 'pl-PL' or locale == 'pl' %}Otwórz wyszukiwarkę{% elsif locale == 'pt' %}Abrir pesquisa{% else %}{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}{% endif %}</span>
           <i class="fas fa-search"></i>
         </button>
         {% endif %}
         <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">{% if locale == 'de-DE' %}Menü öffnen{% elsif locale == 'fr-FR' or locale == 'fr' %}Ouvrir le menu{% elsif locale == 'es-ES' or locale == 'es' %}Abrir menú{% elsif locale == 'it-IT' or locale == 'it' %}Apri il menu{% elsif locale == 'nl-NL' or locale == 'nl' %}Menu openen{% elsif locale == 'pl-PL' or locale == 'pl' %}Otwórz menu{% elsif locale == 'pt-PT' or locale == 'pt' %}Abrir menu{% else %}{{ site.data.ui-text[locale].menu_label | default: "Toggle menu" }}{% endif %}</span>
+          <span class="visually-hidden">{% if locale == 'de-DE' %}Menü öffnen{% elsif locale == 'fr-FR' or locale == 'fr' %}Ouvrir le menu{% elsif locale == 'es-ES' or locale == 'es' %}Abrir menú{% elsif locale == 'it-IT' or locale == 'it' %}Apri il menu{% elsif locale == 'nl-NL' or locale == 'nl' %}Menu openen{% elsif locale == 'pl-PL' or locale == 'pl' %}Otwórz menu{% elsif locale == 'pt' %}Abrir menu{% else %}{{ site.data.ui-text[locale].menu_label | default: "Toggle menu" }}{% endif %}</span>
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>
