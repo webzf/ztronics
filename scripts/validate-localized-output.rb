@@ -8,6 +8,13 @@ site_root = ARGV.fetch(0) { abort "Usage: ruby scripts/validate-localized-output
 site_root = File.expand_path(site_root)
 
 required = %w[
+  de/products/guition-jc8048w550/index.html
+  es/products/guition-jc8048w550/index.html
+  fr/products/guition-jc8048w550/index.html
+  it/products/guition-jc8048w550/index.html
+  nl/products/guition-jc8048w550/index.html
+  pl/products/guition-jc8048w550/index.html
+  pt/products/guition-jc8048w550/index.html
   nl/products/guition-esp32-s3-4848s040/index.html
   nl/products/seeed-xiao-esp32s3-sense/index.html
   nl/products/sunton-esp32-8048s043c/index.html
@@ -30,7 +37,7 @@ required.each do |relative_path|
   end
 end
 
-%w[nl pl].each do |language|
+%w[de es fr it nl pl pt].each do |language|
   duplicate_root = File.join(site_root, language, language)
   errors << "Duplicate language prefix detected: #{duplicate_root}" if File.directory?(duplicate_root)
 end
