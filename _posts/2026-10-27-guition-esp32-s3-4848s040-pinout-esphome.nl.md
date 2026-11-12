@@ -14,12 +14,14 @@ available_languages:
   - fr
   - it
   - nl
+  - pl
 english_url: /guition-esp32-s3-4848s040-pinout-esphome/
 german_url: /de/guition-esp32-s3-4848s040-pinout-esphome/
 spanish_url: /es/guition-esp32-s3-4848s040-pinout-esphome/
 french_url: /fr/guition-esp32-s3-4848s040-pinout-esphome/
 italian_url: /it/guition-esp32-s3-4848s040-pinout-esphome/
 dutch_url: /nl/guition-esp32-s3-4848s040-pinout-esphome/
+polish_url: /nl/guition-esp32-s3-4848s040-pinout-esphome/
 internal_links: true
 excerpt: "Pinout van de Guition ESP32-S3-4848S040, RGB-schermsignalen, ST7701S-initialisatie, GT911-aanraking, GPIO voor achtergrondverlichting en opmerkingen over ESPHome-installatie."
 show_date: false
