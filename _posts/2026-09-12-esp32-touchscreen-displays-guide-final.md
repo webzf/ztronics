@@ -581,6 +581,18 @@ Because Waveshare offers different versions, verify the exact Flash configuratio
 
 The combination of a large display, ESP32-S3 and additional interfaces makes it particularly interesting for HMI, smart-home and embedded control-panel applications.
 
+### Waveshare ESP32-P4-WIFI6-Touch-LCD-X — 7, 8 and 10.1-inch options
+
+[Waveshare ESP32-P4-WIFI6-Touch-LCD-X](/products/waveshare-esp32-p4-wifi6-touch-lcd-x/)
+
+For a larger HMI with several screen-size options, the Touch-LCD-X family is available in 7-inch, 8-inch and 10.1-inch versions. It combines an ESP32-P4 application processor with an ESP32-C6 wireless coprocessor, a two-lane MIPI-DSI display interface and 10-point capacitive touch using the GT9271 controller.
+
+The key differences are the panel size and resolution: the 7-inch version is 720 × 1280, while the 8-inch and 10.1-inch versions are 800 × 1280. All three use 32 MB in-package PSRAM and 32 MB NOR Flash, with camera and audio hardware also provided.
+
+This family is worth considering for portrait-oriented control panels, larger dashboards and advanced LVGL/HMI projects. Waveshare recommends ESP-IDF because Arduino support for ESP32-P4 remains limited; check the examples for the exact model before committing to a software stack.
+
+See the [Waveshare ESP32-P4-WIFI6-Touch-LCD-X product page](/products/waveshare-esp32-p4-wifi6-touch-lcd-x/) for the full specifications, size comparison and purchase options. For a practical example of a different large-screen ESP32-P4 system, read our [ESP32-P4 Weather Station architecture deep dive](/esp32-p4-weather-station/).
+
 ### Waveshare ESP32-P4-WIFI6-Touch-LCD-7B
 
 [Waveshare ESP32-P4-WIFI6-Touch-LCD-7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/)
@@ -627,6 +639,14 @@ For a practical example of the ESP32-P4 architecture in a larger touchscreen sys
 - You want a large LVGL interface.
 - You need additional interfaces such as CAN or RS485.
 - The physical user interface is a major part of the project.
+
+### Choose the ESP32-P4-WIFI6-Touch-LCD-X if:
+
+- You want a larger 7-, 8- or 10.1-inch touchscreen.
+- You need a two-lane MIPI-DSI display and 10-point capacitive touch.
+- You want an ESP32-P4 platform with an ESP32-C6 wireless coprocessor.
+- You are building a portrait-oriented HMI, dashboard or advanced LVGL interface.
+- You are comfortable developing with ESP-IDF and checking the manufacturer's examples for the exact panel.
 
 ### Choose the ESP32-P4-WIFI6-Touch-LCD-7B if:
 
