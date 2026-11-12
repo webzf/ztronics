@@ -23,7 +23,7 @@
 
   {% if commerce.preferred_store == store_key %}
     <span class="en-buy-badge">
-      ★ {% if site.active_lang == 'de' %}Empfohlen{% elsif site.active_lang == 'es' %}Recomendado{% else %}Recommended{% endif %}
+      ★ {% if site.active_lang == 'de' %}Empfohlen{% elsif site.active_lang == 'es' %}Recomendado{% elsif site.active_lang == 'pl' %}Polecane{% else %}Recommended{% endif %}
     </span>
   {% endif %}
 
@@ -69,14 +69,14 @@
 
     {% case store_key %}
       {% when "amazon" %}
-        <strong>{% if site.active_lang == 'de' %}Preis prüfen{% elsif site.active_lang == 'es' %}Consultar precio{% elsif site.active_lang == 'fr' %}Consulter le prix{% else %}Check Price{% endif %}</strong>
+        <strong>{% if site.active_lang == 'de' %}Preis prüfen{% elsif site.active_lang == 'es' %}Consultar precio{% elsif site.active_lang == 'fr' %}Consulter le prix{% elsif site.active_lang == 'pl' %}Sprawdź cenę{% else %}Check Price{% endif %}</strong>
       {% when "aliexpress" %}
-        <strong>{% if site.active_lang == 'de' %}Angebot ansehen{% elsif site.active_lang == 'es' %}Ver oferta{% elsif site.active_lang == 'fr' %}Voir l’offre{% else %}View Offer{% endif %}</strong>
+        <strong>{% if site.active_lang == 'de' %}Angebot ansehen{% elsif site.active_lang == 'es' %}Ver oferta{% elsif site.active_lang == 'fr' %}Voir l’offre{% elsif site.active_lang == 'pl' %}Zobacz ofertę{% else %}View Offer{% endif %}</strong>
       {% else %}
-        <strong>{% if site.active_lang == 'de' %}Produkt ansehen{% elsif site.active_lang == 'es' %}Ver producto{% else %}View Product{% endif %}</strong>
+        <strong>{% if site.active_lang == 'de' %}Produkt ansehen{% elsif site.active_lang == 'es' %}Ver producto{% elsif site.active_lang == 'pl' %}Zobacz produkt{% else %}View Product{% endif %}</strong>
     {% endcase %}
 
-    <small>{% if site.active_lang == 'de' %}bei{% elsif site.active_lang == 'es' %}en{% elsif site.active_lang == 'fr' %}sur{% else %}on{% endif %} {{ store_info.name }}</small>
+    <small>{% if site.active_lang == 'de' %}bei{% elsif site.active_lang == 'es' %}en{% elsif site.active_lang == 'fr' %}sur{% elsif site.active_lang == 'pl' %}w sklepie{% else %}on{% endif %} {{ store_info.name }}</small>
 
   </span>
 
