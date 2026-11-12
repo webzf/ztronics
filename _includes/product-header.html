@@ -164,7 +164,7 @@
         href="{{ store_url }}"
         target="_blank"
         rel="{% if store.affiliate == false %}noopener noreferrer{% else %}nofollow sponsored noopener{% endif %}">
-        🛒 {% if preferred == 'seeed' %}View at Seeed Studio{% else %}Check Price on {{ preferred | capitalize }}{% endif %}
+        🛒 {% if site.active_lang == 'de' %}{% if preferred == 'seeed' %}Bei Seeed Studio ansehen{% else %}Preis bei {{ preferred | capitalize }} prüfen{% endif %}{% elsif site.active_lang == 'fr' %}{% if preferred == 'seeed' %}Voir chez Seeed Studio{% else %}Consulter le prix chez {{ preferred | capitalize }}{% endif %}{% elsif site.active_lang == 'es' %}{% if preferred == 'seeed' %}Ver en Seeed Studio{% else %}Consultar precio en {{ preferred | capitalize }}{% endif %}{% elsif site.active_lang == 'it' %}{% if preferred == 'seeed' %}Vedi su Seeed Studio{% else %}Verifica il prezzo su {{ preferred | capitalize }}{% endif %}{% elsif site.active_lang == 'nl' %}{% if preferred == 'seeed' %}Bekijk bij Seeed Studio{% else %}Prijs bekijken bij {{ preferred | capitalize }}{% endif %}{% elsif site.active_lang == 'pl' %}{% if preferred == 'seeed' %}Zobacz w Seeed Studio{% else %}Sprawdź cenę w {{ preferred | capitalize }}{% endif %}{% elsif site.active_lang == 'pt' %}{% if preferred == 'seeed' %}Ver na Seeed Studio{% else %}Consultar preço em {{ preferred | capitalize }}{% endif %}{% else %}{% if preferred == 'seeed' %}View at Seeed Studio{% else %}Check Price on {{ preferred | capitalize }}{% endif %}{% endif %}
       </a>
       {% endif %}
 
