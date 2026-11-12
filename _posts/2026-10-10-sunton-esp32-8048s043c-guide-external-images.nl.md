@@ -463,14 +463,14 @@ I2C-sensoren zoals de [MPU6050]({{ site.url }}/mpu6050-arduino-guide/) of [BMA40
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Is the Sunton ESP32-8048S043C worth buying?", "acceptedAnswer": { "@type": "Answer", "text": "It is a good option if you want an integrated ESP32-S3 and 4.3-inch 800×480 capacitive touchscreen in a single board. Confirm the exact hardware revision and software configuration." } },
-    { "@type": "Question", "name": "Which touch controller does the 8048S043C use?", "acceptedAnswer": { "@type": "Answer", "text": "The capacitive version uses a GT911 over I2C, normally on GPIO19 and GPIO20." } },
-    { "@type": "Question", "name": "Does the 8048S043C have PSRAM?", "acceptedAnswer": { "@type": "Answer", "text": "The common N16R8 version has 8 MB of octal PSRAM and 16 MB of flash. Verify the exact listing because variants exist." } },
-    { "@type": "Question", "name": "Is the 8048S043C capacitive or resistive?", "acceptedAnswer": { "@type": "Answer", "text": "The C version is capacitive and uses the GT911. The R version uses resistive touch hardware and a different controller." } },
-    { "@type": "Question", "name": "Is the 8048S043N version touchscreen-enabled?", "acceptedAnswer": { "@type": "Answer", "text": "The N variant is listed as a no-touch version in some references. Verify the seller's exact board and specifications." } },
-    { "@type": "Question", "name": "Is it suitable for LVGL?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The ESP32-S3, RGB display and PSRAM are suitable for graphics-heavy LVGL interfaces when the display configuration is correct." } },
-    { "@type": "Question", "name": "Should I buy the 8048S043C or another ESP32 touchscreen?", "acceptedAnswer": { "@type": "Answer", "text": "Compare display size, resolution, touch technology, GPIO requirements, PSRAM and software support before choosing." } },
-    { "@type": "Question", "name": "Can I connect other sensors?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use free expansion pins and ensure I2C addresses do not conflict with the touch controller." } }
+    { "@type": "Question", "name": "Is de Sunton ESP32-8048S043C het kopen waard?", "acceptedAnswer": { "@type": "Answer", "text": "Het is een goede keuze als je een geïntegreerd ESP32-S3-bord met een capacitief touchscreen van 4,3 inch en 800×480 pixels wilt. Controleer de exacte hardwarerevisie en softwareconfiguratie." } },
+    { "@type": "Question", "name": "Welke aanraakcontroller gebruikt de 8048S043C?", "acceptedAnswer": { "@type": "Answer", "text": "De capacitieve versie gebruikt een GT911 via I2C, doorgaans op GPIO19 en GPIO20." } },
+    { "@type": "Question", "name": "Heeft de 8048S043C PSRAM?", "acceptedAnswer": { "@type": "Answer", "text": "De gangbare N16R8-versie heeft 8 MB octale PSRAM en 16 MB Flash. Controleer de exacte aanbieding, want er bestaan verschillende varianten." } },
+    { "@type": "Question", "name": "Is de 8048S043C capacitief of resistief?", "acceptedAnswer": { "@type": "Answer", "text": "De C-versie is capacitief en gebruikt de GT911. De R-versie gebruikt resistieve aanraakhardware en een andere controller." } },
+    { "@type": "Question", "name": "Heeft de 8048S043N-versie touchscreenfunctionaliteit?", "acceptedAnswer": { "@type": "Answer", "text": "De N-variant wordt in sommige referenties vermeld als versie zonder aanraking. Controleer het exacte bord en de specificaties bij de verkoper." } },
+    { "@type": "Question", "name": "Is het bord geschikt voor LVGL?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. De ESP32-S3, het RGB-scherm en de PSRAM zijn geschikt voor grafisch veeleisende LVGL-interfaces wanneer de schermconfiguratie correct is." } },
+    { "@type": "Question", "name": "Moet ik de 8048S043C of een ander ESP32-touchscreen kopen?", "acceptedAnswer": { "@type": "Answer", "text": "Vergelijk vóór je een keuze maakt het schermformaat, de resolutie, aanraaktechnologie, GPIO-vereisten, PSRAM en softwareondersteuning." } },
+    { "@type": "Question", "name": "Kan ik andere sensoren aansluiten?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Gebruik vrije uitbreidingspinnen en zorg ervoor dat I2C-adressen niet conflicteren met de aanraakcontroller." } }
   ]
 }
 </script>
