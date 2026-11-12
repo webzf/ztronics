@@ -81,9 +81,9 @@ specifications:
   - name: Stromversorgung
     value: "5 V DC (Stromversorgungsanforderungen der genauen Ausführung prüfen)"
 links:
-  - title: "Informações do fabricante GUITION"
+  - title: "GUITION-Herstellerinformationen"
     icon: "fas fa-book"
-    description: "Informações do fabricante sobre a família de ecrãs ESP32-S3 de 5 polegadas."
+    description: "Herstellerinformationen zur JC8048W550-Displayfamilie mit 5 Zoll und ESP32-S3."
     url: "https://www.guition.com/esp32-display-module/5-inch-esp32s3-display-module"
   - title: "Configuração de hardware ESPHome"
     icon: "fab fa-github"
