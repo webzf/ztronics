@@ -48,11 +48,11 @@ tags:
   - ESP32-S3
   - Guition
   - JC8048W550
-  - 5-inch
+  - 5 pouces
   - 800x480
   - IPS
   - ST7262
-  - Capacitive Touch
+  - Tactile capacitif
   - LVGL
   - ESPHome
   - Home Assistant
