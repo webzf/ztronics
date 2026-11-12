@@ -27,6 +27,10 @@ embedded:
         url: /pl/products/sunton-esp32-8048s043c/
       - title: "Guition ESP32-S3-4848S040"
         url: /pl/products/guition-esp32-s3-4848s040/
+      - title: "Pinout Guition 4848S040 i konfiguracja ESPHome"
+        url: /pl/guition-esp32-s3-4848s040-pinout-esphome/
+      - title: "Poradnik Sunton 8048S043C: pinout i Arduino"
+        url: /pl/sunton-esp32-8048s043c-guide/
       - title: "ESP32-2432S028 (CYD 2,8 cala)"
         url: /products/esp32-2432s028-2-8-cyd/
       - title: "Projekty z okrągłymi ekranami"
