@@ -8,7 +8,7 @@
 {% elsif page.lang == 'pl' or site.active_lang == 'pl' %}
   {% assign locale = 'pl-PL' %}
 {% endif %}
-{% assign breadcrumb_path = page.url | remove_first: '/de/' | remove_first: '/it/' | remove_first: '/' | remove_last: '/' %}
+{% assign breadcrumb_path = page.url | remove_first: '/de/' | remove_first: '/it/' | remove_first: '/pl/' | remove_first: '/' | remove_last: '/' %}
 {% assign crumbs = breadcrumb_path | split: '/' %}
 {% assign crumb_path = '/' %}
 <nav class="breadcrumbs" aria-label="{% if locale == 'de-DE' %}Brotkrumennavigation{% elsif locale == 'es-ES' %}Ruta de navegación{% elsif locale == 'it-IT' %}Percorso di navigazione{% elsif locale == 'pl-PL' %}Okruszki nawigacyjne{% else %}Breadcrumb{% endif %}">
@@ -27,7 +27,7 @@
           {% if locale == 'de-DE' %}{% assign crumb_label = 'Produkte' %}{% elsif locale == 'es-ES' %}{% assign crumb_label = 'Productos' %}{% elsif locale == 'it-IT' %}{% assign crumb_label = 'Prodotti' %}{% elsif locale == 'pl-PL' %}{% assign crumb_label = 'Produkty' %}{% endif %}
           {% if locale == 'it-IT' %}{% assign crumb_url = '/it/products/' %}{% else %}{% assign crumb_url = '/products/' %}{% endif %}
         {% elsif forloop.last %}
-          <li class="current" lang="{% if locale == 'de-DE' %}de{% elsif locale == 'es-ES' %}es{% elsif locale == 'it-IT' %}it{% else %}en{% endif %}">{{ page.title }}</li>
+          <li class="current" lang="{% if locale == 'de-DE' %}de{% elsif locale == 'es-ES' %}es{% elsif locale == 'it-IT' %}it{% elsif locale == 'pl-PL' %}pl{% else %}en{% endif %}">{{ page.title }}</li>
           {% continue %}
         {% else %}
           {% assign crumb_label = crumb | url_decode | replace: '-', ' ' | capitalize %}
