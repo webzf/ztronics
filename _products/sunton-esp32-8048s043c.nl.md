@@ -52,7 +52,7 @@ tags:
   - LVGL
   - Micro SD
 
-permalink: /nl/products/sunton-esp32-8048s043c/
+permalink: /products/sunton-esp32-8048s043c/
 
 specifications:
   - name: "Processor"
