@@ -34,7 +34,7 @@
       {% endfor %}
     {% endif %}
     {% unless site.atom_feed.hide %}
-      <li><a {% static_href %}href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"{% endstatic_href %}><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> {% if locale == 'de-DE' %}RSS-Feed{% elsif locale == 'fr-FR' or locale == 'fr' %}Flux RSS{% elsif locale == 'es-ES' or locale == 'es' %}Fuente RSS{% elsif locale == 'it-IT' or locale == 'it' %}Feed RSS{% else %}{{ site.data.ui-text[locale].feed_label | default: "Feed" }}{% endif %}</a></li>
+      <li><a {% static_href %}href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"{% endstatic_href %}><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> {% if locale == 'de-DE' %}RSS-Feed{% elsif locale == 'fr-FR' or locale == 'fr' %}Flux RSS{% elsif locale == 'es-ES' or locale == 'es' %}Fuente RSS{% elsif locale == 'it-IT' or locale == 'it' %}Feed RSS{% elsif locale == 'nl-NL' or locale == 'nl' %}RSS-feed{% else %}{{ site.data.ui-text[locale].feed_label | default: "Feed" }}{% endif %}</a></li>
     {% endunless %}
   </ul>
 </div>
