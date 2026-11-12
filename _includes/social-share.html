@@ -1,5 +1,7 @@
 {% assign locale = include.locale | default: page.locale | default: site.locale %}
-{% if page.lang == 'pl' or site.active_lang == 'pl' %}
+{% if page.lang == 'pt' or site.active_lang == 'pt' %}
+  {% assign locale = 'pt-PT' %}
+{% elsif page.lang == 'pl' or site.active_lang == 'pl' %}
   {% assign locale = 'pl-PL' %}
 {% elsif page.lang == 'nl' or site.active_lang == 'nl' %}
   {% assign locale = 'nl-NL' %}
@@ -26,6 +28,9 @@
 {% elsif locale == 'pl-PL' or locale == 'pl' %}
   {% assign share_label = "Udostępnij w" %}
   {% assign copy_label = "Kopiuj link" %}
+{% elsif locale == 'pt-PT' or locale == 'pt' %}
+  {% assign share_label = "Partilhar em" %}
+  {% assign copy_label = "Copiar ligação" %}
 {% endif %}
 <section class="page__share">
   <h4 class="page__share-title">{{ share_label }}</h4>
@@ -49,11 +54,12 @@
       var italian = document.documentElement.lang.toLowerCase().indexOf('it') === 0;
       var dutch = document.documentElement.lang.toLowerCase().indexOf('nl') === 0;
       var polish = document.documentElement.lang.toLowerCase().indexOf('pl') === 0;
+      var portuguese = document.documentElement.lang.toLowerCase().indexOf('pt') === 0;
       button.addEventListener('click', function () {
         var url = button.getAttribute('data-copy-link');
         function showResult(success) {
-          label.textContent = success ? (german ? ' Kopiert!' : (spanish ? ' ¡Copiado!' : (french ? ' Copié !' : (italian ? ' Copiato!' : (dutch ? ' Gekopieerd!' : (polish ? ' Skopiowano!' : ' Copied!')))))) : (german ? ' Kopieren fehlgeschlagen' : (spanish ? ' Error al copiar' : (french ? ' Échec de la copie' : (italian ? ' Copia non riuscita' : (dutch ? ' Kopiëren mislukt' : (polish ? ' Nie udało się skopiować' : ' Copy failed'))))));
-          if (status) status.textContent = success ? (german ? 'Link in die Zwischenablage kopiert.' : (spanish ? 'Enlace copiado al portapapeles.' : (french ? 'Lien copié dans le presse-papiers.' : (italian ? 'Link copiato negli appunti.' : (dutch ? 'Link gekopieerd naar het klembord.' : (polish ? 'Link skopiowany do schowka.' : 'Link copied to clipboard.')))))) : (german ? 'Der Link konnte nicht kopiert werden. Bitte kopieren Sie die Seitenadresse aus der Adressleiste.' : (spanish ? 'No se pudo copiar el enlace. Copie la dirección de la página desde la barra de direcciones.' : (french ? 'Impossible de copier le lien. Copiez l’adresse de la page depuis la barre d’adresse.' : (italian ? 'Impossibile copiare il link. Copia l’indirizzo della pagina dalla barra degli indirizzi.' : (dutch ? 'De link kon niet worden gekopieerd. Kopieer het pagina-adres uit de adresbalk.' : (polish ? 'Nie można skopiować linku. Skopiuj adres strony z paska adresu.' : 'Could not copy the link. Please copy the page URL from the address bar.'))))));
+          label.textContent = success ? (german ? ' Kopiert!' : (spanish ? ' ¡Copiado!' : (french ? ' Copié !' : (italian ? ' Copiato!' : (dutch ? ' Gekopieerd!' : (polish ? ' Skopiowano!' : (portuguese ? ' Copiado!' : ' Copied!'))))))) : (german ? ' Kopieren fehlgeschlagen' : (spanish ? ' Error al copiar' : (french ? ' Échec de la copie' : (italian ? ' Copia non riuscita' : (dutch ? ' Kopiëren mislukt' : (polish ? ' Nie udało się skopiować' : (portuguese ? ' Falha ao copiar' : ' Copy failed')))))));
+          if (status) status.textContent = success ? (german ? 'Link in die Zwischenablage kopiert.' : (spanish ? 'Enlace copiado al portapapeles.' : (french ? 'Lien copié dans le presse-papiers.' : (italian ? 'Link copiato negli appunti.' : (dutch ? 'Link gekopieerd naar het klembord.' : (polish ? 'Link skopiowany do schowka.' : (portuguese ? 'Ligação copiada para a área de transferência.' : 'Link copied to clipboard.'))))))) : (german ? 'Der Link konnte nicht kopiert werden. Bitte kopieren Sie die Seitenadresse aus der Adressleiste.' : (spanish ? 'No se pudo copiar el enlace. Copie la dirección de la página desde la barra de direcciones.' : (french ? 'Impossible de copier le lien. Copiez l’adresse de la page depuis la barre d’adresse.' : (italian ? 'Impossibile copiare il link. Copia l’indirizzo della pagina dalla barra degli indirizzi.' : (dutch ? 'De link kon niet worden gekopieerd. Kopieer het pagina-adres uit de adresbalk.' : (polish ? 'Nie można skopiować linku. Skopiuj adres strony z paska adresu.' : (portuguese ? 'Não foi possível copiar a ligação. Copie o endereço da página na barra de endereços.' : 'Could not copy the link. Please copy the page URL from the address bar.')))))));
           window.setTimeout(function () { label.textContent = originalLabel; if (status) status.textContent = ''; }, 2500);
         }
         if (navigator.clipboard && window.isSecureContext) {
