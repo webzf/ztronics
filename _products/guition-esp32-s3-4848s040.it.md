@@ -33,8 +33,8 @@ editorial_review:
     - "Il display RGB utilizza molti GPIO: verifica i pin disponibili prima di aggiungere periferiche"
     - "Le configurazioni software della community devono essere verificate con la revisione esatta della scheda"
     - "Moduli relè e contenitori variano in base all'offerta: controlla compatibilità e dimensioni prima dell'acquisto"
-seo_title: "Guition ESP32-S3-4848S040: prezzo, specifiche e acquisto (4 pollici)"
-seo_description: "Confronta i prezzi di Guition ESP32-S3-4848S040 (ESP32-4848S040): touchscreen da 4 pollici 480×480 con touch GT911 e supporto ESPHome. Acquista su AliExpress."
+seo_title: "Guition ESP32-S3-4848S040: prezzo, specifiche e recensione"
+seo_description: "Confronta display 4 pollici 480×480, ESP32-S3, touch GT911 e versioni con relè. Scopri quale configurazione è adatta al tuo progetto."
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
