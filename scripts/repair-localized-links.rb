@@ -3,7 +3,6 @@
 # Existing translations are preserved; missing translations fall back to the English
 # route when it exists. Links with no valid destination are made non-clickable.
 require "find"
-require "fileutils"
 require "nokogiri"
 require "uri"
 
@@ -64,7 +63,10 @@ Find.find(site_root) do |file|
 
     fallback_path = public_path.sub(localized_prefix, "")
     fallback_path = "/" if fallback_path.empty?
-    if output_exists?(site_root, fallback_path)
+
+    if check_only
+      errors << "#{file}: link still points to missing localized route #{public_path}"
+    elsif output_exists?(site_root, fallback_path)
       anchor["href"] = rewrite_uri(uri, fallback_path)
       rewritten_links += 1
       changed = true
