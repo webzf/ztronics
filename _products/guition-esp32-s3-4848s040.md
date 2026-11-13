@@ -18,8 +18,8 @@ editorial_review:
     - "The RGB display consumes many GPIOs, so available pins must be checked before adding peripherals"
     - "Community software configurations should be verified against the exact board revision"
     - "Relay modules and enclosures vary by listing; check compatibility and dimensions before ordering"
-seo_title: "Guition ESP32-S3-4848S040: Buy, Price & Specs (4\" 480×480)"
-seo_description: "Compare prices for the Guition ESP32-S3-4848S040 (ESP32-4848S040): 4-inch 480×480 touchscreen with GT911 touch and ESPHome support. Buy on AliExpress."
+seo_title: "Guition ESP32-S3-4848S040: Price, Specs & Review"
+seo_description: "Compare Guition 4848S040 specs, 4-inch 480×480 display, ESP32-S3, GT911 touch and relay options. Check which version suits your project."
 page_id: product-guition-esp32-s3-4848s040
 available_languages:
   - en
