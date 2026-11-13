@@ -33,8 +33,8 @@ editorial_review:
     - "L’écran RGB utilise de nombreuses broches GPIO ; vérifiez les broches encore disponibles avant d’ajouter des périphériques"
     - "Les configurations logicielles communautaires doivent être vérifiées avec la révision exacte de la carte"
     - "Les modules relais et les boîtiers varient selon les offres ; vérifiez leur compatibilité et leurs dimensions avant l’achat"
-seo_title: "Guition ESP32-S3-4848S040 : Acheter, prix et specs (4\")"
-seo_description: "Comparez les prix de la Guition ESP32-S3-4848S040 (ESP32-4848S040) : écran tactile 4 pouces 480×480 avec GT911 et support ESPHome. Acheter sur AliExpress."
+seo_title: "Guition ESP32-S3-4848S040 : prix, caractéristiques et avis"
+seo_description: "Comparez l’écran 4 pouces 480 × 480, l’ESP32-S3, le tactile GT911 et les versions avec relais. Trouvez la version adaptée à votre projet."
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
