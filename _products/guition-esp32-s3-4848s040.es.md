@@ -33,8 +33,8 @@ editorial_review:
     - "La pantalla RGB utiliza numerosos GPIO; compruebe los pines libres antes de conectar más periféricos"
     - "Las configuraciones de la comunidad deben compararse con la revisión exacta del hardware"
     - "Los módulos de relé y las carcasas varían según el anuncio; compruebe la compatibilidad y las dimensiones antes de comprar"
-seo_title: "Guition ESP32-S3-4848S040: Comprar, precio y características"
-seo_description: "Compara precios de la Guition ESP32-S3-4848S040 (ESP32-4848S040): pantalla táctil de 4 pulgadas 480×480 con GT911 y soporte ESPHome. Comprar en AliExpress."
+seo_title: "Guition ESP32-S3-4848S040: precio, especificaciones y análisis"
+seo_description: "Compara la pantalla de 4 pulgadas 480 × 480, ESP32-S3, táctil GT911 y versiones con relé. Descubre qué opción encaja en tu proyecto."
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
