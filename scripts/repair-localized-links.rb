@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# Repair links to localized routes that were not actually emitted by Jekyll/Polyglot.
+# Repair internal links to routes that were not actually emitted by Jekyll/Polyglot.
 # Existing translations are preserved; missing translations fall back to the English
 # route when it exists. Links with no valid destination are made non-clickable.
 require "find"
@@ -56,26 +56,40 @@ Find.find(site_root) do |file|
   document.css("a[href]").each do |anchor|
     href = anchor["href"].to_s.strip
     uri = local_uri(href)
-    next unless uri && uri.path.to_s.match?(localized_prefix)
+    next unless uri
 
-    public_path = uri.path
-    next if output_exists?(site_root, public_path)
+    public_path = uri.path.to_s
+    next unless public_path.start_with?("/") || uri.host
+    public_path = "/" if public_path.empty?
 
-    fallback_path = public_path.sub(localized_prefix, "")
-    fallback_path = "/" if fallback_path.empty?
+    if public_path.match?(localized_prefix)
+      next if output_exists?(site_root, public_path)
 
-    if check_only
-      errors << "#{file}: link still points to missing localized route #{public_path}"
-    elsif output_exists?(site_root, fallback_path)
-      anchor["href"] = rewrite_uri(uri, fallback_path)
-      rewritten_links += 1
-      changed = true
-      puts "Fallback: #{public_path} -> #{fallback_path}"
-    else
-      anchor.remove_attribute("href")
-      removed_links += 1
-      changed = true
-      puts "Removed unavailable link: #{public_path}"
+      fallback_path = public_path.sub(localized_prefix, "")
+      fallback_path = "/" if fallback_path.empty?
+
+      if check_only
+        errors << "#{file}: link still points to missing localized route #{public_path}"
+      elsif output_exists?(site_root, fallback_path)
+        anchor["href"] = rewrite_uri(uri, fallback_path)
+        rewritten_links += 1
+        changed = true
+        puts "Fallback: #{public_path} -> #{fallback_path}"
+      else
+        anchor.remove_attribute("href")
+        removed_links += 1
+        changed = true
+        puts "Removed unavailable localized link: #{public_path}"
+      end
+    elsif !output_exists?(site_root, public_path)
+      if check_only
+        errors << "#{file}: internal link points to missing route #{public_path}"
+      else
+        anchor.remove_attribute("href")
+        removed_links += 1
+        changed = true
+        puts "Removed broken internal link: #{public_path}"
+      end
     end
   end
 
@@ -101,11 +115,11 @@ end
 
 if check_only
   if errors.any?
-    warn "Localized link validation: FAIL"
+    warn "Internal link validation: FAIL"
     errors.each { |error| warn " - #{error}" }
     exit 1
   end
-  puts "Localized link validation: PASS"
+  puts "Internal link validation: PASS"
 else
-  puts "Localized link repair: #{rewritten_links} fallback(s), #{removed_links} unavailable link(s) disabled, #{removed_hreflang} missing hreflang link(s) removed across #{changed_files} file(s)."
+  puts "Internal link repair: #{rewritten_links} fallback(s), #{removed_links} unavailable link(s) disabled, #{removed_hreflang} missing hreflang link(s) removed across #{changed_files} file(s)."
 end
