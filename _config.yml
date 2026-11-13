@@ -16,6 +16,7 @@ exclude_from_localization:
   - "assets"
   - "index.html"
   - "sitemap"
+  - "_pages/best-arduino-starter-kits.md"
   - "CNAME"
   - "robots.txt"
   - ".well-known"
