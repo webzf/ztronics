@@ -176,6 +176,21 @@ puts "Sitemap hreflang groups added: #{alternates_by_url.length}"
 
 puts "Sitemap localized URLs added: #{localized_added.length}"
 
-File.write(path, doc.to_s)
+# Serialize an explicit XML document, then parse it again before replacing
+# the generated sitemap. This prevents publishing malformed or non-XML output.
+doc.xml_decl = REXML::XMLDecl.new("1.0", "UTF-8")
+xml_output = +""
+formatter = REXML::Formatters::Pretty.new(2)
+formatter.compact = true
+formatter.write(doc, xml_output)
+
+validated_doc = REXML::Document.new(xml_output)
+root = validated_doc.root
+abort "Sitemap validation failed: expected <urlset> root element" unless root && root.name == "urlset"
+abort "Sitemap validation failed: missing sitemap namespace" unless root.namespace == "http://www.sitemaps.org/schemas/sitemap/0.9"
+abort "Sitemap validation failed: no URL entries found" if REXML::XPath.match(validated_doc, "//*[local-name()='url']/*[local-name()='loc']").empty?
+
+File.write(path, xml_output)
+puts "Sitemap XML validation: passed"
 puts "Sitemap cleanup: removed #{removed.length} URLs"
 puts removed
