@@ -1,5 +1,7 @@
 ---
 title: "ESP32 I2C Scanner: Arduino & ESP8266 Code"
+seo_title: "I2C Scanner for ESP32, ESP8266 & Arduino"
+seo_description: "Find I2C addresses with scanner code for ESP32, ESP8266 and Arduino. Includes wiring, setup steps and fixes for devices not detected."
 
 howto: true
 
