@@ -57,6 +57,12 @@ jobs:
       - name: Build production site
         run: bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build
 
+      - name: Repair unavailable localized internal links
+        run: bundle exec ruby scripts/repair-localized-links.rb _site
+
+      - name: Validate localized internal links and hreflang
+        run: bundle exec ruby scripts/repair-localized-links.rb _site --check
+
       - name: Clean generated sitemap
         run: ruby scripts/clean-sitemap.rb
 
@@ -107,6 +113,17 @@ jobs:
               --drafts \
               --baseurl "/preview/pr-${pr_number}" \
               --destination "_site/preview/pr-${pr_number}"
+
+            # Repair links to translated routes that were not emitted by Polyglot,
+            # then fail the preview build if any unavailable localized href remains.
+            if [ -f "pr-site-${pr_number}/scripts/repair-localized-links.rb" ]; then
+              BUNDLE_GEMFILE="$pr_gemfile" bundle exec ruby \
+                "pr-site-${pr_number}/scripts/repair-localized-links.rb" \
+                "_site/preview/pr-${pr_number}"
+              BUNDLE_GEMFILE="$pr_gemfile" bundle exec ruby \
+                "pr-site-${pr_number}/scripts/repair-localized-links.rb" \
+                "_site/preview/pr-${pr_number}" --check
+            fi
 
             # Verify translated routes in the generated output, not just a successful build.
             if [ -f "pr-site-${pr_number}/scripts/validate-localized-output.rb" ]; then
