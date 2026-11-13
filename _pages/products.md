@@ -3,6 +3,23 @@ layout: single
 classes: wide
 title: "Products"
 permalink: /products/
+redirect_from:
+  - /best-esp32-boards/
+  - /best-esp32-sensors/
+  - /de/best-esp32-boards/
+  - /de/best-esp32-sensors/
+  - /es/best-esp32-boards/
+  - /es/best-esp32-sensors/
+  - /fr/best-esp32-boards/
+  - /fr/best-esp32-sensors/
+  - /it/best-esp32-boards/
+  - /it/best-esp32-sensors/
+  - /nl/best-esp32-boards/
+  - /nl/best-esp32-sensors/
+  - /pl/best-esp32-boards/
+  - /pl/best-esp32-sensors/
+  - /pt/best-esp32-boards/
+  - /pt/best-esp32-sensors/
 author_profile: false
 sidebar:
   nav: embedded
