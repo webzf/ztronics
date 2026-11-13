@@ -178,7 +178,7 @@ puts "Sitemap localized URLs added: #{localized_added.length}"
 
 # Serialize an explicit XML document, then parse it again before replacing
 # the generated sitemap. This prevents publishing malformed or non-XML output.
-doc.xml_decl = REXML::XMLDecl.new("1.0", "UTF-8")
+doc << REXML::XMLDecl.new("1.0", "UTF-8")
 xml_output = +""
 formatter = REXML::Formatters::Pretty.new(2)
 formatter.compact = true
