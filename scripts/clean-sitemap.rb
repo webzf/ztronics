@@ -178,11 +178,11 @@ puts "Sitemap localized URLs added: #{localized_added.length}"
 
 # Serialize an explicit XML document, then parse it again before replacing
 # the generated sitemap. This prevents publishing malformed or non-XML output.
-doc << REXML::XMLDecl.new("1.0", "UTF-8")
 xml_output = +""
 formatter = REXML::Formatters::Pretty.new(2)
-formatter.compact = true
+formatter.compact = false
 formatter.write(doc, xml_output)
+xml_output = %(<?xml version="1.0" encoding="UTF-8"?>\n) + xml_output unless xml_output.lstrip.start_with?("<?xml")
 
 validated_doc = REXML::Document.new(xml_output)
 root = validated_doc.root
