@@ -21,8 +21,8 @@ editorial_review:
     - "Het RGB-scherm gebruikt veel GPIO's; controleer beschikbare pinnen voordat je randapparatuur toevoegt"
     - "Controleer communitysoftwareconfiguraties aan de hand van de exacte bordrevisie"
     - "Relaismodules en behuizingen verschillen per aanbieding; controleer compatibiliteit en afmetingen vóór aankoop"
-seo_title: "Guition ESP32-S3-4848S040: prijs, specificaties en kopen (4-inch 480×480)"
-seo_description: "Vergelijk prijzen voor de Guition ESP32-S3-4848S040 (ESP32-4848S040): 4-inch touchscreen met 480×480 pixels, GT911-aanraking en ESPHome-ondersteuning. Kopen via AliExpress."
+seo_title: "Guition ESP32-S3-4848S040: prijs, specs en review"
+seo_description: "Vergelijk het 4-inch 480×480-scherm, ESP32-S3, GT911-touch en uitvoeringen met relais. Ontdek welke versie bij je project past."
 page_id: product-guition-esp32-s3-4848s040
 available_languages:
   - en
