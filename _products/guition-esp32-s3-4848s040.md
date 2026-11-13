@@ -1,6 +1,6 @@
 ---
 layout: product
-internal_links: true
+internal_links: false
 title: "Guition ESP32-S3-4848S040: 4\" 480×480 Touchscreen"
 product_verdict: "A good fit for a square 4-inch 480×480 ESP32-S3 touchscreen dashboard; verify the relay version and mounting dimensions before ordering."
 editorial_review:
@@ -185,11 +185,9 @@ For the complete [pinout and GPIO reference](/guition-esp32-s3-4848s040-pinout-e
 - [ESPHome device page](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/)
 - [Community ESPHome/LVGL example and YAML template](https://github.com/jtenniswood/esphome-lvgl/tree/main/guition-esp32-s3-4848s040)
 
-### Starting with an ESPHome configuration
+### ESPHome configuration
 
-The community project's YAML file is a template that imports a package from the same repository. It is not a fully self-contained configuration: replace the sample device name and room values, configure Wi-Fi secrets, and inspect the referenced package and its component files before flashing.
-
-Use the project's current [ESPHome YAML template](https://github.com/jtenniswood/esphome-lvgl/blob/main/guition-esp32-s3-4848s040/esphome.yaml) as a starting point. Confirm compatibility with your installed ESPHome version and the exact board variant. This page does not claim that the community YAML has been independently tested by Embedded Nerd.
+The community YAML is a template, not a ready-to-flash configuration; check its imported package, Wi-Fi secrets and GPIO assignments for your board revision. For the complete workflow, see the [4848S040 pinout and ESPHome setup guide](/guition-esp32-s3-4848s040-pinout-esphome/).
 
 ## Where to buy
 

@@ -61,7 +61,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% elsif locale == 'pl-PL' %}
   {% assign toc_default_label = "Spis treści" %}
 {% else %}
-  {% assign toc_default_label = "Contents" %}
+  {% assign toc_default_label = "On this page" %}
 {% endif %}
 
 {% if page.toc %}
@@ -83,7 +83,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               </details>
             {% else %}
               <nav class="toc" aria-label="{% if locale == 'de-DE' %}Inhaltsverzeichnis{% elsif locale == 'it-IT' %}Indice dei contenuti{% else %}Table of contents{% endif %}">
-                <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: "In questa pagina" }}</h4></header>
+                <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: toc_default_label }}</h4></header>
                 {% include toc.html sanitize=true html=content h_min=2 h_max=6 class="toc__menu" %}
               </nav>
             {% endif %}
