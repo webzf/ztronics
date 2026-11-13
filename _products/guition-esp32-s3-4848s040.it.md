@@ -176,11 +176,9 @@ Per il [riferimento completo di pinout e GPIO](/guition-esp32-s3-4848s040-pinout
 - [Pagina del dispositivo ESPHome](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/)
 - [Esempio ESPHome/LVGL della community e modello YAML](https://github.com/jtenniswood/esphome-lvgl/tree/main/guition-esp32-s3-4848s040)
 
-### Come iniziare con una configurazione ESPHome
+### Configurazione ESPHome
 
-Il file YAML del progetto della community è un modello che importa un pacchetto dallo stesso repository. Non è una configurazione completamente autonoma: sostituisci il nome di esempio del dispositivo e i valori relativi alla stanza, configura i segreti Wi-Fi e controlla il pacchetto e i relativi file dei componenti prima del flashing.
-
-Usa l'attuale [modello YAML ESPHome del progetto](https://github.com/jtenniswood/esphome-lvgl/blob/main/guition-esp32-s3-4848s040/esphome.yaml) come punto di partenza. Verifica la compatibilità con la versione ESPHome installata e con la variante esatta della scheda. Questa pagina non afferma che il file YAML della community sia stato testato in modo indipendente da Embedded Nerd.
+Il file YAML della community è un modello, non una configurazione pronta all'uso: verifica pacchetto importato, credenziali Wi-Fi e GPIO per la revisione della tua scheda. Per la procedura completa, consulta la [guida al pinout e alla configurazione ESPHome del 4848S040](/it/guition-esp32-s3-4848s040-pinout-esphome/).
 
 ## Dove acquistare
 
