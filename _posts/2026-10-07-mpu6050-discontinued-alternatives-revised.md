@@ -309,7 +309,7 @@ For MPU6050 projects, see the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/).
 | BMA400 — low power, accel only | [**BMA400 Accelerometer Module**](/products/bma400/) | [AliExpress](https://s.click.aliexpress.com/e/_c3RBiLUT){: rel="sponsored nofollow noopener" } |
 | ESP32 development board | [**ESP32 DevKit V1**](/products/esp32-devkit/) | [AliExpress](https://s.click.aliexpress.com/e/_c4n38hZ9){: rel="sponsored nofollow noopener" } |
 
-> **Transparency Notice:** Some links on this page are affiliate links. If you purchase through them, Embedded Nerd may earn a commission at no additional cost to you. This helps support the website and allows us to continue creating free tutorials and guides.
+> **Transparency Notice:** Some links on this page are affiliate links. If you purchase through them, Embedded Nerd may earn a small commission at no additional cost to you. This helps support the website and allows us to continue creating free tutorials and guides.
 
 ## Related Embedded Nerd Tutorials
 
@@ -320,7 +320,7 @@ For MPU6050 projects, see the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/).
 - [I2C Address Lookup & Compatibility Checker](/tools/i2c-address-lookup/)
 - [Best Sensors for ESP32](/products/#sensors)
 
-> **Transparency Notice:** Some links on this page are affiliate links. If you purchase through them, Embedded Nerd may earn a commission at no additional cost to you. This helps support the website and allows us to continue creating free tutorials and guides.
+> **Transparency Notice:** Some links on this page are affiliate links. If you purchase through them, Embedded Nerd may earn a small commission at no additional cost to you. This helps support the website and allows us to continue creating free tutorials and guides.
 
 ## FAQ
 
