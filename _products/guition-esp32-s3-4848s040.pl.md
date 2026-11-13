@@ -21,8 +21,8 @@ editorial_review:
     - "Ekran RGB wykorzystuje wiele GPIO, dlatego przed dodaniem urządzeń peryferyjnych trzeba sprawdzić dostępne piny"
     - "Konfiguracje oprogramowania społeczności należy zweryfikować pod kątem dokładnej rewizji płytki"
     - "Moduły przekaźników i obudowy różnią się między ofertami; przed zakupem sprawdź zgodność i wymiary"
-seo_title: "Guition ESP32-S3-4848S040: cena, specyfikacja i zakup (4″ 480×480)"
-seo_description: "Porównaj ceny Guition ESP32-S3-4848S040 (ESP32-4848S040): ekran dotykowy 4″ 480×480, GT911 i obsługa ESPHome. Zakup w AliExpress."
+seo_title: "Guition ESP32-S3-4848S040: cena, specyfikacja i test"
+seo_description: "Porównaj ekran 4″ 480×480, ESP32-S3, dotyk GT911 i wersje z przekaźnikiem. Sprawdź, który wariant pasuje do Twojego projektu."
 page_id: product-guition-esp32-s3-4848s040
 product_id: guition-esp32-s3-4848s040
 english_url: /products/guition-esp32-s3-4848s040/
