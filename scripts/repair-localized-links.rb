@@ -10,14 +10,14 @@ site_root = File.expand_path(ARGV[0] || "_site")
 check_only = ARGV.include?("--check")
 abort "Usage: ruby scripts/repair-localized-links.rb SITE_ROOT [--check]" unless File.directory?(site_root)
 
-SITE_HOST = "embeddednerd.com"
+SITE_HOSTS = %w[embeddednerd.com www.embeddednerd.com].freeze
 LANGUAGES = %w[de es fr it nl pl pt].freeze
 localized_prefix = %r{\A/(#{LANGUAGES.join("|")})(?=/|\z)}
 
 def local_uri(href)
   uri = URI.parse(href)
   return nil if uri.scheme && !%w[http https].include?(uri.scheme)
-  return nil if uri.host && uri.host.downcase != SITE_HOST
+  return nil if uri.host && !SITE_HOSTS.include?(uri.host.downcase)
 
   uri
 rescue URI::InvalidURIError
