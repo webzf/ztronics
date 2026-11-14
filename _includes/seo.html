@@ -13,7 +13,25 @@
 {%- assign page_title = page_title | markdownify | strip_html | strip_newlines | escape_once -%}
 {%- assign seo_title  = seo_title  | markdownify | strip_html | strip_newlines | escape_once -%}
 
-{%- assign current_lang = page.lang | default: site.default_lang -%}
+{%- assign current_lang = page.lang | default: site.active_lang | default: site.default_lang -%}
+{%- case page.url -%}
+  {%- when '/products/' -%}
+    {%- assign seo_title = 'ESP32 and Electronics Products | Embedded Nerd' -%}
+  {%- when '/de/products/' -%}
+    {%- assign seo_title = 'ESP32- und Elektronikprodukte | Embedded Nerd' -%}
+  {%- when '/es/products/' -%}
+    {%- assign seo_title = 'Productos ESP32 y electrónica | Embedded Nerd' -%}
+  {%- when '/fr/products/' -%}
+    {%- assign seo_title = 'Produits ESP32 et électronique | Embedded Nerd' -%}
+  {%- when '/it/products/' -%}
+    {%- assign seo_title = 'Prodotti ESP32 ed elettronica | Embedded Nerd' -%}
+  {%- when '/nl/products/' -%}
+    {%- assign seo_title = 'ESP32- en elektronicaproducten | Embedded Nerd' -%}
+  {%- when '/pl/products/' -%}
+    {%- assign seo_title = 'Produkty ESP32 i elektronika | Embedded Nerd' -%}
+  {%- when '/pt/products/' -%}
+    {%- assign seo_title = 'Produtos ESP32 e eletrónica | Embedded Nerd' -%}
+{%- endcase -%}
 {%- assign translation_key = page.translation_id | default: page.product_id -%}
 {%- assign translation_paths = site.data.language_urls[translation_key] -%}
 {%- assign canonical_path = page.canonical_url | default: page.url -%}
