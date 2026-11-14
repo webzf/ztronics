@@ -17,9 +17,43 @@
 {%- assign translation_key = page.translation_id | default: page.product_id -%}
 {%- assign translation_paths = site.data.language_urls[translation_key] -%}
 {%- assign canonical_path = page.canonical_url | default: page.url -%}
-{%- if translation_paths -%}
-  {%- assign canonical_path = translation_paths[current_lang] | default: translation_paths.en -%}
-{%- endif -%}
+
+{%- comment -%}
+  Respect explicit canonical URLs first. For translated source files, use the
+  registered localized route when available. If the language is not yet listed
+  in language_urls.yml, build the route from the translated page's language.
+  Pages without an actual translated source file keep the default-language
+  canonical, which is the intended fallback for untranslated copies.
+{%- endcomment -%}
+{%- unless page.canonical_url -%}
+  {%- if translation_paths -%}
+    {%- assign localized_translation_path = translation_paths[current_lang] -%}
+    {%- if localized_translation_path -%}
+      {%- assign canonical_path = localized_translation_path -%}
+    {%- elsif page.lang and current_lang != site.default_lang -%}
+      {%- assign lang_prefix = current_lang | prepend: "/" -%}
+      {%- assign lang_prefix_length = lang_prefix | size -%}
+      {%- assign existing_path_prefix = page.url | slice: 0, lang_prefix_length -%}
+      {%- if existing_path_prefix == lang_prefix -%}
+        {%- assign canonical_path = page.url -%}
+      {%- else -%}
+        {%- assign canonical_path = page.url | prepend: lang_prefix -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- assign canonical_path = translation_paths.en | default: page.url -%}
+    {%- endif -%}
+  {%- elsif page.lang and current_lang != site.default_lang -%}
+    {%- assign lang_prefix = current_lang | prepend: "/" -%}
+    {%- assign lang_prefix_length = lang_prefix | size -%}
+    {%- assign existing_path_prefix = page.url | slice: 0, lang_prefix_length -%}
+    {%- if existing_path_prefix == lang_prefix -%}
+      {%- assign canonical_path = page.url -%}
+    {%- else -%}
+      {%- assign canonical_path = page.url | prepend: lang_prefix -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endunless -%}
+
 {%- assign canonical_path = canonical_path | replace: "/index.html", "/" -%}
 {%- assign canonical_url = canonical_path | absolute_url -%}
 
