@@ -3,6 +3,7 @@ title: "Terms of Service"
 permalink: /terms/
 layout: single
 author_profile: false
+seo_description: "Review the terms governing use of Embedded Nerd, including educational content, technical safety, external links, intellectual property and liability."
 ---
 
 
