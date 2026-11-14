@@ -124,7 +124,7 @@ The Guition ESP32-S3-4848S040 is a 4-inch 480×480 ESP32-S3 touchscreen for comp
 
 {% include guition-variant-buttons.html %}
 
-For the detailed [4848S040 pinout and ESPHome setup guide](/guition-esp32-s3-4848s040-pinout-esphome/), see the separate technical walkthrough.
+For the detailed [pinout & ESPHome setup](/guition-esp32-s3-4848s040-pinout-esphome/), see the separate technical walkthrough.
 
 
 ## Is the Guition ESP32-S3-4848S040 Worth Buying?
