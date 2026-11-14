@@ -3,6 +3,7 @@ title: "Affiliate Disclosure"
 permalink: /affiliate-disclosure/
 layout: single
 author_profile: false
+seo_description: "Read how Embedded Nerd uses affiliate links, how commissions support the site and how product recommendations remain editorially independent."
 ---
 
 
