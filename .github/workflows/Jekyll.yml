@@ -66,6 +66,25 @@ jobs:
       - name: Clean generated sitemap
         run: ruby scripts/clean-sitemap.rb
 
+      - name: Create legacy French URL redirect
+        run: |
+          mkdir -p _site/fr/best-arduino-starter-kits
+          cat > _site/fr/best-arduino-starter-kits/index.html <<'EOF'
+          <!doctype html>
+          <html lang="fr">
+            <head>
+              <meta charset="utf-8">
+              <meta name="robots" content="noindex,follow">
+              <link rel="canonical" href="https://embeddednerd.com/best-arduino-starter-kits/">
+              <meta http-equiv="refresh" content="0;url=https://embeddednerd.com/best-arduino-starter-kits/">
+              <title>Page moved</title>
+            </head>
+            <body>
+              <p>Cette page a été déplacée. <a href="https://embeddednerd.com/best-arduino-starter-kits/">Continuer vers le guide en anglais</a>.</p>
+            </body>
+          </html>
+          EOF
+
       - name: Build active PR previews
         env:
           GH_TOKEN: ${{ github.token }}
