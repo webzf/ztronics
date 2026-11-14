@@ -1,5 +1,6 @@
 ---
-title: "Contact"
+title: "Contact Embedded Nerd"
+seo_title: "Contact Embedded Nerd | Questions and Feedback"
 permalink: /contact/
 layout: single
 author_profile: true
