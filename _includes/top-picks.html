@@ -1,0 +1,36 @@
+{%- assign picks = site.data.top_picks -%}
+{%- if picks and picks.items -%}
+<section class="top-picks" aria-labelledby="top-picks-title">
+  <header class="top-picks__header">
+    <h2 id="top-picks-title">{{ picks.title | default: "Top Picks" | escape }}</h2>
+    <p>{{ picks.subtitle | default: "Specs, pinouts and practical guides." | escape }}</p>
+  </header>
+
+  <div class="top-picks__grid">
+    {%- for item in picks.items -%}
+      <article class="top-picks__card{% if item.featured %} top-picks__card--featured{% endif %}" data-product="{{ item.id | escape }}">
+        <a class="top-picks__image-link" href="{{ item.url | relative_url }}" data-ga-event="home_top_picks" data-ga-product="{{ item.id | escape }}" data-ga-link="image">
+          <img
+            src="{{ item.image | relative_url }}"
+            alt="{{ item.image_alt | default: item.name | escape }}"
+            width="{{ item.width | default: 640 }}"
+            height="{{ item.height | default: 480 }}"
+            loading="{% if item.featured %}eager{% else %}lazy{% endif %}"
+            decoding="async"
+            {% if item.featured %}fetchpriority="high"{% endif %}>
+        </a>
+        <div class="top-picks__content">
+          <h3><a href="{{ item.url | relative_url }}" data-ga-event="home_top_picks" data-ga-product="{{ item.id | escape }}" data-ga-link="title">{{ item.name | escape }}</a></h3>
+          <p>{{ item.description | escape }}</p>
+          <div class="top-picks__actions">
+            <a class="top-picks__cta" href="{{ item.url | relative_url }}" aria-label="Explore {{ item.name | escape }}" data-ga-event="home_top_picks" data-ga-product="{{ item.id | escape }}" data-ga-link="cta">Explore product</a>
+            {% if item.guide_url and item.guide_url != "" %}
+              <a class="top-picks__guide" href="{{ item.guide_url | relative_url }}">{{ item.guide_label | default: "Read the guide" | escape }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}
