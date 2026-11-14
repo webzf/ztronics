@@ -1,6 +1,7 @@
 ---
 permalink: /about/
-title: "About"
+title: "About Embedded Nerd"
+seo_title: "About Embedded Nerd | Arduino, ESP32 and IoT"
 author_profile: true
 seo_description: "Learn about Embedded Nerd, an independent resource for practical Arduino, ESP32, Raspberry Pi and embedded systems tutorials, projects and hardware guides."
 ---
