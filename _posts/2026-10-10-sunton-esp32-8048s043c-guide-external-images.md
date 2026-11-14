@@ -390,7 +390,7 @@ For a focused comparison, use the [ESP32 4.3-inch touchscreen selector]({{ site.
 
 Before ordering, confirm that the listing is for the **8048S043C capacitive GT911 variant**, not the R resistive or N no-touch version. The exact model identifier behind the short affiliate URL is not exposed to Embedded Nerd, so verify the seller's photos and specifications carefully.
 
-Prices, shipping, taxes and stock vary by seller and destination. Compare the **total delivered price** and check the board revision before buying. You can also review the [technical product page]({{ site.url }}/products/sunton-esp32-8048s043c/) before deciding.
+Prices, shipping, taxes and stock vary by seller and destination. Compare the **total delivered price** and check the board revision before buying. You can also review the [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) before deciding.
 
 ## FAQ
 
@@ -496,4 +496,4 @@ If those characteristics match your project, the 8048S043C is worth considering.
 - [Waveshare ESP32-S3-Touch-LCD-7 product page]({{ site.url }}/products/waveshare-esp32-s3-touch-lcd-7/) — compare a 7-inch 800×480 alternative when you need more physical screen area.
 - [I2C Scanner for Arduino, ESP32 and ESP8266]({{ site.url }}/i2c-scanner-tutorial/) — check which I2C devices respond on the bus when debugging touch or sensor connections.
 - [I2C Address Lookup & Compatibility Checker]({{ site.url }}/tools/i2c-address-lookup/) — check I2C addresses and investigate possible conflicts with the GT911 touch controller.
-- [Sunton ESP32-8048S043C product page]({{ site.url }}/products/sunton-esp32-8048s043c/) — review the product specifications and current purchase options.
+- [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — review the product specifications and current purchase options.
