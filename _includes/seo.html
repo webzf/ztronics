@@ -25,6 +25,9 @@
 
 {%- comment -%} Meta description. {%- endcomment -%}
 {%- assign seo_description = page.seo_description | default: page.description | default: page.excerpt | default: site.description -%}
+{%- if paginator and paginator.page > 1 -%}
+  {%- assign seo_description = seo_description | append: ' Page ' | append: paginator.page -%}
+{%- endif -%}
 {%- if seo_description -%}
   {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | strip | truncate: 155 | escape_once -%}
 {%- endif -%}
