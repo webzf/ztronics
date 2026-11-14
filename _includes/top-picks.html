@@ -6,7 +6,7 @@
     <p>{{ picks.subtitle | default: "Specs, pinouts and practical guides." | escape }}</p>
   </header>
 
-  <div class="top-picks__grid">
+  <div class="top-picks__grid" id="home-top-picks">
     {%- for item in picks.items -%}
       <article class="top-picks__card{% if item.featured %} top-picks__card--featured{% endif %}" data-product="{{ item.id | escape }}">
         <a class="top-picks__image-link" href="{{ item.url | relative_url }}" data-ga-event="home_top_picks" data-ga-product="{{ item.id | escape }}" data-ga-link="image">
@@ -34,3 +34,30 @@
   </div>
 </section>
 {%- endif -%}
+
+<script>
+(function () {
+  var section = document.getElementById('home-top-picks');
+  if (!section || section.dataset.gaTrackingBound === 'true') return;
+  section.dataset.gaTrackingBound = 'true';
+  section.addEventListener('click', function (event) {
+    var link = event.target.closest('a[data-ga-event="home_top_picks"]');
+    if (!link || !section.contains(link)) return;
+    var payload = {
+      event: 'home_top_picks',
+      product_id: link.getAttribute('data-ga-product') || '',
+      link_type: link.getAttribute('data-ga-link') || '',
+      link_url: link.href
+    };
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(payload);
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'home_top_picks', {
+        product_id: payload.product_id,
+        link_type: payload.link_type,
+        link_url: payload.link_url
+      });
+    }
+  });
+})();
+</script>
