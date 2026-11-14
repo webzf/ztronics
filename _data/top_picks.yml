@@ -1,0 +1,64 @@
+# Homepage product recommendations. Keep product details here, not in the include.
+title: "Top Picks"
+subtitle: "Specs, pinouts and practical guides for choosing embedded hardware."
+
+items:
+  - id: guition-esp32-s3-4848s040
+    name: "Guition ESP32-S3-4848S040"
+    description: "4-inch 480×480 ESP32-S3 touchscreen with capacitive touch, Flash and PSRAM."
+    url: "/products/guition-esp32-s3-4848s040/"
+    image: "/assets/images/products/guition-4848s040-home-assistant-review.webp"
+    image_alt: "Guition ESP32-S3-4848S040 square 4-inch 480×480 touchscreen development board"
+    width: 800
+    height: 800
+    guide_url: "/guition-esp32-s3-4848s040-pinout-esphome/"
+    guide_label: "Pinout & ESPHome setup"
+    featured: true
+
+  - id: waveshare-esp32-p4-round
+    name: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C"
+    description: "3.4-inch round 800×800 capacitive display powered by ESP32-P4."
+    url: "/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/"
+    image: "/assets/images/products/esp32-p4-touch-lcd-3.4c-front.webp"
+    image_alt: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C round 3.4-inch touchscreen board"
+    width: 800
+    height: 800
+    guide_url: "/esp32-p4-round-touchscreen-display-projects/"
+    guide_label: "Round touchscreen projects"
+    featured: false
+
+  - id: guition-jc8048w550
+    name: "Guition JC8048W550"
+    description: "5-inch 800×480 ESP32-S3 HMI display with multiple touch variants."
+    url: "/products/guition-jc8048w550/"
+    image: "/assets/images/products/guition-jc8048w550-kit.webp"
+    image_alt: "Guition JC8048W550 5-inch 800×480 ESP32-S3 display module kit"
+    width: 800
+    height: 800
+    guide_url: ""
+    guide_label: ""
+    featured: false
+
+  - id: sunton-esp32-8048s043c
+    name: "Sunton ESP32-8048S043C"
+    description: "4.3-inch 800×480 ESP32-S3 display with capacitive GT911 touch."
+    url: "/products/sunton-esp32-8048s043c/"
+    image: "/assets/images/products/sunton-esp32-8048s043c-main.webp"
+    image_alt: "Sunton ESP32-8048S043C 4.3-inch ESP32-S3 touchscreen development board"
+    width: 800
+    height: 800
+    guide_url: "/sunton-esp32-8048s043c-guide/"
+    guide_label: "Pinout & setup guide"
+    featured: false
+
+  - id: arduino-uno-q
+    name: "Arduino UNO Q"
+    description: "Hybrid Linux and microcontroller development board for edge AI and embedded projects."
+    url: "/products/arduino-uno-q/"
+    image: "/assets/images/products/arduino-uno-q-handheld.webp"
+    image_alt: "Arduino UNO Q development board held in a hand"
+    width: 800
+    height: 800
+    guide_url: ""
+    guide_label: ""
+    featured: false
