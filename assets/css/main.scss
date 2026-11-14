@@ -437,3 +437,77 @@
 .language-switcher__toggle .language-switcher__flag {
   margin-right: 0.15rem;
 }
+
+/* Homepage Top Picks: one featured row followed by a 2x2 product grid. */
+.top-picks {
+  margin: 2.5rem auto 3rem;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+.top-picks__header { margin-bottom: 1.25rem; }
+.top-picks__header h2 { margin: 0 0 .35rem; }
+.top-picks__header p { margin: 0; opacity: .82; }
+.top-picks__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.top-picks__card {
+  display: grid;
+  grid-template-columns: minmax(110px, 34%) minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: .65rem;
+  background: rgba(255,255,255,.035);
+}
+.top-picks__card--featured {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(180px, 32%) minmax(0, 1fr);
+  padding: 1.25rem;
+  border-color: rgba(125,211,252,.42);
+  background: rgba(125,211,252,.055);
+}
+.top-picks__image-link { display:block; min-width:0; }
+.top-picks__card img {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: .4rem;
+}
+.top-picks__content { min-width:0; }
+.top-picks__content h3 { margin:0 0 .45rem; font-size:1.12rem; line-height:1.3; }
+.top-picks__card--featured .top-picks__content h3 { font-size:1.45rem; }
+.top-picks__content p { margin:0 0 .8rem; font-size:.92rem; line-height:1.5; }
+.top-picks__content a { overflow-wrap:anywhere; }
+.top-picks__actions { display:flex; flex-wrap:wrap; align-items:center; gap:.7rem 1rem; }
+.top-picks__cta {
+  display:inline-block;
+  padding:.5rem .85rem;
+  border:1px solid rgba(125,211,252,.65);
+  border-radius:.35rem;
+  font-weight:700;
+  text-decoration:none;
+}
+.top-picks__cta:hover { background:rgba(125,211,252,.12); text-decoration:none; }
+.top-picks__guide { font-size:.88rem; }
+@media (max-width: 700px) {
+  .top-picks__grid { grid-template-columns:1fr; }
+  .top-picks__card,
+  .top-picks__card--featured {
+    grid-column:auto;
+    grid-template-columns: minmax(96px, 31%) minmax(0,1fr);
+    padding:.85rem;
+    gap:.8rem;
+  }
+  .top-picks__card--featured .top-picks__content h3 { font-size:1.15rem; }
+}
+@media (max-width: 390px) {
+  .top-picks__card,
+  .top-picks__card--featured { grid-template-columns: 1fr; }
+  .top-picks__card img { max-height:220px; }
+}
