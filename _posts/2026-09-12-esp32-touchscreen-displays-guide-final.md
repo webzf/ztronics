@@ -108,6 +108,14 @@ Answer a few questions and get a practical recommendation based on your ESP32 bo
 
 [Try the ESP32 Touchscreen Selector →](/tools/esp32-touchscreen-selector/)
 
+
+
+### Featured hardware to compare
+
+- [Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) — 3.4-inch round 800×800 ESP32-P4 touchscreen.
+- [Guition JC8048W550](/products/guition-jc8048w550/) — 5-inch 800×480 ESP32-S3 HMI display.
+- [Arduino UNO Q](/products/arduino-uno-q/) — hybrid Linux and microcontroller board.
+
 ## What Is the Best Screen for an ESP32 Project?
 
 There is no single **best screen for ESP32** projects. The right display depends on the interface size, resolution, touch technology, display interface, memory, available GPIO, power budget and the ESP32 variant being used.
