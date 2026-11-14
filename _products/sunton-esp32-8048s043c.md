@@ -148,11 +148,11 @@ This page describes the **ESP32-8048S043C**, the capacitive-touch variant using 
 
 Use the purchase option above to check the current offer. The exact product ID behind the short affiliate URL is not exposed to Embedded Nerd, so verify the listing, seller photos and the **8048S043C capacitive GT911 variant** before ordering. Compare the delivered cost and confirm the model suffix, display interface, touch controller and accessories.
 
-For wiring, code, touch setup and known limitations, read the [Sunton ESP32-8048S043C Arduino pinout and setup guide](/sunton-esp32-8048s043c-guide/).
+For wiring, code, touch setup and known limitations, read the [pinout & setup guide](/sunton-esp32-8048s043c-guide/).
 
 ## Embedded Nerd Guides & Selector
 
-- [Sunton ESP32-8048S043C Arduino pinout and setup guide](/sunton-esp32-8048s043c-guide/) — GPIO tables, a minimal code example and troubleshooting.
+- [pinout & setup guide](/sunton-esp32-8048s043c-guide/) — GPIO tables, a minimal code example and troubleshooting.
 - [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/)
 - [800×480 touchscreen selector](/tools/esp32-touchscreen-selector/800x480/)
 - [4.3-inch touchscreen selector](/tools/esp32-touchscreen-selector/esp32-4-3-inch-touchscreen/)
