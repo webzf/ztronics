@@ -22,6 +22,10 @@ tags:
   - Touchscreen
   - AMOLED
 ---
+{% if site.active_lang and site.active_lang != site.default_lang %}
+<h1 class="page__title">ESP32-C6 Display Selector</h1>
+{% endif %}
+
 ## ESP32-C6 Display Selector
 
 Choosing an **ESP32-C6 display or touchscreen board** requires more than checking the processor family. Display controller, interface, touch hardware, memory, GPIO and power features can all affect which board is practical for a project.
