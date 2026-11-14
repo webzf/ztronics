@@ -1,7 +1,8 @@
 ---
 layout: single
 classes: wide
-title: "Products"
+title: "ESP32 & Electronics Products"
+seo_title: "ESP32 and Electronics Products | Embedded Nerd"
 permalink: /products/
 redirect_from:
   - /best-esp32-boards/
