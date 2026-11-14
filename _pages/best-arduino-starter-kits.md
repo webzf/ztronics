@@ -3,8 +3,6 @@ title: "Best Arduino Starter Kits in 2026"
 excerpt: "Compare the best Arduino starter kits in 2026, from official Arduino learning kits to budget-friendly ELEGOO, SunFounder and Freenove options."
 layout: single
 permalink: /best-arduino-starter-kits/
-redirect_from:
-  - /fr/best-arduino-starter-kits/
 show_date: false
 read_time: false
 last_modified_at: false
