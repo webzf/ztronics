@@ -3,6 +3,7 @@ title: "Privacy Policy"
 permalink: /privacy-policy/
 layout: single
 author_profile: false
+seo_description: "Read the Embedded Nerd Privacy Policy to learn what information the site collects, how analytics and live chat work, and how data is used."
 ---
 
 _Last updated: November 1, 2026_
