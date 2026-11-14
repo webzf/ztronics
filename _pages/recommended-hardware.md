@@ -6,6 +6,7 @@ internal_links: true
 
 sidebar:
   nav: "embedded"
+seo_description: "Explore development boards, sensors, displays and components featured in Embedded Nerd tutorials, with links to relevant product guides."
 ---
 
 ## Recommended Hardware
