@@ -3,6 +3,7 @@ title: "Contact"
 permalink: /contact/
 layout: single
 author_profile: true
+seo_description: "Contact Embedded Nerd with technical questions, tutorial corrections, content suggestions, partnership enquiries or feedback about the website."
 ---
 
 ## Contact Embedded Nerd
