@@ -1,9 +1,21 @@
 #!/usr/bin/env ruby
 # Verify localized routes and legacy language-root redirects in generated output.
 # Polyglot adds the language prefix; localized permalinks must not.
+require "rbconfig"
 
 site_root = ARGV.fetch(0) { abort "Usage: ruby scripts/validate-localized-output.rb SITE_ROOT" }
 site_root = File.expand_path(site_root)
+
+# The preview build finishes all Polyglot language passes before this validator
+# runs. Generate legacy root redirects now so later locale writes cannot erase them.
+preview_baseurl = if File.basename(File.dirname(site_root)) == "preview"
+  "/preview/#{File.basename(site_root)}"
+else
+  ""
+end
+generator = File.join(__dir__, "create-language-root-redirects.rb")
+abort "Failed to generate legacy language-root redirects" unless
+  system(RbConfig.ruby, generator, site_root, preview_baseurl)
 
 required = %w[
   de/products/guition-jc8048w550/index.html
