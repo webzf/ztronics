@@ -1,7 +1,6 @@
 /**
  * Embedded Nerd — mobile sticky affiliate bar.
- * Show the bar after the purchase CTA leaves the viewport, and hide it
- * whenever another purchase CTA or the footer is visible.
+ * Show after a short scroll on mobile; hide only when the footer enters view.
  */
 (function () {
   'use strict';
@@ -10,25 +9,21 @@
     var bar = document.querySelector('[data-sticky-affiliate]');
     if (!bar) return;
 
-    var purchaseAreas = Array.prototype.slice.call(
-      document.querySelectorAll('.en-product-cta, .en-buy-buttons')
-    );
     var footer = document.querySelector('.page__footer');
     var mobileQuery = window.matchMedia('(max-width: 767px)');
+    var scrollThreshold = 260;
 
-    function isInViewport(element) {
-      if (!element) return false;
-      var rect = element.getBoundingClientRect();
-      return rect.bottom > 0 && rect.top < window.innerHeight;
+    function isFooterVisible() {
+      if (!footer) return false;
+      var rect = footer.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom > 0;
     }
 
     function updateVisibility() {
-      var purchaseVisible = purchaseAreas.some(isInViewport);
-      var footerVisible = isInViewport(footer);
+      var scrollPosition = window.scrollY || window.pageYOffset || 0;
       var shouldShow = mobileQuery.matches &&
-        window.scrollY > 260 &&
-        !purchaseVisible &&
-        !footerVisible;
+        scrollPosition > scrollThreshold &&
+        !isFooterVisible();
 
       bar.classList.toggle('is-visible', shouldShow);
       bar.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
@@ -36,15 +31,12 @@
 
     window.addEventListener('scroll', updateVisibility, { passive: true });
     window.addEventListener('resize', updateVisibility);
-
-    function handleViewportChange() {
-      updateVisibility();
-    }
+    window.addEventListener('pageshow', updateVisibility);
 
     if (mobileQuery.addEventListener) {
-      mobileQuery.addEventListener('change', handleViewportChange);
+      mobileQuery.addEventListener('change', updateVisibility);
     } else if (mobileQuery.addListener) {
-      mobileQuery.addListener(handleViewportChange);
+      mobileQuery.addListener(updateVisibility);
     }
 
     updateVisibility();
