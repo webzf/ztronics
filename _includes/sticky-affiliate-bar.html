@@ -1,14 +1,13 @@
 {% if page.product_id == 'guition-esp32-s3-4848s040' %}
-  <aside class="en-sticky-affiliate" data-sticky-affiliate aria-label="Product purchase" aria-hidden="true">
+  <aside class="en-sticky-affiliate" data-sticky-affiliate aria-label="{% if site.active_lang == 'pt' %}Compra do produto{% elsif site.active_lang == 'fr' %}Acheter ce produit{% elsif site.active_lang == 'de' %}Produkt kaufen{% elsif site.active_lang == 'es' %}Comprar este producto{% elsif site.active_lang == 'it' %}Acquista questo prodotto{% elsif site.active_lang == 'nl' %}Koop dit product{% elsif site.active_lang == 'pl' %}Kup ten produkt{% else %}Product purchase{% endif %}" aria-hidden="true">
     <div class="en-sticky-affiliate__product">
-      <span class="en-sticky-affiliate__eyebrow">AliExpress</span>
       <strong>{{ page.title | escape }}</strong>
     </div>
     <a class="en-sticky-affiliate__button"
        href="/go/hardware/guition-esp32-s3-4848s040-standard/"
        target="_blank"
        rel="nofollow sponsored noopener">
-      View offer <span aria-hidden="true">›</span>
+      {% if site.active_lang == 'pt' %}Ver oferta{% elsif site.active_lang == 'fr' %}Voir l’offre{% elsif site.active_lang == 'de' %}Angebot ansehen{% elsif site.active_lang == 'es' %}Ver oferta{% elsif site.active_lang == 'it' %}Vedi offerta{% elsif site.active_lang == 'nl' %}Bekijk aanbod{% elsif site.active_lang == 'pl' %}Zobacz ofertę{% else %}View offer{% endif %} <span aria-hidden="true">›</span>
     </a>
   </aside>
   <script src="{{ '/assets/js/sticky-affiliate-bar.js' | relative_url }}" defer></script>
@@ -33,7 +32,6 @@
 {% if sticky_commerce and sticky_store and sticky_store.enabled and sticky_url %}
   <aside class="en-sticky-affiliate" data-sticky-affiliate aria-label="{% if site.active_lang == 'pt' %}Compra do produto{% elsif site.active_lang == 'fr' %}Acheter ce produit{% elsif site.active_lang == 'de' %}Produkt kaufen{% elsif site.active_lang == 'es' %}Comprar este producto{% elsif site.active_lang == 'it' %}Acquista questo prodotto{% elsif site.active_lang == 'nl' %}Koop dit product{% elsif site.active_lang == 'pl' %}Kup ten produkt{% else %}Product purchase{% endif %}" aria-hidden="true">
     <div class="en-sticky-affiliate__product">
-      <span class="en-sticky-affiliate__eyebrow">{{ sticky_store_info.name | default: "Store" | escape }}</span>
       <strong>{{ page.title | escape }}</strong>
     </div>
     <a class="en-sticky-affiliate__button"
