@@ -1,0 +1,33 @@
+{% assign sticky_commerce = site.data.commerce[page.product_id] %}
+{% assign sticky_stores = site.data.stores %}
+{% assign sticky_store_key = sticky_commerce.preferred_store %}
+{% assign sticky_store = sticky_commerce.stores[sticky_store_key] %}
+{% unless sticky_store and sticky_store.enabled %}
+  {% assign sticky_store_key = nil %}
+  {% for item in sticky_commerce.stores %}
+    {% assign candidate = item[1] %}
+    {% if candidate.enabled and candidate.affiliate_url or candidate.enabled and candidate.product_url %}
+      {% assign sticky_store_key = item[0] %}
+      {% assign sticky_store = candidate %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endunless %}
+{% assign sticky_store_info = sticky_stores[sticky_store_key] %}
+{% assign sticky_url = sticky_store.affiliate_url | default: sticky_store.product_url %}
+{% if sticky_commerce and sticky_store and sticky_store.enabled and sticky_url %}
+  <aside class="en-sticky-affiliate" data-sticky-affiliate aria-label="{% if site.active_lang == 'pt' %}Compra do produto{% elsif site.active_lang == 'fr' %}Acheter ce produit{% elsif site.active_lang == 'de' %}Produkt kaufen{% elsif site.active_lang == 'es' %}Comprar este producto{% elsif site.active_lang == 'it' %}Acquista questo prodotto{% elsif site.active_lang == 'nl' %}Koop dit product{% elsif site.active_lang == 'pl' %}Kup ten produkt{% else %}Product purchase{% endif %}" aria-hidden="true">
+    <div class="en-sticky-affiliate__product">
+      <span class="en-sticky-affiliate__eyebrow">{{ sticky_store_info.name | default: "Store" | escape }}</span>
+      <strong>{{ page.title | escape }}</strong>
+    </div>
+    <a class="en-sticky-affiliate__button"
+       href="{% if page.product_id == 'waveshare-esp32-c6-touch-amoled-2-16' and sticky_store_key == 'aliexpress' %}/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/{% else %}{{ sticky_url }}{% endif %}"
+       target="_blank"
+       rel="{% if sticky_store.affiliate == false %}noopener noreferrer{% else %}nofollow sponsored noopener{% endif %}">
+      {% if site.active_lang == 'pt' %}Ver oferta{% elsif site.active_lang == 'fr' %}Voir l’offre{% elsif site.active_lang == 'de' %}Angebot ansehen{% elsif site.active_lang == 'es' %}Ver oferta{% elsif site.active_lang == 'it' %}Vedi offerta{% elsif site.active_lang == 'nl' %}Bekijk aanbod{% elsif site.active_lang == 'pl' %}Zobacz ofertę{% else %}View offer{% endif %}
+      <span aria-hidden="true">›</span>
+    </a>
+  </aside>
+  <script src="{{ '/assets/js/sticky-affiliate-bar.js' | relative_url }}" defer></script>
+{% endif %}
