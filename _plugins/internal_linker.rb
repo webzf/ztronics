@@ -2857,17 +2857,29 @@ require "json"
 
 Jekyll::Hooks.register :site, :post_write do |site|
   languages = %w[de es fr it nl pl pt]
+  all_languages = %w[en de es fr it nl pl pt]
 
-  # Polyglot creates a separate site destination for each non-default
-  # language. Only write redirects from the shared root destination.
-  destination_name = File.basename(site.dest.to_s)
-  next if languages.include?(destination_name)
+  # Polyglot writes the default language into an /en directory. The legacy
+  # redirects belong beside that directory, not inside /en itself.
+  destination_root = File.expand_path(site.dest.to_s)
+  destination_name = File.basename(destination_root)
+
+  if destination_name == "en"
+    output_root = File.dirname(destination_root)
+  elsif all_languages.include?(destination_name)
+    # Ignore non-default language passes to avoid /de/de/, /fr/fr/, etc.
+    next
+  else
+    # Also support builds where the default language writes directly to site.dest.
+    output_root = destination_root
+  end
+
   baseurl = site.config["baseurl"].to_s.sub(%r{/$}, "")
   destination = "#{baseurl}/"
   escaped_destination = CGI.escapeHTML(destination)
 
   languages.each do |language|
-    output_dir = File.join(site.dest, language)
+    output_dir = File.join(output_root, language)
     FileUtils.mkdir_p(output_dir)
 
     html = <<~HTML
@@ -2889,7 +2901,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
     File.write(File.join(output_dir, "index.html"), html)
     Jekyll.logger.info(
       "Embedded Nerd:",
-      "Created legacy language-root redirect: /#{language}/"
+      "Created legacy language-root redirect: #{File.join(output_root, language, "index.html")}"
     )
   end
 end
