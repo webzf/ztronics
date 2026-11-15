@@ -2848,13 +2848,21 @@ end
 # ============================================================================
 # LEGACY LANGUAGE ROOT REDIRECTS
 # ============================================================================
-# This file is explicitly required by the production and PR-preview build
-# commands, so keep this hook here to ensure it is loaded in both builds.
+# Polyglot runs the site write hook once for each language. Only create these
+# historical root redirects during the default-language pass; otherwise the
+# language output can be nested under its own prefix (for example /de/de/).
 require "fileutils"
 require "cgi"
 require "json"
 
 Jekyll::Hooks.register :site, :post_write do |site|
+  default_language = site.config["default_lang"].to_s
+  current_language = site.config["lang"].to_s
+
+  unless current_language.empty? || current_language == default_language
+    next
+  end
+
   languages = %w[de es fr it nl pl pt]
   baseurl = site.config["baseurl"].to_s.sub(%r{/$}, "")
   destination = "#{baseurl}/"
@@ -2881,6 +2889,9 @@ Jekyll::Hooks.register :site, :post_write do |site|
     HTML
 
     File.write(File.join(output_dir, "index.html"), html)
-    Jekyll.logger.info("Embedded Nerd:", "Created legacy language-root redirect: /#{language}/")
+    Jekyll.logger.info(
+      "Embedded Nerd:",
+      "Created legacy language-root redirect: /#{language}/"
+    )
   end
 end
