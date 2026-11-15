@@ -14,13 +14,13 @@
     );
     var footer = document.querySelector('.page__footer');
     var mobileQuery = window.matchMedia('(max-width: 767px)');
-    var visiblePurchaseAreas = 0;
+    var visiblePurchaseAreas = new Set();
     var footerVisible = false;
 
     function updateVisibility() {
       var shouldShow = mobileQuery.matches &&
         window.scrollY > 260 &&
-        visiblePurchaseAreas === 0 &&
+        visiblePurchaseAreas.size === 0 &&
         !footerVisible;
 
       bar.classList.toggle('is-visible', shouldShow);
@@ -31,9 +31,9 @@
       var purchaseObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            visiblePurchaseAreas += 1;
-          } else if (visiblePurchaseAreas > 0) {
-            visiblePurchaseAreas -= 1;
+            visiblePurchaseAreas.add(entry.target);
+          } else {
+            visiblePurchaseAreas.delete(entry.target);
           }
         });
         updateVisibility();
