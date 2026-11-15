@@ -2859,9 +2859,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
   default_language = site.config["default_lang"].to_s
   current_language = site.config["lang"].to_s
 
-  unless current_language.empty? || current_language == default_language
-    next
-  end
+  next unless current_language == default_language
 
   languages = %w[de es fr it nl pl pt]
   baseurl = site.config["baseurl"].to_s.sub(%r{/$}, "")
