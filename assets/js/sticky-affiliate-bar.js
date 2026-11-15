@@ -1,6 +1,7 @@
 /**
  * Embedded Nerd — mobile sticky affiliate bar.
- * Keep the bar hidden while a product purchase CTA is visible and near the footer.
+ * Show the bar after the purchase CTA leaves the viewport, and hide it
+ * whenever another purchase CTA or the footer is visible.
  */
 (function () {
   'use strict';
@@ -9,54 +10,32 @@
     var bar = document.querySelector('[data-sticky-affiliate]');
     if (!bar) return;
 
-    // Guition and a few other product pages use .en-product-cta;
-    // standard product pages use .en-buy-buttons.
     var purchaseAreas = Array.prototype.slice.call(
       document.querySelectorAll('.en-product-cta, .en-buy-buttons')
     );
     var footer = document.querySelector('.page__footer');
     var mobileQuery = window.matchMedia('(max-width: 767px)');
-    var visiblePurchaseAreas = new Set();
-    var footerVisible = false;
+
+    function isInViewport(element) {
+      if (!element) return false;
+      var rect = element.getBoundingClientRect();
+      return rect.bottom > 0 && rect.top < window.innerHeight;
+    }
 
     function updateVisibility() {
+      var purchaseVisible = purchaseAreas.some(isInViewport);
+      var footerVisible = isInViewport(footer);
       var shouldShow = mobileQuery.matches &&
         window.scrollY > 260 &&
-        visiblePurchaseAreas.size === 0 &&
+        !purchaseVisible &&
         !footerVisible;
 
       bar.classList.toggle('is-visible', shouldShow);
       bar.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
     }
 
-    if ('IntersectionObserver' in window) {
-      var purchaseObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            visiblePurchaseAreas.add(entry.target);
-          } else {
-            visiblePurchaseAreas.delete(entry.target);
-          }
-        });
-        updateVisibility();
-      }, { threshold: 0.01 });
-
-      purchaseAreas.forEach(function (area) {
-        purchaseObserver.observe(area);
-      });
-
-      if (footer) {
-        var footerObserver = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            footerVisible = entry.isIntersecting;
-          });
-          updateVisibility();
-        }, { threshold: 0.01 });
-        footerObserver.observe(footer);
-      }
-    }
-
     window.addEventListener('scroll', updateVisibility, { passive: true });
+    window.addEventListener('resize', updateVisibility);
 
     function handleViewportChange() {
       updateVisibility();
