@@ -1,6 +1,6 @@
 /**
  * Embedded Nerd — mobile sticky affiliate bar.
- * Shows after the primary product purchase buttons leave the viewport.
+ * Shows after purchase CTAs leave the viewport and stays hidden near the footer.
  */
 (function () {
   'use strict';
@@ -9,56 +9,64 @@
     var bar = document.querySelector('[data-sticky-affiliate]');
     if (!bar) return;
 
-    var purchaseArea = document.querySelector('.en-product-box .en-buy-buttons, .product-page .en-buy-buttons');
+    var purchaseAreas = Array.prototype.slice.call(
+      document.querySelectorAll('.en-buy-buttons')
+    );
+    var footer = document.querySelector('.page__footer');
     var mobileQuery = window.matchMedia('(max-width: 767px)');
-    var visible = false;
+    var visiblePurchaseAreas = 0;
+    var footerVisible = false;
 
-    function setVisible(nextVisible) {
-      if (visible === nextVisible) return;
-      visible = nextVisible;
-      bar.classList.toggle('is-visible', visible);
-      bar.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    function updateVisibility() {
+      var shouldShow = mobileQuery.matches &&
+        window.scrollY > 260 &&
+        visiblePurchaseAreas === 0 &&
+        !footerVisible;
+
+      bar.classList.toggle('is-visible', shouldShow);
+      bar.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
     }
 
-    function updateVisibility(purchaseAreaVisible) {
-      if (!mobileQuery.matches) {
-        setVisible(false);
-        return;
-      }
-
-      var hasScrolled = window.scrollY > 260;
-      setVisible(hasScrolled && !purchaseAreaVisible);
-    }
-
-    if ('IntersectionObserver' in window && purchaseArea) {
-      var purchaseIsVisible = false;
-      var observer = new IntersectionObserver(function (entries) {
-        purchaseIsVisible = entries.some(function (entry) {
-          return entry.isIntersecting;
+    if ('IntersectionObserver' in window) {
+      var purchaseObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            visiblePurchaseAreas += 1;
+          } else if (visiblePurchaseAreas > 0) {
+            visiblePurchaseAreas -= 1;
+          }
         });
-        updateVisibility(purchaseIsVisible);
+        updateVisibility();
       }, { threshold: 0.01 });
-      observer.observe(purchaseArea);
 
-      window.addEventListener('scroll', function () {
-        updateVisibility(purchaseIsVisible);
-      }, { passive: true });
-    } else {
-      window.addEventListener('scroll', function () {
-        updateVisibility(false);
-      }, { passive: true });
-      updateVisibility(false);
+      purchaseAreas.forEach(function (area) {
+        purchaseObserver.observe(area);
+      });
+
+      if (footer) {
+        var footerObserver = new IntersectionObserver(function (entries) {
+          footerVisible = entries.some(function (entry) {
+            return entry.isIntersecting;
+          });
+          updateVisibility();
+        }, { threshold: 0.01 });
+        footerObserver.observe(footer);
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+
+    function handleViewportChange() {
+      updateVisibility();
     }
 
     if (mobileQuery.addEventListener) {
-      mobileQuery.addEventListener('change', function () {
-        updateVisibility(purchaseArea ? purchaseArea.getBoundingClientRect().top < window.innerHeight && purchaseArea.getBoundingClientRect().bottom > 0 : false);
-      });
+      mobileQuery.addEventListener('change', handleViewportChange);
     } else if (mobileQuery.addListener) {
-      mobileQuery.addListener(function () {
-        updateVisibility(false);
-      });
+      mobileQuery.addListener(handleViewportChange);
     }
+
+    updateVisibility();
   }
 
   if (document.readyState === 'loading') {
