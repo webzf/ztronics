@@ -2,6 +2,7 @@
 # Polyglot and jekyll-redirect-from can otherwise double-prefix these paths.
 require "fileutils"
 require "cgi"
+require "json"
 
 Jekyll::Hooks.register :site, :post_write do |site|
   languages = %w[de es fr it nl pl pt]
