@@ -2856,12 +2856,12 @@ require "cgi"
 require "json"
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  default_language = site.config["default_lang"].to_s
-  current_language = site.config["lang"].to_s
-
-  next unless current_language == default_language
-
   languages = %w[de es fr it nl pl pt]
+
+  # Polyglot creates a separate site destination for each non-default
+  # language. Only write redirects from the shared root destination.
+  destination_name = File.basename(site.dest.to_s)
+  next if languages.include?(destination_name)
   baseurl = site.config["baseurl"].to_s.sub(%r{/$}, "")
   destination = "#{baseurl}/"
   escaped_destination = CGI.escapeHTML(destination)
