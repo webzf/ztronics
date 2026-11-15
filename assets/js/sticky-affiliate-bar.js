@@ -1,6 +1,6 @@
 /**
  * Embedded Nerd — mobile sticky affiliate bar.
- * Show after a short scroll on mobile; hide only when the footer enters view.
+ * Show shortly after the visitor starts scrolling; hide only when the footer enters view.
  */
 (function () {
   'use strict';
@@ -11,7 +11,7 @@
 
     var footer = document.querySelector('.page__footer');
     var mobileQuery = window.matchMedia('(max-width: 767px)');
-    var scrollThreshold = 260;
+    var scrollThreshold = 100;
 
     function isFooterVisible() {
       if (!footer) return false;
