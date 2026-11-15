@@ -2843,3 +2843,44 @@ Jekyll::Hooks.register :documents, :pre_render do |document|
 
   end
 end
+
+
+# ============================================================================
+# LEGACY LANGUAGE ROOT REDIRECTS
+# ============================================================================
+# This file is explicitly required by the production and PR-preview build
+# commands, so keep this hook here to ensure it is loaded in both builds.
+require "fileutils"
+require "cgi"
+require "json"
+
+Jekyll::Hooks.register :site, :post_write do |site|
+  languages = %w[de es fr it nl pl pt]
+  baseurl = site.config["baseurl"].to_s.sub(%r{/$}, "")
+  destination = "#{baseurl}/"
+  escaped_destination = CGI.escapeHTML(destination)
+
+  languages.each do |language|
+    output_dir = File.join(site.dest, language)
+    FileUtils.mkdir_p(output_dir)
+
+    html = <<~HTML
+      <!doctype html>
+      <html lang="#{language}">
+        <head>
+          <meta charset="utf-8">
+          <meta name="robots" content="noindex,follow">
+          <meta http-equiv="refresh" content="0;url=#{escaped_destination}">
+          <title>Page moved | Embedded Nerd</title>
+          <script>window.location.replace(#{destination.to_json});</script>
+        </head>
+        <body>
+          <p>This language homepage has moved. <a href="#{escaped_destination}">Continue to Embedded Nerd</a>.</p>
+        </body>
+      </html>
+    HTML
+
+    File.write(File.join(output_dir, "index.html"), html)
+    Jekyll.logger.info("Embedded Nerd:", "Created legacy language-root redirect: /#{language}/")
+  end
+end
