@@ -1,11 +1,21 @@
 #!/usr/bin/env ruby
-# Verify that Dutch and Polish pages are emitted at their public language-prefixed routes.
-# Jekyll Polyglot adds the language prefix; localized permalinks must not.
-
-require "fileutils"
+# Verify localized routes and legacy language-root redirects in generated output.
+# Polyglot adds the language prefix; localized permalinks must not.
+require "rbconfig"
 
 site_root = ARGV.fetch(0) { abort "Usage: ruby scripts/validate-localized-output.rb SITE_ROOT" }
 site_root = File.expand_path(site_root)
+
+# The preview build finishes all Polyglot language passes before this validator
+# runs. Generate legacy root redirects now so later locale writes cannot erase them.
+preview_baseurl = if File.basename(File.dirname(site_root)) == "preview"
+  "/preview/#{File.basename(site_root)}"
+else
+  ""
+end
+generator = File.join(__dir__, "create-language-root-redirects.rb")
+abort "Failed to generate legacy language-root redirects" unless
+  system(RbConfig.ruby, generator, site_root, preview_baseurl)
 
 required = %w[
   de/products/guition-jc8048w550/index.html
@@ -38,6 +48,18 @@ required.each do |relative_path|
 end
 
 %w[de es fr it nl pl pt].each do |language|
+  redirect_path = File.join(site_root, language, "index.html")
+  if File.file?(redirect_path)
+    html = File.read(redirect_path)
+    if html.match?(/http-equiv=["']refresh["']/i) && html.include?("location.replace")
+      puts "Language-root redirect PASS: /#{language}/"
+    else
+      errors << "Language-root page is not a redirect: #{redirect_path}"
+    end
+  else
+    errors << "Missing language-root redirect: #{redirect_path}"
+  end
+
   duplicate_root = File.join(site_root, language, language)
   errors << "Duplicate language prefix detected: #{duplicate_root}" if File.directory?(duplicate_root)
 end
@@ -48,4 +70,4 @@ if errors.any?
   exit 1
 end
 
-puts "Localized output validation: PASS (#{required.length} routes)"
+puts "Localized output validation: PASS (#{required.length} localized routes + 7 language-root redirects)"

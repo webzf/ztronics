@@ -57,6 +57,9 @@ jobs:
       - name: Build production site
         run: bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build
 
+      - name: Generate legacy language-root redirects
+        run: ruby scripts/create-language-root-redirects.rb _site /
+
       - name: Repair unavailable localized internal links
         run: bundle exec ruby scripts/repair-localized-links.rb _site
 

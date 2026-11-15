@@ -124,7 +124,7 @@ The Guition ESP32-S3-4848S040 is a 4-inch 480×480 ESP32-S3 touchscreen for comp
 
 {% include guition-variant-buttons.html %}
 
-For the detailed [4848S040 pinout and ESPHome setup guide](/guition-esp32-s3-4848s040-pinout-esphome/), see the separate technical walkthrough.
+For the detailed [pinout & ESPHome setup](/guition-esp32-s3-4848s040-pinout-esphome/), see the separate technical walkthrough.
 
 
 ## Is the Guition ESP32-S3-4848S040 Worth Buying?
@@ -170,7 +170,7 @@ The RGB display interface uses a substantial number of GPIOs. If your project ne
 
 The RGB display and GT911 touchscreen use many ESP32-S3 pins, leaving limited room for additional peripherals. GPIO assignments can vary by board revision, so do not assume an unlisted pin is available.
 
-For the complete signal tables, connector details, GPIO cautions and ESPHome configuration, use the [4848S040 pinout and ESPHome setup guide](/guition-esp32-s3-4848s040-pinout-esphome/).
+For the complete signal tables, connector details, GPIO cautions and ESPHome configuration, use the [pinout & ESPHome setup](/guition-esp32-s3-4848s040-pinout-esphome/).
 
 ## Relay hardware and installation
 
@@ -180,7 +180,7 @@ The 4848S040 is sold with and without a relay assembly. The relay-equipped versi
 
 A community configuration is available for ESPHome, including the ST7701S display and GT911 touch controller. It can be a useful starting point for a Home Assistant control panel. Arduino and LVGL workflows are also used by the community, but check the software configuration for the exact board revision.
 
-For the complete [pinout and GPIO reference](/guition-esp32-s3-4848s040-pinout-esphome/), including display signals and touch wiring, see the technical guide. For configuration steps, follow the [ESPHome setup guide](/guition-esp32-s3-4848s040-pinout-esphome/).
+For the complete [pinout & ESPHome setup](/guition-esp32-s3-4848s040-pinout-esphome/), including display signals and touch wiring, see the technical guide. For configuration steps, follow the [pinout & ESPHome setup](/guition-esp32-s3-4848s040-pinout-esphome/).
 
 - [ESPHome device page](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/)
 - [Community ESPHome/LVGL example and YAML template](https://github.com/jtenniswood/esphome-lvgl/tree/main/guition-esp32-s3-4848s040)

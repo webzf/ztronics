@@ -112,7 +112,7 @@ This guide focuses on the 4848S040 pinout, display and touch interfaces, relay-r
 
 ## Key hardware at a glance
 
-This board family combines an ESP32-S3, a 480 × 480 RGB display using the ST7701S, and GT911 capacitive touch. Memory, relay hardware and enclosure options should be checked against the exact revision and seller listing. See the [product page for full specifications and buying options](/products/guition-esp32-s3-4848s040/).
+This board family combines an ESP32-S3, a 480 × 480 RGB display using the ST7701S, and GT911 capacitive touch. Memory, relay hardware and enclosure options should be checked against the exact revision and seller listing. See the [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/).
 
 ## Guition ESP32-S3-4848S040 pinout
 
@@ -175,7 +175,7 @@ The board profile is a useful starting point, but it is not a substitute for the
 
 ## Relay and non-relay versions
 
-The 4848S040 is sold in variants that may include a relay module and different mounting arrangements. If you are deciding between versions, check the [product page for variant details and guidance on which version to buy](/products/guition-esp32-s3-4848s040/).
+The 4848S040 is sold in variants that may include a relay module and different mounting arrangements. If you are deciding between versions, check the [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/).
 
 - **Non-relay version:** Check the exact board documentation to identify the exposed connections and supported peripherals.
 - **Relay version:** Do not assume the relay’s GPIO assignment or electrical ratings. Verify them in the schematic or documentation for that version before connecting a load.
