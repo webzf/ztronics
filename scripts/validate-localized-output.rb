@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
-# Verify that Dutch and Polish pages are emitted at their public language-prefixed routes.
-# Jekyll Polyglot adds the language prefix; localized permalinks must not.
-
-require "fileutils"
+# Verify localized routes and legacy language-root redirects in generated output.
+# Polyglot adds the language prefix; localized permalinks must not.
 
 site_root = ARGV.fetch(0) { abort "Usage: ruby scripts/validate-localized-output.rb SITE_ROOT" }
 site_root = File.expand_path(site_root)
@@ -31,13 +29,25 @@ errors = []
 required.each do |relative_path|
   full_path = File.join(site_root, relative_path)
   if File.file?(full_path)
-    puts "Localized route PASS: /#{relative_path.sub(%r{/index\.html$}, "/")}"
+    puts "Localized route PASS: /#{relative_path.sub(%r{/index\\.html$}, "/")}"
   else
     errors << "Missing generated localized page: #{full_path}"
   end
 end
 
 %w[de es fr it nl pl pt].each do |language|
+  redirect_path = File.join(site_root, language, "index.html")
+  if File.file?(redirect_path)
+    html = File.read(redirect_path)
+    if html.match?(/http-equiv=["']refresh["']/i) && html.include?("location.replace")
+      puts "Language-root redirect PASS: /#{language}/"
+    else
+      errors << "Language-root page is not a redirect: #{redirect_path}"
+    end
+  else
+    errors << "Missing language-root redirect: #{redirect_path}"
+  end
+
   duplicate_root = File.join(site_root, language, language)
   errors << "Duplicate language prefix detected: #{duplicate_root}" if File.directory?(duplicate_root)
 end
@@ -48,4 +58,4 @@ if errors.any?
   exit 1
 end
 
-puts "Localized output validation: PASS (#{required.length} routes)"
+puts "Localized output validation: PASS (#{required.length} localized routes + 7 language-root redirects)"
