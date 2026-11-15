@@ -1,6 +1,6 @@
 /**
  * Embedded Nerd — mobile sticky affiliate bar.
- * Shows after purchase CTAs leave the viewport and stays hidden near the footer.
+ * Keep the bar hidden while a product purchase CTA is visible and near the footer.
  */
 (function () {
   'use strict';
@@ -9,8 +9,10 @@
     var bar = document.querySelector('[data-sticky-affiliate]');
     if (!bar) return;
 
+    // Guition and a few other product pages use .en-product-cta;
+    // standard product pages use .en-buy-buttons.
     var purchaseAreas = Array.prototype.slice.call(
-      document.querySelectorAll('.en-buy-buttons')
+      document.querySelectorAll('.en-product-cta, .en-buy-buttons')
     );
     var footer = document.querySelector('.page__footer');
     var mobileQuery = window.matchMedia('(max-width: 767px)');
@@ -45,8 +47,8 @@
 
       if (footer) {
         var footerObserver = new IntersectionObserver(function (entries) {
-          footerVisible = entries.some(function (entry) {
-            return entry.isIntersecting;
+          entries.forEach(function (entry) {
+            footerVisible = entry.isIntersecting;
           });
           updateVisibility();
         }, { threshold: 0.01 });
