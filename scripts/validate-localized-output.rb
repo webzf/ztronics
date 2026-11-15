@@ -29,7 +29,7 @@ errors = []
 required.each do |relative_path|
   full_path = File.join(site_root, relative_path)
   if File.file?(full_path)
-    puts "Localized route PASS: /#{relative_path.sub(%r{/index\\.html$}, "/")}"
+    puts "Localized route PASS: /#{relative_path.sub(%r{/index\.html$}, "/")}"
   else
     errors << "Missing generated localized page: #{full_path}"
   end
