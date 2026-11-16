@@ -154,7 +154,7 @@ The board cards show information such as:
 Some entries have status labels such as **Verified**, **Vendor Matched** or **USB Live**. These labels are important: being listed in the catalog does not automatically mean that a board can currently be exported or used with USB Live.
 
 ![LCD Ultra Pro new project window with the ESP32 display board picker](https://lcdultrapro.com/press/full/board-picker.jpg)
-*The board picker helps identify the exact panel before creating a project. Screenshot supplied by the developer.*
+*The board picker helps identify the exact panel before creating a project. Screenshot from the developer's public press kit.*
 
 For a first project, choose the exact model and revision rather than a similar-looking board. Display controllers, touch controllers and GPIO assignments can differ between boards that appear to belong to the same product family.
 
@@ -189,12 +189,12 @@ Examples include:
 The available Smart widgets can depend on the selected board. Screenshots in the developer's public press kit show different counts depending on the selected board: 20 Smart widgets on the 7-inch Waveshare project and 12 on the round 2.1-inch MaTouch project.
 
 ![LCD Ultra Pro Smart widget palette with WiFi, MQTT, time and settings components](https://lcdultrapro.com/press/full/smart-widgets-palette.jpg)
-*The Smart tab groups ready-made screens and components. Screenshot supplied by the developer.*
+*The Smart tab groups ready-made screens and components. Screenshot from the developer's public press kit.*
 
 The project also includes **19 demo projects** that open directly in the editor. A smart home dashboard or thermostat is a useful starting point because you can inspect its widgets and rules instead of building everything from an empty screen.
 
 ![LCD Ultra Pro thermostat interface for the 2.1-inch round Makerfabs MaTouch display](https://lcdultrapro.com/press/full/round-thermostat.jpg)
-*A thermostat demo for the round 2.1-inch MaTouch Rotary display. Screenshot supplied by the developer.*
+*A thermostat demo for the round 2.1-inch MaTouch Rotary display. Screenshot from the developer's public press kit.*
 
 ## Step 3: Add behaviour with visual rules
 
@@ -220,7 +220,7 @@ The Beginner view describes actions as readable sentences and provides quick-sta
 This is the more approachable starting point if you are not familiar with LVGL event callbacks.
 
 ![LCD Ultra Pro Beginner rule editor showing quick-start actions and readable event rules](https://lcdultrapro.com/press/full/rules-beginner-view.jpg)
-*Beginner mode presents common actions as readable rules. Screenshot supplied by the developer.*
+*Beginner mode presents common actions as readable rules. Screenshot from the developer's public press kit.*
 
 ### Advanced view
 
@@ -229,7 +229,7 @@ The Advanced view exposes the individual options for each rule. Depending on the
 That extra detail matters when a project needs more than a simple button action. You can inspect and adjust the rule rather than being restricted to a fixed preset.
 
 ![LCD Ultra Pro Advanced rule editor with MQTT topic, message, QoS and widget state settings](https://lcdultrapro.com/press/full/rules-advanced-view.jpg)
-*Advanced mode exposes the options behind each event rule. Screenshot supplied by the developer.*
+*Advanced mode exposes the options behind each event rule. Screenshot from the developer's public press kit.*
 
 The current documentation describes about **100 ready-made rules**. They provide a starting point, but a real project still needs its topics, pins, conditions and hardware behaviour configured correctly.
 
@@ -244,7 +244,7 @@ Live Preview runs the interface and its visual rules inside the browser. You can
 The supplied demonstration also shows a simulated MQTT broker. You can enter a topic and message to see how the interface reacts and what it publishes. This is useful for checking event logic without connecting a physical board.
 
 ![LCD Ultra Pro Live Preview window with a simulated MQTT broker and smart home dashboard](https://lcdultrapro.com/press/full/live-preview.jpg)
-*Live Preview lets you interact with the design and simulate MQTT messages in the browser. Screenshot supplied by the developer.*
+*Live Preview lets you interact with the design and simulate MQTT messages in the browser. Screenshot from the developer's public press kit.*
 
 ### USB Live: mirror the design onto a real display
 
@@ -266,7 +266,7 @@ There are two important limitations:
 This makes USB Live useful for checking the appearance and layout on a real panel, but it is not a replacement for uploading and testing the finished firmware.
 
 ![LCD Ultra Pro USB Live setup window showing the steps to install and run the preview on a supported board](https://lcdultrapro.com/press/full/usb-live-window.jpg)
-*USB Live setup and board selection. Screenshot supplied by the developer.*
+*USB Live setup and board selection. Screenshot from the developer's public press kit.*
 
 The developer's press kit also includes this demonstration clip:
 
@@ -290,7 +290,7 @@ The editor also lists free pins for the selected board and provides clickable co
 One limitation is worth remembering: custom code runs on the physical board after the exported project is uploaded. It is not executed by Live Preview or USB Live.
 
 ![LCD Ultra Pro Custom Code window with startup, global and event code insertion points](https://lcdultrapro.com/press/full/custom-code-window.jpg)
-*Custom code can be added to the generated Arduino event file. Screenshot supplied by the developer.*
+*Custom code can be added to the generated Arduino event file. Screenshot from the developer's public press kit.*
 
 ## Export the Arduino project
 
@@ -305,10 +305,10 @@ When the interface is ready, Export generates a ZIP containing an Arduino projec
 - A `secrets_example.h` file for Wi-Fi and MQTT credentials.
 
 ![LCD Ultra Pro editor showing the completed export notification](https://lcdultrapro.com/press/full/export-done.jpg)
-*The editor confirms when the project export has finished. Screenshot supplied by the developer.*
+*The editor confirms when the project export has finished. Screenshot from the developer's public press kit.*
 
 ![LCD Ultra Pro exported Arduino ZIP contents and generated README with board configuration](https://lcdultrapro.com/press/full/export-zip-and-readme.jpg)
-*The ZIP contains the generated source, board support files and a README with configuration details. Screenshot supplied by the developer.*
+*The ZIP contains the generated source, board support files and a README with configuration details. Screenshot from the developer's public press kit.*
 
 ### Example: Waveshare ESP32-S3-LCD-7B Arduino settings
 
@@ -373,10 +373,10 @@ The board wiki provides specifications, pin information and connector details. T
 The parts section contains 62 pages covering sensors, relays and modules. For example, the BME280 page discusses the common I²C address choices (0x76 and 0x77), wiring and the possibility of sharing an I²C bus with a display's touch controller.
 
 ![LCD Ultra Pro board wiki page showing Waveshare ESP32-S3-LCD-7B specifications](https://lcdultrapro.com/press/full/web-board-wiki.jpg)
-*Example board wiki page with specifications and hardware information. Screenshot supplied by the developer.*
+*Example board wiki page with specifications and hardware information. Screenshot from the developer's public press kit.*
 
 ![LCD Ultra Pro parts wiki page showing BME280 wiring and ESP32 I2C connections](https://lcdultrapro.com/press/full/web-parts-bme280.jpg)
-*Example parts reference for connecting a BME280 sensor over I²C. Screenshot supplied by the developer.*
+*Example parts reference for connecting a BME280 sensor over I²C. Screenshot from the developer's public press kit.*
 
 The site also publishes articles about ESP32 display hardware, LVGL and projects built with supported boards. You can browse the [LCD Ultra Pro blog](https://lcdultrapro.com/blog) separately from the editor.
 
