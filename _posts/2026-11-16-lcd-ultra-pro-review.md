@@ -319,7 +319,7 @@ The README also recommends extracting each new export into a **new, empty folder
 
 Wi-Fi and MQTT credentials are kept separately in a local `secrets.h` file. The developer states that these credentials are not included in the project file or uploaded to the cloud. As with any tool that handles credentials, check the generated files and the current privacy documentation before using it with sensitive network details.
 
-## Board support: 101 listed does not mean 101 export-ready
+## Board support: 102 selectable does not mean 102 export-ready
 
 The board catalog is one of the most important parts of LCD Ultra Pro, but the support figures need context. The current [board list](https://lcdultrapro.com/boards) says there are 173 wiki entries, 102 selectable boards and 61 boards with a driver in the Arduino export.
 
@@ -329,6 +329,7 @@ The current press kit lists the following support figures (checked 16 November 2
 |---|---:|
 | Boards in the wiki | 173 |
 | Boards selectable in the editor | 102 |
+| Boards with a display driver in the export | 61 |
 | Boards with a display driver in the export | 61 |
 | Boards tested by the developer on physical hardware | 3 |
 | Tested on the developer's own hardware | 3 |
