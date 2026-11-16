@@ -1,22 +1,22 @@
 ---
-title: "LCD Ultra Pro Review: A Visual LVGL Editor for ESP32 Displays"
-title_tag: "LCD Ultra Pro: Visual LVGL Editor for ESP32 Displays"
+title: "LCD Ultra Pro Overview: Visual LVGL Editor for ESP32 Displays"
+title_tag: "LCD Ultra Pro Overview: Visual LVGL Editor for ESP32 Displays"
 layout: single
-permalink: /lcd-ultra-pro-review/
+permalink: /lcd-ultra-pro-overview/
 lang: en
-page_id: article-lcd-ultra-pro-review
-translation_id: lcd-ultra-pro-review
+page_id: article-lcd-ultra-pro-overview
+translation_id: lcd-ultra-pro-overview
 internal_links: true
 excerpt: "Explore LCD Ultra Pro, a browser-based visual editor for ESP32 displays. Design LVGL interfaces, add logic with visual rules, test in a browser and export an Arduino project."
 show_date: false
 read_time: false
 last_modified_at: 2026-11-16
 header:
-  teaser: https://lcdultrapro.com/press/full/demo-smart-home.jpg
+  teaser: /assets/images/esp32-touchscreen-lvgl-gui.webp
   overlay_image: /assets/images/header3.webp
   overlay_filter: 0.5
-  image: https://lcdultrapro.com/press/full/demo-smart-home.jpg
-  og_image: https://lcdultrapro.com/press/full/demo-smart-home.jpg
+  image: /assets/images/esp32-touchscreen-lvgl-gui.webp
+  og_image: /assets/images/esp32-touchscreen-lvgl-gui.webp
   og_image_alt: "LCD Ultra Pro visual editor showing a smart home dashboard for an ESP32 touchscreen"
 categories:
   - Displays
@@ -37,7 +37,7 @@ related_posts:
   - /esp32-touchscreen-displays-guide/
   - /tools/esp32-touchscreen-selector/
 share: true
-seo_title: "LCD Ultra Pro: Visual LVGL Editor for ESP32 Displays"
+seo_title: "LCD Ultra Pro Overview: Visual LVGL Editor for ESP32 Displays"
 seo_description: "Explore LCD Ultra Pro, a free browser-based LVGL editor for ESP32 displays. See its visual rules, USB Live preview, Arduino export and limitations."
 ---
 
@@ -54,7 +54,9 @@ seo_description: "Explore LCD Ultra Pro, a free browser-based LVGL editor for ES
         "@type": "WebPage",
         "@id": {{ page.url | absolute_url | jsonify }}
       },
+      "datePublished": "2026-11-16",
       "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+      "image": {{ "/assets/images/esp32-touchscreen-lvgl-gui.webp" | absolute_url | jsonify }},
       "author": {
         "@type": "Organization",
         "name": "Embedded Nerd",
@@ -92,9 +94,9 @@ Designing a touchscreen interface for an ESP32 usually involves more than arrang
 
 **LCD Ultra Pro** takes a different approach: it is a browser-based visual editor for ESP32 display boards. You arrange widgets on a canvas, define their behaviour with visual rules, test the interface in the browser and export an Arduino project.
 
-The project is currently offered as a free open beta. This article looks at how the editor is structured, what its workflow includes and where its compatibility limits matter.
+The project is currently offered as a free open beta. This overview explains its workflow, checks the current documentation and identifies the compatibility limits that matter before choosing a board.
 
-> **Disclosure and testing note:** The LCD Ultra Pro developer provided the screenshots, fact sheet and demonstration video used in this article. We have not independently tested the editor on a physical display or compiled an exported project on our own hardware. Feature descriptions and compatibility figures below are attributed to the developer's supplied material and documentation.
+> **Editorial scope:** This is an independently researched overview, not a hands-on review. We checked the public editor information, documentation, board catalog, pricing page and press kit. We could not sign in, operate Live Preview, export a ZIP or inspect its contents in this session, and we did not test firmware on a physical display. Screenshots and export-file details below are attributed to the developer's published material, not presented as our own test results.
 
 ## What is LCD Ultra Pro?
 
@@ -163,7 +165,7 @@ You can position and resize widgets on the canvas, then adjust their geometry, t
 
 ### Smart widgets and ready-made screens
 
-The Smart tab contains **20 ready-made components** in the supplied fact sheet. These are intended to provide more complete functions than a basic button or label.
+The Smart tab contains **more than 20 ready-made components**, according to the current fact sheet. These are intended to provide more complete functions than a basic button or label.
 
 Examples include:
 
@@ -218,7 +220,7 @@ That extra detail matters when a project needs more than a simple button action.
 ![LCD Ultra Pro Advanced rule editor with MQTT topic, message, QoS and widget state settings](https://lcdultrapro.com/press/full/rules-advanced-view.jpg)
 *Advanced mode exposes the options behind each event rule. Screenshot supplied by the developer.*
 
-The supplied fact sheet lists **100 ready-made rules**. They provide a starting point, but a real project still needs its topics, pins, conditions and hardware behaviour configured correctly.
+The current documentation describes about **100 ready-made rules**. They provide a starting point, but a real project still needs its topics, pins, conditions and hardware behaviour configured correctly.
 
 ## Step 4: Test the interface before exporting
 
@@ -319,25 +321,38 @@ Wi-Fi and MQTT credentials are kept separately in a local `secrets.h` file. The 
 
 ## Board support: 101 listed does not mean 101 export-ready
 
-The board catalog is one of the most important parts of LCD Ultra Pro, but the support figures need context.
+The board catalog is one of the most important parts of LCD Ultra Pro, but the support figures need context. The current [board list](https://lcdultrapro.com/boards) says there are 173 wiki entries, 102 selectable boards and 61 boards with a driver in the Arduino export.
 
-The November 2026 fact sheet supplied for this article lists the following figures:
+The current press kit lists the following support figures (checked 16 November 2026):
 
 | Support level | Boards |
 |---|---:|
-| Boards in the catalog | 101 |
-| Boards with an export driver | 60 |
-| Matched against the manufacturer's example code | 42 |
-| Compiled with arduino-cli | 15 |
+| Boards in the wiki | 173 |
+| Boards selectable in the editor | 102 |
+| Boards with a display driver in the export | 61 |
+| Boards tested by the developer on physical hardware | 3 |
 | Tested on the developer's own hardware | 3 |
 
-The remaining **41 catalog entries do not have an export driver** in that snapshot. Their specifications may be available in the wiki, but you cannot currently export a project for them.
+The current public figures distinguish 173 boards documented in the wiki, 102 available in the editor and 61 with a display driver included in the export. A selectable board is therefore not necessarily export-ready.
 
 These are different levels of support. A board can be listed with specifications without having a driver. A driver matched against a manufacturer's example is not the same as a successful compile, and a successful compile is not the same as testing on the physical board.
 
 Before choosing a display for a project, check its status in the board picker and confirm that the exact board has an export driver. If USB Live is important, check that the board is one of the three listed above.
 
 The catalog and its status labels can change as the developer adds boards and drivers. Check the [current board list](https://lcdultrapro.com/boards) rather than treating the November 2026 figures as permanent.
+
+
+### Examples already in the Embedded Nerd catalog
+
+We checked the public board list against display products already covered by Embedded Nerd. These three exact models appear in the catalog with a **ready** export driver:
+
+- [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — 4.3-inch, 800×480, capacitive touch. The LCD Ultra Pro board list marks this family as ready; the driver is included in the export, but the ready label does not mean it has been physically tested by the developer.
+- [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — 4.3-inch, 800×480, capacitive touch. The board list marks this exact CYD variant as ready.
+- [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) — 4-inch, 480×480, capacitive touch. The board list marks it as ready.
+
+This gives Embedded Nerd readers a practical starting point: these products are already documented on our site and have an export driver listed by LCD Ultra Pro. Check the exact revision and current board status before relying on the generated driver.
+
+**Important Waveshare naming detail:** the editor's USB Live list names the 1024×600 board as **ESP32-S3-LCD-7B**. LCD Ultra Pro's own board wiki explains that Waveshare also sells a touch-equipped version called **ESP32-S3-Touch-LCD-7B**; the shorter ESP32-S3-LCD-7B designation refers to the version without touch. Do not confuse either 1024×600 board with Embedded Nerd's [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/), which is an 800×480 display. See the [LCD Ultra Pro board entry](https://lcdultrapro.com/boards/waveshare-7b-1024x600) for the distinction.
 
 ## The board wiki, parts pages and other tools
 
@@ -354,6 +369,19 @@ The parts section contains 62 pages covering sensors, relays and modules. For ex
 *Example parts reference for connecting a BME280 sensor over I²C. Screenshot supplied by the developer.*
 
 The site also publishes articles about ESP32 display hardware, LVGL and projects built with supported boards. You can browse the [LCD Ultra Pro blog](https://lcdultrapro.com/blog) separately from the editor.
+
+
+## What to check before committing to a project
+
+The public documentation suggests three separate checks rather than one single preview step:
+
+1. **Live Preview** is the place to exercise the UI rules in the browser. The documentation says pins used by rules appear as virtual controls, which is useful for trying logic without a physical board.
+2. **USB Live** mirrors the canvas to one of the three supported displays. It only checks the picture: touch, rules and timers do not run on the board in this mode.
+3. **Arduino export** is the step that produces the firmware project. The ZIP should include the sketch, generated screen and event code, board display/touch drivers, `lv_conf.h`, images as C arrays and a README with the board settings and library versions.
+
+That separation is the most important practical detail to understand before starting. A successful browser preview does not prove that the export compiles, and USB Live does not validate touch input or the final firmware. The documentation recommends Arduino IDE 2.x and LVGL 8.4.x for compiling the export.
+
+We could not independently run those three stages in this session. In particular, we did not open or compile the ZIP; the file list and README description above are based on the developer's press-kit screenshot and published documentation.
 
 ## Advantages and limitations
 
@@ -373,10 +401,10 @@ Based on the supplied documentation and demonstrations, LCD Ultra Pro has severa
 **Limitations**
 - The export targets ESP32 and ESP32-S3 boards.
 - The current export is based on LVGL 8.4, not LVGL 9.
-- Only 60 of the 101 boards in the supplied November 2026 snapshot have an export driver.
+- Only 61 of the 102 selectable boards currently have a display driver in the export.
 - USB Live is limited to three boards and requires Chrome or Edge.
 - USB Live mirrors the picture only; it does not test touch input or run the finished application on the board.
-- The project is in open beta, and the developer says paid plans may be introduced after the beta.
+- The project is still in open beta; the pricing page says paid plans will be introduced after the beta.
 
 The distinction between the editor preview, USB Live and the final uploaded firmware is particularly important. Each stage tests something different, and none should be mistaken for a complete hardware validation of every supported board.
 
@@ -408,7 +436,7 @@ We have not tested the editor or exported firmware on a physical board, so this 
 
 ### Is LCD Ultra Pro free?
 
-It is free during the open beta, according to the developer. The pricing page says paid plans may be introduced after the beta, so check the [current pricing information](https://lcdultrapro.com/pricing).
+It is free during the open beta. The [pricing page](https://lcdultrapro.com/pricing) says paid plans will be introduced after the beta; pricing has not yet been announced.
 
 ### Does LCD Ultra Pro use LVGL 9?
 
@@ -416,7 +444,7 @@ No. The supplied documentation describes an LVGL 8.4 workflow. The exported proj
 
 ### Which ESP32 boards can export an Arduino project?
 
-The November 2026 fact sheet supplied for this article lists 101 boards in the catalog, of which 60 have an export driver. Check the current board picker and the status of your exact board before starting.
+The current public press kit lists 173 boards in the wiki, 102 selectable in the editor and 61 with an export driver. Check the current board picker and the status of your exact board before starting.
 
 ### Does USB Live work with every ESP32 display?
 
