@@ -89,6 +89,30 @@ For current availability and official specifications, compare the two variants o
 
 The 3.4C and 4C are two variants of the same product family, not interchangeable panels: the 3.4C is 800 × 800 in a 115 × 115 mm outline, while the 4C is 720 × 720 in a 126 × 126 mm outline. Check the exact SKU in the seller's variant selector before checkout.
 
+## ESP32-P4 3.4C vs 7B: Which Display Should You Choose?
+
+The 3.4C and 7B share the ESP32-P4 platform, 32 MB PSRAM, 32 MB flash and ESP32-C6 wireless co-processor, but their screen formats serve different HMI designs. The 3.4C is a high-resolution circular display; the 7B is a larger widescreen panel with additional industrial-style interfaces.
+
+| Feature | [ESP32-P4-WIFI6-Touch-LCD-3.4C](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) | [ESP32-P4-WIFI6-Touch-LCD-7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/) |
+|---|---|---|
+| Display size and shape | 3.4-inch round IPS | 7-inch widescreen IPS |
+| Resolution | 800 × 800 | 1024 × 600 |
+| Touch | 10-point capacitive, GT9271 | 5-point capacitive, GT911 |
+| Brightness | 300 cd/m² | 350 cd/m² |
+| Processor platform | ESP32-P4 + ESP32-C6 | ESP32-P4 + ESP32-C6 |
+| Memory | 32 MB PSRAM, 32 MB flash | 32 MB PSRAM, 32 MB flash |
+| Display interface | 2-lane MIPI-DSI | MIPI-DSI |
+| Camera | MIPI-CSI | 2-lane MIPI-CSI |
+| Expansion and control | 40-pin GPIO header, I²C, microSD, USB and audio | CAN, RS485, I²C, UART, TF card, USB and audio |
+| Best fit | Circular dashboards, gauges, clocks and round control interfaces | Larger control panels, industrial HMIs and widescreen dashboards |
+
+**Choose the 3.4C** if the circular format is central to your interface: it offers a square 800 × 800 pixel canvas inside a round panel and supports 10-point touch. **Choose the 7B** if you need more physical screen area, a landscape layout or CAN/RS485 connectivity for a more involved control system.
+
+Neither is a universal upgrade over the other. The 7B is not simply a larger 3.4C: its 1024 × 600 widescreen layout changes how you should design the UI, while the 3.4C's 800 × 800 round panel is better suited to radial interfaces.
+
+For exact connector assignments, power requirements and current software support, check the [official Waveshare documentation for the 3.4C and 4C family](https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-XC) and the [official 7B documentation](https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-7B). You can also open the individual Embedded Nerd pages for the [3.4C](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) and [7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/).
+
+
 **Why the P4 instead of an ESP32-S3?** Resolution and speed. An S3 round board is typically 240 × 240 over SPI. The P4 drives an 800 × 800 panel over MIPI-DSI with a 2D pixel accelerator (PPA) and plenty of PSRAM for frame buffers. If your project is a small gadget, an S3 or a plain SPI module is cheaper and simpler. If you want a polished control panel, the P4 is the better fit.
 
 ## Round display design basics
