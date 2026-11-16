@@ -94,6 +94,11 @@ Designing a touchscreen interface for an ESP32 usually involves more than arrang
 
 **LCD Ultra Pro** takes a different approach: it is a browser-based visual editor for ESP32 display boards. You arrange widgets on a canvas, define their behaviour with visual rules, test the interface in the browser and export an Arduino project.
 
+<figure style="max-width:480px;margin:1.25rem auto;text-align:center;">
+  <img src="https://lcdultrapro.com/press/full/demo-smart-home.jpg" alt="LCD Ultra Pro visual editor showing a smart home dashboard for an ESP32 display" loading="lazy" style="width:100%;height:auto;">
+  <figcaption>LCD Ultra Pro's visual editor with a Smart Home dashboard. Screenshot supplied by the developer.</figcaption>
+</figure>
+
 **Choosing an ESP32 display for a project?** These boards already have product coverage on Embedded Nerd and are listed by LCD Ultra Pro with a ready export driver:
 
 - [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — 4.3-inch, 800×480 display.
@@ -133,8 +138,6 @@ The editor itself does not require a desktop application installation. USB Live 
 
 [Open the LCD Ultra Pro editor](https://app.lcdultrapro.com/) or visit the [official LCD Ultra Pro website](https://lcdultrapro.com/).
 
-![LCD Ultra Pro editor showing a smart home dashboard on a Waveshare ESP32-S3-LCD-7B display project](https://lcdultrapro.com/press/full/demo-smart-home.jpg)
-*The editor canvas with a smart home dashboard. Screenshot supplied by the LCD Ultra Pro developer.*
 
 ## Step 1: Select your exact ESP32 display board
 
