@@ -60,58 +60,17 @@ If you're still choosing hardware, start with our [ESP32 touch display guide]({{
 
 > **Testing note:** this is a project guide based on the manufacturer's documentation and LVGL 9 APIs. The UI examples have not been verified on the physical 3.4C or 4C hardware as part of this article. Start from the matching Waveshare demo, confirm display and touch initialization, and then integrate one UI at a time.
 
-## The ESP32-P4 round display boards
+### ESP32-P4 display boards at a glance
 
-At the time of writing, the board most makers find first is from Waveshare. It comes in two sizes. The specifications below are based on the [manufacturer's product listing](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm). Check the exact variant before ordering, because the 3.4C and 4C have different display sizes and resolutions.
+| | 3.4C | 4C | 7B |
+|---|---|---|---|
+| Shape | Round | Round | Rectangular |
+| Display | 3.4" IPS, 800 × 800 | 4" IPS, 720 × 720 | 7" IPS, 1024 × 600 |
+| Touch | 10-point capacitive (GT9271) | 10-point capacitive (GT9271) | 5-point capacitive (GT911) |
+| Interface | 2-lane MIPI-DSI | 2-lane MIPI-DSI | MIPI-DSI |
+| Page | [Product page](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) | [Waveshare listing](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm) | [Product page](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/) |
 
-| | **ESP32-P4-WIFI6-Touch-LCD-3.4C** | **ESP32-P4-WIFI6-Touch-LCD-4C** |
-|---|---|---|
-| Display | 3.4" round IPS | 4" round IPS |
-| Resolution | 800 × 800 | 720 × 720 |
-| Touch | 10-point capacitive (GT9271) | 10-point capacitive (GT9271) |
-| Brightness | 300 cd/m² | 350 cd/m² |
-| Display interface | 2-lane MIPI-DSI | 2-lane MIPI-DSI |
-| Board outline | 115 × 115 mm | 126 × 126 mm |
-
-Both share the same core hardware:
-
-- **ESP32-P4** (ESP32-P4NRW32): dual-core RISC-V at 400 MHz, 32 MB PSRAM, 32 MB flash
-- **ESP32-C6 module** for Wi-Fi 6 and Bluetooth 5 (LE). The P4 has no radio of its own, so wireless goes through the C6
-- Two microphones with an ES7210 front end, an ES8311 audio codec and a speaker connector
-- MIPI-CSI camera connector, microSD slot, USB OTG Type-A and two USB-C ports
-- A 40-pin GPIO header and an SH1.0 4-pin I²C header for external sensors
-- Optical-bonded toughened glass front
-
-For current availability and official specifications, compare the two variants on the [Waveshare product page](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm). The Embedded Nerd product page linked above covers the 3.4C specifically. Prices and stock change, so confirm the selected size before ordering.
-
-![Rear view of the Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C showing its connectors and expansion header](/assets/images/products/esp32-p4-touch-lcd-3.4c-back.webp)
-*Rear view: check connector placement, expansion headers and enclosure clearance before planning a build.*
-
-The 3.4C and 4C are two variants of the same product family, not interchangeable panels: the 3.4C is 800 × 800 in a 115 × 115 mm outline, while the 4C is 720 × 720 in a 126 × 126 mm outline. Check the exact SKU in the seller's variant selector before checkout.
-
-## ESP32-P4 3.4C vs 7B: Which Display Should You Choose?
-
-The 3.4C and 7B share the ESP32-P4 platform, 32 MB PSRAM, 32 MB flash and ESP32-C6 wireless co-processor, but their screen formats serve different HMI designs. The 3.4C is a high-resolution circular display; the 7B is a larger widescreen panel with additional industrial-style interfaces.
-
-| Feature | [ESP32-P4-WIFI6-Touch-LCD-3.4C](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) | [ESP32-P4-WIFI6-Touch-LCD-7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/) |
-|---|---|---|
-| Display size and shape | 3.4-inch round IPS | 7-inch widescreen IPS |
-| Resolution | 800 × 800 | 1024 × 600 |
-| Touch | 10-point capacitive, GT9271 | 5-point capacitive, GT911 |
-| Brightness | 300 cd/m² | 350 cd/m² |
-| Processor platform | ESP32-P4 + ESP32-C6 | ESP32-P4 + ESP32-C6 |
-| Memory | 32 MB PSRAM, 32 MB flash | 32 MB PSRAM, 32 MB flash |
-| Display interface | 2-lane MIPI-DSI | MIPI-DSI |
-| Camera | MIPI-CSI | 2-lane MIPI-CSI |
-| Expansion and control | 40-pin GPIO header, I²C, microSD, USB and audio | CAN, RS485, I²C, UART, TF card, USB and audio |
-| Best fit | Circular dashboards, gauges, clocks and round control interfaces | Larger control panels, industrial HMIs and widescreen dashboards |
-
-**Choose the 3.4C** if the circular format is central to your interface: it offers a square 800 × 800 pixel canvas inside a round panel and supports 10-point touch. **Choose the 7B** if you need more physical screen area, a landscape layout or CAN/RS485 connectivity for a more involved control system.
-
-Neither is a universal upgrade over the other. The 7B is not simply a larger 3.4C: its 1024 × 600 widescreen layout changes how you should design the UI, while the 3.4C's 800 × 800 round panel is better suited to radial interfaces.
-
-For exact connector assignments, power requirements and current software support, check the [official Waveshare documentation for the 3.4C and 4C family](https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-XC) and the [official 7B documentation](https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-7B). You can also open the individual Embedded Nerd pages for the [3.4C](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) and [7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/).
-
+Our [Waveshare ESP32-P4 3.4C product page](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) has the full interface list, dimensions and purchase link for the 3.4-inch version.
 
 **Why the P4 instead of an ESP32-S3?** Resolution and speed. An S3 round board is typically 240 × 240 over SPI. The P4 drives an 800 × 800 panel over MIPI-DSI with a 2D pixel accelerator (PPA) and plenty of PSRAM for frame buffers. If your project is a small gadget, an S3 or a plain SPI module is cheaper and simpler. If you want a polished control panel, the P4 is the better fit.
 
@@ -380,20 +339,6 @@ Wi-Fi runs on the ESP32-C6 module, not on the P4. Use the networking example fro
 **UI feels slow**
 Lower the animation load first: fewer redraws, smaller changing areas, and no full-screen redraw on every timer tick. In the demo's LVGL settings, make sure the draw buffers are in PSRAM and sized sensibly.
 
-## Product page and buying checklist
-
-If you want the exact 3.4-inch board shown in the photos, see the [Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/). It includes the board specifications and a purchase link for this specific model.
-
-Before ordering, verify these details on the listing:
-
-- **Variant:** select 3.4C (800 × 800), not 4C (720 × 720).
-- **Included items:** check whether the listing includes the speaker and the two 4-pin cables; bundle contents can vary.
-- **Power and programming:** review the manufacturer's documentation for the correct USB connector and flashing procedure.
-- **Mechanical fit:** the board outline is about 115 × 115 mm, so plan the enclosure around the complete assembly, not only the visible glass.
-- **Software support:** begin with the manufacturer's ESP-IDF demo and confirm the screen and touch work before porting custom LVGL code.
-
-The product link may earn Embedded Nerd a commission if you buy through it, at no extra cost to you.
-
 ## Where to go next
 
 - Use LVGL's `lv_scale` widget to build a clock face with needles. It suits round screens well.
@@ -402,6 +347,7 @@ The product link may earn Embedded Nerd a commission if you buy through it, at n
 - On a tighter budget, a 1.28" SPI round module on a classic ESP32 or an ESP32-S3 round board is a good first step, with lower resolution and no MIPI-DSI.
 - For help comparing display boards by size, touch and interface, try the [ESP32 Touchscreen Selector]({{ site.baseurl }}/tools/esp32-touchscreen-selector/).
 - For another ESP32-P4 design, see our [ESP32-P4 Weather Station architecture guide]({{ site.baseurl }}/esp32-p4-weather-station/).
+- Need more screen area? The [Waveshare ESP32-P4-WIFI6-Touch-LCD-7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/) is a 7-inch rectangular board also built around the ESP32-P4.
 - If you're considering a rectangular alternative, read our [Sunton ESP32-8048S043C guide]({{ site.baseurl }}/sunton-esp32-8048s043c-guide/) for an integrated 4.3-inch ESP32-S3 touchscreen.
 
 ## FAQ
