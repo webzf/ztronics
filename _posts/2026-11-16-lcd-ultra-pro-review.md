@@ -175,12 +175,12 @@ Examples include:
 
 The available Smart widgets can depend on the selected board. The supplied screenshots, for example, show 20 Smart widgets on the 7-inch Waveshare project and 12 on the round 2.1-inch MaTouch project.
 
-![LCD Ultra Pro Smart widget palette with WiFi, MQTT, time and settings components](https://lcdultrapro.com/press/full/smart-widgets.jpg)
+![LCD Ultra Pro Smart widget palette with WiFi, MQTT, time and settings components](https://lcdultrapro.com/press/full/smart-widgets-palette.jpg)
 *The Smart tab groups ready-made screens and components. Screenshot supplied by the developer.*
 
 The project also includes **19 demo projects** that open directly in the editor. A smart home dashboard or thermostat is a useful starting point because you can inspect its widgets and rules instead of building everything from an empty screen.
 
-![LCD Ultra Pro thermostat interface for the 2.1-inch round Makerfabs MaTouch display](https://lcdultrapro.com/press/full/thermostat-round.jpg)
+![LCD Ultra Pro thermostat interface for the 2.1-inch round Makerfabs MaTouch display](https://lcdultrapro.com/press/full/round-thermostat.jpg)
 *A thermostat demo for the round 2.1-inch MaTouch Rotary display. Screenshot supplied by the developer.*
 
 ## Step 3: Add behaviour with visual rules
