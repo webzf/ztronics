@@ -394,7 +394,7 @@ It may be especially useful for:
 
 It is less suitable if your project depends on LVGL 9, your exact board has no export driver, or you need USB Live on hardware outside the three supported models.
 
-If you are still choosing a display, start with the [Embedded Nerd ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) or compare boards with the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/). For a larger Waveshare panel, see our [Waveshare ESP32-S3-Touch-LCD-7 product page](/products/waveshare-esp32-s3-touch-lcd-7/) and check the exact model carefully: the USB Live-supported **ESP32-S3-LCD-7B** is a distinct board designation.
+If you are still choosing a display, start with the [Embedded Nerd ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) or compare boards with the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/). Check the exact model name carefully: the USB Live-supported **Waveshare ESP32-S3-LCD-7B** is a specific board, and similarly named Waveshare displays are not automatically interchangeable.
 
 ## Final thoughts
 
