@@ -257,7 +257,7 @@ This makes USB Live useful for checking the appearance and layout on a real pane
 
 The following demonstration clip was also provided by the developer:
 
-<video controls preload="metadata" poster="https://lcdultrapro.com/press/usb-live-demo-poster.jpg" style="width:100%;height:auto;">
+<video controls preload="metadata" poster="https://lcdultrapro.com/press/full/usb-live-on-board.jpg" style="width:100%;height:auto;">
   <source src="https://lcdultrapro.com/videos/usb-live-demo.mp4" type="video/mp4">
   Your browser does not support embedded video. <a href="https://lcdultrapro.com/videos/usb-live-demo.mp4">Open the USB Live demonstration video</a>.
 </video>
