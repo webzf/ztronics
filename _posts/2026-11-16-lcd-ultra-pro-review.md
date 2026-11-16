@@ -94,6 +94,14 @@ Designing a touchscreen interface for an ESP32 usually involves more than arrang
 
 **LCD Ultra Pro** takes a different approach: it is a browser-based visual editor for ESP32 display boards. You arrange widgets on a canvas, define their behaviour with visual rules, test the interface in the browser and export an Arduino project.
 
+**Choosing an ESP32 display for a project?** These boards already have product coverage on Embedded Nerd and are listed by LCD Ultra Pro with a ready export driver:
+
+- [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — 4.3-inch, 800×480 display.
+- [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) — 4-inch, 480×480 display.
+- [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — 4.3-inch, 800×480 display; check the exact revision and touch controller because the public hardware descriptions do not fully match.
+
+For a broader comparison before choosing a board, see the [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/).
+
 The project is currently offered as a free open beta. This overview explains its workflow, checks the current documentation and identifies the compatibility limits that matter before choosing a board.
 
 > **Editorial scope:** This is an independently researched overview, not a hands-on review. We checked the public editor information, documentation, board catalog, pricing page and press kit. We could not sign in, operate Live Preview, export a ZIP or inspect its contents in this session, and we did not test firmware on a physical display. Screenshots and export-file details below are attributed to the developer's published material, not presented as our own test results.
