@@ -37,7 +37,7 @@ related_posts:
   - /esp32-touchscreen-displays-guide/
   - /tools/esp32-touchscreen-selector/
 share: true
-seo_title: "LCD Ultra Pro Overview: Visual LVGL Editor for ESP32 Displays"
+seo_title: "LCD Ultra Pro Overview: LVGL Editor for ESP32"
 seo_description: "Explore LCD Ultra Pro, a free browser-based LVGL editor for ESP32 displays. See its visual rules, USB Live preview, Arduino export and limitations."
 ---
 
@@ -327,16 +327,14 @@ The current press kit lists the following support figures (checked 16 November 2
 
 | Support level | Boards |
 |---|---:|
-| Boards in the wiki | 173 |
+| Boards documented in the wiki | 173 |
 | Boards selectable in the editor | 102 |
-| Boards with a display driver in the export | 61 |
-| Boards with a display driver in the export | 61 |
+| Boards with a driver included in export | 61 |
 | Boards tested by the developer on physical hardware | 3 |
-| Tested on the developer's own hardware | 3 |
 
 The current public figures distinguish 173 boards documented in the wiki, 102 available in the editor and 61 with a display driver included in the export. A selectable board is therefore not necessarily export-ready.
 
-These are different levels of support. A board can be listed with specifications without having a driver. A driver matched against a manufacturer's example is not the same as a successful compile, and a successful compile is not the same as testing on the physical board.
+These figures describe different levels of support. A board can be documented in the wiki without being selectable in the editor, and a selectable board may still have no export driver. The three hardware-tested boards are a much smaller group than the 61 boards with an export driver.
 
 Before choosing a display for a project, check its status in the board picker and confirm that the exact board has an export driver. If USB Live is important, check that the board is one of the three listed above.
 
