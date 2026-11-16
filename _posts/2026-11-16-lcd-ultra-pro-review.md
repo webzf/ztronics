@@ -17,7 +17,7 @@ header:
   overlay_filter: 0.5
   image: /assets/images/esp32-touchscreen-lvgl-gui.webp
   og_image: /assets/images/esp32-touchscreen-lvgl-gui.webp
-  og_image_alt: "LCD Ultra Pro visual editor showing a smart home dashboard for an ESP32 touchscreen"
+  og_image_alt: "ESP32 touchscreen interface designed with LVGL"
 categories:
   - Displays
   - ESP32
@@ -351,7 +351,7 @@ We checked the public board list against display products already covered by Emb
 
 This gives Embedded Nerd readers a practical starting point: these products are already documented on our site and have an export driver listed by LCD Ultra Pro. Check the exact revision and current board status before relying on the generated driver.
 
-**Important Waveshare naming detail:** the editor's USB Live list names the 1024×600 board as **ESP32-S3-LCD-7B**. LCD Ultra Pro's own board wiki explains that Waveshare also sells a touch-equipped version called **ESP32-S3-Touch-LCD-7B**; the shorter ESP32-S3-LCD-7B designation refers to the version without touch. Do not confuse either 1024×600 board with Embedded Nerd's [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/), which is an 800×480 display. See the [LCD Ultra Pro board entry](https://lcdultrapro.com/boards/waveshare-7b-1024x600) for the distinction.
+**Important Waveshare naming detail:** the USB Live board picker and press-kit screenshot use the name **ESP32-S3-LCD-7B**. LCD Ultra Pro's board wiki says Waveshare's touch-equipped version is called **ESP32-S3-Touch-LCD-7B**, while the shorter **ESP32-S3-LCD-7B** name refers to the version without touch. However, the current board-list table labels the ESP32-S3-LCD-7B entry as capacitive touch. That is an inconsistency between the public sources, so confirm the exact hardware with the developer before assuming which touch variant the USB Live profile targets. Do not confuse either 1024×600 model with Embedded Nerd's [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/), which is an 800×480 display. See the [LCD Ultra Pro board entry](https://lcdultrapro.com/boards/waveshare-7b-1024x600) for the distinction.
 
 ## The board wiki, parts pages and other tools
 
