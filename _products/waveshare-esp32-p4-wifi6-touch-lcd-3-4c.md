@@ -1,10 +1,10 @@
 ---
 layout: product
 internal_links: true
-title: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C"
+title: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C: Specs & Buy"
 product_verdict: "A strong choice for a high-resolution circular HMI with ESP32-P4 performance, provided your project can accommodate the board's size and MIPI-DSI setup."
-seo_title: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C: Specs"
-seo_description: "Explore the Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C: 3.4-inch 800×800 round capacitive touchscreen, ESP32-P4, memory, interfaces and LVGL projects."
+seo_title: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C: Specs & Buy"
+seo_description: "Waveshare ESP32-P4 round touch display, 3.4-inch 800×800, Wi-Fi 6 via ESP32-C6, 32 MB PSRAM. Specs, what's in the box, vs 7B and where to buy."
 product_id: waveshare-esp32-p4-wifi6-touch-lcd-3-4c
 category: Displays
 manufacturer: "Waveshare"
@@ -68,8 +68,8 @@ links:
     url: "https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-3.4c.htm"
   - title: "Waveshare Documentation"
     icon: "fas fa-book"
-    description: "Official setup instructions and example projects."
-    url: "https://www.waveshare.com/wiki/ESP32-P4-WIFI6-Touch-LCD-4C"
+    description: "Official shared documentation for the ESP32-P4-WIFI6-Touch-LCD-3.4C and 4C variants."
+    url: "https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-XC"
 related:
   - waveshare-esp32-p4-wifi6-touch-lcd-7b
   - waveshare-esp32-s3-touch-lcd-7
@@ -81,6 +81,19 @@ related:
 Choose this board when you want a large, high-resolution circular interface for an advanced dashboard, control panel or LVGL project. The 800×800 MIPI-DSI panel and ESP32-P4 provide much more room for a polished UI than small SPI round displays.
 
 It is less suitable for a compact, low-cost gadget: the board is physically large, the display interface is more involved, and the manufacturer's ESP-IDF demo is the sensible starting point.
+
+## ESP32-P4 3.4C vs 7B
+
+Both boards use the ESP32-P4 platform and ESP32-C6 wireless connectivity, but they target very different interface sizes and projects.
+
+| Feature | [Waveshare ESP32-P4 3.4C](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) | [Waveshare ESP32-P4 7B](/products/waveshare-esp32-p4-wifi6-touch-lcd-7b/) |
+|---|---|---|
+| Display | 3.4-inch round IPS | 7-inch IPS |
+| Resolution | 800 × 800 | 1024 × 600 |
+| Touch | 10-point capacitive (GT9271) | 5-point capacitive (GT911) |
+| Best suited to | Circular dashboards, gauges and compact round HMIs | Larger control panels and widescreen HMIs |
+
+For a broader look at the ESP32-P4 display family and how these boards compare with ESP32-S3 alternatives, see our [ESP32-P4 round touchscreen display projects and comparison guide](/esp32-p4-round-touchscreen-display-projects/).
 
 ## Key Features
 
@@ -94,6 +107,25 @@ It is less suitable for a compact, low-cost gadget: the board is physically larg
 - MicroSD slot, USB ports and GPIO expansion
 - Microphone and speaker-related audio hardware
 - LVGL support for graphical interfaces
+
+## Interfaces, Dimensions & What's in the Box
+
+| Interface | Details |
+|---|---|
+| Wireless | ESP32-C6-MINI-1 over SDIO: Wi-Fi 6 and Bluetooth 5 (LE) |
+| USB | USB 2.0 OTG Type-A; 2× USB-C for power, flashing and debugging (one is USB-to-UART) |
+| GPIO | 2×20 header, 28 programmable GPIOs; compatible with some Raspberry Pi HATs (adapter required) |
+| I²C | SH1.0 4-pin ESP32-P4 I²C header |
+| Camera | MIPI-CSI, 15-pin 1.0 mm connector for 2-lane cameras |
+| Storage | microSD (TF) slot, SDIO 3.0 |
+| Audio | ES8311 codec, ES7210 echo cancellation, dual microphones and speaker connector |
+| Other | RTC battery header (rechargeable batteries only), BOOT and RESET buttons |
+
+**Dimensions:** 115 × 115 mm board, with an 87.6 × 87.6 mm display area. Operating temperature: 0–60 °C.
+
+**In the box (according to Waveshare):** the board, two 4-pin cables and a speaker. Contents may differ between marketplaces, so check the seller's listing before ordering.
+
+The table above describes the available connectors and interfaces; it is not a GPIO pin map. For signal-level assignments, check the manufacturer's schematic and the relevant sections of the [official Waveshare documentation](https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-XC).
 
 ## Photos
 
