@@ -229,6 +229,8 @@ It can be used as the basis for a Home Assistant touchscreen dashboard with a co
 
 ## Compare other ESP32 touchscreen boards
 
+The [LCD Ultra Pro overview](/lcd-ultra-pro-overview/) explains how this board's **ready** export-driver status differs from a verified hardware test, and what to check before exporting an LVGL project.
+
 | Board | Best for |
 |---|---|
 | Guition ESP32-S3-4848S040 | Square 4-inch 480×480 interface |
