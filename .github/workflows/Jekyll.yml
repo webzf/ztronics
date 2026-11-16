@@ -55,7 +55,7 @@ jobs:
         run: ruby scripts/validate-commerce.rb
 
       - name: Build production site
-        run: bundle exec ruby -r jekyll -r ./_plugins/internal_linker.rb $(bundle show jekyll)/exe/jekyll build
+        run: bundle exec jekyll build
 
       - name: Generate legacy language-root redirects
         run: ruby scripts/create-language-root-redirects.rb _site /
@@ -129,7 +129,6 @@ jobs:
 
             BUNDLE_GEMFILE="$pr_gemfile" bundle exec ruby \
               -r jekyll \
-              -r "$PWD/pr-site-${pr_number}/_plugins/internal_linker.rb" \
               "$(BUNDLE_GEMFILE="$pr_gemfile" bundle show jekyll)/exe/jekyll" build \
               --source "pr-site-${pr_number}" \
               --drafts \
