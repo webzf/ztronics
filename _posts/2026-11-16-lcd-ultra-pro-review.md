@@ -241,7 +241,7 @@ LCD Ultra Pro provides two different ways to preview a project. They solve diffe
 
 Live Preview runs the interface and its visual rules inside the browser. You can click buttons, move sliders and test how the screen responds.
 
-The supplied demonstration also shows a simulated MQTT broker. You can enter a topic and message to see how the interface reacts and what it publishes. This is useful for checking event logic without connecting a physical board.
+The developer's public demonstration also shows a simulated MQTT broker. You can enter a topic and message to see how the interface reacts and what it publishes. This is useful for checking event logic without connecting a physical board.
 
 ![LCD Ultra Pro Live Preview window with a simulated MQTT broker and smart home dashboard](https://lcdultrapro.com/press/full/live-preview.jpg)
 *Live Preview lets you interact with the design and simulate MQTT messages in the browser. Screenshot from the developer's public press kit.*
@@ -279,7 +279,7 @@ The developer's press kit also includes this demonstration clip:
 
 The visual rule system does not remove the option to write code. LCD Ultra Pro includes a Custom Code window for adding your own Arduino code to the generated `ui_events.cpp` file.
 
-The supplied screenshots show three insertion points:
+Screenshots in the developer's public press kit show three insertion points:
 
 - **Top of file:** includes, pin definitions, variables and other declarations.
 - **Once at startup:** initialization code such as `pinMode()` or `sensor.begin()`.
@@ -356,7 +356,7 @@ The catalog and its status labels can change as the developer adds boards and dr
 
 We checked the public board list against display products already covered by Embedded Nerd. These three models are listed in the catalog with a **ready** export driver:
 
-- [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — 4.3-inch, 800×480, capacitive touch. The LCD Ultra Pro board list marks this family as ready; the driver is included in the export, but the ready label does not mean it has been physically tested by the developer.
+- [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — 4.3-inch, 800×480, capacitive touch. The LCD Ultra Pro board list marks this family as ready.
 - [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — 4.3-inch, 800×480. The board list marks an 8048S043C entry as ready, but there is a hardware-description mismatch: LCD Ultra Pro labels its entry as resistive touch, while our product page describes the C variant with capacitive GT911 touch. Confirm the exact revision and touch controller with the seller and developer before treating these entries as the same hardware.
 - [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) — 4-inch, 480×480, capacitive touch. The board list marks it as ready.
 
