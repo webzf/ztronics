@@ -1,6 +1,10 @@
 ---
 layout: product
 lang: es
+locale: es-ES
+toc_label: Contenido
+page_id: product-arduino-uno-q
+translation_id: arduino-uno-q
 internal_links: true
 title: "Arduino UNO Q: especificaciones, 2GB frente a 4GB y dónde comprar"
 product_verdict: "Una placa híbrida con Linux y microcontrolador para IA en el borde, visión artificial y robótica. Elige 2GB para aplicaciones específicas; 4GB ofrece más margen para usarla como ordenador independiente y realizar varias tareas."
@@ -19,7 +23,7 @@ excerpt: "Arduino UNO Q combina un procesador Qualcomm Dragonwing QRB2210 para L
 description: "Arduino UNO Q es una plataforma híbrida de ordenador de placa única y microcontrolador. El Qualcomm Dragonwing QRB2210 ejecuta Debian Linux y cargas de trabajo avanzadas, mientras que el STM32U585 gestiona las entradas y salidas en tiempo real. Disponible con 2GB de RAM y 16GB eMMC o 4GB de RAM y 32GB eMMC."
 categories: [Arduino, Placas de desarrollo, SBC Linux, IA en el borde, Robótica]
 tags: [Arduino UNO Q, Arduino, Qualcomm Dragonwing QRB2210, STM32U585, Debian Linux, IA en el borde, Visión artificial, Robótica, Arduino App Lab, Wi-Fi 5, Bluetooth 5.1]
-permalink: /es/products/arduino-uno-q/
+permalink: /products/arduino-uno-q/
 available_languages: [en, de, es, fr, it, nl, pl]
 english_url: /products/arduino-uno-q/
 german_url: /de/products/arduino-uno-q/
