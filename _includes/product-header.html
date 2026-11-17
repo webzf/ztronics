@@ -146,14 +146,14 @@
           {% if amazon_offer.enabled and amazon_offer.affiliate_url %}
           <a class="en-buy-button preferred" href="{{ amazon_offer.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener">
             <span class="en-buy-icon"><i class="fab fa-amazon"></i></span>
-            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Preis bei Amazon prüfen{% else %}Check Price on Amazon{% endif %}</strong><small>Check 2GB / 4GB option and delivery</small></span>
+            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Preis bei Amazon prüfen{% elsif site.active_lang == 'es' %}Consultar precio en Amazon{% elsif site.active_lang == 'fr' %}Consulter le prix sur Amazon{% elsif site.active_lang == 'it' %}Verifica il prezzo su Amazon{% elsif site.active_lang == 'nl' %}Prijs bekijken op Amazon{% elsif site.active_lang == 'pl' %}Sprawdź cenę w Amazon{% else %}Check Price on Amazon{% endif %}</strong><small>{% if site.active_lang == 'de' %}2-GB-/4-GB-Variante und Lieferung prüfen{% elsif site.active_lang == 'es' %}Comprueba la versión de 2 GB o 4 GB y la entrega{% elsif site.active_lang == 'fr' %}Vérifiez la version 2 Go ou 4 Go et la livraison{% elsif site.active_lang == 'it' %}Verifica la versione da 2 GB o 4 GB e la consegna{% elsif site.active_lang == 'nl' %}Controleer de 2GB- of 4GB-versie en levering{% elsif site.active_lang == 'pl' %}Sprawdź wariant 2 GB lub 4 GB oraz dostawę{% else %}Check 2GB / 4GB option and delivery{% endif %}</span>
             <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
           </a>
           {% endif %}
           {% if aliexpress_offer.enabled and aliexpress_offer.affiliate_url %}
           <a class="en-buy-button" href="{{ aliexpress_offer.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener">
             <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Angebot bei AliExpress ansehen{% else %}Check Offer on AliExpress{% endif %}</strong><small>Check seller, memory option and delivery</small></span>
+            <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Angebot bei AliExpress ansehen{% elsif site.active_lang == 'es' %}Ver oferta en AliExpress{% elsif site.active_lang == 'fr' %}Voir l’offre sur AliExpress{% elsif site.active_lang == 'it' %}Vedi l’offerta su AliExpress{% elsif site.active_lang == 'nl' %}Bekijk de aanbieding op AliExpress{% elsif site.active_lang == 'pl' %}Zobacz ofertę w AliExpress{% else %}Check Offer on AliExpress{% endif %}</strong><small>{% if site.active_lang == 'de' %}Verkäufer, Speichervariante und Lieferung prüfen{% elsif site.active_lang == 'es' %}Comprueba el vendedor, la memoria y la entrega{% elsif site.active_lang == 'fr' %}Vérifiez le vendeur, la mémoire et la livraison{% elsif site.active_lang == 'it' %}Verifica venditore, memoria e consegna{% elsif site.active_lang == 'nl' %}Controleer verkoper, geheugenvariant en levering{% elsif site.active_lang == 'pl' %}Sprawdź sprzedawcę, wariant pamięci i dostawę{% else %}Check seller, memory option and delivery{% endif %}</span>
             <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
           </a>
           {% endif %}
