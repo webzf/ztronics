@@ -37,7 +37,8 @@
       <span class="language-switcher__chevron" aria-hidden="true">▾</span>
     </summary>
     <ul class="language-switcher__menu">
-      {% for lang in site.languages %}
+      {% assign available_languages = page.available_languages | default: site.languages %}
+      {% for lang in available_languages %}
         {% assign lang_path = translation_paths[lang] %}
         {% if lang_path %}
           {% case lang %}
