@@ -4,7 +4,7 @@ internal_links: true
 title: "ESP-Mosaico (ESP32-S31)"
 product_verdict: "A distinctive development kit for experimenting with display-based interaction, sensors, audio, modular hardware and AI-assisted coding. Its appeal depends on whether you want the integrated hardware and modular workflow; confirm the exact kit contents, revision and delivered cost before ordering."
 seo_title: "ESP-Mosaico ESP32-S31: Specs & Where to Buy"
-seo_description: "Explore ESP-Mosaico ESP32-S31 specs, modular hardware, Waveshare alternatives and where to buy. Check the official store for current availability and pricing."
+seo_description: "Explore ESP-Mosaico ESP32-S31 specs, modular hardware, Waveshare alternatives and where to buy. Check the AliExpress listing for current availability and kit options."
 product_id: esp-mosaico
 category: Displays
 manufacturer: "Espressif"
@@ -182,9 +182,9 @@ See the individual product pages for more details:
 
 ## Where to buy: official ESP-Mosaico vs lower-cost alternatives
 
-For the ESP-Mosaico Vision Combo Kit and its modular accessories, use the official Espressif store. Check the current availability, kit contents, shipping terms and delivery estimate before ordering. Verify that the selected bundle includes the Core Unit, Camera Module and Multi-function Interaction Module if those are the components you need.
+For the ESP-Mosaico Vision Combo Kit and its modular accessories, check the AliExpress listing for current availability, kit contents, shipping terms and delivery estimate. Verify that the selected bundle includes the Core Unit, Camera Module and Multi-function Interaction Module if those are the components you need.
 
-<p><a class="btn btn--primary" href="https://store.mosaico.ai/" target="_blank" rel="noopener noreferrer">Buy from the Official ESP-Mosaico Store</a></p>
+<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c3usb6Xf" target="_blank" rel="nofollow sponsored noopener">Check Price on AliExpress</a></p>
 
 ### Lower-cost 2.16-inch AMOLED alternatives {#lower-cost-amoled-alternatives}
 
@@ -195,7 +195,7 @@ For the ESP-Mosaico Vision Combo Kit and its modular accessories, use the offici
 
 Both AliExpress links are affiliate links supplied for the respective listings. Check the seller’s current listing, selected battery option, shipping and final checkout details before ordering.
 
-*Affiliate disclosure: The lower-cost Waveshare AliExpress links above are affiliate links. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you. The official ESP-Mosaico store link is not an affiliate link.*
+*Affiliate disclosure: The ESP-Mosaico and lower-cost Waveshare AliExpress links on this page are affiliate links. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you.*
 
 Before ordering any of these boards, confirm the selected version, battery inclusion, shipping, delivery estimate and applicable taxes.
 
