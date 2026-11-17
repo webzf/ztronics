@@ -3,8 +3,8 @@ layout: product
 internal_links: true
 title: "Arduino Nano ESP32"
 product_verdict: "A compact Nano-format board for ESP32-S3 projects that need Wi-Fi, Bluetooth and Arduino-friendly pin names; remember that its GPIOs are 3.3 V only."
-seo_title: "Arduino Nano ESP32: Specs, Pinout & Where to Buy"
-seo_description: "Arduino Nano ESP32 specs, full D0–D13 / A0–A7 to GPIO pinout table, 3.3 V limits, MicroPython support and where to buy."
+seo_title: "Arduino Nano ESP32: Price, Specs, Pinout & Where to Buy"
+seo_description: "Considering the Arduino Nano ESP32? Compare its price, ESP32-S3 specs, pinout, 3.3 V limits and features, then check where to buy the board."
 product_id: arduino-nano-esp32
 category: Development Boards
 manufacturer: "Arduino"
@@ -14,7 +14,7 @@ header:
   teaser: "/assets/images/products/arduino-nano-esp32-board.webp"
   og_image: "/assets/images/products/arduino-nano-esp32-board.webp"
   og_image_alt: "Arduino Nano ESP32 development board with ESP32-S3, Wi-Fi, Bluetooth and USB-C"
-excerpt: "Arduino Nano ESP32 with ESP32-S3, Wi-Fi, Bluetooth, USB-C and Nano-format pin headers. Check the pin mapping, 3.3 V limits and buying options."
+excerpt: "Arduino Nano ESP32 review and buying guide: ESP32-S3 specs, Wi-Fi, Bluetooth, pinout, 3.3 V limits, compatibility and where to buy."
 description: "The Arduino Nano ESP32 combines the familiar Nano form factor with an ESP32-S3-based NORA-W106 module, Wi-Fi, Bluetooth and USB-C. Its Arduino pin names map to ESP32-S3 GPIO numbers, so check the mapping before wiring existing projects."
 categories:
   - ESP32
@@ -69,7 +69,17 @@ The **Arduino Nano ESP32** brings Espressif's ESP32-S3 platform into the familia
 
 If your project needs a camera, digital microphone and microSD storage in an even smaller package, compare it with the [Seeed Studio XIAO ESP32S3 Sense](/products/seeed-xiao-esp32s3-sense/). Both use the ESP32-S3, but the XIAO Sense adds a camera expansion board and has a different GPIO layout, so their pinouts are not interchangeable.
 
-If your project needs a full Linux environment, Python applications or edge-AI processing alongside real-time microcontroller control, compare it with the [Arduino UNO Q](/products/arduino-uno-q/). The UNO Q is a larger and much more powerful hybrid platform, rather than a direct Nano-format replacement.\n\nThe key detail to understand before wiring it is the **pin mapping**: Arduino names such as D2 or A4 are not the same numbers as the ESP32-S3 GPIOs. Use the mapping table below instead of assuming the labels match GPIO numbers.
+If your project needs a full Linux environment, Python applications or edge-AI processing alongside real-time microcontroller control, compare it with the [Arduino UNO Q](/products/arduino-uno-q/). The UNO Q is a larger and much more powerful hybrid platform, rather than a direct Nano-format replacement.
+
+## Is the Arduino Nano ESP32 worth buying?
+
+The Nano ESP32 is worth considering if you want **ESP32-S3 performance, Wi-Fi and Bluetooth in the classic Nano footprint** and value the familiar Arduino pin labels. It is particularly suitable for compact connected sensors, small automation projects and wireless prototypes where board size matters.
+
+It may not be the best purchase if your project needs **5 V-tolerant GPIO, a large number of easily accessible pins, or the lowest possible board cost**. In those cases, a classic 5 V Nano or a standard ESP32 DevKit may be a better fit. Also check whether your existing Nano shields are electrically compatible: the Nano-style form factor does not make 5 V shields safe to use.
+
+**Buying tip:** compare the exact board version, whether headers are pre-soldered, seller reputation, shipping cost and return policy before ordering. These details can matter as much as the advertised board price.
+
+The key detail to understand before wiring it is the **pin mapping**: Arduino names such as D2 or A4 are not the same numbers as the ESP32-S3 GPIOs. Use the mapping table below instead of assuming the labels match GPIO numbers.
 
 ## Arduino Nano ESP32 specifications
 
@@ -125,6 +135,20 @@ Arduino’s official Nano ESP32 User Manual states that PWM via `analogWrite()` 
 For analog reads, **A0–A3 (GPIO1–GPIO4) use ADC1**. **A4–A7 (GPIO11–GPIO14) use ADC2**, which is also used by Wi-Fi and can fail or become unavailable while Wi-Fi is active. If you need stable analog measurements while using Wi-Fi, prefer A0–A3.
 
 **Important:** the mapping above is the default Nano ESP32 Arduino configuration. It is not a generic mapping for every ESP32-S3 board.
+
+### Arduino Nano ESP32 pin numbering in the Arduino IDE
+
+The Nano ESP32 supports two pin-numbering modes. The default **By Arduino pin** mode uses the familiar Nano labels, while **By GPIO number (legacy)** uses the ESP32-S3 GPIO numbers. You can change this under **Tools → Pin Numbering** in the Arduino IDE. This matters when adapting examples or libraries written for other ESP32 boards.
+
+For example, the physical pin marked **D0** maps to ESP32-S3 **GPIO44** in the default Nano mapping. In Arduino IDE's default mode, `pinMode(0, OUTPUT)` refers to D0; in GPIO-number mode, `pinMode(44, OUTPUT)` refers to the same physical pin. To make sketches work with either setting, use the board label directly:
+
+```cpp
+pinMode(D0, OUTPUT);
+digitalWrite(D0, HIGH);
+```
+
+The built-in RGB LED also uses GPIOs that are not part of the standard D0–D13 digital header: red is GPIO46 (B0 / D14), green is GPIO0 (B1 / D15), and blue is GPIO45 (D16). Check the selected pin-numbering mode and the official pinout before using these signals.
+
 
 ## Arduino Nano ESP32 vs classic Nano vs ESP32 DevKit
 
@@ -187,12 +211,15 @@ Use the Arduino IDE with the Arduino ESP32 board package for the simplest setup 
 
 ![Arduino Nano ESP32 board beside its retail box](/assets/images/products/arduino-nano-esp32-box.webp)
 
-## Where to buy the Arduino Nano ESP32
+## Arduino Nano ESP32 price and where to buy
 
-Check the exact model and whether the board is supplied with headers soldered or unsoldered. Arduino's product listings and marketplace offers can differ by region, seller and included accessories. The purchase button uses the product-specific Amazon listing supplied for this board. Check the seller, delivery destination, price and whether headers are included before ordering; availability and offers can vary by region.
+The price of the Arduino Nano ESP32 varies by country, seller, shipping and stock. Rather than quoting a price that can quickly become outdated, check the current listing and the final delivered cost before buying.
 
-- [Official Arduino Nano ESP32 documentation](https://docs.arduino.cc/hardware/nano-esp32)
-- [View the Arduino Nano ESP32 listing on Amazon](https://www.amazon.com/dp/B0C947BHK5?tag=embeddednerd2-20)
+**Check current availability and price:** [View the Arduino Nano ESP32 on Amazon](https://www.amazon.com/dp/B0C947BHK5?tag=embeddednerd2-20)
+
+Before ordering, confirm that the listing is for the **Arduino Nano ESP32 (ABX00083)**, check whether headers are included or already soldered, and review the seller, delivery estimate and return policy. Marketplace listings may include compatible alternatives, so verify the manufacturer and model number if you specifically want the official Arduino board.
+
+For technical details before purchase, consult the [official Arduino Nano ESP32 documentation](https://docs.arduino.cc/hardware/nano-esp32) and [full pinout PDF](https://docs.arduino.cc/resources/pinouts/ABX00083-full-pinout.pdf).
 
 ## Official resources
 
