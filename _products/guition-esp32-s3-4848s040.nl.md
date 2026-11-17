@@ -24,19 +24,6 @@ editorial_review:
 seo_title: "Guition ESP32-S3-4848S040: prijs, specs en review"
 seo_description: "Vergelijk het 4-inch 480×480-scherm, ESP32-S3, GT911-touch en uitvoeringen met relais. Ontdek welke versie bij je project past."
 page_id: product-guition-esp32-s3-4848s040
-available_languages:
-  - en
-  - de
-  - es
-  - fr
-  - it
-  - nl
-english_url: /products/guition-esp32-s3-4848s040/
-german_url: /de/products/guition-esp32-s3-4848s040/
-spanish_url: /es/products/guition-esp32-s3-4848s040/
-french_url: /fr/products/guition-esp32-s3-4848s040/
-italian_url: /it/products/guition-esp32-s3-4848s040/
-dutch_url: /nl/products/guition-esp32-s3-4848s040/
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
@@ -121,6 +108,14 @@ related:
   - sunton-esp32-8048s043c
   - esp32-2432s028-2-8-cyd
   - waveshare-esp32-s3-touch-lcd-4-3
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /products/guition-esp32-s3-4848s040/
+german_url: /de/products/guition-esp32-s3-4848s040/
+spanish_url: /es/products/guition-esp32-s3-4848s040/
+french_url: /fr/products/guition-esp32-s3-4848s040/
+italian_url: /it/products/guition-esp32-s3-4848s040/
+dutch_url: /nl/products/guition-esp32-s3-4848s040/
+polish_url: /pl/products/guition-esp32-s3-4848s040/
 ---
 De Guition ESP32-S3-4848S040 is een ESP32-S3-touchscreen van 4 inch en 480×480 pixels voor compacte Home Assistant-dashboards en wandpanelen. Het wordt ook gezocht als **ESP32-4848S040**; in sommige bord- en aanbiedingsreferenties staat **4848S040C_I**. Controleer vóór aankoop de exacte revisie en bundel.
 
