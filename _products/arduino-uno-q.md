@@ -35,6 +35,14 @@ tags:
   - Wi-Fi 5
   - Bluetooth 5.1
 permalink: /products/arduino-uno-q/
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /products/arduino-uno-q/
+german_url: /de/products/arduino-uno-q/
+spanish_url: /es/products/arduino-uno-q/
+french_url: /fr/products/arduino-uno-q/
+italian_url: /it/products/arduino-uno-q/
+dutch_url: /nl/products/arduino-uno-q/
+polish_url: /pl/products/arduino-uno-q/
 specifications:
   - name: MPU
     value: "Qualcomm Dragonwing QRB2210, quad-core Arm Cortex-A53 up to 2.0 GHz"
