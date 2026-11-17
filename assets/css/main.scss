@@ -566,3 +566,36 @@
 @media (prefers-reduced-motion: reduce) {
   .en-sticky-affiliate { transition: none; }
 }
+
+/* Product page typography: keep localized product content as readable as
+   standard articles, including specifications tables. */
+.product-page .product-content {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.product-page .product-content p,
+.product-page .product-content li {
+  line-height: 1.7;
+}
+
+.product-page .product-content table {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.product-page .en-specifications-table th,
+.product-page .en-specifications-table td {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .product-page .product-content {
+    font-size: 1rem;
+  }
+
+  .product-page .product-content table {
+    font-size: 0.9rem;
+  }
+}
