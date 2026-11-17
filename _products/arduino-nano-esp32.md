@@ -126,6 +126,20 @@ For analog reads, **A0–A3 (GPIO1–GPIO4) use ADC1**. **A4–A7 (GPIO11–GPIO
 
 **Important:** the mapping above is the default Nano ESP32 Arduino configuration. It is not a generic mapping for every ESP32-S3 board.
 
+### Arduino Nano ESP32 pin numbering in the Arduino IDE
+
+The Nano ESP32 supports two pin-numbering modes. The default **By Arduino pin** mode uses the familiar Nano labels, while **By GPIO number (legacy)** uses the ESP32-S3 GPIO numbers. You can change this under **Tools → Pin Numbering** in the Arduino IDE. This matters when adapting examples or libraries written for other ESP32 boards.
+
+For example, the physical pin marked **D0** maps to ESP32-S3 **GPIO44** in the default Nano mapping. In Arduino IDE's default mode, `pinMode(0, OUTPUT)` refers to D0; in GPIO-number mode, `pinMode(44, OUTPUT)` refers to the same physical pin. To make sketches work with either setting, use the board label directly:
+
+```cpp
+pinMode(D0, OUTPUT);
+digitalWrite(D0, HIGH);
+```
+
+The built-in RGB LED also uses GPIOs that are not part of the standard D0–D13 digital header: red is GPIO46 (B0 / D14), green is GPIO0 (B1 / D15), and blue is GPIO45 (D16). Check the selected pin-numbering mode and the official pinout before using these signals.
+
+
 ## Arduino Nano ESP32 vs classic Nano vs ESP32 DevKit
 
 | Feature | Nano ESP32 | Classic Arduino Nano | ESP32 DevKit V1 |
