@@ -21,8 +21,8 @@ editorial_review:
     - "Das RGB-Display belegt zahlreiche GPIOs; freie Pins müssen vor dem Anschluss weiterer Peripherie geprüft werden"
     - "Community-Konfigurationen sollten mit der genauen Hardware-Revision abgeglichen werden"
     - "Relaismodule und Gehäuse unterscheiden sich je nach Angebot; Kompatibilität und Abmessungen vor dem Kauf prüfen"
-seo_title: "Guition ESP32-S3-4848S040: Preis, Daten & Test"
-seo_description: "Vergleiche das 4-Zoll-Display mit 480 × 480 Pixeln, ESP32-S3, GT911-Touch und Relaisvarianten. Finde die passende Version für dein Projekt."
+seo_title: "Guition ESP32-S3-4848S040: Preis, Daten & Überblick"
+seo_description: "Vergleichen Sie das 4-Zoll-Display mit 480 × 480 Pixeln, ESP32-S3, GT911-Touch und Relaisvarianten. Finden Sie die passende Version für Ihr Projekt."
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
@@ -44,12 +44,12 @@ tags:
   - ESP32-S3
   - Guition
   - 4848S040
-  - 4-inch
+  - 4-Zoll
   - 480x480
   - IPS
   - ST7701S
   - GT911
-  - Capacitive Touch
+  - Kapazitiver Touch
   - LVGL
   - ESPHome
   - Home Assistant
