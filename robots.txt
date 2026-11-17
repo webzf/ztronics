@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /go/
+Disallow: /*/go/
 
 Content-Signal: search=yes,ai-input=yes,ai-train=no,use=reference
 

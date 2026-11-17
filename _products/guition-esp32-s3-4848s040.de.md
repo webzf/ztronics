@@ -1,6 +1,7 @@
 ---
 layout: product
 lang: de
+locale: de-DE
 toc_label: Inhalt
 page_id: product-guition-esp32-s3-4848s040
 internal_links: true
@@ -21,8 +22,8 @@ editorial_review:
     - "Das RGB-Display belegt zahlreiche GPIOs; freie Pins müssen vor dem Anschluss weiterer Peripherie geprüft werden"
     - "Community-Konfigurationen sollten mit der genauen Hardware-Revision abgeglichen werden"
     - "Relaismodule und Gehäuse unterscheiden sich je nach Angebot; Kompatibilität und Abmessungen vor dem Kauf prüfen"
-seo_title: "Guition ESP32-S3-4848S040: Preis, Daten & Test"
-seo_description: "Vergleiche das 4-Zoll-Display mit 480 × 480 Pixeln, ESP32-S3, GT911-Touch und Relaisvarianten. Finde die passende Version für dein Projekt."
+seo_title: "Guition ESP32-S3-4848S040: Preis, Daten & Überblick"
+seo_description: "Vergleichen Sie das 4-Zoll-Display mit 480 × 480 Pixeln, ESP32-S3, GT911-Touch und Relaisvarianten. Finden Sie die passende Version für Ihr Projekt."
 product_id: guition-esp32-s3-4848s040
 category: Displays
 manufacturer: "Guition"
@@ -44,12 +45,12 @@ tags:
   - ESP32-S3
   - Guition
   - 4848S040
-  - 4-inch
+  - 4-Zoll
   - 480x480
   - IPS
   - ST7701S
   - GT911
-  - Capacitive Touch
+  - Kapazitiver Touch
   - LVGL
   - ESPHome
   - Home Assistant
@@ -220,7 +221,7 @@ Es kann mit einer passenden ESPHome-Konfiguration als Grundlage für ein Home-As
 | Platine | Besonders geeignet für |
 |---|---|
 | Guition ESP32-S3-4848S040 | Quadratische Benutzeroberfläche mit 4 Zoll und 480 × 480 Pixeln |
-| [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) | Breiteres 4,3-Zoll-Display mit 800 × 480 Pixeln |
+| [Sunton ESP32-8048S043C](/de/products/sunton-esp32-8048s043c/) | Breiteres 4,3-Zoll-Display mit 800 × 480 Pixeln |
 | [ESP32-2432S028 CYD](/products/esp32-2432s028-2-8-cyd/) | Kompaktes und preisgünstigeres 2,8-Zoll-Touchdisplay |
 
 Sie sind unsicher, welche Platine zu Ihrem Projekt passt? Nutzen Sie den [ESP32-Touchscreen-Auswahlassistenten](/tools/esp32-touchscreen-selector/) und lesen Sie den [Leitfaden zu ESP32-Touchscreen-Displays](/esp32-touchscreen-displays-guide/).
