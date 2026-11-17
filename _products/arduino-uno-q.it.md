@@ -250,7 +250,7 @@ Scegli **Arduino UNO Q** se vuoi Linux e un microcontrollore dedicato sulla stes
 
 Scegli un **Raspberry Pi 4 o 5** se la priorità è un computer Linux generico, un ambiente desktop, un home server o il più ampio ecosistema software Raspberry Pi. Per progetti pratici di server Linux, consulta la nostra [guida ai progetti IT con Raspberry Pi](/raspberry-pi-it-projects/).
 
-## Arduino UNO Q a confronto con Arduino UNO R4 WiFi
+## Arduino UNO Q a confronto con [Arduino UNO R4 WiFi](https://store.arduino.cc/products/uno-r4-wifi)
 
 Queste schede sono destinate a tipi di progetto diversi. UNO R4 WiFi è una tradizionale scheda di sviluppo a microcontrollore. UNO Q aggiunge un processore applicativo capace di eseguire Linux e molta più memoria di sistema.
 
