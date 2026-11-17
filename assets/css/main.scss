@@ -599,3 +599,27 @@
     font-size: 0.9rem;
   }
 }
+
+
+/* Arduino UNO Q product resources: keep card text comfortably readable. */
+.product-page .en-resource-card strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.product-page .en-resource-card span {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 600px) {
+  .product-page .en-resource-card strong {
+    font-size: 0.98rem;
+  }
+
+  .product-page .en-resource-card span {
+    font-size: 0.88rem;
+  }
+}
