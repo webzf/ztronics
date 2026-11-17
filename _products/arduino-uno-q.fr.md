@@ -1,6 +1,10 @@
 ---
 layout: product
 lang: fr
+locale: fr-FR
+toc_label: Sommaire
+page_id: product-arduino-uno-q
+translation_id: arduino-uno-q
 internal_links: true
 title: "Arduino UNO Q : caractéristiques, 2 Go ou 4 Go et où l’acheter"
 product_verdict: "Une carte hybride Linux et microcontrôleur destinée à l’IA en périphérie, à la vision par ordinateur et à la robotique. La version 2 Go convient aux applications ciblées ; la version 4 Go offre davantage de marge pour un usage autonome et multitâche."
@@ -19,7 +23,7 @@ excerpt: "Arduino UNO Q associe un processeur Qualcomm Dragonwing QRB2210 pour L
 description: "Arduino UNO Q est une plateforme hybride réunissant un ordinateur monocarte et un microcontrôleur. Le Qualcomm Dragonwing QRB2210 exécute Debian Linux et les charges de travail avancées, tandis que le STM32U585 gère les entrées/sorties temps réel. Disponible avec 2 Go de RAM et 16 Go eMMC ou 4 Go de RAM et 32 Go eMMC."
 categories: [Arduino, Cartes de développement, SBC Linux, IA en périphérie, Robotique]
 tags: [Arduino UNO Q, Arduino, Qualcomm Dragonwing QRB2210, STM32U585, Debian Linux, IA en périphérie, Vision par ordinateur, Robotique, Arduino App Lab, Wi-Fi 5, Bluetooth 5.1]
-permalink: /fr/products/arduino-uno-q/
+permalink: /products/arduino-uno-q/
 available_languages: [en, de, es, fr, it, nl, pl]
 english_url: /products/arduino-uno-q/
 german_url: /de/products/arduino-uno-q/
