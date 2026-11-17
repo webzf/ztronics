@@ -254,7 +254,7 @@ It uses the browser's Web Serial API, so **Chrome or Edge is required**. If a bo
 
 The developer lists three supported USB Live boards:
 
-- Waveshare ESP32-S3-LCD-7B (the capacitive GT911 touch version was used for the USB Live test).
+- Waveshare ESP32-S3-Touch-LCD-7B (the capacitive GT911 touch version).
 - Makerfabs MaTouch ESP32-S3 Parallel TFT 4.3-inch.
 - Makerfabs MaTouch Rotary IPS 2.1-inch.
 
@@ -357,12 +357,12 @@ The catalog and its status labels can change as the developer adds boards and dr
 We checked the public board list against display products already covered by Embedded Nerd. These three models are listed in the catalog with a **ready** export driver:
 
 - [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) — 4.3-inch, 800×480, capacitive touch. The LCD Ultra Pro board list marks this family as ready.
-- [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — 4.3-inch, 800×480 with capacitive GT911 touch. The developer confirmed that the resistive XPT2046 version is the separate ESP32-8048S043R model. The short Wiki summary currently mislabels the C version as resistive; its detailed specifications are correct, and the developer plans to fix the summary.
+- [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) — 4.3-inch, 800×480 with capacitive GT911 touch. The separate ESP32-8048S043R version uses resistive touch with the XPT2046 controller. The current LCD Ultra Pro board list now correctly identifies the C version as capacitive.
 - [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) — 4-inch, 480×480, capacitive touch. The board list marks it as ready.
 
 The Waveshare, Sunton C and Guition entries are listed with a ready export driver. In all cases, **ready** means the export includes a driver; it does not mean the developer has tested that exact hardware on a physical board.
 
-**Important Waveshare naming detail:** the USB Live profile was tested on the capacitive GT911 touch version of the board. The Wiki distinguishes the touch-equipped **ESP32-S3-Touch-LCD-7B** from the non-touch **ESP32-S3-LCD-7B**. USB Live only transmits the display image; it does not return touch events to the editor. In an exported Arduino project, the GT911 touch functionality is handled separately by the board's native driver. Do not confuse either 1024×600 model with Embedded Nerd's [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/), which is an 800×480 display. See the [LCD Ultra Pro board entry](https://lcdultrapro.com/boards/waveshare-7b-1024x600) for the distinction.
+**Waveshare 7B naming:** LCD Ultra Pro now lists the USB Live-supported board under its correct touch-version name, **ESP32-S3-Touch-LCD-7B**. Waveshare's separate **ESP32-S3-LCD-7B** is the non-touch model. The USB Live profile was tested on the capacitive GT911 version. USB Live only transmits the display image; it does not return touch events to the editor. In an exported Arduino project, the GT911 touch functionality is handled separately by the board's native driver. Do not confuse this 1024×600 board with Embedded Nerd's [Waveshare ESP32-S3-Touch-LCD-7](/products/waveshare-esp32-s3-touch-lcd-7/), which is an 800×480 display. See the [LCD Ultra Pro board entry](https://lcdultrapro.com/boards/waveshare-7b-1024x600) for the specifications.
 
 ## The board wiki, parts pages and other tools
 
@@ -433,7 +433,7 @@ It may be especially useful for:
 
 It is less suitable if your project depends on LVGL 9, your exact board has no export driver, or you need USB Live on hardware outside the three supported models.
 
-If you are still choosing a display, start with the [Embedded Nerd ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) or compare boards with the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/). Check the exact model name carefully: the USB Live-supported **Waveshare ESP32-S3-LCD-7B** is a specific board, and similarly named Waveshare displays are not automatically interchangeable.
+If you are still choosing a display, start with the [Embedded Nerd ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) or compare boards with the [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/). Check the exact model name carefully: the USB Live-supported **Waveshare ESP32-S3-Touch-LCD-7B** is the capacitive touch version, while the similarly named **ESP32-S3-LCD-7B** is the non-touch model.
 
 ## Final thoughts
 
@@ -459,7 +459,7 @@ The current public board catalog lists 173 wiki entries, 102 selectable boards a
 
 ### Does USB Live work with every ESP32 display?
 
-No. The developer's documentation lists three supported boards: Waveshare ESP32-S3-LCD-7B, Makerfabs MaTouch ESP32-S3 Parallel TFT 4.3-inch and Makerfabs MaTouch Rotary IPS 2.1-inch.
+No. The developer's documentation lists three supported boards: Waveshare ESP32-S3-Touch-LCD-7B, Makerfabs MaTouch ESP32-S3 Parallel TFT 4.3-inch and Makerfabs MaTouch Rotary IPS 2.1-inch.
 
 ### Can I test touchscreen input with USB Live?
 
