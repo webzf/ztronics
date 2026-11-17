@@ -26,19 +26,6 @@ seo_title: "XIAO ESP32S3 Sense: specificaties, pinout en waar te kopen"
 seo_description: "Specificaties van de Seeed Studio XIAO ESP32S3 Sense, volledige D0–D12-naar-GPIO-pinout, OV5640-camera, microfoon- en SD-kaartpinnen, stroomverbruik en aankoopopties."
 page_id: product-seeed-xiao-esp32s3-sense
 product_id: seeed-xiao-esp32s3-sense
-english_url: /products/seeed-xiao-esp32s3-sense/
-german_url: /de/products/seeed-xiao-esp32s3-sense/
-spanish_url: /es/products/seeed-xiao-esp32s3-sense/
-french_url: /fr/products/seeed-xiao-esp32s3-sense/
-italian_url: /it/products/seeed-xiao-esp32s3-sense/
-available_languages:
-  - en
-  - de
-  - es
-  - fr
-  - it
-  - nl
-dutch_url: /nl/products/seeed-xiao-esp32s3-sense/
 category: Development Boards
 manufacturer: "Seeed Studio"
 
@@ -115,6 +102,14 @@ related:
   - arduino-nano-esp32
   - esp32-devkit
   - raspberry-pi-pico-w
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /products/seeed-xiao-esp32s3-sense/
+german_url: /de/products/seeed-xiao-esp32s3-sense/
+spanish_url: /es/products/seeed-xiao-esp32s3-sense/
+french_url: /fr/products/seeed-xiao-esp32s3-sense/
+italian_url: /it/products/seeed-xiao-esp32s3-sense/
+dutch_url: /nl/products/seeed-xiao-esp32s3-sense/
+polish_url: /pl/products/seeed-xiao-esp32s3-sense/
 ---
 De Seeed Studio XIAO ESP32S3 Sense is een ESP32-S3-bord ter grootte van een duim met een afneembare uitbreidingskaart waarop een camera, digitale microfoon en microSD-sleuf zitten. Het wordt ook gezocht als **XIAO ESP32-S3 Sense** of **Seeed XIAO ESP32S3 Sense**. Controleer vóór aankoop of de aanbieding de **Sense**-versie betreft, want de gewone XIAO ESP32S3 ziet er bijna hetzelfde uit maar heeft geen camera, microfoon of SD-sleuf.
 
