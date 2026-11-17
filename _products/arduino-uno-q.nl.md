@@ -1,6 +1,10 @@
 ---
 layout: product
 lang: nl
+locale: nl-NL
+toc_label: Inhoud
+page_id: product-arduino-uno-q
+translation_id: arduino-uno-q
 internal_links: true
 title: "Arduino UNO Q: specificaties, 2GB versus 4GB en waar te kopen"
 product_verdict: "Een hybride Linux- en microcontrollerboard voor edge-AI, computervisie en robotica. Kies 2GB voor gerichte toepassingen; 4GB biedt meer ruimte voor zelfstandig desktopgebruik en multitasking."
@@ -19,7 +23,7 @@ excerpt: "Arduino UNO Q combineert een Qualcomm Dragonwing QRB2210 Linux-process
 description: "Arduino UNO Q is een hybride platform dat een single-boardcomputer en microcontroller combineert. De Qualcomm Dragonwing QRB2210 draait Debian Linux en zwaardere toepassingen, terwijl de STM32U585 realtime-I/O afhandelt. Verkrijgbaar met 2GB RAM en 16GB eMMC of 4GB RAM en 32GB eMMC."
 categories: [Arduino, Ontwikkelboards, Linux-SBC, Edge-AI, Robotica]
 tags: [Arduino UNO Q, Arduino, Qualcomm Dragonwing QRB2210, STM32U585, Debian Linux, Edge-AI, Computervisie, Robotica, Arduino App Lab, Wi-Fi 5, Bluetooth 5.1]
-permalink: /nl/products/arduino-uno-q/
+permalink: /products/arduino-uno-q/
 available_languages: [en, de, es, fr, it, nl, pl]
 english_url: /products/arduino-uno-q/
 german_url: /de/products/arduino-uno-q/
