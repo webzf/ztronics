@@ -876,11 +876,11 @@ tca9548a-i2c-multiplexer:
 
 esp-mosaico:
 
-  preferred_store: official
+  preferred_store: aliexpress
 
-  notes: "Official ESP-Mosaico store. Check current availability and exact kit contents before ordering."
+  notes: "AliExpress affiliate link supplied by the site owner. Confirm the ESP-Mosaico Vision Combo Kit V1.2 and included modules before ordering."
 
-  disclaimer: false
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you."
 
   badges:
     recommended: false
@@ -891,11 +891,11 @@ esp-mosaico:
   stores:
 
     aliexpress:
-      enabled: false
-      affiliate_url: ""
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3usb6Xf"
 
     official:
-      enabled: true
+      enabled: false
       affiliate: false
       product_url: "https://store.mosaico.ai/"
       affiliate_url: ""
