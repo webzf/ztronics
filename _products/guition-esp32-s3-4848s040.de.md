@@ -1,6 +1,7 @@
 ---
 layout: product
 lang: de
+locale: de-DE
 toc_label: Inhalt
 page_id: product-guition-esp32-s3-4848s040
 internal_links: true
