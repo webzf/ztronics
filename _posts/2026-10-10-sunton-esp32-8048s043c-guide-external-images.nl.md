@@ -6,21 +6,6 @@ layout: single
 lang: nl
 locale: nl-NL
 translation_id: sunton-esp32-8048s043c-guide
-available_languages:
-  - en
-  - de
-  - es
-  - fr
-  - it
-  - nl
-  - pl
-english_url: /sunton-esp32-8048s043c-guide/
-german_url: /de/sunton-esp32-8048s043c-guide/
-spanish_url: /es/sunton-esp32-8048s043c-guide/
-french_url: /fr/sunton-esp32-8048s043c-guide/
-italian_url: /it/sunton-esp32-8048s043c-guide/
-dutch_url: /nl/sunton-esp32-8048s043c-guide/
-polish_url: /pl/sunton-esp32-8048s043c-guide/
 permalink: /sunton-esp32-8048s043c-guide/
 id: "https://embeddednerd.com/nl/sunton-esp32-8048s043c-guide/"
 sidebar:
@@ -55,6 +40,14 @@ related: true
 related_posts:
   - /esp32-touchscreen-displays-guide/
   - /esp32-p4-round-touchscreen-display-projects/
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /sunton-esp32-8048s043c-guide/
+german_url: /de/sunton-esp32-8048s043c-guide/
+spanish_url: /es/sunton-esp32-8048s043c-guide/
+french_url: /fr/sunton-esp32-8048s043c-guide/
+italian_url: /it/sunton-esp32-8048s043c-guide/
+dutch_url: /nl/sunton-esp32-8048s043c-guide/
+polish_url: /pl/sunton-esp32-8048s043c-guide/
 ---
 
 De **Sunton ESP32-8048S043C** is een alles-in-één-bord met een ESP32-S3, een 4,3-inch 800×480 IPS-scherm en een capacitief aanraakpaneel op één printplaat. Het is bedoeld voor projecten waarvoor een relatief groot touchscreen nodig is zonder een afzonderlijke ESP32 en schermmodule te combineren.

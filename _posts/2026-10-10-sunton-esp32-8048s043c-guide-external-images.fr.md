@@ -7,13 +7,6 @@ layout: single
 lang: fr
 page_id: article-sunton-esp32-8048s043c-guide
 translation_id: sunton-esp32-8048s043c-guide
-available_languages: [en, de, es, fr, it]
-english_url: /sunton-esp32-8048s043c-guide/
-german_url: /de/sunton-esp32-8048s043c-guide/
-spanish_url: /es/sunton-esp32-8048s043c-guide/
-french_url: /fr/sunton-esp32-8048s043c-guide/
-italian_url: /it/sunton-esp32-8048s043c-guide/
-polish_url: /pl/sunton-esp32-8048s043c-guide/
 internal_links: true
 permalink: /sunton-esp32-8048s043c-guide/
 id: "https://embeddednerd.com/fr/sunton-esp32-8048s043c-guide/"
@@ -43,6 +36,14 @@ related: true
 related_posts:
   - /esp32-touchscreen-displays-guide/
   - /esp32-p4-round-touchscreen-display-projects/
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /sunton-esp32-8048s043c-guide/
+german_url: /de/sunton-esp32-8048s043c-guide/
+spanish_url: /es/sunton-esp32-8048s043c-guide/
+french_url: /fr/sunton-esp32-8048s043c-guide/
+italian_url: /it/sunton-esp32-8048s043c-guide/
+dutch_url: /nl/sunton-esp32-8048s043c-guide/
+polish_url: /pl/sunton-esp32-8048s043c-guide/
 ---
 Le **Sunton ESP32-8048S043C** est une carte tout-en-un intégrant un ESP32-S3, un écran IPS de 4,3 pouces en 800 × 480 pixels et un écran tactile capacitif. Le processeur, l’écran et le contrôleur tactile sont réunis sur une seule carte. Elle convient aux projets nécessitant un écran tactile relativement grand sans devoir associer séparément un ESP32 et un module d’affichage.
 

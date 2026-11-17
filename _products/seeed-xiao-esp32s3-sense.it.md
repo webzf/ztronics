@@ -26,17 +26,6 @@ seo_title: "XIAO ESP32S3 Sense: specifiche, pinout e dove acquistarlo"
 seo_description: "Specifiche Seeed Studio XIAO ESP32S3 Sense, pinout completo da D0 a D12/GPIO, pin della fotocamera OV5640, microfono e SD, consumi e acquisto."
 page_id: product-seeed-xiao-esp32s3-sense
 product_id: seeed-xiao-esp32s3-sense
-english_url: /products/seeed-xiao-esp32s3-sense/
-german_url: /de/products/seeed-xiao-esp32s3-sense/
-spanish_url: /es/products/seeed-xiao-esp32s3-sense/
-french_url: /fr/products/seeed-xiao-esp32s3-sense/
-italian_url: /it/products/seeed-xiao-esp32s3-sense/
-available_languages:
-  - en
-  - de
-  - es
-  - fr
-  - it
 category: Development Boards
 manufacturer: "Seeed Studio"
 image: "/assets/images/products/seeed-xiao-esp32s3-sense-front.webp"
@@ -105,6 +94,14 @@ related:
   - arduino-nano-esp32
   - esp32-devkit
   - raspberry-pi-pico-w
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /products/seeed-xiao-esp32s3-sense/
+german_url: /de/products/seeed-xiao-esp32s3-sense/
+spanish_url: /es/products/seeed-xiao-esp32s3-sense/
+french_url: /fr/products/seeed-xiao-esp32s3-sense/
+italian_url: /it/products/seeed-xiao-esp32s3-sense/
+dutch_url: /nl/products/seeed-xiao-esp32s3-sense/
+polish_url: /pl/products/seeed-xiao-esp32s3-sense/
 ---
 Seeed Studio XIAO ESP32S3 Sense è una scheda ESP32-S3 grande quanto un pollice, con una scheda di espansione rimovibile che integra una fotocamera, un microfono digitale e uno slot microSD. È cercata anche come **XIAO ESP32-S3 Sense** o **Seeed XIAO ESP32S3 Sense**. Prima dell'acquisto, verifica che l'inserzione riguardi la versione **Sense**: il normale XIAO ESP32S3 è quasi identico, ma non include fotocamera, microfono o slot SD.
 

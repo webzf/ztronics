@@ -7,14 +7,6 @@ lang: pl
 locale: pl-PL
 page_id: article-guition-esp32-s3-4848s040-pinout-esphome
 translation_id: guition-esp32-s3-4848s040-pinout-esphome
-available_languages: [en, de, es, fr, it, nl, pl]
-english_url: /guition-esp32-s3-4848s040-pinout-esphome/
-german_url: /de/guition-esp32-s3-4848s040-pinout-esphome/
-spanish_url: /es/guition-esp32-s3-4848s040-pinout-esphome/
-french_url: /fr/guition-esp32-s3-4848s040-pinout-esphome/
-italian_url: /it/guition-esp32-s3-4848s040-pinout-esphome/
-dutch_url: /nl/guition-esp32-s3-4848s040-pinout-esphome/
-polish_url: /pl/guition-esp32-s3-4848s040-pinout-esphome/
 internal_links: true
 excerpt: "Pinout Guition ESP32-S3-4848S040, sygnały wyświetlacza RGB, inicjalizacja ST7701S, dotyk GT911, sterowanie podświetleniem i konfiguracja ESPHome."
 show_date: false
@@ -45,6 +37,14 @@ related_posts:
 share: true
 seo_title: "Guition 4848S040: pinout, GPIO i konfiguracja ESPHome"
 seo_description: "Pinout 4848S040 i opis GPIO, sygnały wyświetlacza RGB, dotyk GT911, sterowanie podświetleniem oraz wskazówki konfiguracji ESPHome dla ekranu ESP32-S3."
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /guition-esp32-s3-4848s040-pinout-esphome/
+german_url: /de/guition-esp32-s3-4848s040-pinout-esphome/
+spanish_url: /es/guition-esp32-s3-4848s040-pinout-esphome/
+french_url: /fr/guition-esp32-s3-4848s040-pinout-esphome/
+italian_url: /it/guition-esp32-s3-4848s040-pinout-esphome/
+dutch_url: /nl/guition-esp32-s3-4848s040-pinout-esphome/
+polish_url: /pl/guition-esp32-s3-4848s040-pinout-esphome/
 ---
 <script type="application/ld+json">
 {

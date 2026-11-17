@@ -7,13 +7,6 @@ layout: single
 lang: fr
 page_id: article-guition-esp32-s3-4848s040-pinout-esphome
 translation_id: guition-esp32-s3-4848s040-pinout-esphome
-available_languages: [en, de, es, fr, it]
-english_url: /guition-esp32-s3-4848s040-pinout-esphome/
-german_url: /de/guition-esp32-s3-4848s040-pinout-esphome/
-spanish_url: /es/guition-esp32-s3-4848s040-pinout-esphome/
-french_url: /fr/guition-esp32-s3-4848s040-pinout-esphome/
-italian_url: /it/guition-esp32-s3-4848s040-pinout-esphome/
-polish_url: /pl/guition-esp32-s3-4848s040-pinout-esphome/
 internal_links: true
 permalink: /guition-esp32-s3-4848s040-pinout-esphome/
 id: "https://embeddednerd.com/fr/guition-esp32-s3-4848s040-pinout-esphome/"
@@ -43,6 +36,14 @@ related: true
 related_posts:
   - /fr/products/guition-esp32-s3-4848s040/
   - /esp32-touchscreen-displays-guide/
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /guition-esp32-s3-4848s040-pinout-esphome/
+german_url: /de/guition-esp32-s3-4848s040-pinout-esphome/
+spanish_url: /es/guition-esp32-s3-4848s040-pinout-esphome/
+french_url: /fr/guition-esp32-s3-4848s040-pinout-esphome/
+italian_url: /it/guition-esp32-s3-4848s040-pinout-esphome/
+dutch_url: /nl/guition-esp32-s3-4848s040-pinout-esphome/
+polish_url: /pl/guition-esp32-s3-4848s040-pinout-esphome/
 ---
 <script type="application/ld+json">
 {

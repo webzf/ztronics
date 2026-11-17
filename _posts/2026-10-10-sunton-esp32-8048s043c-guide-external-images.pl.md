@@ -6,14 +6,6 @@ layout: single
 lang: pl
 locale: pl-PL
 translation_id: sunton-esp32-8048s043c-guide
-available_languages: [en, de, es, fr, it, nl, pl]
-english_url: /sunton-esp32-8048s043c-guide/
-german_url: /de/sunton-esp32-8048s043c-guide/
-spanish_url: /es/sunton-esp32-8048s043c-guide/
-french_url: /fr/sunton-esp32-8048s043c-guide/
-italian_url: /it/sunton-esp32-8048s043c-guide/
-dutch_url: /nl/sunton-esp32-8048s043c-guide/
-polish_url: /pl/sunton-esp32-8048s043c-guide/
 permalink: /sunton-esp32-8048s043c-guide/
 sidebar:
   nav: "embedded"
@@ -49,6 +41,14 @@ related_posts:
   - /esp32-p4-round-touchscreen-display-projects/
 seo_title: "Sunton ESP32-8048S043C – pinout, Arduino, LVGL i konfiguracja"
 seo_description: "Kompletny poradnik Sunton ESP32-8048S043C: pinout RGB i GT911, microSD, konfiguracja Arduino IDE, przykładowy kod, ESPHome i rozwiązywanie problemów."
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /sunton-esp32-8048s043c-guide/
+german_url: /de/sunton-esp32-8048s043c-guide/
+spanish_url: /es/sunton-esp32-8048s043c-guide/
+french_url: /fr/sunton-esp32-8048s043c-guide/
+italian_url: /it/sunton-esp32-8048s043c-guide/
+dutch_url: /nl/sunton-esp32-8048s043c-guide/
+polish_url: /pl/sunton-esp32-8048s043c-guide/
 ---
 
 **Sunton ESP32-8048S043C** to zintegrowana płytka z układem ESP32-S3, 4,3-calowym ekranem IPS o rozdzielczości 800×480 i pojemnościowym panelem dotykowym. Wszystkie te elementy znajdują się na jednej płytce, dzięki czemu można zbudować projekt z dużym ekranem dotykowym bez łączenia osobnego modułu ESP32 i wyświetlacza.

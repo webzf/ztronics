@@ -7,19 +7,6 @@ layout: single
 lang: de
 page_id: article-sunton-esp32-8048s043c-guide
 translation_id: sunton-esp32-8048s043c-guide
-available_languages:
-  - en
-  - de
-  - es
-  - fr
-  - it
-  - pl
-english_url: /sunton-esp32-8048s043c-guide/
-german_url: /de/sunton-esp32-8048s043c-guide/
-spanish_url: /es/sunton-esp32-8048s043c-guide/
-french_url: /fr/sunton-esp32-8048s043c-guide/
-italian_url: /it/sunton-esp32-8048s043c-guide/
-polish_url: /pl/sunton-esp32-8048s043c-guide/
 internal_links: true
 permalink: /sunton-esp32-8048s043c-guide/
 id: "https://embeddednerd.com/de/sunton-esp32-8048s043c-guide/"
@@ -56,6 +43,14 @@ related: true
 related_posts:
   - /esp32-touchscreen-displays-guide/
   - /esp32-p4-round-touchscreen-display-projects/
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /sunton-esp32-8048s043c-guide/
+german_url: /de/sunton-esp32-8048s043c-guide/
+spanish_url: /es/sunton-esp32-8048s043c-guide/
+french_url: /fr/sunton-esp32-8048s043c-guide/
+italian_url: /it/sunton-esp32-8048s043c-guide/
+dutch_url: /nl/sunton-esp32-8048s043c-guide/
+polish_url: /pl/sunton-esp32-8048s043c-guide/
 ---
 
 Das **Sunton ESP32-8048S043C** ist eine All-in-one-Platine mit ESP32-S3, einem 4,3-Zoll-IPS-Display mit 800 × 480 Pixeln und kapazitivem Touchscreen. Prozessor, Display und Touchcontroller befinden sich auf einer einzigen Platine. Damit eignet sich das Board für Projekte, bei denen ein vergleichsweise großes Touchdisplay benötigt wird, ohne einen separaten ESP32 und ein Displaymodul kombinieren zu müssen.

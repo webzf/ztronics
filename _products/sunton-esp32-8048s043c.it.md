@@ -5,12 +5,6 @@ locale: it-IT
 toc_label: Indice
 page_id: product-sunton-esp32-8048s043c
 translation_id: sunton-esp32-8048s043c
-available_languages: [en, de, es, fr, it]
-english_url: /products/sunton-esp32-8048s043c/
-german_url: /de/products/sunton-esp32-8048s043c/
-spanish_url: /es/products/sunton-esp32-8048s043c/
-french_url: /fr/products/sunton-esp32-8048s043c/
-italian_url: /it/products/sunton-esp32-8048s043c/
 internal_links: true
 title: "Sunton ESP32-8048S043C: display touchscreen ESP32-S3 da 4,3 pollici"
 product_verdict: "Un'ottima opzione per un sistema HMI ESP32-S3 con display da 4,3 pollici. Se prezzo e dimensioni compatte sono più importanti, valuta un modello CYD più piccolo."
@@ -92,6 +86,14 @@ related:
   - waveshare-esp32-s3-touch-lcd-7
   - waveshare-esp32-s3-touch-lcd-1-85b
   - ili9341-xpt2046-2-8-touchscreen
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /products/sunton-esp32-8048s043c/
+german_url: /de/products/sunton-esp32-8048s043c/
+spanish_url: /es/products/sunton-esp32-8048s043c/
+french_url: /fr/products/sunton-esp32-8048s043c/
+italian_url: /it/products/sunton-esp32-8048s043c/
+dutch_url: /nl/products/sunton-esp32-8048s043c/
+polish_url: /pl/products/sunton-esp32-8048s043c/
 ---
 ## Vale la pena acquistare Sunton ESP32-8048S043C?
 

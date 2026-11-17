@@ -4,17 +4,6 @@ lang: es
 locale: es-ES
 toc_label: Contenido
 page_id: product-guition-esp32-s3-4848s040
-available_languages:
-  - en
-  - de
-  - es
-  - fr
-  - it
-english_url: /products/guition-esp32-s3-4848s040/
-german_url: /de/products/guition-esp32-s3-4848s040/
-spanish_url: /es/products/guition-esp32-s3-4848s040/
-french_url: /fr/products/guition-esp32-s3-4848s040/
-italian_url: /it/products/guition-esp32-s3-4848s040/
 internal_links: true
 title: "Guition ESP32-S3-4848S040: pantalla táctil 4\" 480×480"
 product_verdict: "Una opción interesante para un panel táctil cuadrado de 4 pulgadas y 480 × 480 píxeles basado en ESP32-S3. Antes de comprar, compruebe la variante con relé y las dimensiones para el montaje."
@@ -111,6 +100,14 @@ related:
   - sunton-esp32-8048s043c
   - esp32-2432s028-2-8-cyd
   - waveshare-esp32-s3-touch-lcd-4-3
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /products/guition-esp32-s3-4848s040/
+german_url: /de/products/guition-esp32-s3-4848s040/
+spanish_url: /es/products/guition-esp32-s3-4848s040/
+french_url: /fr/products/guition-esp32-s3-4848s040/
+italian_url: /it/products/guition-esp32-s3-4848s040/
+dutch_url: /nl/products/guition-esp32-s3-4848s040/
+polish_url: /pl/products/guition-esp32-s3-4848s040/
 ---
 El **Guition ESP32-S3-4848S040** es una pantalla táctil ESP32-S3 de 4 pulgadas y 480 × 480 píxeles, pensada para paneles compactos de Home Assistant y paneles de pared. También se busca como **ESP32-4848S040**; en algunas referencias de placas y vendedores aparece como **4848S040C_I**. Antes de comprar, compruebe la revisión exacta y el contenido del paquete.
 

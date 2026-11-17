@@ -7,21 +7,6 @@ lang: nl
 locale: nl-NL
 page_id: article-guition-esp32-s3-4848s040-pinout-esphome
 translation_id: guition-esp32-s3-4848s040-pinout-esphome
-available_languages:
-  - en
-  - de
-  - es
-  - fr
-  - it
-  - nl
-  - pl
-english_url: /guition-esp32-s3-4848s040-pinout-esphome/
-german_url: /de/guition-esp32-s3-4848s040-pinout-esphome/
-spanish_url: /es/guition-esp32-s3-4848s040-pinout-esphome/
-french_url: /fr/guition-esp32-s3-4848s040-pinout-esphome/
-italian_url: /it/guition-esp32-s3-4848s040-pinout-esphome/
-dutch_url: /nl/guition-esp32-s3-4848s040-pinout-esphome/
-polish_url: /nl/guition-esp32-s3-4848s040-pinout-esphome/
 internal_links: true
 excerpt: "Pinout van de Guition ESP32-S3-4848S040, RGB-schermsignalen, ST7701S-initialisatie, GT911-aanraking, GPIO voor achtergrondverlichting en opmerkingen over ESPHome-installatie."
 show_date: false
@@ -52,6 +37,14 @@ related_posts:
 share: true
 seo_title: "4848S040-pinout, GPIO's en ESPHome-installatiehandleiding"
 seo_description: "Pinout en GPIO-referentie van de 4848S040, RGB-schermsignalen, GT911-aanraking, regeling van de achtergrondverlichting en ESPHome-installatie voor dit ESP32-S3-touchscreen."
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /guition-esp32-s3-4848s040-pinout-esphome/
+german_url: /de/guition-esp32-s3-4848s040-pinout-esphome/
+spanish_url: /es/guition-esp32-s3-4848s040-pinout-esphome/
+french_url: /fr/guition-esp32-s3-4848s040-pinout-esphome/
+italian_url: /it/guition-esp32-s3-4848s040-pinout-esphome/
+dutch_url: /nl/guition-esp32-s3-4848s040-pinout-esphome/
+polish_url: /pl/guition-esp32-s3-4848s040-pinout-esphome/
 ---
 <script type="application/ld+json">
 {

@@ -10,14 +10,6 @@ seo_title: "Sunton ESP32-8048S043C: specyfikacja i poradnik zakupu"
 seo_description: "Sunton ESP32-8048S043C z ESP32-S3, ekranem IPS 4,3″ 800×480 i dotykiem pojemnościowym GT911. Porównaj również wersję ESP32-8048S043 bez końcowego C."
 page_id: product-sunton-esp32-8048s043c
 translation_id: sunton-esp32-8048s043c
-available_languages: [en, de, es, fr, it, nl, pl]
-english_url: /products/sunton-esp32-8048s043c/
-german_url: /de/products/sunton-esp32-8048s043c/
-spanish_url: /es/products/sunton-esp32-8048s043c/
-french_url: /fr/products/sunton-esp32-8048s043c/
-italian_url: /it/products/sunton-esp32-8048s043c/
-dutch_url: /nl/products/sunton-esp32-8048s043c/
-polish_url: /pl/products/sunton-esp32-8048s043c/
 product_id: sunton-esp32-8048s043c
 category: Displays
 manufacturer: "Sunton"
@@ -94,6 +86,14 @@ related:
   - waveshare-esp32-s3-touch-lcd-7
   - waveshare-esp32-s3-touch-lcd-1-85b
   - ili9341-xpt2046-2-8-touchscreen
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /products/sunton-esp32-8048s043c/
+german_url: /de/products/sunton-esp32-8048s043c/
+spanish_url: /es/products/sunton-esp32-8048s043c/
+french_url: /fr/products/sunton-esp32-8048s043c/
+italian_url: /it/products/sunton-esp32-8048s043c/
+dutch_url: /nl/products/sunton-esp32-8048s043c/
+polish_url: /pl/products/sunton-esp32-8048s043c/
 ---
 ## Czy warto kupić Sunton ESP32-8048S043C?
 
