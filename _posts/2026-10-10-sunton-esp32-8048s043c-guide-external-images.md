@@ -5,20 +5,6 @@ hide_post_pagination: true
 layout: single
 lang: en
 translation_id: sunton-esp32-8048s043c-guide
-available_languages:
-  - en
-  - de
-  - es
-  - fr
-  - it
-  - nl
-  - pl
-english_url: /sunton-esp32-8048s043c-guide/
-german_url: /de/sunton-esp32-8048s043c-guide/
-spanish_url: /es/sunton-esp32-8048s043c-guide/
-french_url: /fr/sunton-esp32-8048s043c-guide/
-italian_url: /it/sunton-esp32-8048s043c-guide/
-polish_url: /pl/sunton-esp32-8048s043c-guide/
 permalink: /sunton-esp32-8048s043c-guide/
 id: "https://embeddednerd.com/sunton-esp32-8048s043c-guide/"
 sidebar:
@@ -53,6 +39,14 @@ related: true
 related_posts:
   - /esp32-touchscreen-displays-guide/
   - /esp32-p4-round-touchscreen-display-projects/
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /sunton-esp32-8048s043c-guide/
+german_url: /de/sunton-esp32-8048s043c-guide/
+spanish_url: /es/sunton-esp32-8048s043c-guide/
+french_url: /fr/sunton-esp32-8048s043c-guide/
+italian_url: /it/sunton-esp32-8048s043c-guide/
+dutch_url: /nl/sunton-esp32-8048s043c-guide/
+polish_url: /pl/sunton-esp32-8048s043c-guide/
 ---
 
 The **Sunton ESP32-8048S043C** is an all-in-one board built around an ESP32-S3, a 4.3" 800×480 IPS display and a capacitive touch panel on one PCB. It is aimed at projects that need a relatively large touchscreen without combining a separate ESP32 and display module.
