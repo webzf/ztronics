@@ -1,0 +1,97 @@
+/* Seeed Studio Black Friday campaign popup */
+.seeed-campaign-popup {
+  position: fixed;
+  z-index: 10000;
+  left: 16px;
+  bottom: 16px;
+  width: min(320px, calc(100vw - 32px));
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, .12);
+  border-radius: 12px;
+  background: #fff;
+  color: #1f2937;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .24);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(18px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+}
+
+.seeed-campaign-popup.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.seeed-campaign-popup__banner {
+  display: block;
+}
+
+.seeed-campaign-popup__banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.seeed-campaign-popup__note {
+  margin: 0;
+  padding: 6px 12px 8px;
+  color: #596273;
+  font: 12px/1.4 system-ui, sans-serif;
+}
+
+.seeed-campaign-popup__close {
+  position: absolute;
+  z-index: 1;
+  top: 7px;
+  right: 7px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .7);
+  border-radius: 50%;
+  background: rgba(15, 23, 42, .78);
+  color: #fff;
+  font: 24px/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.seeed-campaign-popup__close:hover {
+  background: rgba(15, 23, 42, .95);
+}
+
+.seeed-campaign-popup__close:focus-visible {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .seeed-campaign-popup {
+    left: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    width: min(270px, calc(100vw - 20px));
+    border-radius: 10px;
+  }
+
+  .seeed-campaign-popup__close {
+    top: 4px;
+    right: 4px;
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Keep clear of the existing mobile product purchase bar. */
+  body.layout--product .seeed-campaign-popup {
+    bottom: calc(82px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seeed-campaign-popup {
+    transition: none;
+  }
+}
