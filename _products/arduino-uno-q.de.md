@@ -1,6 +1,10 @@
 ---
 layout: product
 lang: de
+locale: de-DE
+toc_label: Inhalt
+page_id: product-arduino-uno-q
+translation_id: arduino-uno-q
 internal_links: true
 title: "Arduino UNO Q: Technische Daten, 2GB vs. 4GB und Kaufberatung"
 product_verdict: "Eine Hybridplatine mit Debian-Linux-Prozessor und Echtzeit-Mikrocontroller für Edge-KI, Bildverarbeitung und Robotik. 2GB eignen sich für gezielte Embedded-Anwendungen; 4GB bieten mehr Reserven für Desktop-Nutzung und Multitasking."
@@ -19,7 +23,7 @@ excerpt: "Arduino UNO Q kombiniert einen Qualcomm Dragonwing QRB2210 für Linux 
 description: "Die Arduino UNO Q ist eine Hybridplattform aus Einplatinencomputer und Mikrocontroller. Der Qualcomm Dragonwing QRB2210 führt Debian Linux und anspruchsvolle Anwendungen aus, während der STM32U585 die Echtzeit-Ein-/Ausgänge steuert. Erhältlich mit 2GB RAM und 16GB eMMC oder 4GB RAM und 32GB eMMC."
 categories: [Arduino, Entwicklungsplatinen, Linux-SBC, Edge-KI, Robotik]
 tags: [Arduino UNO Q, Arduino, Qualcomm Dragonwing QRB2210, STM32U585, Debian Linux, Edge-KI, Bildverarbeitung, Robotik, Arduino App Lab, Wi-Fi 5, Bluetooth 5.1]
-permalink: /de/products/arduino-uno-q/
+permalink: /products/arduino-uno-q/
 available_languages: [en, de, es, fr, it, nl, pl]
 english_url: /products/arduino-uno-q/
 german_url: /de/products/arduino-uno-q/
