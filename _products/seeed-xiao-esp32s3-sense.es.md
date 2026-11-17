@@ -4,17 +4,6 @@ lang: es
 locale: es-ES
 toc_label: Contenido
 page_id: product-seeed-xiao-esp32s3-sense
-available_languages:
-  - en
-  - de
-  - es
-  - fr
-  - it
-english_url: /products/seeed-xiao-esp32s3-sense/
-german_url: /de/products/seeed-xiao-esp32s3-sense/
-spanish_url: /es/products/seeed-xiao-esp32s3-sense/
-french_url: /fr/products/seeed-xiao-esp32s3-sense/
-italian_url: /it/products/seeed-xiao-esp32s3-sense/
 internal_links: true
 title: "Seeed Studio XIAO ESP32S3 Sense: cámara, micrófono y microSD en 21 × 17,8 mm"
 product_verdict: "Una placa ESP32-S3 muy compacta para proyectos de cámara, audio y registro de datos. Tenga en cuenta los GPIO compartidos y el mayor consumo en deep sleep con la placa de expansión conectada."
@@ -105,6 +94,14 @@ related:
   - arduino-nano-esp32
   - esp32-devkit
   - raspberry-pi-pico-w
+available_languages: [en, de, es, fr, it, nl, pl]
+english_url: /products/seeed-xiao-esp32s3-sense/
+german_url: /de/products/seeed-xiao-esp32s3-sense/
+spanish_url: /es/products/seeed-xiao-esp32s3-sense/
+french_url: /fr/products/seeed-xiao-esp32s3-sense/
+italian_url: /it/products/seeed-xiao-esp32s3-sense/
+dutch_url: /nl/products/seeed-xiao-esp32s3-sense/
+polish_url: /pl/products/seeed-xiao-esp32s3-sense/
 ---
 El **Seeed Studio XIAO ESP32S3 Sense** es una placa ESP32-S3 del tamaño de un pulgar con una placa de expansión extraíble que incorpora una cámara, un micrófono digital y una ranura microSD. También se busca como **XIAO ESP32-S3 Sense** o **Seeed XIAO ESP32S3 Sense**. Al comprar, fíjese expresamente en la versión **Sense**: el XIAO ESP32S3 estándar tiene un aspecto muy parecido, pero no incluye cámara, micrófono ni ranura SD.
 
