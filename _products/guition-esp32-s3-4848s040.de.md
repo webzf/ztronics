@@ -221,7 +221,7 @@ Es kann mit einer passenden ESPHome-Konfiguration als Grundlage für ein Home-As
 | Platine | Besonders geeignet für |
 |---|---|
 | Guition ESP32-S3-4848S040 | Quadratische Benutzeroberfläche mit 4 Zoll und 480 × 480 Pixeln |
-| [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) | Breiteres 4,3-Zoll-Display mit 800 × 480 Pixeln |
+| [Sunton ESP32-8048S043C](/de/products/sunton-esp32-8048s043c/) | Breiteres 4,3-Zoll-Display mit 800 × 480 Pixeln |
 | [ESP32-2432S028 CYD](/products/esp32-2432s028-2-8-cyd/) | Kompaktes und preisgünstigeres 2,8-Zoll-Touchdisplay |
 
 Sie sind unsicher, welche Platine zu Ihrem Projekt passt? Nutzen Sie den [ESP32-Touchscreen-Auswahlassistenten](/tools/esp32-touchscreen-selector/) und lesen Sie den [Leitfaden zu ESP32-Touchscreen-Displays](/esp32-touchscreen-displays-guide/).
