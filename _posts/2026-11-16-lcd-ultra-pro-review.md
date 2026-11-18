@@ -7,10 +7,10 @@ lang: en
 page_id: article-lcd-ultra-pro-overview
 translation_id: lcd-ultra-pro-overview
 internal_links: false
-excerpt: "Explore LCD Ultra Pro, a browser-based visual editor for ESP32 displays. Design LVGL interfaces, add logic with visual rules, test in a browser and export an Arduino project."
+excerpt: "Explore LCD Ultra Pro, a browser-based LVGL editor for ESP32 displays with visual rules, Arduino export and eight free hardware-planning tools."
 show_date: false
 read_time: false
-last_modified_at: 2026-11-17
+last_modified_at: 2026-11-18
 header:
   teaser: /assets/images/esp32-touchscreen-lvgl-gui.webp
   overlay_image: /assets/images/header3.webp
@@ -38,7 +38,7 @@ related_posts:
   - /tools/esp32-touchscreen-selector/
 share: true
 seo_title: "LCD Ultra Pro Overview: LVGL Editor for ESP32"
-seo_description: "Explore LCD Ultra Pro, a free browser-based LVGL editor for ESP32 displays. See its visual rules, USB Live preview, Arduino export and limitations."
+seo_description: "Explore LCD Ultra Pro, a free browser-based LVGL editor for ESP32 displays, plus eight free board, pin, memory and I²C planning tools."
 ---
 
 <script type="application/ld+json">
@@ -95,7 +95,7 @@ Designing a touchscreen interface for an ESP32 usually involves more than arrang
 **LCD Ultra Pro** takes a different approach: it is a browser-based visual editor for ESP32 display boards. You arrange widgets on a canvas, define their behaviour with visual rules, test the interface in the browser and export an Arduino project.
 
 <figure style="max-width:480px;margin:1.25rem auto;text-align:center;">
-  <img src="https://lcdultrapro.com/press/full/demo-smart-home.jpg" alt="LCD Ultra Pro visual editor showing a smart home dashboard for an ESP32 display" loading="lazy" style="width:100%;height:auto;">
+  <img src="/assets/images/lcd-ultra-pro/01-editor-smart-home-7inch.webp" alt="LCD Ultra Pro visual editor showing a smart home dashboard for an ESP32 display" loading="lazy" style="width:100%;height:auto;">
   <figcaption>LCD Ultra Pro's visual editor with a Smart Home dashboard. Screenshot from the developer's public press kit.</figcaption>
 </figure>
 
@@ -153,7 +153,7 @@ The board cards show information such as:
 
 Some entries have status labels such as **Verified**, **Vendor Matched** or **USB Live**. These labels are important: being listed in the catalog does not automatically mean that a board can currently be exported or used with USB Live.
 
-![LCD Ultra Pro new project window with the ESP32 display board picker](https://lcdultrapro.com/press/full/board-picker.jpg)
+![LCD Ultra Pro new project window with the ESP32 display board picker](/assets/images/lcd-ultra-pro/10-new-project-board-picker.webp)
 *The board picker helps identify the exact panel before creating a project. Screenshot from the developer's public press kit.*
 
 For a first project, choose the exact model and revision rather than a similar-looking board. Display controllers, touch controllers and GPIO assignments can differ between boards that appear to belong to the same product family.
@@ -188,12 +188,12 @@ Examples include:
 
 The Smart widget palette may vary with the selected board and project. The current overall count of 24 was confirmed directly by the developer on 17 November 2026.
 
-![LCD Ultra Pro Smart widget palette with WiFi, MQTT, time and settings components](https://lcdultrapro.com/press/full/smart-widgets-palette.jpg)
+![LCD Ultra Pro Smart widget palette with WiFi, MQTT, time and settings components](/assets/images/lcd-ultra-pro/02-smart-widgets-palette.webp)
 *The Smart tab groups ready-made screens and components. Screenshot from the developer's public press kit.*
 
 The project also includes **19 demo projects** that open directly in the editor. A smart home dashboard or thermostat is a useful starting point because you can inspect its widgets and rules instead of building everything from an empty screen.
 
-![LCD Ultra Pro thermostat interface for the 2.1-inch round Makerfabs MaTouch display](https://lcdultrapro.com/press/full/round-thermostat.jpg)
+![LCD Ultra Pro thermostat interface for the 2.1-inch round Makerfabs MaTouch display](/assets/images/lcd-ultra-pro/09-round-thermostat-2-1inch.webp)
 *A thermostat demo for the round 2.1-inch MaTouch Rotary display. Screenshot from the developer's public press kit.*
 
 ## Step 3: Add behaviour with visual rules
@@ -219,7 +219,7 @@ The Beginner view describes actions as readable sentences and provides quick-sta
 
 This is the more approachable starting point if you are not familiar with LVGL event callbacks.
 
-![LCD Ultra Pro Beginner rule editor showing quick-start actions and readable event rules](https://lcdultrapro.com/press/full/rules-beginner-view.jpg)
+![LCD Ultra Pro Beginner rule editor showing quick-start actions and readable event rules](/assets/images/lcd-ultra-pro/03-rules-beginner-view.webp)
 *Beginner mode presents common actions as readable rules. Screenshot from the developer's public press kit.*
 
 ### Advanced view
@@ -228,7 +228,7 @@ The Advanced view exposes the individual options for each rule. Depending on the
 
 That extra detail matters when a project needs more than a simple button action. You can inspect and adjust the rule rather than being restricted to a fixed preset.
 
-![LCD Ultra Pro Advanced rule editor with MQTT topic, message, QoS and widget state settings](https://lcdultrapro.com/press/full/rules-advanced-view.jpg)
+![LCD Ultra Pro Advanced rule editor with MQTT topic, message, QoS and widget state settings](/assets/images/lcd-ultra-pro/04-rules-advanced-view.webp)
 *Advanced mode exposes the options behind each event rule. Screenshot from the developer's public press kit.*
 
 The current documentation describes about **100 ready-made rules**. They provide a starting point, but a real project still needs its topics, pins, conditions and hardware behaviour configured correctly.
@@ -243,7 +243,7 @@ Live Preview runs the interface and its visual rules inside the browser. You can
 
 The developer's public demonstration also shows a simulated MQTT broker. You can enter a topic and message to see how the interface reacts and what it publishes. This is useful for checking event logic without connecting a physical board.
 
-![LCD Ultra Pro Live Preview window with a simulated MQTT broker and smart home dashboard](https://lcdultrapro.com/press/full/live-preview.jpg)
+![LCD Ultra Pro Live Preview window with a simulated MQTT broker and smart home dashboard](/assets/images/lcd-ultra-pro/05-live-preview.webp)
 *Live Preview lets you interact with the design and simulate MQTT messages in the browser. Screenshot from the developer's public press kit.*
 
 ### USB Live: mirror the design onto a real display
@@ -265,12 +265,12 @@ There are two important limitations:
 
 This makes USB Live useful for checking the appearance and layout on a real panel, but it is not a replacement for uploading and testing the finished firmware.
 
-![LCD Ultra Pro USB Live setup window showing the steps to install and run the preview on a supported board](https://lcdultrapro.com/press/full/usb-live-window.jpg)
+![LCD Ultra Pro USB Live setup window showing the steps to install and run the preview on a supported board](/assets/images/lcd-ultra-pro/06-usb-live-window.webp)
 *USB Live setup and board selection. Screenshot from the developer's public press kit.*
 
 The developer's press kit also includes this demonstration clip:
 
-<video controls preload="metadata" poster="https://lcdultrapro.com/press/full/usb-live-on-board.jpg" style="width:100%;height:auto;">
+<video controls preload="metadata" poster="/assets/images/lcd-ultra-pro/usb-live-demo-poster.webp" style="width:100%;height:auto;">
   <source src="https://lcdultrapro.com/videos/usb-live-demo.mp4" type="video/mp4">
   Your browser does not support embedded video. <a href="https://lcdultrapro.com/videos/usb-live-demo.mp4">Open the USB Live demonstration video</a>.
 </video>
@@ -289,7 +289,7 @@ The editor also lists free pins for the selected board and provides clickable co
 
 One limitation is worth remembering: custom code runs on the physical board after the exported project is uploaded. It is not executed by Live Preview or USB Live.
 
-![LCD Ultra Pro Custom Code window with startup, global and event code insertion points](https://lcdultrapro.com/press/full/custom-code-window.jpg)
+![LCD Ultra Pro Custom Code window with startup, global and event code insertion points](/assets/images/lcd-ultra-pro/07-custom-code-window.webp)
 *Custom code can be added to the generated Arduino event file. Screenshot from the developer's public press kit.*
 
 ## Export the Arduino project
@@ -304,10 +304,10 @@ When the interface is ready, Export generates a ZIP containing an Arduino projec
 - A README with board settings and setup instructions.
 - A `secrets_example.h` file for Wi-Fi and MQTT credentials.
 
-![LCD Ultra Pro editor showing the completed export notification](https://lcdultrapro.com/press/full/export-done.jpg)
+![LCD Ultra Pro editor showing the completed export notification](/assets/images/lcd-ultra-pro/08-export-done.webp)
 *The editor confirms when the project export has finished. Screenshot from the developer's public press kit.*
 
-![LCD Ultra Pro exported Arduino ZIP contents and generated README with board configuration](https://lcdultrapro.com/press/full/export-zip-and-readme.jpg)
+![LCD Ultra Pro exported Arduino ZIP contents and generated README with board configuration](/assets/images/lcd-ultra-pro/08b-export-zip-and-readme.webp)
 *The ZIP contains the generated source, board support files and a README with configuration details. Screenshot from the developer's public press kit.*
 
 ### Example: Waveshare ESP32-S3-LCD-7B Arduino settings
@@ -366,16 +366,35 @@ The Waveshare, Sunton C and Guition entries are listed with a ready export drive
 
 ## The board wiki, parts pages and other tools
 
-LCD Ultra Pro is more than the visual editor. Its website also includes a board wiki, parts references, an I²C checker and a technical blog.
+LCD Ultra Pro is more than the visual editor. Its website now includes eight free technical utilities alongside a board wiki, parts references and a technical blog. We checked all eight tool pages on 18 November 2026: every page loaded and showed its intended controls and reference data. We could inspect the page content, but did not interact with the live controls in a full browser session, so their operation is not independently tested.
+
+### Eight free technical tools
+
+All eight tools are now published under the [Free tools page](https://lcdultrapro.com/tools). They load as public pages and are usable without an account according to the site's page descriptions.
+
+| Tool | What it currently offers |
+|---|---|
+| [Board finder](https://lcdultrapro.com/tools/board-finder) | Filters the 173-board catalog by screen size, resolution, touch, PSRAM, GPIO count, shape, interface, ESP32 chip, CAN/RS485 and battery. |
+| [Arduino IDE settings](https://lcdultrapro.com/tools/arduino-settings) | Select a board to see its board type, PSRAM, flash, partition and library settings. The page says settings for the 61 driver-supported boards are tested; the remaining 94 use manufacturer or corroborated reference settings and are marked as not tested by LCD Ultra Pro. |
+| [Pin planner](https://lcdultrapro.com/tools/pin-planner) | Select a board and sensors/modules to allocate GPIOs, warn about display/reserved/strapping pins and I²C address conflicts. Pin assignments can be changed, with warnings updating; ADC suggestions are limited to ADC1 on chips with Wi-Fi-related ADC2 restrictions. |
+| [Board comparison](https://lcdultrapro.com/tools/compare) | Compare two or three boards side by side, including screen, controller, touch, PSRAM, free GPIOs and driver status; differences are highlighted. |
+| [LVGL memory calculator](https://lcdultrapro.com/tools/lvgl-memory) | Estimate memory for dimensions, screens, text, widget counts, images and Wi-Fi/MQTT, optionally against a selected board. It separates the full-frame-buffer estimate from the RAM subtotal and warns that the estimate is a floor. |
+| [Boards by controller chip](https://lcdultrapro.com/tools/display-controllers) | Search display or touch controller names and find compatible boards. The page currently lists 35 display-controller groups and supports reverse lookup from controller to board. |
+| [LVGL symbol browser](https://lcdultrapro.com/tools/lvgl-symbols) | Search all 61 built-in LVGL symbols; each entry shows a preview, macro name, Unicode code point and UTF-8 bytes with a copy action. |
+| [I²C address checker](https://lcdultrapro.com/tools/i2c-checker) | Choose a board and I²C devices or presets to map addresses and identify collisions against chips listed on that board. It covers 21 I²C parts and onboard chips on 140 boards, with address-change suggestions. |
+
+These tools are a useful addition to the main editor: the board finder and comparison help choose hardware, the Arduino settings and pin planner help plan a build, and the memory/I²C/controller/symbol tools address specific integration questions.
+
+**Verification limit:** I confirmed that each tool's page is published and that its controls, selectors, filters, example presets and reference data are present in the rendered page. I did not run through the controls interactively in a full browser session. Treat the descriptions above as feature availability confirmed from the live page, not a hands-on functional test.
 
 The board wiki provides specifications, pin information and connector details. The developer's public documentation says that 50 boards had surveyed connector lists at the time it was checked.
 
 The parts section contains 62 pages covering sensors, relays and modules. For example, the BME280 page discusses the common I²C address choices (0x76 and 0x77), wiring and the possibility of sharing an I²C bus with a display's touch controller.
 
-![LCD Ultra Pro board wiki page showing Waveshare ESP32-S3-LCD-7B specifications](https://lcdultrapro.com/press/full/web-board-wiki.jpg)
+![LCD Ultra Pro board wiki page showing Waveshare ESP32-S3-LCD-7B specifications](/assets/images/lcd-ultra-pro/12-board-wiki-page.webp)
 *Example board wiki page with specifications and hardware information. Screenshot from the developer's public press kit.*
 
-![LCD Ultra Pro parts wiki page showing BME280 wiring and ESP32 I2C connections](https://lcdultrapro.com/press/full/web-parts-bme280.jpg)
+![LCD Ultra Pro parts wiki page showing BME280 wiring and ESP32 I2C connections](/assets/images/lcd-ultra-pro/13-parts-wiki-bme280.webp)
 *Example parts reference for connecting a BME280 sensor over I²C. Screenshot from the developer's public press kit.*
 
 The site also publishes articles about ESP32 display hardware, LVGL and projects built with supported boards. You can browse the [LCD Ultra Pro blog](https://lcdultrapro.com/blog) separately from the editor.
