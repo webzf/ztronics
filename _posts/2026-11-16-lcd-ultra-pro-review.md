@@ -375,7 +375,7 @@ All eight tools are now published under the [Free tools page](https://lcdultrapr
 | Tool | What it currently offers |
 |---|---|
 | [Board finder](https://lcdultrapro.com/tools/board-finder) | Filters the 173-board catalog by screen size, resolution, touch, PSRAM, GPIO count, shape, interface, ESP32 chip, CAN/RS485 and battery. |
-| [Arduino IDE settings](https://lcdultrapro.com/tools/arduino-settings) | Select a board to see its board type, PSRAM, flash, partition and library settings. The page says settings for the 61 driver-supported boards are tested; the remaining 94 use manufacturer or corroborated reference settings and are marked as not tested by LCD Ultra Pro. |
+| [Arduino IDE settings](https://lcdultrapro.com/tools/arduino-settings) | Select a board to see its board type, PSRAM, flash, partition and library settings. The page says settings for 61 export-driver boards come from export README files and were compiled with arduino-cli; 94 additional entries use manufacturer or corroborated reference settings and are marked as not tested. |
 | [Pin planner](https://lcdultrapro.com/tools/pin-planner) | Select a board and sensors/modules to allocate GPIOs, warn about display/reserved/strapping pins and I²C address conflicts. Pin assignments can be changed, with warnings updating; ADC suggestions are limited to ADC1 on chips with Wi-Fi-related ADC2 restrictions. |
 | [Board comparison](https://lcdultrapro.com/tools/compare) | Compare two or three boards side by side, including screen, controller, touch, PSRAM, free GPIOs and driver status; differences are highlighted. |
 | [LVGL memory calculator](https://lcdultrapro.com/tools/lvgl-memory) | Estimate memory for dimensions, screens, text, widget counts, images and Wi-Fi/MQTT, optionally against a selected board. It separates the full-frame-buffer estimate from the RAM subtotal and warns that the estimate is a floor. |
@@ -384,6 +384,8 @@ All eight tools are now published under the [Free tools page](https://lcdultrapr
 | [I²C address checker](https://lcdultrapro.com/tools/i2c-checker) | Choose a board and I²C devices or presets to map addresses and identify collisions against chips listed on that board. It covers 21 I²C parts and onboard chips on 140 boards, with address-change suggestions. |
 
 These tools are a useful addition to the main editor: the board finder and comparison help choose hardware, the Arduino settings and pin planner help plan a build, and the memory/I²C/controller/symbol tools address specific integration questions.
+
+**A count discrepancy to keep in mind:** the Arduino settings page describes 61 export-driver entries plus 94 additional entries with reference settings (155 in total), while the catalog reports 102 selectable boards. The page does not explain how those sets overlap, so this overview does not treat 155 as the number of selectable boards.
 
 **Verification limit:** I confirmed that each tool's page is published and that its controls, selectors, filters, example presets and reference data are present in the rendered page. I did not run through the controls interactively in a full browser session. Treat the descriptions above as feature availability confirmed from the live page, not a hands-on functional test.
 
