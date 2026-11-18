@@ -151,7 +151,6 @@ Use the purchase option above to check the current offer. The exact product ID b
 For wiring, code, touch setup and known limitations, read the [pinout & setup guide](/sunton-esp32-8048s043c-guide/).
 
 ## Embedded Nerd Guides & Selector
-- [LCD Ultra Pro overview: visual LVGL editor for ESP32 displays](/lcd-ultra-pro-overview/) — see the editor workflow and check the current driver status for this board.
 
 - [pinout & setup guide](/sunton-esp32-8048s043c-guide/) — GPIO tables, a minimal code example and troubleshooting.
 - [ESP32 Touchscreen Selector](/tools/esp32-touchscreen-selector/)
