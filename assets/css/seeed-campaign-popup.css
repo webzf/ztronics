@@ -73,9 +73,15 @@
   .seeed-campaign-popup {
     left: 10px;
     bottom: calc(10px + env(safe-area-inset-bottom, 0px));
-    width: min(270px, calc(100vw - 20px));
-    border-radius: 10px;
+    width: min(320px, calc(100vw - 20px));
+    border-radius: 12px;
   }
+
+  .seeed-campaign-popup__note {
+    padding: 8px 14px 10px;
+    font-size: 13px;
+  }
+
 
   .seeed-campaign-popup__close {
     top: 4px;
