@@ -1,0 +1,22 @@
+{% comment %}Seeed Studio Black Friday 2026 campaign popup. Included site-wide from the default layout.{% endcomment %}
+<aside id="seeed-campaign-popup"
+       class="seeed-campaign-popup"
+       role="complementary"
+       aria-label="{% if site.active_lang == 'pt' %}Promoção Seeed Studio{% elsif site.active_lang == 'fr' %}Promotion Seeed Studio{% elsif site.active_lang == 'de' %}Seeed Studio Aktion{% elsif site.active_lang == 'es' %}Promoción de Seeed Studio{% elsif site.active_lang == 'it' %}Promozione Seeed Studio{% elsif site.active_lang == 'nl' %}Seeed Studio-promotie{% elsif site.active_lang == 'pl' %}Promocja Seeed Studio{% else %}Seeed Studio promotion{% endif %}"
+       aria-hidden="true">
+  <button class="seeed-campaign-popup__close"
+          type="button"
+          aria-label="{% if site.active_lang == 'pt' %}Fechar promoção{% elsif site.active_lang == 'fr' %}Fermer la promotion{% elsif site.active_lang == 'de' %}Aktion schließen{% elsif site.active_lang == 'es' %}Cerrar promoción{% elsif site.active_lang == 'it' %}Chiudi promozione{% elsif site.active_lang == 'nl' %}Promotie sluiten{% elsif site.active_lang == 'pl' %}Zamknij promocję{% else %}Close promotion{% endif %}">&times;</button>
+  <a class="seeed-campaign-popup__banner"
+     href="https://www.seeedstudio.com/page/black-friday-sale-2026?sensecap_affiliate=3jSyuVk&amp;referring_service=banner&amp;element_id=2"
+     target="_blank"
+     rel="sponsored nofollow noopener">
+    <img src="https://media-cdn.seeedstudio.com/media/amasty_affiliate/banner/banner_1.jpg"
+         alt="Seeed Studio Black Friday 2026"
+         loading="lazy"
+         decoding="async">
+  </a>
+  <p class="seeed-campaign-popup__note">{% if site.active_lang == 'pt' %}Link de afiliado{% elsif site.active_lang == 'fr' %}Lien affilié{% elsif site.active_lang == 'de' %}Affiliate-Link{% elsif site.active_lang == 'es' %}Enlace de afiliado{% elsif site.active_lang == 'it' %}Link affiliato{% elsif site.active_lang == 'nl' %}Affiliate-link{% elsif site.active_lang == 'pl' %}Link afiliacyjny{% else %}Affiliate link{% endif %}</p>
+</aside>
+<link rel="stylesheet" href="{{ '/assets/css/seeed-campaign-popup.css' | relative_url }}">
+<script src="{{ '/assets/js/seeed-campaign-popup.js' | relative_url }}" defer></script>
