@@ -341,11 +341,11 @@ The current public board catalog lists the following support figures (confirmed 
 | Boards documented in the wiki | 173 |
 | Boards selectable in the editor | 102 |
 | Boards with a driver included in export | 61 |
-| Boards tested by the developer on physical hardware | 3 |
+| Boards confirmed hardware-tested | 4 |
 
-The developer's press kit instead lists 101 selectable boards and 60 with an export driver. The live catalog currently shows 102 and 61 respectively, so the figures differ by one; the table above reflects the live catalog checked on 16 November 2026.
+The live catalog figures (102 selectable boards and 61 export drivers) differ from an earlier press-kit snapshot (101 and 60). The catalog is continuously updated; these figures were checked on 18 November 2026.
 
-These figures describe different levels of support. A board can be documented in the wiki without being selectable in the editor, and a selectable board may still have no export driver. The three hardware-tested boards are a much smaller group than the 61 boards with an export driver.
+These figures describe different levels of support. A board can be documented in the wiki without being selectable in the editor, and a selectable board may still have no export driver. LCD Ultra Pro reports four hardware-tested boards as of 18 November 2026. This includes the Elecrow CrowPanel ESP32-S3 HMI 5.0-inch, which was confirmed on a real board by an independent tester. Embedded Nerd has not performed that test.
 
 Before choosing a display for a project, check its status in the board picker and confirm that the exact board has an export driver. If USB Live is important, check that the board is one of the three listed above.
 
@@ -375,7 +375,7 @@ All eight tools are now published under the [Free tools page](https://lcdultrapr
 | Tool | What it currently offers |
 |---|---|
 | [Board finder](https://lcdultrapro.com/tools/board-finder) | Filters the 173-board catalog by screen size, resolution, touch, PSRAM, GPIO count, shape, interface, ESP32 chip, CAN/RS485 and battery. |
-| [Arduino IDE settings](https://lcdultrapro.com/tools/arduino-settings) | Select a board to see its board type, PSRAM, flash, partition and library settings. The page says settings for 61 export-driver boards come from export README files and were compiled with arduino-cli; 94 additional entries use manufacturer or corroborated reference settings and are marked as not tested. |
+| [Arduino IDE settings](https://lcdultrapro.com/tools/arduino-settings) | Select a board to see its board type, PSRAM, flash, partition and library settings. Settings for 61 boards with export drivers are taken from their export README files and compiled with arduino-cli. For 41 selectable boards without an export driver, 32 have settings sourced from manufacturer documentation and marked as untested; 9 have no settings because the manufacturer provides no reliable information. The broader wiki also contains 63 wiki-only boards with manufacturer/reference settings, outside the 102 selectable-board count. |
 | [Pin planner](https://lcdultrapro.com/tools/pin-planner) | Select a board and sensors/modules to allocate GPIOs, warn about display/reserved/strapping pins and I²C address conflicts. Pin assignments can be changed, with warnings updating; ADC suggestions are limited to ADC1 on chips with Wi-Fi-related ADC2 restrictions. |
 | [Board comparison](https://lcdultrapro.com/tools/compare) | Compare two or three boards side by side, including screen, controller, touch, PSRAM, free GPIOs and driver status; differences are highlighted. |
 | [LVGL memory calculator](https://lcdultrapro.com/tools/lvgl-memory) | Estimate memory for dimensions, screens, text, widget counts, images and Wi-Fi/MQTT, optionally against a selected board. It separates the full-frame-buffer estimate from the RAM subtotal and warns that the estimate is a floor. |
@@ -385,7 +385,7 @@ All eight tools are now published under the [Free tools page](https://lcdultrapr
 
 These tools are a useful addition to the main editor: the board finder and comparison help choose hardware, the Arduino settings and pin planner help plan a build, and the memory/I²C/controller/symbol tools address specific integration questions.
 
-**A count discrepancy to keep in mind:** the Arduino settings page describes 61 export-driver entries plus 94 additional entries with reference settings (155 in total), while the catalog reports 102 selectable boards. The page does not explain how those sets overlap, so this overview does not treat 155 as the number of selectable boards.
+**Arduino settings coverage clarified by the developer:** the 61 boards with export drivers are exactly the selectable boards whose settings come from the driver's README and are compiled with arduino-cli. Of the other 41 selectable boards, 32 have manufacturer-sourced settings (not tested by LCD Ultra Pro) and 9 have no settings because the manufacturer does not provide them. The broader wiki has 63 wiki-only boards with reference settings, which are not part of the 102 selectable boards. LCD Ultra Pro avoids guessing where documentation is unavailable.
 
 **Verification limit:** I confirmed that each tool's page is published and that its controls, selectors, filters, example presets and reference data are present in the rendered page. I did not run through the controls interactively in a full browser session. Treat the descriptions above as feature availability confirmed from the live page, not a hands-on functional test.
 
@@ -432,7 +432,7 @@ Based on the developer's public documentation and demonstrations, LCD Ultra Pro 
 **Limitations**
 - The export targets ESP32 and ESP32-S3 boards.
 - The current export is based on LVGL 8.4, not LVGL 9.
-- Only 61 of the 102 selectable boards currently have a display driver in the export.
+- Only 61 of the 102 selectable boards currently have a display driver in the export. The remaining 41 selectable boards are split into 32 with manufacturer-sourced settings (not tested by LCD Ultra Pro) and 9 without settings because reliable manufacturer information is unavailable.
 - Smart widget availability and counts may evolve as the developer adds new components.
 - USB Live is limited to three boards and requires Chrome or Edge.
 - USB Live mirrors the picture only; it does not test touch input or run the finished application on the board.
