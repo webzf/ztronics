@@ -4,7 +4,7 @@ layout: product
 internal_links: true
 
 seo_title: "Raspberry Pi Pico W: Specs, Pros & Where to Buy"
-seo_description: "RP2040 board with 2.4 GHz Wi-Fi and Bluetooth LE. Compare Pico W specs, wireless features, standard Pico alternatives and where to buy."
+seo_description: "Raspberry Pi Pico W specs, Wi-Fi, Bluetooth 5.2, GPIO and projects. Compare this wireless RP2040 board and find where to buy."
 title: "Raspberry Pi Pico W"
 
 product_id: raspberry-pi-pico-w
@@ -54,7 +54,7 @@ specifications:
   - name: "Flash memory"
     value: "2 MB"
   - name: "GPIO"
-    value: "26 multifunction GPIO"
+    value: "26 exposed multifunction GPIO (3 ADC-capable)"
   - name: "ADC"
     value: "3 × 12-bit ADC inputs"
   - name: "PWM"
@@ -121,7 +121,7 @@ Unlike a traditional Raspberry Pi computer, the Pico W is a microcontroller boar
 - Up to 133 MHz clock speed
 - 264 KB SRAM
 - 2 MB on-board flash memory
-- 26 multifunction GPIO pins
+- 26 exposed multifunction GPIO pins, including 3 ADC-capable pins
 - 3 × 12-bit ADC inputs
 - 16 PWM channels
 - 2 × SPI interfaces
@@ -159,16 +159,16 @@ The Raspberry Pi Pico W is suitable for applications such as:
 
 ## GPIO and Pinout
 
-The Raspberry Pi Pico W provides **26 multifunction GPIO pins**.
+The Raspberry Pi Pico W exposes **26 multifunction GPIO pins** for general use. Of these, **3 GPIO pins support analog input (ADC)**; the remaining exposed GPIO pins can be used for digital input/output and supported peripheral functions.
 
-These pins can be configured for digital input and output as well as several peripheral functions.
+For the physical pin numbers, pin functions and electrical details, refer to the [official Raspberry Pi Pico W datasheet](https://datasheets.raspberrypi.com/picow/pico-w-datasheet.pdf).
 
 Common interfaces include:
 
 | Interface | Available |
 |---|---:|
-| GPIO | 26 |
-| ADC | 3 × 12-bit |
+| GPIO | 26 exposed pins |
+| ADC-capable GPIO | 3 of the 26 pins (12-bit) |
 | PWM | 16 channels |
 | SPI | 2 |
 | I2C | 2 |
