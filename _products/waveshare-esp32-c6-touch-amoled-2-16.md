@@ -201,7 +201,7 @@ For projects involving a complex LVGL interface, compare the ESP32-C6's internal
 <p class="en-product-cta">
   <a class="en-buy-button" href="/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/" target="_blank" rel="sponsored nofollow noopener">
     <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-    <span class="en-buy-text"><strong>Buy on AliExpress — approx. US$30</strong><small>Battery options affect the final price · checked Nov 2026</small></span>
+    <span class="en-buy-text"><strong>Buy on AliExpress</strong><small>Check battery options and current price before checkout</small></span>
     <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
   </a>
   <a href="https://www.waveshare.com/esp32-c6-touch-amoled-2.16.htm" target="_blank" rel="noopener noreferrer">View the official Waveshare store listing</a>
