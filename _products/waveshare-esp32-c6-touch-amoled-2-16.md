@@ -108,7 +108,7 @@ related:
   - esp-mosaico
 ---
 
-## Should You Choose the ESP32-C6-Touch-AMOLED-2.16?
+## ESP32-C6 vs ESP32-S3 AMOLED: which 2.16-inch board should you choose?
 
 Choose this board if you want a compact **2.16-inch square AMOLED touchscreen** with Wi-Fi 6, Bluetooth LE and IEEE 802.15.4 connectivity. It combines a small colour display with sensors, audio hardware, a real-time clock and battery-management circuitry.
 
@@ -117,7 +117,7 @@ The ESP32-C6 is a **single-core RISC-V processor running at up to 160 MHz**. It 
 | Board | Price (as of Nov 2026) | Choose it when | Main trade-off |
 |---|---:|---|---|
 | **ESP32-C6-Touch-AMOLED-2.16** | **US$29.99–31.99** | You want Wi-Fi 6, BLE 5 and 802.15.4 in a compact AMOLED board | Single-core C6 and no external PSRAM listed |
-| [**ESP32-S3-Touch-AMOLED-2.16**](/products/waveshare-esp32-s3-touch-amoled-2-16/) | **US$29.99–31.99** | You want a dual-core S3 with 8 MB PSRAM | No Wi-Fi 6 / 802.15.4 |
+| [**Waveshare ESP32-S3-Touch-AMOLED-2.16**](/products/waveshare-esp32-s3-touch-amoled-2-16/) | **US$29.99–31.99** | You want a dual-core S3 with 8 MB PSRAM | No Wi-Fi 6 / 802.15.4 |
 | [**ESP-Mosaico**](/products/esp-mosaico/) | **US$59** (official store) | You want the ESP32-S31 platform and modular expansion | Different processor and ecosystem |
 
 ## Overview
@@ -141,7 +141,18 @@ Wireless connectivity includes:
 - Bluetooth 5 Low Energy
 - IEEE 802.15.4, supporting ecosystems such as Zigbee 3.0 and Thread
 
-This combination makes the board interesting for connected interfaces and smart-home prototypes. It does not have the dual-core CPU or external PSRAM found on the ESP32-S3R8 version.
+The combination is useful for connected interfaces and smart-home prototypes. The important distinction is that **802.15.4 is the radio/protocol capability, not a ready-made Home Assistant integration**. You still need compatible firmware, a network role and an integration path.
+
+## Using the ESP32-C6 AMOLED with Home Assistant, Thread and Zigbee
+
+There are two realistic ways to use this board in a smart-home project:
+
+- **Home Assistant touchscreen:** build a compact Wi-Fi dashboard that reads states and sends commands through the Home Assistant REST API or MQTT. The ESP32-C6 connects over Wi-Fi; the AMOLED display and touch controller provide the local interface. This is the most straightforward role for a small wall, desk or bedside control panel, although the 2.16-inch screen limits how much information fits comfortably.
+- **Thread or Zigbee device:** the ESP32-C6 radio supports IEEE 802.15.4, which is the radio foundation used by Thread and Zigbee. With suitable ESP-IDF firmware and the relevant protocol stack, the board can be developed as a connected endpoint or other supported network role. For Thread, that may mean a device joining an existing Thread network; for Zigbee, it means implementing a compatible Zigbee device role.
+
+**Important limitations:** this board should not be assumed to work as a plug-and-play Home Assistant Zigbee coordinator or Thread Border Router. The product documentation confirms the radio capability, but does not document pre-installed coordinator firmware, a Home Assistant add-on, or a turnkey Border Router setup. A practical Home Assistant touchscreen would normally use Wi-Fi, while an 802.15.4 project requires deliberate firmware and network integration. Check the current ESP-IDF support and the chosen Home Assistant integration before designing around a specific role.
+
+The ESP32-C6 is single-core and does not have the dual-core CPU or external PSRAM found on the ESP32-S3R8 version.
 
 ## Onboard Peripherals
 
@@ -181,7 +192,7 @@ The AliExpress listing linked on this page should be checked carefully before ch
 
 Waveshare documents support for both **Arduino IDE and ESP-IDF**. Its documentation includes examples, pin definitions, a schematic and hardware resources.
 
-For projects involving a complex LVGL interface, compare the ESP32-C6's internal SRAM resources with the 8 MB external PSRAM available on the ESP32-S3-Touch-AMOLED-2.16.
+For projects involving a complex LVGL interface, compare the ESP32-C6's internal SRAM resources with the 8 MB external PSRAM available on the [Waveshare ESP32-S3-Touch-AMOLED-2.16](/products/waveshare-esp32-s3-touch-amoled-2-16/) product page.
 
 *Editorial note: This is a documentation-based assessment, not a physical review. Embedded Nerd has not hands-on tested this board.*
 
