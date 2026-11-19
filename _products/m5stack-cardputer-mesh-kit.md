@@ -54,7 +54,7 @@ specifications:
   - name: GNSS
     value: "ATGM336H-6N / AT6668; GPS, QZSS, BeiDou, Galileo and GLONASS"
   - name: Battery
-    value: "1750 mAh (M5Stack store specification; check current revision)"
+    value: "1500 mAh in the latest documentation revision; official store listing still shows 1750 mAh"
   - name: Audio
     value: "ES8311 codec, MEMS microphone, 1 W speaker and 3.5 mm audio output"
   - name: IMU
@@ -152,10 +152,10 @@ The GNSS receiver supports GPS, QZSS, BeiDou, Galileo and GLONASS. M5Stack speci
 | IMU | BMI270 |
 | Audio | ES8311, MEMS microphone, 1 W speaker, 3.5 mm output |
 | Storage | microSD |
-| Battery | 1750 mAh according to the current M5Stack store listing |
+| Battery | 1500 mAh in latest documentation revision; store listing still says 1750 mAh |
 | Dimensions | Cardputer-Adv: 84 × 54 × 19.6 mm; Cap: 84 × 24 × 15.2 mm |
 
-M5Stack's documentation and store pages have shown different battery-capacity figures across revisions/publications. The 1750 mAh value above follows the current store listing; check the exact revision and package listing before purchase.
+M5Stack's Cardputer-Adv documentation includes a version-change note dated 13 July 2026 stating that the battery capacity changed from 1750 mAh to 1500 mAh. The official store listing still displays 1750 mAh. This page reports the latest documentation revision and flags the discrepancy; check the exact hardware revision and seller listing before purchase.
 
 ## Meshtastic: ready to use
 
