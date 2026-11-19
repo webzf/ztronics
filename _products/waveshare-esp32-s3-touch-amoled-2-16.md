@@ -18,7 +18,7 @@ editorial_review:
     - "The 2.16-inch physical display area may be too small for interfaces with large controls or dense information"
     - "Using the display, touch, sensors and audio together may require additional configuration and debugging"
     - "The board's many integrated features may be unnecessary for simpler display-only projects"
-seo_title: "Waveshare ESP32-S3-Touch-AMOLED-2.16: Price, Specs & Where to Buy"
+seo_title: "Waveshare ESP32-S3 AMOLED 2.16: Price & Where to Buy"
 seo_description: "Waveshare ESP32-S3 AMOLED 2.16 costs US$29.99–31.99. Compare specs, 8MB PSRAM, battery versions and where to buy. Price checked Nov 2026."
 product_id: waveshare-esp32-s3-touch-amoled-2-16
 category: Displays
