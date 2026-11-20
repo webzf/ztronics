@@ -1110,3 +1110,28 @@ seeed-reterminal-e1004:
       affiliate: true
       product_url: "https://www.seeedstudio.com/reTerminal-E1004-p-6692.html"
       affiliate_url: "https://www.seeedstudio.com/reTerminal-E1004-p-6692.html?sensecap_affiliate=3jSyuVk&referring_service=link"
+
+#----------------
+
+m5stack-cardputer-mesh-kit:
+
+  preferred_store: aliexpress
+
+  notes: "AliExpress listing 1005011822875562 confirmed by the site owner as the Cardputer-Adv + Cap LoRa-1262 bundle. Check the selected variant and package contents before checkout."
+
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    aliexpress:
+      enabled: true
+      product_id: "1005011822875562"
+      product_url: "https://pt.aliexpress.com/item/1005011822875562.html"
+      affiliate_url: "https://s.click.aliexpress.com/e/_c34VL1MV"
+      last_verified: "2026-11-20"
