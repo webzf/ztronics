@@ -9,6 +9,12 @@ page_id: product-m5stack-cardputer-adv
 product_id: m5stack-cardputer-adv
 category: ESP32
 manufacturer: "M5Stack"
+alt: "M5Stack Cardputer-Adv standalone handheld computer, front view showing its 56-key keyboard and display"
+image: /assets/images/products/cardputer-adv-front.webp
+header:
+  teaser: "/assets/images/products/cardputer-adv-front.webp"
+  og_image: "/assets/images/products/cardputer-adv-front.webp"
+  og_image_alt: "M5Stack Cardputer-Adv standalone handheld computer, front view showing its 56-key keyboard and display"
 date: 2026-11-19
 header:
 excerpt: "M5Stack Cardputer-Adv is a compact ESP32-S3 computer with a 56-key keyboard, 1.14-inch display, microSD, audio, BMI270 IMU and a 14-pin expansion bus."
@@ -90,6 +96,13 @@ The **M5Stack Cardputer-Adv** is a card-sized computer built around the ESP32-S3
 It is more than a tiny ESP32 development board: the screen, keyboard, speaker, microphone and battery make it useful for building self-contained handheld tools and interfaces without wiring a separate display and input devices.
 
 The standalone Cardputer-Adv does **not** include a LoRa radio. For LoRa or Meshtastic, you need a compatible Cap or the complete [Cardputer Mesh Kit](/products/m5stack-cardputer-mesh-kit/).
+
+
+![M5Stack Cardputer-Adv standalone handheld computer, front view showing the 56-key keyboard and display](/assets/images/products/cardputer-adv-front.webp)
+
+![M5Stack Cardputer-Adv showing its Wi-Fi configuration menu in a real-use photo](/assets/images/products/cardputer-adv-real-use.webp)
+
+![M5Stack Cardputer-Adv dimensions: 84 × 54 × 19.6 mm](/assets/images/products/cardputer-adv-dimensions.webp)
 
 ## M5Stack Cardputer-Adv price and where to buy
 
