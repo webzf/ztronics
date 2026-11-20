@@ -7,7 +7,7 @@ seo_title: "M5Stack Cardputer Mesh Kit: Price, Specs & Meshtastic"
 seo_description: "M5Stack Cardputer Mesh Kit with ESP32-S3, SX1262 LoRa, GNSS and Meshtastic pre-installed. Compare specs, setup, regional bands and where to buy."
 page_id: product-m5stack-cardputer-mesh-kit
 product_id: m5stack-cardputer-mesh-kit
-category: ESP32
+category: Development Boards
 manufacturer: "M5Stack"
 alt: "M5Stack Cardputer Mesh Kit bundle with Cardputer-Adv, LoRa SX1262 GNSS module and antenna"
 image: /assets/images/products/cardputer-mesh-kit-bundle.webp
