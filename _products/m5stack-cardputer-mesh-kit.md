@@ -200,7 +200,7 @@ The official M5Stack store listing is linked below. Marketplace prices, shipping
 
 [Check the official M5Stack Cardputer Mesh Kit listing](https://shop.m5stack.com/products/cardputer-mesh-kit-for-meshtastic-esp32-s3)
 
-AliExpress purchase button: add the verified affiliate URL for the complete Cardputer Mesh Kit after confirming that the destination is the ADV + Cap LoRa-1262 bundle. Do not use a standard Cardputer-Adv-only listing for this CTA.
+[**Buy the M5Stack Cardputer Mesh Kit on AliExpress**](/go/hardware/m5stack-cardputer-mesh-kit/). The linked listing was confirmed as the Cardputer-Adv + Cap LoRa-1262 bundle. Check the selected option and package contents before checkout.
 
 As an affiliate, Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you.
 
