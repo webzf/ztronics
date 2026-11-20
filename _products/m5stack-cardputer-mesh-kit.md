@@ -9,6 +9,12 @@ page_id: product-m5stack-cardputer-mesh-kit
 product_id: m5stack-cardputer-mesh-kit
 category: ESP32
 manufacturer: "M5Stack"
+alt: "M5Stack Cardputer Mesh Kit bundle with Cardputer-Adv, LoRa SX1262 GNSS module and antenna"
+image: /assets/images/products/cardputer-mesh-kit-bundle.webp
+header:
+  teaser: "/assets/images/products/cardputer-mesh-kit-bundle.webp"
+  og_image: "/assets/images/products/cardputer-mesh-kit-bundle.webp"
+  og_image_alt: "M5Stack Cardputer Mesh Kit bundle with Cardputer-Adv, LoRa SX1262 GNSS module and antenna"
 header:
 excerpt: "M5Stack Cardputer Mesh Kit combines the ESP32-S3 Cardputer-Adv, Cap LoRa-1262 SX1262 radio, GNSS receiver and pre-installed Meshtastic firmware."
 description: "Portable ESP32-S3 handheld with a 56-key keyboard, 1.14-inch display, SX1262 LoRa radio, GNSS and Meshtastic."
@@ -85,6 +91,13 @@ related:
 The **M5Stack Cardputer Mesh Kit (SKU K152)** combines the Cardputer-Adv handheld computer with the Cap LoRa-1262 expansion module. The result is a pocket-sized device for Meshtastic messaging, LoRa mesh networking and GNSS-based location sharing.
 
 This is the complete kit to look at if your goal is a Cardputer with LoRa. The standard Cardputer-Adv does not include the Cap LoRa-1262 radio/GNSS module, antenna or the kit's Meshtastic authorization.
+
+
+![Complete M5Stack Cardputer Mesh Kit bundle with Cardputer-Adv, LoRa SX1262 GNSS module and antenna](/assets/images/products/cardputer-mesh-kit-bundle.webp)
+
+![Close-up of the M5Stack Cardputer Mesh Kit LoRa-1262 expansion showing the SX1262 radio and GNSS section](/assets/images/products/cardputer-mesh-kit-lora-cap.webp)
+
+![M5Stack Cardputer-Adv connected to the LoRa GNSS expansion and antenna during real use](/assets/images/products/cardputer-mesh-kit-real-use.webp)
 
 ## Is the M5Stack Cardputer Mesh Kit worth buying?
 
