@@ -7,7 +7,7 @@ seo_title: "M5Stack Cardputer-Adv: Price, Specs & Where to Buy"
 seo_description: "M5Stack Cardputer-Adv price, ESP32-S3 specs, differences vs Cardputer v1.1, LoRa and CC1101/NFC Caps, and where to buy."
 page_id: product-m5stack-cardputer-adv
 product_id: m5stack-cardputer-adv
-category: ESP32
+category: Development Boards
 manufacturer: "M5Stack"
 alt: "M5Stack Cardputer-Adv standalone handheld computer, front view showing its 56-key keyboard and display"
 image: /assets/images/products/cardputer-adv-front.webp
