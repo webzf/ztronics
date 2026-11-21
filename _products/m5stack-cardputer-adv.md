@@ -103,9 +103,7 @@ The standalone Cardputer-Adv does **not** include a LoRa radio. For LoRa or Mesh
 
 ![M5Stack Cardputer-Adv dimensions: 84 × 54 × 19.6 mm](/assets/images/products/cardputer-adv-dimensions.webp)
 
-## M5Stack Cardputer-Adv price and where to buy
-
-The official M5Stack store lists the Cardputer-Adv at **US$29.90** at the time this page was prepared. Treat this as a reference price, not a guaranteed checkout price: shipping, tax, promotions and regional availability can change the total.
+## Where to buy the M5Stack Cardputer-Adv
 
 [Check the official M5Stack Cardputer-Adv listing](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3)
 
@@ -254,10 +252,6 @@ M5Stack lists Arduino, UiFlow2, ESP-IDF and PlatformIO as development options. S
 ### Is the Cardputer-Adv compatible with original Cardputer apps?
 
 Compatibility depends on how each app uses the hardware. Apps that rely on the original audio components, keyboard scanning or GPIO assignments may need changes. Check the individual project's supported devices and ADV-specific releases rather than assuming every original app works unchanged.
-
-### How much does the Cardputer-Adv cost?
-
-The official M5Stack store listing showed **US$29.90** when this page was prepared. The price can change and does not necessarily include shipping, VAT or import charges. Check the seller's final checkout price for your country.
 
 ## Related product
 
