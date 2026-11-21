@@ -1,6 +1,6 @@
 ---
 layout: product
-internal_links: true
+internal_links: false
 title: "M5Stack Cardputer-Adv: ESP32-S3 Specs, Kits & Buying Guide"
 product_verdict: "A pocket-sized ESP32-S3 development computer with a 56-key keyboard, display, audio, IMU and expansion headers. Buy the standalone ADV for general prototyping; add a Cap for LoRa or sub-GHz/NFC experiments."
 seo_title: "M5Stack Cardputer-Adv: Price, Specs & Where to Buy"
@@ -9,15 +9,13 @@ page_id: product-m5stack-cardputer-adv
 product_id: m5stack-cardputer-adv
 category: Development Boards
 manufacturer: "M5Stack"
-alt: "M5Stack Cardputer-Adv standalone handheld computer, front view showing its 56-key keyboard and display"
+alt: "M5Stack Cardputer-Adv product image showing the 56-key keyboard and display"
 image: /assets/images/products/cardputer-adv-front.webp
 header:
   teaser: "/assets/images/products/cardputer-adv-front.webp"
   og_image: "/assets/images/products/cardputer-adv-front.webp"
   og_image_alt: "M5Stack Cardputer-Adv standalone handheld computer, front view showing its 56-key keyboard and display"
-date: 2026-11-19
-header:
-excerpt: "M5Stack Cardputer-Adv is a compact ESP32-S3 computer with a 56-key keyboard, 1.14-inch display, microSD, audio, BMI270 IMU and a 14-pin expansion bus."
+date: 2026-11-19\nexcerpt: "M5Stack Cardputer-Adv is a compact ESP32-S3 computer with a 56-key keyboard, 1.14-inch display, microSD, audio, BMI270 IMU and a 14-pin expansion bus."
 description: "A programmable card-sized ESP32-S3 computer for embedded prototyping, portable interfaces and expansion with optional M5Stack Caps."
 categories:
   - ESP32
@@ -100,7 +98,7 @@ The standalone Cardputer-Adv does **not** include a LoRa radio. For LoRa or Mesh
 
 ![M5Stack Cardputer-Adv standalone handheld computer, front view showing the 56-key keyboard and display](/assets/images/products/cardputer-adv-front.webp)
 
-![M5Stack Cardputer-Adv showing its Wi-Fi configuration menu in a real-use photo](/assets/images/products/cardputer-adv-real-use.webp)
+![M5Stack Cardputer-Adv with its Wi-Fi configuration menu displayed](/assets/images/products/cardputer-adv-real-use.webp)
 
 ![M5Stack Cardputer-Adv dimensions: 84 × 54 × 19.6 mm](/assets/images/products/cardputer-adv-dimensions.webp)
 
@@ -110,7 +108,7 @@ The official M5Stack store lists the Cardputer-Adv at **US$29.90** at the time t
 
 [Check the official M5Stack Cardputer-Adv listing](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3)
 
-Embedded Nerd will add marketplace purchase buttons when the exact Cardputer-Adv-only listings and affiliate destinations have been verified. Make sure a listing is for the standalone ADV if that is what you intend to buy; bundles with LoRa Caps are different products.
+The AliExpress listing linked here is titled **M5Stack Cardputer ADV New Version StampS3A Development Board** (item 1005007476851351), which identifies the standalone handheld. I could not independently resolve the affiliate short link to inspect its live variant selector, so check that the selected option is **Cardputer-Adv only** and not a bundle with the Cap LoRa-1262. [View the AliExpress offer](/go/hardware/m5stack-cardputer-adv/).
 
 *Affiliate disclosure: some links on this page may be affiliate links. If you buy through them, Embedded Nerd may earn a commission at no extra cost to you.*
 
@@ -271,4 +269,4 @@ If you specifically want LoRa, GNSS and Meshtastic in a matched bundle, read the
 - [M5Stack Cardputer-Adv accessories](https://shop.m5stack.com/collections/for-cardputer-adv)
 - [M5Stack Cardputer-Adv launch article](https://shop.m5stack.com/blogs/news/m5stack-launches-cardputer-adv-upgraded-card-sized-computer-for-rapid-iot-development)
 
-*Editorial note: This is a documentation-based product guide, not a hands-on review. Prices, availability, accessory compatibility and hardware revisions can change; verify the exact seller listing before ordering.*
+*Editorial note: This is a documentation-based product guide, not a hands-on review. Product images are supplied listing/manufacturer visuals, not photographs taken during an Embedded Nerd hands-on test. Prices, availability, accessory compatibility and hardware revisions can change; verify the exact seller option before ordering.*
