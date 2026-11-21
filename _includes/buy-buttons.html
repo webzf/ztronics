@@ -16,7 +16,7 @@
     {% if store.enabled and store_url %}
 
       <a
-  href="{% if include.product == 'waveshare-esp32-c6-touch-amoled-2-16' and store_key == 'aliexpress' %}/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/{% else %}{{ store_url }}{% endif %}"
+  href="{% if store_key == 'aliexpress' and include.product == 'waveshare-esp32-c6-touch-amoled-2-16' %}/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/{% elsif store_key == 'aliexpress' and include.product == 'm5stack-cardputer-adv' %}/go/hardware/m5stack-cardputer-adv/{% elsif store_key == 'aliexpress' and include.product == 'm5stack-cardputer-mesh-kit' %}/go/hardware/m5stack-cardputer-mesh-kit/{% else %}{{ store_url }}{% endif %}"
   class="en-buy-button{% if commerce.preferred_store == store_key %} preferred{% endif %}"
   target="_blank"
   rel="{% if store.affiliate == false %}noopener noreferrer{% else %}nofollow sponsored noopener{% endif %}">
