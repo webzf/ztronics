@@ -3,6 +3,21 @@ layout: product
 internal_links: true
 title: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C: Specs & Buy"
 product_verdict: "A strong choice for a high-resolution circular HMI with ESP32-P4 performance, provided your project can accommodate the board's size and MIPI-DSI setup."
+editorial_review:
+  rating: 9.1
+  best_rating: 10
+  worst_rating: 1
+  author: "Embedded Nerd"
+  summary: "The Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C combines a detailed 800×800 circular IPS touchscreen with ESP32-P4 processing, 32 MB PSRAM, 32 MB flash and ESP32-C6 wireless connectivity. Its MIPI-DSI display, capacitive multi-touch, camera interface and audio hardware make it a capable platform for advanced circular HMIs, dashboards and LVGL projects. The main trade-offs are its relatively large board footprint, the added complexity of MIPI-DSI development and the need to start from the manufacturer's ESP-IDF examples."
+  methodology: "This editorial assessment is based on published hardware specifications and available manufacturer documentation. Embedded Nerd has not physically tested this specific board or seller listing."
+  pros:
+    - "Sharp 3.4-inch 800×800 round IPS touchscreen with 10-point capacitive touch"
+    - "ESP32-P4 platform with 32 MB PSRAM and 32 MB flash for demanding graphical interfaces"
+    - "ESP32-C6 adds Wi-Fi 6 and Bluetooth 5 (LE), with MIPI-CSI and audio interfaces for expanded projects"
+  cons:
+    - "The 115 × 115 mm board is relatively large and needs careful enclosure planning"
+    - "MIPI-DSI integration is more involved than using a typical SPI display"
+    - "The manufacturer's ESP-IDF demo is the practical starting point; setup may be demanding for beginners"
 seo_title: "Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C: Specs & Buy"
 seo_description: "Waveshare ESP32-P4 round touch display, 3.4-inch 800×800, Wi-Fi 6 via ESP32-C6, 32 MB PSRAM. Specs, what's in the box, vs 7B and where to buy."
 product_id: waveshare-esp32-p4-wifi6-touch-lcd-3-4c
