@@ -14,7 +14,7 @@ image: /assets/images/products/cardputer-adv-front.webp
 header:
   teaser: "/assets/images/products/cardputer-adv-front.webp"
   og_image: "/assets/images/products/cardputer-adv-front.webp"
-  og_image_alt: "M5Stack Cardputer-Adv standalone handheld computer, front view showing its 56-key keyboard and display"
+  og_image_alt: "M5Stack Cardputer-Adv product image showing the 56-key keyboard and display"
 date: 2026-11-19
 excerpt: "M5Stack Cardputer-Adv is a compact ESP32-S3 computer with a 56-key keyboard, 1.14-inch display, microSD, audio, BMI270 IMU and a 14-pin expansion bus."
 description: "A programmable card-sized ESP32-S3 computer for embedded prototyping, portable interfaces and expansion with optional M5Stack Caps."
@@ -199,7 +199,7 @@ This Cap adds a CC1101 sub-GHz transceiver and NFC functionality. It is intended
 
 A small carry case can help protect the keyboard and screen when the Cardputer is in a bag. It is an optional convenience accessory rather than a requirement for operation.
 
-For current Caps and accessory availability, see [M5Stack's official Cardputer-Adv accessories collection](https://shop.m5stack.com/collections/for-cardputer-adv).
+For the Cap LoRa-1262, an AliExpress listing identified as the M5Stack Cap LoRa-1262 for Cardputer-Adv is available [here](https://pt.aliexpress.com/item/1005012064723771.html). Check the seller, exact Cap model and included antenna before ordering; this is a marketplace listing, not an Embedded Nerd-verified hands-on purchase. We could not confirm a matching AliExpress listing for the Cap CC1101 & NFC, so no marketplace link is provided for that accessory.
 
 ## What can you build with the Cardputer-Adv?
 
