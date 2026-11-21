@@ -35,7 +35,7 @@
       <strong>{{ page.title | escape }}</strong>
     </div>
     <a class="en-sticky-affiliate__button"
-       href="{% if page.product_id == 'waveshare-esp32-c6-touch-amoled-2-16' and sticky_store_key == 'aliexpress' %}/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/{% else %}{{ sticky_url }}{% endif %}"
+       href="{% if sticky_store_key == 'aliexpress' and page.product_id == 'waveshare-esp32-c6-touch-amoled-2-16' %}/go/hardware/waveshare-esp32-c6-touch-amoled-2-16/{% elsif sticky_store_key == 'aliexpress' and page.product_id == 'm5stack-cardputer-adv' %}/go/hardware/m5stack-cardputer-adv/{% elsif sticky_store_key == 'aliexpress' and page.product_id == 'm5stack-cardputer-mesh-kit' %}/go/hardware/m5stack-cardputer-mesh-kit/{% else %}{{ sticky_url }}{% endif %}"
        target="_blank"
        rel="{% if sticky_store.affiliate == false %}noopener noreferrer{% else %}nofollow sponsored noopener{% endif %}">
       {% if site.active_lang == 'pt' %}Ver oferta{% elsif site.active_lang == 'fr' %}Voir l’offre{% elsif site.active_lang == 'de' %}Angebot ansehen{% elsif site.active_lang == 'es' %}Ver oferta{% elsif site.active_lang == 'it' %}Vedi offerta{% elsif site.active_lang == 'nl' %}Bekijk aanbod{% elsif site.active_lang == 'pl' %}Zobacz ofertę{% else %}View offer{% endif %}
