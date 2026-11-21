@@ -14,7 +14,8 @@ image: /assets/images/products/cardputer-mesh-kit-bundle.webp
 header:
   teaser: "/assets/images/products/cardputer-mesh-kit-bundle.webp"
   og_image: "/assets/images/products/cardputer-mesh-kit-bundle.webp"
-  og_image_alt: "M5Stack Cardputer Mesh Kit bundle with Cardputer-Adv, LoRa SX1262 GNSS module and antenna"\nexcerpt: "M5Stack Cardputer Mesh Kit combines the ESP32-S3 Cardputer-Adv, Cap LoRa-1262 SX1262 radio, GNSS receiver and pre-installed Meshtastic firmware."
+  og_image_alt: "M5Stack Cardputer Mesh Kit bundle with Cardputer-Adv, LoRa SX1262 GNSS module and antenna"
+excerpt: "M5Stack Cardputer Mesh Kit combines the ESP32-S3 Cardputer-Adv, Cap LoRa-1262 SX1262 radio, GNSS receiver and pre-installed Meshtastic firmware."
 description: "Portable ESP32-S3 handheld with a 56-key keyboard, 1.14-inch display, SX1262 LoRa radio, GNSS and Meshtastic."
 categories:
   - ESP32
