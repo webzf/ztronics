@@ -328,7 +328,7 @@ On **21 November 2026**, the official Arduino Store lists the UNO Q 2GB at **€
 
 ### Where to buy the Arduino UNO Q?
 
-You can compare retailer offers in the [price and where to buy section](#arduino-uno-q-price-and-where-to-buy), or check both memory configurations directly at the [official Arduino Store](https://store.arduino.cc/pages/uno-q).
+You can compare retailer offers in the [where to buy section](#where-to-buy-arduino-uno-q), or check both memory configurations directly at the [official Arduino Store](https://store.arduino.cc/pages/uno-q).
 
 ### Does Arduino UNO Q run Linux?
 
