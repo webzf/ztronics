@@ -639,25 +639,65 @@
 
 @media (max-width:768px){
 
+    /* Mobile only: place the purchase CTA before the product image.
+       Desktop keeps the original image/content layout unchanged. */
     .en-product-header{
 
-        flex-direction:column;
+        display:grid;
+
+        grid-template-columns:minmax(0, 1fr);
 
         text-align:center;
 
     }
 
-   
+    /* Let the content children participate in the header grid so they
+       can be ordered independently without changing the HTML or links. */
+    .en-product-content{
 
-    .en-product-image{
+        display:contents;
 
-        flex:none;
+    }
+
+    .en-product-badges{
+
+        order:1;
 
     }
 
     .en-product-title{
 
+        order:2;
+
         font-size:1.6rem;
+
+    }
+
+    .en-product-manufacturer{
+
+        order:3;
+
+    }
+
+    .en-product-description{
+
+        order:4;
+
+    }
+
+    .en-product-cta{
+
+        order:5;
+
+    }
+
+    .en-product-image{
+
+        order:6;
+
+        flex:none;
+
+        width:100%;
 
     }
 
