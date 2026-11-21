@@ -36,6 +36,8 @@
     </div>
 
     {% include scripts.html locale=locale %}
-    {% include seeed-campaign-popup.html %}
+    {% unless page.product_id == 'm5stack-cardputer-adv' or page.product_id == 'm5stack-cardputer-mesh-kit' %}
+      {% include seeed-campaign-popup.html %}
+    {% endunless %}
   </body>
 </html>

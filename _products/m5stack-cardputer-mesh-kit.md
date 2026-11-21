@@ -1,6 +1,6 @@
 ---
 layout: product
-internal_links: true
+internal_links: false
 title: "M5Stack Cardputer Mesh Kit: ESP32-S3 LoRa & Meshtastic"
 product_verdict: "A compact, ready-to-use Meshtastic handheld that combines the Cardputer-Adv with an SX1262 LoRa/GNSS expansion. Buy the complete Mesh Kit if you need the authorized Meshtastic hardware; the standard Cardputer-Adv alone is not equivalent."
 seo_title: "M5Stack Cardputer Mesh Kit: Price, Specs & Meshtastic"
@@ -15,7 +15,6 @@ header:
   teaser: "/assets/images/products/cardputer-mesh-kit-bundle.webp"
   og_image: "/assets/images/products/cardputer-mesh-kit-bundle.webp"
   og_image_alt: "M5Stack Cardputer Mesh Kit bundle with Cardputer-Adv, LoRa SX1262 GNSS module and antenna"
-header:
 excerpt: "M5Stack Cardputer Mesh Kit combines the ESP32-S3 Cardputer-Adv, Cap LoRa-1262 SX1262 radio, GNSS receiver and pre-installed Meshtastic firmware."
 description: "Portable ESP32-S3 handheld with a 56-key keyboard, 1.14-inch display, SX1262 LoRa radio, GNSS and Meshtastic."
 categories:
@@ -85,7 +84,7 @@ links:
     description: "Manufacturer store listing for the complete Cardputer Mesh Kit."
     url: "https://shop.m5stack.com/products/cardputer-mesh-kit-for-meshtastic-esp32-s3"
 related:
-  - lilygo-t-deck-plus
+  - m5stack-cardputer-adv
 ---
 
 The **M5Stack Cardputer Mesh Kit (SKU K152)** combines the Cardputer-Adv handheld computer with the Cap LoRa-1262 expansion module. The result is a pocket-sized device for Meshtastic messaging, LoRa mesh networking and GNSS-based location sharing.
@@ -97,7 +96,7 @@ This is the complete kit to look at if your goal is a Cardputer with LoRa. The s
 
 ![Close-up of the M5Stack Cardputer Mesh Kit LoRa-1262 expansion showing the SX1262 radio and GNSS section](/assets/images/products/cardputer-mesh-kit-lora-cap.webp)
 
-![M5Stack Cardputer-Adv connected to the LoRa GNSS expansion and antenna during real use](/assets/images/products/cardputer-mesh-kit-real-use.webp)
+![M5Stack Cardputer-Adv assembled with the LoRa GNSS expansion and antenna](/assets/images/products/cardputer-mesh-kit-real-use.webp)
 
 ## Is the M5Stack Cardputer Mesh Kit worth buying?
 
@@ -208,8 +207,6 @@ The safest way to identify the correct bundle is to check that the listing expli
 1. Cardputer-Adv handheld
 2. Cap LoRa-1262 expansion module
 3. LoRa antenna with RP-SMA connector
-
-The official M5Stack store listing is linked below. Marketplace prices, shipping and bundle contents can change, so verify the selected variant before checkout.
 
 [Check the official M5Stack Cardputer Mesh Kit listing](https://shop.m5stack.com/products/cardputer-mesh-kit-for-meshtastic-esp32-s3)
 

@@ -122,6 +122,15 @@
             <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
           </a>
         </div>
+      {% elsif product.product_id == "m5stack-cardputer-adv" or product.product_id == "m5stack-cardputer-mesh-kit" %}
+        <a class="en-buy-button preferred"
+           href="{% if product.product_id == 'm5stack-cardputer-adv' %}/go/hardware/m5stack-cardputer-adv/{% else %}/go/hardware/m5stack-cardputer-mesh-kit/{% endif %}"
+           target="_blank"
+           rel="nofollow sponsored noopener">
+          <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
+          <span class="en-buy-text"><strong>{% if site.active_lang == 'pt' %}Ver oferta no AliExpress{% elsif site.active_lang == 'fr' %}Voir l’offre sur AliExpress{% elsif site.active_lang == 'de' %}Angebot auf AliExpress ansehen{% elsif site.active_lang == 'es' %}Ver oferta en AliExpress{% elsif site.active_lang == 'it' %}Vedi l’offerta su AliExpress{% elsif site.active_lang == 'nl' %}Bekijk aanbod op AliExpress{% elsif site.active_lang == 'pl' %}Zobacz ofertę na AliExpress{% else %}View Offer on AliExpress{% endif %}</strong><small>{% if product.product_id == 'm5stack-cardputer-adv' %}Standalone Cardputer-Adv · check selected option{% else %}Complete Cardputer Mesh Kit · Cardputer-Adv + LoRa-1262{% endif %}</small></span>
+          <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
       {% elsif product.product_id == "sunton-esp32-8048s043c" %}
         {% if store.enabled and store.affiliate_url %}
         <a
