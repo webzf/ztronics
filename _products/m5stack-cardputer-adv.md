@@ -15,7 +15,8 @@ header:
   teaser: "/assets/images/products/cardputer-adv-front.webp"
   og_image: "/assets/images/products/cardputer-adv-front.webp"
   og_image_alt: "M5Stack Cardputer-Adv standalone handheld computer, front view showing its 56-key keyboard and display"
-date: 2026-11-19\nexcerpt: "M5Stack Cardputer-Adv is a compact ESP32-S3 computer with a 56-key keyboard, 1.14-inch display, microSD, audio, BMI270 IMU and a 14-pin expansion bus."
+date: 2026-11-19
+excerpt: "M5Stack Cardputer-Adv is a compact ESP32-S3 computer with a 56-key keyboard, 1.14-inch display, microSD, audio, BMI270 IMU and a 14-pin expansion bus."
 description: "A programmable card-sized ESP32-S3 computer for embedded prototyping, portable interfaces and expansion with optional M5Stack Caps."
 categories:
   - ESP32
