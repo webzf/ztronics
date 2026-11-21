@@ -4,7 +4,6 @@ internal_links: true
 title: "Waveshare ESP32-S3-Touch-AMOLED-2.16"
 product_verdict: "A good fit for a compact square 480×480 AMOLED UI; choose the 2.41-inch model for a larger physical panel, or a larger LCD board for a conventional HMI."
 editorial_review:
-  rating: 9.2
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
@@ -19,8 +18,8 @@ editorial_review:
     - "The 2.16-inch physical display area may be too small for interfaces with large controls or dense information"
     - "Using the display, touch, sensors and audio together may require additional configuration and debugging"
     - "The board's many integrated features may be unnecessary for simpler display-only projects"
-seo_title: "Waveshare ESP32-S3-Touch-AMOLED-2.16: Specs & Versions"
-seo_description: "Waveshare ESP32-S3-Touch-AMOLED-2.16 specs: 2.16inch 480×480 AMOLED, ESP32-S3R8, 8MB PSRAM. Compare the -EN and battery versions and where to buy."
+seo_title: "Waveshare ESP32-S3 AMOLED 2.16: Price & Where to Buy"
+seo_description: "Waveshare ESP32-S3 AMOLED 2.16 costs US$29.99–31.99. Compare specs, 8MB PSRAM, battery versions and where to buy. Price checked Nov 2026."
 product_id: waveshare-esp32-s3-touch-amoled-2-16
 category: Displays
 manufacturer: "Waveshare"
@@ -109,21 +108,20 @@ related:
   - waveshare-esp32-c6-touch-amoled-1-8
 ---
 
-## Should You Choose the ESP32-S3-Touch-AMOLED-2.16?
+## ESP32-S3 vs ESP32-C6 AMOLED: which 2.16-inch board should you buy?
 
-Choose this board if you want a **square 480×480 AMOLED touchscreen** in a compact ESP32-S3 package. The square format works well for compact dashboards, status screens and graphical interfaces designed around a square canvas.
+Both Waveshare boards use the same **2.16-inch, 480 × 480 AMOLED touchscreen** and are listed at **US$29.99–31.99**. The key buying decision is the processor and wireless feature set: choose the S3 for dual-core processing and 8 MB PSRAM; choose the C6 for Wi-Fi 6 and IEEE 802.15.4.
 
-| Option | Choose it when | Main trade-off |
-|---|---|---|
-| **ESP32-S3-Touch-AMOLED-2.16** | You want a square 480×480 AMOLED screen | Smaller physical area than larger HMI panels |
-| [**ESP-Mosaico**](/products/esp-mosaico/) | You want a compact 2.16-inch 480×480 AMOLED kit based on ESP32-S31 | Different platform and development ecosystem |
-| [**ESP32-C6-Touch-AMOLED-2.16**](/products/waveshare-esp32-c6-touch-amoled-2-16/) | You want the same 2.16-inch 480×480 AMOLED format with ESP32-C6, Wi-Fi 6 and BLE 5 | ESP32-C6 platform rather than ESP32-S3 |
-| [**ESP32-S3-Touch-AMOLED-1.75**](/products/waveshare-esp32-s3-touch-amoled-1-75/) | You need a round display for a circular UI | Different shape and 466×466 resolution |
-| [**ESP32-S3-Touch-AMOLED-2.41**](/products/waveshare-esp32-s3-touch-amoled-2-41/) | You want a larger 600×450 AMOLED panel | Rectangular rather than square layout |
-| [**ESP32-S3-Touch-LCD-4.3**](/products/waveshare-esp32-s3-touch-lcd-4-3/) | You need a larger 800×480 HMI interface | Larger board and enclosure |
+| Board | Price (Nov 2026) | Processor | PSRAM | Wireless | Best fit |
+|---|---:|---|---:|---|---|
+| **ESP32-S3-Touch-AMOLED-2.16** | **US$29.99–31.99** | Dual-core Xtensa LX7, up to 240 MHz | **8 MB** | 2.4 GHz Wi-Fi + BLE 5 | More memory and processing headroom for graphical interfaces |
+| [**ESP32-C6-Touch-AMOLED-2.16**](/products/waveshare-esp32-c6-touch-amoled-2-16/) | **US$29.99–31.99** | Single-core RISC-V, up to 160 MHz | No external PSRAM listed | Wi-Fi 6, BLE 5 and IEEE 802.15.4 | Connected IoT and smart-home projects |
 
-Before buying, confirm the board revision and included accessories in the product listing. Use the [ESP32 display selector](/tools/esp32-touchscreen-selector/) to compare the larger integrated display formats as well.
+Choose the S3 if your LVGL interface needs extra memory or you want a dual-core MCU. Choose the C6 if Wi-Fi 6 or 802.15.4 (for Thread/Zigbee development) matters more than external PSRAM. These are different strengths, not a simple performance ranking.
 
+Other options include [ESP-Mosaico](/products/esp-mosaico/) for a different modular platform, the [ESP32-S3-Touch-AMOLED-1.75](/products/waveshare-esp32-s3-touch-amoled-1-75/) for a round screen, and the [ESP32-S3-Touch-AMOLED-2.41](/products/waveshare-esp32-s3-touch-amoled-2-41/) for a larger panel.
+
+Use the [ESP32 display selector](/tools/esp32-touchscreen-selector/) to compare other integrated display boards.
 ## Overview
 
 The **Waveshare ESP32-S3-Touch-AMOLED-2.16** combines an ESP32-S3R8 with a **2.16inch AMOLED** touchscreen at 480×480 resolution, 16MB Flash and 8MB PSRAM.
@@ -175,6 +173,30 @@ Waveshare distinguishes the versions by whether a lithium battery is included. T
 |---|---:|---|
 | Battery version | 33969 | Yes |
 | -EN (standard) | 33970 | No |
+
+## Where to Buy
+
+<p class="en-product-cta">
+  <a class="en-buy-button" href="/go/hardware/waveshare-esp32-s3-touch-amoled-2-16/" target="_blank" rel="sponsored nofollow noopener">
+    <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
+    <span class="en-buy-text"><strong>Buy on AliExpress</strong><small>US$29.99–31.99 · battery option affects price · checked Nov 2026</small></span>
+    <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
+  </a>
+  <a href="https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm" target="_blank" rel="noopener noreferrer">View the official Waveshare store listing</a>
+</p>
+
+The AliExpress link is an affiliate link. Embedded Nerd may earn a commission from qualifying purchases at no additional cost to you. Waveshare lists the board at **US$29.99–31.99**, depending on the selected option (checked Nov 2026). Shipping, taxes and marketplace prices may differ. Confirm whether the selected SKU includes the 3.7V battery before checkout.
+
+## Frequently Asked Questions
+
+### How much does the ESP32-S3-Touch-AMOLED-2.16 cost?
+Waveshare lists it at **US$29.99–31.99** (checked Nov 2026). The final price depends on the selected version and battery option; shipping, taxes and marketplace prices may differ.
+
+### Does it have PSRAM?
+Yes. The ESP32-S3R8 version includes **8 MB PSRAM** and 16 MB Flash. This is a key advantage over the ESP32-C6-Touch-AMOLED-2.16, for which Waveshare does not list external PSRAM.
+
+### How is it different from the ESP32-C6 AMOLED 2.16?
+The S3 has a dual-core Xtensa LX7 processor and 8 MB PSRAM. The C6 has a single-core RISC-V processor, Wi-Fi 6 and IEEE 802.15.4. Choose based on whether memory/processing or newer wireless connectivity matters more.
 
 ## Frequently Asked Questions
 
