@@ -249,12 +249,12 @@ UNO Q è disponibile nelle configurazioni da 2GB e 4GB. Usa i link dei rivendito
 <div class="en-product-cta__buttons">
   <a class="en-buy-button preferred" href="https://link.amazon/B05l32CeC" target="_blank" rel="nofollow sponsored noopener">
     <span class="en-buy-icon"><i class="fab fa-amazon"></i></span>
-    <span class="en-buy-text"><strong>Vedi Arduino UNO Q su Amazon</strong><small>Verifica versione 2GB / 4GB e consegna</small></span>
+    <span class="en-buy-text"><strong style="font-weight:400">Vedi Arduino UNO Q su Amazon</strong><small style="font-weight:700">Verifica versione 2GB / 4GB e consegna</small></span>
     <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
   </a>
   <a class="en-buy-button" href="https://s.click.aliexpress.com/e/_c3w4434P" target="_blank" rel="nofollow sponsored noopener">
     <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-    <span class="en-buy-text"><strong>Vedi Arduino UNO Q su AliExpress</strong><small>Verifica venditore, memoria e consegna</small></span>
+    <span class="en-buy-text"><strong style="font-weight:400">Vedi Arduino UNO Q su AliExpress</strong><small style="font-weight:700">Verifica venditore, memoria e consegna</small></span>
     <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
   </a>
 </div>
