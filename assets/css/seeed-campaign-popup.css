@@ -17,31 +17,20 @@
   transform: translateY(18px);
   transition: opacity .25s ease, transform .25s ease, visibility .25s;
 }
-
 .seeed-campaign-popup.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
 }
-
-.seeed-campaign-popup__banner {
-  display: block;
-}
-
-.seeed-campaign-popup__banner img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
+.seeed-campaign-popup__banner { display: block; }
+.seeed-campaign-popup__banner img { display: block; width: 100%; height: auto; }
 .seeed-campaign-popup__note {
   margin: 0;
   padding: 6px 12px 8px;
   color: #596273;
   font: 12px/1.4 system-ui, sans-serif;
 }
-
 .seeed-campaign-popup__close {
   position: absolute;
   z-index: 1;
@@ -59,45 +48,20 @@
   font: 24px/1 system-ui, sans-serif;
   cursor: pointer;
 }
-
-.seeed-campaign-popup__close:hover {
-  background: rgba(15, 23, 42, .95);
-}
-
-.seeed-campaign-popup__close:focus-visible {
-  outline: 3px solid #0ea5e9;
-  outline-offset: 2px;
-}
-
+.seeed-campaign-popup__close:hover { background: rgba(15, 23, 42, .95); }
+.seeed-campaign-popup__close:focus-visible { outline: 3px solid #0ea5e9; outline-offset: 2px; }
 @media (max-width: 600px) {
   .seeed-campaign-popup {
     left: 10px;
-    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(70px + env(safe-area-inset-bottom, 0px));
     width: min(320px, calc(100vw - 20px));
     border-radius: 12px;
   }
-
-  .seeed-campaign-popup__note {
-    padding: 8px 14px 10px;
-    font-size: 13px;
-  }
-
-
-  .seeed-campaign-popup__close {
-    top: 4px;
-    right: 4px;
-    width: 44px;
-    height: 44px;
-  }
-
-  /* Keep clear of the existing mobile product purchase bar. */
+  .seeed-campaign-popup__note { padding: 8px 14px 10px; font-size: 13px; }
+  .seeed-campaign-popup__close { top: 4px; right: 4px; width: 44px; height: 44px; }
+  /* Keep clear of the existing mobile product purchase bar and chat button. */
   body.layout--product .seeed-campaign-popup {
-    bottom: calc(82px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(142px + env(safe-area-inset-bottom, 0px));
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .seeed-campaign-popup {
-    transition: none;
-  }
-}
+@media (prefers-reduced-motion: reduce) { .seeed-campaign-popup { transition: none; }
