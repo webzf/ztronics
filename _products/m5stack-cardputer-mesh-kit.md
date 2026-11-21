@@ -208,8 +208,6 @@ The safest way to identify the correct bundle is to check that the listing expli
 2. Cap LoRa-1262 expansion module
 3. LoRa antenna with RP-SMA connector
 
-The official M5Stack store listed the complete Cardputer Mesh Kit (SKU K152) at **US$48.00 on 21 November 2026**. This is a dated reference price, not a guaranteed checkout total; shipping, tax, promotions and regional availability may change. Marketplace prices and bundle contents can also vary, so verify the selected option before checkout.
-
 [Check the official M5Stack Cardputer Mesh Kit listing](https://shop.m5stack.com/products/cardputer-mesh-kit-for-meshtastic-esp32-s3)
 
 [**Buy the M5Stack Cardputer Mesh Kit on AliExpress**](/go/hardware/m5stack-cardputer-mesh-kit/). The linked listing was confirmed as the Cardputer-Adv + Cap LoRa-1262 bundle. Check the selected option and package contents before checkout.
