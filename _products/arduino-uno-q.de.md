@@ -6,10 +6,10 @@ toc_label: Inhalt
 page_id: product-arduino-uno-q
 translation_id: arduino-uno-q
 internal_links: true
-title: "Arduino UNO Q: Technische Daten, 2GB vs. 4GB und Kaufberatung"
+title: "Arduino® UNO Q: 2GB vs. 4GB, technische Daten und Preis"
 product_verdict: "Eine Hybridplatine mit Debian-Linux-Prozessor und Echtzeit-Mikrocontroller für Edge-KI, Bildverarbeitung und Robotik. 2GB eignen sich für gezielte Embedded-Anwendungen; 4GB bieten mehr Reserven für Desktop-Nutzung und Multitasking."
-seo_title: "Arduino UNO Q: Preis, technische Daten und 2GB- oder 4GB-Version"
-seo_description: "Arduino UNO Q mit Qualcomm Dragonwing QRB2210, STM32U585, Debian Linux, KI-Funktionen und Vergleich der 2GB- und 4GB-Version. Aktuelle Preise und Bezugsquellen prüfen."
+seo_title: "Arduino® UNO Q: 2GB vs. 4GB, technische Daten und Preis"
+seo_description: "Vergleichen Sie Arduino UNO Q 2GB und 4GB: RAM, eMMC-Speicher, Abmessungen, technische Daten, Preise und offizielles Datenblatt."
 product_id: arduino-uno-q
 category: Entwicklungsplatinen
 manufacturer: "Arduino"
@@ -98,6 +98,55 @@ Es gibt zwei Speicherkonfigurationen: **2GB RAM mit 16GB eMMC** und **4GB RAM mi
 
 *Arduino UNO Q mit Verkaufsverpackung.*
 
+## Arduino UNO Q 2GB vs. 4GB
+
+Der wichtigste Unterschied betrifft den Arbeitsspeicher und den integrierten Speicher. Beide Versionen verwenden denselben Qualcomm Dragonwing QRB2210 und denselben STM32U585-Mikrocontroller.
+
+| Merkmal | Arduino UNO Q 2GB | Arduino UNO Q 4GB |
+|---|---|---|
+| RAM | 2GB LPDDR4 | 4GB LPDDR4 |
+| eMMC-Speicher | 16GB | 32GB |
+| MPU | Qualcomm Dragonwing QRB2210 | Qualcomm Dragonwing QRB2210 |
+| MCU | STM32U585 | STM32U585 |
+| Betriebssystem | Debian Linux | Debian Linux |
+| Empfohlener Einsatz | Dedizierte Embedded-Anwendungen, IoT-Gateways und leichtere KI-Aufgaben | Eigenständige SBC-Nutzung, Multitasking und größere KI-/Bildverarbeitungsaufgaben |
+
+### Arduino UNO Q 2GB
+
+Wählen Sie das 2GB-Modell für dedizierte Embedded-Anwendungen, IoT-Gateways und Projekte mit moderatem Speicherbedarf.
+
+### Arduino UNO Q 4GB
+
+Wählen Sie das 4GB-Modell für die eigenständige Desktop-Nutzung mit Monitor, Tastatur und Maus, für Multitasking sowie größere KI- und Bildverarbeitungsaufgaben.
+
+## Preis der Arduino UNO Q: 2GB vs. 4GB
+
+| Variante | Preis im offiziellen Arduino Store |
+|---|---:|
+| Arduino UNO Q 2GB (16GB eMMC) | **59,90 €** |
+| Arduino UNO Q 4GB (32GB eMMC) | **82,90 €** |
+
+<small>Preise geprüft am **21. November 2026** auf der [offiziellen Arduino-UNO-Q-Shopseite](https://store.arduino.cc/pages/uno-q). Preise, Steuern, Versandkosten und Verfügbarkeit können je nach Lieferziel variieren.</small>
+
+## Abmessungen und Größe
+
+Die Arduino UNO Q misst **68,85 × 53,34 mm** und behält das vertraute physische Arduino-UNO-Format bei. Die 2GB- und 4GB-Versionen haben dieselben Abmessungen.
+
+## Technische Daten
+
+Die wichtigsten Hardwaredaten sind bereits im Spezifikationsbereich oben zusammengefasst. Beide Speichervarianten verwenden denselben QRB2210-Anwendungsprozessor, denselben STM32U585-Mikrocontroller, dieselbe drahtlose Konnektivität und dieselben Abmessungen im UNO-Format.
+
+## Datenblatt und offizielle Dokumentation
+
+Nutzen Sie die offiziellen Arduino-Ressourcen für aktuelle Einrichtungsanleitungen, Anschlussdetails, elektrische Grenzwerte und Informationen zu den Platinenrevisionen:
+
+- [Offizielle Arduino®-UNO-Q-Dokumentation](https://docs.arduino.cc/hardware/uno-q/) — Einrichtung, Hardwareinformationen und Software-Ressourcen.
+- [Arduino® UNO Q Datenblatt (PDF)](https://docs.arduino.cc/resources/datasheets/ABX00162-datasheet.pdf) — Architektur, Anschlüsse, elektrische Details und technische Daten.
+- [Vollständiges Arduino-UNO-Q-Pinout (PDF)](https://docs.arduino.cc/resources/pinouts/ABX00162-full-pinout.pdf) — Pinbelegung und alternative Funktionen.
+- [Offizielle Arduino®-UNO-Q-Produktseite](https://store.arduino.cc/pages/uno-q) — Vergleich der 2GB- und 4GB-Konfigurationen.
+
+Anschlussfunktionen und Signalspannungsbereiche sind nicht austauschbar: Prüfen Sie das Datenblatt, bevor Sie externe Hardware anschließen.
+
 ## Lohnt sich der Kauf der Arduino UNO Q?
 
 Die UNO Q ist sinnvoll, wenn ein Projekt mehr benötigt, als ein herkömmlicher Mikrocontroller bequem leisten kann. Sie kann Linux-Anwendungen, Python-Code und containerisierte Dienste ausführen, während der STM32U585 weiterhin Echtzeit-Ein-/Ausgänge verwaltet.
@@ -106,24 +155,7 @@ Für einfache LED-, Sensor- oder Automatisierungsprojekte ist sie weniger attrak
 
 **Die wichtigste Kaufentscheidung ist 2GB oder 4GB.** Die 2GB-Version eignet sich für eine dedizierte Embedded-Anwendung mit überschaubarer Arbeitslast. Wählen Sie 4GB, wenn Sie Monitor, Tastatur und Maus anschließen, mehrere Linux-Dienste parallel ausführen oder größere KI- und Bildverarbeitungsaufgaben bearbeiten möchten.
 
-## Arduino UNO Q 2GB vs. 4GB
 
-| Merkmal | UNO Q 2GB | UNO Q 4GB |
-|---|---|---|
-| RAM | 2GB LPDDR4 | 4GB LPDDR4 |
-| eMMC-Speicher | 16GB | 32GB |
-| MPU | Qualcomm Dragonwing QRB2210 | Qualcomm Dragonwing QRB2210 |
-| MCU | STM32U585 | STM32U585 |
-| Linux | Debian | Debian |
-| Geeignet für | Dedizierte Embedded-Anwendungen, IoT-Gateways und leichtere KI-Aufgaben | Eigenständige SBC-Nutzung, Multitasking und größere KI-/Bildverarbeitungsaufgaben |
-
-Die 4GB-Version ist die sicherere Wahl, wenn Sie die UNO Q als kleinen Linux-Computer mit Display, Tastatur und Maus verwenden möchten. Arduino empfiehlt für den eigenständigen Betrieb die 4GB-Konfiguration. Die 2GB-Version bleibt für gezielte Anwendungen mit kontrolliertem Speicherbedarf geeignet.
-
-Die Varianten verwenden nicht unterschiedliche Prozessoren: Beide besitzen den QRB2210 und den STM32U585. Der zusätzliche RAM und eMMC-Speicher unterscheiden das 4GB-Modell.
-
-## Technische Daten der Arduino UNO Q
-
-Die technischen Daten sind bereits im Spezifikationsbereich oben zusammengefasst. Um eine doppelte Tabelle zu vermeiden, verwenden Sie für Details auf Steckverbinder-Ebene und revisionsabhängige elektrische Angaben das [offizielle Arduino-UNO-Q-Datenblatt](https://docs.arduino.cc/resources/datasheets/ABX00162-datasheet.pdf). Anschlussfunktionen und Signalspannungsbereiche sind nicht austauschbar: Prüfen Sie das Datenblatt, bevor Sie externe Hardware anschließen.
 
 ## Ansichten der Arduino UNO Q
 
@@ -219,17 +251,17 @@ Die UNO Q wird in Konfigurationen mit 2GB und 4GB angeboten. Der aktuelle Preis 
 <div class="en-product-cta__buttons">
   <a class="en-buy-button preferred" href="https://link.amazon/B05l32CeC" target="_blank" rel="nofollow sponsored noopener">
     <span class="en-buy-icon"><i class="fab fa-amazon"></i></span>
-    <span class="en-buy-text"><strong>Arduino UNO Q bei Amazon ansehen</strong><small>2GB-/4GB-Version und Lieferung prüfen</small></span>
+    <span class="en-buy-text"><strong style="font-weight:400">Arduino UNO Q bei Amazon ansehen</strong><small style="font-weight:700">2GB-/4GB-Version und Lieferung prüfen</small></span>
     <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
   </a>
   <a class="en-buy-button" href="https://s.click.aliexpress.com/e/_c3w4434P" target="_blank" rel="nofollow sponsored noopener">
     <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-    <span class="en-buy-text"><strong>Arduino UNO Q bei AliExpress ansehen</strong><small>Verkäufer, Speicherversion und Lieferung prüfen</small></span>
+    <span class="en-buy-text"><strong style="font-weight:400">Arduino UNO Q bei AliExpress ansehen</strong><small style="font-weight:700">Verkäufer, Speicherversion und Lieferung prüfen</small></span>
     <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
   </a>
 </div>
 
-Der offizielle Arduino Store listet die UNO Q 2GB derzeit für **59,90€** und die 4GB-Version für **82,90€** (Preise geprüft am **11. November 2026**). [Beide Konfigurationen im offiziellen Arduino-UNO-Q-Store vergleichen](https://store.arduino.cc/pages/uno-q). Händlerpreise, Versandkosten und Verfügbarkeit können abweichen.
+Der offizielle Arduino Store listet die UNO Q 2GB derzeit für **59,90€** und die 4GB-Version für **82,90€** (Preise geprüft am **21. November 2026**). [Beide Konfigurationen im offiziellen Arduino-UNO-Q-Store vergleichen](https://store.arduino.cc/pages/uno-q). Händlerpreise, Versandkosten und Verfügbarkeit können abweichen.
 
 Als Affiliate-Website kann Embedded Nerd bei qualifizierten Käufen eine Provision erhalten, ohne dass Ihnen zusätzliche Kosten entstehen.
 
@@ -280,7 +312,7 @@ Die 2GB-Version besitzt 2GB LPDDR4-RAM und 16GB eMMC-Speicher. Die 4GB-Version v
 
 ### Wie viel kostet die Arduino UNO Q?
 
-Im offiziellen Arduino Store wird die UNO Q 2GB mit **59,90€** und die 4GB-Version mit **82,90€** gelistet (Preise geprüft am **11. November 2026**). Preise können je nach Land, Steuern, Versand und Verfügbarkeit variieren. Prüfen Sie den Endpreis auf der [offiziellen Arduino-UNO-Q-Store-Seite](https://store.arduino.cc/pages/uno-q).
+Im offiziellen Arduino Store wird die UNO Q 2GB mit **59,90€** und die 4GB-Version mit **82,90€** gelistet (Preise geprüft am **21. November 2026**). Preise können je nach Land, Steuern, Versand und Verfügbarkeit variieren. Prüfen Sie den Endpreis auf der [offiziellen Arduino-UNO-Q-Store-Seite](https://store.arduino.cc/pages/uno-q).
 
 ### Wo kann man die Arduino UNO Q kaufen?
 
