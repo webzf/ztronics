@@ -294,9 +294,9 @@ defaults:
       toc_label: "Contents"
       toc_levels: 2
 
-      header:
-        overlay_image: /assets/images/header3.webp
-        overlay_filter: 0.25 
+     # header:
+      #  overlay_image: /assets/images/header3.webp
+       # overlay_filter: 0.25 
 
         
   - scope:
