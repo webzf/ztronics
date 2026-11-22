@@ -148,6 +148,22 @@ tags:
 <script src="/assets/tools/esp32-touchscreen-selector/project-recommendations.js?v=20261012" defer></script>
 <script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20261024b" defer></script>
 
+## Popular ESP32 touchscreen boards compared
+
+The selector helps narrow the catalog, but sometimes it is easier to start by comparing a few well-known boards. These examples cover different screen sizes, display technologies and project needs. They are not interchangeable: check the exact board revision and seller variant before ordering.
+
+| Board | Display | Touch | A good fit for |
+|---|---|---|---|
+| [ESP32-2432S028 CYD](/products/esp32-2432s028-2-8-cyd/) | 2.8-inch TFT · 240×320 · SPI | Resistive (XPT2046) | Low-cost, compact dashboards and control panels |
+| [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) | 4-inch IPS · 480×480 | Capacitive (GT911) | Square interfaces, LVGL projects and documented ESPHome/Home Assistant panels |
+| [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) | 4.3-inch IPS · 800×480 · RGB | Capacitive (GT911) | Wider dashboards and larger graphical interfaces |
+| [Guition JC8048W550](/products/guition-jc8048w550/) | 5-inch IPS · 800×480 | No touch, resistive or capacitive, depending on suffix | Larger HMI and control-panel layouts |
+| [ESP-Mosaico](/products/esp-mosaico/) | 2.16-inch AMOLED · 480×480 · QSPI | Touchscreen (CST9220 series) | Compact interactive projects that also need sensors, audio and modular expansion |
+
+**Important variant checks:** the CYD family has board revisions with different display controllers; the Sunton page covers the **8048S043C capacitive-touch** version; and the JC8048W550 suffix determines whether the board has no touch (N), resistive touch (R) or capacitive touch (C). The ESP-Mosaico uses the **ESP32-S31**, not the ESP32-S3. Read the linked product pages before choosing a board or copying a pin configuration.
+
+For a Home Assistant wall panel, start with the [Guition 4848S040 guide](/guition-esp32-s3-4848s040-pinout-esphome/). The [JC8048W550 product page](/products/guition-jc8048w550/) also links to a community ESPHome configuration, but you should match its pins and touch setup to the exact suffix and board revision.
+
 ## Hardware currently covered by the selector
 
 The interactive catalog currently covers 14 ESP32 boards and display modules. The linked product pages provide detailed specifications, documentation and available purchasing options.
@@ -288,6 +304,16 @@ These focused pages help you start with a common hardware requirement before ope
 <details>
 <summary>Is native USB the same as a UART bridge?</summary>
 <p>No. The selector treats native USB and UART bridge hardware as separate properties and a required Native USB filter is not satisfied by a UART bridge.</p>
+</details>
+
+<details>
+<summary>What is the difference between capacitive and resistive touch?</summary>
+<p>Capacitive touch detects changes in the electrical field and is common on modern phone-like interfaces. Resistive touch responds to pressure and can be useful with a stylus or gloved operation, but the feel and controller support differ. Check the actual controller and board variant: for example, the CYD page describes XPT2046 resistive touch, while the Guition 4848S040 uses capacitive GT911 touch.</p>
+</details>
+
+<details>
+<summary>Which ESP32 display is suitable for Home Assistant?</summary>
+<p>For a documented starting point on Embedded Nerd, see the <a href="/guition-esp32-s3-4848s040-pinout-esphome/">Guition ESP32-S3-4848S040 pinout and ESPHome guide</a>. The Guition JC8048W550 also has a community ESPHome configuration linked from its <a href="/products/guition-jc8048w550/">product page</a>. For other boards, verify that an ESPHome configuration exists for the exact display controller, touch controller and board revision before buying; a screen being ESP32-based does not by itself guarantee Home Assistant compatibility.</p>
 </details>
 
 <details>
