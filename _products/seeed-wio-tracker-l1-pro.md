@@ -204,6 +204,24 @@ Prices, promotions, stock, shipping and import charges can change by destination
 
 As an affiliate, Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you.
 
+## Commercial opportunity snapshot
+
+The initial Embedded Nerd product research scored this opportunity as follows. These are internal editorial estimates, not independently measured sales or conversion metrics.
+
+| Factor | Score |
+|---|---:|
+| Search demand | 8.5 / 10 |
+| Community interest | 8 / 10 |
+| Affiliate commission potential | 5 / 10 |
+| SEO opportunity | 6 / 10 |
+| Advertising potential | 8 / 10 |
+| Content potential | 6 / 10 |
+| **Overall opportunity** | **7.1 / 10** |
+
+The initial commission estimate is approximately **US$2.40–3.30 per qualifying sale**, subject to the actual affiliate rate, order value, attribution and programme terms. The Seeed affiliate terms and any product-specific coupon arrangement should be confirmed before treating this estimate as guaranteed revenue.
+
+Marketplace research also found listings reporting more than 4,000 sales and ratings around 4.8–4.9 stars. These are listing-level signals and can change; they should not be interpreted as verified sales figures for every regional variant or firmware edition.
+
 ## FAQ
 
 ### What is the difference between the Wio Tracker L1 Pro Meshtastic and MeshCore versions?
