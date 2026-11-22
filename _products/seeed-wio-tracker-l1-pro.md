@@ -24,7 +24,7 @@ seo_title: "Seeed Wio Tracker L1 Pro Review: Meshtastic vs MeshCore"
 seo_description: "Seeed Wio Tracker L1 Pro specs, nRF52840, SX1262 LoRa, GPS, OLED and 2,000 mAh battery. Compare Meshtastic and MeshCore versions before buying."
 page_id: product-seeed-wio-tracker-l1-pro
 product_id: seeed-wio-tracker-l1-pro
-category: IoT & Wireless
+category: LoRa & Wireless Devices
 manufacturer: "Seeed Studio"
 
 excerpt: "Seeed Studio Wio Tracker L1 Pro with nRF52840, SX1262 LoRa, L76K GNSS, 1.3-inch OLED and integrated 2,000 mAh battery."
@@ -32,7 +32,7 @@ excerpt: "Seeed Studio Wio Tracker L1 Pro with nRF52840, SX1262 LoRa, L76K GNSS,
 description: "A ready-to-use handheld LoRa tracker with nRF52840, SX1262 radio, multi-GNSS, OLED display, Bluetooth 5.0 and a 2,000 mAh battery. Available from Seeed with Meshtastic or MeshCore Companion firmware."
 
 categories:
-  - IoT & Wireless
+  - LoRa & Wireless Devices
   - LoRa
   - Meshtastic
   - MeshCore
