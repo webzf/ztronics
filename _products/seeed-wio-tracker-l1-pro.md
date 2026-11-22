@@ -112,12 +112,9 @@ The **Seeed Studio Wio Tracker L1 Pro** is a handheld LoRa device for off-grid m
 
 Seeed sells two factory firmware editions: **Meshtastic** and **MeshCore Companion**. The hardware platform is closely related, but the two editions connect to different mesh ecosystems. Choose the version that matches the network you intend to use.
 
-## Choose your firmware: Meshtastic or MeshCore
+<span id="choose-your-firmware"></span>
 
-<div class="en-product-cta__buttons">
-  <a class="en-buy-button" href="https://www.seeedstudio.com/Wio-Tracker-L1-Pro-p-6454.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-shopping-cart"></i></span><span class="en-buy-text"><strong>Buy Wio Tracker L1 Pro — Meshtastic</strong><small>Official Seeed Studio store · Meshtastic pre-installed</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-  <a class="en-buy-button" href="https://www.seeedstudio.com/Wio-Tracker-L1-Pro-for-Meshcore-p-6717.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-shopping-cart"></i></span><span class="en-buy-text"><strong>Buy Wio Tracker L1 Pro — MeshCore</strong><small>Official Seeed Studio store · MeshCore Companion pre-installed</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-</div>
+## Choose your firmware: Meshtastic or MeshCore
 
 | Edition | Factory firmware | Choose it when |
 |---|---|---|
