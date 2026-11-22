@@ -154,7 +154,7 @@ The selector helps narrow the catalog, but sometimes it is easier to start by co
 
 | Board | Display | Touch | A good fit for |
 |---|---|---|---|
-| [ESP32-2432S028 CYD](/products/esp32-2432s028-2-8-cyd/) | 2.8-inch TFT · 240×320 · SPI | Resistive (XPT2046) | Low-cost, compact dashboards and control panels |
+| [ESP32-2432S028 CYD](/products/esp32-2432s028-2-8-cyd/) | 2.8-inch TFT · 240×320 native (320×240 landscape) · SPI | Resistive (XPT2046) | Low-cost, compact dashboards and control panels |
 | [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) | 4-inch IPS · 480×480 | Capacitive (GT911) | Square interfaces, LVGL projects and documented ESPHome/Home Assistant panels |
 | [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) | 4.3-inch IPS · 800×480 · RGB | Capacitive (GT911) | Wider dashboards and larger graphical interfaces |
 | [Guition JC8048W550](/products/guition-jc8048w550/) | 5-inch IPS · 800×480 | No touch (N), resistive touch (R) or capacitive touch (C), depending on suffix | Larger HMI and control-panel layouts |
@@ -179,7 +179,7 @@ The interactive catalog currently covers 14 ESP32 hardware entries: 12 boards wi
 <li><a href="/products/waveshare-esp32-s3-touch-amoled-2-41/"><strong>Waveshare ESP32-S3-Touch-AMOLED-2.41</strong></a> — 2.41″ · AMOLED · touch · ESP32-S3</li>
 <li><a href="/products/sunton-esp32-8048s043c/"><strong>Sunton ESP32-8048S043C</strong></a> — 4.3″ · 800×480 · ESP32 touchscreen</li>
 <li><a href="/products/guition-esp32-s3-4848s040/"><strong>Guition ESP32-S3-4848S040</strong></a> — 4″ · 480×480 · RGB · capacitive touch · ESP32-S3</li>
-<li><a href="/products/esp32-2432s028-2-8-cyd/"><strong>ESP32-2432S028 2.8″ CYD</strong></a> — 2.8″ · 240×320 · touchscreen</li>
+<li><a href="/products/esp32-2432s028-2-8-cyd/"><strong>ESP32-2432S028 2.8″ CYD</strong></a> — 2.8″ · 240×320 native (320×240 landscape) · touchscreen</li>
 <li><a href="/products/waveshare-esp32-s3-touch-amoled-2-16/"><strong>Waveshare ESP32-S3-Touch-AMOLED-2.16</strong></a> — 2.16″ · AMOLED · touch · ESP32-S3</li>
 <li><a href="/products/ssd1306-oled/"><strong>SSD1306 OLED Display</strong></a> — 0.96″ · 128×64 · monochrome OLED · I²C · no touch</li>
 <li><a href="/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/"><strong>Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C</strong></a> — 3.4″ · 800×800 · round IPS · MIPI-DSI · capacitive touch</li>
