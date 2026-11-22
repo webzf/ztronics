@@ -1142,7 +1142,7 @@ m5stack-cardputer-adv:
 
   preferred_store: aliexpress
 
-  notes: "AliExpress listing 1005007476851351 is titled M5Stack Cardputer ADV New Version StampS3A Development Board, identifying the standalone handheld. The affiliate short-link redirect could not be independently resolved; confirm the selected option is Cardputer-Adv only, not a Cap or Mesh Kit."
+  notes: "AliExpress listing 1005007476851351 is titled M5Stack Cardputer ADV New Version StampS3A Development Board, identifying the standalone handheld. Affiliate short link supplied for this product; confirm the selected option is Cardputer-Adv only, not a Cap or Mesh Kit."
 
   disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
 
@@ -1158,5 +1158,5 @@ m5stack-cardputer-adv:
       enabled: true
       product_id: "1005007476851351"
       product_url: "https://pt.aliexpress.com/item/1005007476851351.html"
-      affiliate_url: "https://s.click.aliexpress.com/e/_c3kPdidb"
+      affiliate_url: "https://s.click.aliexpress.com/e/_c39uVdoh"
       last_verified: "2026-11-20"
