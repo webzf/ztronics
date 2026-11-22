@@ -1,15 +1,15 @@
 ---
-title: "ESP32 Display Selector: Find Your Touchscreen Board"
+title: "ESP32 Board & Display Selector: Touchscreen Boards and Modules"
 layout: single
 classes: wide
 sidebar:
   nav: "embedded"
-internal_links: true
+internal_links: false
 permalink: /tools/esp32-touchscreen-selector/
 redirect_from:
   - /esp32-touchscreen-selector
 canonical_url: https://embeddednerd.com/tools/esp32-touchscreen-selector/
-excerpt: "Filter ESP32 displays by size, touch, PSRAM, LVGL, interface and battery. Compare 14 touchscreen boards and find the right one for your project."
+excerpt: "Compare 14 ESP32 hardware entries: 12 display boards and 2 display modules. Filter by screen size, resolution, touch, PSRAM, LVGL and interface."
 show_date: false
 read_time: false
 last_modified_at: false
@@ -44,8 +44,8 @@ tags:
 ---
 <section class="selector-seo-intro" aria-labelledby="selector-seo-title">
 <h2 id="selector-seo-title">Compare ESP32 Display Boards and Touchscreens</h2>
-<p>Looking for an <strong>ESP32 display</strong> or an <strong>ESP32 touchscreen</strong> for your next project? This selector helps you compare development boards and display modules by screen size, resolution, display technology, touch support, ESP32 family and hardware requirements.</p>
-<p>Compare compact SPI TFT modules, ESP32-S3 touchscreen boards, AMOLED displays and larger RGB or MIPI-DSI panels. Check the display and touch interfaces separately, then narrow the options by PSRAM, Flash, available GPIO, LVGL support, USB, battery and other onboard features.</p>
+<p>Looking for an <strong>ESP32 display</strong> or an <strong>ESP32 touchscreen</strong> for your next project? This selector compares ESP32 development boards and standalone display modules, including both touchscreen and non-touch options, by screen size, resolution, display technology, ESP32 family and hardware requirements.</p>
+<p>Compare compact SPI TFT modules, <a href="/tools/esp32-touchscreen-selector/esp32-s3-lvgl/">ESP32-S3 touchscreen boards for LVGL projects</a>, AMOLED displays and larger RGB or MIPI-DSI panels. Check the display and touch interfaces separately, then narrow the options by PSRAM, Flash, available GPIO, LVGL support, USB, battery and other onboard features.</p>
 <p>Start with the interactive filters below, or explore popular hardware: <a href="/products/guition-esp32-s3-4848s040/">Guition ESP32-S3 4-inch touchscreen</a>, <a href="/products/sunton-esp32-8048s043c/">Sunton 4.3-inch ESP32-S3 display</a>, <a href="/products/waveshare-esp32-s3-touch-lcd-4-3/">Waveshare 4.3-inch ESP32 touchscreen</a> and <a href="/products/esp32-2432s028-2-8-cyd/">ESP32-2432S028 CYD</a>. For help choosing a screen, read the <a href="/esp32-touchscreen-displays-guide/">ESP32 touchscreen displays guide</a>.</p>
 </section>
 
@@ -53,10 +53,10 @@ tags:
 
 <div class="selector-app-shell">
 <p class="site-label">Embedded Nerd · Open Source Tool</p>
-<header class="hero"><span class="eyebrow">ESP32 HARDWARE DISCOVERY</span><h2>ESP32 Display Selector</h2><p>Find compatible ESP32 display boards and touchscreen modules for your project. Start with your project type or use technical requirements directly. <strong>Required</strong> filters exclude incompatible hardware; project intent and other preferences influence ranking.</p><p>Need help choosing a display first? Read our <a href="/esp32-touchscreen-displays-guide/">ESP32 touchscreen displays guide</a> for a practical comparison of screen sizes, touch technologies, SPI vs RGB, and ESP32-S3 options.</p></header>
+<header class="hero"><span class="eyebrow">ESP32 HARDWARE DISCOVERY</span><h2>ESP32 Board &amp; Display Selector</h2><p>Find compatible ESP32 display boards and display modules, including touchscreen options, for your project. Start with your project type or use technical requirements directly. <strong>Required</strong> filters exclude incompatible hardware; project intent and other preferences influence ranking.</p><p>Need help choosing a display first? Read our <a href="/esp32-touchscreen-displays-guide/">ESP32 touchscreen displays guide</a> for a practical comparison of screen sizes, touch technologies, SPI vs RGB, and ESP32-S3 options.</p></header>
 <section class="tool" aria-labelledby="tool-title">
 <h2 id="tool-title" class="sr-only">Hardware selector</h2>
-<div class="mode-bar"><div class="mode-buttons"><button type="button" id="mode-requirements" class="mode-button active" data-mode="requirements">Choose &amp; filter</button><button type="button" id="browse-btn" class="mode-button" data-mode="browse">Browse all hardware</button></div><span class="catalog-status"><span id="catalog-count">0</span> catalog entries</span></div>
+<div class="mode-bar"><div class="mode-buttons"><button type="button" id="mode-requirements" class="mode-button active" data-mode="requirements">Choose &amp; filter</button><button type="button" id="browse-btn" class="mode-button" data-mode="browse">Browse all hardware</button></div><span class="catalog-status"><span id="catalog-count">14</span> hardware entries</span></div>
 
 <section id="project-intent" class="project-intent" aria-labelledby="project-intent-title">
 <div class="section-heading intent-heading"><div><span class="step">01</span><h2 id="project-intent-title">What are you building?</h2></div><p>Choose one use case to influence ranking. Change it later, clear it, or skip it and use the technical filters.</p></div>
@@ -132,7 +132,7 @@ tags:
 </div></section>
 
 <div id="active-filter-summary" class="active-filter-summary" hidden></div>
-<div id="live-result-bar" class="live-result-bar selector-live-bar" aria-live="polite"><strong>Results</strong><span id="live-count">Choose a project or technical filters to see recommendations.</span></div>
+<div id="live-result-bar" class="live-result-bar selector-live-bar" aria-live="polite"><strong>Results</strong><span id="live-count">14 hardware entries are available: 12 display boards and 2 display modules. Choose a project or set technical filters to see recommendations.</span></div>
 <div class="form-actions"><button type="submit" class="btn-primary">Find recommended hardware</button><button type="button" id="reset-btn" class="btn-secondary">Clear All Filters</button><button type="button" id="share-btn" class="btn-secondary">Share setup</button></div>
 </form>
 <div id="catalog-error" class="error-panel" hidden></div><div id="catalog-warning" class="warning-panel" hidden></div>
@@ -157,16 +157,16 @@ The selector helps narrow the catalog, but sometimes it is easier to start by co
 | [ESP32-2432S028 CYD](/products/esp32-2432s028-2-8-cyd/) | 2.8-inch TFT · 240×320 · SPI | Resistive (XPT2046) | Low-cost, compact dashboards and control panels |
 | [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) | 4-inch IPS · 480×480 | Capacitive (GT911) | Square interfaces, LVGL projects and documented ESPHome/Home Assistant panels |
 | [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/) | 4.3-inch IPS · 800×480 · RGB | Capacitive (GT911) | Wider dashboards and larger graphical interfaces |
-| [Guition JC8048W550](/products/guition-jc8048w550/) | 5-inch IPS · 800×480 | No touch, resistive or capacitive, depending on suffix | Larger HMI and control-panel layouts |
+| [Guition JC8048W550](/products/guition-jc8048w550/) | 5-inch IPS · 800×480 | No touch (N), resistive touch (R) or capacitive touch (C), depending on suffix | Larger HMI and control-panel layouts |
 | [ESP-Mosaico](/products/esp-mosaico/) | 2.16-inch AMOLED · 480×480 · QSPI | Touchscreen (CST9220 series) | Compact interactive projects that also need sensors, audio and modular expansion |
 
-**Important variant checks:** the CYD family has board revisions with different display controllers; the Sunton page covers the **8048S043C capacitive-touch** version; and the JC8048W550 suffix determines whether the board has no touch (N), resistive touch (R) or capacitive touch (C). The ESP-Mosaico uses the **ESP32-S31**, not the ESP32-S3. Read the linked product pages before choosing a board or copying a pin configuration.
+**Important variant checks:** the CYD family has board revisions with different display controllers; the Sunton page covers the **8048S043C capacitive-touch** version; and the JC8048W550 suffix determines whether the board has no touch (N), resistive touch (R) or capacitive touch (C). The ESP-Mosaico uses the **ESP32-S31**, not the ESP32-S3. The Guition JC8048W550 and ESP-Mosaico are examples from the wider Embedded Nerd product catalogue; they are not currently included in the interactive selector’s 14 hardware entries. Read the linked product pages before choosing a board or copying a pin configuration.
 
 For a Home Assistant wall panel, start with the [Guition 4848S040 guide](/guition-esp32-s3-4848s040-pinout-esphome/). The [JC8048W550 product page](/products/guition-jc8048w550/) also links to a community ESPHome configuration, but you should match its pins and touch setup to the exact suffix and board revision.
 
 ## Hardware currently covered by the selector
 
-The interactive catalog currently covers 14 ESP32 boards and display modules. The linked product pages provide detailed specifications, documentation and available purchasing options.
+The interactive catalog currently covers 14 ESP32 hardware entries: 12 boards with integrated displays and 2 standalone display modules. The linked product pages provide detailed specifications, documentation and available purchasing options.
 
 <div class="selector-catalog-links">
 <ul>
@@ -179,7 +179,7 @@ The interactive catalog currently covers 14 ESP32 boards and display modules. Th
 <li><a href="/products/waveshare-esp32-s3-touch-amoled-2-41/"><strong>Waveshare ESP32-S3-Touch-AMOLED-2.41</strong></a> — 2.41″ · AMOLED · touch · ESP32-S3</li>
 <li><a href="/products/sunton-esp32-8048s043c/"><strong>Sunton ESP32-8048S043C</strong></a> — 4.3″ · 800×480 · ESP32 touchscreen</li>
 <li><a href="/products/guition-esp32-s3-4848s040/"><strong>Guition ESP32-S3-4848S040</strong></a> — 4″ · 480×480 · RGB · capacitive touch · ESP32-S3</li>
-<li><a href="/products/esp32-2432s028-2-8-cyd/"><strong>ESP32-2432S028 2.8″ CYD</strong></a> — 2.8″ · 320×240 · touchscreen</li>
+<li><a href="/products/esp32-2432s028-2-8-cyd/"><strong>ESP32-2432S028 2.8″ CYD</strong></a> — 2.8″ · 240×320 · touchscreen</li>
 <li><a href="/products/waveshare-esp32-s3-touch-amoled-2-16/"><strong>Waveshare ESP32-S3-Touch-AMOLED-2.16</strong></a> — 2.16″ · AMOLED · touch · ESP32-S3</li>
 <li><a href="/products/ssd1306-oled/"><strong>SSD1306 OLED Display</strong></a> — 0.96″ · 128×64 · monochrome OLED · I²C · no touch</li>
 <li><a href="/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/"><strong>Waveshare ESP32-P4-WIFI6-Touch-LCD-3.4C</strong></a> — 3.4″ · 800×800 · round IPS · MIPI-DSI · capacitive touch</li>
@@ -215,7 +215,7 @@ The selector treats **Required** filters as compatibility constraints and other 
 
 ## Which ESP32 displays are compatible?
 
-An ESP32 display is compatible when the board, display interface, touch controller and memory work together. The selector checks these against 14 catalog entries, from 2.8″ SPI modules to 7″ RGB and MIPI-DSI boards.
+An ESP32 display is compatible when the board, display interface, touch controller and memory work together. The selector checks these against 14 hardware entries, including 12 boards with integrated displays and 2 standalone modules. One module, the SSD1306 OLED, has no touch; it is included as a general ESP32 display option, not as a touchscreen.
 
 ## How to choose ESP32 hardware for a touchscreen project
 
@@ -325,8 +325,8 @@ These focused pages help you start with a common hardware requirement before ope
 {
   "@context":"https://schema.org",
   "@type":"WebApplication",
-  "name":"ESP32 Display Selector",
-  "alternateName":"ESP32 Touchscreen Selector",
+  "name":"ESP32 Board & Display Selector",
+  "alternateName":["ESP32 Touchscreen Selector","ESP32 Display Selector"],
   "url":"https://embeddednerd.com/tools/esp32-touchscreen-selector/",
   "description":"Free interactive selector for ESP32 boards and display modules, with filters for display interface, touch, PSRAM, GPIO, LVGL, USB and onboard features.",
   "applicationCategory":"DeveloperApplication",
