@@ -62,6 +62,8 @@ embedded:
         url: /tutorials/
       - title: "All Products"
         url: /products/
+      - title: "LoRa & Wireless Devices"
+        url: /products/lora-wireless/
       - title: "Best Arduino Starter Kits"
         url: /best-arduino-starter-kits/
       - title: "All Tools"
