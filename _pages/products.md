@@ -31,7 +31,7 @@ description: "Browse the Embedded Nerd hardware directory: development boards, E
     </div>
   </section>
 
-  {% assign category_order = "Development Boards|Displays|Sensors|Modules|Accessories" | split: "|" %}
+  {% assign category_order = "Development Boards|Displays|Sensors|Modules|Accessories|LoRa & Wireless Devices" | split: "|" %}
 
   <nav class="en-category-nav" aria-label="Browse product categories">
     <div class="en-category-nav-inner">
@@ -48,6 +48,7 @@ description: "Browse the Embedded Nerd hardware directory: development boards, E
                 {% when "Sensors" %}◉
                 {% when "Modules" %}▦
                 {% when "Accessories" %}⌁
+                {% when "LoRa & Wireless Devices" %}⌁
               {% endcase %}
             </span>
             <span class="en-category-name">{{ category }}</span>
@@ -110,6 +111,8 @@ description: "Browse the Embedded Nerd hardware directory: development boards, E
                   <p>Motor drivers, power modules, joysticks and interface boards.</p>
                 {% when "Accessories" %}
                   <p>Breadboards, jumper wires and prototyping essentials.</p>
+                {% when "LoRa & Wireless Devices" %}
+                  <p>LoRa trackers, Meshtastic and MeshCore devices for off-grid communication.</p>
               {% endcase %}
             </div>
             <span class="en-category-total">{{ products.size }} {% if products.size == 1 %}product{% else %}products{% endif %}</span>
