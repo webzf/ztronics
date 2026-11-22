@@ -639,8 +639,8 @@
 
 @media (max-width:768px){
 
-    /* Mobile only: place the purchase CTA before the product image.
-       Desktop keeps the original image/content layout unchanged. */
+    /* Mobile only: move the purchase CTA before the image.
+       Keep the image ahead of the product title and description. */
     .en-product-header{
 
         display:grid;
@@ -651,23 +651,39 @@
 
     }
 
-    /* Let the content children participate in the header grid so they
-       can be ordered independently without changing the HTML or links. */
+    /* Allow CTA and image to be ordered independently while preserving
+       the existing content and markup. */
     .en-product-content{
 
         display:contents;
 
     }
 
-    .en-product-badges{
+    .en-product-cta{
 
         order:1;
 
     }
 
-    .en-product-title{
+    .en-product-image{
 
         order:2;
+
+        flex:none;
+
+        width:100%;
+
+    }
+
+    .en-product-badges{
+
+        order:3;
+
+    }
+
+    .en-product-title{
+
+        order:4;
 
         font-size:1.6rem;
 
@@ -675,29 +691,13 @@
 
     .en-product-manufacturer{
 
-        order:3;
+        order:5;
 
     }
 
     .en-product-description{
 
-        order:4;
-
-    }
-
-    .en-product-cta{
-
-        order:5;
-
-    }
-
-    .en-product-image{
-
         order:6;
-
-        flex:none;
-
-        width:100%;
 
     }
 
