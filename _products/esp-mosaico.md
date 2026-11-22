@@ -4,7 +4,7 @@ internal_links: true
 title: "ESP-Mosaico (ESP32-S31)"
 product_verdict: "A distinctive development kit for experimenting with display-based interaction, sensors, audio, modular hardware and AI-assisted coding. Its appeal depends on whether you want the integrated hardware and modular workflow; confirm the exact kit contents, revision and delivered cost before ordering."
 seo_title: "ESP-Mosaico ESP32-S31: Specs & Where to Buy"
-seo_description: "Explore ESP-Mosaico ESP32-S31 specs, modular hardware, Waveshare alternatives and where to buy. Check the AliExpress listing for current availability and kit options."
+seo_description: "Explore ESP-Mosaico ESP32-S31 specs, modular hardware, Waveshare alternatives and where to buy from the official store or AliExpress."
 product_id: esp-mosaico
 category: Displays
 manufacturer: "Espressif"
@@ -182,9 +182,11 @@ See the individual product pages for more details:
 
 ## Where to buy: official ESP-Mosaico vs lower-cost alternatives
 
-For the ESP-Mosaico Vision Combo Kit and its modular accessories, check the AliExpress listing for current availability, kit contents, shipping terms and delivery estimate. Verify that the selected bundle includes the Core Unit, Camera Module and Multi-function Interaction Module if those are the components you need.
+For the ESP-Mosaico Vision Combo Kit and its modular accessories, compare the official store with the AliExpress listing. Check current availability, kit contents, shipping terms and delivery estimates before ordering. The official store currently lists the Vision Combo Kit with the Core Unit v1.2, Camera Module and Interaction Module; confirm the selected option and final checkout details.
 
-<p><a class="btn btn--primary" href="https://s.click.aliexpress.com/e/_c3usb6Xf" target="_blank" rel="nofollow sponsored noopener">Check Price on AliExpress</a></p>
+<p><a class="btn btn--primary" href="https://store.mosaico.ai/products/esp-mosaico" target="_blank" rel="noopener noreferrer">Buy from the Official ESP-Mosaico Store</a></p>
+
+<p><a class="btn btn--inverse" href="https://s.click.aliexpress.com/e/_c3usb6Xf" target="_blank" rel="nofollow sponsored noopener noreferrer">Check Price on AliExpress</a></p>
 
 ### Lower-cost 2.16-inch AMOLED alternatives {#lower-cost-amoled-alternatives}
 
