@@ -159,7 +159,7 @@ Specifications are based on Seeed Studio's product information and hardware docu
 
 The radio hardware is specified for a broad 862–930 MHz range, but that does **not** mean every frequency or preset is legal in every country. The firmware must be configured for the correct regional plan, and local duty-cycle, power and channel rules still apply.
 
-For Portugal and most of Europe, users will generally need the applicable **EU_868** regional configuration. Users in the United States commonly use **US_915**. Always confirm the current rules for your country and the firmware's regional settings before transmitting.
+For Germany, users will generally need the applicable **EU_868** regional configuration. Users in the United States commonly use **US_915**. Always confirm the current rules for your country and the firmware's regional settings before transmitting.
 
 Do not choose a device only because a listing mentions 868 MHz or 915 MHz. Confirm the actual regional configuration, antenna and firmware settings. The hardware frequency range alone is not proof that a particular transmission configuration is compliant.
 
@@ -244,9 +244,9 @@ Yes. The Pro product listings specify an integrated 3.7 V, 2,000 mAh lithium bat
 
 Yes. It uses the L76K multi-GNSS module, which supports GPS, BeiDou, GLONASS and QZSS.
 
-### Which frequency should I use in Portugal?
+### Which frequency should I use in Germany?
 
-Users in Portugal will generally need the applicable EU_868 regional plan. Confirm the current local regulations and select the matching regional setting in the firmware. The hardware's 862–930 MHz range does not make every frequency or power setting legal.
+Users in Germany will generally need the applicable EU_868 regional plan. Confirm the current local regulations and select the matching regional setting in the firmware. The hardware's 862–930 MHz range does not make every frequency or power setting legal.
 
 ### How long does the battery last?
 
