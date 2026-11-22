@@ -1,4 +1,17 @@
-{% if page.product_id == 'guition-esp32-s3-4848s040' %}
+{% if page.product_id == 'esp-mosaico' %}
+  <aside class="en-sticky-affiliate" data-sticky-affiliate aria-label="{% if site.active_lang == 'pt' %}Compra do produto{% elsif site.active_lang == 'fr' %}Acheter ce produit{% elsif site.active_lang == 'de' %}Produkt kaufen{% elsif site.active_lang == 'es' %}Comprar este producto{% elsif site.active_lang == 'it' %}Acquista questo prodotto{% elsif site.active_lang == 'nl' %}Koop dit product{% elsif site.active_lang == 'pl' %}Kup ten produkt{% else %}Product purchase{% endif %}" aria-hidden="true">
+    <div class="en-sticky-affiliate__product">
+      <strong>{{ page.title | escape }}</strong>
+    </div>
+    <a class="en-sticky-affiliate__button"
+       href="https://store.mosaico.ai/products/esp-mosaico"
+       target="_blank"
+       rel="noopener noreferrer">
+      {% if site.active_lang == 'pt' %}Loja oficial{% elsif site.active_lang == 'fr' %}Boutique officielle{% elsif site.active_lang == 'de' %}Offizieller Shop{% elsif site.active_lang == 'es' %}Tienda oficial{% elsif site.active_lang == 'it' %}Negozio ufficiale{% elsif site.active_lang == 'nl' %}Officiële winkel{% elsif site.active_lang == 'pl' %}Oficjalny sklep{% else %}Official Store{% endif %} <span aria-hidden="true">›</span>
+    </a>
+  </aside>
+  <script src="{{ '/assets/js/sticky-affiliate-bar.js' | relative_url }}" defer></script>
+{% elsif page.product_id == 'guition-esp32-s3-4848s040' %}
   <aside class="en-sticky-affiliate" data-sticky-affiliate aria-label="{% if site.active_lang == 'pt' %}Compra do produto{% elsif site.active_lang == 'fr' %}Acheter ce produit{% elsif site.active_lang == 'de' %}Produkt kaufen{% elsif site.active_lang == 'es' %}Comprar este producto{% elsif site.active_lang == 'it' %}Acquista questo prodotto{% elsif site.active_lang == 'nl' %}Koop dit product{% elsif site.active_lang == 'pl' %}Kup ten produkt{% else %}Product purchase{% endif %}" aria-hidden="true">
     <div class="en-sticky-affiliate__product">
       <strong>{{ page.title | escape }}</strong>
