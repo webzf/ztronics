@@ -4,7 +4,7 @@ internal_links: false
 title: "M5Stack Cardputer-Adv: ESP32-S3 Specs, Kits & Buying Guide"
 product_verdict: "A capable pocket-sized ESP32-S3 development platform with an integrated keyboard, display, audio, IMU and expansion bus. Best for portable tools and experimentation; the small screen, compact keyboard and separate radio Caps define its limits."
 editorial_review:
-  rating: 8.8
+  rating: 9.5
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
