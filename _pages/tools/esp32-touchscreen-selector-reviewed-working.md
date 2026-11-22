@@ -42,6 +42,13 @@ tags:
   - I2C
   - Electronics
 ---
+<section class="selector-seo-intro" aria-labelledby="selector-seo-title">
+<h2 id="selector-seo-title">Compare ESP32 Display Boards and Touchscreens</h2>
+<p>Looking for an <strong>ESP32 display</strong> or an <strong>ESP32 touchscreen</strong> for your next project? This selector helps you compare development boards and display modules by screen size, resolution, display technology, touch support, ESP32 family and hardware requirements.</p>
+<p>Compare compact SPI TFT modules, ESP32-S3 touchscreen boards, AMOLED displays and larger RGB or MIPI-DSI panels. Check the display and touch interfaces separately, then narrow the options by PSRAM, Flash, available GPIO, LVGL support, USB, battery and other onboard features.</p>
+<p>Start with the interactive filters below, or explore popular hardware: <a href="/products/guition-esp32-s3-4848s040/">Guition ESP32-S3 4-inch touchscreen</a>, <a href="/products/sunton-esp32-8048s043c/">Sunton 4.3-inch ESP32-S3 display</a>, <a href="/products/waveshare-esp32-s3-touch-lcd-4-3/">Waveshare 4.3-inch ESP32 touchscreen</a> and <a href="/products/esp32-2432s028-2-8-cyd/">ESP32-2432S028 CYD</a>. For help choosing a screen, read the <a href="/esp32-touchscreen-displays-guide/">ESP32 touchscreen displays guide</a>.</p>
+</section>
+
 <link rel="stylesheet" href="/assets/tools/esp32-touchscreen-selector/selector.css?v=20261012b">
 
 <div class="selector-app-shell">
