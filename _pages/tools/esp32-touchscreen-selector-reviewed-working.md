@@ -148,9 +148,9 @@ tags:
 <script src="/assets/tools/esp32-touchscreen-selector/project-recommendations.js?v=20261012" defer></script>
 <script src="/assets/tools/esp32-touchscreen-selector/selector.js?v=20261024b" defer></script>
 
-## Popular ESP32 touchscreen boards compared
+## Popular ESP32 boards and display modules compared
 
-The selector helps narrow the catalog, but sometimes it is easier to start by comparing a few well-known boards. These examples cover different screen sizes, display technologies and project needs. They are not interchangeable: check the exact board revision and seller variant before ordering.
+The selector helps narrow the catalog, but sometimes it is easier to start by comparing a few well-known products. These examples cover different screen sizes, display technologies and project needs. They are not interchangeable: check the exact board revision and seller variant before ordering.
 
 | Board | Display | Touch | A good fit for |
 |---|---|---|---|
@@ -166,7 +166,7 @@ For a Home Assistant wall panel, start with the [Guition 4848S040 guide](/guitio
 
 ## Hardware currently covered by the selector
 
-The interactive catalog currently covers 14 ESP32 hardware entries: 12 boards with integrated displays and 2 standalone display modules. The linked product pages provide detailed specifications, documentation and available purchasing options.
+The interactive catalog currently covers 14 ESP32 hardware entries: 12 boards with integrated displays and 2 standalone display modules. The comparison table above also includes two wider-catalogue examples (Guition JC8048W550 and ESP-Mosaico) that are not yet available as selector results. The linked product pages provide detailed specifications, documentation and available purchasing options.
 
 <div class="selector-catalog-links">
 <ul>
