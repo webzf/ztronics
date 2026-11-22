@@ -27,13 +27,6 @@ product_id: seeed-wio-tracker-l1-pro
 category: IoT & Wireless
 manufacturer: "Seeed Studio"
 
-image: "/assets/images/products/seeed-wio-tracker-l1-pro.webp"
-header:
-  teaser: "/assets/images/products/seeed-wio-tracker-l1-pro.webp"
-  og_image: "/assets/images/products/seeed-wio-tracker-l1-pro.webp"
-  og_image_alt: "Seeed Studio Wio Tracker L1 Pro handheld LoRa tracker with OLED display and antenna"
-alt: "Seeed Studio Wio Tracker L1 Pro handheld LoRa tracker"
-
 excerpt: "Seeed Studio Wio Tracker L1 Pro with nRF52840, SX1262 LoRa, L76K GNSS, 1.3-inch OLED and integrated 2,000 mAh battery."
 
 description: "A ready-to-use handheld LoRa tracker with nRF52840, SX1262 radio, multi-GNSS, OLED display, Bluetooth 5.0 and a 2,000 mAh battery. Available from Seeed with Meshtastic or MeshCore Companion firmware."
