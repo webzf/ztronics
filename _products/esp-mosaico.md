@@ -3,6 +3,29 @@ layout: product
 internal_links: true
 title: "ESP-Mosaico (ESP32-S31)"
 product_verdict: "A distinctive development kit for experimenting with display-based interaction, sensors, audio, modular hardware and AI-assisted coding. Its appeal depends on whether you want the integrated hardware and modular workflow; confirm the exact kit contents, revision and delivered cost before ordering."
+editorial_review:
+  rating: 9.5
+  best_rating: 10
+  worst_rating: 1
+  author: "Embedded Nerd"
+  summary: "ESP-Mosaico combines the ESP32-S31 with a 2.16-inch 480×480 AMOLED touchscreen, onboard motion and magnetic sensors, audio hardware, substantial local storage and dual expansion headers. Its modular design and AI-assisted development workflow make it an unusually capable platform for interactive hardware experiments. The score reflects its documented feature set and potential, not hands-on testing."
+  methodology: "This editorial assessment is based on published Espressif specifications and documentation. Embedded Nerd has not physically tested this board."
+  pros:
+    - "Integrated 2.16-inch 480×480 AMOLED touchscreen with touch input"
+    - "ESP32-S31 with Wi-Fi 6, Bluetooth 5.4 and IEEE 802.15.4"
+    - "Onboard IMU, dual magnetometers, audio hardware and 128 MB SPI NAND storage"
+    - "Two expansion headers and a modular ecosystem for adding hardware"
+  cons:
+    - "The 65 mAh onboard battery is small and does not imply long standalone runtime"
+    - "The specialised ESP32-S31 platform and AI-assisted workflow may involve a learning curve"
+    - "Expansion modules have compatibility and placement restrictions; the camera module uses the left slot only"
+schema_offer:
+  price: "59.00"
+  currency: "USD"
+  url: "https://store.mosaico.ai/products/esp-mosaico"
+  availability: "https://schema.org/PreOrder"
+  name: "Vision Combo Kit (Core Unit v1.2 + Camera Module + Interaction Module)"
+
 seo_title: "ESP-Mosaico ESP32-S31: Specs & Where to Buy"
 seo_description: "Explore ESP-Mosaico ESP32-S31 specs, modular hardware, Waveshare alternatives and where to buy from the official store or AliExpress."
 product_id: esp-mosaico
@@ -183,6 +206,8 @@ See the individual product pages for more details:
 ## Where to buy: official ESP-Mosaico vs lower-cost alternatives
 
 For the ESP-Mosaico Vision Combo Kit and its modular accessories, compare the official store with the AliExpress listing. Check current availability, kit contents, shipping terms and delivery estimates before ordering. The official store currently lists the Vision Combo Kit with the Core Unit v1.2, Camera Module and Interaction Module; confirm the selected option and final checkout details.
+
+<p><strong>Official store price: US$59.00</strong> for the Vision Combo Kit (Core Unit v1.2, Camera Module and Interaction Module). The listing is currently marked as pre-order; shipping, taxes and final availability should be confirmed at checkout. Prices and dispatch estimates may change.</p>
 
 <p><a class="btn btn--primary" href="https://store.mosaico.ai/products/esp-mosaico" target="_blank" rel="noopener noreferrer">Buy from the Official ESP-Mosaico Store</a></p>
 
