@@ -79,10 +79,6 @@ links:
     icon: "fas fa-book"
     description: "M5Stack's step-by-step firmware, assembly and first-start instructions."
     url: "https://docs.m5stack.com/en/guide/cardputer_mesh_kit/meshtastic"
-  - title: "M5Stack official product listing"
-    icon: "fas fa-shopping-cart"
-    description: "Manufacturer store listing for the complete Cardputer Mesh Kit."
-    url: "https://shop.m5stack.com/products/cardputer-mesh-kit-for-meshtastic-esp32-s3"
 related:
   - m5stack-cardputer-adv
 ---
@@ -208,8 +204,6 @@ The safest way to identify the correct bundle is to check that the listing expli
 2. Cap LoRa-1262 expansion module
 3. LoRa antenna with RP-SMA connector
 
-[Check the official M5Stack Cardputer Mesh Kit listing](https://shop.m5stack.com/products/cardputer-mesh-kit-for-meshtastic-esp32-s3)
-
 [**Buy the M5Stack Cardputer Mesh Kit on AliExpress**](/go/hardware/m5stack-cardputer-mesh-kit/). The linked listing was confirmed as the Cardputer-Adv + Cap LoRa-1262 bundle. Check the selected option and package contents before checkout.
 
 As an affiliate, Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you.
@@ -248,6 +242,5 @@ Do not assume official MeshCore certification or out-of-the-box support. Meshtas
 
 - [M5Stack Cardputer Mesh Kit hardware documentation](https://docs.m5stack.com/en/core/Cardputer_Mesh_Kit)
 - [M5Stack Meshtastic setup guide](https://docs.m5stack.com/en/guide/cardputer_mesh_kit/meshtastic)
-- [M5Stack official store listing](https://shop.m5stack.com/products/cardputer-mesh-kit-for-meshtastic-esp32-s3)
 
 *Editorial note: This is a documentation-based product overview, not a hands-on review. Specifications and package contents should be checked against the exact seller listing and hardware revision.*
