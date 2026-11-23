@@ -79,14 +79,6 @@ links:
     icon: "fas fa-book"
     description: "Official specifications, pin map, schematics and development guides."
     url: "https://docs.m5stack.com/en/core/Cardputer-Adv"
-  - title: "M5Stack Cardputer-Adv official store listing"
-    icon: "fas fa-shopping-cart"
-    description: "Manufacturer listing for the standalone Cardputer-Adv (SKU K132-ADV)."
-    url: "https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3"
-  - title: "M5Stack Cardputer-Adv accessories"
-    icon: "fas fa-puzzle-piece"
-    description: "Official collection of Caps and accessories designed for the Cardputer-Adv."
-    url: "https://shop.m5stack.com/collections/for-cardputer-adv"
 related:
   - m5stack-cardputer-mesh-kit
 ---
@@ -105,10 +97,6 @@ The standalone Cardputer-Adv does **not** include a LoRa radio. For LoRa or Mesh
 ![M5Stack Cardputer-Adv dimensions: 84 × 54 × 19.6 mm](/assets/images/products/cardputer-adv-dimensions.webp)
 
 ## M5Stack Cardputer-Adv price and where to buy
-
-The official M5Stack store lists the Cardputer-Adv at **US$29.90** at the time this page was prepared. Treat this as a reference price, not a guaranteed checkout price: shipping, tax, promotions and regional availability can change the total.
-
-[Check the official M5Stack Cardputer-Adv listing](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3)
 
 Embedded Nerd will add marketplace purchase buttons when the exact Cardputer-Adv-only listings and affiliate destinations have been verified. Make sure a listing is for the standalone ADV if that is what you intend to buy; bundles with LoRa Caps are different products.
 
@@ -200,8 +188,6 @@ This Cap adds a CC1101 sub-GHz transceiver and NFC functionality. It is intended
 
 A small carry case can help protect the keyboard and screen when the Cardputer is in a bag. It is an optional convenience accessory rather than a requirement for operation.
 
-For current Caps and accessory availability, see [M5Stack's official Cardputer-Adv accessories collection](https://shop.m5stack.com/collections/for-cardputer-adv).
-
 ## What can you build with the Cardputer-Adv?
 
 - **Portable ESP32 tools:** combine the keyboard, screen and buttons into a self-contained diagnostic or control interface.
@@ -256,10 +242,6 @@ M5Stack lists Arduino, UiFlow2, ESP-IDF and PlatformIO as development options. S
 
 Compatibility depends on how each app uses the hardware. Apps that rely on the original audio components, keyboard scanning or GPIO assignments may need changes. Check the individual project's supported devices and ADV-specific releases rather than assuming every original app works unchanged.
 
-### How much does the Cardputer-Adv cost?
-
-The official M5Stack store listing showed **US$29.90** when this page was prepared. The price can change and does not necessarily include shipping, VAT or import charges. Check the seller's final checkout price for your country.
-
 ## Related product
 
 If you specifically want LoRa, GNSS and Meshtastic in a matched bundle, read the [M5Stack Cardputer Mesh Kit guide](/products/m5stack-cardputer-mesh-kit/).
@@ -267,8 +249,6 @@ If you specifically want LoRa, GNSS and Meshtastic in a matched bundle, read the
 ## Sources and verification
 
 - [M5Stack Cardputer-Adv documentation](https://docs.m5stack.com/en/core/Cardputer-Adv)
-- [M5Stack Cardputer-Adv official store listing](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3)
-- [M5Stack Cardputer-Adv accessories](https://shop.m5stack.com/collections/for-cardputer-adv)
 - [M5Stack Cardputer-Adv launch article](https://shop.m5stack.com/blogs/news/m5stack-launches-cardputer-adv-upgraded-card-sized-computer-for-rapid-iot-development)
 
 *Editorial note: This is a documentation-based product guide, not a hands-on review. Prices, availability, accessory compatibility and hardware revisions can change; verify the exact seller listing before ordering.*
