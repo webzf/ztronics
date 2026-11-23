@@ -23,7 +23,7 @@ sitemap: false
     <h1>Where to Buy {{ product.title }}</h1>
     {% if preferred.enabled and destination %}
     <p>Redirecting you to the official Seeed Studio product page…</p>
-    <p><a href="{{ destination }}" rel="noopener noreferrer">Continue to Seeed Studio</a></p>
+    <p><a href="{{ destination }}" rel="{% if preferred.affiliate_url %}nofollow sponsored noopener{% else %}noopener noreferrer{% endif %}">Continue to Seeed Studio</a></p>
     <script>window.location.replace({{ destination | jsonify }});</script>
     {% else %}
     <p>The official product link is not currently available.</p>
