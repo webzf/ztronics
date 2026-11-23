@@ -26,8 +26,8 @@ schema_offer:
   availability: "https://schema.org/PreOrder"
   name: "Vision Combo Kit (Core Unit v1.2 + Camera Module + Interaction Module)"
 
-seo_title: "ESP-Mosaico ESP32-S31: Specs & Where to Buy"
-seo_description: "Explore ESP-Mosaico ESP32-S31 specs, modular hardware, Waveshare alternatives and where to buy from the official store or AliExpress."
+seo_title: "ESP-Mosaico Price & Where to Buy (ESP32-S31)"
+seo_description: "Check the ESP-Mosaico price, Vision Combo Kit contents and where to buy. Compare the ESP32-S31 board with lower-cost AMOLED alternatives before ordering."
 product_id: esp-mosaico
 category: Displays
 manufacturer: "Espressif"
@@ -203,15 +203,21 @@ See the individual product pages for more details:
 - [Waveshare ESP32-S3-Touch-AMOLED-2.16](/products/waveshare-esp32-s3-touch-amoled-2-16/)
 - [Waveshare ESP32-C6-Touch-AMOLED-2.16 product page](/products/waveshare-esp32-c6-touch-amoled-2-16/)
 
-## Where to buy: official ESP-Mosaico vs lower-cost alternatives
+## ESP-Mosaico price and where to buy
 
-For the ESP-Mosaico Vision Combo Kit and its modular accessories, compare the official store with the AliExpress listing. Check current availability, kit contents, shipping terms and delivery estimates before ordering. The official store currently lists the Vision Combo Kit with the Core Unit v1.2, Camera Module and Interaction Module; confirm the selected option and final checkout details.
+If you are checking the **ESP-Mosaico price** or looking for where to buy the ESP32-S31 development kit, start by comparing the exact bundle rather than the headline price alone. The official store lists the **Vision Combo Kit** with the **Core Unit v1.2, Camera Module and Interaction Module**. The price shown for this bundle is **US$59.00**.
 
-<p><strong>Official store price: US$59.00</strong> for the Vision Combo Kit (Core Unit v1.2, Camera Module and Interaction Module). The listing is currently marked as pre-order; shipping, taxes and final availability should be confirmed at checkout. Prices and dispatch estimates may change.</p>
+The official listing is marked as **pre-order**. Treat US$59.00 as the listed kit price, not a guaranteed delivered price: shipping, taxes, dispatch estimates and stock status can change and should be checked at checkout. Also confirm that the selected option is the Vision Combo Kit, since accessory bundles and standalone modules are not equivalent.
 
-<p><a class="btn btn--primary" href="https://store.mosaico.ai/products/esp-mosaico" target="_blank" rel="noopener noreferrer">Buy from the Official ESP-Mosaico Store</a></p>
+<p><strong>ESP-Mosaico Vision Combo Kit: US$59.00 (official store listing)</strong><br>Includes Core Unit v1.2, Camera Module and Interaction Module. Listed as pre-order; final delivery cost and availability are confirmed by the store at checkout.</p>
 
-<p><a class="btn btn--inverse" href="https://s.click.aliexpress.com/e/_c3usb6Xf" target="_blank" rel="nofollow sponsored noopener noreferrer">Check Price on AliExpress</a></p>
+<p><a class="btn btn--primary" href="https://store.mosaico.ai/products/esp-mosaico" target="_blank" rel="noopener noreferrer">Buy ESP-Mosaico — Official Store</a></p>
+
+<p><a class="btn btn--inverse" href="https://s.click.aliexpress.com/e/_c3usb6Xf" target="_blank" rel="nofollow sponsored noopener noreferrer">Compare ESP-Mosaico Price on AliExpress</a></p>
+
+The AliExpress link may show a different seller, price or bundle. Check the listing's selected variant, included modules, seller details, shipping and taxes before comparing it with the official Vision Combo Kit. Do not assume that an AliExpress offer includes all three components.
+
+If the ESP-Mosaico is outside your budget, compare the [Waveshare ESP32-S3 AMOLED 2.16-inch](/products/waveshare-esp32-s3-touch-amoled-2-16/) and [Waveshare ESP32-C6 AMOLED 2.16-inch](/products/waveshare-esp32-c6-touch-amoled-2-16/) boards. They share the same display size and resolution, but use different processors, memory configurations and expansion approaches.
 
 ### Lower-cost 2.16-inch AMOLED alternatives {#lower-cost-amoled-alternatives}
 
