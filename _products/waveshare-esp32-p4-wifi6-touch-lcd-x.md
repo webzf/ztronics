@@ -177,7 +177,7 @@ If you specifically need a landscape 1024 × 600 7-inch display, see the separat
 
 ## Price and where to buy
 
-- **[View the AliExpress offer](https://s.click.aliexpress.com/e/_c3Bms5Dz)** — select 7-inch, 8-inch or 10.1-inch, with or without battery.
+- **[View the AliExpress offer](https://s.click.aliexpress.com/e/_c3Bms5Dz){: rel="sponsored nofollow noopener" target="_blank" }** — select 7-inch, 8-inch or 10.1-inch, with or without battery.
 - **[Read the official documentation](https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-X)** — confirm the exact SKU and setup requirements.
 - **[Browse the manufacturer's example code](https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-X)** — review the current development examples.
 
