@@ -4551,10 +4551,10 @@ Below are the parts we recommend for this project.
 
 | Product | Why We Recommend It | Buy |
 |----------|---------------------|-----|
-| [ESP32 DevKit V1](/products/esp32-devkit/) | Powerful Wi-Fi and Bluetooth microcontroller with a 240 MHz dual-core CPU | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c4n38hZ9) |
-| [KY-023 Analog Joystick](/products/ky-023-analog-joystick/) | Low-cost analog joystick with two potentiometers and a push button | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c3jqbrz5) |
+| [ESP32 DevKit V1](/products/esp32-devkit/) | Powerful Wi-Fi and Bluetooth microcontroller with a 240 MHz dual-core CPU | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c4n38hZ9){: rel="sponsored nofollow noopener" } |
+| [KY-023 Analog Joystick](/products/ky-023-analog-joystick/) | Low-cost analog joystick with two potentiometers and a push button | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c3jqbrz5){: rel="sponsored nofollow noopener" } |
 | [SG90 Micro Servo](/products/sg90-micro-servo/) | Ideal for learning motion control and robotics | — |
-| [SSD1306 OLED Display](/products/ssd1306-oled/) | Perfect for menus, sensors, and user interfaces | [🛒 AliExpress](https://s.click.aliexpress.com/e/_EIt4LOO) |
+| [SSD1306 OLED Display](/products/ssd1306-oled/) | Perfect for menus, sensors, and user interfaces | [🛒 AliExpress](https://s.click.aliexpress.com/e/_EIt4LOO){: rel="sponsored nofollow noopener" } |
 | [L298N Motor Driver](/products/l298n-motor-driver/) | Beginner-friendly H-bridge for DC motors | — |
 | [TB6612FNG Motor Driver](/products/tb6612fng-motor-driver/) | More efficient alternative to the L298N | — |
 | [Solderless Breadboard](/products/solderless-breadboard/) | Reusable prototyping platform | — |
