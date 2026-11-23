@@ -1116,3 +1116,8 @@ text-decoration:none;
 @media (max-width: 900px) {
   .en-product-cta__buttons { grid-template-columns: 1fr; }
 }
+
+/* Desktop CTA spacing: override the shared base margin above the card title. */
+@media (min-width:769px){
+  .en-product-cta{ margin-top:0; }
+}
