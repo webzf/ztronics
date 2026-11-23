@@ -4,7 +4,7 @@ internal_links: true
 title: "Seeed Wio Tracker L1 Pro: Meshtastic & MeshCore LoRa GPS Tracker"
 product_verdict: "A ready-to-use handheld LoRa companion with GNSS, OLED and a 2,000 mAh battery; choose the correct factory firmware and regional radio settings before buying."
 editorial_review:
-  rating: 7.1
+  rating: 8.1
   best_rating: 10
   worst_rating: 1
   author: "Embedded Nerd"
