@@ -106,11 +106,33 @@ related:
 
 available_languages: [en]
 english_url: /products/seeed-wio-tracker-l1-pro/
+image: "/assets/images/products/seeed-wio-tracker-l1-pro-meshcore.webp"
+header:
+  teaser: "/assets/images/products/seeed-wio-tracker-l1-pro-meshcore.webp"
+  og_image: "/assets/images/products/seeed-wio-tracker-l1-pro-meshcore.webp"
+  og_image_alt: "Seeed Wio Tracker L1 Pro MeshCore handheld LoRa tracker with antenna and OLED display"
+alt: "Seeed Wio Tracker L1 Pro handheld LoRa GPS tracker"
+
 ---
 
 The **Seeed Studio Wio Tracker L1 Pro** is a handheld LoRa device for off-grid messaging and location sharing. It combines a Nordic nRF52840 microcontroller, an SX1262-based LoRa radio, an L76K multi-GNSS receiver, a 1.3-inch OLED and an integrated 2,000 mAh battery inside a ready-to-use enclosure.
 
 Seeed sells two factory firmware editions: **Meshtastic** and **MeshCore Companion**. The hardware platform is closely related, but the two editions connect to different mesh ecosystems. Choose the version that matches the network you intend to use.
+
+
+## Product photos
+
+The gallery below shows the MeshCore and Meshtastic editions, enclosure details and the advertised hardware features.
+
+![Seeed Wio Tracker L1 Pro MeshCore edition with antenna and OLED display](/assets/images/products/seeed-wio-tracker-l1-pro-meshcore.webp)
+
+![Seeed Wio Tracker L1 Pro MeshCore product features: LoRa, OLED, GNSS and 2,000 mAh battery](/assets/images/products/seeed-wio-tracker-l1-pro-meshcore-features.webp)
+
+![Seeed Wio Tracker L1 Pro enclosure and OLED close-up](/assets/images/products/seeed-wio-tracker-l1-pro-device-details.webp)
+
+![Seeed Wio Tracker L1 Pro Meshtastic edition](/assets/images/products/seeed-wio-tracker-l1-pro-meshtastic.webp)
+
+![Seeed Wio Tracker L1 Pro PWRD edition product features](/assets/images/products/seeed-wio-tracker-l1-pro-pwrd-features.webp)
 
 <span id="choose-your-firmware"></span>
 
