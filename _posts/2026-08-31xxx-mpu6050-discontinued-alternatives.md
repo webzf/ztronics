@@ -553,9 +553,9 @@ In most cases, an MPU6050 replacement is a **design migration**, not a component
 
 | Component | Recommended Product | Buy |
 |---|---|---|
-| MPU6050 Accelerometer & Gyroscope (legacy/prototyping) | [**MPU6050 Accelerometer & Gyroscope**](/products/mpu6050/) | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c2uAjJYP) |
-| BMA400 Accelerometer Module (low-power, accel-only) | [**BMA400 Accelerometer Module**](/products/bma400/) | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c3RBiLUT) |
-| ESP32 Development Board | [**ESP32 DevKit V1**](/products/esp32-devkit/) | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c4n38hZ9) |
+| MPU6050 Accelerometer & Gyroscope (legacy/prototyping) | [**MPU6050 Accelerometer & Gyroscope**](/products/mpu6050/) | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c2uAjJYP){: rel="sponsored nofollow noopener" } |
+| BMA400 Accelerometer Module (low-power, accel-only) | [**BMA400 Accelerometer Module**](/products/bma400/) | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c3RBiLUT){: rel="sponsored nofollow noopener" } |
+| ESP32 Development Board | [**ESP32 DevKit V1**](/products/esp32-devkit/) | [🛒 AliExpress](https://s.click.aliexpress.com/e/_c4n38hZ9){: rel="sponsored nofollow noopener" } |
 
 ICM-42670-P and ICM-42688-P breakout board recommendations can be added once verified product listings are available on Embedded Nerd.
 
