@@ -95,14 +95,6 @@ links:
     icon: "fas fa-book"
     description: "Official specifications, pin map, schematics and development guides."
     url: "https://docs.m5stack.com/en/core/Cardputer-Adv"
-  - title: "M5Stack Cardputer-Adv official store listing"
-    icon: "fas fa-shopping-cart"
-    description: "Manufacturer listing for the standalone Cardputer-Adv (SKU K132-ADV)."
-    url: "https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3"
-  - title: "M5Stack Cardputer-Adv accessories"
-    icon: "fas fa-puzzle-piece"
-    description: "Official collection of Caps and accessories designed for the Cardputer-Adv."
-    url: "https://shop.m5stack.com/collections/for-cardputer-adv"
 related:
   - m5stack-cardputer-mesh-kit
 ---
@@ -122,9 +114,7 @@ The standalone Cardputer-Adv does **not** include a LoRa radio. For LoRa or Mesh
 
 ## Where to buy the M5Stack Cardputer-Adv
 
-[Check the official M5Stack Cardputer-Adv listing](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3)
-
-The AliExpress button links to the affiliate offer supplied for this product. Before checkout, confirm that the selected option is the **standalone Cardputer-Adv** and not a bundle with the Cap LoRa-1262 or the complete Cardputer Mesh Kit.
+The AliExpress purchase button links to the affiliate offer supplied for this product. Before checkout, confirm that the selected option is the **standalone Cardputer-Adv** and not a bundle with the Cap LoRa-1262 or the complete Cardputer Mesh Kit.
 
 *Affiliate disclosure: some links on this page may be affiliate links. If you buy through them, Embedded Nerd may earn a commission at no extra cost to you.*
 
@@ -277,8 +267,6 @@ If you specifically want LoRa, GNSS and Meshtastic in a matched bundle, read the
 ## Sources and verification
 
 - [M5Stack Cardputer-Adv documentation](https://docs.m5stack.com/en/core/Cardputer-Adv)
-- [M5Stack Cardputer-Adv official store listing](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3)
-- [M5Stack Cardputer-Adv accessories](https://shop.m5stack.com/collections/for-cardputer-adv)
 - [M5Stack Cardputer-Adv launch article](https://shop.m5stack.com/blogs/news/m5stack-launches-cardputer-adv-upgraded-card-sized-computer-for-rapid-iot-development)
 
 *Editorial note: This is a documentation-based product guide, not a hands-on review. Product images are supplied listing/manufacturer visuals, not photographs taken during an Embedded Nerd hands-on test. Prices, availability, accessory compatibility and hardware revisions can change; verify the exact seller option before ordering.*
