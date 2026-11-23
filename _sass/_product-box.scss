@@ -634,6 +634,40 @@
 }
 
 /* =====================================================
+   Desktop: place the purchase CTA above the product title
+   ===================================================== */
+
+@media (min-width:769px){
+
+    .en-product-content{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .en-product-cta{
+        order:1;
+        margin:0 0 1.25rem;
+    }
+
+    .en-product-badges{
+        order:2;
+    }
+
+    .en-product-title{
+        order:3;
+    }
+
+    .en-product-manufacturer{
+        order:4;
+    }
+
+    .en-product-description{
+        order:5;
+    }
+
+}
+
+/* =====================================================
    Mobile
 ===================================================== */
 
