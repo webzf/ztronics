@@ -215,7 +215,7 @@ Use the Arduino IDE with the Arduino ESP32 board package for the simplest setup 
 
 The price of the Arduino Nano ESP32 varies by country, seller, shipping and stock. Rather than quoting a price that can quickly become outdated, check the current listing and the final delivered cost before buying.
 
-**Check current availability and price:** [View the Arduino Nano ESP32 on Amazon](https://www.amazon.com/dp/B0C947BHK5?tag=embeddednerd2-20)
+**Check current availability and price:** [View the Arduino Nano ESP32 on Amazon](https://www.amazon.com/dp/B0C947BHK5?tag=embeddednerd2-20){: target="_blank" rel="nofollow sponsored noopener"}
 
 Before ordering, confirm that the listing is for the **Arduino Nano ESP32 (ABX00083)**, check whether headers are included or already soldered, and review the seller, delivery estimate and return policy. Marketplace listings may include compatible alternatives, so verify the manufacturer and model number if you specifically want the official Arduino board.
 
