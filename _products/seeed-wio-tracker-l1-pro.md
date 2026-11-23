@@ -9,7 +9,7 @@ editorial_review:
   worst_rating: 1
   author: "Embedded Nerd"
   summary: "The Seeed Wio Tracker L1 Pro combines a Nordic nRF52840, SX1262-based LoRa radio, L76K multi-GNSS, a 1.3-inch OLED, four-way controls and an integrated 2,000 mAh battery in a ready-to-use enclosure. Its strongest points are the practical handheld format, broad community interest around Meshtastic and MeshCore, and official Seeed purchase options for both firmware editions. Buyers still need to pay attention to firmware ecosystem, regional frequency configuration and the exact factory variant."
-  methodology: "This editorial assessment is based on published Seeed Studio specifications, firmware documentation and available community information. Embedded Nerd has not physically tested the specific device or either seller listing. Commercial scores are editorial estimates, not measured conversion or sales data."
+  methodology: "This editorial assessment is based on published Seeed Studio specifications, firmware documentation and available community information. Embedded Nerd has not physically tested the specific device or either seller listing."
   pros:
     - "Integrated 2,000 mAh battery, enclosure, antenna, OLED and GNSS make it usable without assembling a separate node"
     - "nRF52840 and SX1262-based LoRa hardware support low-power off-grid messaging"
@@ -222,24 +222,6 @@ The two official Seeed listings below make the factory firmware choice explicit.
 Prices, promotions, stock, shipping and import charges can change by destination and checkout date. Confirm the selected firmware edition, regional suitability and final delivered price on the Seeed product page before ordering.
 
 As an affiliate, Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you.
-
-## Commercial opportunity snapshot
-
-The initial Embedded Nerd product research scored this opportunity as follows. These are internal editorial estimates, not independently measured sales or conversion metrics.
-
-| Factor | Score |
-|---|---:|
-| Search demand | 8.5 / 10 |
-| Community interest | 8 / 10 |
-| Affiliate commission potential | 5 / 10 |
-| SEO opportunity | 6 / 10 |
-| Advertising potential | 8 / 10 |
-| Content potential | 6 / 10 |
-| **Overall opportunity** | **7.1 / 10** |
-
-The initial commission estimate is approximately **US$2.40–3.30 per qualifying sale**, subject to the actual affiliate rate, order value, attribution and programme terms. The Seeed affiliate terms and any product-specific coupon arrangement should be confirmed before treating this estimate as guaranteed revenue.
-
-Marketplace research also found listings reporting more than 4,000 sales and ratings around 4.8–4.9 stars. These are listing-level signals and can change; they should not be interpreted as verified sales figures for every regional variant or firmware edition.
 
 ## FAQ
 
