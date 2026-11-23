@@ -211,7 +211,7 @@ The official listing is marked as **pre-order**. Treat US$59.00 as the listed ki
 
 <p><strong>ESP-Mosaico Vision Combo Kit: US$59.00 (official store listing)</strong><br>Includes Core Unit v1.2, Camera Module and Interaction Module. Listed as pre-order; final delivery cost and availability are confirmed by the store at checkout.</p>
 
-<p><a class="btn btn--primary" href="https://store.mosaico.ai/products/esp-mosaico" target="_blank" rel="noopener noreferrer">Buy ESP-Mosaico — Official Store</a></p>
+<p><a class="btn btn--primary" href="https://store.mosaico.ai/products/esp-mosaico" target="_blank" rel="nofollow sponsored noopener noreferrer">Buy ESP-Mosaico — Official Store</a></p>
 
 <p><a class="btn btn--inverse" href="https://s.click.aliexpress.com/e/_c3usb6Xf" target="_blank" rel="nofollow sponsored noopener noreferrer">Compare ESP-Mosaico Price on AliExpress</a></p>
 
