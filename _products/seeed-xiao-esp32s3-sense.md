@@ -149,13 +149,9 @@ Seeed reserves D11 and D12 for the microphone by default. Reusing them for other
   </figure>
 </div>
 
-
-
 ## Is the XIAO ESP32S3 Sense Worth Buying?
 
 Choose this board if you want a camera, microphone or SD logging on a board the size of a thumb: a small Wi-Fi camera, a sound or voice project, a wearable or a battery-powered logger. If you only need a small ESP32-S3 without those extras, the plain XIAO ESP32S3 has the same header layout and a much lower deep-sleep current. If you need more GPIOs and 16 MB of Flash, look at the XIAO ESP32-S3 Plus.
-
-
 
 ## XIAO ESP32S3 vs Sense vs Plus: which version should you buy?
 
@@ -169,8 +165,6 @@ Choose this board if you want a camera, microphone or SD logging on a board the 
 | Best fit | Smallest, lowest-power builds | Vision, audio and logging | More pins and Flash |
 
 Prices change by seller, destination, shipping and selected variant. Check the live listing, the included accessories and the camera model before checkout.
-
-
 
 ## XIAO ESP32S3 and Sense pinout: D0–D12 to GPIO {#xiao-esp32s3-sense-pinout-d0d12-to-gpio}
 
@@ -194,8 +188,6 @@ Seeed notes that, although D11 and D12 (GPIO42 and GPIO41) are labelled as analo
 
 Power pins: **5V** is the USB 5 V rail, **3V3** is the regulated 3.3 V output and **GND** is ground. All GPIOs are 3.3 V logic and must not receive 5 V. When the board runs from a battery, the 5V pin has no voltage.
 
-
-
 ## GPIO availability: pins used by the camera, microphone and SD card
 
 According to Seeed's pin map, the camera, microphone and SD card do not overlap with each other, but some of them share GPIOs with the header pins.
@@ -211,15 +203,11 @@ According to Seeed's pin map, the camera, microphone and SD card do not overlap 
 
 If you use the SD card, the user LED on GPIO21 is also the card's chip-select line, and any extra SPI device on D8–D10 shares a bus with the card and needs its own chip-select pin. If you use the microphone, treat D11 and D12 as taken.
 
-
-
 ## Camera, microphone and microSD
 
 The expansion board plugs into a board-to-board connector and carries the camera, the PDM microphone and the microSD slot. Seeed's camera examples support the OV5640, OV3660 and OV2640, so the same sketches work, but only the OV5640 has auto-focus. The OV5640 module is also sold separately as a replacement.
 
 Seeed states that, since June 2025, the factory firmware enables a default Wi-Fi access point with a published name and password. Flash your own firmware before deploying the board where other people can reach it.
-
-
 
 ## Specifications at a glance
 
@@ -241,8 +229,6 @@ Seeed states that, since June 2025, the factory firmware enables a default Wi-Fi
 
 Specifications follow the Seeed Studio Wiki (checked 7 November 2026). Seeed states that the camera is moving from the OV3660 to the OV5640 with auto-focus, and that boards may ship with either during the transition.
 
-
-
 ## Power consumption and battery use
 
 Typical figures published by Seeed for the Sense **with the expansion board attached**:
@@ -257,8 +243,6 @@ Typical figures published by Seeed for the Sense **with the expansion board atta
 | Camera web server (USB) | about 140 mA average, 347 mA peak |
 
 The board can run from a 3.7 V Li-ion battery and charge it over USB-C. Seeed notes that the negative battery pad is the one closest to the USB port, so check polarity before soldering. There is no GPIO dedicated to reading the battery voltage; measuring it needs an external divider on an ADC pin.
-
-
 
 ## Arduino, MicroPython and getting started
 
@@ -289,8 +273,6 @@ Open the Serial Monitor at **115200 baud**. Because GPIO21 is also the SD card c
 
 - [Seeed Studio getting started guide](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/)
 - [Seeed Studio pin multiplexing guide](https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/)
-
-
 
 ## Where to buy
 
@@ -331,8 +313,6 @@ Seeed ships the board without pin headers by default. Check whether the listing 
 ### Does the XIAO ESP32S3 Sense work with MicroPython?
 
 Yes. Seeed documents Arduino and MicroPython for the XIAO ESP32-S3 series. The programming environment does not change the 3.3 V limits or the pin mapping above.
-
-
 
 ## Compare other ESP32 boards
 
