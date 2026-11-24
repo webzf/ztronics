@@ -42,23 +42,23 @@ tags: ["XIAO ESP32S3", "Seeed Studio XIAO", ESP32, ESP32-S3, "ESP32-S3 pinout", 
 permalink: /products/seeed-xiao-esp32s3/
 specifications:
   - name: Processeur
-    value: "ESP32-S3R8, dual-core 32-bit Xtensa LX7, up to 240 MHz"
+    value: "ESP32-S3R8, double cœur Xtensa LX7 32 bits, jusqu’à 240 MHz"
   - name: Flash
     value: "8 MB"
   - name: PSRAM
     value: "8 MB"
   - name: Connectivité sans fil
-    value: "2.4 GHz Wi-Fi, Bluetooth LE 5.0 and Bluetooth Mesh"
+    value: "Wi-Fi 2,4 GHz, Bluetooth LE 5.0 et Bluetooth Mesh"
   - name: Interfaces
-    value: "1 UART, 1 I²C, 1 SPI, 11 PWM GPIO, 9 ADC channels"
+    value: "1 UART, 1 I²C, 1 SPI, 11 GPIO PWM, 9 canaux ADC"
   - name: USB
     value: "USB Type-C"
   - name: Batterie
-    value: "3.7 V battery input with onboard charging management"
+    value: "Entrée batterie 3,7 V avec gestion de charge intégrée"
   - name: Dimensions
-    value: "21 × 17.8 mm"
+    value: "21 × 17,8 mm"
   - name: Température de fonctionnement
-    value: "−20 °C to 65 °C"
+    value: "−20 °C à 65 °C"
 links:
   - title: "Seeed Studio XIAO ESP32-S3 — guide de démarrage"
     icon: "fas fa-book"
