@@ -134,7 +134,7 @@ La carte comprend également une LED utilisateur, une LED de charge, des boutons
 
 **Attention à l’ADC :** Seeed annonce neuf canaux ADC, mais précise que GPIO41 et GPIO42 (D12 et D11) ne prennent pas en charge l’ADC sur l’ESP32-S3. Pour les mesures analogiques, utilisez D0–D5 et D8–D10.
 
-![Official Seeed Studio XIAO ESP32-S3 pinout diagram](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg)
+![Schéma officiel de brochage du Seeed Studio XIAO ESP32-S3](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg)
 
 ## Consommation et alimentation par batterie
 
