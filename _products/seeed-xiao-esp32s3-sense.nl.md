@@ -283,9 +283,12 @@ Controleer of de aanbieding de **Sense**-versie betreft, welke camera is inbegre
 
 Als affiliate kan Embedded Nerd een commissie ontvangen uit in aanmerking komende aankopen, zonder extra kosten voor jou.
 
-- [AliExpress — controleer prijs en uitvoering](/go/hardware/seeed-xiao-esp32s3-sense/)
-- [Amazon — Seeed Studio XIAO ESP32S3 Sense](https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20)
-- [Seeed Studio XIAO ESP32S3 Sense — officiële winkel](https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link)
+
+<ul>
+  <li><a href="/go/hardware/seeed-xiao-esp32s3-sense/" target="_blank" rel="nofollow sponsored noopener">AliExpress — controleer prijs en uitvoering</a></li>
+  <li><a href="https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20" target="_blank" rel="nofollow sponsored noopener">Amazon — Seeed Studio XIAO ESP32S3 Sense</a></li>
+  <li><a href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener">Seeed Studio XIAO ESP32S3 Sense — officiële winkel</a></li>
+</ul>
 
 ## Veelgestelde vragen
 
