@@ -1160,3 +1160,31 @@ m5stack-cardputer-adv:
       product_url: "https://pt.aliexpress.com/item/1005007476851351.html"
       affiliate_url: "https://s.click.aliexpress.com/e/_c39uVdoh"
       last_verified: "2026-11-22"
+
+#----------------
+
+seeed-xiao-esp32s3:
+
+  preferred_store: aliexpress
+
+  notes: "AliExpress and official Seeed Studio affiliate links supplied by the site owner for the standard XIAO ESP32S3. Confirm that the listing is the standard board, not the Sense or Plus variant, and check whether headers are included."
+
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
+
+  badges:
+    recommended: false
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c4dqXlNJ"
+
+    seeed:
+      enabled: true
+      affiliate: true
+      product_url: "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html"
+      affiliate_url: "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?sensecap_affiliate=3jSyuVk&referring_service=link"

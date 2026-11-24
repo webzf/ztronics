@@ -30,6 +30,17 @@ guition-esp32-s3-4848s040-pinout-esphome:
   it: /it/guition-esp32-s3-4848s040-pinout-esphome/
   nl: /nl/guition-esp32-s3-4848s040-pinout-esphome/
   pl: /pl/guition-esp32-s3-4848s040-pinout-esphome/
+
+seeed-xiao-esp32s3:
+  en: /products/seeed-xiao-esp32s3/
+  de: /de/products/seeed-xiao-esp32s3/
+  es: /es/products/seeed-xiao-esp32s3/
+  fr: /fr/products/seeed-xiao-esp32s3/
+  it: /it/products/seeed-xiao-esp32s3/
+  nl: /nl/products/seeed-xiao-esp32s3/
+  pl: /pl/products/seeed-xiao-esp32s3/
+  pt: /pt/products/seeed-xiao-esp32s3/
+
 seeed-xiao-esp32s3-sense:
   en: /products/seeed-xiao-esp32s3-sense/
   de: /de/products/seeed-xiao-esp32s3-sense/

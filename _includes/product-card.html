@@ -2,6 +2,9 @@
 {% assign product_image = include.product.image %}
 {% assign card_url = include.product.url %}
 {% assign card_title = include.product.title %}
+{% if include.product.product_id == 'seeed-xiao-esp32s3' %}
+  {% case site.active_lang %}{% when 'de' %}{% assign card_title = 'Seeed Studio XIAO ESP32S3 – ESP32-S3-Entwicklungsboard' %}{% when 'fr' %}{% assign card_title = 'Carte de développement Seeed Studio XIAO ESP32S3' %}{% when 'es' %}{% assign card_title = 'Placa de desarrollo Seeed Studio XIAO ESP32S3' %}{% when 'it' %}{% assign card_title = 'Scheda di sviluppo Seeed Studio XIAO ESP32S3' %}{% when 'nl' %}{% assign card_title = 'Seeed Studio XIAO ESP32S3-ontwikkelbord' %}{% when 'pl' %}{% assign card_title = 'Płytka rozwojowa Seeed Studio XIAO ESP32S3' %}{% when 'pt' %}{% assign card_title = 'Placa de desenvolvimento Seeed Studio XIAO ESP32S3' %}{% endcase %}
+{% endif %}
 {% if include.product.product_id == 'guition-jc8048w550' %}
   {% case site.active_lang %}{% when 'de' %}{% assign card_title = 'Guition JC8048W550 5-Zoll-ESP32-S3-Display' %}{% when 'fr' %}{% assign card_title = 'Écran Guition JC8048W550 ESP32-S3 de 5 pouces' %}{% when 'es' %}{% assign card_title = 'Pantalla Guition JC8048W550 ESP32-S3 de 5 pulgadas' %}{% when 'it' %}{% assign card_title = 'Display Guition JC8048W550 ESP32-S3 da 5 pollici' %}{% when 'nl' %}{% assign card_title = 'Guition JC8048W550 ESP32-S3-scherm van 5 inch' %}{% when 'pl' %}{% assign card_title = '5-calowy wyświetlacz Guition JC8048W550 ESP32-S3' %}{% when 'pt' %}{% assign card_title = 'Ecrã Guition JC8048W550 ESP32-S3 de 5 polegadas' %}{% endcase %}
 {% endif %}
@@ -39,6 +42,20 @@
         5-calowy ekran IPS 800 × 480 z ESP32-S3, 8 MB PSRAM i 16 MB Flash.
       {% elsif site.active_lang == 'pt' and include.product.product_id == 'guition-jc8048w550' %}
         Ecrã IPS de 5 polegadas e 800 × 480 com ESP32-S3, 8 MB de PSRAM e 16 MB de Flash.
+      {% elsif site.active_lang == 'de' and include.product.product_id == 'seeed-xiao-esp32s3' %}
+        Kompaktes ESP32-S3-Board mit 8 MB PSRAM, 8 MB Flash und Akku-Ladefunktion.
+      {% elsif site.active_lang == 'fr' and include.product.product_id == 'seeed-xiao-esp32s3' %}
+        Carte ESP32-S3 compacte avec 8 Mo de PSRAM, 8 Mo de Flash et charge de batterie.
+      {% elsif site.active_lang == 'es' and include.product.product_id == 'seeed-xiao-esp32s3' %}
+        Placa ESP32-S3 compacta con 8 MB de PSRAM, 8 MB de Flash y carga de batería.
+      {% elsif site.active_lang == 'it' and include.product.product_id == 'seeed-xiao-esp32s3' %}
+        Scheda ESP32-S3 compatta con 8 MB di PSRAM, 8 MB di Flash e ricarica batteria.
+      {% elsif site.active_lang == 'nl' and include.product.product_id == 'seeed-xiao-esp32s3' %}
+        Compact ESP32-S3-bord met 8 MB PSRAM, 8 MB Flash en acculaden.
+      {% elsif site.active_lang == 'pl' and include.product.product_id == 'seeed-xiao-esp32s3' %}
+        Kompaktowa płytka ESP32-S3 z 8 MB PSRAM, 8 MB Flash i ładowaniem akumulatora.
+      {% elsif site.active_lang == 'pt' and include.product.product_id == 'seeed-xiao-esp32s3' %}
+        Placa ESP32-S3 compacta com 8 MB de PSRAM, 8 MB de Flash e carregamento de bateria.
       {% elsif site.active_lang == 'de' and include.product.product_id == 'sunton-esp32-8048s043c' %}
         ESP32-S3-Touchscreen-Platine mit 4,3-Zoll-Display und 800 × 480 Pixeln.
       {% elsif site.active_lang == 'de' and include.product.product_id == 'esp32-2432s028-2-8-cyd' %}

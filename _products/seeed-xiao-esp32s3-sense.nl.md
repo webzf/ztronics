@@ -115,6 +115,8 @@ portuguese_url: /pt/products/seeed-xiao-esp32s3-sense/
 ---
 De Seeed Studio XIAO ESP32S3 Sense is een ESP32-S3-bord ter grootte van een duim met een afneembare uitbreidingskaart waarop een camera, digitale microfoon en microSD-sleuf zitten. Het wordt ook gezocht als **XIAO ESP32-S3 Sense** of **Seeed XIAO ESP32S3 Sense**. Controleer vóór aankoop of de aanbieding de **Sense**-versie betreft, want de gewone XIAO ESP32S3 ziet er bijna hetzelfde uit maar heeft geen camera, microfoon of SD-sleuf.
 
+Heb je alleen het standaardbord zonder camera, microfoon of microSD-uitbreiding nodig? Bekijk dan onze [XIAO ESP32S3-specificaties en pinout-gids](/nl/products/seeed-xiao-esp32s3/).
+
 Het belangrijkste aandachtspunt voordat je iets aansluit, zijn de **gedeelde pinnen**: de microfoon, SD-kaart en gebruikers-led gebruiken GPIO's die ook op de header beschikbaar zijn. De onderstaande pintabellen tonen precies welke.
 
 <div class="en-product-cta__buttons">
