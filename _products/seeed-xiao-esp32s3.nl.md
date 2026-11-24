@@ -17,16 +17,16 @@ editorial_review:
   worst_rating: 1
   author: "Embedded Nerd"
   summary: "De Seeed Studio XIAO ESP32S3 combineert een ESP32-S3R8, 8 MB PSRAM, 8 MB Flash, wifi, Bluetooth LE en acculaadbeheer op 21 × 17,8 mm. De 14 µA in deep sleep is aantrekkelijk voor batterijprojecten, maar het werkelijke verbruik hangt af van randapparatuur, firmware en voeding."
-  methodology: "This editorial assessment is based on the manufacturer's published specifications and documentation. Embedded Nerd has not physically tested the specific board or seller listing covered by this page."
+  methodology: "Deze redactionele beoordeling is gebaseerd op de gepubliceerde specificaties en documentatie van de fabrikant. Embedded Nerd heeft het specifieke bord en de verkopersaanbieding op deze pagina niet fysiek getest."
   pros:
-    - "ESP32-S3 dual-core processor with 8 MB PSRAM and 8 MB Flash"
-    - "Wi-Fi, Bluetooth LE 5.0 and onboard battery charging management"
-    - "Very compact 21 × 17.8 mm footprint"
-    - "Low-power modes, including 14 µA typical deep sleep"
+    - "ESP32-S3 dual-coreprocessor met 8 MB PSRAM en 8 MB Flash"
+    - "Wifi, Bluetooth LE 5.0 en ingebouwd acculaadbeheer"
+    - "Zeer compact formaat van 21 × 17,8 mm"
+    - "Energiebesparende standen, waaronder typisch 14 µA deep sleep"
   cons:
-    - "No camera, digital microphone or microSD slot on the standard model"
-    - "Pin headers are not soldered by default"
-    - "GPIO operate at 3.3 V and are not 5 V tolerant"
+    - "Geen camera, digitale microfoon of microSD-slot op het standaardmodel"
+    - "Pinheaders zijn standaard niet vastgesoldeerd"
+    - "GPIO werkt op 3,3 V en is niet 5V-tolerant"
 seo_title: "Seeed Studio XIAO ESP32S3: specificaties, pinout en projecten"
 seo_description: "Specificaties Seeed Studio XIAO ESP32S3, D0–D12-pinout, ESP32-S3-interfaces, batterijvoeding en typisch stroomverbruik."
 excerpt: "Compact ESP32-S3-bord met 8 MB PSRAM, 8 MB Flash, wifi, BLE 5.0, acculaden en typisch 14 µA in deep sleep."
@@ -35,8 +35,8 @@ image: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp3
 header:
   teaser: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg"
   og_image: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg"
-  og_image_alt: "Seeed Studio XIAO ESP32-S3 development board"
-alt: "Seeed Studio XIAO ESP32-S3 development board"
+  og_image_alt: "Seeed Studio XIAO ESP32-S3-ontwikkelbord"
+alt: "Seeed Studio XIAO ESP32-S3-ontwikkelbord"
 categories: [ESP32, ESP32-S3, "Development Boards"]
 tags: ["XIAO ESP32S3", "Seeed Studio XIAO", ESP32, ESP32-S3, "ESP32-S3 pinout", Wi-Fi, Bluetooth, "Low power", Arduino, MicroPython]
 permalink: /products/seeed-xiao-esp32s3/
@@ -47,26 +47,26 @@ specifications:
     value: "8 MB"
   - name: PSRAM
     value: "8 MB"
-  - name: Wireless
+  - name: Draadloze verbinding
     value: "2.4 GHz Wi-Fi, Bluetooth LE 5.0 and Bluetooth Mesh"
   - name: Interfaces
     value: "1 UART, 1 I²C, 1 SPI, 11 PWM GPIO, 9 ADC channels"
   - name: USB
     value: "USB Type-C"
-  - name: Battery
+  - name: Batterij
     value: "3.7 V battery input with onboard charging management"
-  - name: Dimensions
+  - name: Afmetingen
     value: "21 × 17.8 mm"
-  - name: Operating temperature
+  - name: Bedrijfstemperatuur
     value: "−20 °C to 65 °C"
 links:
-  - title: "Seeed Studio XIAO ESP32-S3 – getting started"
+  - title: "Seeed Studio XIAO ESP32-S3 – aan de slag"
     icon: "fas fa-book"
-    description: "Official specifications, pin map, setup and troubleshooting."
+    description: "Officiële specificaties, pinout, installatie en probleemoplossing."
     url: "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/"
-  - title: "ESP32-S3 datasheet"
+  - title: "ESP32-S3-datasheet"
     icon: "fas fa-file-pdf"
-    description: "Espressif technical reference for the ESP32-S3 SoC."
+    description: "Technische referentie van Espressif voor de ESP32-S3-SoC."
     url: "https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf"
 related:
   - seeed-xiao-esp32s3-sense
