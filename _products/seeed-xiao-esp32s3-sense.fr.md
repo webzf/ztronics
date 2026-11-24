@@ -93,7 +93,7 @@ Avant de connecter des périphériques externes, faites attention aux **broches 
   <a class="en-buy-button" href="/go/hardware/seeed-xiao-esp32s3-sense/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Voir le prix — XIAO ESP32S3 Sense</strong><small>AliExpress · Vérifiez la version caméra et les barrettes</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
   <a class="en-buy-button" href="https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fab fa-amazon"></i></span><span class="en-buy-text"><strong>Voir le prix — Amazon</strong><small>Vérifiez la version Sense et le contenu du colis</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
 
-  <a class="en-buy-button" href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-store"></i></span><span class="en-buy-text"><strong>Acheter chez Seeed Studio</strong><small>Official store · pre-soldered version</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+  <a class="en-buy-button" href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-store"></i></span><span class="en-buy-text"><strong>Acheter chez Seeed Studio</strong><small>Boutique officielle · version avec broches pré-soudées</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
 </div>
 
 ## Brochage du XIAO ESP32S3 Sense en bref
@@ -118,13 +118,9 @@ Seeed réserve D11 et D12 au microphone par défaut. Leur réaffectation nécess
   <figure><img src="/assets/images/products/seeed-xiao-esp32s3-sense-back.webp" alt="Vue arrière du Seeed Studio XIAO ESP32S3 Sense avec marquages des broches" loading="lazy" style="width:100%;height:auto;"><figcaption>Vue arrière : marquages des broches et pastilles de soudure</figcaption></figure>
 </div>
 
-
-
 ## Le XIAO ESP32S3 Sense vaut-il l’achat ?
 
 Cette carte convient si vous avez besoin d’une caméra, d’un microphone ou d’un stockage SD sur un module minuscule : petite caméra Wi-Fi, projet audio ou vocal, objet connecté portable ou enregistreur de données sur batterie. Si vous avez seulement besoin d’un ESP32-S3 compact, le XIAO ESP32S3 standard est intéressant : il reprend le même brochage de connecteur et consomme beaucoup moins en veille profonde. Pour davantage de GPIO et 16 Mo de Flash, regardez le XIAO ESP32-S3 Plus.
-
-
 
 ## XIAO ESP32S3, Sense ou Plus : quelle version choisir ?
 
@@ -138,8 +134,6 @@ Cette carte convient si vous avez besoin d’une caméra, d’un microphone ou d
 | Usage conseillé | Petits projets basse consommation | Image, audio et journalisation | Plus de broches et de Flash |
 
 Les prix varient selon le vendeur, le pays de livraison, les frais d’expédition et la variante choisie. Vérifiez l’offre actuelle, les accessoires et le modèle de caméra inclus.
-
-
 
 ## Brochage du XIAO ESP32S3 Sense : D0–D12 vers GPIO {#xiao-esp32s3-sense-pinout-d0d12-to-gpio}
 
@@ -163,8 +157,6 @@ Seeed précise que D11 et D12 (GPIO42 et GPIO41) sont étiquetés comme broches 
 
 Broches d’alimentation : **5V** correspond au rail USB 5 V, **3V3** à la sortie régulée 3,3 V et **GND** à la masse. Tous les GPIO fonctionnent en logique 3,3 V et ne sont pas tolérants au 5 V. En fonctionnement sur batterie, la broche 5V n’est pas alimentée.
 
-
-
 ## Disponibilité des GPIO : caméra, microphone et carte SD
 
 Selon le brochage Seeed, la caméra, le microphone et la carte SD ne se chevauchent pas entre eux. Certaines de ces fonctions partagent toutefois des GPIO avec les broches du connecteur.
@@ -180,15 +172,11 @@ Selon le brochage Seeed, la caméra, le microphone et la carte SD ne se chevauch
 
 Lorsque vous utilisez la carte SD, la LED utilisateur sur GPIO21 sert également de ligne chip-select. Les autres périphériques SPI connectés à D8–D10 partagent le bus avec la carte SD et nécessitent leur propre broche chip-select. Lorsque le microphone est utilisé, D11 et D12 sont occupées.
 
-
-
 ## Caméra, microphone et microSD
 
 La carte d’extension se connecte via un connecteur carte-à-carte et intègre la caméra, le microphone PDM et le lecteur microSD. Les exemples caméra de Seeed prennent en charge les OV5640, OV3660 et OV2640. Les mêmes programmes peuvent donc être utilisés ; seule l’OV5640 dispose de l’autofocus. Le module OV5640 est également disponible séparément comme pièce de rechange.
 
 Selon Seeed, le firmware d’usine livré depuis juin 2025 active par défaut un point d’accès Wi-Fi avec un nom et un mot de passe publiés. Installez votre propre firmware avant toute utilisation dans un lieu accessible au public.
-
-
 
 ## Caractéristiques techniques
 
@@ -210,8 +198,6 @@ Selon Seeed, le firmware d’usine livré depuis juin 2025 active par défaut un
 
 Ces caractéristiques reposent sur le wiki Seeed Studio (au 7 novembre 2026). Seeed remplace actuellement la caméra OV3660 par une OV5640 avec autofocus. Pendant cette transition, les cartes livrées peuvent contenir l’une ou l’autre.
 
-
-
 ## Consommation et alimentation par batterie
 
 Valeurs typiques publiées par Seeed pour le Sense **avec la carte d’extension connectée** :
@@ -226,8 +212,6 @@ Valeurs typiques publiées par Seeed pour le Sense **avec la carte d’extension
 | Serveur caméra (USB) | environ 140 mA en moyenne, 347 mA en pointe |
 
 La carte peut fonctionner avec une batterie Li-ion 3,7 V, rechargeable via USB-C. Selon Seeed, la pastille de soudure négative de la batterie est la plus proche du connecteur USB. Vérifiez soigneusement la polarité avant de souder. Il n’existe pas de GPIO dédié à la mesure de la tension de batterie : un diviseur de tension externe connecté à une broche ADC est nécessaire.
-
-
 
 ## Arduino, MicroPython et démarrage
 
@@ -260,8 +244,6 @@ Ouvrez le moniteur série à **115200 bauds**. GPIO21 sert aussi de chip-select 
 
 - [Seeed Studio — guide de démarrage](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/)
 - [Seeed Studio — multiplexage des broches](https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/)
-
-
 
 ## Où acheter
 
@@ -302,8 +284,6 @@ Seeed livre généralement la carte sans barrettes. Vérifiez si l’offre compr
 ### Le XIAO ESP32S3 Sense fonctionne-t-il avec MicroPython ?
 
 Oui. Seeed documente Arduino et MicroPython pour la série XIAO ESP32-S3. L’environnement de développement ne change toutefois ni les limites électriques de 3,3 V ni le brochage présenté ci-dessus.
-
-
 
 ## Comparaison avec d’autres cartes ESP32
 
