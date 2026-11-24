@@ -22,7 +22,7 @@ editorial_review:
     - "De microfoon, SD-kaart en gebruikers-led delen GPIO's met de headerpinnen; controleer de beschikbare pinnen vóór het aansluiten"
     - "Het deep-sleep-verbruik bedraagt ongeveer 3 mA met de uitbreidingskaart aangesloten, veel hoger dan bij de gewone XIAO ESP32S3"
     - "Borden worden doorgaans zonder pinheaders geleverd en het cameramodel (OV5640 of OV3660) kan per batch verschillen"
-seo_title: "Seeed Studio XIAO ESP32S3 Sense: specificaties, pinout en kopen"
+seo_title: "Seeed Studio XIAO ESP32S3 Sense: pinout en kopen"
 seo_description: "Specificaties van de Seeed Studio XIAO ESP32S3 Sense, D0–D12-pinout, OV5640-camera, microfoon, microSD-pinnen en waar te koop."
 page_id: product-seeed-xiao-esp32s3-sense
 product_id: seeed-xiao-esp32s3-sense
