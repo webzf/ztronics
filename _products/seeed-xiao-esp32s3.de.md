@@ -31,12 +31,12 @@ seo_title: "Seeed Studio XIAO ESP32S3: Daten, Pinout & Projekte"
 seo_description: "Technische Daten des Seeed Studio XIAO ESP32S3, D0–D12-Pinout, ESP32-S3-Schnittstellen, Akkuversorgung und typischer Stromverbrauch."
 excerpt: "Kompaktes ESP32-S3-Board mit 8 MB PSRAM, 8 MB Flash, WLAN, BLE 5.0, Akku-Ladefunktion und 14 µA typischem Deep Sleep."
 description: "Das Seeed Studio XIAO ESP32S3 ist ein 21 × 17,8 mm großes ESP32-S3-Entwicklungsboard mit 8 MB PSRAM, 8 MB Flash, WLAN, Bluetooth LE 5.0 und Akku-Lademanagement."
-image: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32-S3_front_pinout.png"
+image: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg"
 header:
-  teaser: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32-S3_front_pinout.png"
-  og_image: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32-S3_front_pinout.png"
-  og_image_alt: "Official Seeed Studio XIAO ESP32-S3 pinout diagram"
-alt: "Seeed Studio XIAO ESP32-S3 official pinout diagram"
+  teaser: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg"
+  og_image: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg"
+  og_image_alt: "Seeed Studio XIAO ESP32-S3 development board"
+alt: "Seeed Studio XIAO ESP32-S3 development board"
 categories: [ESP32, ESP32-S3, "Development Boards"]
 tags: ["XIAO ESP32S3", "Seeed Studio XIAO", ESP32, ESP32-S3, "ESP32-S3 pinout", Wi-Fi, Bluetooth, "Low power", Arduino, MicroPython]
 permalink: /products/seeed-xiao-esp32s3/
@@ -70,7 +70,6 @@ links:
     url: "https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf"
 related:
   - seeed-xiao-esp32s3-sense
-  - seeed-xiao-esp32s3-plus
   - arduino-nano-esp32
 available_languages: [en, de, es, fr, it, nl, pl, pt]
 english_url: /products/seeed-xiao-esp32s3/
@@ -87,8 +86,8 @@ Das **Seeed Studio XIAO ESP32S3** ist ein sehr kleines Entwicklungsboard auf Bas
 Das XIAO ESP32S3 ist leicht mit der Sense-Version zu verwechseln. Für Kamera, Mikrofon oder microSD siehe den separaten [XIAO ESP32S3 Sense-Leitfaden](/de/products/seeed-xiao-esp32s3-sense/).
 
 <div class="en-product-cta__buttons">
-  <a class="en-buy-button preferred" href="/go/hardware/seeed-xiao-esp32s3/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Preis prüfen – XIAO ESP32S3</strong><small>AliExpress · verify the selected board and accessories</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-  <a class="en-buy-button" href="https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-store"></i></span><span class="en-buy-text"><strong>Seeed Studio official store</strong><small>Manufacturer product page · check headers and package contents</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+  <a class="en-buy-button preferred" href="/go/hardware/seeed-xiao-esp32s3/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Preis prüfen – XIAO ESP32S3</strong><small>AliExpress · Standardversion und Zubehör prüfen</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+  <a class="en-buy-button" href="https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-store"></i></span><span class="en-buy-text"><strong>Bei Seeed Studio kaufen</strong><small>Offizieller Hersteller-Shop · Stiftleisten und Lieferumfang prüfen</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
 </div>
 
 ## Warum ist das XIAO ESP32S3 interessant?
@@ -135,7 +134,7 @@ Zusätzlich gibt es eine Benutzer-LED, eine Lade-LED, Reset- und Boot-Tasten sow
 
 **ADC-Hinweis:** Seeed nennt neun ADC-Kanäle, weist aber ausdrücklich darauf hin, dass GPIO41 und GPIO42 (D12 und D11) beim ESP32-S3 keine ADC-Funktion unterstützen. Für analoge Messungen D0–D5 und D8–D10 verwenden.
 
-![Official Seeed Studio XIAO ESP32-S3 pinout diagram](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32-S3_front_pinout.png)
+![Official Seeed Studio XIAO ESP32-S3 pinout diagram](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg)
 
 ## Stromverbrauch und Akkubetrieb
 
