@@ -144,13 +144,9 @@ Seeed domyślnie rezerwuje D11 i D12 dla mikrofonu. Ich ponowne wykorzystanie wy
   </figure>
 </div>
 
-
-
 ## Czy warto kupić XIAO ESP32S3 Sense?
 
 Wybierz tę płytkę, jeśli potrzebujesz kamery, mikrofonu lub zapisu danych na karcie SD w urządzeniu wielkości kciuka — na przykład do małej kamery Wi-Fi, projektu audio lub rozpoznawania mowy, urządzenia przenośnego albo rejestratora zasilanego z akumulatora. Jeśli potrzebujesz tylko małej płytki ESP32-S3 bez tych dodatków, zwykły XIAO ESP32S3 ma taki sam układ złącza i znacznie niższy pobór prądu w deep-sleep. Jeśli potrzebujesz większej liczby GPIO i 16 MB Flash, sprawdź XIAO ESP32-S3 Plus.
-
-
 
 ## XIAO ESP32S3, Sense czy Plus — którą wersję wybrać?
 
@@ -164,8 +160,6 @@ Wybierz tę płytkę, jeśli potrzebujesz kamery, mikrofonu lub zapisu danych na
 | Najlepsze zastosowanie | Możliwie małe i energooszczędne projekty | Obraz, dźwięk i rejestrowanie danych | Więcej pinów i pamięci Flash |
 
 Ceny zależą od sprzedawcy, kraju dostawy, kosztów wysyłki i wybranego wariantu. Przed zakupem sprawdź aktualną ofertę, zawartość zestawu i model kamery.
-
-
 
 ## Pinout XIAO ESP32S3 Sense: D0–D12 i GPIO {#xiao-esp32s3-sense-pinout-d0d12-to-gpio}
 
@@ -189,8 +183,6 @@ Seeed zaznacza, że D11 i D12 (GPIO42 i GPIO41), mimo oznaczeń sugerujących we
 
 Piny zasilania: **5V** to linia USB 5 V, **3V3** to stabilizowane wyjście 3,3 V, a **GND** oznacza masę. Wszystkie GPIO pracują z logiką 3,3 V i nie mogą otrzymywać 5 V. Podczas zasilania płytki z akumulatora na pinie 5V nie ma napięcia.
 
-
-
 ## Dostępność GPIO: piny używane przez kamerę, mikrofon i kartę SD
 
 Zgodnie z mapą pinów Seeed kamera, mikrofon i karta SD nie kolidują ze sobą, ale część ich sygnałów współdzieli GPIO z pinami złącza.
@@ -206,15 +198,11 @@ Zgodnie z mapą pinów Seeed kamera, mikrofon i karta SD nie kolidują ze sobą,
 
 Jeśli używasz karty SD, dioda użytkownika na GPIO21 korzysta również z linii chip select karty. Każde dodatkowe urządzenie SPI podłączone do D8–D10 współdzieli magistralę z kartą i wymaga własnego pinu chip select. Podczas korzystania z mikrofonu traktuj D11 i D12 jako zajęte.
 
-
-
 ## Kamera, mikrofon i microSD
 
 Płytka rozszerzeń łączy się przez złącze board-to-board i zawiera kamerę, mikrofon PDM oraz gniazdo microSD. Przykłady Seeed obsługują OV5640, OV3660 i OV2640, więc te same szkice mogą działać z każdym z nich, ale autofokus ma tylko OV5640. Moduł OV5640 jest również sprzedawany osobno jako część zamienna.
 
 Seeed informuje, że od czerwca 2025 r. fabryczne oprogramowanie domyślnie uruchamia punkt dostępowy Wi-Fi z opublikowaną nazwą sieci i hasłem. Przed wdrożeniem płytki w miejscu dostępnym dla innych osób wgraj własne oprogramowanie.
-
-
 
 ## Specyfikacja w skrócie
 
@@ -236,8 +224,6 @@ Seeed informuje, że od czerwca 2025 r. fabryczne oprogramowanie domyślnie uruc
 
 Specyfikacja opiera się na dokumentacji Seeed Studio Wiki (sprawdzonej 7 listopada 2026 r.). Seeed informuje o przejściu z kamery OV3660 na OV5640 z autofokusem; w okresie przejściowym płytki mogą być dostarczane z jednym z tych modeli.
 
-
-
 ## Pobór prądu i zasilanie akumulatorowe
 
 Typowe wartości podawane przez Seeed dla wersji Sense **z podłączoną płytką rozszerzeń**:
@@ -252,8 +238,6 @@ Typowe wartości podawane przez Seeed dla wersji Sense **z podłączoną płytk�
 | Serwer kamery (USB) | około 140 mA średnio, 347 mA szczytowo |
 
 Płytka może być zasilana akumulatorem Li-ion 3,7 V i ładować go przez USB-C. Seeed wskazuje, że ujemny pad akumulatora znajduje się bliżej portu USB, dlatego przed lutowaniem sprawdź polaryzację. Nie ma dedykowanego GPIO do odczytu napięcia akumulatora; pomiar wymaga zewnętrznego dzielnika napięcia podłączonego do wejścia ADC.
-
-
 
 ## Arduino, MicroPython i pierwsze uruchomienie
 
@@ -284,8 +268,6 @@ Otwórz Monitor portu szeregowego z szybkością **115200 baud**. Ponieważ GPIO
 
 - [Pierwsze kroki z Seeed Studio](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/)
 - [Przewodnik Seeed Studio po multipleksowaniu pinów](https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/)
-
-
 
 ## Gdzie kupić
 
@@ -326,8 +308,6 @@ Seeed standardowo dostarcza płytkę bez goldpinów. Sprawdź, czy oferta inform
 ### Czy XIAO ESP32S3 Sense obsługuje MicroPython?
 
 Tak. Seeed dokumentuje Arduino i MicroPython dla serii XIAO ESP32-S3. Wybór środowiska programistycznego nie zmienia ograniczenia napięcia 3,3 V ani opisanej wyżej mapy pinów.
-
-
 
 ## Porównanie z innymi płytkami ESP32
 
