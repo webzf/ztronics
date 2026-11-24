@@ -134,7 +134,7 @@ Na płytce znajdują się również dioda użytkownika, dioda ładowania, przyci
 
 **Uwaga dotycząca ADC:** Seeed podaje dziewięć kanałów ADC, ale wyraźnie zaznacza, że GPIO41 i GPIO42 (D12 i D11) nie obsługują ADC w ESP32-S3. Do pomiarów analogowych używaj D0–D5 i D8–D10.
 
-![Official Seeed Studio XIAO ESP32-S3 pinout diagram](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg)
+![Oficjalny schemat pinów Seeed Studio XIAO ESP32-S3](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg)
 
 ## Pobór prądu i zasilanie z akumulatora
 
