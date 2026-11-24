@@ -89,6 +89,8 @@ portuguese_url: /pt/products/seeed-xiao-esp32s3-sense/
 ---
 Le **Seeed Studio XIAO ESP32S3 Sense** est une carte ESP32-S3 de la taille d’un pouce, accompagnée d’une carte d’extension amovible qui accueille une caméra, un microphone numérique et un lecteur microSD. Ce modèle est également recherché sous les noms **XIAO ESP32-S3 Sense** et **Seeed XIAO ESP32S3 Sense**. Lors de l’achat, vérifiez qu’il s’agit bien de la version **Sense** : le XIAO ESP32S3 standard lui ressemble, mais ne possède ni caméra, ni microphone, ni lecteur SD.
 
+Si vous avez seulement besoin de la carte standard sans caméra, microphone ni extension microSD, consultez notre [guide des caractéristiques et du brochage du XIAO ESP32S3](/fr/products/seeed-xiao-esp32s3/).
+
 Avant de connecter des périphériques externes, faites attention aux **broches partagées** : le microphone, la carte SD et la LED utilisateur utilisent certains GPIO également présents sur le connecteur. Les tableaux ci-dessous détaillent ces affectations.
 
 <div class="en-product-cta__buttons">
