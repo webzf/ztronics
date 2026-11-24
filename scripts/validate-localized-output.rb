@@ -32,6 +32,7 @@ required = %w[
   nl/guition-esp32-s3-4848s040-pinout-esphome/index.html
   pl/products/guition-esp32-s3-4848s040/index.html
   pl/products/seeed-xiao-esp32s3-sense/index.html
+  pt/products/seeed-xiao-esp32s3-sense/index.html
   pl/products/sunton-esp32-8048s043c/index.html
   pl/sunton-esp32-8048s043c-guide/index.html
   pl/guition-esp32-s3-4848s040-pinout-esphome/index.html
