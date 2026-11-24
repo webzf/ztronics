@@ -23,7 +23,7 @@ editorial_review:
     - "El micrófono, la tarjeta SD y el LED de usuario comparten GPIO con los pines de la cabecera; compruebe los pines disponibles antes de cablear"
     - "El consumo en deep sleep es de aproximadamente 3 mA con la placa de expansión conectada, claramente superior al XIAO ESP32S3 estándar"
     - "La placa suele venderse sin conectores de pines; el módulo de cámara (OV5640 u OV3660) puede variar según el lote"
-seo_title: "Seeed Studio XIAO ESP32S3 Sense: especificaciones, pinout y compra"
+seo_title: "Seeed Studio XIAO ESP32S3 Sense: pinout y compra"
 seo_description: "Especificaciones del Seeed Studio XIAO ESP32S3 Sense, pinout D0–D12, cámara OV5640, micrófono, pines microSD y dónde comprar."
 product_id: seeed-xiao-esp32s3-sense
 category: Development Boards
