@@ -26,6 +26,13 @@ required = %w[
   pl/products/guition-jc8048w550/index.html
   pt/products/guition-jc8048w550/index.html
   nl/products/guition-esp32-s3-4848s040/index.html
+  de/products/seeed-xiao-esp32s3/index.html
+  es/products/seeed-xiao-esp32s3/index.html
+  fr/products/seeed-xiao-esp32s3/index.html
+  it/products/seeed-xiao-esp32s3/index.html
+  nl/products/seeed-xiao-esp32s3/index.html
+  pl/products/seeed-xiao-esp32s3/index.html
+  pt/products/seeed-xiao-esp32s3/index.html
   nl/products/seeed-xiao-esp32s3-sense/index.html
   nl/products/sunton-esp32-8048s043c/index.html
   nl/sunton-esp32-8048s043c-guide/index.html
