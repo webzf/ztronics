@@ -31,10 +31,10 @@ seo_title: "Seeed Studio XIAO ESP32S3: specyfikacja, pinout i projekty"
 seo_description: "Specyfikacja Seeed Studio XIAO ESP32S3, pinout D0–D12, interfejsy ESP32-S3, zasilanie akumulatorowe i typowy pobór prądu."
 excerpt: "Kompaktowa płytka ESP32-S3 z 8 MB PSRAM, 8 MB Flash, Wi-Fi, BLE 5.0, ładowaniem akumulatora i typowym deep sleep 14 µA."
 description: "Seeed Studio XIAO ESP32S3 to płytka rozwojowa ESP32-S3 o wymiarach 21 × 17,8 mm, z 8 MB PSRAM, 8 MB Flash, Wi-Fi, Bluetooth LE 5.0 i układem ładowania akumulatora."
-image: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg"
+image: "/assets/images/products/seeed-xiao-esp32s3.webp"
 header:
-  teaser: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg"
-  og_image: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg"
+  teaser: "/assets/images/products/seeed-xiao-esp32s3.webp"
+  og_image: "/assets/images/products/seeed-xiao-esp32s3.webp"
   og_image_alt: "Płytka rozwojowa Seeed Studio XIAO ESP32-S3"
 alt: "Płytka rozwojowa Seeed Studio XIAO ESP32-S3"
 categories: [ESP32, ESP32-S3, "Development Boards"]
@@ -134,7 +134,7 @@ Na płytce znajdują się również dioda użytkownika, dioda ładowania, przyci
 
 **Uwaga dotycząca ADC:** Seeed podaje dziewięć kanałów ADC, ale wyraźnie zaznacza, że GPIO41 i GPIO42 (D12 i D11) nie obsługują ADC w ESP32-S3. Do pomiarów analogowych używaj D0–D5 i D8–D10.
 
-![Oficjalny schemat pinów Seeed Studio XIAO ESP32-S3](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg)
+![Oficjalny schemat pinów Seeed Studio XIAO ESP32-S3](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32-S3_front_pinout.png)
 
 ## Pobór prądu i zasilanie z akumulatora
 
