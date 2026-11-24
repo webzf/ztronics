@@ -17,16 +17,16 @@ editorial_review:
   worst_rating: 1
   author: "Embedded Nerd"
   summary: "Das Seeed Studio XIAO ESP32S3 kombiniert ESP32-S3R8, 8 MB PSRAM, 8 MB Flash, WLAN, Bluetooth LE und Akkulademanagement auf 21 × 17,8 mm. Der Deep-Sleep-Wert von 14 µA ist für Akkuprojekte interessant; der reale Strom hängt jedoch von Peripherie, Firmware und Stromversorgung ab."
-  methodology: "This editorial assessment is based on the manufacturer's published specifications and documentation. Embedded Nerd has not physically tested the specific board or seller listing covered by this page."
+  methodology: "Diese redaktionelle Einschätzung basiert auf den veröffentlichten technischen Daten und der Dokumentation des Herstellers. Embedded Nerd hat das hier beschriebene Board und das konkrete Händlerangebot nicht physisch getestet."
   pros:
-    - "ESP32-S3 dual-core processor with 8 MB PSRAM and 8 MB Flash"
-    - "Wi-Fi, Bluetooth LE 5.0 and onboard battery charging management"
-    - "Very compact 21 × 17.8 mm footprint"
-    - "Low-power modes, including 14 µA typical deep sleep"
+    - "ESP32-S3-Dual-Core-Prozessor mit 8 MB PSRAM und 8 MB Flash"
+    - "WLAN, Bluetooth LE 5.0 und integriertes Akku-Lademanagement"
+    - "Sehr kompakte Abmessungen von 21 × 17,8 mm"
+    - "Energiesparmodi mit typisch 14 µA im Deep Sleep"
   cons:
-    - "No camera, digital microphone or microSD slot on the standard model"
-    - "Pin headers are not soldered by default"
-    - "GPIO operate at 3.3 V and are not 5 V tolerant"
+    - "Keine Kamera, kein digitales Mikrofon und kein microSD-Steckplatz beim Standardmodell"
+    - "Stiftleisten sind standardmäßig nicht angelötet"
+    - "GPIO arbeiten mit 3,3 V und sind nicht 5-V-tolerant"
 seo_title: "Seeed Studio XIAO ESP32S3: Daten, Pinout & Projekte"
 seo_description: "Technische Daten des Seeed Studio XIAO ESP32S3, D0–D12-Pinout, ESP32-S3-Schnittstellen, Akkuversorgung und typischer Stromverbrauch."
 excerpt: "Kompaktes ESP32-S3-Board mit 8 MB PSRAM, 8 MB Flash, WLAN, BLE 5.0, Akku-Ladefunktion und 14 µA typischem Deep Sleep."
@@ -35,38 +35,38 @@ image: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp3
 header:
   teaser: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg"
   og_image: "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg"
-  og_image_alt: "Seeed Studio XIAO ESP32-S3 development board"
-alt: "Seeed Studio XIAO ESP32-S3 development board"
+  og_image_alt: "Seeed Studio XIAO ESP32-S3-Entwicklungsboard"
+alt: "Seeed Studio XIAO ESP32-S3-Entwicklungsboard"
 categories: [ESP32, ESP32-S3, "Development Boards"]
 tags: ["XIAO ESP32S3", "Seeed Studio XIAO", ESP32, ESP32-S3, "ESP32-S3 pinout", Wi-Fi, Bluetooth, "Low power", Arduino, MicroPython]
 permalink: /products/seeed-xiao-esp32s3/
 specifications:
-  - name: Processor
+  - name: Prozessor
     value: "ESP32-S3R8, dual-core 32-bit Xtensa LX7, up to 240 MHz"
   - name: Flash
     value: "8 MB"
   - name: PSRAM
     value: "8 MB"
-  - name: Wireless
+  - name: Funkverbindungen
     value: "2.4 GHz Wi-Fi, Bluetooth LE 5.0 and Bluetooth Mesh"
-  - name: Interfaces
+  - name: Schnittstellen
     value: "1 UART, 1 I²C, 1 SPI, 11 PWM GPIO, 9 ADC channels"
   - name: USB
     value: "USB Type-C"
-  - name: Battery
+  - name: Akku
     value: "3.7 V battery input with onboard charging management"
-  - name: Dimensions
+  - name: Abmessungen
     value: "21 × 17.8 mm"
-  - name: Operating temperature
+  - name: Betriebstemperatur
     value: "−20 °C to 65 °C"
 links:
-  - title: "Seeed Studio XIAO ESP32-S3 – getting started"
+  - title: "Seeed Studio XIAO ESP32-S3 – Erste Schritte"
     icon: "fas fa-book"
-    description: "Official specifications, pin map, setup and troubleshooting."
+    description: "Offizielle technische Daten, Pinbelegung, Einrichtung und Fehlerbehebung."
     url: "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/"
-  - title: "ESP32-S3 datasheet"
+  - title: "ESP32-S3-Datenblatt"
     icon: "fas fa-file-pdf"
-    description: "Espressif technical reference for the ESP32-S3 SoC."
+    description: "Technische Referenz von Espressif für den ESP32-S3-SoC."
     url: "https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf"
 related:
   - seeed-xiao-esp32s3-sense
