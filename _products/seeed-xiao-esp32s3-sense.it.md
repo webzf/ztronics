@@ -277,9 +277,12 @@ Verifica che l'inserzione indichi la versione **Sense**, quale fotocamera è inc
 
 In qualità di affiliato, Embedded Nerd può ricevere una commissione sugli acquisti idonei, senza costi aggiuntivi per te.
 
-- [AliExpress — controlla prezzo e variante](/go/hardware/seeed-xiao-esp32s3-sense/)
-- [Amazon — Seeed Studio XIAO ESP32S3 Sense](https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20)
-- [Seeed Studio XIAO ESP32S3 Sense — negozio ufficiale](https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link)
+
+<ul>
+  <li><a href="/go/hardware/seeed-xiao-esp32s3-sense/" target="_blank" rel="nofollow sponsored noopener">AliExpress — controlla prezzo e variante</a></li>
+  <li><a href="https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20" target="_blank" rel="nofollow sponsored noopener">Amazon — Seeed Studio XIAO ESP32S3 Sense</a></li>
+  <li><a href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener">Seeed Studio XIAO ESP32S3 Sense — negozio ufficiale</a></li>
+</ul>
 
 ## Domande frequenti
 
