@@ -22,7 +22,7 @@ editorial_review:
     - "Mikrofon, karta SD i dioda użytkownika współdzielą GPIO z pinami złącza; przed podłączeniem urządzeń trzeba sprawdzić dostępne piny"
     - "Prąd w deep-sleep wynosi około 3 mA z podłączoną płytką rozszerzeń, znacznie więcej niż w zwykłym XIAO ESP32S3"
     - "Płytki są zwykle dostarczane bez goldpinów, a model kamery (OV5640 lub OV3660) może zależeć od partii"
-seo_title: "Seeed Studio XIAO ESP32S3 Sense: specyfikacja, pinout i zakup"
+seo_title: "Seeed Studio XIAO ESP32S3 Sense: pinout i zakup"
 seo_description: "Specyfikacja Seeed Studio XIAO ESP32S3 Sense, pinout D0–D12, kamera OV5640, mikrofon, piny microSD i miejsce zakupu."
 page_id: product-seeed-xiao-esp32s3-sense
 product_id: seeed-xiao-esp32s3-sense
