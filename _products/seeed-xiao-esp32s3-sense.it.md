@@ -22,7 +22,7 @@ editorial_review:
     - "Microfono, scheda SD e LED utente condividono GPIO con i pin del connettore: verifica i pin disponibili prima del cablaggio"
     - "La corrente in deep sleep è di circa 3 mA con la scheda di espansione collegata, molto più alta rispetto al normale XIAO ESP32S3"
     - "Le schede sono generalmente fornite senza pin header e il modello della fotocamera (OV5640 o OV3660) può variare in base al lotto"
-seo_title: "Seeed Studio XIAO ESP32S3 Sense: specifiche, pinout e acquisto"
+seo_title: "Seeed Studio XIAO ESP32S3 Sense: pinout e acquisto"
 seo_description: "Specifiche Seeed Studio XIAO ESP32S3 Sense, pinout D0–D12, fotocamera OV5640, microfono, pin microSD e dove acquistare."
 page_id: product-seeed-xiao-esp32s3-sense
 product_id: seeed-xiao-esp32s3-sense
