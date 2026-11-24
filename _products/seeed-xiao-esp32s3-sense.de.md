@@ -111,7 +111,7 @@ Wichtig vor dem Anschließen externer Hardware sind die **gemeinsam genutzten Pi
   <a class="en-buy-button" href="/go/hardware/seeed-xiao-esp32s3-sense/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Preis prüfen – XIAO ESP32S3 Sense</strong><small>AliExpress · Kameraversion und Stiftleisten prüfen</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
   <a class="en-buy-button" href="https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fab fa-amazon"></i></span><span class="en-buy-text"><strong>Preis prüfen – Amazon</strong><small>Sense-Version und Lieferumfang prüfen</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
 
-  <a class="en-buy-button" href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-store"></i></span><span class="en-buy-text"><strong>Bei Seeed Studio kaufen</strong><small>Official store · pre-soldered version</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+  <a class="en-buy-button" href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-store"></i></span><span class="en-buy-text"><strong>Bei Seeed Studio kaufen</strong><small>Offizieller Shop · Version mit vorgelöteten Stiftleisten</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
 </div>
 
 ## XIAO ESP32S3 Sense Pinout auf einen Blick
@@ -145,13 +145,9 @@ Seeed reserviert D11 und D12 standardmäßig für das Mikrofon. Eine anderweitig
   </figure>
 </div>
 
-
-
 ## Lohnt sich der Kauf des XIAO ESP32S3 Sense?
 
 Diese Platine ist eine gute Wahl, wenn Sie eine Kamera, ein Mikrofon oder SD-Datenspeicherung auf einer daumengroßen Platine benötigen – etwa für eine kleine WLAN-Kamera, ein Audio- oder Sprachprojekt, ein Wearable oder einen batteriebetriebenen Datenlogger. Wenn Sie lediglich einen kleinen ESP32-S3 ohne diese Zusatzfunktionen benötigen, ist das normale XIAO ESP32S3 interessant: Es besitzt dasselbe Header-Layout und einen deutlich geringeren Deep-Sleep-Stromverbrauch. Für mehr GPIOs und 16 MB Flash sollten Sie sich das XIAO ESP32-S3 Plus ansehen.
-
-
 
 ## XIAO ESP32S3, Sense oder Plus: Welche Version ist die richtige?
 
@@ -165,8 +161,6 @@ Diese Platine ist eine gute Wahl, wenn Sie eine Kamera, ein Mikrofon oder SD-Dat
 | Geeignet für | Kleine Projekte mit niedrigem Stromverbrauch | Bildverarbeitung, Audio und Datenlogging | Mehr Pins und Flash |
 
 Preise unterscheiden sich je nach Händler, Lieferland, Versand und ausgewählter Variante. Prüfen Sie vor dem Kauf das aktuelle Angebot, das Zubehör und das enthaltene Kameramodell.
-
-
 
 ## Pinout des XIAO ESP32S3 Sense: D0–D12 zu GPIO {#xiao-esp32s3-sense-pinout-d0d12-to-gpio}
 
@@ -190,8 +184,6 @@ Seeed weist darauf hin, dass D11 und D12 (GPIO42 und GPIO41) zwar als Analog-Pin
 
 Versorgungspins: **5V** ist die USB-5-V-Schiene, **3V3** der geregelte 3,3-V-Ausgang und **GND** Masse. Alle GPIOs arbeiten mit 3,3-V-Logik und dürfen nicht mit 5 V beaufschlagt werden. Im Akkubetrieb liegt am 5V-Pin keine Spannung an.
 
-
-
 ## GPIO-Verfügbarkeit: Pins für Kamera, Mikrofon und SD-Karte
 
 Laut Pinbelegung von Seeed überschneiden sich Kamera, Mikrofon und SD-Karte nicht gegenseitig. Einige dieser Funktionen teilen sich jedoch GPIOs mit den Header-Pins.
@@ -207,15 +199,11 @@ Laut Pinbelegung von Seeed überschneiden sich Kamera, Mikrofon und SD-Karte nic
 
 Wenn Sie die SD-Karte verwenden, dient die Benutzer-LED an GPIO21 gleichzeitig als Chip-Select-Leitung der Karte. Zusätzliche SPI-Geräte an D8–D10 teilen sich den Bus mit der SD-Karte und benötigen einen eigenen Chip-Select-Pin. Bei Verwendung des Mikrofons gelten D11 und D12 als belegt.
 
-
-
 ## Kamera, Mikrofon und microSD
 
 Die Erweiterungsplatine wird über einen Board-to-Board-Steckverbinder angeschlossen und enthält Kamera, PDM-Mikrofon und microSD-Steckplatz. Die Kamerabeispiele von Seeed unterstützen OV5640, OV3660 und OV2640. Die gleichen Programme können daher verwendet werden; nur die OV5640 besitzt Autofokus. Das OV5640-Modul ist auch separat als Ersatzteil erhältlich.
 
 Laut Seeed aktiviert die ab Juni 2025 ausgelieferte Werksfirmware standardmäßig einen WLAN-Access-Point mit veröffentlichtem Namen und Passwort. Installieren Sie vor dem Einsatz an einem öffentlich zugänglichen Ort eine eigene Firmware.
-
-
 
 ## Technische Daten im Überblick
 
@@ -237,8 +225,6 @@ Laut Seeed aktiviert die ab Juni 2025 ausgelieferte Werksfirmware standardmäßi
 
 Die technischen Angaben basieren auf dem Seeed Studio Wiki (Stand: 7. November 2026). Seeed stellt die Kamera derzeit von OV3660 auf OV5640 mit Autofokus um. Während dieser Umstellung können Platinen mit beiden Kameravarianten ausgeliefert werden.
 
-
-
 ## Stromverbrauch und Akkubetrieb
 
 Typische von Seeed veröffentlichte Werte für das Sense **mit angeschlossener Erweiterungsplatine**:
@@ -253,8 +239,6 @@ Typische von Seeed veröffentlichte Werte für das Sense **mit angeschlossener E
 | Kamera-Webserver (USB) | etwa 140 mA im Durchschnitt, 347 mA Spitze |
 
 Die Platine kann mit einem 3,7-V-Li-Ionen-Akku betrieben und über USB-C geladen werden. Laut Seeed befindet sich das negative Batterie-Lötpad am nächsten zum USB-Anschluss. Prüfen Sie die Polarität vor dem Löten sorgfältig. Es gibt keinen eigenen GPIO zum Auslesen der Akkuspannung; dafür ist ein externer Spannungsteiler an einem ADC-Pin erforderlich.
-
-
 
 ## Arduino, MicroPython und erste Schritte
 
@@ -287,8 +271,6 @@ void loop() {
 
 - [Seeed Studio – Erste Schritte](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/)
 - [Seeed Studio – Pin-Multiplexing](https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/)
-
-
 
 ## Bezugsquellen
 
@@ -329,8 +311,6 @@ Seeed liefert die Platine standardmäßig ohne Stiftleisten. Prüfen Sie, ob das
 ### Funktioniert das XIAO ESP32S3 Sense mit MicroPython?
 
 Ja. Seeed dokumentiert Arduino und MicroPython für die XIAO-ESP32-S3-Serie. Die verwendete Entwicklungsumgebung ändert jedoch nichts an den 3,3-V-Grenzen oder der oben gezeigten Pinbelegung.
-
-
 
 ## Vergleich mit anderen ESP32-Boards
 
