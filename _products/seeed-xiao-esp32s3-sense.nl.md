@@ -152,13 +152,9 @@ Seeed reserveert D11 en D12 standaard voor de microfoon. Hergebruik vereist een 
   </figure>
 </div>
 
-
-
 ## Is de XIAO ESP32S3 Sense het kopen waard?
 
 Kies dit bord als je een camera, microfoon of SD-logging wilt op een bord ter grootte van een duim: bijvoorbeeld een kleine Wi-Fi-camera, een audio- of spraakproject, een draagbaar apparaat of een logger op batterijen. Als je alleen een kleine ESP32-S3 zonder deze extra's nodig hebt, heeft de gewone XIAO ESP32S3 dezelfde headerindeling en een veel lager deep-sleep-verbruik. Als je meer GPIO's en 16 MB Flash nodig hebt, bekijk dan de XIAO ESP32-S3 Plus.
-
-
 
 ## XIAO ESP32S3 versus Sense versus Plus: welke versie moet je kopen?
 
@@ -172,8 +168,6 @@ Kies dit bord als je een camera, microfoon of SD-logging wilt op een bord ter gr
 | Meest geschikt voor | Zo klein en zuinig mogelijke projecten | Beeld, audio en datalogging | Meer pinnen en Flash |
 
 Prijzen veranderen afhankelijk van verkoper, bestemming, verzending en gekozen variant. Controleer vóór het afrekenen de actuele aanbieding, meegeleverde accessoires en het cameramodel.
-
-
 
 ## XIAO ESP32S3 Sense-pinout: D0–D12 naar GPIO {#xiao-esp32s3-sense-pinout-d0d12-to-gpio}
 
@@ -197,8 +191,6 @@ Seeed merkt op dat D11 en D12 (GPIO42 en GPIO41), hoewel ze als analoge pinnen z
 
 Voedingspinnen: **5V** is de USB-5V-voedingsrail, **3V3** is de gereguleerde uitgang van 3,3 V en **GND** is massa. Alle GPIO's gebruiken 3,3V-logica en mogen geen 5 V ontvangen. Wanneer het bord op een batterij werkt, staat er geen spanning op de 5V-pin.
 
-
-
 ## Beschikbaarheid van GPIO's: pinnen die door camera, microfoon en SD-kaart worden gebruikt
 
 Volgens de pinout van Seeed overlappen camera, microfoon en SD-kaart elkaar niet, maar sommige delen GPIO's met de headerpinnen.
@@ -214,15 +206,11 @@ Volgens de pinout van Seeed overlappen camera, microfoon en SD-kaart elkaar niet
 
 Als je de SD-kaart gebruikt, is de gebruikers-led op GPIO21 ook de chipselectlijn van de kaart. Elk extra SPI-apparaat op D8–D10 deelt de bus met de kaart en heeft een eigen chipselectpin nodig. Als je de microfoon gebruikt, moet je D11 en D12 als bezet beschouwen.
 
-
-
 ## Camera, microfoon en microSD
 
 De uitbreidingskaart wordt aangesloten op een board-to-board-connector en bevat de camera, PDM-microfoon en microSD-sleuf. De camera-voorbeelden van Seeed ondersteunen OV5640, OV3660 en OV2640, zodat dezelfde sketches werken, maar alleen de OV5640 heeft autofocus. De OV5640-module wordt ook afzonderlijk als vervangingsonderdeel verkocht.
 
 Seeed vermeldt dat de fabrieksfirmware sinds juni 2025 standaard een Wi-Fi-toegangspunt activeert met een gepubliceerde netwerknaam en een gepubliceerd wachtwoord. Flash je eigen firmware voordat je het bord inzet op een plek waar andere mensen er toegang toe kunnen krijgen.
-
-
 
 ## Specificaties in één oogopslag
 
@@ -244,8 +232,6 @@ Seeed vermeldt dat de fabrieksfirmware sinds juni 2025 standaard een Wi-Fi-toega
 
 De specificaties volgen de Seeed Studio Wiki (gecontroleerd op 7 november 2026). Seeed vermeldt dat de camera wordt vervangen door de OV5640 met autofocus in plaats van de OV3660 en dat borden tijdens deze overgang met een van beide camera's kunnen worden geleverd.
 
-
-
 ## Stroomverbruik en batterijgebruik
 
 Typische waarden die Seeed publiceert voor de Sense **met aangesloten uitbreidingskaart**:
@@ -260,8 +246,6 @@ Typische waarden die Seeed publiceert voor de Sense **met aangesloten uitbreidin
 | Camera-webserver (USB) | ongeveer 140 mA gemiddeld, 347 mA piek |
 
 Het bord kan werken op een 3,7V-Li-ion-batterij en deze via USB-C opladen. Seeed merkt op dat het negatieve batterijpad het dichtst bij de USB-poort ligt; controleer daarom de polariteit voordat je gaat solderen. Er is geen GPIO die specifiek bedoeld is om de batterijspanning uit te lezen; daarvoor is een externe spanningsdeler op een ADC-pin nodig.
-
-
 
 ## Arduino, MicroPython en aan de slag
 
@@ -292,8 +276,6 @@ Open de Serial Monitor op **115200 baud**. Omdat GPIO21 ook de chipselect van de
 
 - [Aan de slag met Seeed Studio](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/)
 - [Handleiding pinmultiplexing van Seeed Studio](https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/)
-
-
 
 ## Waar te kopen
 
@@ -334,8 +316,6 @@ Seeed levert het bord standaard zonder pinheaders. Controleer of de aanbieding v
 ### Werkt de XIAO ESP32S3 Sense met MicroPython?
 
 Ja. Seeed documenteert Arduino en MicroPython voor de XIAO ESP32-S3-serie. De programmeeromgeving verandert niets aan de limiet van 3,3 V of de hierboven beschreven pinindeling.
-
-
 
 ## Vergelijk andere ESP32-borden
 
