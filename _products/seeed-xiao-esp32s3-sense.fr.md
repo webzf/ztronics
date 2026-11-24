@@ -23,7 +23,7 @@ editorial_review:
     - "Le microphone, la carte SD et la LED utilisateur partagent des GPIO avec les broches du connecteur ; vérifiez les broches disponibles avant le câblage"
     - "La consommation en veille profonde atteint environ 3 mA avec la carte d’extension connectée, bien plus que le XIAO ESP32S3 standard"
     - "La carte est généralement livrée sans barrettes de broches ; le module caméra (OV5640 ou OV3660) peut varier selon le lot"
-seo_title: "Seeed Studio XIAO ESP32S3 Sense : caractéristiques, brochage et achat"
+seo_title: "Seeed Studio XIAO ESP32S3 Sense : brochage et achat"
 seo_description: "Caractéristiques du Seeed Studio XIAO ESP32S3 Sense, brochage D0–D12, caméra OV5640, microphone, broches microSD et points de vente."
 product_id: seeed-xiao-esp32s3-sense
 category: Development Boards
