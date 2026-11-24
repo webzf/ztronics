@@ -4,7 +4,7 @@ lang: it
 locale: it-IT
 toc_label: Indice
 internal_links: true
-title: "Seeed Studio XIAO ESP32S3 Sense: fotocamera, microfono e microSD in una scheda da 21 × 17,8 mm"
+title: "Seeed Studio XIAO ESP32S3 Sense: fotocamera, microfono e microSD in 21 × 17,8 mm"
 product_verdict: "Ideale per progetti compatti con fotocamera, audio e registrazione dati basati su ESP32-S3. Pianifica l'utilizzo dei GPIO condivisi e considera la maggiore corrente in deep sleep con la scheda di espansione collegata."
 editorial_review:
   rating: 8.5
@@ -22,8 +22,8 @@ editorial_review:
     - "Microfono, scheda SD e LED utente condividono GPIO con i pin del connettore: verifica i pin disponibili prima del cablaggio"
     - "La corrente in deep sleep è di circa 3 mA con la scheda di espansione collegata, molto più alta rispetto al normale XIAO ESP32S3"
     - "Le schede sono generalmente fornite senza pin header e il modello della fotocamera (OV5640 o OV3660) può variare in base al lotto"
-seo_title: "XIAO ESP32S3 Sense: specifiche, pinout e dove acquistarlo"
-seo_description: "Specifiche Seeed Studio XIAO ESP32S3 Sense, pinout completo da D0 a D12/GPIO, pin della fotocamera OV5640, microfono e SD, consumi e acquisto."
+seo_title: "Seeed Studio XIAO ESP32S3 Sense: specifiche, pinout e acquisto"
+seo_description: "Specifiche Seeed Studio XIAO ESP32S3 Sense, pinout D0–D12, fotocamera OV5640, microfono, pin microSD e dove acquistare."
 page_id: product-seeed-xiao-esp32s3-sense
 product_id: seeed-xiao-esp32s3-sense
 category: Development Boards
@@ -107,6 +107,26 @@ Seeed Studio XIAO ESP32S3 Sense è una scheda ESP32-S3 grande quanto un pollice,
 
 Prima di collegare qualsiasi componente, è importante capire quali sono i **pin condivisi**: microfono, scheda SD e LED utente riutilizzano GPIO disponibili anche sul connettore. Le tabelle qui sotto mostrano esattamente quali.
 
+<div class="en-product-cta__buttons">
+  <a class="en-buy-button" href="/go/hardware/seeed-xiao-esp32s3-sense/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Verifica il prezzo — XIAO ESP32S3 Sense</strong><small>AliExpress · verifica la versione della fotocamera e i pin header</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+  <a class="en-buy-button" href="https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fab fa-amazon"></i></span><span class="en-buy-text"><strong>Verifica il prezzo — Amazon</strong><small>Verifica la versione Sense e gli accessori inclusi</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+  <a class="en-buy-button" href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-store"></i></span><span class="en-buy-text"><strong>Acquista — Seeed Studio (pin pre-saldati)</strong><small>Store ufficiale · versione con pin pre-saldati</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
+</div>
+
+## Pinout XIAO ESP32S3 Sense in breve
+
+XIAO ESP32S3 e XIAO ESP32S3 Sense condividono la stessa disposizione dei pin sulla scheda principale. Sulla scheda di espansione Sense, D11 e D12 sono riservati per impostazione predefinita al microfono digitale; D8–D10 condividono il bus SPI della microSD.
+
+- **I²C:** D4 / SDA = GPIO5, D5 / SCL = GPIO6
+- **UART:** D6 / TX = GPIO43, D7 / RX = GPIO44
+- **SPI:** D8 / SCK = GPIO7, D9 / MISO = GPIO8, D10 / MOSI = GPIO9
+- **Analogico (ADC): D0–D5 e D8–D10; D11 e D12 non supportano ADC**
+- **Microfono: D11 (GPIO42), clock; D12 (GPIO41), dati**
+- **LED utente / chip select SD: GPIO21**
+- Tutti i GPIO usano logica a 3,3 V e non tollerano 5 V.
+
+Seeed riserva D11 e D12 al microfono per impostazione predefinita. Per riutilizzarli occorre modificare il collegamento J1/J2 sulla scheda di espansione.
+
 ## Foto del prodotto
 
 <div class="product-image-gallery" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.5rem 0;">
@@ -124,9 +144,13 @@ Prima di collegare qualsiasi componente, è importante capire quali sono i **pin
   </figure>
 </div>
 
+
+
 ## Vale la pena acquistare XIAO ESP32S3 Sense?
 
 Scegli questa scheda se vuoi una fotocamera, un microfono o la registrazione su SD in una scheda grande quanto un pollice: una piccola videocamera Wi-Fi, un progetto audio o vocale, un dispositivo indossabile o un logger alimentato a batteria. Se ti serve soltanto un piccolo ESP32-S3 senza questi extra, il normale XIAO ESP32S3 ha la stessa disposizione dei pin e una corrente in deep sleep molto più bassa. Se ti servono più GPIO e 16 MB di Flash, valuta XIAO ESP32-S3 Plus.
+
+
 
 ## XIAO ESP32S3, Sense o Plus: quale versione acquistare?
 
@@ -141,39 +165,9 @@ Scegli questa scheda se vuoi una fotocamera, un microfono o la registrazione su 
 
 I prezzi cambiano in base al venditore, alla destinazione, alla spedizione e alla variante selezionata. Prima del pagamento, controlla l'inserzione aggiornata, gli accessori inclusi e il modello della fotocamera.
 
-<div class="en-product-cta__buttons">
-  <a class="en-buy-button" href="/go/hardware/seeed-xiao-esp32s3-sense/" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span><span class="en-buy-text"><strong>Verifica il prezzo — XIAO ESP32S3 Sense</strong><small>AliExpress · verifica la versione della fotocamera e i pin header</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-  <a class="en-buy-button" href="https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fab fa-amazon"></i></span><span class="en-buy-text"><strong>Verifica il prezzo — Amazon</strong><small>Verifica la versione Sense e gli accessori inclusi</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-  <a class="en-buy-button" href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener"><span class="en-buy-icon"><i class="fas fa-store"></i></span><span class="en-buy-text"><strong>Acquista — Seeed Studio (pin pre-saldati)</strong><small>Store ufficiale · versione con pin pre-saldati</small></span><span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span></a>
-</div>
 
-## Specifiche in breve
 
-| Specifica | Dettagli |
-|---|---|
-| MCU | ESP32-S3R8, dual-core Xtensa LX7, fino a 240 MHz |
-| Flash | 8 MB |
-| PSRAM | 8 MB |
-| Wireless | Wi-Fi 2,4 GHz, Bluetooth LE 5.0 / Bluetooth Mesh |
-| Fotocamera | OV5640 rimovibile con autofocus (2592 × 1944); alcune schede sono fornite con OV3660 (2048 × 1536); le prime versioni utilizzavano OV2640 (1600 × 1200) |
-| Microfono | Microfono digitale (PDM) |
-| Memoria | Slot microSD sulla scheda di espansione, supporto FAT fino a 32 GB |
-| Interfacce | 1 × UART, 1 × I²C, 1 × I²S, 1 × SPI, 11 × GPIO con PWM, 9 × ADC |
-| Pulsanti e LED | Reset, Boot, LED utente, LED di ricarica |
-| Alimentazione | USB Type-C 5 V oppure batteria Li-ion da 3,7 V |
-| Antenna | Connettore U.FL; antenna esterna inclusa nella confezione |
-| Dimensioni | 21 × 17,8 mm; 21 × 17,8 × 15 mm con scheda di espansione |
-| Temperatura di esercizio | −20 °C a 65 °C |
-
-Le specifiche seguono la Wiki Seeed Studio (verificata il 7 novembre 2026). Seeed indica che la fotocamera sta passando dal modello OV3660 all'OV5640 con autofocus e che, durante la transizione, le schede possono essere fornite con uno dei due modelli.
-
-## Fotocamera, microfono e microSD
-
-La scheda di espansione si collega tramite un connettore board-to-board e ospita la fotocamera, il microfono PDM e lo slot microSD. Gli esempi di Seeed per la fotocamera supportano OV5640, OV3660 e OV2640: gli stessi sketch funzionano con tutti e tre i modelli, ma soltanto OV5640 dispone di autofocus. Il modulo OV5640 è venduto anche separatamente come ricambio.
-
-Seeed dichiara che, da giugno 2025, il firmware di fabbrica abilita un access point Wi-Fi predefinito con nome e password pubblicati. Prima di installare la scheda in un luogo accessibile ad altre persone, carica un firmware personalizzato.
-
-## Pinout XIAO ESP32S3 Sense: da D0–D12 a GPIO
+## Pinout XIAO ESP32S3 Sense: da D0–D12 a GPIO {#xiao-esp32s3-sense-pinout-d0d12-to-gpio}
 
 | Pin XIAO | GPIO | Funzioni | Nota |
 |---|---:|---|---|
@@ -195,6 +189,8 @@ Seeed specifica che, anche se D11 e D12 (GPIO42 e GPIO41) sono contrassegnati co
 
 Pin di alimentazione: **5V** è la linea USB a 5 V, **3V3** è l'uscita regolata a 3,3 V e **GND** è la massa. Tutti i GPIO utilizzano logica a 3,3 V e non devono ricevere 5 V. Quando la scheda è alimentata a batteria, sul pin 5V non è presente tensione.
 
+
+
 ## Disponibilità dei GPIO: pin utilizzati da fotocamera, microfono e scheda SD
 
 Secondo la mappa dei pin di Seeed, fotocamera, microfono e scheda SD non si sovrappongono tra loro, ma alcune funzioni condividono i GPIO con i pin del connettore.
@@ -210,6 +206,38 @@ Secondo la mappa dei pin di Seeed, fotocamera, microfono e scheda SD non si sovr
 
 Se utilizzi la scheda SD, il LED utente su GPIO21 è anche la linea chip-select della scheda. Qualsiasi dispositivo SPI aggiuntivo collegato a D8–D10 condivide il bus con la scheda SD e richiede un proprio pin chip-select. Se utilizzi il microfono, considera D11 e D12 già occupati.
 
+
+
+## Fotocamera, microfono e microSD
+
+La scheda di espansione si collega tramite un connettore board-to-board e ospita la fotocamera, il microfono PDM e lo slot microSD. Gli esempi di Seeed per la fotocamera supportano OV5640, OV3660 e OV2640: gli stessi sketch funzionano con tutti e tre i modelli, ma soltanto OV5640 dispone di autofocus. Il modulo OV5640 è venduto anche separatamente come ricambio.
+
+Seeed dichiara che, da giugno 2025, il firmware di fabbrica abilita un access point Wi-Fi predefinito con nome e password pubblicati. Prima di installare la scheda in un luogo accessibile ad altre persone, carica un firmware personalizzato.
+
+
+
+## Specifiche in breve
+
+| Specifica | Dettagli |
+|---|---|
+| MCU | ESP32-S3R8, dual-core Xtensa LX7, fino a 240 MHz |
+| Flash | 8 MB |
+| PSRAM | 8 MB |
+| Wireless | Wi-Fi 2,4 GHz, Bluetooth LE 5.0 / Bluetooth Mesh |
+| Fotocamera | OV5640 rimovibile con autofocus (2592 × 1944); alcune schede sono fornite con OV3660 (2048 × 1536); le prime versioni utilizzavano OV2640 (1600 × 1200) |
+| Microfono | Microfono digitale (PDM) |
+| Memoria | Slot microSD sulla scheda di espansione, supporto FAT fino a 32 GB |
+| Interfacce | 1 × UART, 1 × I²C, 1 × I²S, 1 × SPI, 11 × GPIO con PWM, 9 × ADC |
+| Pulsanti e LED | Reset, Boot, LED utente, LED di ricarica |
+| Alimentazione | USB Type-C 5 V oppure batteria Li-ion da 3,7 V |
+| Antenna | Connettore U.FL; antenna esterna inclusa nella confezione |
+| Dimensioni | 21 × 17,8 mm; 21 × 17,8 × 15 mm con scheda di espansione |
+| Temperatura di esercizio | −20 °C a 65 °C |
+
+Le specifiche seguono la Wiki Seeed Studio (verificata il 7 novembre 2026). Seeed indica che la fotocamera sta passando dal modello OV3660 all'OV5640 con autofocus e che, durante la transizione, le schede possono essere fornite con uno dei due modelli.
+
+
+
 ## Consumo energetico e utilizzo della batteria
 
 Valori tipici pubblicati da Seeed per la versione Sense **con la scheda di espansione collegata**:
@@ -224,6 +252,8 @@ Valori tipici pubblicati da Seeed per la versione Sense **con la scheda di espan
 | Server web della fotocamera (USB) | circa 140 mA in media, 347 mA di picco |
 
 La scheda può essere alimentata da una batteria Li-ion da 3,7 V e ricaricarla tramite USB-C. Seeed indica che la piazzola negativa della batteria è quella più vicina alla porta USB: verifica la polarità prima di saldare. Non è presente un GPIO dedicato alla lettura della tensione della batteria; per misurarla serve un partitore di tensione esterno collegato a un pin ADC.
+
+
 
 ## Arduino, MicroPython e primi passi
 
@@ -257,13 +287,17 @@ Apri il Monitor seriale a **115200 baud**. Poiché GPIO21 è anche il chip-selec
 - [Guida introduttiva Seeed Studio](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/)
 - [Guida Seeed Studio al multiplexing dei pin](https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/)
 
+
+
 ## Dove acquistare
 
 Verifica che l'inserzione indichi la versione **Sense**, quale fotocamera è inclusa, il venditore e il Paese di consegna. Per impostazione predefinita, Seeed spedisce la scheda senza pin header: cerca una versione con pin pre-saldati oppure prevedi di saldare i tuoi connettori. Le offerte variano in base alla regione e questa pagina non indica un prezzo fisso.
 
 In qualità di affiliato, Embedded Nerd può ricevere una commissione sugli acquisti idonei, senza costi aggiuntivi per te.
 
-- [Seeed Studio XIAO ESP32S3 Sense (pin pre-saldati) — store ufficiale](https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link)
+- [AliExpress — controlla prezzo e variante](/go/hardware/seeed-xiao-esp32s3-sense/)
+- [Amazon — Seeed Studio XIAO ESP32S3 Sense](https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20)
+- [Seeed Studio XIAO ESP32S3 Sense — negozio ufficiale](https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link)
 
 ## Domande frequenti
 
@@ -295,6 +329,8 @@ Per impostazione predefinita, Seeed fornisce la scheda senza pin header. Verific
 
 Sì. Seeed documenta Arduino e MicroPython per la serie XIAO ESP32-S3. L'ambiente di programmazione non modifica i limiti elettrici di 3,3 V né la mappatura dei pin descritta sopra.
 
+
+
 ## Confronto con altre schede ESP32
 
 | Scheda | Ideale per |
@@ -305,3 +341,4 @@ Sì. Seeed documenta Arduino e MicroPython per la serie XIAO ESP32-S3. L'ambient
 | [Raspberry Pi Pico W](/products/raspberry-pi-pico-w/) | RP2040 con Wi-Fi e supporto a MicroPython |
 
 Non sai quale scheda sia adatta al tuo progetto? Leggi la guida alle [migliori schede ESP32](/best-esp32-boards/) oppure visita la categoria [Schede di sviluppo](/products/development-boards/).
+
