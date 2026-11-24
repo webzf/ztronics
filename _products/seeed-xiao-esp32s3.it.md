@@ -134,7 +134,7 @@ Sono presenti anche un LED utente, un LED di ricarica, pulsanti Reset e Boot e u
 
 **Nota ADC:** Seeed indica nove canali ADC, ma specifica che GPIO41 e GPIO42 (D12 e D11) non supportano ADC sul chip ESP32-S3. Per gli ingressi analogici usa D0–D5 e D8–D10.
 
-![Official Seeed Studio XIAO ESP32-S3 pinout diagram](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg)
+![Schema ufficiale dei pin di Seeed Studio XIAO ESP32-S3](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3.jpg)
 
 ## Consumo energetico e batteria
 
