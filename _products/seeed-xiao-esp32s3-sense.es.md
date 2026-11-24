@@ -278,9 +278,12 @@ Compruebe que el anuncio indica expresamente la versión **Sense**, qué modelo 
 
 Como afiliado, Embedded Nerd puede recibir una comisión por compras que cumplan los requisitos, sin coste adicional para usted.
 
-- [AliExpress — consultar precio y variante](/go/hardware/seeed-xiao-esp32s3-sense/)
-- [Amazon — Seeed Studio XIAO ESP32S3 Sense](https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20)
-- [Seeed Studio XIAO ESP32S3 Sense — tienda oficial](https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link)
+
+<ul>
+  <li><a href="/go/hardware/seeed-xiao-esp32s3-sense/" target="_blank" rel="nofollow sponsored noopener">AliExpress — consultar precio y variante</a></li>
+  <li><a href="https://www.amazon.com/Seeed-Studio-XIAO-ESP32-Sense/dp/B0C69FFVHH?tag=embeddednerd2-20" target="_blank" rel="nofollow sponsored noopener">Amazon — Seeed Studio XIAO ESP32S3 Sense</a></li>
+  <li><a href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link" target="_blank" rel="nofollow sponsored noopener">Seeed Studio XIAO ESP32S3 Sense — tienda oficial</a></li>
+</ul>
 
 ## Preguntas frecuentes
 
