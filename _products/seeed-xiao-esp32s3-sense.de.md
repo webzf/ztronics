@@ -91,6 +91,7 @@ links:
     description: "Offizielle Produktseite des XIAO ESP32S3 Sense."
     url: "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html"
 related:
+  - seeed-xiao-esp32s3
   - arduino-nano-esp32
   - esp32-devkit
   - raspberry-pi-pico-w
