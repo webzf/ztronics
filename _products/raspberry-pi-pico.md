@@ -339,7 +339,7 @@ The Pico can be combined with many common electronics modules.
 
 ### Temperature and Humidity Monitor
 
-Connect a **DHT22** to the Pico and display or log temperature and humidity measurements.
+Connect a [DHT22 Temperature & Humidity Sensor](/products/dht22/) to the Pico and display or log temperature and humidity measurements. If your project also needs barometric pressure, consider the [BME280 sensor](/products/bme280/), which measures temperature, humidity and pressure.
 
 ### MPU6050 Motion Sensor
 
