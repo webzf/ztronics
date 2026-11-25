@@ -76,7 +76,7 @@ links:
     icon: "fas fa-store"
     description: "Page officielle du XIAO ESP32S3 Sense."
     url: "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html"
-related: [arduino-nano-esp32, esp32-devkit, raspberry-pi-pico-w]
+related: [seeed-xiao-esp32s3, arduino-nano-esp32, esp32-devkit, raspberry-pi-pico-w]
 available_languages: [en, de, es, fr, it, nl, pl, pt]
 english_url: /products/seeed-xiao-esp32s3-sense/
 german_url: /de/products/seeed-xiao-esp32s3-sense/
