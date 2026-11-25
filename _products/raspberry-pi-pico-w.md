@@ -353,7 +353,7 @@ The Pico W can be used with many of the sensors and modules commonly used in emb
 
 ### Wireless Temperature and Humidity Monitor
 
-Combine the Pico W with a **DHT22** to create a wireless environmental monitor.
+Combine the Pico W with a [DHT22 Temperature & Humidity Sensor](/products/dht22/) to create a wireless environmental monitor. If you also need barometric pressure, the [BME280 sensor](/products/bme280/) is a suitable alternative that measures temperature, humidity and pressure.
 
 The Pico W can read temperature and humidity and publish the measurements to a web server, MQTT broker or another device.
 
