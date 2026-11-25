@@ -143,7 +143,7 @@ The SSD1306 communicates over the **I2C bus**, requiring only four connections:
 
 Most modules use the default I2C address **0x3C**, although some versions are configured as **0x3D**.
 
-If your display isn't detected, our **[I2C Scanner Tutorial](/i2c-scanner-tutorial/)** shows you how to identify the correct device address and troubleshoot common communication problems.
+If your display isn't detected, our **[I2C Scanner Tutorial](/i2c-scanner-tutorial/)** shows you how to identify the correct device address and troubleshoot common communication problems. When combining the OLED with other sensors, use the [I2C Address Lookup Tool](/tools/i2c-address-lookup/) to check for address conflicts. If the bus becomes unreliable, the [I2C Pull-up Resistor Calculator](/tools/i2c-pullup-resistor-calculator/) can help estimate suitable resistor values.
 
 ---
 
