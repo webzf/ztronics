@@ -198,6 +198,8 @@ The ESP32 DevKit V1 can be used for a wide range of embedded and connected proje
 
 Its integrated wireless connectivity makes the ESP32 particularly useful for projects that require communication with cloud services, smartphones or other networked devices.
 
+The ESP32 DevKit is also a practical platform for motion-sensing projects. Follow the [MPU6050 Arduino Guide](/mpu6050-arduino-guide/) for a 6-axis accelerometer and gyroscope setup, or the [BMA400 ESP32 Tutorial](/bma400-esp32-tutorial-wiring-code-arduino-guide/) when low-power acceleration sensing is more important. For a complete example, see the [ESP32 Snake Game controlled by an MPU6050](/esp32-snake-game-with-mpu6050-and-oled-display/).
+
 ---
 
 ## Why Choose the ESP32 DevKit V1?
