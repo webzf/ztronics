@@ -22,7 +22,9 @@ Explore dedicated LoRa hardware and wireless devices for off-grid communication,
 
 Meshtastic and MeshCore are independent LoRa mesh networking ecosystems. Devices must run compatible firmware to communicate within the same network. Before choosing a product, check which ecosystem is used by your contacts and local repeaters.
 
-The [Seeed Wio Tracker L1 Pro](/products/seeed-wio-tracker-l1-pro/) is available in separate Seeed listings for Meshtastic and MeshCore Companion firmware.
+The [Seeed Wio Tracker L1 Pro](/products/seeed-wio-tracker-l1-pro/) is available in separate Seeed listings for Meshtastic and MeshCore Companion firmware. It is the more tracker-oriented handheld in this group, with an integrated battery, GNSS receiver and OLED.
+
+For a keyboard-based Meshtastic device, compare the [M5Stack Cardputer Mesh Kit](/products/m5stack-cardputer-mesh-kit/), which bundles the Cardputer-Adv with an SX1262 LoRa/GNSS expansion and factory-installed Meshtastic. If you want the handheld ESP32-S3 computer but prefer to choose expansion hardware separately, see the [M5Stack Cardputer-Adv](/products/m5stack-cardputer-adv/) guide; the standalone unit does not include LoRa.
 
 ## What to check before buying LoRa hardware
 
