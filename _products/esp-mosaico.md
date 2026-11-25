@@ -135,7 +135,7 @@ The ESP-Mosaico is worth considering if you want a compact interactive platform 
 
 ### It may not suit you if
 - You only need a low-cost Wi-Fi microcontroller or a simple display controller.
-- You need a larger screen for dense dashboards, accessibility-sized controls or a conventional HMI.
+- You need a larger screen for dense dashboards, accessibility-sized controls or a conventional HMI. A 4-inch square option like the [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) gives you much more room at the same 480 × 480 resolution.
 - You need proven battery runtime or independently measured reliability data before buying.
 
 ## Display, sensors and storage
@@ -275,4 +275,5 @@ It has an onboard 3.7 V, 65 mAh Li-ion battery, but that small capacity should n
 - [Waveshare ESP32-S3-Touch-AMOLED-2.16](/products/waveshare-esp32-s3-touch-amoled-2-16/) — another compact 480 × 480 AMOLED development board.
 - [Waveshare ESP32-S3-Touch-AMOLED-2.41](/products/waveshare-esp32-s3-touch-amoled-2-41/) — a larger AMOLED alternative.
 - [Waveshare ESP32-P4 round touchscreen board](/products/waveshare-esp32-p4-wifi6-touch-lcd-3-4c/) — a different display-oriented platform.
+- [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/) — a larger 4-inch 480 × 480 square touchscreen for Home Assistant dashboards.
 - [ESP32 Touchscreen Displays Guide](/esp32-touchscreen-displays-guide/) — broader guidance on choosing display hardware.
