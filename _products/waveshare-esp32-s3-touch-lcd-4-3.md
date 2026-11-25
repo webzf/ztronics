@@ -302,7 +302,7 @@ It is especially attractive as a step up from a small **ILI9341 + XPT2046** touc
 
 This board fits naturally into the Embedded Nerd ESP32 display and touchscreen cluster.
 
-The **ILI9341 + XPT2046 2.8-inch Touchscreen** is the compact, low-cost resistive-touch option, while the Waveshare ESP32-S3-Touch-LCD-4.3 provides a larger capacitive touchscreen with an integrated ESP32-S3 and PSRAM.
+The [**ILI9341 + XPT2046 2.8-inch Touchscreen**](/products/ili9341-xpt2046-2-8-touchscreen/) is the compact, low-cost resistive-touch option, while the Waveshare ESP32-S3-Touch-LCD-4.3 provides a larger capacitive touchscreen with an integrated ESP32-S3 and PSRAM. For another 4.3-inch 800×480 option, compare the [Sunton ESP32-8048S043C](/products/sunton-esp32-8048s043c/); if you prefer a smaller square panel, see the [Guition ESP32-S3-4848S040](/products/guition-esp32-s3-4848s040/).
 
 ---
 
