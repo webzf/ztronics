@@ -99,7 +99,7 @@ This tutorial includes:
 
 > **Important:** The MPU6050 must remain completely still during calibration. Movement or vibration while collecting samples can produce incorrect calibration values.
 
-If you are new to the MPU6050, start with our [MPU6050 Arduino Guide](/mpu6050-arduino-guide/) to learn how to connect the sensor, install the required library, and read its accelerometer and gyroscope values.
+If you are new to the MPU6050, start with our [MPU6050 Arduino Guide](/mpu6050-arduino-guide/) to learn how to connect the sensor, install the required library, and read its accelerometer and gyroscope values. For module specifications and hardware details, see the [MPU6050 Accelerometer & Gyroscope product page](/products/mpu6050/).
 
 ---
 
