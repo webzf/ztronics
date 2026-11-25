@@ -97,6 +97,7 @@ links:
     url: "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Sense-Pre-Soldered-p-6335.html?sensecap_affiliate=3jSyuVk&referring_service=link"
 
 related:
+  - seeed-xiao-esp32s3
   - arduino-nano-esp32
   - esp32-devkit
   - raspberry-pi-pico-w
