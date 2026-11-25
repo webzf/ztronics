@@ -191,6 +191,8 @@ The Cap LoRa-1262 adds GNSS positioning to the handheld. In Meshtastic, location
 
 GNSS performance depends on satellite visibility, antenna placement and the surrounding environment. For best results, use the device outdoors with a clear view of the sky.
 
+If you are comparing ready-to-use handheld LoRa trackers, also see the [Seeed Wio Tracker L1 Pro](/products/seeed-wio-tracker-l1-pro/). Its Meshtastic edition can join a Meshtastic network like this kit, while its separately sold MeshCore edition belongs to a different, incompatible ecosystem. The Wio is more tracker-oriented; the Cardputer adds a physical keyboard and an ESP32-S3 development platform.
+
 ## Development beyond Meshtastic
 
 The Cardputer-Adv remains an ESP32-S3 development platform. M5Stack lists Arduino, UiFlow2, ESP-IDF and PlatformIO as development options. The Cap LoRa-1262 also has documentation and libraries for LoRa and GNSS development.
