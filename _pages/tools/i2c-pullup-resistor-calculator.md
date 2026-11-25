@@ -521,4 +521,4 @@ manual](https://www.nxp.com/docs/en/user-guide/UM10204.pdf).
 
 ## Related I2C resources
 
-Use the [I2C Address Lookup Tool](/tools/i2c-address-lookup/) to identify common device addresses, or follow the [I2C Scanner Tutorial](/i2c-scanner-tutorial/) to detect devices connected to an Arduino or ESP32 bus.
+Use the [I2C Address Lookup Tool](/tools/i2c-address-lookup/) to identify common device addresses, or follow the [I2C Scanner Tutorial](/i2c-scanner-tutorial/) to detect devices connected to an Arduino or ESP32 bus. If two devices share a fixed address, see the [TCA9548A I2C Multiplexer](/products/tca9548a-i2c-multiplexer/) for a way to separate them onto different channels.
