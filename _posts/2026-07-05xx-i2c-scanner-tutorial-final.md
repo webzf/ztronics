@@ -866,5 +866,6 @@ Using an [Arduino Nano ESP32](/products/arduino-nano-esp32/)? Its default I²C p
 
 ## Related I2C tools
 
-- [I2C Address Lookup Tool](/tools/i2c-address-lookup/)
-- [I2C Pull-up Resistor Calculator](/tools/i2c-pullup-resistor-calculator/)
+- [I2C Address Lookup Tool](/tools/i2c-address-lookup/) — identify devices commonly associated with a detected address.
+- [I2C Pull-up Resistor Calculator](/tools/i2c-pullup-resistor-calculator/) — check suitable pull-up values for your bus.
+- [TCA9548A I2C Multiplexer](/products/tca9548a-i2c-multiplexer/) — separate devices that share a fixed I2C address.
