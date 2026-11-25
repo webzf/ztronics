@@ -103,7 +103,7 @@ The **M5Stack Cardputer-Adv** is a card-sized computer built around the ESP32-S3
 
 It is more than a tiny ESP32 development board: the screen, keyboard, speaker, microphone and battery make it useful for building self-contained handheld tools and interfaces without wiring a separate display and input devices.
 
-The standalone Cardputer-Adv does **not** include a LoRa radio. For LoRa or Meshtastic, you need a compatible Cap or the complete [Cardputer Mesh Kit](/products/m5stack-cardputer-mesh-kit/).
+The standalone Cardputer-Adv does **not** include a LoRa radio. For LoRa or Meshtastic, you need a compatible Cap or the complete [Cardputer Mesh Kit](/products/m5stack-cardputer-mesh-kit/). If you prefer a finished handheld with LoRa and GNSS already integrated rather than an ESP32-S3 development platform with an add-on, compare the [Seeed Wio Tracker L1 Pro](/products/seeed-wio-tracker-l1-pro/); it is sold in separate Meshtastic and MeshCore editions.
 
 
 ![M5Stack Cardputer-Adv standalone handheld computer, front view showing the 56-key keyboard and display](/assets/images/products/cardputer-adv-front.webp)
