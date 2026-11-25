@@ -273,8 +273,8 @@ Popular choices include:
 
 - **[SSD1306 OLED Display](/products/ssd1306-oled/)**
 - **[MPU6050 Accelerometer & Gyroscope](/mpu6050-arduino-guide/)**
-- BME280 Environmental Sensor
-- DHT22 Temperature Sensor
+- **[BME280 Environmental Sensor](/products/bme280/)**
+- **[DHT22 Temperature & Humidity Sensor](/products/dht22/)**
 - Relay Modules
 - RFID Readers
 - GPS Modules
