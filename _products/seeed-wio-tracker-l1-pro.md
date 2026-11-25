@@ -265,5 +265,6 @@ Seeed specifies a 5 V / 1 A solar input. Use a compatible panel and follow the m
 
 - [Seeed Studio XIAO ESP32S3 Sense](/products/seeed-xiao-esp32s3-sense/) — a compact ESP32-S3 board for camera, audio and sensor projects.
 - [LilyGO T-Deck Plus](/products/lilygo-t-deck-plus/) — a handheld LoRa device with a keyboard and display for compatible mesh projects.
+- [M5Stack Cardputer Mesh Kit](/products/m5stack-cardputer-mesh-kit/) — another Meshtastic handheld, built around an ESP32-S3 with a physical keyboard and an SX1262 LoRa/GNSS expansion.
 
-For a mesh communication project, start by checking which network is active in your area. Local coverage and compatible peers matter more than the feature list alone.
+For a mesh communication project, start by checking which network is active in your area. Local coverage and compatible peers matter more than the feature list alone. The Cardputer Mesh Kit is a Meshtastic product; choose the Wio Tracker L1 Pro's Meshtastic edition if you want it on the same network, not the MeshCore edition.
