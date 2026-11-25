@@ -171,7 +171,9 @@ The Amazon and AliExpress buttons above are affiliate links. Embedded Nerd may e
 
 ## Related Guides
 
-- **[I2C Scanner Tutorial](/i2c-scanner-tutorial/)**
+- **[I2C Scanner Tutorial](/i2c-scanner-tutorial/)** — detect which addresses respond on the bus.
+- **[I2C Address Lookup Tool](/tools/i2c-address-lookup/)** — check common device addresses and possible conflicts.
+- **[I2C Pull-up Resistor Calculator](/tools/i2c-pullup-resistor-calculator/)** — assess pull-up values for the I2C bus.
 - **[ESP32 DevKit V1](/products/esp32-devkit/)**
 - **[SSD1306 OLED Display](/products/ssd1306-oled/)**
 - **[MPU6050](/products/mpu6050/)**
