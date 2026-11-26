@@ -103,6 +103,7 @@ links:
     description: "Official product page, version options and specifications."
     url: "https://www.waveshare.com/esp32-c6-touch-amoled-2.16.htm"
 related:
+  - waveshare-esp32-c6-touch-amoled-1-8
   - waveshare-esp32-s3-touch-amoled-2-16
   - waveshare-esp32-s3-touch-amoled-2-41
   - esp-mosaico
@@ -110,7 +111,7 @@ related:
 
 ## ESP32-C6 vs ESP32-S3 AMOLED: which 2.16-inch board should you choose?
 
-Choose this board if you want a compact **2.16-inch square AMOLED touchscreen** with Wi-Fi 6, Bluetooth LE and IEEE 802.15.4 connectivity. It combines a small colour display with sensors, audio hardware, a real-time clock and battery-management circuitry.
+Choose this board if you want a compact **2.16-inch square AMOLED touchscreen** with Wi-Fi 6, Bluetooth LE and IEEE 802.15.4 connectivity. It combines a small colour display with sensors, audio hardware, a real-time clock and battery-management circuitry. If a smaller, taller 368×448 AMOLED format is a better fit, see the [Waveshare ESP32-C6-Touch-AMOLED-1.8](/products/waveshare-esp32-c6-touch-amoled-1-8/); it uses the same ESP32-C6 family but has revision-dependent display and touch controllers.
 
 The ESP32-C6 is a **single-core RISC-V processor running at up to 160 MHz**. It is a different class of platform from the dual-core ESP32-S3 boards with external PSRAM, so compare memory and processing requirements before choosing it for a demanding graphical interface.
 
