@@ -1163,6 +1163,28 @@ m5stack-cardputer-adv:
 
 #----------------
 
+xiaozhi-ai-robot-ball-esp32-s3-1-28:
+
+  preferred_store: aliexpress
+
+  notes: "AliExpress affiliate short link supplied by the site owner. The link opens a listing with three touch/battery configurations; confirm the selected variant before checkout."
+
+  disclaimer: "Embedded Nerd may earn a commission from qualifying purchases at no extra cost to you."
+
+  badges:
+    recommended: true
+    editor_choice: false
+    best_value: false
+    fast_shipping: false
+
+  stores:
+
+    aliexpress:
+      enabled: true
+      affiliate_url: "https://s.click.aliexpress.com/e/_c3o43XDn"
+
+#----------------
+
 seeed-xiao-esp32s3:
 
   preferred_store: aliexpress
