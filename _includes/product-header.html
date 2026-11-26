@@ -63,6 +63,15 @@
         </div>
       {% elsif product.product_id == "esp-mosaico" %}
         <a
+          class="en-buy-button"
+          href="{{ commerce.stores.aliexpress.affiliate_url }}"
+          target="_blank"
+          rel="nofollow sponsored noopener">
+          <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
+          <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Angebot bei AliExpress ansehen{% elsif site.active_lang == 'es' %}Ver oferta en AliExpress{% elsif site.active_lang == 'fr' %}Voir l’offre sur AliExpress{% elsif site.active_lang == 'it' %}Vedi l’offerta su AliExpress{% elsif site.active_lang == 'nl' %}Bekijk de aanbieding op AliExpress{% elsif site.active_lang == 'pl' %}Zobacz ofertę na AliExpress{% elsif site.active_lang == 'pt' %}Ver oferta na AliExpress{% else %}Check Price on AliExpress{% endif %}</strong><small>ESP-Mosaico Vision Combo Kit V1.2 · Check selected kit and availability</small></span>
+          <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+        <a
           class="en-buy-button preferred en-buy-button--official"
           href="https://store.mosaico.ai/products/esp-mosaico"
           target="_blank"
@@ -72,15 +81,6 @@
             <strong>{% if site.active_lang == 'de' %}Im offiziellen ESP-Mosaico-Shop kaufen{% elsif site.active_lang == 'fr' %}Acheter sur la boutique officielle ESP-Mosaico{% elsif site.active_lang == 'es' %}Comprar en la tienda oficial de ESP-Mosaico{% elsif site.active_lang == 'it' %}Acquista dal negozio ufficiale ESP-Mosaico{% elsif site.active_lang == 'nl' %}Koop in de officiële ESP-Mosaico-winkel{% elsif site.active_lang == 'pl' %}Kup w oficjalnym sklepie ESP-Mosaico{% elsif site.active_lang == 'pt' %}Comprar na loja oficial ESP-Mosaico{% else %}Buy from the Official ESP-Mosaico Store{% endif %}</strong>
             <small>{% if site.active_lang == 'de' %}Direkt bei Mosaico{% elsif site.active_lang == 'fr' %}Directement auprès de Mosaico{% elsif site.active_lang == 'es' %}Directamente a Mosaico{% elsif site.active_lang == 'it' %}Direttamente da Mosaico{% elsif site.active_lang == 'nl' %}Rechtstreeks bij Mosaico{% elsif site.active_lang == 'pl' %}Bezpośrednio od Mosaico{% elsif site.active_lang == 'pt' %}Diretamente à Mosaico{% else %}Direct from Mosaico{% endif %}</small>
           </span>
-          <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-        </a>
-        <a
-          class="en-buy-button"
-          href="{{ commerce.stores.aliexpress.affiliate_url }}"
-          target="_blank"
-          rel="nofollow sponsored noopener">
-          <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-          <span class="en-buy-text"><strong>{% if site.active_lang == 'de' %}Angebot bei AliExpress ansehen{% elsif site.active_lang == 'es' %}Ver oferta en AliExpress{% elsif site.active_lang == 'fr' %}Voir l’offre sur AliExpress{% elsif site.active_lang == 'it' %}Vedi l’offerta su AliExpress{% elsif site.active_lang == 'nl' %}Bekijk de aanbieding op AliExpress{% elsif site.active_lang == 'pl' %}Zobacz ofertę na AliExpress{% elsif site.active_lang == 'pt' %}Ver oferta na AliExpress{% else %}Check Price on AliExpress{% endif %}</strong><small>ESP-Mosaico Vision Combo Kit V1.2 · Check selected kit and availability</small></span>
           <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
         </a>
       {% elsif product.product_id == "waveshare-esp32-c6-touch-amoled-2-16" %}
