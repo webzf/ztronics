@@ -6,7 +6,7 @@ seo_title: "XiaoZhi AI Robot Ball ESP32-S3: Specs & Buying Guide"
 seo_description: "Compare the XiaoZhi AI Robot Ball ESP32-S3 with a 1.28-inch round display. Check its three variants, memory, firmware support and buying options."
 page_id: product-xiaozhi-ai-robot-ball-esp32-s3-1-28
 product_id: xiaozhi-ai-robot-ball-esp32-s3-1-28
-category: ESP32 Boards
+category: Development Boards
 image: "/assets/images/products/xiaozhi-ai-robot-ball-1.webp"
 header:
   teaser: "/assets/images/products/xiaozhi-ai-robot-ball-1.webp"
