@@ -7,6 +7,12 @@ seo_description: "Compare the XiaoZhi AI Robot Ball ESP32-S3 with a 1.28-inch ro
 page_id: product-xiaozhi-ai-robot-ball-esp32-s3-1-28
 product_id: xiaozhi-ai-robot-ball-esp32-s3-1-28
 category: ESP32 Boards
+image: "/assets/images/products/xiaozhi-ai-robot-ball-1.webp"
+header:
+  teaser: "/assets/images/products/xiaozhi-ai-robot-ball-1.webp"
+  og_image: "/assets/images/products/xiaozhi-ai-robot-ball-1.webp"
+  og_image_alt: "XiaoZhi AI Robot Ball ESP32-S3 with its 1.28-inch round display showing a galaxy image"
+alt: "XiaoZhi AI Robot Ball ESP32-S3 with 1.28-inch round display"
 
 excerpt: "ESP32-S3 XiaoZhi AI voice assistant board with a 1.28-inch round LCD. Compare touch and battery variants before buying."
 description: "ESP32-S3 voice assistant board with a 1.28-inch round display and three touch/battery configurations."
@@ -62,11 +68,29 @@ available_languages: [en]
 english_url: /products/xiaozhi-ai-robot-ball-esp32-s3-1-28/
 ---
 
-![XiaoZhi AI Robot Ball ESP32-S3 with its 1.28-inch round display showing a galaxy image](/assets/images/products/xiaozhi-ai-robot-ball-1.webp)
 
 The **XiaoZhi AI Robot Ball** is an ESP32-S3 board sold with a **1.28-inch round LCD** and marketed for the open-source **XiaoZhi AI voice assistant**. The seller listing offers three configurations, combining touch input and a built-in battery in different ways. The listed price is approximately **US$40 to US$45**, but prices and options can change.
 
 <p class="en-affiliate-note"><em>Affiliate disclosure: this page contains affiliate links. If you buy through them, Embedded Nerd may earn a commission at no extra cost to you. This page is based on the seller's product listing and public XiaoZhi project documentation. We have not tested this board ourselves.</em></p>
+
+<div class="en-xiaozhi-gallery" aria-label="XiaoZhi AI Robot Ball product photos">
+  <figure>
+    <img src="/assets/images/products/xiaozhi-ai-robot-ball-1.webp" alt="XiaoZhi AI Robot Ball powered on with a galaxy image on its round display" loading="lazy">
+    <figcaption>Round display powered on</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/products/xiaozhi-ai-robot-ball-2.webp" alt="XiaoZhi AI Robot Ball with the display switched off and wrist strap" loading="lazy">
+    <figcaption>Device and wrist strap</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/products/xiaozhi-ai-robot-ball-3.webp" alt="XiaoZhi AI Robot Ball case components shown beside a battery" loading="lazy">
+    <figcaption>Case components and battery</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/products/xiaozhi-ai-robot-ball-4.webp" alt="XiaoZhi AI Robot Ball powered on in a warm indoor setting" loading="lazy">
+    <figcaption>Powered-on product photo</figcaption>
+  </figure>
+</div>
 
 <div class="en-product-cta__buttons">
   <a class="en-buy-button preferred" href="https://s.click.aliexpress.com/e/_c3o43XDn" target="_blank" rel="nofollow sponsored noopener">
@@ -100,7 +124,6 @@ Specifications above are based on the seller's listing. Confirm the selected var
 
 The listing offers three configurations:
 
-![XiaoZhi AI Robot Ball with its round display switched off and wrist strap](/assets/images/products/xiaozhi-ai-robot-ball-2.webp)
 
 | Version | Touch | Battery | Best for |
 |---|---|---|---|
@@ -128,7 +151,6 @@ If you are unsure, the **With-Battery-Touch** version offers the most flexibilit
   </a>
 </div>
 
-![XiaoZhi AI Robot Ball shown with its circular case components and a battery for scale](/assets/images/products/xiaozhi-ai-robot-ball-3.webp)
 
 ## XiaoZhi firmware and board compatibility
 
@@ -143,7 +165,6 @@ The current supported-board catalogue lists the **Spotpear ESP32-S3-1.28-BOX**. 
 
 At the time this page was prepared, the AliExpress listing showed approximately **382 units sold** and a **4.5 rating from 42 reviews**. These figures are seller-listing snapshots, not independent quality tests. Check recent reviews and buyer photos before ordering.
 
-![XiaoZhi AI Robot Ball powered on, photographed in a warm indoor setting](/assets/images/products/xiaozhi-ai-robot-ball-4.webp)
 
 ## Is this the right display for your project?
 
