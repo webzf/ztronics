@@ -100,7 +100,7 @@ related:
 
 ## Should You Choose the ESP32-C6-Touch-AMOLED-1.8?
 
-This board is worth considering for **compact, portable interfaces** that benefit from an AMOLED screen and integrated peripherals. One important detail: Waveshare documents different display and touch controllers for V1 and V2, so confirm the revision before choosing libraries or following a setup guide.
+This board is worth considering for **compact, portable interfaces** that benefit from an AMOLED screen and integrated peripherals. One important detail: Waveshare documents different display and touch controllers for V1 and V2, so confirm the revision before choosing libraries or following a setup guide. If you prefer a larger square panel with a 480×480 resolution and the same ESP32-C6 platform, compare the [Waveshare ESP32-C6-Touch-AMOLED-2.16](/products/waveshare-esp32-c6-touch-amoled-2-16/).
 
 | Option | Choose it when | Main trade-off |
 |---|---|---|
