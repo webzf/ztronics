@@ -7,7 +7,6 @@ seo_description: "Compare the XiaoZhi AI Robot Ball ESP32-S3 with a 1.28-inch ro
 page_id: product-xiaozhi-ai-robot-ball-esp32-s3-1-28
 product_id: xiaozhi-ai-robot-ball-esp32-s3-1-28
 category: ESP32 Boards
-manufacturer: "Seller-listed XiaoZhi AI Robot Ball"
 
 excerpt: "ESP32-S3 XiaoZhi AI voice assistant board with a 1.28-inch round LCD. Compare touch and battery variants before buying."
 description: "ESP32-S3 voice assistant board with a 1.28-inch round display and three touch/battery configurations."
