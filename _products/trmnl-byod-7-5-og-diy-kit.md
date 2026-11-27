@@ -79,11 +79,6 @@ The **TRMNL 7.5-inch (OG) DIY Kit** is a do-it-yourself e-paper dashboard built 
 It is a hardware route into the TRMNL BYOD ecosystem, but it is not a complete boxed appliance: **the enclosure is not included**, and access to the TRMNL hosted platform and its plugin ecosystem requires a separate BYOD license.
 
 <div class="en-product-cta__buttons">
-  <a class="en-buy-button preferred" href="https://pt.aliexpress.com/item/1005009532501677.html" target="_blank" rel="nofollow noopener">
-    <span class="en-buy-icon"><i class="fas fa-cart-shopping"></i></span>
-    <span class="en-buy-text"><strong>Check price on AliExpress</strong><small>TRMNL BYOD 7.5-inch OG DIY Kit · confirm the listing and delivery options</small></span>
-    <span class="en-buy-arrow"><i class="fas fa-chevron-right"></i></span>
-  </a>
   <a class="en-buy-button" href="https://www.seeedstudio.com/TRMNL-7-5-Inch-OG-DIY-Kit-p-6481.html" target="_blank" rel="nofollow noopener">
     <span class="en-buy-icon"><i class="fas fa-store"></i></span>
     <span class="en-buy-text"><strong>Buy from Seeed Studio</strong><small>Official manufacturer store · check current price and shipping</small></span>
