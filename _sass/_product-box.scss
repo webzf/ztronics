@@ -1147,3 +1147,47 @@ text-decoration:none;
 @media (min-width:769px){
   .en-product-cta{ margin-top:0; }
 }
+
+
+/* XiaoZhi product photo gallery */
+.en-xiaozhi-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.25rem;
+}
+
+.en-xiaozhi-gallery figure {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .035);
+}
+
+.en-xiaozhi-gallery img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  padding: .65rem;
+  box-sizing: border-box;
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+.en-xiaozhi-gallery figcaption {
+  padding: .65rem .8rem;
+  color: $muted-text-color;
+  font-size: .82rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .en-xiaozhi-gallery { gap: .65rem; }
+  .en-xiaozhi-gallery img { height: 155px; padding: .4rem; }
+  .en-xiaozhi-gallery figcaption { padding: .5rem; font-size: .74rem; }
+}
