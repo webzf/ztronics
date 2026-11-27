@@ -221,6 +221,7 @@ Può essere utilizzato come base per una dashboard touchscreen Home Assistant co
 |---|---|
 | Guition ESP32-S3-4848S040 | Interfaccia quadrata da 4 pollici e 480×480 |
 | [Sunton ESP32-8048S043C](/it/products/sunton-esp32-8048s043c/) | Interfaccia più ampia da 4,3 pollici e 800×480 |
+| [Waveshare ESP32-S3-Touch-LCD-4.3](/products/waveshare-esp32-s3-touch-lcd-4-3/) | Un'altra opzione ESP32-S3 da 4,3 pollici e 800×480 con touch capacitivo e interfacce aggiuntive |
 | [ESP32-2432S028 CYD](/products/esp32-2432s028-2-8-cyd/) | Touchscreen compatto da 2,8 pollici a costo contenuto |
 
 Non sai quale scheda sia adatta al tuo progetto? Usa il [selettore di touchscreen ESP32](/tools/esp32-touchscreen-selector/) e leggi la [guida ai display touchscreen ESP32](/esp32-touchscreen-displays-guide/).
