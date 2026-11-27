@@ -496,3 +496,65 @@
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
+
+
+/* TRMNL BYOD product page: AliExpress button over the main hero image. */
+.en-product-hero-media--trmnl {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 1.5rem 0 2rem;
+  border-radius: .9rem;
+  background: #fff;
+}
+
+.en-product-hero-media--trmnl > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: inherit;
+}
+
+.en-product-hero-media--trmnl .en-product-hero-aliexpress {
+  position: absolute;
+  right: clamp(.65rem, 2.5vw, 1.25rem);
+  bottom: clamp(.65rem, 2.5vw, 1.25rem);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 2.7rem;
+  padding: .65rem 1rem;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: .55rem;
+  background: #e85d04;
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .28);
+  transition: background .18s ease, transform .18s ease;
+}
+
+.en-product-hero-media--trmnl .en-product-hero-aliexpress:hover,
+.en-product-hero-media--trmnl .en-product-hero-aliexpress:focus-visible {
+  background: #c94d00;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.en-product-hero-media--trmnl .en-product-hero-aliexpress:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .en-product-hero-media--trmnl .en-product-hero-aliexpress {
+    min-height: 2.35rem;
+    padding: .55rem .75rem;
+    font-size: .78rem;
+  }
+}
