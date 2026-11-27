@@ -17,10 +17,18 @@
 {% assign product_categories_search = include.product.categories | join: " " %}
 {% assign product_tags_search = include.product.tags | join: " " %}
 {% assign product_search = include.product.title | append: " " | append: include.product.manufacturer | append: " " | append: product_categories_search | append: " " | append: include.product.excerpt | append: " " | append: product_tags_search %}
-<div class="en-product-card" data-title="{{ include.product.title | downcase | escape }}" data-platforms="{{ include.product.categories | join: ',' | downcase | escape }}" data-manufacturer="{{ include.product.manufacturer | downcase | escape }}" data-description="{{ include.product.excerpt | downcase | escape }}" data-search="{{ product_search | downcase | escape }}">
-  <a class="en-product-card__image" href="{{ card_url | relative_url | escape }}">
-    <img src="{{ product_image | escape }}" alt="{{ card_title | escape }}" loading="lazy" onerror="this.hidden=true;this.closest('.en-product-card__image').classList.add('is-missing')">
-  </a>
+<div class="en-product-card{% if include.product.product_id == 'trmnl-byod-7-5-og-diy-kit' %} en-product-card--trmnl{% endif %}" data-title="{{ include.product.title | downcase | escape }}" data-platforms="{{ include.product.categories | join: ',' | downcase | escape }}" data-manufacturer="{{ include.product.manufacturer | downcase | escape }}" data-description="{{ include.product.excerpt | downcase | escape }}" data-search="{{ product_search | downcase | escape }}">
+  <div class="en-product-card__media">
+    <a class="en-product-card__image" href="{{ card_url | relative_url | escape }}">
+      <img src="{{ product_image | escape }}" alt="{{ card_title | escape }}" loading="lazy" onerror="this.hidden=true;this.closest('.en-product-card__image').classList.add('is-missing')">
+    </a>
+    {% if include.product.product_id == 'trmnl-byod-7-5-og-diy-kit' %}
+      <a class="en-product-card__aliexpress" href="https://pt.aliexpress.com/item/1005009532501677.html" target="_blank" rel="nofollow sponsored noopener">
+        <i class="fas fa-cart-shopping" aria-hidden="true"></i>
+        {% if site.active_lang == 'de' %}Auf AliExpress ansehen{% elsif site.active_lang == 'fr' %}Voir sur AliExpress{% elsif site.active_lang == 'es' %}Ver en AliExpress{% elsif site.active_lang == 'it' %}Vedi su AliExpress{% elsif site.active_lang == 'nl' %}Bekijk op AliExpress{% elsif site.active_lang == 'pl' %}Zobacz na AliExpress{% elsif site.active_lang == 'pt' %}Ver na AliExpress{% else %}View on AliExpress{% endif %}
+      </a>
+    {% endif %}
+  </div>
   <div class="en-product-card__body">
     {% if commerce.badges.recommended %}
       <span class="en-badge en-badge--recommended">{% if site.active_lang == 'de' %}Empfohlen{% elsif site.active_lang == 'es' %}Recomendado{% elsif site.active_lang == 'fr' %}Recommandé{% elsif site.active_lang == 'it' %}Consigliato{% elsif site.active_lang == 'nl' %}Aanbevolen{% elsif site.active_lang == 'pl' %}Polecany{% elsif site.active_lang == 'pt' %}Recomendado{% else %}Recommended{% endif %}</span>
