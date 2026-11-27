@@ -18,9 +18,13 @@
         height="220">
     </a>
     {% if product.product_id == 'trmnl-byod-7-5-og-diy-kit' %}
-    <a class="en-product-image-aliexpress" href="https://pt.aliexpress.com/item/1005009532501677.html" target="_blank" rel="nofollow sponsored noopener">
-      <i class="fas fa-cart-shopping" aria-hidden="true"></i>
-      <span>Check price on AliExpress</span>
+    <a class="en-buy-button preferred en-product-image-aliexpress" href="https://pt.aliexpress.com/item/1005009532501677.html" target="_blank" rel="nofollow sponsored noopener">
+      <span class="en-buy-icon"><i class="fas fa-cart-shopping" aria-hidden="true"></i></span>
+      <span class="en-buy-text">
+        <strong>{% if site.active_lang == 'de' %}Preis bei AliExpress prüfen{% elsif site.active_lang == 'fr' %}Voir le prix sur AliExpress{% elsif site.active_lang == 'es' %}Consultar precio en AliExpress{% elsif site.active_lang == 'it' %}Verifica il prezzo su AliExpress{% elsif site.active_lang == 'nl' %}Prijs bekijken op AliExpress{% elsif site.active_lang == 'pl' %}Sprawdź cenę w AliExpress{% elsif site.active_lang == 'pt' %}Consultar preço no AliExpress{% else %}Check Price on AliExpress{% endif %}</strong>
+        <small>TRMNL BYOD 7.5-inch OG DIY Kit</small>
+      </span>
+      <span class="en-buy-arrow"><i class="fas fa-chevron-right" aria-hidden="true"></i></span>
     </a>
     {% endif %}
   </div>
