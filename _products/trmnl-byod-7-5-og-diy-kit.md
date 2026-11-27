@@ -66,7 +66,13 @@ available_languages: [en]
 english_url: /products/trmnl-byod-7-5-og-diy-kit/
 ---
 
-![TRMNL 7.5-inch OG DIY Kit with its e-paper display and XIAO ESP32-S3 Plus controller](https://files.seeedstudio.com/wiki/XIAO_Gadget/TRMNL_Kit_Pic/head.webp)
+<div class="en-product-hero-media en-product-hero-media--trmnl">
+  <img src="https://files.seeedstudio.com/wiki/XIAO_Gadget/TRMNL_Kit_Pic/head.webp" alt="TRMNL 7.5-inch OG DIY Kit with its e-paper display and XIAO ESP32-S3 Plus controller" loading="eager">
+  <a class="en-product-hero-aliexpress" href="https://pt.aliexpress.com/item/1005009532501677.html" target="_blank" rel="nofollow sponsored noopener">
+    <i class="fas fa-cart-shopping" aria-hidden="true"></i>
+    <span>Check price on AliExpress</span>
+  </a>
+</div>
 
 The **TRMNL 7.5-inch (OG) DIY Kit** is a do-it-yourself e-paper dashboard built around a 7.5-inch monochrome display and a **XIAO ESP32-S3 Plus** driver board. The kit also includes a rechargeable 2000mAh battery, making it suitable for wall-mounted information displays, smart-home dashboards, calendars and other low-refresh applications.
 
