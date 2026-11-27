@@ -5,10 +5,10 @@
   {% assign product_image = product_image | relative_url %}
 {% endunless %}
 
-<div class="en-product-header">
+<div class="en-product-header{% if product.product_id == 'trmnl-byod-7-5-og-diy-kit' %} en-product-header--trmnl{% endif %}">
 
   {% if product_image %}
-  <div class="en-product-image">
+  <div class="en-product-image{% if product.product_id == 'trmnl-byod-7-5-og-diy-kit' %} en-product-image--trmnl{% endif %}">
     <a href="{{ product.url | relative_url }}">
       <img
         src="{{ product_image }}"
@@ -17,6 +17,12 @@
         width="220"
         height="220">
     </a>
+    {% if product.product_id == 'trmnl-byod-7-5-og-diy-kit' %}
+    <a class="en-product-image-aliexpress" href="https://pt.aliexpress.com/item/1005009532501677.html" target="_blank" rel="nofollow sponsored noopener">
+      <i class="fas fa-cart-shopping" aria-hidden="true"></i>
+      <span>Check price on AliExpress</span>
+    </a>
+    {% endif %}
   </div>
   {% endif %}
 
