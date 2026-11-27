@@ -449,3 +449,50 @@
   .en-category-total { margin-top: .3rem; }
   .en-search-hint { display: none; }
 }
+
+
+/* TRMNL BYOD: place the AliExpress purchase link over the product photo. */
+.en-products-page .en-product-card--trmnl .en-product-card__media {
+  position: relative;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.en-products-page .en-product-card--trmnl .en-product-card__image {
+  width: 100%;
+}
+
+.en-products-page .en-product-card--trmnl .en-product-card__aliexpress {
+  position: absolute;
+  right: .7rem;
+  bottom: .7rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  min-height: 2rem;
+  padding: .45rem .7rem;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: .45rem;
+  background: #e85d04;
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .24);
+  transition: background .18s ease, transform .18s ease;
+}
+
+.en-products-page .en-product-card--trmnl .en-product-card__aliexpress:hover,
+.en-products-page .en-product-card--trmnl .en-product-card__aliexpress:focus-visible {
+  background: #c94d00;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.en-products-page .en-product-card--trmnl .en-product-card__aliexpress:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
